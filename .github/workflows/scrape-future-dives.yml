@@ -9,7 +9,7 @@ on:
         type: boolean
         default: false
 
-  # After the one-week shadow test, uncomment these three lines.
+  # Twice-daily shadow-mode collection.
     schedule:
      - cron: "17 1,13 * * *"
 
