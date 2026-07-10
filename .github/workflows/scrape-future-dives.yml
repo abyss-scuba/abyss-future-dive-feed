@@ -80,16 +80,21 @@ jobs:
           if-no-files-found: warn
           retention-days: 30
 
-      - name: Commit validated feed
+            - name: Commit validated feed
         if: github.event_name == 'schedule' || inputs.publish == true
         run: |
-          if git diff --quiet -- data; then
+          git config user.name "abyss-future-dive-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # Stage new, changed and deleted feed files before checking.
+          git add -A data
+
+          # Check the staged changes, including previously untracked files.
+          if git diff --cached --quiet; then
             echo "No feed changes to commit."
             exit 0
           fi
 
-          git config user.name "abyss-future-dive-bot"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data
+          git status --short
           git commit -m "chore: refresh future dive feed"
           git push
