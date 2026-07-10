@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "1.0.0",
+  "note": "Illustrative shape only. This is not a live feed.",
+  "events": [
+    {
+      "id": "66121878",
+      "openCartId": "66121878",
+      "source": "boat-seal",
+      "sourceWidgetId": "4746",
+      "primaryCategory": "seal",
+      "tags": ["boat", "marine-life", "seal"],
+      "title": "Martin Island Seals",
+      "startDate": "2026-07-11",
+      "startTime": "11:30",
+      "price": {
+        "amount": 130,
+        "currency": "AUD",
+        "display": "$130.00"
+      },
+      "bookingUrl": "https://www.abyss.com.au/charters/scuba-dive-with-seals?q=EXAMPLE_ONLY",
+      "bookingCode": "EXAMPLE_ONLY",
+      "productPath": "/charters/scuba-dive-with-seals"
+    }
+  ]
+}
