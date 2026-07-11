@@ -7,11 +7,11 @@ on:
         description: "Commit validated JSON files to this repository"
         required: true
         type: boolean
-        default: false
+        default: true
 
-  # Twice-daily shadow-mode collection.
-    schedule:
-     - cron: "17 1,13 * * *"
+  schedule:
+    - cron: "17 11,23 * * *"
+      timezone: "Australia/Sydney"
 
 permissions:
   contents: write
@@ -81,7 +81,7 @@ jobs:
           retention-days: 30
 
       - name: Commit validated feed
-        if: github.event_name == 'schedule' || inputs.publish == true
+        if: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.publish) }}
         run: |
           git config user.name "abyss-future-dive-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
