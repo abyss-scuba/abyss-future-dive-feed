@@ -10,7 +10,8 @@ on:
         default: true
 
   schedule:
-    - cron: "7,22,37,52 * * * *"
+    - cron: "17 11,23 * * *"
+      timezone: "Australia/Sydney"
   
 permissions:
   contents: write
