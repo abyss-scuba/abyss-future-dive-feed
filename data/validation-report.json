@@ -2,7 +2,7 @@
   "valid": true,
   "errors": [],
   "warnings": [],
-  "generatedAt": "2026-07-24T04:33:36.297Z",
+  "generatedAt": "2026-07-24T15:06:45.875Z",
   "sourcePage": "https://www.abyss.com.au/widget-all",
   "browserMessages": [
     "error: Failed to load resource: net::ERR_FAILED",
@@ -26,7 +26,7 @@
     "requestfailed: https://www.abyss.com.au/style.css — net::ERR_ABORTED",
     "error: Failed to load resource: net::ERR_FAILED",
     "error: Failed to load resource: net::ERR_FAILED",
-    "requestfailed: https://analytics.google.com/g/collect?v=2&tid=G-B7HLTKWJ3V&gtm=45je67m1h2v893827339za200zd893827339&_p=1784867619395&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGAC&are=1&cid=1537542937.1784867620&frm=0&pscdl=noapi&rcb=10&sr=1600x1000&uaa=x86&uab=64&uafvl=HeadlessChrome%3B149.0.7827.55%7CChromium%3B149.0.7827.55%7CNot)A%253BBrand%3B24.0.0.0&uam=&uamb=0&uap=Windows&uapv=&uaw=0&ul=en-au&gaf=2&_s=1&tag_exp=115616985~115938465~115938468~118897920~118897930~119381662~119896803&sid=1784867619&sct=1&seg=0&dl=https%3A%2F%2Fwww.abyss.com.au%2Fwidget-all&dt=Internal%20DS360%20Future%20Dive%20Schedule%20Source&en=page_view&_fv=1&_nsi=1&_ss=1&_ee=1&tfd=1252 — net::ERR_ABORTED",
+    "requestfailed: https://analytics.google.com/g/collect?v=2&tid=G-B7HLTKWJ3V&gtm=45je67m0h1v893827339za200zd893827339&_p=1784905607104&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGAC&are=1&cid=1530428286.1784905607&frm=0&pscdl=noapi&rcb=8&sr=1600x1000&uaa=x86&uab=64&uafvl=HeadlessChrome%3B149.0.7827.55%7CChromium%3B149.0.7827.55%7CNot)A%253BBrand%3B24.0.0.0&uam=&uamb=0&uap=Windows&uapv=&uaw=0&ul=en-au&gaf=2&_s=1&tag_exp=115938465~115938469~118395335~118897920~118897930~119896803&sid=1784905607&sct=1&seg=0&dl=https%3A%2F%2Fwww.abyss.com.au%2Fwidget-all&dt=Internal%20DS360%20Future%20Dive%20Schedule%20Source&en=page_view&_fv=1&_nsi=1&_ss=1&_ee=1&tfd=1280 — net::ERR_ABORTED",
     "error: Failed to load resource: net::ERR_FAILED",
     "error: Failed to load resource: net::ERR_FAILED",
     "error: Failed to load resource: net::ERR_FAILED",
@@ -38,7 +38,7 @@
     "error: Failed to load resource: net::ERR_FAILED",
     "warning: Google Maps JavaScript API warning: NoApiKeys https://developers.google.com/maps/documentation/javascript/error-messages#no-api-keys",
     "warning: Google Maps JavaScript API warning: SensorNotRequired https://developers.google.com/maps/documentation/javascript/error-messages#sensor-not-required",
-    "requestfailed: https://analytics.google.com/g/collect?v=2&tid=G-B7HLTKWJ3V&gtm=45je67m1h2v893827339za200zd893827339&_p=1784867619395&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AEAAAGQC&ae=a&are=1&cid=1537542937.1784867620&frm=0&pscdl=noapi&rcb=10&sr=1600x1000&uaa=x86&uab=64&uafvl=HeadlessChrome%3B149.0.7827.55%7CChromium%3B149.0.7827.55%7CNot)A%253BBrand%3B24.0.0.0&uam=&uamb=0&uap=Windows&uapv=&uaw=0&ul=en-au&gaf=2&_s=2&tag_exp=115616985~115938465~115938468~118897920~118897930~119381662~119896803&sid=1784867619&sct=1&seg=0&dl=https%3A%2F%2Fwww.abyss.com.au%2Fwidget-all&dt=Internal%20DS360%20Future%20Dive%20Schedule%20Source&en=scroll&epn.percent_scrolled=90&_et=6&tfd=6261 — net::ERR_ABORTED"
+    "requestfailed: https://analytics.google.com/g/collect?v=2&tid=G-B7HLTKWJ3V&gtm=45je67m0h1v893827339za200zd893827339&_p=1784905607104&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AEAAAGQC&ae=a&are=1&cid=1530428286.1784905607&frm=0&pscdl=noapi&rcb=8&sr=1600x1000&uaa=x86&uab=64&uafvl=HeadlessChrome%3B149.0.7827.55%7CChromium%3B149.0.7827.55%7CNot)A%253BBrand%3B24.0.0.0&uam=&uamb=0&uap=Windows&uapv=&uaw=0&ul=en-au&gaf=2&_s=2&tag_exp=115938465~115938469~118395335~118897920~118897930~119896803&sid=1784905607&sct=1&seg=0&dl=https%3A%2F%2Fwww.abyss.com.au%2Fwidget-all&dt=Internal%20DS360%20Future%20Dive%20Schedule%20Source&en=scroll&epn.percent_scrolled=90&_et=7&tfd=6289 — net::ERR_ABORTED"
   ],
   "counts": {
     "sourceEvents": 109,
