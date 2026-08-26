@@ -5,7 +5,7 @@
     "guided-shore: does not reach the 100-day collection target",
     "boat-seal: does not reach the 100-day collection target"
   ],
-  "generatedAt": "2026-08-25T14:04:34.108Z",
+  "generatedAt": "2026-08-26T02:39:47.553Z",
   "sourcePage": "https://www.abyss.com.au/widget-all",
   "browserMessages": [
     "error: Failed to load resource: net::ERR_FAILED",
@@ -19,9 +19,9 @@
     "error: Failed to load resource: net::ERR_FAILED",
     "error: Failed to load resource: net::ERR_FAILED",
     "error: Failed to load resource: net::ERR_FAILED",
+    "requestfailed: https://analytics.google.com/g/collect?v=2&tid=G-B7HLTKWJ3V&gtm=45je68o1v893827339za200zd893827339&_p=1787711990179&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGAC&are=1&cid=889350567.1787711990&frm=0&pscdl=noapi&rcb=11&sr=1600x1000&uaa=x86&uab=64&uafvl=HeadlessChrome%3B149.0.7827.55%7CChromium%3B149.0.7827.55%7CNot)A%253BBrand%3B24.0.0.0&uam=&uamb=0&uap=Windows&uapv=&uaw=0&ul=en-au&gaf=2&_s=1&tag_exp=115938466~115938468~118897920~118897930~119259606~119367802~119367810~120213116~120385422~120476658&sid=1787711990&sct=1&seg=0&dl=https%3A%2F%2Fwww.abyss.com.au%2Fwidget-all&dt=Internal%20DS360%20Future%20Dive%20Schedule%20Source&en=page_view&_fv=1&_nsi=1&_ss=1&_ee=1&tfd=1302 — net::ERR_ABORTED",
     "error: Failed to load resource: net::ERR_FAILED",
     "warning: Google Maps JavaScript API has been loaded directly without loading=async. This can result in suboptimal performance. For best-practice loading patterns please see https://goo.gle/js-api-loading",
-    "requestfailed: https://analytics.google.com/g/collect?v=2&tid=G-B7HLTKWJ3V&gtm=45je68l1v893827339za200zd893827339&_p=1787666676721&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGAC&are=1&cid=1230799927.1787666677&frm=0&pscdl=noapi&rcb=9&sr=1600x1000&uaa=x86&uab=64&uafvl=HeadlessChrome%3B149.0.7827.55%7CChromium%3B149.0.7827.55%7CNot)A%253BBrand%3B24.0.0.0&uam=&uamb=0&uap=Windows&uapv=&uaw=0&ul=en-au&gaf=2&_s=1&tag_exp=115616985~115938466~115938468~118897920~118897930~119367802~119367810~120213116~120385422&sid=1787666676&sct=1&seg=0&dl=https%3A%2F%2Fwww.abyss.com.au%2Fwidget-all&dt=Internal%20DS360%20Future%20Dive%20Schedule%20Source&en=page_view&_fv=1&_nsi=1&_ss=1&_ee=1&tfd=1567 — net::ERR_ABORTED",
     "error: Failed to load resource: net::ERR_FAILED",
     "error: Failed to load resource: net::ERR_FAILED",
     "error: Failed to load resource: net::ERR_FAILED",
@@ -33,7 +33,7 @@
     "error: Failed to load resource: net::ERR_FAILED",
     "error: Failed to load resource: net::ERR_FAILED",
     "error: Failed to load resource: net::ERR_FAILED",
-    "requestfailed: https://analytics.google.com/g/collect?v=2&tid=G-B7HLTKWJ3V&gtm=45je68l1v893827339za200zd893827339&_p=1787666676721&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AEAAAGQC&ae=a&are=1&cid=1230799927.1787666677&frm=0&pscdl=noapi&rcb=9&sr=1600x1000&uaa=x86&uab=64&uafvl=HeadlessChrome%3B149.0.7827.55%7CChromium%3B149.0.7827.55%7CNot)A%253BBrand%3B24.0.0.0&uam=&uamb=0&uap=Windows&uapv=&uaw=0&ul=en-au&gaf=2&_s=2&tag_exp=115616985~115938466~115938468~118897920~118897930~119367802~119367810~120213116~120385422&sid=1787666676&sct=1&seg=0&dl=https%3A%2F%2Fwww.abyss.com.au%2Fwidget-all&dt=Internal%20DS360%20Future%20Dive%20Schedule%20Source&en=scroll&epn.percent_scrolled=90&_et=9&tfd=6580 — net::ERR_ABORTED",
+    "requestfailed: https://analytics.google.com/g/collect?v=2&tid=G-B7HLTKWJ3V&gtm=45je68o1v893827339za200zd893827339&_p=1787711990179&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AEAAAGQC&ae=a&are=1&cid=889350567.1787711990&frm=0&pscdl=noapi&rcb=11&sr=1600x1000&uaa=x86&uab=64&uafvl=HeadlessChrome%3B149.0.7827.55%7CChromium%3B149.0.7827.55%7CNot)A%253BBrand%3B24.0.0.0&uam=&uamb=0&uap=Windows&uapv=&uaw=0&ul=en-au&gaf=2&_s=2&tag_exp=115938466~115938468~118897920~118897930~119259606~119367802~119367810~120213116~120385422~120476658&sid=1787711990&sct=1&seg=0&dl=https%3A%2F%2Fwww.abyss.com.au%2Fwidget-all&dt=Internal%20DS360%20Future%20Dive%20Schedule%20Source&en=scroll&epn.percent_scrolled=90&_et=86&tfd=6391 — net::ERR_ABORTED",
     "warning: Google Maps JavaScript API warning: NoApiKeys https://developers.google.com/maps/documentation/javascript/error-messages#no-api-keys",
     "warning: Google Maps JavaScript API warning: SensorNotRequired https://developers.google.com/maps/documentation/javascript/error-messages#sensor-not-required"
   ],
