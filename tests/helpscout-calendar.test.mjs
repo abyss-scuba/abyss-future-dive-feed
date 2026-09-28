@@ -2,7 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { DateTime } from "luxon";
 import {
-  ZONE,
+  ARTICLE_TITLE, COLLECTION_ID, ZONE,
   parseWidgetRow, buildSnapshot, deduplicateWidgetRows, renderArticle, updateHelpScoutArticle
 } from "../src/helpscout-calendar.mjs";
 
@@ -44,6 +44,16 @@ test("contradictory detail or booking dates cannot enter the article", () => {
   const differentCode = row("03 Oct 2026", "Magic Point", "b");
   differentCode.bookingUrl = row("04 Oct 2026", "Magic Point", "b").bookingUrl;
   assert.match(parseWidgetRow(differentCode, { kind: "charter" }).errors.join(" "), /booking code/);
+
+  const hyphenCode = row("24 Oct 2026", "Equipment Specialist", "equipment", "Equipment Specialist Course");
+  const booking = new URL(hyphenCode.bookingUrl);
+  booking.searchParams.set("q", Buffer.from("part_number=EQUIP%2024-10-2027&date=&open_cart_id=equipment").toString("base64"));
+  hyphenCode.bookingUrl = booking.href;
+  assert.match(parseWidgetRow(hyphenCode, { kind: "course" }).errors.join(" "), /booking code/);
+
+  booking.searchParams.set("q", Buffer.from("part_number=EQUIP%2024-10-2026&date=&open_cart_id=equipment").toString("base64"));
+  hyphenCode.bookingUrl = booking.href;
+  assert.deepEqual(parseWidgetRow(hyphenCode, { kind: "course" }).errors, []);
 });
 
 test("matching page-boundary rows are kept once, while conflicting booking links are omitted", () => {
@@ -102,7 +112,7 @@ test("an unpublished draft blocks all writes", async () => {
   const fakeFetch = async (_url, init) => {
     if (init.method === "PUT") writes++;
     return new Response(JSON.stringify({ article: {
-      id: ARTICLE_ID,
+      id: ARTICLE_ID, collectionId: COLLECTION_ID, name: ARTICLE_TITLE,
       status: "published", hasDraft: true, text: "Schedule snapshot checked yesterday"
     } }), { status: 200 });
   };
@@ -116,11 +126,28 @@ test("the same snapshot skips a second publish", async () => {
   const fakeFetch = async (_url, init) => {
     if (init.method === "PUT") writes++;
     return new Response(JSON.stringify({ article: {
-      id: ARTICLE_ID,
+      id: ARTICLE_ID, collectionId: COLLECTION_ID, name: ARTICLE_TITLE,
       status: "published", hasDraft: false, text: markup
     } }), { status: 200 });
   };
   const result = await updateHelpScoutArticle(sample(), "fake-key", fakeFetch, { articleId: ARTICLE_ID });
   assert.equal(result.status, "unchanged");
   assert.equal(writes, 0);
+});
+
+test("the dry run verifies the exact Docs target with GET and never publishes", async () => {
+  const methods = [];
+  const fakeFetch = async (_url, init) => {
+    methods.push(init.method);
+    return new Response(JSON.stringify({ article: {
+      id: ARTICLE_ID, collectionId: COLLECTION_ID, name: ARTICLE_TITLE,
+      status: "published", hasDraft: false,
+      text: "Schedule snapshot checked yesterday"
+    } }), { status: 200 });
+  };
+  const result = await updateHelpScoutArticle(sample(), "fake-key", fakeFetch, {
+    articleId: ARTICLE_ID, dryRun: true
+  });
+  assert.equal(result.status, "dry-run");
+  assert.deepEqual(methods, ["GET"]);
 });
