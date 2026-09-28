@@ -2,7 +2,7 @@
 import fs from "node:fs/promises";
 import { chromium } from "playwright";
 import { DateTime } from "luxon";
-import { SOURCES, ZONE, buildSnapshot, renderArticle, updateHelpScoutArticle } from "../src/helpscout-calendar.mjs";
+import { SOURCES, ZONE, buildSnapshot, deduplicateWidgetRows, renderArticle, updateHelpScoutArticle } from "../src/helpscout-calendar.mjs";
 
 const SOURCE_URL = "https://www.abyss.com.au/beacon";
 const TIMEOUT = 90_000;
@@ -123,21 +123,9 @@ async function scrapeSource(page, source) {
     throw new Error(`${source.label}: more than ${MAX_PAGES} pages; article was left unchanged`);
   }
   if (source.kind !== "trip" && rows.length === 0) throw new Error(`${source.label}: no event rows`);
-  const seen = new Map();
-  const unique = [];
-  for (const row of rows) {
-    const previous = row.bookingUrl && seen.get(row.bookingUrl);
-    if (previous) {
-      if (JSON.stringify(previous) !== JSON.stringify(row)) {
-        throw new Error(`${source.label}: conflicting rows share an event link; article was left unchanged`);
-      }
-      continue;
-    }
-    if (row.bookingUrl) seen.set(row.bookingUrl, row);
-    unique.push(row);
-  }
-  console.log(`${source.label}: ${unique.length} unique rows across ${total} page(s), ${rows.length - unique.length} identical boundary duplicate(s)`);
-  return unique;
+  const result = deduplicateWidgetRows(rows, source);
+  console.log(`${source.label}: ${result.rows.length} unique rows across ${total} page(s), ${result.identicalDuplicates} matching duplicate(s), ${result.excluded.length} conflicting row(s) omitted`);
+  return result;
 }
 
 async function main() {
@@ -159,8 +147,19 @@ async function main() {
     // interacting with controls that DS360 attaches after the rows appear.
     await page.waitForTimeout(10_000);
     const raw = {};
-    for (const source of SOURCES) raw[source.id] = await scrapeSource(page, source);
-    const snapshot = buildSnapshot(raw, DateTime.now().setZone(ZONE));
+    const preExcluded = [];
+    const conflicts = [];
+    for (const source of SOURCES) {
+      const result = await scrapeSource(page, source);
+      raw[source.id] = result.rows;
+      preExcluded.push(...result.excluded);
+      conflicts.push(...result.conflicts);
+    }
+    if (conflicts.length) {
+      await fs.mkdir("diagnostics", { recursive: true });
+      await fs.writeFile("diagnostics/helpscout-calendar-conflicts.json", JSON.stringify(conflicts, null, 2));
+    }
+    const snapshot = buildSnapshot(raw, DateTime.now().setZone(ZONE), { preExcluded });
     console.log(`Validated ${snapshot.events.length} events; omitted ${snapshot.excluded.length} inconsistent rows`);
     await fs.mkdir("diagnostics", { recursive: true });
     await fs.writeFile("diagnostics/helpscout-calendar-candidate.html", renderArticle(snapshot));
@@ -188,6 +187,7 @@ async function main() {
     await Promise.allSettled([
       fs.writeFile("diagnostics/helpscout-calendar-error.txt", `${error.stack || error.message}\n`),
       page?.screenshot({ path: "diagnostics/helpscout-calendar-failure.png", fullPage: true }),
+      page?.content().then((markup) => fs.writeFile("diagnostics/helpscout-calendar-page.html", markup)),
       page?.locator("#widget3855").evaluate((element) => element.outerHTML)
         .then((markup) => fs.writeFile("diagnostics/helpscout-calendar-widget.html", markup))
     ]);
