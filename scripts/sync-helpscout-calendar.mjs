@@ -169,7 +169,8 @@ async function main() {
       omitted: snapshot.excluded
     }, null, 2));
     if (DRY_RUN) {
-      console.log("DRY_RUN=true: candidate built; Help Scout article was left unchanged");
+      const result = await updateHelpScoutArticle(snapshot, process.env.HELP_SCOUT_DOCS_API_KEY, fetch, { dryRun: true });
+      console.log(`DRY_RUN=true: Help Scout article target verified (${result.status}); no article write`);
       return;
     }
     const result = await updateHelpScoutArticle(snapshot, process.env.HELP_SCOUT_DOCS_API_KEY);
