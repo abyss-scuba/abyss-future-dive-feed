@@ -253,12 +253,17 @@ export async function updateHelpScoutArticle(snapshot, apiKey, fetchImpl = fetch
   if (!/Schedule snapshot checked|Source: Abyss \/beacon/.test(current.text || "")) {
     throw new Error("Article no longer looks like the managed schedule snapshot; article was left unchanged");
   }
+  const previousCount = Number((current.text || "").match(/These are (\d+) listed events/)?.[1]);
+  if (previousCount >= 30 && snapshot.events.length < previousCount * 0.6) {
+    throw new Error(`Event count fell from ${previousCount} to ${snapshot.events.length}; article was left unchanged`);
+  }
   const next = renderArticle(snapshot);
   if (articleFingerprint(current.text) === articleFingerprint(next)) return { status: "unchanged", count: snapshot.events.length };
   if (options.dryRun) return { status: "dry-run", count: snapshot.events.length, html: next };
   await request("PUT", { text: next });
   const verified = await request("GET");
-  if (verified?.status !== "published" || articleFingerprint(verified.text) !== articleFingerprint(next)) {
+  if (verified?.status !== "published" || verified?.hasDraft ||
+      articleFingerprint(verified.text) !== articleFingerprint(next)) {
     throw new Error("Help Scout readback did not match the new snapshot; inspect the article before retrying");
   }
   return { status: "updated", count: snapshot.events.length };
