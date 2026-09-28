@@ -19,6 +19,7 @@ function fixture() {
     categories: ["category-a"], related: ["existing-related"],
     keywords: ["existing keyword"]
   }));
+  const relatedFallback = new Map();
   const calls = [];
   const fetchImpl = async (url, options) => {
     const parsed = new URL(url);
@@ -31,6 +32,15 @@ function fixture() {
         items: articles.map(({ id, name }) => ({ id, name }))
       } });
     }
+    if (path.endsWith("/related")) {
+      const id = path.split("/").at(-2);
+      const article = articles.find((item) => item.id === id);
+      const ids = article?.related ?? relatedFallback.get(id) ?? [];
+      return Response.json({ articles: {
+        page: 1, pages: 1, count: ids.length,
+        items: ids.map((id) => ({ id }))
+      } });
+    }
     const id = path.split("/").at(-1);
     const article = id === snapshotId ? snapshot : articles.find((item) => item.id === id);
     if (!article) return new Response("missing", { status: 404 });
@@ -41,7 +51,7 @@ function fixture() {
     }
     throw new Error(`Unexpected ${method}`);
   };
-  return { snapshot, articles, calls, fetchImpl };
+  return { snapshot, articles, relatedFallback, calls, fetchImpl };
 }
 
 test("dry run inspects seven live articles without changing them", async () => {
@@ -81,9 +91,19 @@ test("an unpublished draft in any target blocks the whole batch before a write",
   state.articles.at(-1).hasDraft = true;
   await assert.rejects(
     updateCalendarGuides("test-key", snapshotId, state.fetchImpl),
-    /draft or body check failed/
+    /has an unpublished draft/
   );
   assert.equal(state.calls.filter((call) => call.method === "PUT").length, 0);
+});
+
+test("missing related field is read separately before preserving existing links", async () => {
+  const state = fixture();
+  const first = state.articles[0];
+  state.relatedFallback.set(first.id, ["existing-related"]);
+  delete first.related;
+  await updateCalendarGuides("test-key", snapshotId, state.fetchImpl);
+  assert.deepEqual(first.related, ["existing-related", snapshotId]);
+  assert.ok(state.calls.some((call) => call.path === `/v1/articles/${first.id}/related`));
 });
 
 test("a mismatched snapshot identity or missing guide blocks all writes", async () => {
