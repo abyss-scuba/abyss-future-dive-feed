@@ -60,22 +60,16 @@ async function extractRows(root) {
 }
 
 async function currentPage(root) {
-  const selected = await root.locator(".pagination .page-item.active .page-link").first().textContent().catch(() => "1");
+  const active = root.locator(".pagination .page-item.active .page-link");
+  if (await active.count() === 0) return 1;
+  const selected = await active.first().textContent();
   return Number(selected.trim()) || 1;
-}
-
-async function pages(root) {
-  const nav = await root.locator(".pagination .page-link").allTextContents();
-  if (nav.some((n) => n.trim() === ">>")) throw new Error("Pagination has more pages than its numbered links expose");
-  const numbered = nav.map((n) => Number(n.trim())).filter((n) => Number.isInteger(n) && n > 0);
-  return Math.max(1, ...numbered);
 }
 
 async function goToPage(page, root, source, number) {
   const before = await signature(root);
-  const link = root.locator(`.pagination .page-link[data-page="${number}"]`)
-    .filter({ hasText: new RegExp(`^\\s*${number}\\s*$`) }).first();
-  if (await link.count() !== 1) throw new Error(`${source.label}: page ${number} link missing`);
+  const link = root.locator(`.pagination .page-link[data-page="${number}"]`).first();
+  if (await link.count() === 0) throw new Error(`${source.label}: page ${number} link missing`);
   await waitForAjax(page, () => link.click());
   await page.waitForFunction(({ selector, expected }) => {
     const root = document.querySelector(selector);
@@ -90,23 +84,40 @@ async function scrapeSource(page, source) {
   await root.waitFor({ state: "attached", timeout: TIMEOUT });
   await waitForStable(page, root, source);
   const pageSize = root.locator("select.per_page").first();
-  if (await pageSize.count() && await pageSize.inputValue() !== "50") {
-    await waitForAjax(page, () => pageSize.selectOption("50"));
+  // The live charter widget repeats its first rows on page 2 at 50/page.
+  // Its 20/page navigation returns distinct, sequential pages.
+  if (await pageSize.count() && await pageSize.inputValue() !== "20") {
+    await waitForAjax(page, () => pageSize.selectOption("20"));
     await waitForStable(page, root, source);
   }
   if (await currentPage(root) !== 1) await goToPage(page, root, source, 1);
-  const total = await pages(root);
-  if (total > MAX_PAGES) throw new Error(`${source.label}: ${total} pages exceed safety limit`);
   const rows = await extractRows(root);
-  for (let number = 2; number <= total; number++) {
+  let total = 1;
+  for (let number = 2; number <= MAX_PAGES; number++) {
+    if (await root.locator(`.pagination .page-link[data-page="${number}"]`).count() === 0) break;
     await goToPage(page, root, source, number);
     rows.push(...await extractRows(root));
+    total = number;
+  }
+  if (await root.locator(`.pagination .page-link[data-page="${total + 1}"]`).count()) {
+    throw new Error(`${source.label}: more than ${MAX_PAGES} pages; article was left unchanged`);
   }
   if (source.kind !== "trip" && rows.length === 0) throw new Error(`${source.label}: no event rows`);
-  const urls = rows.map((r) => r.bookingUrl).filter(Boolean);
-  if (urls.length !== new Set(urls).size) throw new Error(`${source.label}: duplicate event links across pages`);
-  console.log(`${source.label}: ${rows.length} rows across ${total} page(s)`);
-  return rows;
+  const seen = new Map();
+  const unique = [];
+  for (const row of rows) {
+    const previous = row.bookingUrl && seen.get(row.bookingUrl);
+    if (previous) {
+      if (JSON.stringify(previous) !== JSON.stringify(row)) {
+        throw new Error(`${source.label}: conflicting rows share an event link; article was left unchanged`);
+      }
+      continue;
+    }
+    if (row.bookingUrl) seen.set(row.bookingUrl, row);
+    unique.push(row);
+  }
+  console.log(`${source.label}: ${unique.length} unique rows across ${total} page(s), ${rows.length - unique.length} identical boundary duplicate(s)`);
+  return unique;
 }
 
 async function main() {
