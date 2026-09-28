@@ -72,6 +72,17 @@ export async function updateCalendarGuides(apiKey, snapshotId, fetchImpl = fetch
     if (!response.ok) throw new Error(`Help Scout ${method} ${path} returned HTTP ${response.status}`);
     return method === "GET" ? response.json() : null;
   };
+  const relatedIds = async (article) => {
+    if (Array.isArray(article.related)) return article.related;
+    // Some Docs responses omit an empty related list. Read the dedicated
+    // endpoint before changing it so existing relationships are retained.
+    const page = (await request(`/articles/${article.id}/related?pageSize=100`)).articles;
+    if (page?.page !== 1 || page?.pages !== 1 || !Array.isArray(page?.items) ||
+        !page.items.every((item) => typeof item.id === "string")) {
+      throw new Error(`${article.name}: could not inspect related articles; update stopped`);
+    }
+    return page.items.map((item) => item.id);
+  };
 
   const listing = (await request(`/collections/${COLLECTION_ID}/articles?pageSize=100`)).articles;
   if (!listing || listing.page !== 1 || listing.pages !== 1 || !Array.isArray(listing.items)) {
@@ -93,17 +104,20 @@ export async function updateCalendarGuides(apiKey, snapshotId, fetchImpl = fetch
     }
     const ref = matches[0];
     const current = (await request(`/articles/${ref.id}`)).article;
-    if (current?.id !== ref.id || current?.collectionId !== COLLECTION_ID ||
-        current?.name !== ref.name || current?.status !== "published" || current?.hasDraft ||
-        typeof current?.text !== "string" || current.text.length < 80 ||
-        !Array.isArray(current.related)) {
-      throw new Error(`${ref.name}: identity, publication, draft or body check failed; no articles changed`);
+    if (current?.id !== ref.id || current?.collectionId !== COLLECTION_ID || current?.name !== ref.name) {
+      throw new Error(`${ref.name}: article identity changed; no articles changed`);
     }
+    if (current.status !== "published") throw new Error(`${ref.name}: article is not published; no articles changed`);
+    if (current.hasDraft) throw new Error(`${ref.name}: article has an unpublished draft; no articles changed`);
+    if (typeof current.text !== "string" || !current.text.trim()) {
+      throw new Error(`${ref.name}: article body is empty or unavailable; no articles changed`);
+    }
+    const currentRelated = await relatedIds(current);
     const needsText = !plainText(current.text).includes(guide.marker.toLowerCase());
-    const needsRelated = !current.related.includes(snapshotId);
+    const needsRelated = !currentRelated.includes(snapshotId);
     const nextText = needsText ? `<p>${guide.note}</p>\n${current.text}` : current.text;
-    const nextRelated = needsRelated ? [...current.related, snapshotId] : current.related;
-    plans.push({ guide, current, needsText, needsRelated, nextText, nextRelated });
+    const nextRelated = needsRelated ? [...currentRelated, snapshotId] : currentRelated;
+    plans.push({ guide, current, currentRelated, needsText, needsRelated, nextText, nextRelated });
   }
 
   const summary = plans.map(({ current, needsText, needsRelated }) => ({
@@ -122,7 +136,7 @@ export async function updateCalendarGuides(apiKey, snapshotId, fetchImpl = fetch
     if (latest?.name !== plan.current.name || latest?.collectionId !== COLLECTION_ID ||
         latest?.status !== "published" || latest?.hasDraft ||
         latest?.text !== plan.current.text ||
-        !sameList(latest?.related, plan.current.related) ||
+        !sameList(await relatedIds(latest), plan.currentRelated) ||
         !sameList(latest?.categories, plan.current.categories) ||
         !sameList(latest?.keywords, plan.current.keywords)) {
       throw new Error(`${plan.current.name}: changed since inspection; inspect the article before retrying`);
@@ -132,7 +146,7 @@ export async function updateCalendarGuides(apiKey, snapshotId, fetchImpl = fetch
     if (verified?.id !== plan.current.id || verified?.collectionId !== COLLECTION_ID ||
         verified?.name !== plan.current.name || verified?.status !== "published" || verified?.hasDraft ||
         plainText(verified?.text) !== plainText(plan.nextText) ||
-        !sameList(verified.related, plan.nextRelated) ||
+        !sameList(await relatedIds(verified), plan.nextRelated) ||
         !sameList(verified.categories, plan.current.categories) ||
         !sameList(verified.keywords, plan.current.keywords)) {
       throw new Error(`${plan.current.name}: published readback failed; inspect this article before retrying`);
