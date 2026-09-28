@@ -1,0 +1,38 @@
+name: Connect calendar guides to the schedule snapshot
+
+on:
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: "Update seven Help Scout articles (leave unchecked to inspect only)"
+        type: boolean
+        required: true
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: helpscout-sydney-dive-calendar
+  cancel-in-progress: false
+
+jobs:
+  update:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      DRY_RUN: ${{ inputs.publish && 'false' || 'true' }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - name: Check and update the calendar guides
+        run: node scripts/update-calendar-guides.mjs
+        env:
+          HELP_SCOUT_DOCS_API_KEY: ${{ secrets.HELP_SCOUT_DOCS_API_KEY }}
+          HELP_SCOUT_ARTICLE_ID: ${{ secrets.HELP_SCOUT_ARTICLE_ID }}
