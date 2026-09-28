@@ -33,21 +33,6 @@ async function waitForStable(page, root, source) {
   throw new Error(`${source.label}: widget never produced stable rows`);
 }
 
-async function waitForAjax(page, label, action) {
-  const responsePromise = page.waitForResponse((response) =>
-    response.url().includes("/calendar/ajax_list") && response.request().method() === "POST", { timeout: 45_000 });
-  // If the action itself fails, closing the browser also rejects this pending
-  // response wait. Handle that rejection so the original error is preserved.
-  responsePromise.catch(() => {});
-  try {
-    await action();
-    const response = await responsePromise;
-    if (!response.ok()) throw new Error(`calendar returned HTTP ${response.status()}`);
-  } catch (error) {
-    throw new Error(`${label}: ${error.message}`, { cause: error });
-  }
-}
-
 async function extractRows(root) {
   return root.locator("table tbody tr.main-row").evaluateAll((rows) => rows.map((row) => {
     const cells = [...row.querySelectorAll(":scope > td")];
@@ -75,16 +60,27 @@ async function currentPage(root) {
 
 async function goToPage(page, root, source, number) {
   const before = await signature(root);
-  const link = root.locator(`.pagination .page-link[data-page="${number}"]`).first();
+  const links = root.locator(`.pagination .page-link[data-page="${number}"]`);
+  const visible = links.filter({ visible: true });
+  const link = await visible.count() ? visible.first() : links.first();
   if (await link.count() === 0) throw new Error(`${source.label}: page ${number} link missing`);
   console.log(`${source.label}: loading page ${number}`);
-  // The widget sometimes renders a page link before Playwright considers it
-  // actionable. Its own pagination handler listens for DOM click events.
-  await waitForAjax(page, `${source.label}: page ${number}`, () => link.evaluate((element) => element.click()));
-  await page.waitForFunction(({ selector, expected }) => {
-    const root = document.querySelector(selector);
-    return Number(root?.querySelector(".pagination .page-item.active .page-link")?.textContent.trim()) === expected;
-  }, { selector: `#widget${source.id}`, expected: number }, { timeout: TIMEOUT });
+  await link.evaluate((element) => element.click());
+  // The calendar may update from a cache, a GET or a POST. Verify the visible
+  // result instead of depending on a particular request URL or method.
+  const started = Date.now();
+  let observedPage = 1;
+  let observedRows = 0;
+  while (Date.now() - started < 45_000) {
+    observedPage = await currentPage(root);
+    const after = await signature(root);
+    observedRows = after ? after.split("\n").length : 0;
+    if (observedPage === number && after && after !== before) break;
+    await page.waitForTimeout(500);
+  }
+  if (observedPage !== number || before === await signature(root)) {
+    throw new Error(`${source.label}: page ${number} did not load (selected page ${observedPage}, ${observedRows} rows)`);
+  }
   await waitForStable(page, root, source);
   if (before === await signature(root)) throw new Error(`${source.label}: page ${number} repeated the previous rows`);
 }
@@ -99,14 +95,19 @@ async function scrapeSource(page, source) {
   // Its 20/page navigation returns distinct, sequential pages.
   if (await pageSize.count() && await pageSize.inputValue() !== "20") {
     console.log(`${source.label}: changing page size to 20`);
-    await waitForAjax(page, `${source.label}: set 20 rows per page`, () => pageSize.evaluate((element) => {
+    await pageSize.evaluate((element) => {
       if (![...element.options].some((option) => option.value === "20")) {
         throw new Error("20-row option missing");
       }
       element.value = "20";
       element.dispatchEvent(new Event("input", { bubbles: true }));
       element.dispatchEvent(new Event("change", { bubbles: true }));
-    }));
+    });
+    await page.waitForFunction(({ selector, allowEmpty }) => {
+      const root = document.querySelector(selector);
+      const count = root?.querySelectorAll("tr.main-row").length || 0;
+      return count <= 20 && (count > 0 || allowEmpty);
+    }, { selector: `#widget${source.id}`, allowEmpty: source.kind === "trip" }, { timeout: 45_000 });
     await waitForStable(page, root, source);
   }
   if (await currentPage(root) !== 1) await goToPage(page, root, source, 1);
@@ -141,11 +142,22 @@ async function scrapeSource(page, source) {
 
 async function main() {
   const browser = await chromium.launch({ headless: true, args: ["--no-sandbox", "--disable-dev-shm-usage"] });
+  let page;
   try {
     const context = await browser.newContext({ viewport: { width: 1440, height: 900 }, locale: "en-AU", timezoneId: ZONE });
-    const page = await context.newPage();
+    page = await context.newPage();
+    page.on("response", (response) => {
+      const pathname = new URL(response.url()).pathname;
+      if (pathname.includes("calendar")) {
+        console.log(`Calendar request: ${response.request().method()} ${pathname} -> ${response.status()}`);
+      }
+    });
+    page.on("pageerror", (error) => console.warn(`Calendar page error: ${error.message}`));
     await page.route("**/*", (route) => ["image", "font", "media"].includes(route.request().resourceType()) ? route.abort() : route.continue());
     await page.goto(SOURCE_URL, { waitUntil: "domcontentloaded", timeout: 120_000 });
+    // Match the established widget scraper's initialisation delay before
+    // interacting with controls that DS360 attaches after the rows appear.
+    await page.waitForTimeout(10_000);
     const raw = {};
     for (const source of SOURCES) raw[source.id] = await scrapeSource(page, source);
     const snapshot = buildSnapshot(raw, DateTime.now().setZone(ZONE));
@@ -171,6 +183,15 @@ async function main() {
       lastDate: snapshot.events.at(-1).startDate,
       result: "verified"
     }, null, 2)}\n`);
+  } catch (error) {
+    await fs.mkdir("diagnostics", { recursive: true });
+    await Promise.allSettled([
+      fs.writeFile("diagnostics/helpscout-calendar-error.txt", `${error.stack || error.message}\n`),
+      page?.screenshot({ path: "diagnostics/helpscout-calendar-failure.png", fullPage: true }),
+      page?.locator("#widget3855").evaluate((element) => element.outerHTML)
+        .then((markup) => fs.writeFile("diagnostics/helpscout-calendar-widget.html", markup))
+    ]);
+    throw error;
   } finally {
     await browser.close();
   }
