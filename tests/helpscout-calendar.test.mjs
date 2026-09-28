@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { DateTime } from "luxon";
 import {
   ZONE,
-  parseWidgetRow, buildSnapshot, renderArticle, updateHelpScoutArticle
+  parseWidgetRow, buildSnapshot, deduplicateWidgetRows, renderArticle, updateHelpScoutArticle
 } from "../src/helpscout-calendar.mjs";
 
 const ARTICLE_ID = "aaaaaaaaaaaaaaaaaaaaaaaa";
@@ -44,6 +44,27 @@ test("contradictory detail or booking dates cannot enter the article", () => {
   const differentCode = row("03 Oct 2026", "Magic Point", "b");
   differentCode.bookingUrl = row("04 Oct 2026", "Magic Point", "b").bookingUrl;
   assert.match(parseWidgetRow(differentCode, { kind: "charter" }).errors.join(" "), /booking code/);
+});
+
+test("matching page-boundary rows are kept once, while conflicting booking links are omitted", () => {
+  const first = row("03 Oct 2026", "Advanced Open Water", "shared", "Advanced Open Water Diver");
+  const same = { ...first, detailStart: "03 Oct 2026 12:00 PM" };
+  const matching = deduplicateWidgetRows([first, same], { label: "courses" });
+  assert.equal(matching.rows.length, 1);
+  assert.equal(matching.identicalDuplicates, 1);
+  assert.deepEqual(matching.excluded, []);
+
+  const changed = { ...first, startDate: "04 Oct 2026" };
+  const conflicting = deduplicateWidgetRows([first, changed], { label: "courses" });
+  assert.equal(conflicting.rows.length, 0);
+  assert.equal(conflicting.excluded.length, 2);
+  assert.equal(conflicting.conflicts[0].rows.length, 2);
+  assert.throws(() => buildSnapshot({
+    3855: [row("03 Oct 2026", "Advanced Open Water", "safe")],
+    3857: [], 3856: [row("03 Oct 2026", "Boat Dive", "boat")]
+  }, DateTime.fromISO("2026-09-28T05:07:00", { zone: ZONE }), {
+    minimumEvents: 2, preExcluded: conflicting.excluded
+  }), /Too many inconsistent widget rows/);
 });
 
 test("the widget's Sep abbreviation is parsed as a Sydney date", () => {
