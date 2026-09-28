@@ -151,3 +151,42 @@ test("the dry run verifies the exact Docs target with GET and never publishes", 
   assert.equal(result.status, "dry-run");
   assert.deepEqual(methods, ["GET"]);
 });
+
+test("a verified live update sends only the new article text and confirms publication", async () => {
+  const methods = [];
+  const snapshot = sample();
+  let published = "Schedule snapshot checked yesterday";
+  const fakeFetch = async (_url, init) => {
+    methods.push(init.method);
+    if (init.method === "PUT") {
+      const payload = JSON.parse(init.body);
+      assert.deepEqual(Object.keys(payload), ["text"]);
+      assert.equal(payload.text, renderArticle(snapshot));
+      published = payload.text;
+      return new Response(null, { status: 200 });
+    }
+    return new Response(JSON.stringify({ article: {
+      id: ARTICLE_ID, collectionId: COLLECTION_ID, name: ARTICLE_TITLE,
+      status: "published", hasDraft: false, text: published
+    } }), { status: 200 });
+  };
+  const result = await updateHelpScoutArticle(snapshot, "fake-key", fakeFetch, { articleId: ARTICLE_ID });
+  assert.equal(result.status, "updated");
+  assert.deepEqual(methods, ["GET", "PUT", "GET"]);
+});
+
+test("a sudden loss of listed events blocks publication", async () => {
+  const methods = [];
+  const fakeFetch = async (_url, init) => {
+    methods.push(init.method);
+    return new Response(JSON.stringify({ article: {
+      id: ARTICLE_ID, collectionId: COLLECTION_ID, name: ARTICLE_TITLE,
+      status: "published", hasDraft: false,
+      text: "<p>Schedule snapshot checked yesterday. These are 75 listed events.</p>"
+    } }), { status: 200 });
+  };
+  await assert.rejects(updateHelpScoutArticle(sample(), "fake-key", fakeFetch, {
+    articleId: ARTICLE_ID
+  }), /Event count fell from 75 to 2/);
+  assert.deepEqual(methods, ["GET"]);
+});

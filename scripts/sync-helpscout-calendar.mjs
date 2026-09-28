@@ -7,7 +7,8 @@ import { SOURCES, ZONE, buildSnapshot, deduplicateWidgetRows, renderArticle, upd
 const SOURCE_URL = "https://www.abyss.com.au/beacon";
 const TIMEOUT = 90_000;
 const MAX_PAGES = 10;
-const DRY_RUN = process.env.DRY_RUN === "true";
+// A missing or misspelled setting must never publish the article.
+const DRY_RUN = process.env.DRY_RUN !== "false";
 
 async function signature(root) {
   return root.locator("tr.main-row").evaluateAll((rows) => rows.map((r) =>
