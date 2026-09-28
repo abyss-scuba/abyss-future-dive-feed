@@ -1,7 +1,13 @@
-name: Check Sydney Dive Calendar snapshot (dry run)
+name: Sydney Dive Calendar Help Scout article
 
 on:
   workflow_dispatch:
+    inputs:
+      publish:
+        description: "Update the live Help Scout article (leave unchecked for a dry run)"
+        type: boolean
+        required: true
+        default: false
 
 permissions:
   contents: read
@@ -15,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 25
     env:
-      DRY_RUN: "true"
+      DRY_RUN: ${{ inputs.publish && 'false' || 'true' }}
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
@@ -25,7 +31,7 @@ jobs:
       - run: npm ci
       - run: npx playwright install --with-deps chromium
       - run: npm test
-      - name: Read all Beacon widget pages and build a candidate
+      - name: Read Beacon widgets and check or update the Help Scout article
         run: npm run sync:helpscout
         env:
           HELP_SCOUT_DOCS_API_KEY: ${{ secrets.HELP_SCOUT_DOCS_API_KEY }}
