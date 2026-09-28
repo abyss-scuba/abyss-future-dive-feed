@@ -2,6 +2,8 @@ import { createHash } from "node:crypto";
 import { DateTime } from "luxon";
 
 export const ZONE = "Australia/Sydney";
+export const ARTICLE_TITLE = "Upcoming Sydney dive dates — schedule snapshot";
+export const COLLECTION_ID = "6ab98d4249f1bc2c6aefca54";
 
 export const SOURCES = [
   { id: "3855", kind: "course", label: "courses" },
@@ -32,10 +34,10 @@ function dateFromDetail(value) {
 }
 
 function trailingDate(value) {
-  const match = clean(value).match(/\b(\d{1,2})\/(\d{1,2})\/(\d{2}|\d{4})\s*$/);
+  const match = clean(value).match(/\b(\d{1,2})([/-])(\d{1,2})\2(\d{2}|\d{4})\s*$/);
   if (!match) return null;
-  const year = match[3].length === 2 ? 2000 + Number(match[3]) : Number(match[3]);
-  const date = DateTime.fromObject({ day: Number(match[1]), month: Number(match[2]), year }, { zone: ZONE });
+  const year = match[4].length === 2 ? 2000 + Number(match[4]) : Number(match[4]);
+  const date = DateTime.fromObject({ day: Number(match[1]), month: Number(match[3]), year }, { zone: ZONE });
   return date.isValid ? date.toISODate() : "invalid";
 }
 
@@ -243,8 +245,9 @@ export async function updateHelpScoutArticle(snapshot, apiKey, fetchImpl = fetch
     return method === "GET" ? (await response.json()).article : null;
   };
   const current = await request("GET");
-  if (current?.id !== articleId || current?.status !== "published") {
-    throw new Error("Help Scout article identity or published status changed; article was left unchanged");
+  if (current?.id !== articleId || current?.collectionId !== COLLECTION_ID ||
+      current?.name !== ARTICLE_TITLE || current?.status !== "published") {
+    throw new Error("Help Scout article identity, collection, title or published status changed; article was left unchanged");
   }
   if (current.hasDraft) throw new Error("Help Scout article has an unpublished draft; article was left unchanged");
   if (!/Schedule snapshot checked|Source: Abyss \/beacon/.test(current.text || "")) {

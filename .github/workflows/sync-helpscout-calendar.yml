@@ -27,6 +27,9 @@ jobs:
       - run: npm test
       - name: Read all Beacon widget pages and build a candidate
         run: npm run sync:helpscout
+        env:
+          HELP_SCOUT_DOCS_API_KEY: ${{ secrets.HELP_SCOUT_DOCS_API_KEY }}
+          HELP_SCOUT_ARTICLE_ID: ${{ secrets.HELP_SCOUT_ARTICLE_ID }}
       - name: Save candidate and validation summary
         if: always()
         uses: actions/upload-artifact@v7
