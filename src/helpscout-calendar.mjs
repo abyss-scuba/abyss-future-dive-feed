@@ -193,8 +193,8 @@ export function renderArticle(snapshot) {
   const fullDate = (d) => d.setLocale("en-AU").toFormat("cccc d LLLL yyyy");
   // The date is stable across retries. Content changes are still compared below.
   const parts = [
-    `<p>Schedule snapshot checked ${html(date(checkedAt.setZone(ZONE)))} Sydney time. These are ${events.length} listed events from ${html(date(first))} to ${html(date(last))} on the <a href="https://www.abyss.com.au/beacon">Abyss calendar data page</a>. Times below are Sydney local time. Dates, times, sites and trip details can change. Follow each event link to confirm current details and places before booking. This article is a schedule snapshot, not live availability or a suitability assessment.</p>`,
-    '<p>If you are unsure which event fits your certification, experience, equipment or travel plans, ask the dive team in chat. You can also explore the <a href="https://www.abyss.com.au/sydney-dive-calendar">Sydney Dive Calendar</a>.</p>'
+    `<p>Schedule snapshot checked ${html(date(checkedAt.setZone(ZONE)))} Sydney time. These are ${events.length} listed events from ${html(date(first))} to ${html(date(last))} drawn from Abyss course, trip and charter listings. Times below are Sydney local time. Dates, times, sites and trip details can change. Follow each event link to confirm current details and places before booking. This article is a schedule snapshot, not live availability or a suitability assessment.</p>`,
+    '<p>You are already on the Sydney Dive Calendar page. Use Filter Dives on this page to narrow the schedule. Open a listed event link below to check current places and book. If you are unsure which event fits your certification, experience, equipment or travel plans, ask the dive team in chat.</p>'
   ];
   let month = "";
   let day = "";
@@ -218,7 +218,7 @@ export function renderArticle(snapshot) {
     parts.push(`<li>${html(event.startTime)} · <a href="${html(event.bookingUrl)}">${html(event.title)}</a> (${html(event.category)})${ends}${description}</li>`);
   }
   if (day) parts.push("</ul>");
-  parts.push(`<p>Source: Abyss /beacon course, travel and charter listings.${excluded.length ? ` ${excluded.length} row${excluded.length === 1 ? "" : "s"} with contradictory or incomplete event details ${excluded.length === 1 ? "was" : "were"} omitted; ask the dive team if you cannot find an event.` : ""}</p>`);
+  parts.push(`<p>Source: Abyss course, travel and charter listings.${excluded.length ? ` ${excluded.length} row${excluded.length === 1 ? "" : "s"} with contradictory or incomplete event details ${excluded.length === 1 ? "was" : "were"} omitted; ask the dive team if you cannot find an event.` : ""}</p>`);
   return parts.join("\n");
 }
 
