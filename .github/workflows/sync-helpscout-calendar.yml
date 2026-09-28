@@ -1,0 +1,60 @@
+name: Refresh Help Scout Sydney Dive Calendar article
+
+on:
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: "Update the published Help Scout article after validation"
+        required: true
+        type: boolean
+        default: false
+  schedule:
+    - cron: "7 5 * * *"
+      timezone: "Australia/Sydney"
+    - cron: "37 5 * * *"
+      timezone: "Australia/Sydney"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: helpscout-sydney-dive-calendar
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && !inputs.publish }}
+      HELP_SCOUT_DOCS_API_KEY: ${{ secrets.HELP_SCOUT_DOCS_API_KEY }}
+      HELP_SCOUT_ARTICLE_ID: ${{ secrets.HELP_SCOUT_ARTICLE_ID }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm test
+      - name: Read all Beacon widget pages and refresh the article
+        run: npm run sync:helpscout
+      - name: Record successful daily check
+        if: ${{ env.DRY_RUN != 'true' }}
+        run: |
+          git config user.name "abyss-calendar-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/helpscout-calendar-sync-status.json
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: record Help Scout calendar refresh"
+            git push
+          fi
+      - name: Save candidate and validation summary
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: helpscout-calendar-${{ github.run_number }}
+          path: diagnostics/helpscout-calendar-*
+          if-no-files-found: ignore
+          retention-days: 14
