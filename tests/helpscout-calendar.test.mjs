@@ -103,6 +103,8 @@ test("the snapshot gives both same-day departures, omits places and escapes sour
   assert.match(markup, /12:00 · <a href=/);
   assert.match(markup, /Magic Point Shark Dive/);
   assert.match(markup, /Sharks &amp; &lt;rays&gt;/);
+  assert.match(markup, /Use Filter Dives on this page/);
+  assert.doesNotMatch(markup, /href="https:\/\/www\.abyss\.com\.au\/sydney-dive-calendar"/);
   assert.doesNotMatch(markup, /places available|live seats|\$130/i);
   assert.equal((markup.match(/<li>/g) || []).length, 2);
 });
