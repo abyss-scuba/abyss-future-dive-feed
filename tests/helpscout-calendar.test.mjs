@@ -10,7 +10,7 @@ const ARTICLE_ID = "aaaaaaaaaaaaaaaaaaaaaaaa";
 
 function row(date, title, id, label = "Boat Dives") {
   const [day, month, year] = date.split(" ");
-  const monthNumber = DateTime.fromFormat(month, "LLL", { locale: "en-AU" }).month;
+  const monthNumber = DateTime.fromFormat(month, "LLL", { locale: "en-US" }).month;
   return {
     startDate: date, endDate: date, label,
     detailStart: `${date}  12:00 PM`,
@@ -44,6 +44,25 @@ test("contradictory detail or booking dates cannot enter the article", () => {
   const differentCode = row("03 Oct 2026", "Magic Point", "b");
   differentCode.bookingUrl = row("04 Oct 2026", "Magic Point", "b").bookingUrl;
   assert.match(parseWidgetRow(differentCode, { kind: "charter" }).errors.join(" "), /booking code/);
+});
+
+test("the widget's Sep abbreviation is parsed as a Sydney date", () => {
+  const parsed = parseWidgetRow(row("03 Sep 2027", "Shore Dive", "september"), { kind: "charter" });
+  assert.deepEqual(parsed.errors, []);
+  assert.equal(parsed.event.startDate, "2027-09-03");
+});
+
+test("contradictory distant events do not block a near-term snapshot", () => {
+  const distant = row("03 Sep 2027", "Shore Dive", "distant");
+  distant.detailStart = "04 Sep 2027  12:00 PM";
+  const raw = {
+    3855: [row("03 Oct 2026", "Advanced Open Water", "course1"), distant],
+    3857: [],
+    3856: [row("03 Oct 2026", "Boat Dive", "charter1")]
+  };
+  const snapshot = buildSnapshot(raw, DateTime.fromISO("2026-09-28T05:07:00", { zone: ZONE }), { minimumEvents: 2 });
+  assert.equal(snapshot.events.length, 2);
+  assert.deepEqual(snapshot.excluded, []);
 });
 
 test("the snapshot gives both same-day departures, omits places and escapes source text", () => {
