@@ -104,6 +104,41 @@ export function parseWidgetRow(row, source) {
   };
 }
 
+export function deduplicateWidgetRows(rows, source) {
+  const byLink = new Map();
+  const withoutLink = [];
+  for (const row of rows) {
+    if (!row.bookingUrl) {
+      withoutLink.push(row);
+      continue;
+    }
+    if (!byLink.has(row.bookingUrl)) byLink.set(row.bookingUrl, []);
+    byLink.get(row.bookingUrl).push(row);
+  }
+  const unique = [...withoutLink];
+  const excluded = [];
+  const conflicts = [];
+  let identicalDuplicates = 0;
+  for (const [bookingUrl, group] of byLink) {
+    const variants = new Map(group.map((row) => [JSON.stringify({
+      startDate: clean(row.startDate), endDate: clean(row.endDate),
+      label: clean(row.label), detailStart: clean(row.detailStart),
+      detailText: clean(row.detailText)
+    }), row]));
+    if (variants.size > 1) {
+      conflicts.push({ source: source.label, bookingUrl, rows: [...variants.values()] });
+      for (const row of group) excluded.push({
+        source: source.label, startDate: row.startDate,
+        reason: "conflicting rows share an event booking link"
+      });
+      continue;
+    }
+    unique.push(group[0]);
+    identicalDuplicates += group.length - 1;
+  }
+  return { rows: unique, excluded, conflicts, identicalDuplicates };
+}
+
 export function buildSnapshot(rawBySource, checkedAt = DateTime.now().setZone(ZONE), options = {}) {
   const days = options.days ?? 56;
   const minimumEvents = options.minimumEvents ?? 12;
@@ -112,6 +147,12 @@ export function buildSnapshot(rawBySource, checkedAt = DateTime.now().setZone(ZO
   const events = [];
   const excluded = [];
   let candidateCount = 0;
+  for (const entry of options.preExcluded || []) {
+    const date = dateFromTable(entry.startDate);
+    if (date && (date < today.toISODate() || date > through.toISODate())) continue;
+    excluded.push(entry);
+    candidateCount++;
+  }
   for (const source of SOURCES) {
     const rows = rawBySource[source.id];
     if (!Array.isArray(rows) || (source.kind !== "trip" && rows.length === 0)) {
