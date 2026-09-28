@@ -33,12 +33,19 @@ async function waitForStable(page, root, source) {
   throw new Error(`${source.label}: widget never produced stable rows`);
 }
 
-async function waitForAjax(page, action) {
+async function waitForAjax(page, label, action) {
   const responsePromise = page.waitForResponse((response) =>
     response.url().includes("/calendar/ajax_list") && response.request().method() === "POST", { timeout: 45_000 });
-  await action();
-  const response = await responsePromise;
-  if (!response.ok()) throw new Error(`Calendar pagination returned HTTP ${response.status()}`);
+  // If the action itself fails, closing the browser also rejects this pending
+  // response wait. Handle that rejection so the original error is preserved.
+  responsePromise.catch(() => {});
+  try {
+    await action();
+    const response = await responsePromise;
+    if (!response.ok()) throw new Error(`calendar returned HTTP ${response.status()}`);
+  } catch (error) {
+    throw new Error(`${label}: ${error.message}`, { cause: error });
+  }
 }
 
 async function extractRows(root) {
@@ -70,7 +77,10 @@ async function goToPage(page, root, source, number) {
   const before = await signature(root);
   const link = root.locator(`.pagination .page-link[data-page="${number}"]`).first();
   if (await link.count() === 0) throw new Error(`${source.label}: page ${number} link missing`);
-  await waitForAjax(page, () => link.click());
+  console.log(`${source.label}: loading page ${number}`);
+  // The widget sometimes renders a page link before Playwright considers it
+  // actionable. Its own pagination handler listens for DOM click events.
+  await waitForAjax(page, `${source.label}: page ${number}`, () => link.evaluate((element) => element.click()));
   await page.waitForFunction(({ selector, expected }) => {
     const root = document.querySelector(selector);
     return Number(root?.querySelector(".pagination .page-item.active .page-link")?.textContent.trim()) === expected;
@@ -81,13 +91,22 @@ async function goToPage(page, root, source, number) {
 
 async function scrapeSource(page, source) {
   const root = page.locator(`#widget${source.id}`);
+  console.log(`${source.label}: waiting for widget ${source.id}`);
   await root.waitFor({ state: "attached", timeout: TIMEOUT });
   await waitForStable(page, root, source);
   const pageSize = root.locator("select.per_page").first();
   // The live charter widget repeats its first rows on page 2 at 50/page.
   // Its 20/page navigation returns distinct, sequential pages.
   if (await pageSize.count() && await pageSize.inputValue() !== "20") {
-    await waitForAjax(page, () => pageSize.selectOption("20"));
+    console.log(`${source.label}: changing page size to 20`);
+    await waitForAjax(page, `${source.label}: set 20 rows per page`, () => pageSize.evaluate((element) => {
+      if (![...element.options].some((option) => option.value === "20")) {
+        throw new Error("20-row option missing");
+      }
+      element.value = "20";
+      element.dispatchEvent(new Event("input", { bubbles: true }));
+      element.dispatchEvent(new Event("change", { bubbles: true }));
+    }));
     await waitForStable(page, root, source);
   }
   if (await currentPage(root) !== 1) await goToPage(page, root, source, 1);
