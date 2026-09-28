@@ -194,7 +194,7 @@ export function renderArticle(snapshot) {
   // The date is stable across retries. Content changes are still compared below.
   const parts = [
     `<p>Schedule snapshot checked ${html(date(checkedAt.setZone(ZONE)))} Sydney time. These are ${events.length} listed events from ${html(date(first))} to ${html(date(last))} on the <a href="https://www.abyss.com.au/beacon">Abyss calendar data page</a>. Times below are Sydney local time. Dates, times, sites and trip details can change. Follow each event link to confirm current details and places before booking. This article is a schedule snapshot, not live availability or a suitability assessment.</p>`,
-    '<p>If you are unsure which event fits your certification, experience, equipment or travel plans, ask the dive team in chat. You can also explore the <a href="https://www.abyss.com.au/sydney-dive-calendar">Sydney Dive Calendar</a>.</p>'
+    '<p>You are already on the Sydney Dive Calendar page. Use Filter Dives on this page to narrow the schedule. Open a listed event link below to check current places and book. If you are unsure which event fits your certification, experience, equipment or travel plans, ask the dive team in chat.</p>'
   ];
   let month = "";
   let day = "";
