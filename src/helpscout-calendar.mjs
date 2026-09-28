@@ -15,15 +15,17 @@ const html = (value) => String(value ?? "").replace(/[&<>"']/g, (char) => ({
 }[char]));
 
 function dateFromTable(value) {
-  const date = DateTime.fromFormat(clean(value), "dd LLL yyyy", { zone: ZONE, locale: "en-AU" });
+  // The widget uses English three-letter month names, including "Sep".
+  // Luxon's en-AU locale expects "Sept", so parse the source spelling as en-US.
+  const date = DateTime.fromFormat(clean(value), "dd LLL yyyy", { zone: ZONE, locale: "en-US" });
   return date.isValid ? date.toISODate() : null;
 }
 
 function dateFromDetail(value) {
   const match = clean(value).match(/^(\d{1,2} [A-Za-z]{3} \d{4})\s+(\d{1,2}:\d{2})\s*(AM|PM)$/i);
   if (!match) return null;
-  const date = DateTime.fromFormat(match[1], "d LLL yyyy", { zone: ZONE, locale: "en-AU" });
-  const time = DateTime.fromFormat(`${match[2]} ${match[3].toUpperCase()}`, "h:mm a", { zone: ZONE, locale: "en-AU" });
+  const date = DateTime.fromFormat(match[1], "d LLL yyyy", { zone: ZONE, locale: "en-US" });
+  const time = DateTime.fromFormat(`${match[2]} ${match[3].toUpperCase()}`, "h:mm a", { zone: ZONE, locale: "en-US" });
   return date.isValid && time.isValid
     ? { date: date.toISODate(), time: time.toFormat("HH:mm") }
     : null;
@@ -80,7 +82,9 @@ export function parseWidgetRow(row, source) {
   if (headingDate && headingDate !== startDate) errors.push("description and table dates disagree");
   if (errors.length) return { event: null, errors };
 
-  const title = clean((booking.partNumber || detailHeading).replace(/\s+\d{1,2}\/\d{1,2}\/\d{2,4}\s*$/, "")) || clean(row.label);
+  const bookingTitle = clean((booking.partNumber || detailHeading).replace(/\s+\d{1,2}\/\d{1,2}\/\d{2,4}\s*$/, ""));
+  // Course booking codes are often abbreviations such as "AOW 03-10-2026".
+  const title = (source.kind === "course" ? clean(row.label) : bookingTitle) || clean(row.label);
   const description = clean(row.detailText).includes(":")
     ? clean(row.detailText).slice(clean(row.detailText).indexOf(":") + 1).trim()
     : "";
@@ -107,21 +111,27 @@ export function buildSnapshot(rawBySource, checkedAt = DateTime.now().setZone(ZO
   const through = today.plus({ days });
   const events = [];
   const excluded = [];
+  let candidateCount = 0;
   for (const source of SOURCES) {
     const rows = rawBySource[source.id];
     if (!Array.isArray(rows) || (source.kind !== "trip" && rows.length === 0)) {
       throw new Error(`${source.label}: required widget data missing`);
     }
     for (const row of rows) {
+      const tableDate = dateFromTable(row.startDate);
+      // A distant bad description must not block a snapshot about the next 56
+      // days. An unparseable table date still counts as a candidate error.
+      if (tableDate && (tableDate < today.toISODate() || tableDate > through.toISODate())) continue;
+      candidateCount++;
       const parsed = parseWidgetRow(row, source);
       if (parsed.errors.length) {
         excluded.push({ source: source.label, startDate: row.startDate, reason: parsed.errors.join("; ") });
-      } else if (parsed.event.startDate >= today.toISODate() && parsed.event.startDate <= through.toISODate()) {
+      } else {
         events.push(parsed.event);
       }
     }
   }
-  if (excluded.length > 5 || excluded.length > Object.values(rawBySource).reduce((n, rows) => n + rows.length, 0) * 0.1) {
+  if (excluded.length > 5 || excluded.length > candidateCount * 0.1) {
     throw new Error(`Too many inconsistent widget rows (${excluded.length}); article was left unchanged`);
   }
   const unique = [...new Map(events.map((event) => [event.bookingUrl, event])).values()]
