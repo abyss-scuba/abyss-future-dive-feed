@@ -1,0 +1,37 @@
+name: Check Sydney Dive Calendar snapshot (dry run)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: helpscout-sydney-dive-calendar
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      DRY_RUN: "true"
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm test
+      - name: Read all Beacon widget pages and build a candidate
+        run: npm run sync:helpscout
+      - name: Save candidate and validation summary
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: helpscout-calendar-${{ github.run_number }}
+          path: diagnostics/helpscout-calendar-*
+          if-no-files-found: ignore
+          retention-days: 14
