@@ -71,6 +71,7 @@ class FakeDocs {
 
 test("reviewed pack compiles to seven distinct HTML articles with searchable keyword arrays", () => {
   assert.equal(articles.length, 7);
+  assert.equal(articles.reduce((count, article) => count + article.keywords.length, 0), 126);
   assert.equal(articles.filter(a => a.name === SCHEDULE_TITLE).length, 1);
   assert.ok(articles.every(a => a.text.startsWith("<h2") && a.keywords.length >= 10));
   assert.ok(articles.some(a => a.keywords.includes("is there a toilet on the dive boat")));
@@ -106,6 +107,7 @@ test("repeated bootstrap keeps the scheduled article's newer daily snapshot", as
   const target = await bootstrapBoatDocs({ request: docs.request, articles });
   const schedule = docs.articles.get(target.articleId);
   schedule.text = `<h2>${SCHEDULE_TITLE}</h2><p>Updated today.</p><!-- ABYSS_BOAT_SNAPSHOT_V1 -->`;
+  schedule.keywords.reverse(); // Help Scout may reorder keywords without changing membership.
   docs.calls = [];
   assert.deepEqual(await bootstrapBoatDocs({ request: docs.request, articles, existingTarget: target }), target);
   assert.equal(schedule.text.includes("Updated today"), true);

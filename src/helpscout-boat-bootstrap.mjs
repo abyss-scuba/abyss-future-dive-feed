@@ -10,9 +10,9 @@ function assert(condition, message) {
   if (!condition) throw new Error(message);
 }
 
-function sameStrings(a, b) {
-  return Array.isArray(a) && a.length === b.length &&
-    a.every((value, index) => value === b[index]);
+function sameKeywords(a, b) {
+  return Array.isArray(a) && Array.isArray(b) && a.length === b.length &&
+    new Set(a).size === a.length && b.every(value => a.includes(value));
 }
 
 function comparableHtml(value) {
@@ -118,7 +118,7 @@ function verifyArticleIdentity(current, planned, collectionId) {
 function verifyPublished(current, planned, collectionId, expectedText) {
   verifyArticleIdentity(current, planned, collectionId);
   assert(current.status === "published", `Article is not published: ${planned.name}`);
-  assert(sameStrings(current.keywords, planned.keywords),
+  assert(sameKeywords(current.keywords, planned.keywords),
     `Keyword readback mismatch: ${planned.name}`);
   if (expectedText !== undefined) {
     assert(comparableHtml(current.text) === comparableHtml(expectedText),
