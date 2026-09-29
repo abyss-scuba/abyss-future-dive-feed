@@ -3,7 +3,7 @@ import fs from "node:fs/promises";
 import { chromium } from "playwright";
 import { DateTime } from "luxon";
 import { deduplicateWidgetRows } from "../src/helpscout-calendar.mjs";
-import { SOURCE_URL, SOURCE, ZONE, buildBoatSnapshot, renderBoatArticle, updateBoatArticle } from "../src/helpscout-boat.mjs";
+import { SOURCE_URL, SOURCE, ZONE, boatTarget, buildBoatSnapshot, renderBoatArticle, updateBoatArticle } from "../src/helpscout-boat.mjs";
 const TIMEOUT = 90_000;
 const MAX_PAGES = 10;
 const DRY_RUN = process.env.DRY_RUN !== "false";
@@ -155,7 +155,8 @@ async function main() {
       console.log(`Boat source-only check: ${summary.eventCount} validated events, ${summary.firstDate} through ${summary.lastDate}; no Help Scout request`);
       return;
     }
-    const publication = await updateBoatArticle(snapshot, process.env.HELP_SCOUT_DOCS_API_KEY, fetch, { dryRun: DRY_RUN });
+    const target = boatTarget(JSON.parse(await fs.readFile("data/helpscout-boat-target.json", "utf8")));
+    const publication = await updateBoatArticle(snapshot, process.env.HELP_SCOUT_DOCS_API_KEY, fetch, { dryRun: DRY_RUN, target });
     summary.publication = publication;
     await fs.writeFile("diagnostics/helpscout-boat-summary.json", JSON.stringify(summary, null, 2));
     if (!DRY_RUN) {

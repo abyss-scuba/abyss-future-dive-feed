@@ -19,15 +19,16 @@ const html = value => String(value ?? "").replace(/[&<>"']/g, char => ({
 const date = value => value.setLocale("en-AU").toFormat("cccc d LLLL yyyy");
 const asDate = iso => DateTime.fromISO(iso, { zone: ZONE });
 
-export function boatTarget(env = process.env) {
-  const articleId = env.HELP_SCOUT_BOAT_ARTICLE_ID;
-  const collectionId = env.HELP_SCOUT_BOAT_COLLECTION_ID;
-  const title = env.HELP_SCOUT_BOAT_ARTICLE_TITLE;
+export function boatTarget(record) {
+  const articleId = record?.articleId;
+  const collectionId = record?.collectionId;
+  const siteId = record?.siteId;
+  const title = record?.articleTitle;
   if (!/^[a-f0-9]{24}$/i.test(articleId || "") || !/^[a-f0-9]{24}$/i.test(collectionId || "") ||
-      !title || title.trim() !== title || title.length > 200) {
-    throw new Error("Boat article ID, collection ID and exact title must be configured before any Help Scout request");
+      !/^[a-f0-9]{24}$/i.test(siteId || "") || !title || title.trim() !== title || title.length > 200) {
+    throw new Error("Verified Boat article ID, collection ID, site ID and exact title must be present before any Help Scout request");
   }
-  return { articleId, collectionId, title };
+  return { articleId, collectionId, siteId, title };
 }
 
 export function publishedDepth(description, title = "") {
@@ -98,10 +99,10 @@ export function renderBoatArticle(snapshot) {
   const parts = [
     `<!-- ${MARKER} -->`,
     `<h1>${ARTICLE_HEADING}</h1>`,
-    `<p><strong>Last successfully checked: ${html(date(checkedAt))}, Australia/Sydney.</strong></p>`,
+    `<p><strong>Last successfully checked: ${html(date(checkedAt))} at ${html(checkedAt.toFormat("HH:mm ZZZZ"))}, Australia/Sydney.</strong></p>`,
     `<p>Source: <a href="${SOURCE_URL}">Abyss Boat Diving Beacon schedule</a>. The schedule is checked daily in Sydney time. These are ${events.length} listed boat events from ${html(date(asDate(events[0].startDate)))} to ${html(date(asDate(events.at(-1).startDate)))}. The search window is ${html(date(today))} through ${html(date(through))}; only supplied events are listed. No listing beyond the last date does not prove no later boat dives will run.</p>`,
-    "<h2>How to answer boat schedule questions</h2>",
-    "<p>If this snapshot is within 36 hours of its Sydney check date, answer with matching event names, dates, Sydney start times, published depth and certification guidance, and the exact event booking links. These are scheduled listings, not live inventory. The booking link is authoritative for current price, places, meeting point and final details. Never quote cached seats, call a zero-dollar source value free, guarantee a site or wildlife sighting, or assume every boat dive is guided or a double dive. Explicitly disclose an UNGUIDED event. A planned site may change with conditions; the skipper and dive team make the final call. If the snapshot is older than 36 hours, point to the live boat booking page and ask the team.</p>"
+    "<h2>Using these listings</h2>",
+    "<p>These are scheduled departures as of the check date, with Sydney local start times. Open the individual event link for current price, places, meeting point and final details before booking. The planned site can change with conditions; the skipper and dive team make the final call. If the check date is old, use the live boat booking page for current departures. Qualification guidance here is based on the depth published for each event; ask the dive team about your own certification and recent experience.</p>"
   ];
   const windows = weekendWindows(today);
   for (const [heading, saturday] of [
@@ -115,27 +116,37 @@ export function renderBoatArticle(snapshot) {
     parts.push(matching.length ? `<ul>${matching.map(eventLine).join("\n")}</ul>` : "<p>No event is supplied for these dates in this snapshot. Check the live booking page; missing listings do not prove a cancellation.</p>");
   }
   parts.push("<h2>All upcoming boat dive dates</h2>");
-  for (const event of events) parts.push(`<ul>${eventLine(event)}</ul>`);
+  parts.push(`<ul>${events.map(eventLine).join("\n")}</ul>`);
   parts.push('<p>For current price, availability, eligibility, departure and gear options, open the individual event link or see <a href="https://www.abyss.com.au/charters/boat-dives">Sydney Boat Dives</a>.</p>');
   return parts.join("\n");
 }
 
-export async function updateBoatArticle(snapshot, apiKey, fetchImpl = fetch, { dryRun = true, target = boatTarget() } = {}) {
+function contentFingerprint(markup) {
+  // Ignore only the successful check clock when deciding whether the 01:37
+  // retry has new event content. The published readback below remains exact.
+  return articleFingerprint(String(markup || "").replace(
+    /Last successfully checked:[^<]*Australia\/Sydney\./i,
+    "Last successfully checked: [verified clock], Australia/Sydney."
+  ));
+}
+
+export async function updateBoatArticle(snapshot, apiKey, fetchImpl = fetch, { dryRun = true, target } = {}) {
   if (!apiKey) throw new Error("HELP_SCOUT_DOCS_API_KEY is not configured");
-  const { articleId, collectionId, title } = target;
-  if (!/^[a-f0-9]{24}$/i.test(articleId || "") || !/^[a-f0-9]{24}$/i.test(collectionId || "") || !title) {
-    throw new Error("Boat article target is invalid");
-  }
+  const { articleId, collectionId, siteId, title } = boatTarget(target && {
+    articleId: target.articleId, collectionId: target.collectionId,
+    siteId: target.siteId, articleTitle: target.title
+  });
   const url = `https://docsapi.helpscout.net/v1/articles/${articleId}`;
+  const collectionUrl = `https://docsapi.helpscout.net/v1/collections/${collectionId}`;
   const headers = { Authorization: `Basic ${Buffer.from(`${apiKey}:X`).toString("base64")}`, Accept: "application/json" };
-  const request = async (method, body) => {
-    const response = await fetchImpl(url, {
+  const request = async (requestUrl, method, body) => {
+    const response = await fetchImpl(requestUrl, {
       method, redirect: "error", signal: AbortSignal.timeout(30_000),
       headers: { ...headers, ...(body ? { "Content-Type": "application/json" } : {}) },
       ...(body ? { body: JSON.stringify(body) } : {})
     });
     if (!response.ok) throw new Error(`Help Scout ${method} returned HTTP ${response.status}`);
-    return method === "GET" ? (await response.json()).article : null;
+    return method === "GET" ? await response.json() : null;
   };
   const validate = article => {
     if (article?.id !== articleId || article?.collectionId !== collectionId ||
@@ -143,7 +154,11 @@ export async function updateBoatArticle(snapshot, apiKey, fetchImpl = fetch, { d
       throw new Error("Boat article identity, publication or draft status changed; no further writes");
     }
   };
-  const current = await request("GET");
+  const collection = (await request(collectionUrl, "GET")).collection;
+  if (collection?.id !== collectionId || collection?.siteId !== siteId || collection?.visibility !== "private") {
+    throw new Error("Boat collection identity, site or private visibility changed; article left unchanged");
+  }
+  const current = (await request(url, "GET")).article;
   validate(current);
   const currentText = current.text || "";
   // Docs may strip HTML comments. The exact article identity plus source URL
@@ -156,10 +171,10 @@ export async function updateBoatArticle(snapshot, apiKey, fetchImpl = fetch, { d
     throw new Error(`Boat event count fell from ${previousCount} to ${snapshot.events.length}; article left unchanged`);
   }
   const next = renderBoatArticle(snapshot);
-  if (articleFingerprint(currentText) === articleFingerprint(next)) return { status: "unchanged", count: snapshot.events.length };
+  if (contentFingerprint(currentText) === contentFingerprint(next)) return { status: "unchanged", count: snapshot.events.length };
   if (dryRun) return { status: "dry-run", count: snapshot.events.length };
-  await request("PUT", { text: next });
-  const verified = await request("GET");
+  await request(url, "PUT", { text: next });
+  const verified = (await request(url, "GET")).article;
   validate(verified);
   if (articleFingerprint(verified.text) !== articleFingerprint(next)) {
     throw new Error("Boat published readback mismatch; inspect before retrying");

@@ -13,6 +13,7 @@ const snapshot = () => buildBoatSnapshot(fixture.rows, now);
 const target = {
   articleId: "aaaaaaaaaaaaaaaaaaaaaaaa",
   collectionId: "bbbbbbbbbbbbbbbbbbbbbbbb",
+  siteId: "cccccccccccccccccccccccc",
   title: "Upcoming boat dives — schedule snapshot"
 };
 const bootstrap = `<!-- ${MARKER} --><h1>${ARTICLE_HEADING}</h1><p>Source: ${SOURCE_URL}.</p>`;
@@ -21,11 +22,16 @@ const article = (overrides = {}) => ({
   status: "published", hasDraft: false, text: bootstrap, ...overrides
 });
 
-function docsFetch(initial = article(), { corruptReadback = false } = {}) {
+function docsFetch(initial = article(), { corruptReadback = false, collectionOverrides = {} } = {}) {
   let current = initial;
   const calls = [];
   const fetchImpl = async (url, options) => {
     calls.push({ url, options });
+    if (url.includes("/collections/")) {
+      return { ok: true, status: 200, json: async () => ({ collection: {
+        id: target.collectionId, siteId: target.siteId, visibility: "private", ...collectionOverrides
+      } }) };
+    }
     if (options.method === "PUT") {
       const payload = JSON.parse(options.body);
       if (!corruptReadback) current = { ...current, text: payload.text };
@@ -70,11 +76,12 @@ test("negative seat counts and $0.00 do not become availability or a free-price 
   assert.equal(seal.placesAvailable, -3);
   assert.equal(undola.price, "$0.00");
   const html = renderBoatArticle(snapshot());
+  assert.match(html, /Last successfully checked: Tuesday 29 September 2026 at 17:00 GMT\+10, Australia\/Sydney/);
   assert.ok(html.includes(seal.bookingUrl));
   assert.ok(html.includes(undola.bookingUrl));
   assert.match(html, /Wanderers UNGUIDED Boat Dive/);
   assert.match(html, /explicitly UNGUIDED/);
-  assert.doesNotMatch(html, /-3 places|\$0\.00|13 places|Free boat dive/);
+  assert.doesNotMatch(html, /-3 places|\$0\.00|13 places|Free boat dive|How to answer/);
   assert.match(html, /Check live details, price and places/);
 });
 
@@ -115,28 +122,31 @@ test("source descriptions are escaped before rendering", () => {
 
 test("target requires configured exact article, collection and title", () => {
   assert.deepEqual(boatTarget({
-    HELP_SCOUT_BOAT_ARTICLE_ID: target.articleId,
-    HELP_SCOUT_BOAT_COLLECTION_ID: target.collectionId,
-    HELP_SCOUT_BOAT_ARTICLE_TITLE: target.title
+    articleId: target.articleId,
+    collectionId: target.collectionId,
+    siteId: target.siteId,
+    articleTitle: target.title
   }), target);
-  assert.throws(() => boatTarget({}), /must be configured/);
-  assert.throws(() => boatTarget({ HELP_SCOUT_BOAT_ARTICLE_ID: "123" }), /must be configured/);
+  assert.throws(() => boatTarget({}), /must be present/);
+  assert.throws(() => boatTarget({ articleId: "123" }), /must be present/);
 });
 
 test("dry run uses GET only; publishing updates text only and verifies readback", async () => {
   const source = docsFetch();
   const dry = await updateBoatArticle(snapshot(), "fake", source.fetchImpl, { dryRun: true, target });
   assert.equal(dry.status, "dry-run");
-  assert.deepEqual(source.calls.map(call => call.options.method), ["GET"]);
-  assert.equal(source.calls[0].url, `https://docsapi.helpscout.net/v1/articles/${target.articleId}`);
+  assert.deepEqual(source.calls.map(call => call.options.method), ["GET", "GET"]);
+  assert.equal(source.calls[0].url, `https://docsapi.helpscout.net/v1/collections/${target.collectionId}`);
+  assert.equal(source.calls[1].url, `https://docsapi.helpscout.net/v1/articles/${target.articleId}`);
   const live = await updateBoatArticle(snapshot(), "fake", source.fetchImpl, { dryRun: false, target });
   assert.equal(live.status, "updated");
-  assert.deepEqual(source.calls.slice(1).map(call => call.options.method), ["GET", "PUT", "GET"]);
+  assert.deepEqual(source.calls.slice(2).map(call => call.options.method), ["GET", "GET", "PUT", "GET"]);
   const payload = JSON.parse(source.calls.find(call => call.options.method === "PUT").options.body);
   assert.deepEqual(Object.keys(payload), ["text"]);
   assert.match(payload.text, /<!-- ABYSS_BOAT_SNAPSHOT_V1 -->/);
   assert.match(payload.text, /https:\/\/www\.abyss\.com\.au\/boat-diving-beacon/);
-  const unchanged = await updateBoatArticle(snapshot(), "fake", source.fetchImpl, { dryRun: false, target });
+  const retry = buildBoatSnapshot(fixture.rows, now.plus({ minutes: 37 }));
+  const unchanged = await updateBoatArticle(retry, "fake", source.fetchImpl, { dryRun: false, target });
   assert.equal(unchanged.status, "unchanged");
   assert.equal(source.calls.filter(call => call.options.method === "PUT").length, 1);
 });
@@ -150,6 +160,13 @@ test("wrong target, draft, missing marker and large count loss prevent writes", 
   ]) {
     const source = docsFetch(article(bad));
     await assert.rejects(updateBoatArticle(snapshot(), "fake", source.fetchImpl, { dryRun: false, target }));
+    assert.deepEqual(source.calls.map(call => call.options.method), ["GET", "GET"]);
+  }
+  for (const collectionOverrides of [
+    { id: "dddddddddddddddddddddddd" }, { siteId: "dddddddddddddddddddddddd" }, { visibility: "public" }
+  ]) {
+    const source = docsFetch(article(), { collectionOverrides });
+    await assert.rejects(updateBoatArticle(snapshot(), "fake", source.fetchImpl, { dryRun: false, target }), /collection identity/);
     assert.deepEqual(source.calls.map(call => call.options.method), ["GET"]);
   }
   const strippedComment = docsFetch(article({ text: `<h1>${ARTICLE_HEADING}</h1><p>Source: ${SOURCE_URL}</p>` }));
@@ -159,5 +176,5 @@ test("wrong target, draft, missing marker and large count loss prevent writes", 
 test("failed published readback is not reported as success", async () => {
   const source = docsFetch(article(), { corruptReadback: true });
   await assert.rejects(updateBoatArticle(snapshot(), "fake", source.fetchImpl, { dryRun: false, target }), /readback mismatch/);
-  assert.deepEqual(source.calls.map(call => call.options.method), ["GET", "PUT", "GET"]);
+  assert.deepEqual(source.calls.map(call => call.options.method), ["GET", "GET", "PUT", "GET"]);
 });

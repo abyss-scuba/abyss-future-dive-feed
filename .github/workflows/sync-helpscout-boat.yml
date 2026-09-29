@@ -25,6 +25,10 @@ on:
       - "tests/helpscout-boat.test.mjs"
       - "tests/fixtures/boat-widget-2026-09-29.json"
       - ".github/workflows/sync-helpscout-boat.yml"
+  push:
+    branches: [main]
+    paths:
+      - "data/helpscout-boat-target.json"
 
 permissions:
   contents: read
@@ -52,7 +56,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     env:
-      DRY_RUN: ${{ (github.event_name == 'schedule' || inputs.publish) && !inputs.source_only && 'false' || 'true' }}
+      DRY_RUN: ${{ (github.event_name == 'schedule' || github.event_name == 'push' || inputs.publish) && !inputs.source_only && 'false' || 'true' }}
       SOURCE_ONLY: ${{ inputs.source_only && 'true' || 'false' }}
     steps:
       - uses: actions/checkout@v6
@@ -68,9 +72,6 @@ jobs:
         run: node scripts/sync-helpscout-boat.mjs
         env:
           HELP_SCOUT_DOCS_API_KEY: ${{ secrets.HELP_SCOUT_DOCS_API_KEY }}
-          HELP_SCOUT_BOAT_ARTICLE_ID: ${{ secrets.HELP_SCOUT_BOAT_ARTICLE_ID }}
-          HELP_SCOUT_BOAT_COLLECTION_ID: ${{ secrets.HELP_SCOUT_BOAT_COLLECTION_ID }}
-          HELP_SCOUT_BOAT_ARTICLE_TITLE: ${{ secrets.HELP_SCOUT_BOAT_ARTICLE_TITLE }}
       - name: Save validation result
         if: always()
         uses: actions/upload-artifact@v7
