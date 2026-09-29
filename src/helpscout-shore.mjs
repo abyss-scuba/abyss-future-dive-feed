@@ -61,6 +61,11 @@ export function renderShoreArticle(snapshot) {
     "<h2>How to answer shore-diving date questions</h2>",
     "<p>If checked within the previous 36 hours, answer directly with the matching dive names, dates, Sydney start times and event links. These are scheduled listings as of the check, not live booking inventory. Never quote cached places or guarantee space, price, conditions or departure. If older than 36 hours, say the snapshot needs refreshing and point to the current shore booking page. Do not invent dates outside the supplied coverage.</p>"
   ];
+  // Keep the product name, dates and links together so retrieval can answer Marine Marvels follow-ups.
+  parts.push("<h2>When are the next Marine Marvels seadragon dives, and where do I book?</h2>");
+  parts.push("<p>Marine Marvels are guided shore dives with a marine biologist. A Marine Marvels event named Weedy Seadragon Dive is the seadragon experience. The upcoming Marine Marvels events listed in this schedule are below; use each event's own booking link. These are scheduled dates, not live vacancies. Check the current fee, requirements and places when booking; sightings are not guaranteed.</p>");
+  parts.push(marine.length ? `<ul>${marine.map(e => eventLine({ ...e, title: `Marine Marvels — ${e.title}` })).join("")}</ul>` : "<p>No Marine Marvels date is supplied in this snapshot. That does not establish that no later events will run.</p>");
+  parts.push('<p>For current Marine Marvels bookings, including dates outside this snapshot, visit <a href="https://www.abyss.com.au/charters/marine-marvels-dives">Marine Marvels shore dives</a>.</p>');
   const windows = weekendWindows(today);
   for (const [heading, saturday] of [
     ["What shore dives are on this weekend?", windows.thisWeekend],
@@ -74,8 +79,6 @@ export function renderShoreArticle(snapshot) {
   }
   parts.push("<h2>Booking, rental gear and arrival</h2><p>Free guided shore dives still require booking: numbers are limited and cannot be exceeded, so book early. Add hire gear in the Select your dive gear section of the same organised-dive booking so it is linked to that specific dive. Arrive at the dive centre 15 minutes before the confirmed departure time. The times here are source-labelled scheduled start times; use the booking confirmation for meeting and departure arrangements. The separate rental page is for independent diving with a buddy.</p>");
   parts.push("<p>Site choice remains subject to certification, recent experience, conditions and the dive team's confirmation. Bare Island listings do not establish access to closed island, bridge or rock-shelf areas; the team confirms permitted entries. Leap to Steps requires appropriate advanced certification and experience.</p>");
-  parts.push("<h2>Are Marine Marvels shore dives, and when are they scheduled?</h2><p>Yes. Marine Marvels are shore dives. Check their individual event details, fee and requirements. Sightings are not guaranteed.</p>");
-  parts.push(marine.length ? `<ul>${marine.map(eventLine).join("\n")}</ul>` : "<p>No Marine Marvels date is supplied in the current snapshot. Ask the team about later dates.</p>");
   parts.push("<h2>All upcoming shore dive dates</h2>");
   for (const e of events) parts.push(`<h3>${html(date(asDate(e.startDate)))} — ${html(e.title)}</h3><p>Scheduled start: <strong>${html(e.startTime)}</strong> Sydney local time. ${html(e.category)}. ${html(e.description)} <a href="${html(e.bookingUrl)}">Check this event and book</a>.</p>`);
   return parts.join("\n");
