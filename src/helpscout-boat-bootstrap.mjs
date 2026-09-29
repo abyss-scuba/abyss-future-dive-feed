@@ -148,6 +148,7 @@ export async function bootstrapBoatDocs({ request, articles, existingTarget = nu
   // collection is still the correct source for Beacon. The Shore collection
   // supplies the identity; public site status is not a publication gate.
   assert(site?.id === siteId, "Shore collection's Docs site ID did not match site readback");
+  console.log(`Shore Docs site status: ${site.status ?? "not provided"}`);
 
   const collections = await listAll(request, `/collections?siteId=${siteId}&visibility=all`, "collections");
   const matches = collections.filter(item => item.name === BOAT_COLLECTION_NAME);
