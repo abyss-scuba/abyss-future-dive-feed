@@ -29,6 +29,9 @@ on:
     branches: [main]
     paths:
       - "data/helpscout-boat-target.json"
+      - ".github/workflows/sync-helpscout-boat.yml"
+      - "scripts/sync-helpscout-boat.mjs"
+      - "src/helpscout-boat.mjs"
 
 permissions:
   contents: read
