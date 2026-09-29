@@ -1,0 +1,15 @@
+# Automatic Boat Diving snapshot
+
+The `Boat Diving Help Scout snapshot` workflow checks the dedicated [Boat Diving Beacon source](https://www.abyss.com.au/boat-diving-beacon), widget **4862**, every day at **01:00 and 01:37 Australia/Sydney**. The second run is a retry opportunity if the first fails or the source changes. GitHub may delay a scheduled start. A run uses GitHub's browser, independent of anyone's desktop.
+
+The source presently includes Boat Dives, Tech Boat Dives, Single Seal Dive and Seal Diving. Only those four exact label and booking-path pairs are allowed. The upcoming three-month window, Sydney date and time, booking URL, published depth, appropriate certification guidance and any explicit UNGUIDED flag appear in the article. Site and departure can change with conditions. Seat counts and prices are intentionally omitted: the captured source included a negative seat count and a technical listing marked $0.00, neither of which can be treated as reliable availability or a free trip. Visitors check the exact event link for current price, places and details.
+
+## Set up before merging
+
+1. Publish the schedule article in the intended **private Boat Diving collection**. Its body must include `<!-- ABYSS_BOAT_SNAPSHOT_V1 -->`, the heading `Upcoming Sydney boat dives — schedule snapshot`, and `https://www.abyss.com.au/boat-diving-beacon`. The Help Scout article's *actual title* may differ from this body heading.
+2. Record its exact 24-character article and collection IDs and actual article title as repository secrets `HELP_SCOUT_BOAT_ARTICLE_ID`, `HELP_SCOUT_BOAT_COLLECTION_ID` and `HELP_SCOUT_BOAT_ARTICLE_TITLE`. Reuse the existing `HELP_SCOUT_DOCS_API_KEY` repository secret. No mixed-calendar article ID is used.
+3. On `main`, run **Boat Diving Help Scout snapshot** manually with **Source only** checked to validate the live widget without requesting Help Scout. Then run with both boxes unchecked: that reads and validates the Help Scout article without a PUT. Inspect the generated candidate and summary artifacts. Check **Publish** for a one-off verified refresh. Scheduled runs publish automatically.
+
+The publisher requires exact article ID, collection ID, title, published status, no unpublished draft and the managed marker (or the exact source URL plus heading if Docs strips HTML comments). It rejects missing/contradictory source data, mismatched category links, duplicate event identities and a drop below 60% of the prior snapshot count. It updates only the article `text`; collection privacy, keywords, title and publication status remain intact. A published readback is required before the run succeeds. Pull-request tests cannot publish and have no Help Scout credentials.
+
+The workflow saves diagnostics as a short-lived Actions artifact. Each verified publication writes `data/helpscout-boat-sync-status.json` with check time and event counts, then commits that one status file to `main`. This provides an audit trail and repository activity for scheduled GitHub workflows. The Boat workflow is separate from the 04:00 Shore workflow and the mixed Sydney Dive Calendar workflow.

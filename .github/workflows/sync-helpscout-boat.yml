@@ -1,0 +1,91 @@
+name: Boat Diving Help Scout snapshot
+
+on:
+  schedule:
+    - cron: "0 1 * * *"
+      timezone: "Australia/Sydney"
+    - cron: "37 1 * * *"
+      timezone: "Australia/Sydney"
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: "Publish the Boat Diving snapshot (unchecked = dry run)"
+        type: boolean
+        required: true
+        default: false
+      source_only:
+        description: "Validate the Abyss source without requesting Help Scout"
+        type: boolean
+        required: true
+        default: false
+  pull_request:
+    paths:
+      - "src/helpscout-boat.mjs"
+      - "scripts/sync-helpscout-boat.mjs"
+      - "tests/helpscout-boat.test.mjs"
+      - "tests/fixtures/boat-widget-2026-09-29.json"
+      - ".github/workflows/sync-helpscout-boat.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: helpscout-boat-diving-${{ github.event_name == 'pull_request' && github.run_id || 'publish' }}
+  cancel-in-progress: false
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - run: npm test
+  refresh:
+    needs: test
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      DRY_RUN: ${{ (github.event_name == 'schedule' || inputs.publish) && !inputs.source_only && 'false' || 'true' }}
+      SOURCE_ONLY: ${{ inputs.source_only && 'true' || 'false' }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Scrape boat dates and verify Help Scout publication
+        run: node scripts/sync-helpscout-boat.mjs
+        env:
+          HELP_SCOUT_DOCS_API_KEY: ${{ secrets.HELP_SCOUT_DOCS_API_KEY }}
+          HELP_SCOUT_BOAT_ARTICLE_ID: ${{ secrets.HELP_SCOUT_BOAT_ARTICLE_ID }}
+          HELP_SCOUT_BOAT_COLLECTION_ID: ${{ secrets.HELP_SCOUT_BOAT_COLLECTION_ID }}
+          HELP_SCOUT_BOAT_ARTICLE_TITLE: ${{ secrets.HELP_SCOUT_BOAT_ARTICLE_TITLE }}
+      - name: Save validation result
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: helpscout-boat-${{ github.run_number }}
+          path: diagnostics/helpscout-boat-*
+          if-no-files-found: ignore
+          retention-days: 14
+      - name: Record the successful refresh
+        if: success() && env.DRY_RUN == 'false' && env.SOURCE_ONLY != 'true'
+        run: |
+          git config user.name "abyss-future-dive-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- data/helpscout-boat-sync-status.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "chore: record verified boat schedule refresh"
+          git pull --rebase origin main
+          git push origin HEAD:main
