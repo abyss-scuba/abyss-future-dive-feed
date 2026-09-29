@@ -1,0 +1,80 @@
+name: Publish Boat Diving Help Scout Docs
+
+on:
+  pull_request:
+    paths:
+      - "docs/Boat_Diving_Help_Scout_Docs_2026-09-29.md"
+      - "data/helpscout-boat-articles.json"
+      - "src/helpscout-boat-bootstrap.mjs"
+      - "scripts/bootstrap-helpscout-boat.mjs"
+      - "scripts/build-helpscout-boat-payload.py"
+      - "tests/helpscout-boat-bootstrap.test.mjs"
+      - ".github/workflows/bootstrap-helpscout-boat.yml"
+  push:
+    branches: [main]
+    paths:
+      - "docs/Boat_Diving_Help_Scout_Docs_2026-09-29.md"
+      - "data/helpscout-boat-articles.json"
+      - "src/helpscout-boat-bootstrap.mjs"
+      - "scripts/bootstrap-helpscout-boat.mjs"
+      - ".github/workflows/bootstrap-helpscout-boat.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: helpscout-boat-docs-bootstrap
+  cancel-in-progress: false
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - run: npm test
+
+  publish:
+    needs: test
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    permissions:
+      contents: write
+      actions: write
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+          cache: npm
+      - run: npm ci
+      - name: Find Sydney Docs site and publish seven verified articles
+        run: node scripts/bootstrap-helpscout-boat.mjs
+        env:
+          HELP_SCOUT_DOCS_API_KEY: ${{ secrets.HELP_SCOUT_DOCS_API_KEY }}
+      - name: Record verified schedule article target
+        run: |
+          git config user.name "abyss-future-dive-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- data/helpscout-boat-target.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "chore: record verified Boat Diving Docs target"
+          git pull --rebase origin main
+          git push origin HEAD:main
+      - name: Refresh the schedule now if its workflow is installed
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git cat-file -e HEAD:.github/workflows/sync-helpscout-boat.yml 2>/dev/null; then
+            gh workflow run sync-helpscout-boat.yml --ref main -f publish=true
+          else
+            echo "Schedule updater is not yet installed; its daily run will begin after it is merged."
+          fi
