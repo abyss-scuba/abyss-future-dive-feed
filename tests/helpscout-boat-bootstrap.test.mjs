@@ -14,12 +14,14 @@ const payload = JSON.parse(await fs.readFile(new URL("../data/helpscout-boat-art
 const articles = verifyPack(payload, source);
 
 class FakeDocs {
-  constructor({ collection = false, refs = [], siteStatus = "active", returnedSiteId = SITE_ID } = {}) {
+  constructor({ collection = false, refs = [], siteStatus = "active", returnedSiteId = SITE_ID,
+    malformedEmptyList = false } = {}) {
     this.collection = collection;
     this.articles = new Map(refs.map(article => [article.id, structuredClone(article)]));
     this.calls = [];
     this.siteStatus = siteStatus;
     this.returnedSiteId = returnedSiteId;
+    this.malformedEmptyList = malformedEmptyList;
   }
 
   request = async (method, path, body) => {
@@ -47,7 +49,8 @@ class FakeDocs {
         visibility: "private", name: BOAT_COLLECTION_NAME } };
     }
     if (method === "GET" && path.startsWith(`/collections/${BOAT_ID}/articles?`)) {
-      return { articles: { page: 1, pages: 1,
+      return { articles: { page: 1, pages: this.articles.size ? 1 : 0,
+        count: this.articles.size || (this.malformedEmptyList ? 1 : 0),
         items: [...this.articles.values()].map(({ id, name }) => ({ id, name })) } };
     }
     if (method === "POST" && path === "/articles") {
@@ -102,6 +105,13 @@ test("creates a private collection and seven published articles, then verifies e
     assert.ok(Array.isArray(create.body.keywords));
     assert.ok(create.body.text.includes("<h2"));
   }
+});
+
+test("an inconsistent zero-page response fails with safe shape details before article writes", async () => {
+  const docs = new FakeDocs({ collection: true, malformedEmptyList: true });
+  await assert.rejects(bootstrapBoatDocs({ request: docs.request, articles }),
+    /Invalid Help Scout pagination.*page=1, pages=0, count=1, items=0/);
+  assert.equal(docs.calls.filter(c => c.method === "POST" || c.method === "PUT").length, 0);
 });
 
 test("uses the Shore collection's site even when its public website is inactive", async () => {
