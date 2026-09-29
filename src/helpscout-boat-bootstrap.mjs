@@ -90,9 +90,19 @@ async function listAll(request, path, envelope) {
   while (true) {
     assert(page <= 100, `Help Scout pagination exceeded 100 pages for ${path}`);
     const response = (await request("GET", `${path}${path.includes("?") ? "&" : "?"}page=${page}`))?.[envelope];
+    // Help Scout can report zero pages for an empty new collection. Accept
+    // only the exact empty response; never treat a malformed list as empty.
+    if (page === 1 && response?.page === 1 && response.pages === 0 &&
+      response.count === 0 && Array.isArray(response.items) && response.items.length === 0) {
+      return [];
+    }
+    const shape = `page=${Number.isInteger(response?.page) ? response.page : "missing"}, ` +
+      `pages=${Number.isInteger(response?.pages) ? response.pages : "missing"}, ` +
+      `count=${Number.isInteger(response?.count) ? response.count : "missing"}, ` +
+      `items=${Array.isArray(response?.items) ? response.items.length : "missing"}`;
     assert(Array.isArray(response?.items) && Number.isInteger(response.pages) &&
-      response.pages >= 1 && page <= response.pages,
-      `Invalid Help Scout pagination for ${path}`);
+      response.pages >= 1 && response.page === page && page <= response.pages,
+      `Invalid Help Scout pagination for ${path} (${shape})`);
     result.push(...response.items);
     if (page === response.pages) return result;
     page++;
