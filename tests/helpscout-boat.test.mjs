@@ -151,6 +151,21 @@ test("dry run uses GET only; publishing updates text only and verifies readback"
   assert.equal(source.calls.filter(call => call.options.method === "PUT").length, 1);
 });
 
+test("a new Sydney check date republishes even if only the timestamp changes", async () => {
+  const todayText = renderBoatArticle(snapshot());
+  const yesterdayText = todayText.replace(
+    "Last successfully checked: Tuesday 29 September 2026 at 17:00",
+    "Last successfully checked: Monday 28 September 2026 at 17:00"
+  );
+  assert.notEqual(yesterdayText, todayText);
+  const source = docsFetch(article({ text: yesterdayText }));
+  const result = await updateBoatArticle(snapshot(), "fake", source.fetchImpl, { dryRun: false, target });
+  assert.equal(result.status, "updated");
+  assert.deepEqual(source.calls.map(call => call.options.method), ["GET", "GET", "PUT", "GET"]);
+  const published = JSON.parse(source.calls.find(call => call.options.method === "PUT").options.body).text;
+  assert.match(published, /Last successfully checked: Tuesday 29 September 2026 at 17:00 GMT\+10, Australia\/Sydney/);
+});
+
 test("wrong target, draft, missing marker and large count loss prevent writes", async () => {
   for (const bad of [
     { id: "cccccccccccccccccccccccc" }, { collectionId: "cccccccccccccccccccccccc" },

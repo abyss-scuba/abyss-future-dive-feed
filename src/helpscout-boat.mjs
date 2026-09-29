@@ -122,11 +122,12 @@ export function renderBoatArticle(snapshot) {
 }
 
 function contentFingerprint(markup) {
-  // Ignore only the successful check clock when deciding whether the 01:37
-  // retry has new event content. The published readback below remains exact.
+  // Ignore only the clock and offset on the same Sydney calendar day. A new
+  // day must publish a fresh check date even when every event is unchanged.
+  // The published readback below still compares the exact rendered content.
   return articleFingerprint(String(markup || "").replace(
-    /Last successfully checked:[^<]*Australia\/Sydney\./i,
-    "Last successfully checked: [verified clock], Australia/Sydney."
+    /(Last successfully checked:\s*[^<]*? at )[^<,]+(?=, Australia\/Sydney\.)/i,
+    "$1[verified clock]"
   ));
 }
 
