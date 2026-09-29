@@ -14,10 +14,12 @@ const payload = JSON.parse(await fs.readFile(new URL("../data/helpscout-boat-art
 const articles = verifyPack(payload, source);
 
 class FakeDocs {
-  constructor({ collection = false, refs = [] } = {}) {
+  constructor({ collection = false, refs = [], siteStatus = "active", returnedSiteId = SITE_ID } = {}) {
     this.collection = collection;
     this.articles = new Map(refs.map(article => [article.id, structuredClone(article)]));
     this.calls = [];
+    this.siteStatus = siteStatus;
+    this.returnedSiteId = returnedSiteId;
   }
 
   request = async (method, path, body) => {
@@ -27,7 +29,7 @@ class FakeDocs {
         visibility: "private", name: "Shore Diving" } };
     }
     if (method === "GET" && path === `/sites/${SITE_ID}`) {
-      return { site: { id: SITE_ID, status: "active" } };
+      return { site: { id: this.returnedSiteId, status: this.siteStatus } };
     }
     if (method === "GET" && path.startsWith("/collections?")) {
       return { collections: { page: 1, pages: 1,
@@ -100,6 +102,19 @@ test("creates a private collection and seven published articles, then verifies e
     assert.ok(Array.isArray(create.body.keywords));
     assert.ok(create.body.text.includes("<h2"));
   }
+});
+
+test("uses the Shore collection's site even when its public website is inactive", async () => {
+  const docs = new FakeDocs({ siteStatus: "inactive" });
+  const target = await bootstrapBoatDocs({ request: docs.request, articles });
+  assert.equal(target.siteId, SITE_ID);
+  assert.equal(docs.articles.size, 7);
+});
+
+test("rejects a Docs site ID mismatch before creating a collection or article", async () => {
+  const docs = new FakeDocs({ returnedSiteId: "f".repeat(24) });
+  await assert.rejects(bootstrapBoatDocs({ request: docs.request, articles }), /site ID did not match/);
+  assert.equal(docs.calls.filter(c => c.method === "POST" || c.method === "PUT").length, 0);
 });
 
 test("repeated bootstrap keeps the scheduled article's newer daily snapshot", async () => {

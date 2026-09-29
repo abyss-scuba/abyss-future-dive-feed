@@ -144,7 +144,10 @@ export async function bootstrapBoatDocs({ request, articles, existingTarget = nu
     "Existing Shore collection does not identify the expected private Docs site");
   const siteId = shore.siteId;
   const site = (await request("GET", `/sites/${siteId}`))?.site;
-  assert(site?.id === siteId && site.status === "active", "Existing Sydney Docs site is unavailable");
+  // A private Docs site may be inactive as a public website while its private
+  // collection is still the correct source for Beacon. The Shore collection
+  // supplies the identity; public site status is not a publication gate.
+  assert(site?.id === siteId, "Shore collection's Docs site ID did not match site readback");
 
   const collections = await listAll(request, `/collections?siteId=${siteId}&visibility=all`, "collections");
   const matches = collections.filter(item => item.name === BOAT_COLLECTION_NAME);
