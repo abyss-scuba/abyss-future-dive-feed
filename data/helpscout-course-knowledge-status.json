@@ -1,0 +1,300 @@
+{
+  "publishedAt": "2026-09-30T13:39:56.726Z",
+  "packHash": "9cd16247b201ac4e2f3beff18374747b2c3af0a56aad4682b32f5ef0c0f8cafa",
+  "articles": [
+    {
+      "id": "6ab8ba1b171ef8b866f2c207",
+      "name": "PADI Enriched Air Nitrox in Sydney",
+      "slug": "nitrox-and-buoyancy",
+      "plannedSlug": "padi-nitrox-sydney",
+      "textHash": "3294656d6673eec527a11b8971fea4523f0550b194f569ba2e744a20ef3c851e"
+    },
+    {
+      "id": "6abd112249f1bc2c6aefd870",
+      "name": "PADI Peak Performance Buoyancy in Sydney",
+      "slug": "padi-peak-performance-buoyancy-sydney",
+      "plannedSlug": "padi-peak-performance-buoyancy-sydney",
+      "textHash": "6738b37c120c1db4cc1fc97866461ffe0f772a0c8caf02e30b1c8a4a389ab475"
+    },
+    {
+      "id": "6ab8b970171ef8b866f2c206",
+      "name": "PADI Advanced Open Water in Sydney",
+      "slug": "padi-advanced-open-water",
+      "plannedSlug": "padi-advanced-open-water-sydney",
+      "textHash": "36120450ce0e72b9858bddc603b5b83c303c8021d728898b421771d13033ae3b"
+    },
+    {
+      "id": "6ab8baf349f1bc2c6aefc9ab",
+      "name": "PADI ReActivate and scuba refresher in Sydney",
+      "slug": "scuba-refresher-reactivate",
+      "plannedSlug": "padi-reactivate-sydney",
+      "textHash": "807bb18a329c3f00c608e53c4a8e2c9f6d85b9bff4e6253b930de184c967153f"
+    },
+    {
+      "id": "6ab8ba857b6962906797d359",
+      "name": "PADI Rescue Diver in Sydney",
+      "slug": "rescue-first-aid-and-oxygen",
+      "plannedSlug": "padi-rescue-diver-sydney",
+      "textHash": "eb2b025e7ee3bba80d96102090935f12e2031b52ee07d0ccc270cea192af57a8"
+    },
+    {
+      "id": "6abd112349f1bc2c6aefd872",
+      "name": "Emergency First Response: First Aid and CPR in Sydney",
+      "slug": "emergency-first-response-sydney",
+      "plannedSlug": "emergency-first-response-sydney",
+      "textHash": "587c7555d7574751236be5a07fdca98aab5da84fbefd4e34b27a6212d8d9f31c"
+    },
+    {
+      "id": "6abd1123bd0193dcb268d442",
+      "name": "PADI Emergency Oxygen Provider in Sydney",
+      "slug": "emergency-oxygen-provider-sydney",
+      "plannedSlug": "emergency-oxygen-provider-sydney",
+      "textHash": "395bc352b8c0cea9ac0744171c2322569ff4654e93f7fdfc67ee67edd41dee8f"
+    },
+    {
+      "id": "6ab8bbae4b37f75b5ff65b9f",
+      "name": "PADI Deep Diver in Sydney",
+      "slug": "deep-and-dry-suit",
+      "plannedSlug": "padi-deep-diver-sydney",
+      "textHash": "e14be86fdf632df70d7b02e32e18dc478695fe7a5b48d9e4be8f8c7a933c27d2"
+    },
+    {
+      "id": "6abd11243be702ed269e3546",
+      "name": "PADI Dry Suit Diver in Sydney",
+      "slug": "padi-dry-suit-diver-sydney",
+      "plannedSlug": "padi-dry-suit-diver-sydney",
+      "textHash": "8235df4e45bc6e58b411dbc6cc1a6487af4619b6129d1b683bb6d476eb695ee9"
+    },
+    {
+      "id": "6ab8bba6171ef8b866f2c208",
+      "name": "PADI Freediver in Sydney",
+      "slug": "padi-freediver-and-mermaid",
+      "plannedSlug": "padi-freediver-sydney",
+      "textHash": "2f8163c98e815f192069dfb11b590e84ce20d11865b0729ba074f42825962c24"
+    },
+    {
+      "id": "6abd11245c1e572f6ed8c213",
+      "name": "PADI Mermaid in Sydney",
+      "slug": "padi-mermaid-sydney",
+      "plannedSlug": "padi-mermaid-sydney",
+      "textHash": "bd2e2eb16117eb6f1a3be698088655e60d2cbc16747197112b92edacf4e62a91"
+    },
+    {
+      "id": "6abd1124528fa6f4b198ab1c",
+      "name": "PADI Advanced Freediver in Sydney",
+      "slug": "padi-advanced-freediver-sydney",
+      "plannedSlug": "padi-advanced-freediver-sydney",
+      "textHash": "7861e52a767d91621268b534a6ec5df7bc4734aba900f8e562ff7fa43ba85801"
+    },
+    {
+      "id": "6ab8bb8b7b6962906797d35a",
+      "name": "Avelo Dive Course and Avelo Essentials in Sydney",
+      "slug": "avelo-essentials",
+      "plannedSlug": "avelo-essentials-sydney",
+      "textHash": "54b23d0052cb77d9b2434e97098ba6108450b48549cd0a836ffa77fe2d381379"
+    },
+    {
+      "id": "6ab8b8967b6962906797d358",
+      "name": "PADI Open Water in Sydney: beginners, juniors and referrals",
+      "slug": "padi-open-water-and-junior",
+      "plannedSlug": "padi-open-water-sydney",
+      "textHash": "b27d3c2e0d637f693ccfd089f9d77f8976d054a2a9f52ebf03a0372a4d8b3a52"
+    },
+    {
+      "id": "6ab8bb9349f1bc2c6aefc9ad",
+      "name": "PADI Divemaster course in Sydney",
+      "slug": "padi-divemaster-and-internship",
+      "plannedSlug": "padi-divemaster-course-sydney",
+      "textHash": "88eb912dda97930b99b92f8461fcd4c3bda6ed0bae0cea65625009bcddec2a1d"
+    },
+    {
+      "id": "6abd1125528fa6f4b198ab1d",
+      "name": "Abyss Divemaster Internship",
+      "slug": "abyss-divemaster-internship",
+      "plannedSlug": "abyss-divemaster-internship",
+      "textHash": "5a3e7807da95499a2c10a07e0c9b4a9f74865384ffaabca3178920cc3e305dc5"
+    },
+    {
+      "id": "6abd112649f1bc2c6aefd874",
+      "name": "PADI Junior Divemaster in Sydney",
+      "slug": "padi-junior-divemaster-sydney",
+      "plannedSlug": "padi-junior-divemaster-sydney",
+      "textHash": "23e0411045729120ed44c714d51abe6af7f22983ed227d6c6729005857bf4c40"
+    },
+    {
+      "id": "6ab8bbb549f1bc2c6aefc9ae",
+      "name": "PADI Instructor Development Course (IDC) in Sydney",
+      "slug": "padi-idc-and-instructor-internships",
+      "plannedSlug": "padi-idc-sydney",
+      "textHash": "5e3273c577f9a74bdf35bd8d57a7ca38a71795960157036cf7c3c92143f880b3"
+    },
+    {
+      "id": "6abd1126bd0193dcb268d443",
+      "name": "Abyss Dive Instructor Internship",
+      "slug": "abyss-instructor-internship",
+      "plannedSlug": "abyss-instructor-internship",
+      "textHash": "a2b56c2d8bd59d54f69bee5cf7c516798e59b9b85c7e5e0fc28c92a28ca836a3"
+    },
+    {
+      "id": "6abd1126528fa6f4b198ab1e",
+      "name": "PADI Master Scuba Diver Trainer preparation",
+      "slug": "padi-msdt-preparation-sydney",
+      "plannedSlug": "padi-msdt-preparation-sydney",
+      "textHash": "1b6bcdd043676fb222015f38ce419f03cacdaa843a665ddad3e5db5dcea751b3"
+    },
+    {
+      "id": "6abd1127528fa6f4b198ab1f",
+      "name": "Emergency First Response Instructor in Sydney",
+      "slug": "efr-instructor-sydney",
+      "plannedSlug": "efr-instructor-sydney",
+      "textHash": "05466d876658242c3a98ff5a618d54ac7c5fd122d1f3964023b675b89945ad8c"
+    },
+    {
+      "id": "6abd112749f1bc2c6aefd875",
+      "name": "PADI IDC Staff Instructor in Sydney",
+      "slug": "padi-idc-staff-instructor-sydney",
+      "plannedSlug": "padi-idc-staff-instructor-sydney",
+      "textHash": "97a52ea03c5f77d00bf09bacadf7e2bb8fab3be95cc1b48356f26c5cc925b722"
+    },
+    {
+      "id": "6abd1127bd0193dcb268d444",
+      "name": "PADI Underwater Navigator in Sydney",
+      "slug": "padi-underwater-navigator-sydney",
+      "plannedSlug": "padi-underwater-navigator-sydney",
+      "textHash": "7a8462b9a9c7a71bf9e00f46066ee53c7e0205d75c03bfafca594b4b6ba7e356"
+    },
+    {
+      "id": "6abd11273be702ed269e3548",
+      "name": "PADI Equipment Specialist in Sydney",
+      "slug": "padi-equipment-specialist-sydney",
+      "plannedSlug": "padi-equipment-specialist-sydney",
+      "textHash": "e4bf7ae71aab19355d4417a19512c6e002194e9987719459d6219352f0e5b135"
+    },
+    {
+      "id": "6abd11277cdaed3f1efa5538",
+      "name": "PADI Sidemount Diver in Sydney",
+      "slug": "padi-sidemount-diver-sydney",
+      "plannedSlug": "padi-sidemount-diver-sydney",
+      "textHash": "61041b585c867a2692ebfd743561c3c2698641dfc3764ddcc2420c50dcdbf681"
+    },
+    {
+      "id": "6abd1128528fa6f4b198ab20",
+      "name": "PADI Wreck Diver in Sydney",
+      "slug": "padi-wreck-diver-sydney",
+      "plannedSlug": "padi-wreck-diver-sydney",
+      "textHash": "413e6afb1b1b8d0f58cf157b108b900a69e6b8aa464c3ca20835c5b0479f8bf3"
+    },
+    {
+      "id": "6abd112849f1bc2c6aefd876",
+      "name": "PADI AWARE Shark Conservation in Sydney",
+      "slug": "padi-shark-conservation-sydney",
+      "plannedSlug": "padi-shark-conservation-sydney",
+      "textHash": "a30581a7f1e1876bcc9ab345fe0d989cd4cfc2e6446d075028605a0e718a4ae8"
+    },
+    {
+      "id": "6abd1128bd0193dcb268d445",
+      "name": "PADI Full Face Mask Diver in Sydney",
+      "slug": "padi-full-face-mask-sydney",
+      "plannedSlug": "padi-full-face-mask-sydney",
+      "textHash": "d3d07291cc329316b2674726717676f8ff03480e776a2d756acaf07685e5b3ca"
+    },
+    {
+      "id": "6ab8bbd97b6962906797d35b",
+      "name": "PADI Tec 40 in Sydney",
+      "slug": "padi-technical-diving",
+      "plannedSlug": "padi-tec-40-sydney",
+      "textHash": "97a254439084110bcf8890b5af34c49618eef072f3da96df970d0648d0a07e22"
+    },
+    {
+      "id": "6abd112949f1bc2c6aefd877",
+      "name": "PADI Tec 45 in Sydney",
+      "slug": "padi-tec-45-sydney",
+      "plannedSlug": "padi-tec-45-sydney",
+      "textHash": "457b7e65cfdd8305982255766e15ff45d9f8f3456d5750d91cfd98c9c1aaf77b"
+    },
+    {
+      "id": "6abd11295c1e572f6ed8c215",
+      "name": "PADI Tec 50 in Sydney",
+      "slug": "padi-tec-50-sydney",
+      "plannedSlug": "padi-tec-50-sydney",
+      "textHash": "c5379b8694e83debf6f0ccc80405f1a02dd16bcfebe222dd8aee97679923e007"
+    },
+    {
+      "id": "6abd1129bd0193dcb268d446",
+      "name": "PADI Tec 40 CCR on Hollis Prism 2",
+      "slug": "padi-tec-40-ccr-sydney",
+      "plannedSlug": "padi-tec-40-ccr-sydney",
+      "textHash": "0441f51db288af88f98881aaa37664c6dd888fb3de83b74fceb6678720b358c4"
+    },
+    {
+      "id": "6ab8bbed4b37f75b5ff65ba1",
+      "name": "AHCLPW307 restricted scientific diving course",
+      "slug": "scientific-diving-ahclpw307",
+      "plannedSlug": "ahclpw307-scientific-diving",
+      "textHash": "c4c483a3c722c339cc62c3039a4418a74f2f797a52cd653ab1aa4e1df30b7e59"
+    },
+    {
+      "id": "6ab8bbc9171ef8b866f2c209",
+      "name": "Avelo Instructor training: current requirements",
+      "slug": "avelo-instructor",
+      "plannedSlug": "avelo-instructor-requirements",
+      "textHash": "58c2484768d6b698a3f9fe0e572f1f9a0cb22751fbaa127ff50345af1fdece81"
+    },
+    {
+      "id": "6ab8ca817b6962906797d35e",
+      "name": "PADI Master Scuba Diver at Abyss: requirements and package",
+      "slug": "master-scuba-diver-abyss",
+      "plannedSlug": "padi-master-scuba-diver-package",
+      "textHash": "8ddf8199648599ea1d2210842e6d9f176d43f60075fa8ec3913d50d595cfffc5"
+    },
+    {
+      "id": "6ab8b5107b6962906797d355",
+      "name": "Which Sydney dive course should I choose?",
+      "slug": "which-sydney-dive-course-should-i-choose",
+      "plannedSlug": "which-sydney-dive-course",
+      "textHash": "0a9e3b28ff9159e4614fc9d00dcb3a062eb5965c4ec8f6e29a221c41dd2990d1"
+    },
+    {
+      "id": "6ab8b6617b6962906797d356",
+      "name": "Booking a dive course: buddies, prerequisites, dates and equipment",
+      "slug": "booking-a-dive-course-buddies-prerequisites-dates-equipment",
+      "plannedSlug": "booking-sydney-dive-course",
+      "textHash": "63a71602379210740732c13d15628935ead589db56e8ee09e08244372e2631be"
+    },
+    {
+      "id": "6ab8cb2984f08c58bb03f7f1",
+      "name": "Abyss internships versus PADI professional courses",
+      "slug": "internships-vs-professional-courses",
+      "plannedSlug": "internship-versus-professional-course",
+      "textHash": "cf1105f1c5b22fa341e9be2b44563cc13d17f401f1e42b7dcde5a468f2350143"
+    },
+    {
+      "id": "6ab8bbd184f08c58bb03f7e8",
+      "name": "Other PADI specialties: choose by diving goal",
+      "slug": "other-recreational-specialties",
+      "plannedSlug": "other-padi-specialty-goals",
+      "textHash": "a9560e8ed1fcfae1563bf1ff2048bfc7bef2f010a4699978175b118c17febf22"
+    },
+    {
+      "id": "6ab8bbfb84f08c58bb03f7eb",
+      "name": "Courses without a confirmed current Abyss offering",
+      "slug": "padi-courses-abyss-does-not-currently-teach",
+      "plannedSlug": "courses-without-confirmed-current-offering",
+      "textHash": "9e95d1e2682c21bc6153a73c45938e7e4ea2683f067df55915e95e6ecd0ff0c2"
+    },
+    {
+      "id": "6ab8bbf484f08c58bb03f7ea",
+      "name": "PADI courses to discuss with an Abyss instructor",
+      "slug": "padi-courses-by-instructor-enquiry",
+      "plannedSlug": "courses-to-discuss-with-instructor",
+      "textHash": "cbd0f8afb7ca1ae4eef7602f05d7b34173d16ec43ae42a78dee9d5464d5ad278"
+    },
+    {
+      "id": "6abd112c5c1e572f6ed8c217",
+      "name": "Advanced Open Water or a focused specialty?",
+      "slug": "advanced-versus-specialty-course",
+      "plannedSlug": "advanced-versus-specialty-course",
+      "textHash": "047ca3def8e6b0543395d83fa45a09463b8c1110250abafe349faac0057cdfec"
+    }
+  ]
+}

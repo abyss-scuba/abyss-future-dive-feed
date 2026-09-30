@@ -1,0 +1,23 @@
+{
+  "attemptedAt": "2026-09-30T23:39:59.284+10:00",
+  "status": "published-and-verified",
+  "lastSuccessfulCheck": "2026-09-30T23:39:59.284+10:00",
+  "staleAfter": "2026-10-02T23:39:59.284+10:00",
+  "publication": {
+    "status": "published-and-verified",
+    "id": "6abd113e528fa6f4b198ab23",
+    "count": 95
+  },
+  "coverage": {
+    "sourceTotal": 95,
+    "pageSizes": [
+      50,
+      45
+    ],
+    "pages": 2,
+    "method": "DS360 course-beacon widget and its own paginated AJAX endpoint; explicit offset 50"
+  },
+  "firstDate": "2026-10-03",
+  "lastDate": "2027-12-19",
+  "warningCount": 15
+}
