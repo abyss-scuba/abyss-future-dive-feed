@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "auditedAt": "2026-09-30",
   "collectionId": "6ab8b33984f08c58bb03f7e6",
   "collectionName": "Sydney Dive Courses",
@@ -781,7 +781,7 @@
       "slug": "which-sydney-dive-course",
       "name": "Which Sydney dive course should I choose?",
       "categories": [
-        "6ab8b3eb7b6962906797d354"
+        "6abd693c7cdaed3f1efa5777"
       ],
       "keywords": [
         "Which Sydney dive course should I choose?",
@@ -791,13 +791,25 @@
         "which course",
         "goal",
         "next course",
-        "recommendation"
+        "recommendation",
+        "Which course helps me do the diving I want",
+        "Choose Your Next Step",
+        "confidence",
+        "holiday",
+        "liveaboard",
+        "deeper wrecks",
+        "buddy",
+        "return after break",
+        "marine life photography",
+        "Master Scuba Diver",
+        "more diving"
       ],
-      "text": "<!-- ABYSS_COURSE_KNOWLEDGE_V1 --><h2>Start with the diving you want to do</h2><p>Ask: “What would you like to do underwater that you cannot comfortably or confidently do now?” Then establish present certification/agency, approximate logged dives, most recent dive and the relevant trip or site. Ask age only where it affects eligibility. Do not ask every question before offering useful guidance.</p><h2>Match the goal to the smallest useful next step</h2><p>Return after a break: ReActivate/refresher. Steadier buoyancy or trim: Peak Performance Buoyancy. Broader experience and recreational depth to 30 metres: Advanced Open Water. Longer no-decompression time on suitable repetitive dives: Nitrox. Recreational diving to 40 metres: Deep Diver. Cooler water: Dry Suit. Finding routes: Underwater Navigator. Buddy prevention and response: Rescue. Equipment configuration: Sidemount or Full Face Mask when that is the actual goal. Breath-hold diving: Freediver. Professional guiding: Divemaster; teaching scuba: IDC after prerequisites.</p><h2>When no course is needed</h2><p>If the visitor is already qualified, current and comfortable for the intended diving, suggest appropriate diving experience or local orientation. Do not sell Advanced, Nitrox or a specialty simply because it is next on a ladder. A guided dive can be appropriate for unfamiliar sites; medical clearance and instructor judgement cannot be replaced by the Agent.</p><h2>Explain the recommendation</h2><p>Give one primary recommendation and a short reason tied to the stated goal. Explain the entry requirements separately from requirements needed by certification. Accept qualifying equivalents after Abyss checks them; do not force a customer to repeat equivalent training. Mention one alternative only when it materially changes suitability.</p><h2>Move to a suitable booking</h2><p>Ask which weekend/date range works and whether there is a trip deadline. Allow time for eLearning, prerequisites and all sessions. Offer one to three suitable entries from Upcoming Sydney Course Dates — Updated Daily. Preserve package and language distinctions, omit sold-out entries as bookable recommendations, and use each exact booking link. Say dates and prices were listed at the last check and are confirmed on the live booking page.</p><h2>When to ask the team</h2><p>Use <a href=\"https://www.abyss.com.au/talk-to-a-dive-instructor\">the Abyss instructor enquiry</a> for unresolved equivalents, technical/occupational eligibility, unclear package inclusions, junior suitability or a course with no listed intake. If the snapshot is older than 48 hours or its check time cannot be verified, use <a href=\"https://www.abyss.com.au/course-beacon\">live course listings</a> and do not assert availability.</p><h2>Course information sources</h2><p><a href=\"https://www.abyss.com.au/training-hub\">Abyss pathway information</a> · <a href=\"https://www.abyss.com.au/course-beacon\">Abyss pathway information</a></p>",
+      "text": "<!-- ABYSS_GOAL_GUIDANCE_V1 --><h2>Which course helps me do the diving I want?</h2><p>Start with the experience the diver wants, then identify the smallest useful next step. That may be a course, a refresher, a guided experience or more diving with their existing qualification. A recommendation should help the diver do something meaningful underwater, rather than follow a compulsory ladder of certifications.</p><h2>Ask enough to make the recommendation useful</h2><p>Begin with: “What would you like to do underwater that you cannot comfortably or confidently do now?” Establish current certification and agency, approximate experience, most recent dive and the intended site or trip as relevant. Ask one or two useful questions at a time, acknowledge answers already given, and explain why any missing detail matters. Ask about age only when it affects suitability. For travel, establish destination, operator requirements and departure date before recommending a course.</p><h2>Use the focused goal guide</h2><ul><li><strong>Feel more comfortable diving in Sydney</strong> — separate practice, buoyancy, navigation and broader supervised experience.</li><li><strong>Prepare for a dive holiday or liveaboard</strong> — work from the actual itinerary and deadline.</li><li><strong>Explore deeper sites or wrecks</strong> — establish depth and outside-versus-inside wreck objectives.</li><li><strong>Become a more capable dive buddy</strong> — match prevention and response goals to relevant training.</li><li><strong>Return to diving after a break</strong> — use experience, recency and current confidence together.</li><li><strong>Enjoy marine life or underwater photography</strong> — distinguish finding subjects from needing a particular skill.</li><li><strong>Work towards Master Scuba Diver</strong> — check prior achievements and useful remaining requirements.</li><li><strong>When more diving is the best next step</strong> — offer a suitable, bookable experience when another card adds little.</li></ul><h2>Give one recommendation tied to the goal</h2><p>Explain the likely benefit in ordinary language. Offer one primary recommendation and, only if useful, one alternative. Do not prescribe Advanced, Nitrox or a bundle merely because the visitor is already certified. Do not require repeat training where an accepted equivalent or valid credit may meet the requirement. If a diver is not certified, use the definitive Open Water article rather than recommending a certified-diver outing.</p><h2>Keep prerequisites in one definitive home</h2><p>The individual course articles are the authority for entry prerequisites, recognised equivalents, age and experience restrictions, medical screening, certification requirements, time, preparation, inclusions and limitations. Retrieve the relevant article when explaining eligibility; distinguish what is needed to start from what is needed to certify. These goal guides deliberately do not repeat the thresholds. For Master Scuba Diver, use <strong>PADI Master Scuba Diver at Abyss: requirements and package</strong> for the rating and package rules. If eligibility or equivalence remains uncertain, ask Abyss to assess it.</p><h2>Make the recommendation bookable</h2><p>If training is appropriate, establish the date range and any deadline. Read both the definitive course article and <strong>Upcoming Sydney Course Dates — Updated Daily</strong>, using the matching course-family article for complete entries. Offer one to three suitable listed dates with their exact booking links; keep package and language variants distinct, allow for preparation and all sessions, and exclude sold-out or timetable-conflicted options as ready-to-book recommendations. Call snapshot dates and prices “listed” and ask the visitor to confirm current price and places on the live page. Do not copy dates or prices into this evergreen guide.</p><h2>When the next step is diving</h2><p>Use <strong>When more diving is the best next step</strong> to select a relevant <a href=\"https://www.abyss.com.au/guided-shore-dives-sydney\">guided dive</a>, <a href=\"https://www.abyss.com.au/charters/private-guided-shore-dive\">private guided experience</a> or <a href=\"https://www.abyss.com.au/sydney-marine-life-dives\">marine-life outing</a>. Check the particular event requirements, then offer a verified event link or its live listing. Ask which dates suit; do not stop at “just get more experience”. A guided outing does not replace a refresher when basic skills need rebuilding.</p><h2>When information needs checking</h2><p>If the snapshot is older than 48 hours, its check time is unavailable, or the requested date cannot be verified, use <a href=\"https://www.abyss.com.au/course-beacon\">live course listings</a> without asserting availability. No listed intake does not mean a course is unavailable. For unresolved package, equivalence, junior, technical or individual-support questions, <a href=\"https://www.abyss.com.au/contact-us\">ask the Abyss team</a> with a concise summary of the diver's goal and relevant details. Never promise medical clearance or completion by a travel deadline.</p>",
       "sources": [
         "https://www.abyss.com.au/training-hub",
         "https://www.abyss.com.au/course-beacon"
-      ]
+      ],
+      "manageCategories": true
     },
     {
       "id": "6ab8b6617b6962906797d356",
@@ -944,6 +956,203 @@
         "https://www.abyss.com.au/courses/enriched-air-diver",
         "https://www.abyss.com.au/courses/deep-diver"
       ]
+    },
+    {
+      "id": null,
+      "expectedName": null,
+      "slug": "feel-more-comfortable-diving-sydney",
+      "name": "Feel more comfortable diving in Sydney",
+      "categories": [
+        "6abd693c7cdaed3f1efa5777"
+      ],
+      "keywords": [
+        "Feel more comfortable diving in Sydney",
+        "confidence",
+        "nervous diver",
+        "new to Sydney",
+        "buoyancy or Advanced",
+        "navigation",
+        "use less air",
+        "tropical to Sydney"
+      ],
+      "sources": [
+        "https://www.abyss.com.au/guided-shore-dives-sydney",
+        "https://www.abyss.com.au/beginner-dive-calendar",
+        "https://www.abyss.com.au/courses/peak-performance-buoyancy",
+        "https://www.abyss.com.au/advanced-open-water"
+      ],
+      "text": "<!-- ABYSS_GOAL_GUIDANCE_V1 --><h2>What would make your next dive feel easier?</h2><p>Feeling less confident does not automatically mean you need a higher certification. Ask what feels difficult: controlling position, finding the way, equipment routines, local entries and conditions, or a lack of recent practice. Establish current qualifications, approximate experience, last dive and where the diver normally dives. Ask one or two relevant questions at a time.</p><h2>Match the support to the difficulty</h2><ul><li><strong>Skills are sound; Sydney is unfamiliar:</strong> a suitable guided dive or local orientation may be the best start. Check the actual event's depth, access, conditions and experience requirements.</li><li><strong>Hovering, trim or weighting is the sticking point:</strong> consider Peak Performance Buoyancy for focused instructor feedback. Do not recommend Nitrox to fix high air use or poor control.</li><li><strong>Route finding is the concern:</strong> consider Underwater Navigator for a specific navigation goal.</li><li><strong>Several new environments feel unfamiliar:</strong> Advanced Open Water can provide broader supervised experience. Explain which parts address this diver's goals.</li><li><strong>Basic routines have become rusty:</strong> assess a refresher first; a normal group guided dive is not a skills-remediation session.</li></ul><h2>Offer one manageable next step</h2><p>Recommend one primary option with a reason, then a suitable dive on which to use the skills. Do not turn a confidence question into a compulsory sequence of specialties. For individual attention, discuss a private guided dive for a current, capable diver; confirm any coaching request with Abyss before promising it.</p><h2>A useful next question</h2><p>“Is it controlling your buoyancy, finding your way, or getting used to Sydney conditions that you most want help with?”</p><h2>Check the definitive course information</h2><p>Use the following Sydney Dive Courses articles for current entry prerequisites, recognised equivalents, age restrictions, certification requirements, preparation and inclusions: <strong>PADI Peak Performance Buoyancy in Sydney</strong>; <strong>PADI Underwater Navigator in Sydney</strong>; <strong>PADI Advanced Open Water in Sydney</strong>; <strong>PADI ReActivate and scuba refresher in Sydney</strong>. Keep those requirements in these definitive articles; this guide explains which pathway may suit the goal.</p><h2>Choose a suitable date</h2><p>Once the course and eligibility are established, ask for a preferred date range. Use <strong>Upcoming Sydney Course Dates — Updated Daily</strong> and the matching course-family article for a suitable listed date and exact booking link. The live booking page confirms current price and places. If the snapshot is stale or the date cannot be verified, use <a href=\"https://www.abyss.com.au/course-beacon\">live course listings</a>; do not invent availability.</p><h2>Useful Abyss next steps</h2><p><a href=\"https://www.abyss.com.au/guided-shore-dives-sydney\">Find a suitable guided dive</a> · <a href=\"https://www.abyss.com.au/beginner-dive-calendar\">Explore beginner-friendly dates</a> · <a href=\"https://www.abyss.com.au/courses/peak-performance-buoyancy\">Buoyancy training</a> · <a href=\"https://www.abyss.com.au/advanced-open-water\">Broader supervised training</a></p>"
+    },
+    {
+      "id": null,
+      "expectedName": null,
+      "slug": "prepare-for-dive-holiday-liveaboard",
+      "name": "Prepare for a dive holiday or liveaboard",
+      "categories": [
+        "6abd693c7cdaed3f1efa5777"
+      ],
+      "keywords": [
+        "Prepare for a dive holiday or liveaboard",
+        "holiday preparation",
+        "liveaboard",
+        "travel training",
+        "trip requirements",
+        "Nitrox for holiday",
+        "departure date"
+      ],
+      "sources": [
+        "https://www.abyss.com.au/course-beacon",
+        "https://www.abyss.com.au/sydney-dive-calendar",
+        "https://www.abyss.com.au/contact-us"
+      ],
+      "text": "<!-- ABYSS_GOAL_GUIDANCE_V1 --><h2>Start with the trip, not a course bundle</h2><p>Establish the destination, itinerary or operator, departure date, current certifications, recent dive experience and expected diving conditions. Ask what the operator actually requires: an itinerary may have its own certification, logged-experience, recency or equipment rules. Do not invent destination-wide requirements or assume every liveaboard requires Advanced or Nitrox.</p><h2>Separate compulsory requirements from useful preparation</h2><ul><li><strong>Qualification or depth gap:</strong> identify the actual planned dives and operator rules, then consult the relevant Advanced, Deep or Wreck course article.</li><li><strong>Repetitive diving using enriched air:</strong> Nitrox may be useful if available and suitable for the itinerary. It is not a deeper-diving qualification or a solution to using gas quickly.</li><li><strong>Rusty skills:</strong> a refresher followed by appropriate practice may be more useful than another specialty.</li><li><strong>Current and suitably qualified:</strong> book relevant experience dives, practise familiar routines and check equipment arrangements. Another certification may add little.</li><li><strong>Unfamiliar equipment or conditions:</strong> discuss the specific training needed, such as Dry Suit, rather than selling a generic travel package.</li></ul><h2>Work back from departure</h2><p>Leave time for preparation, every course session, any required eligibility checks, practice and possible weather rescheduling. Check the applicable flying-after-diving guidance and flight timing. Do not promise that a course starting before departure will necessarily be completed in time. If the timeline is tight, ask Abyss to confirm a feasible plan before taking the booking.</p><h2>A useful next question</h2><p>“Where and when are you going, and has your operator sent you any certification or experience requirements?”</p><h2>Check the definitive course information</h2><p>Use the following Sydney Dive Courses articles for current entry prerequisites, recognised equivalents, age restrictions, certification requirements, preparation and inclusions: <strong>PADI Enriched Air Nitrox in Sydney</strong>; <strong>PADI Advanced Open Water in Sydney</strong>; <strong>PADI Deep Diver in Sydney</strong>; <strong>PADI Wreck Diver in Sydney</strong>; <strong>PADI Dry Suit Diver in Sydney</strong>; <strong>PADI ReActivate and scuba refresher in Sydney</strong>. Keep those requirements in these definitive articles; this guide explains which pathway may suit the goal.</p><h2>Choose a suitable date</h2><p>Once the course and eligibility are established, ask for a preferred date range. Use <strong>Upcoming Sydney Course Dates — Updated Daily</strong> and the matching course-family article for a suitable listed date and exact booking link. The live booking page confirms current price and places. If the snapshot is stale or the date cannot be verified, use <a href=\"https://www.abyss.com.au/course-beacon\">live course listings</a>; do not invent availability.</p><h2>Useful Abyss next steps</h2><p><a href=\"https://www.abyss.com.au/course-beacon\">Check training dates</a> · <a href=\"https://www.abyss.com.au/sydney-dive-calendar\">Build relevant diving experience</a> · <a href=\"https://www.abyss.com.au/contact-us\">Ask the team to check your trip plan</a></p>"
+    },
+    {
+      "id": null,
+      "expectedName": null,
+      "slug": "explore-deeper-sites-or-wrecks",
+      "name": "Explore deeper sites or wrecks",
+      "categories": [
+        "6abd693c7cdaed3f1efa5777"
+      ],
+      "keywords": [
+        "Explore deeper sites or wrecks",
+        "deeper diving",
+        "wreck diving",
+        "inside wreck",
+        "wreck penetration",
+        "Advanced or Deep",
+        "technical diving"
+      ],
+      "sources": [
+        "https://www.abyss.com.au/courses/deep-diver",
+        "https://www.abyss.com.au/courses/wreck-diver",
+        "https://www.abyss.com.au/sydney-dive-calendar",
+        "https://www.abyss.com.au/contact-us"
+      ],
+      "text": "<!-- ABYSS_GOAL_GUIDANCE_V1 --><h2>Clarify the actual dive</h2><p>Ask which site or wreck the diver wants to visit, the intended maximum depth, and whether they want to look around the outside or enter an overhead space. Establish current certification, relevant recent experience and any operator requirements. The word “wreck” alone does not identify the training needed.</p><h2>Choose the pathway that fits</h2><ul><li><strong>Outside a wreck within existing training and experience:</strong> a suitable guided dive may already meet the goal. Do not insist on a Wreck specialty solely because the site is a shipwreck; check event-specific requirements.</li><li><strong>A recreational depth progression:</strong> compare the intended depth with current certification, then use the definitive Advanced Open Water or Deep Diver article to identify the appropriate next training.</li><li><strong>Wreck-specific planning and techniques:</strong> consider Wreck Diver when those skills are the goal, and explain that depth and wreck skills are separate issues.</li><li><strong>Entering a wreck:</strong> clarify the intended overhead environment with an instructor. Do not treat every swim-through as harmless, or promise that a basic Wreck certification covers all penetration.</li><li><strong>Technical depth, decompression or complex overhead objectives:</strong> arrange an instructor assessment of the actual pathway. Technical depth training alone is not a wreck-penetration qualification.</li></ul><h2>Avoid unnecessary progression</h2><p>Recommend the smallest suitable training step, then experience dives to consolidate it. Nitrox does not replace depth training; a course card does not remove the need for experience, suitable conditions and operator approval. Do not give detailed penetration procedures in place of practical instruction.</p><h2>A useful next question</h2><p>“Which wreck or depth do you have in mind, and do you want to stay outside or enter it?”</p><h2>Check the definitive course information</h2><p>Use the following Sydney Dive Courses articles for current entry prerequisites, recognised equivalents, age restrictions, certification requirements, preparation and inclusions: <strong>PADI Advanced Open Water in Sydney</strong>; <strong>PADI Deep Diver in Sydney</strong>; <strong>PADI Wreck Diver in Sydney</strong>; <strong>PADI Tec 40 in Sydney</strong>; <strong>PADI Tec 45 in Sydney</strong>; <strong>PADI Tec 50 in Sydney</strong>. Keep those requirements in these definitive articles; this guide explains which pathway may suit the goal.</p><h2>Choose a suitable date</h2><p>Once the course and eligibility are established, ask for a preferred date range. Use <strong>Upcoming Sydney Course Dates — Updated Daily</strong> and the matching course-family article for a suitable listed date and exact booking link. The live booking page confirms current price and places. If the snapshot is stale or the date cannot be verified, use <a href=\"https://www.abyss.com.au/course-beacon\">live course listings</a>; do not invent availability.</p><h2>Useful Abyss next steps</h2><p><a href=\"https://www.abyss.com.au/courses/deep-diver\">Deep Diver information</a> · <a href=\"https://www.abyss.com.au/courses/wreck-diver\">Wreck Diver information</a> · <a href=\"https://www.abyss.com.au/sydney-dive-calendar\">Compare suitable dive dates</a> · <a href=\"https://www.abyss.com.au/contact-us\">Discuss the intended dive</a></p>"
+    },
+    {
+      "id": null,
+      "expectedName": null,
+      "slug": "become-a-more-capable-dive-buddy",
+      "name": "Become a more capable dive buddy",
+      "categories": [
+        "6abd693c7cdaed3f1efa5777"
+      ],
+      "keywords": [
+        "Become a more capable dive buddy",
+        "better buddy",
+        "Rescue Diver",
+        "help another diver",
+        "first aid currency",
+        "buddy confidence",
+        "emergency skills"
+      ],
+      "sources": [
+        "https://www.abyss.com.au/courses/padi-rescue-diver-course",
+        "https://www.abyss.com.au/courses/emergency-first-response",
+        "https://www.abyss.com.au/contact-us"
+      ],
+      "text": "<!-- ABYSS_GOAL_GUIDANCE_V1 --><h2>Define the buddy skills you want to improve</h2><p>Ask whether the diver wants better everyday awareness and teamwork, or structured training in recognising problems and responding to emergencies. Establish current qualification, recent experience, comfort with their own skills, and any first-aid or CPR training already held.</p><h2>When Rescue training is useful</h2><p>Rescue Diver is the relevant pathway for developing prevention, awareness and response skills. Explain how that supports looking after a buddy while still managing oneself. It does not guarantee that every emergency can be resolved and does not qualify someone as a professional guide.</p><h2>Check existing first-aid training before recommending more</h2><p>Use the definitive Rescue and Emergency First Response articles to check accepted training and its required currency at the relevant stage. Ask for the course/provider and completion date only as needed. Do not automatically add EFR when the diver already holds suitable, current practical first-aid and CPR training. If equivalence is uncertain, have Abyss verify it.</p><h2>When another step comes first</h2><p>If the main issue is controlling buoyancy or rebuilding rusty personal skills, address that gap before assuming Rescue is the immediate answer. If a current Rescue diver wants to be a better buddy, suitable experience and an agreed skills review may help more than repeating a qualification. Oxygen training can be discussed for that specific skill, not presented as an automatic substitute for Rescue or first aid.</p><h2>A useful next question</h2><p>“Are you mainly looking to improve everyday buddy skills, or would you like practical training for recognising and managing problems?”</p><h2>Check the definitive course information</h2><p>Use the following Sydney Dive Courses articles for current entry prerequisites, recognised equivalents, age restrictions, certification requirements, preparation and inclusions: <strong>PADI Rescue Diver in Sydney</strong>; <strong>Emergency First Response: First Aid and CPR in Sydney</strong>; <strong>PADI Emergency Oxygen Provider in Sydney</strong>; <strong>PADI ReActivate and scuba refresher in Sydney</strong>. Keep those requirements in these definitive articles; this guide explains which pathway may suit the goal.</p><h2>Choose a suitable date</h2><p>Once the course and eligibility are established, ask for a preferred date range. Use <strong>Upcoming Sydney Course Dates — Updated Daily</strong> and the matching course-family article for a suitable listed date and exact booking link. The live booking page confirms current price and places. If the snapshot is stale or the date cannot be verified, use <a href=\"https://www.abyss.com.au/course-beacon\">live course listings</a>; do not invent availability.</p><h2>Useful Abyss next steps</h2><p><a href=\"https://www.abyss.com.au/courses/padi-rescue-diver-course\">Explore Rescue training</a> · <a href=\"https://www.abyss.com.au/courses/emergency-first-response\">Check first-aid training</a> · <a href=\"https://www.abyss.com.au/contact-us\">Check existing training with Abyss</a></p>"
+    },
+    {
+      "id": null,
+      "expectedName": null,
+      "slug": "return-to-diving-after-a-break",
+      "name": "Return to diving after a break",
+      "categories": [
+        "6abd693c7cdaed3f1efa5777"
+      ],
+      "keywords": [
+        "Return to diving after a break",
+        "return after break",
+        "rusty diver",
+        "not dived for years",
+        "ReActivate or guided dive",
+        "refresher",
+        "certification expired"
+      ],
+      "sources": [
+        "https://www.abyss.com.au/scuba-refresher-course",
+        "https://www.abyss.com.au/charters/private-guided-shore-dive",
+        "https://www.abyss.com.au/contact-us"
+      ],
+      "text": "<!-- ABYSS_GOAL_GUIDANCE_V1 --><h2>Use experience, recency and confidence together</h2><p>Ask when the diver last dived, roughly how much diving they have done, their certification and previous conditions, and how comfortable they feel with equipment setup and core skills now. A calendar gap alone is not enough to prescribe one return option for everyone. Do not say that their certification has expired simply because they have not dived recently.</p><h2>Match the return to the support needed</h2><ul><li><strong>Limited experience, uncertain routines or rusty core skills:</strong> explore the refresher pathway in the definitive ReActivate article.</li><li><strong>Experienced and comfortable, but unfamiliar with Sydney:</strong> ask Abyss whether a suitable supported return or private guided dive fits the current event requirements and conditions.</li><li><strong>Ready after a refresher:</strong> choose an appropriate first ocean outing with manageable conditions, followed by regular diving to rebuild familiarity.</li></ul><h2>Make the selected package clear</h2><p>Check the definitive refresher article and exact booking before stating whether ocean dives are included. A pool-based booking and an ocean-inclusive option must not be treated as the same product. Confirm the full timetable and what support follows the refresher. A regular group guided dive is not a replacement for reviewing forgotten skills.</p><h2>Handle uncertainty positively</h2><p>If the diver reports changed health, a difficult previous experience or significant anxiety, arrange an instructor discussion and the required screening rather than making a medical or readiness assessment in chat. Avoid pushing Advanced as a shortcut back into diving.</p><h2>A useful next question</h2><p>“When was your last dive, and do you feel ready to set up your equipment and manage the basic skills, or would you like to practise those first?”</p><h2>Check the definitive course information</h2><p>Use the following Sydney Dive Courses articles for current entry prerequisites, recognised equivalents, age restrictions, certification requirements, preparation and inclusions: <strong>PADI ReActivate and scuba refresher in Sydney</strong>. Keep those requirements in these definitive articles; this guide explains which pathway may suit the goal.</p><h2>Choose a suitable date</h2><p>Once the course and eligibility are established, ask for a preferred date range. Use <strong>Upcoming Sydney Course Dates — Updated Daily</strong> and the matching course-family article for a suitable listed date and exact booking link. The live booking page confirms current price and places. If the snapshot is stale or the date cannot be verified, use <a href=\"https://www.abyss.com.au/course-beacon\">live course listings</a>; do not invent availability.</p><h2>Useful Abyss next steps</h2><p><a href=\"https://www.abyss.com.au/scuba-refresher-course\">Compare refresher options and dates</a> · <a href=\"https://www.abyss.com.au/charters/private-guided-shore-dive\">Explore a private guided return</a> · <a href=\"https://www.abyss.com.au/contact-us\">Discuss the right return plan</a></p>"
+    },
+    {
+      "id": null,
+      "expectedName": null,
+      "slug": "marine-life-photography-next-step",
+      "name": "Enjoy marine life or underwater photography",
+      "categories": [
+        "6abd693c7cdaed3f1efa5777"
+      ],
+      "keywords": [
+        "Enjoy marine life or underwater photography",
+        "marine life",
+        "underwater photography",
+        "seadragons",
+        "camera buoyancy",
+        "hover for photos",
+        "Marine Marvels",
+        "wildlife"
+      ],
+      "sources": [
+        "https://www.abyss.com.au/sydney-marine-life-dives",
+        "https://www.abyss.com.au/charters/private-guided-shore-dive",
+        "https://www.abyss.com.au/courses/peak-performance-buoyancy"
+      ],
+      "text": "<!-- ABYSS_GOAL_GUIDANCE_V1 --><h2>Start with the experience you want</h2><p>Ask which animals or type of photography interest the diver, their current experience and recent diving, and whether the difficulty is finding subjects or controlling their position while using a camera. Wanting better photos does not automatically mean another course is needed.</p><h2>Choose experience or training for the actual gap</h2><ul><li><strong>Finding wildlife or exploring local habitats:</strong> a suitable marine-life outing, guided dive or private guide may meet the goal.</li><li><strong>Hovering, trim or avoiding contact with the bottom:</strong> consider Peak Performance Buoyancy for focused skill development before adding camera tasks.</li><li><strong>Camera operation or composition is the main issue:</strong> clarify the skill wanted and ask Abyss about relevant support; do not invent an available photography course or imply that a guided booking includes camera tuition.</li><li><strong>Conservation learning is the goal:</strong> discuss an appropriate conservation course as an optional learning choice, not a prerequisite for simply seeing wildlife.</li></ul><h2>Protect the encounter</h2><p>Choose a dive within current skills and the event's requirements. Allow space for wildlife and avoid touching animals or damaging habitat to get a photograph. Sightings are not guaranteed. If using the camera makes depth, gas or buddy awareness difficult, reduce task loading and work on those skills first.</p><h2>A useful next question</h2><p>“Would you most like help finding marine life, or staying steady and comfortable while taking photos?”</p><h2>Check the definitive course information</h2><p>Use the following Sydney Dive Courses articles for current entry prerequisites, recognised equivalents, age restrictions, certification requirements, preparation and inclusions: <strong>PADI Peak Performance Buoyancy in Sydney</strong>; <strong>PADI AWARE Shark Conservation in Sydney</strong>. Keep those requirements in these definitive articles; this guide explains which pathway may suit the goal.</p><h2>Choose a suitable date</h2><p>Once the course and eligibility are established, ask for a preferred date range. Use <strong>Upcoming Sydney Course Dates — Updated Daily</strong> and the matching course-family article for a suitable listed date and exact booking link. The live booking page confirms current price and places. If the snapshot is stale or the date cannot be verified, use <a href=\"https://www.abyss.com.au/course-beacon\">live course listings</a>; do not invent availability.</p><h2>Useful Abyss next steps</h2><p><a href=\"https://www.abyss.com.au/sydney-marine-life-dives\">Find marine-life experiences</a> · <a href=\"https://www.abyss.com.au/charters/private-guided-shore-dive\">Discuss a private photography-focused dive</a> · <a href=\"https://www.abyss.com.au/courses/peak-performance-buoyancy\">Develop steadier buoyancy</a></p>"
+    },
+    {
+      "id": null,
+      "expectedName": null,
+      "slug": "plan-master-scuba-diver-next-step",
+      "name": "Work towards Master Scuba Diver",
+      "categories": [
+        "6abd693c7cdaed3f1efa5777"
+      ],
+      "keywords": [
+        "Work towards Master Scuba Diver",
+        "Master Scuba Diver pathway",
+        "MSD remaining requirements",
+        "specialty credits",
+        "already Rescue",
+        "MSD versus Divemaster",
+        "experience dives"
+      ],
+      "sources": [
+        "https://www.abyss.com.au/products/master_scuba_diver",
+        "https://www.abyss.com.au/sydney-dive-calendar",
+        "https://www.abyss.com.au/contact-us"
+      ],
+      "text": "<!-- ABYSS_GOAL_GUIDANCE_V1 --><h2>Start with what you have already achieved</h2><p>Ask for the diver's goal, existing certifications and agencies, the exact specialty names, any documented Adventure Dives or other potential credits, and logged experience. Establish their preferred diving and timescale. Master Scuba Diver is recreational recognition; check whether the visitor instead means professional Divemaster or instructor-level Master Scuba Diver Trainer.</p><h2>Build a gap-based plan</h2><ul><li>Use <strong>PADI Master Scuba Diver at Abyss: requirements and package</strong> as the definitive source for rating requirements and the separate Abyss package conditions.</li><li>Have Abyss confirm which existing qualifications, specialties and documented credits count. Do not assume that any course with “specialty” in its name qualifies, or that an Adventure Dive is a complete specialty.</li><li>Identify only the missing requirements. Select any remaining courses around diving the person actually wants to do, rather than collecting unrelated cards.</li><li>If the training requirements are already met and only logged experience remains, recommend suitable diving; do not sell an extra course just to fill that gap.</li><li>Compare individual bookings with the current package only after checking prior training, eligibility and useful inclusions. Obtain the correct quote or credit advice instead of promising an automatic discount.</li></ul><h2>Turn the plan into a useful next booking</h2><p>Prioritise the next missing skill and a dive on which to use it. Book separate course sessions in a workable order and check the current completion conditions in the definitive article. Purchasing a package is not the same as earning the rating.</p><h2>A useful next question</h2><p>“Which qualifications and specialties do you already hold, roughly how many dives have you logged, and what kind of diving would you like to do more of?”</p><h2>Check the definitive course information</h2><p>Use the following Sydney Dive Courses articles for current entry prerequisites, recognised equivalents, age restrictions, certification requirements, preparation and inclusions: <strong>PADI Master Scuba Diver at Abyss: requirements and package</strong>. Keep those requirements in these definitive articles; this guide explains which pathway may suit the goal.</p><h2>Choose a suitable date</h2><p>Once the course and eligibility are established, ask for a preferred date range. Use <strong>Upcoming Sydney Course Dates — Updated Daily</strong> and the matching course-family article for a suitable listed date and exact booking link. The live booking page confirms current price and places. If the snapshot is stale or the date cannot be verified, use <a href=\"https://www.abyss.com.au/course-beacon\">live course listings</a>; do not invent availability.</p><h2>Useful Abyss next steps</h2><p><a href=\"https://www.abyss.com.au/products/master_scuba_diver\">Review the current Master Scuba Diver pathway</a> · <a href=\"https://www.abyss.com.au/sydney-dive-calendar\">Build relevant logged experience</a> · <a href=\"https://www.abyss.com.au/contact-us\">Have existing qualifications and credits checked</a></p>"
+    },
+    {
+      "id": null,
+      "expectedName": null,
+      "slug": "when-more-diving-is-best-next-step",
+      "name": "When more diving is the best next step",
+      "categories": [
+        "6abd693c7cdaed3f1efa5777"
+      ],
+      "keywords": [
+        "When more diving is the best next step",
+        "do I need another course",
+        "more diving not courses",
+        "practice after certification",
+        "already qualified",
+        "experience dives",
+        "build confidence"
+      ],
+      "sources": [
+        "https://www.abyss.com.au/guided-shore-dives-sydney",
+        "https://www.abyss.com.au/sydney-dive-calendar",
+        "https://www.abyss.com.au/contact-us"
+      ],
+      "text": "<!-- ABYSS_GOAL_GUIDANCE_V1 --><h2>A useful recommendation can be another dive</h2><p>When a diver is already qualified, current and comfortable for their intended diving, more suitable experience may help more than another certification. Identify one practical aim for the next outing: becoming familiar with local conditions, practising recently learned skills or enjoying a particular marine-life experience.</p><h2>Offer a positive, bookable option</h2><ul><li><a href=\"https://www.abyss.com.au/guided-shore-dives-sydney\">A suitable guided shore dive</a> for local orientation and continued experience.</li><li><a href=\"https://www.abyss.com.au/beginner-dive-calendar\">The beginner-friendly calendar</a> to compare manageable next outings; the individual listing still determines suitability.</li><li><a href=\"https://www.abyss.com.au/charters/private-guided-shore-dive\">A private guided dive</a> when a capable, current diver wants an individual pace or particular focus.</li><li><a href=\"https://www.abyss.com.au/sydney-marine-life-dives\">A marine-life experience</a> when seeing and learning about wildlife is the goal.</li></ul><h2>Check suitability, then make the next step easy</h2><p>Ask what the diver wants to see or practise and which dates work. Check the event's certification, recency, depth, conditions, price and equipment arrangements. Use a verified exact event booking link when available; otherwise give the relevant live listing without inventing a date or places. Do not imply that every guided outing or equipment hire is free.</p><h2>When a dive alone is not enough</h2><p>Choose a refresher, focused training or instructor assessment if skills are rusty, the intended dive exceeds training, or individual support needs are unclear. Group guiding is not remedial instruction. Keep course prerequisites in the definitive course article.</p><h2>Suggested way to explain it</h2><p>“You may already have the training you need for that goal. A suitable guided dive could be the most useful next step, so you can enjoy the experience and build confidence. What would you like to see, and which dates suit you?”</p><h2>Useful Abyss next steps</h2><p><a href=\"https://www.abyss.com.au/guided-shore-dives-sydney\">See guided diving options</a> · <a href=\"https://www.abyss.com.au/sydney-dive-calendar\">Find live dive dates</a> · <a href=\"https://www.abyss.com.au/contact-us\">Ask which outing fits</a></p>"
     }
-  ]
+  ],
+  "goalGuidanceUpdatedAt": "2026-10-01"
 }
