@@ -1,0 +1,949 @@
+{
+  "version": 1,
+  "auditedAt": "2026-09-30",
+  "collectionId": "6ab8b33984f08c58bb03f7e6",
+  "collectionName": "Sydney Dive Courses",
+  "articles": [
+    {
+      "id": "6ab8ba1b171ef8b866f2c207",
+      "expectedName": "PADI Nitrox and Peak Performance Buoyancy courses",
+      "slug": "padi-nitrox-sydney",
+      "name": "PADI Enriched Air Nitrox in Sydney",
+      "categories": [
+        "6ab8b3eb7b6962906797d352"
+      ],
+      "keywords": [
+        "PADI Enriched Air Nitrox in Sydney",
+        "padi nitrox sydney",
+        "Sydney dive courses",
+        "Abyss scuba training",
+        "nitrox",
+        "enriched air",
+        "liveaboard",
+        "ocean dives optional"
+      ],
+      "text": "<!-- ABYSS_COURSE_KNOWLEDGE_V1 --><h2>What diving goal does this course help with?</h2><p>For certified divers planning repetitive dives, photography or a liveaboard where no-decompression time limits the dive. It is not a course for going deeper and will not fix high air consumption caused by buoyancy or technique.</p><h2>Before you start</h2><p>Age 12 or older; PADI Junior Open Water, Open Water or an accepted equivalent. Complete the participant medical questionnaire and obtain physician clearance before in-water training when the form requires it. Under-18s need the required parent or guardian consent. </p><h2>To earn the qualification</h2><p>Complete enriched-air knowledge development and the instructor-assessed gas-analysis, recording and computer-setting practical skills. Ocean dives are not required for this certification.</p><h2>Time and preparation</h2><p>Approximately 2–4 hours of eLearning, then a practical session with an instructor. Two optional ocean dives can be arranged.</p><h2>Equipment, inclusions and extra costs</h2><p>The current course description makes the two ocean dives optional and says an additional fee applies. Do not promise they are included in the listed course price. The booking session label “Tank Analysis &amp; 2 Ocean Dives” does not override this stated inclusion. Ask Abyss to confirm the exact dive-inclusive total before selling that option. Confirm eLearning, certification, nitrox fills, computer and gear arrangements for the selected booking.</p><h2>What the qualification enables—and its limits</h2><p>Use recreational enriched air within the analysed mix’s oxygen limits and your existing depth, training and experience limits. More no-decompression time depends on the profile; nitrox does not guarantee less fatigue or automatically make a dive safe.</p><h2>Current dates and booking</h2><p><a href=\"https://www.abyss.com.au/courses/enriched-air-diver\">View current course information, dates and booking options</a>. For a scheduled intake, use the matching entry in <strong>Upcoming Sydney Course Dates — Updated Daily</strong> and its exact booking link. Confirm the selected package, language, full session timetable, price and places on the live booking page. If no date is listed, ask Abyss about a suitable intake; absence from the snapshot does not mean the course is unavailable. Do not use old example prices or imply that an overnight snapshot is real-time inventory.</p><h2>Course information sources</h2><p><a href=\"https://www.abyss.com.au/courses/enriched-air-diver\">Abyss course information</a></p>",
+      "sources": [
+        "https://www.abyss.com.au/courses/enriched-air-diver"
+      ]
+    },
+    {
+      "id": null,
+      "expectedName": null,
+      "slug": "padi-peak-performance-buoyancy-sydney",
+      "name": "PADI Peak Performance Buoyancy in Sydney",
+      "categories": [
+        "6ab8b3eb7b6962906797d352"
+      ],
+      "keywords": [
+        "PADI Peak Performance Buoyancy in Sydney",
+        "padi peak performance buoyancy sydney",
+        "Sydney dive courses",
+        "Abyss scuba training",
+        "buoyancy",
+        "trim",
+        "air consumption",
+        "hover"
+      ],
+      "text": "<!-- ABYSS_COURSE_KNOWLEDGE_V1 --><h2>What diving goal does this course help with?</h2><p>For divers who want steadier hovering, better trim, less contact with the bottom and more efficient movement. Choose this focused course when buoyancy is the main goal; use a refresher first if basic skills have become rusty.</p><h2>Before you start</h2><p>Age 10 or older; Junior Open Water, Open Water or an accepted equivalent. Complete the participant medical questionnaire and obtain physician clearance before in-water training when the form requires it. Under-18s need the required parent or guardian consent. </p><h2>To earn the qualification</h2><p>Certification requires successful knowledge and practical assessments, not attendance alone. Extra training, missed sessions or rescheduling may involve additional fees under the booking terms. Complete the required knowledge and two specialty training dives.</p><h2>Time and preparation</h2><p>Approximately 2–4 hours of eLearning before one practical day with two ocean dives.</p><h2>Equipment, inclusions and extra costs</h2><p>Instructor coaching and two training dives form the course. Bring suitable scuba equipment or arrange hire separately; full equipment and cylinder hire may cost extra. Confirm the selected booking’s learning materials, certification and hire total.</p><h2>What the qualification enables—and its limits</h2><p>Develops buoyancy skills within existing certification limits. It does not grant a new depth rating. One buoyancy Adventure Dive during Advanced Open Water is not automatically the full specialty.</p><h2>Current dates and booking</h2><p><a href=\"https://www.abyss.com.au/courses/peak-performance-buoyancy\">View current course information, dates and booking options</a>. For a scheduled intake, use the matching entry in <strong>Upcoming Sydney Course Dates — Updated Daily</strong> and its exact booking link. Confirm the selected package, language, full session timetable, price and places on the live booking page. If no date is listed, ask Abyss about a suitable intake; absence from the snapshot does not mean the course is unavailable. Do not use old example prices or imply that an overnight snapshot is real-time inventory.</p><h2>Course information sources</h2><p><a href=\"https://www.abyss.com.au/courses/peak-performance-buoyancy\">Abyss course information</a></p>",
+      "sources": [
+        "https://www.abyss.com.au/courses/peak-performance-buoyancy"
+      ]
+    },
+    {
+      "id": "6ab8b970171ef8b866f2c206",
+      "expectedName": "PADI Advanced Open Water in Sydney",
+      "slug": "padi-advanced-open-water-sydney",
+      "name": "PADI Advanced Open Water in Sydney",
+      "categories": [
+        "6ab8b3eb7b6962906797d352"
+      ],
+      "keywords": [
+        "PADI Advanced Open Water in Sydney",
+        "padi advanced open water sydney",
+        "Sydney dive courses",
+        "Abyss scuba training",
+        "advanced",
+        "AOW",
+        "30 metres",
+        "navigation"
+      ],
+      "text": "<!-- ABYSS_COURSE_KNOWLEDGE_V1 --><h2>What diving goal does this course help with?</h2><p>For Open Water divers wanting broader experience, navigation and guided progression to deeper recreational diving. No need to collect specialties first. A buoyancy specialty or refresher can be a better first step when control or basic confidence is the main issue.</p><h2>Before you start</h2><p>Age 12 or older; Junior Open Water, Open Water or an accepted qualifying certification. Abyss must check agency equivalency and readiness. There is no blanket logged-dive minimum for this course. Complete the participant medical questionnaire and obtain physician clearance before in-water training when the form requires it. Under-18s need the required parent or guardian consent. </p><h2>To earn the qualification</h2><p>Certification requires successful knowledge and practical assessments, not attendance alone. Extra training, missed sessions or rescheduling may involve additional fees under the booking terms. Complete five Adventure Dives including deep and underwater navigation.</p><h2>Time and preparation</h2><p>Approximately 6–8 hours of eLearning before two practical days. Abyss advertises five dives, normally three shore and two boat dives; sites and sequence depend on conditions.</p><h2>Equipment, inclusions and extra costs</h2><p>The standard course includes the five training dives and course learning/certification arrangements described on the booking page. Gear hire is additional. A premium package has different inclusions; do not substitute its price or equipment benefits for the standard booking.</p><h2>What the qualification enables—and its limits</h2><p>Adult Advanced Open Water training supports recreational dives to 30 metres when conditions and experience are suitable; ages 12–14 have a 21-metre limit. Five Adventure Dives do not mean five completed specialty certifications.</p><h2>Current dates and booking</h2><p><a href=\"https://www.abyss.com.au/advanced-open-water\">View current course information, dates and booking options</a>. For a scheduled intake, use the matching entry in <strong>Upcoming Sydney Course Dates — Updated Daily</strong> and its exact booking link. Confirm the selected package, language, full session timetable, price and places on the live booking page. If no date is listed, ask Abyss about a suitable intake; absence from the snapshot does not mean the course is unavailable. Do not use old example prices or imply that an overnight snapshot is real-time inventory.</p><h2>Course information sources</h2><p><a href=\"https://www.abyss.com.au/advanced-open-water\">Abyss pathway information</a></p>",
+      "sources": [
+        "https://www.abyss.com.au/advanced-open-water"
+      ]
+    },
+    {
+      "id": "6ab8baf349f1bc2c6aefc9ab",
+      "expectedName": "PADI ReActivate and scuba refresher in Sydney",
+      "slug": "padi-reactivate-sydney",
+      "name": "PADI ReActivate and scuba refresher in Sydney",
+      "categories": [
+        "6ab8b3eb7b6962906797d352"
+      ],
+      "keywords": [
+        "PADI ReActivate and scuba refresher in Sydney",
+        "padi reactivate sydney",
+        "Sydney dive courses",
+        "Abyss scuba training",
+        "refresher",
+        "rusty",
+        "return to diving",
+        "inactive"
+      ],
+      "text": "<!-- ABYSS_COURSE_KNOWLEDGE_V1 --><h2>What diving goal does this course help with?</h2><p>For a certified diver returning after a break or wanting coached practice before a trip. Choose a guided dive if skills are current and the main need is local orientation; do not automatically sell a new certification because an old card has aged.</p><h2>Before you start</h2><p>Abyss advertises age 12+ for the refresher. Bring evidence of a previous recognised scuba qualification; ask Abyss to confirm the suitable refresh pathway and PADI ReActivate recognition. Tell the team when you last dived and which skills concern you. Complete the participant medical questionnaire and obtain physician clearance before in-water training when the form requires it. Under-18s need the required parent or guardian consent. </p><h2>To earn the qualification</h2><p>Complete the assigned knowledge review and practical skills. A refresher updates readiness; the original scuba certification does not expire merely through inactivity.</p><h2>Time and preparation</h2><p>The standard practical option is approximately half a day in a pool. Complete any assigned eLearning first; an ocean dive is a separate optional choice.</p><h2>Equipment, inclusions and extra costs</h2><p>Pool training and essential scuba equipment are included. The refresher landing page opens booking with the optional ocean dive included in the displayed total; remove that add-on in the cart if choosing pool-only. A course-beacon pool-only price must not be described as the ocean-inclusive total. PADI eLearning can be additional; the current page advertises one free ReActivate eLearning for Abyss Club or PADI Club members. Confirm the selected package and any hire extension.</p><h2>What the qualification enables—and its limits</h2><p>Builds confidence and refreshes existing skills; it does not increase depth limits or replace instructor assessment of readiness. No single inactivity interval fits every diver.</p><h2>Current dates and booking</h2><p><a href=\"https://www.abyss.com.au/scuba-refresher-course\">View current course information, dates and booking options</a>. For a scheduled intake, use the matching entry in <strong>Upcoming Sydney Course Dates — Updated Daily</strong> and its exact booking link. Confirm the selected package, language, full session timetable, price and places on the live booking page. If no date is listed, ask Abyss about a suitable intake; absence from the snapshot does not mean the course is unavailable. Do not use old example prices or imply that an overnight snapshot is real-time inventory.</p><h2>Course information sources</h2><p><a href=\"https://www.abyss.com.au/scuba-refresher-course\">Abyss pathway information</a></p>",
+      "sources": [
+        "https://www.abyss.com.au/scuba-refresher-course"
+      ]
+    },
+    {
+      "id": "6ab8ba857b6962906797d359",
+      "expectedName": "PADI Rescue Diver, first aid and emergency oxygen",
+      "slug": "padi-rescue-diver-sydney",
+      "name": "PADI Rescue Diver in Sydney",
+      "categories": [
+        "6ab8b3eb7b6962906797d352"
+      ],
+      "keywords": [
+        "PADI Rescue Diver in Sydney",
+        "padi rescue diver sydney",
+        "Sydney dive courses",
+        "Abyss scuba training",
+        "rescue",
+        "buddy safety",
+        "CPR 24 months"
+      ],
+      "text": "<!-- ABYSS_COURSE_KNOWLEDGE_V1 --><h2>What diving goal does this course help with?</h2><p>For divers who want to prevent problems, recognise stress and help a buddy effectively. It is useful for responsible recreational diving as well as professional progression; it does not require a career goal.</p><h2>Before you start</h2><p>Age 12+; Advanced Open Water, Adventure Diver with the Underwater Navigation Adventure Dive, or an accepted equivalent. Complete the participant medical questionnaire and obtain physician clearance before in-water training when the form requires it. Under-18s need the required parent or guardian consent. </p><h2>To earn the qualification</h2><p>Complete knowledge, rescue exercises and scenarios. Qualifying practical CPR and First Aid must have been completed within the previous 24 months, with evidence supplied before certification. Ages 12–14 earn Junior Rescue where applicable. Certification requires successful knowledge and practical assessments, not attendance alone. Extra training, missed sessions or rescheduling may involve additional fees under the booking terms. </p><h2>Time and preparation</h2><p>Complete PADI eLearning and assigned study before two practical training days. Suitable First Aid/CPR can be taken beforehand or alongside Rescue.</p><h2>Equipment, inclusions and extra costs</h2><p>Bring certification and first-aid evidence, requested paperwork and suitable dive equipment. Check gear hire, learning materials and any first-aid add-on in the selected booking; do not assume the Rescue fee includes a separate EFR course.</p><h2>What the qualification enables—and its limits</h2><p>Develops prevention, rescue and emergency-management skills; it is not a professional supervision qualification and does not extend recreational depth limits. Rescue certification does not expire, but skills need practice.</p><h2>Current dates and booking</h2><p><a href=\"https://www.abyss.com.au/courses/padi-rescue-diver-course\">View current course information, dates and booking options</a>. For a scheduled intake, use the matching entry in <strong>Upcoming Sydney Course Dates — Updated Daily</strong> and its exact booking link. Confirm the selected package, language, full session timetable, price and places on the live booking page. If no date is listed, ask Abyss about a suitable intake; absence from the snapshot does not mean the course is unavailable. Do not use old example prices or imply that an overnight snapshot is real-time inventory.</p><h2>Course information sources</h2><p><a href=\"https://www.abyss.com.au/courses/padi-rescue-diver-course\">Abyss course information</a></p>",
+      "sources": [
+        "https://www.abyss.com.au/courses/padi-rescue-diver-course"
+      ]
+    },
+    {
+      "id": null,
+      "expectedName": null,
+      "slug": "emergency-first-response-sydney",
+      "name": "Emergency First Response: First Aid and CPR in Sydney",
+      "categories": [
+        "6ab8b3eb7b6962906797d352"
+      ],
+      "keywords": [
+        "Emergency First Response: First Aid and CPR in Sydney",
+        "emergency first response sydney",
+        "Sydney dive courses",
+        "Abyss scuba training",
+        "EFR",
+        "first aid",
+        "CPR",
+        "24 months"
+      ],
+      "text": "<!-- ABYSS_COURSE_KNOWLEDGE_V1 --><h2>What diving goal does this course help with?</h2><p>For divers needing current practical first aid and CPR for Rescue or professional training, and non-divers wanting emergency-response skills. Existing qualifying practical training within 24 months may already meet the PADI prerequisite.</p><h2>Before you start</h2><p>No prior first-aid experience or scuba qualification is required. Ask Abyss about suitability for a younger participant; the current page does not state a course-specific minimum age.</p><h2>To earn the qualification</h2><p>Complete online learning and instructor-led practical training successfully. PADI Rescue requires CPR and First Aid completed within the previous 24 months. An online-only certificate without suitable practical assessment may not qualify.</p><h2>Time and preparation</h2><p>Complete assigned online study before the scheduled practical session; check its start and finish times in the live booking.</p><h2>Equipment, inclusions and extra costs</h2><p>The published course includes online learning, practical instruction and EFR certification after successful completion. No scuba gear is needed. Confirm any booking-specific additions.</p><h2>What the qualification enables—and its limits</h2><p>Builds CPR and first-aid capability. EFR is not automatically a nationally recognised HLTAID011 or HLTAID015 Statement of Attainment; scientific/occupational applicants must verify the exact unit outcome with the RTO.</p><h2>Current dates and booking</h2><p><a href=\"https://www.abyss.com.au/courses/emergency-first-response\">View current course information, dates and booking options</a>. For a scheduled intake, use the matching entry in <strong>Upcoming Sydney Course Dates — Updated Daily</strong> and its exact booking link. Confirm the selected package, language, full session timetable, price and places on the live booking page. If no date is listed, ask Abyss about a suitable intake; absence from the snapshot does not mean the course is unavailable. Do not use old example prices or imply that an overnight snapshot is real-time inventory.</p><h2>Course information sources</h2><p><a href=\"https://www.abyss.com.au/courses/emergency-first-response\">Abyss course information</a></p>",
+      "sources": [
+        "https://www.abyss.com.au/courses/emergency-first-response"
+      ]
+    },
+    {
+      "id": null,
+      "expectedName": null,
+      "slug": "emergency-oxygen-provider-sydney",
+      "name": "PADI Emergency Oxygen Provider in Sydney",
+      "categories": [
+        "6ab8b3eb7b6962906797d352"
+      ],
+      "keywords": [
+        "PADI Emergency Oxygen Provider in Sydney",
+        "emergency oxygen provider sydney",
+        "Sydney dive courses",
+        "Abyss scuba training",
+        "oxygen",
+        "O2",
+        "non-diver"
+      ],
+      "text": "<!-- ABYSS_COURSE_KNOWLEDGE_V1 --><h2>What diving goal does this course help with?</h2><p>For divers, boat crew, shore staff and non-diving buddies who want to learn emergency oxygen use. This is separate from Rescue Diver and ordinary CPR/first aid.</p><h2>Before you start</h2><p>No diving qualification, previous CPR or first-aid training is required. The current Abyss page specifies no minimum age; discuss suitability with the instructor.</p><h2>To earn the qualification</h2><p>Complete the required knowledge and instructor-assessed oxygen-equipment skills. No dives are included.</p><h2>Time and preparation</h2><p>Review the required manual before the practical training. Contact Abyss for the duration and an arranged/private date.</p><h2>Equipment, inclusions and extra costs</h2><p>Scuba equipment is not needed. Confirm supply and cost of the required PADI manual, training oxygen equipment and certification in the current quote.</p><h2>What the qualification enables—and its limits</h2><p>Covers recognition of relevant diving illnesses and emergency oxygen equipment use. It does not replace medical care, First Aid/CPR, or the nationally recognised HLTAID015 unit required for some occupational pathways.</p><h2>Current dates and booking</h2><p><a href=\"https://www.abyss.com.au/courses/emergency-oxygen-provider\">View current course information, dates and booking options</a>. For a scheduled intake, use the matching entry in <strong>Upcoming Sydney Course Dates — Updated Daily</strong> and its exact booking link. Confirm the selected package, language, full session timetable, price and places on the live booking page. If no date is listed, ask Abyss about a suitable intake; absence from the snapshot does not mean the course is unavailable. Do not use old example prices or imply that an overnight snapshot is real-time inventory.</p><h2>Course information sources</h2><p><a href=\"https://www.abyss.com.au/courses/emergency-oxygen-provider\">Abyss course information</a></p>",
+      "sources": [
+        "https://www.abyss.com.au/courses/emergency-oxygen-provider"
+      ]
+    },
+    {
+      "id": "6ab8bbae4b37f75b5ff65b9f",
+      "expectedName": "PADI Deep Diver and Dry Suit Diver courses",
+      "slug": "padi-deep-diver-sydney",
+      "name": "PADI Deep Diver in Sydney",
+      "categories": [
+        "6ab8b3eb7b6962906797d352"
+      ],
+      "keywords": [
+        "PADI Deep Diver in Sydney",
+        "padi deep diver sydney",
+        "Sydney dive courses",
+        "Abyss scuba training",
+        "deep",
+        "40 metres"
+      ],
+      "text": "<!-- ABYSS_COURSE_KNOWLEDGE_V1 --><h2>What diving goal does this course help with?</h2><p>For a diver with a specific recreational goal beyond the Advanced Open Water depth range. If the desired diving stays within an existing qualification, extra depth training may be unnecessary.</p><h2>Before you start</h2><p>Age 15+; PADI Adventure Diver or higher, or a qualifying equivalent accepted by Abyss. Current skills and appropriate experience matter. Complete the participant medical questionnaire and obtain physician clearance before in-water training when the form requires it. Under-18s need the required parent or guardian consent. </p><h2>To earn the qualification</h2><p>Certification requires successful knowledge and practical assessments, not attendance alone. Extra training, missed sessions or rescheduling may involve additional fees under the booking terms. Complete deep-diver knowledge and all four training dives.</p><h2>Time and preparation</h2><p>Two practical days with four boat dives, plus pre-course learning. Check the full boat schedule and preparation deadline.</p><h2>Equipment, inclusions and extra costs</h2><p>The course advertises four boat training dives. Bring suitable scuba equipment and the required computer and safety items or arrange hire; confirm materials, certification, gear and all additional costs on the live booking.</p><h2>What the qualification enables—and its limits</h2><p>Recreational deep diving to a maximum of 40 metres within no-decompression limits, conditions and experience. It does not qualify the diver for planned decompression, caves or unrestricted wreck penetration.</p><h2>Current dates and booking</h2><p><a href=\"https://www.abyss.com.au/courses/deep-diver\">View current course information, dates and booking options</a>. For a scheduled intake, use the matching entry in <strong>Upcoming Sydney Course Dates — Updated Daily</strong> and its exact booking link. Confirm the selected package, language, full session timetable, price and places on the live booking page. If no date is listed, ask Abyss about a suitable intake; absence from the snapshot does not mean the course is unavailable. Do not use old example prices or imply that an overnight snapshot is real-time inventory.</p><h2>Course information sources</h2><p><a href=\"https://www.abyss.com.au/courses/deep-diver\">Abyss course information</a></p>",
+      "sources": [
+        "https://www.abyss.com.au/courses/deep-diver"
+      ]
+    },
+    {
+      "id": null,
+      "expectedName": null,
+      "slug": "padi-dry-suit-diver-sydney",
+      "name": "PADI Dry Suit Diver in Sydney",
+      "categories": [
+        "6ab8b3eb7b6962906797d352"
+      ],
+      "keywords": [
+        "PADI Dry Suit Diver in Sydney",
+        "padi dry suit diver sydney",
+        "Sydney dive courses",
+        "Abyss scuba training",
+        "dry suit",
+        "cold water",
+        "Silfra"
+      ],
+      "text": "<!-- ABYSS_COURSE_KNOWLEDGE_V1 --><h2>What diving goal does this course help with?</h2><p>For cooler-water diving or a trip requiring dry-suit skills. Choose suitable exposure protection for the actual destination; a dry-suit card alone does not satisfy every operator’s experience rules.</p><h2>Before you start</h2><p>Age 10+; Junior Open Water, Open Water or a qualifying entry-level certification. Complete the participant medical questionnaire and obtain physician clearance before in-water training when the form requires it. Under-18s need the required parent or guardian consent. </p><h2>To earn the qualification</h2><p>Certification requires successful knowledge and practical assessments, not attendance alone. Extra training, missed sessions or rescheduling may involve additional fees under the booking terms. Complete knowledge, confined-water skills and two ocean training dives.</p><h2>Time and preparation</h2><p>Approximately 2–4 hours of eLearning before one practical day containing confined water and two ocean dives. Private delivery can be requested.</p><h2>Equipment, inclusions and extra costs</h2><p>Use your suitable dry suit or arrange the separately priced rental add-on. Confirm sizing, undergarments, boots/fins and the complete scuba kit. Dry-suit rental is not automatically included in the course fee.</p><h2>What the qualification enables—and its limits</h2><p>Develops dry-suit use within existing depth/training limits; warmth and dryness are not guaranteed. For Silfra or another destination, confirm its current certification, recent-dive and medical requirements directly.</p><h2>Current dates and booking</h2><p><a href=\"https://www.abyss.com.au/courses/dry-suit-diver\">View current course information, dates and booking options</a>. For a scheduled intake, use the matching entry in <strong>Upcoming Sydney Course Dates — Updated Daily</strong> and its exact booking link. Confirm the selected package, language, full session timetable, price and places on the live booking page. If no date is listed, ask Abyss about a suitable intake; absence from the snapshot does not mean the course is unavailable. Do not use old example prices or imply that an overnight snapshot is real-time inventory.</p><h2>Course information sources</h2><p><a href=\"https://www.abyss.com.au/courses/dry-suit-diver\">Abyss course information</a></p>",
+      "sources": [
+        "https://www.abyss.com.au/courses/dry-suit-diver"
+      ]
+    },
+    {
+      "id": "6ab8bba6171ef8b866f2c208",
+      "expectedName": "PADI Freediver and Mermaid courses in Sydney",
+      "slug": "padi-freediver-sydney",
+      "name": "PADI Freediver in Sydney",
+      "categories": [
+        "6ab8b3eb7b6962906797d352"
+      ],
+      "keywords": [
+        "PADI Freediver in Sydney",
+        "padi freediver sydney",
+        "Sydney dive courses",
+        "Abyss scuba training",
+        "freediving",
+        "breath hold"
+      ],
+      "text": "<!-- ABYSS_COURSE_KNOWLEDGE_V1 --><h2>What diving goal does this course help with?</h2><p>For people wanting a structured entry into breath-hold diving, buddy procedures and rescue skills. Choose Mermaid for tail/monofin performance skills, or scuba Open Water to breathe underwater with scuba equipment.</p><h2>Before you start</h2><p>Age 15+ for the full PADI Freediver course. Swim 200 metres unaided or 300 metres with mask, fins and snorkel. No scuba certification is required. Complete freediving medical screening and obtain clearance when required. Ages 12–14 can enquire about Basic Freediver.</p><h2>To earn the qualification</h2><p>Complete knowledge, confined/open-water skills and supervised performance assessments, including 90-second static apnea, 25-metre dynamic apnea and a 10-metre constant-weight dive. These are certification objectives, not unsupervised practice instructions or guaranteed results.</p><h2>Time and preparation</h2><p>Approximately 4–6 hours of eLearning before two practical days, including confined water and two open-water sessions.</p><h2>Equipment, inclusions and extra costs</h2><p>Abyss supplies the training buoy/line arrangement and weights/weight belt as described. Bring a suitable mask, snorkel, fins and exposure protection or arrange hire. Confirm learning/certification and rental inclusions for the chosen package.</p><h2>What the qualification enables—and its limits</h2><p>Develops entry-level freediving within training and experience limits, with course depth progression normally 10–16 metres. Always use a trained, attentive buddy and appropriate direct supervision; certification never makes solo breath-hold practice safe.</p><h2>Current dates and booking</h2><p><a href=\"https://www.abyss.com.au/courses/padi-freediver-course\">View current course information, dates and booking options</a>. For a scheduled intake, use the matching entry in <strong>Upcoming Sydney Course Dates — Updated Daily</strong> and its exact booking link. Confirm the selected package, language, full session timetable, price and places on the live booking page. If no date is listed, ask Abyss about a suitable intake; absence from the snapshot does not mean the course is unavailable. Do not use old example prices or imply that an overnight snapshot is real-time inventory.</p><h2>Course information sources</h2><p><a href=\"https://www.abyss.com.au/courses/padi-freediver-course\">Abyss course information</a></p>",
+      "sources": [
+        "https://www.abyss.com.au/courses/padi-freediver-course"
+      ]
+    },
+    {
+      "id": null,
+      "expectedName": null,
+      "slug": "padi-mermaid-sydney",
+      "name": "PADI Mermaid in Sydney",
+      "categories": [
+        "6ab8b3eb7b6962906797d352"
+      ],
+      "keywords": [
+        "PADI Mermaid in Sydney",
+        "padi mermaid sydney",
+        "Sydney dive courses",
+        "Abyss scuba training",
+        "mermaid",
+        "monofin",
+        "tail"
+      ],
+      "text": "<!-- ABYSS_COURSE_KNOWLEDGE_V1 --><h2>What diving goal does this course help with?</h2><p>For tail and monofin movement, underwater confidence and mermaid performance skills in confined water. For open-water line diving choose a freediving pathway instead.</p><h2>Before you start</h2><p>Age 10+; able to swim 50 metres and float for five minutes. No scuba qualification is required. Complete medical screening and parent/guardian paperwork where applicable.</p><h2>To earn the qualification</h2><p>Complete knowledge and the required confined-water, buddy and rescue skills. Certification depends on demonstrated competence.</p><h2>Time and preparation</h2><p>Approximately 3–4 hours of eLearning before one practical day with two confined-water sessions.</p><h2>Equipment, inclusions and extra costs</h2><p>The course advertises use of a mermaid tail and monofin. Confirm sizing, other swim items, learning materials and certification in the chosen booking.</p><h2>What the qualification enables—and its limits</h2><p>The Mermaid course is confined-water training, not scuba certification or the Advanced Mermaid open-water course. In-water breath-hold activity requires an attentive trained buddy and appropriate supervision.</p><h2>Current dates and booking</h2><p><a href=\"https://www.abyss.com.au/courses/how-to-become-a-mermaid\">View current course information, dates and booking options</a>. For a scheduled intake, use the matching entry in <strong>Upcoming Sydney Course Dates — Updated Daily</strong> and its exact booking link. Confirm the selected package, language, full session timetable, price and places on the live booking page. If no date is listed, ask Abyss about a suitable intake; absence from the snapshot does not mean the course is unavailable. Do not use old example prices or imply that an overnight snapshot is real-time inventory.</p><h2>Course information sources</h2><p><a href=\"https://www.abyss.com.au/courses/how-to-become-a-mermaid\">Abyss course information</a></p>",
+      "sources": [
+        "https://www.abyss.com.au/courses/how-to-become-a-mermaid"
+      ]
+    },
+    {
+      "id": null,
+      "expectedName": null,
+      "slug": "padi-advanced-freediver-sydney",
+      "name": "PADI Advanced Freediver in Sydney",
+      "categories": [
+        "6ab8b3eb7b6962906797d352"
+      ],
+      "keywords": [
+        "PADI Advanced Freediver in Sydney",
+        "padi advanced freediver sydney",
+        "Sydney dive courses",
+        "Abyss scuba training",
+        "advanced freediving",
+        "apnea"
+      ],
+      "text": "<!-- ABYSS_COURSE_KNOWLEDGE_V1 --><h2>What diving goal does this course help with?</h2><p>For certified freedivers ready for more demanding technique, line-diving, safety and rescue training. Start with Freediver if not yet qualified; build experience first if current technique needs consolidation.</p><h2>Before you start</h2><p>Age 15+; PADI Freediver or a qualifying certification from another recognised freediving organisation, with equivalency checked by Abyss. Complete medical screening and clearance when required.</p><h2>To earn the qualification</h2><p>Complete all knowledge, safety, rescue and performance requirements. Adult objectives are 2 minutes 30 seconds static, 50 metres dynamic and 20 metres constant weight; ages 15–17 use modified objectives of 2 minutes, 40 metres and 15 metres. These are supervised assessment objectives, not guaranteed outcomes.</p><h2>Time and preparation</h2><p>Knowledge development, confined water and at least two open-water sessions. Abyss does not publish a fixed duration; arrange the full schedule with the instructor.</p><h2>Equipment, inclusions and extra costs</h2><p>Confirm the current quote, eLearning, certification, transport and all gear inclusions before booking. The public page does not specify a rental package.</p><h2>What the qualification enables—and its limits</h2><p>Adult course progression is in the 16–24 metre range; under-18s have a 20-metre maximum. Individual readiness and conditions govern actual depth. Never practise in-water breath holds alone.</p><h2>Current dates and booking</h2><p><a href=\"https://www.abyss.com.au/courses/padi-advanced-freediver\">View current course information, dates and booking options</a>. For a scheduled intake, use the matching entry in <strong>Upcoming Sydney Course Dates — Updated Daily</strong> and its exact booking link. Confirm the selected package, language, full session timetable, price and places on the live booking page. If no date is listed, ask Abyss about a suitable intake; absence from the snapshot does not mean the course is unavailable. Do not use old example prices or imply that an overnight snapshot is real-time inventory.</p><h2>Course information sources</h2><p><a href=\"https://www.abyss.com.au/courses/padi-advanced-freediver\">Abyss course information</a></p>",
+      "sources": [
+        "https://www.abyss.com.au/courses/padi-advanced-freediver"
+      ]
+    },
+    {
+      "id": "6ab8bb8b7b6962906797d35a",
+      "expectedName": "Avelo Dive Course and Avelo Essentials in Sydney",
+      "slug": "avelo-essentials-sydney",
+      "name": "Avelo Dive Course and Avelo Essentials in Sydney",
+      "categories": [
+        "6ab8b3eb7b6962906797d352"
+      ],
+      "keywords": [
+        "Avelo Dive Course and Avelo Essentials in Sydney",
+        "avelo essentials sydney",
+        "Sydney dive courses",
+        "Abyss scuba training",
+        "Avelo",
+        "Essentials",
+        "buoyancy system"
+      ],
+      "text": "<!-- ABYSS_COURSE_KNOWLEDGE_V1 --><h2>What diving goal does this course help with?</h2><p>For certified scuba divers wanting to learn the Avelo buoyancy system. It is equipment-specific training, not a replacement for beginner scuba certification.</p><h2>Before you start</h2><p>Age 13+; Open Water or an accepted equivalent. Recent diving within the past 12 months, or a suitable refresher, is required by the current course page. Complete the participant medical questionnaire and obtain physician clearance before in-water training when the form requires it. Under-18s need the required parent or guardian consent. </p><h2>To earn the qualification</h2><p>Complete Avelo eLearning and all instructor-assessed Avelo system and diving skills. Complete assigned training within the provider’s stated 90-day window.</p><h2>Time and preparation</h2><p>Approximately 1–2 hours of eLearning and a practical day with two dives. Confirm whether the booking is Avelo Essentials or a different Avelo package.</p><h2>Equipment, inclusions and extra costs</h2><p>The Avelo system is supplied for training. Bring or arrange mask, fins, boots and suitable exposure protection; confirm other gear and any additional hire costs.</p><h2>What the qualification enables—and its limits</h2><p>Avelo Essentials develops system skills for daylight recreational diving to 18 metres, within prior certification and experience. It is an Avelo qualification, not a PADI specialty or automatic credit toward Master Scuba Diver.</p><h2>Current dates and booking</h2><p><a href=\"https://www.abyss.com.au/courses/avelo-dive-course\">View current course information, dates and booking options</a>. For a scheduled intake, use the matching entry in <strong>Upcoming Sydney Course Dates — Updated Daily</strong> and its exact booking link. Confirm the selected package, language, full session timetable, price and places on the live booking page. If no date is listed, ask Abyss about a suitable intake; absence from the snapshot does not mean the course is unavailable. Do not use old example prices or imply that an overnight snapshot is real-time inventory.</p><h2>Course information sources</h2><p><a href=\"https://www.abyss.com.au/courses/avelo-dive-course\">Abyss course information</a></p>",
+      "sources": [
+        "https://www.abyss.com.au/courses/avelo-dive-course"
+      ]
+    },
+    {
+      "id": "6ab8b8967b6962906797d358",
+      "expectedName": "PADI Open Water in Sydney: beginners, juniors and referrals",
+      "slug": "padi-open-water-sydney",
+      "name": "PADI Open Water in Sydney: beginners, juniors and referrals",
+      "categories": [
+        "6ab8b3eb7b6962906797d352"
+      ],
+      "keywords": [
+        "PADI Open Water in Sydney: beginners, juniors and referrals",
+        "padi open water sydney",
+        "Sydney dive courses",
+        "Abyss scuba training",
+        "learn to dive",
+        "beginner",
+        "junior",
+        "referral"
+      ],
+      "text": "<!-- ABYSS_COURSE_KNOWLEDGE_V1 --><h2>What diving goal does this course help with?</h2><p>For people seeking their first full scuba certification. Already-certified divers normally need a refresher, guided experience or continuing education rather than another beginner course.</p><h2>Before you start</h2><p>Standard Abyss group courses are for ages 13+ subject to fit/maturity requirements. Ages 10–12 use the children’s individual pathway. No previous diving qualification is needed. Be able to swim 200 metres and float for 10 minutes; discuss any accepted alternative swim assessment with Abyss. Complete the participant medical questionnaire and obtain physician clearance before in-water training when the form requires it. Under-18s need the required parent or guardian consent. </p><h2>To earn the qualification</h2><p>Certification requires successful knowledge and practical assessments, not attendance alone. Extra training, missed sessions or rescheduling may involve additional fees under the booking terms. Complete knowledge, confined-water skills and four open-water training dives.</p><h2>Time and preparation</h2><p>Allow approximately 10–12 hours of eLearning before the standard two practical days. Children’s, premium/private and referral formats have their own schedule; check the chosen product.</p><h2>Equipment, inclusions and extra costs</h2><p>The standard course page includes eLearning, training equipment, pool and four ocean dives, certification arrangements, student diving insurance and transport between training locations. Personal items and optional upgrades depend on the booking. Do not mix a premium package price or inclusions into the standard course.</p><h2>What the qualification enables—and its limits</h2><p>Adult Open Water training supports buddy diving to 18 metres in suitable conditions and within experience. Ages 10–11 have a 12-metre limit with a certified parent/guardian or PADI professional; ages 12–14 dive with a certified adult and applicable junior limits. A qualification does not guarantee readiness for every site.</p><h2>Children and referrals</h2><p>Ages 10–12 use the individual children’s course; ages 13+ may join a standard group if Abyss’s fit and maturity requirements are met. Referral students must supply the completed training record: Abyss currently states validity within 12 months for PADI and 6 months for SSI/SDI referrals. Referral completion normally involves four ocean dives over two days. Confirm accepted documents, age, remaining training and equipment before booking.</p><h2>Current dates and booking</h2><p><a href=\"https://www.abyss.com.au/scuba-diving-course\">View current course information, dates and booking options</a>. For a scheduled intake, use the matching entry in <strong>Upcoming Sydney Course Dates — Updated Daily</strong> and its exact booking link. Confirm the selected package, language, full session timetable, price and places on the live booking page. If no date is listed, ask Abyss about a suitable intake; absence from the snapshot does not mean the course is unavailable. Do not use old example prices or imply that an overnight snapshot is real-time inventory.</p><h2>Course information sources</h2><p><a href=\"https://www.abyss.com.au/scuba-diving-course\">Abyss pathway information</a></p>",
+      "sources": [
+        "https://www.abyss.com.au/scuba-diving-course"
+      ]
+    },
+    {
+      "id": "6ab8bb9349f1bc2c6aefc9ad",
+      "expectedName": "PADI Divemaster course and Abyss internship",
+      "slug": "padi-divemaster-course-sydney",
+      "name": "PADI Divemaster course in Sydney",
+      "categories": [
+        "6ab8b3eb7b6962906797d353"
+      ],
+      "keywords": [
+        "PADI Divemaster course in Sydney",
+        "padi divemaster course sydney",
+        "Sydney dive courses",
+        "Abyss scuba training",
+        "Divemaster",
+        "40 start",
+        "60 certification",
+        "Chinese"
+      ],
+      "text": "<!-- ABYSS_COURSE_KNOWLEDGE_V1 --><h2>What diving goal does this course help with?</h2><p>For experienced Rescue Divers wanting the focused professional certification route. Divers needing prerequisite courses, more logged dives or extended mentoring should compare the separate Abyss Divemaster Internship.</p><h2>Before you start</h2><p>For the standard course: age 18+, Advanced Open Water and Rescue Diver or accepted equivalents, 40 logged dives, qualifying CPR/First Aid within 24 months, and physician-signed medical within 12 months. Send evidence for equivalency review before booking.</p><h2>To earn the qualification</h2><p>At least 60 logged dives plus all knowledge, stamina, demonstration, rescue and practical leadership assessments. Professional application and active-status requirements also apply.</p><h2>Time and preparation</h2><p>Approximately 14 days full-time or five weekends over up to eight weeks, plus required study. The actual intake’s session schedule and language govern attendance.</p><h2>Equipment, inclusions and extra costs</h2><p>Confirm the standard-course quote separately from internship inclusions. PADI fees, professional insurance, medical, core personal equipment, safety items, required materials, first-aid renewal, accommodation and meals may be additional.</p><h2>What the qualification enables—and its limits</h2><p>Professional supervision of certified divers and instructor assistance within PADI authorisations and local requirements. It does not make you a scuba instructor or guarantee a job or work rights.</p><h2>Current dates and booking</h2><p><a href=\"https://www.abyss.com.au/courses/padi-divemaster-certification-and-training\">View current course information, dates and booking options</a>. For a scheduled intake, use the matching entry in <strong>Upcoming Sydney Course Dates — Updated Daily</strong> and its exact booking link. Confirm the selected package, language, full session timetable, price and places on the live booking page. If no date is listed, ask Abyss about a suitable intake; absence from the snapshot does not mean the course is unavailable. Do not use old example prices or imply that an overnight snapshot is real-time inventory.</p><h2>Course information sources</h2><p><a href=\"https://www.abyss.com.au/courses/padi-divemaster-certification-and-training\">Abyss course information</a></p>",
+      "sources": [
+        "https://www.abyss.com.au/courses/padi-divemaster-certification-and-training"
+      ]
+    },
+    {
+      "id": null,
+      "expectedName": null,
+      "slug": "abyss-divemaster-internship",
+      "name": "Abyss Divemaster Internship",
+      "categories": [
+        "6ab8b3eb7b6962906797d353"
+      ],
+      "keywords": [
+        "Abyss Divemaster Internship",
+        "abyss divemaster internship",
+        "Sydney dive courses",
+        "Abyss scuba training",
+        "internship",
+        "20 dives",
+        "CDC",
+        "60 dives"
+      ],
+      "text": "<!-- ABYSS_COURSE_KNOWLEDGE_V1 --><h2>What diving goal does this course help with?</h2><p>For divers wanting extended mentoring, prerequisite training, frequent diving and dive-centre experience on the way to professional qualification. Choose the standard Divemaster course if already prepared and wanting a shorter direct route.</p><h2>Before you start</h2><p>Age 18+ for professional certification. Discuss your present certifications and logged dives before enrolment. Under Abyss’s approved Career Development Centre mentoring pathway, formal Divemaster training may begin at 20 logged dives; 60 are still required to certify. CPR and First Aid must be current within 24 months and the physician-signed medical within 12 months.</p><h2>To earn the qualification</h2><p>Complete Advanced Open Water, Rescue, qualifying first aid and all Divemaster assessments and logged-dive requirements. The CDC entry pathway does not reduce the 60-dive certification requirement.</p><h2>Time and preparation</h2><p>Approximately nine weeks full-time or six months part-time; your starting qualifications and study/availability affect the individual plan.</p><h2>Equipment, inclusions and extra costs</h2><p>The current internship describes included prerequisite/specialty training, mentoring, unlimited diving under program arrangements and specified tank/weight/air benefits. Confirm the written package’s exact courses, rental days and PADI fees. Personal gear, safety equipment, medical, insurance, accommodation and living costs are separate. Existing qualifications can change the required training and personalised quote—do not insist on paying to repeat completed courses.</p><h2>What the qualification enables—and its limits</h2><p>A route to PADI Divemaster after all requirements are met, not automatic certification, guaranteed employment or immigration/work permission. Internship benefits must not be applied to a standard-course calendar listing.</p><h2>Current dates and booking</h2><p><a href=\"https://www.abyss.com.au/divemaster-internship\">View current course information, dates and booking options</a>. For a scheduled intake, use the matching entry in <strong>Upcoming Sydney Course Dates — Updated Daily</strong> and its exact booking link. Confirm the selected package, language, full session timetable, price and places on the live booking page. If no date is listed, ask Abyss about a suitable intake; absence from the snapshot does not mean the course is unavailable. Do not use old example prices or imply that an overnight snapshot is real-time inventory.</p><h2>Course information sources</h2><p><a href=\"https://www.abyss.com.au/divemaster-internship\">Abyss pathway information</a></p>",
+      "sources": [
+        "https://www.abyss.com.au/divemaster-internship"
+      ]
+    },
+    {
+      "id": null,
+      "expectedName": null,
+      "slug": "padi-junior-divemaster-sydney",
+      "name": "PADI Junior Divemaster in Sydney",
+      "categories": [
+        "6ab8b3eb7b6962906797d353"
+      ],
+      "keywords": [
+        "PADI Junior Divemaster in Sydney",
+        "padi junior divemaster sydney",
+        "Sydney dive courses",
+        "Abyss scuba training",
+        "junior divemaster",
+        "15 to 17"
+      ],
+      "text": "<!-- ABYSS_COURSE_KNOWLEDGE_V1 --><h2>What diving goal does this course help with?</h2><p>For divers aged 15–17 seeking skills and leadership development before they are old enough for full professional Divemaster certification.</p><h2>Before you start</h2><p>Age 15–17; Advanced Open Water and Rescue Diver, at least 20 logged dives and medical clearance. Ask Abyss to assess any non-PADI qualifications and first-aid paperwork.</p><h2>To earn the qualification</h2><p>Complete the specified Junior Divemaster knowledge, water skills, projects and assessments. Turning 18 does not automatically convert this qualification to full Divemaster; additional requirements apply.</p><h2>Time and preparation</h2><p>eLearning plus pool/open-water skills and projects. Contact Abyss for a personalised schedule and preparation list.</p><h2>Equipment, inclusions and extra costs</h2><p>The current page is contact-only. Request the complete price, materials, equipment, certification and extra-cost breakdown before booking.</p><h2>What the qualification enables—and its limits</h2><p>A junior leadership-development program, not authority to work as a full PADI Divemaster or independently supervise students.</p><h2>Current dates and booking</h2><p><a href=\"https://www.abyss.com.au/courses/padi-junior-divemaster-course\">View current course information, dates and booking options</a>. For a scheduled intake, use the matching entry in <strong>Upcoming Sydney Course Dates — Updated Daily</strong> and its exact booking link. Confirm the selected package, language, full session timetable, price and places on the live booking page. If no date is listed, ask Abyss about a suitable intake; absence from the snapshot does not mean the course is unavailable. Do not use old example prices or imply that an overnight snapshot is real-time inventory.</p><h2>Course information sources</h2><p><a href=\"https://www.abyss.com.au/courses/padi-junior-divemaster-course\">Abyss course information</a></p>",
+      "sources": [
+        "https://www.abyss.com.au/courses/padi-junior-divemaster-course"
+      ]
+    },
+    {
+      "id": "6ab8bbb549f1bc2c6aefc9ae",
+      "expectedName": "PADI IDC, OWSI and MSDT Instructor internships",
+      "slug": "padi-idc-sydney",
+      "name": "PADI Instructor Development Course (IDC) in Sydney",
+      "categories": [
+        "6ab8b3eb7b6962906797d353"
+      ],
+      "keywords": [
+        "PADI Instructor Development Course (IDC) in Sydney",
+        "padi idc sydney",
+        "Sydney dive courses",
+        "Abyss scuba training",
+        "IDC",
+        "OWSI",
+        "60 IDC",
+        "100 IE"
+      ],
+      "text": "<!-- ABYSS_COURSE_KNOWLEDGE_V1 --><h2>What diving goal does this course help with?</h2><p>For qualified dive leaders wanting the focused route to scuba instructor training. Choose the Instructor Internship when broader teaching practice and dive-centre experience are the goal.</p><h2>Before you start</h2><p>Age 18+; PADI Divemaster, Assistant Instructor or an accepted qualifying leadership rating; certified diver for at least six months; 60 logged dives; CPR/First Aid within 24 months; physician-signed medical within 12 months.</p><h2>To earn the qualification</h2><p>Complete the IDC, reach 100 logged dives for the Instructor Examination, successfully complete the IE and applications, and hold the required EFR Instructor rating. EFR Instructor can be completed during the pathway. Active teaching status and relevant insurance are required before teaching.</p><h2>Time and preparation</h2><p>Online preparation followed by approximately seven in-person IDC days. Allow separate time for the IE and any additional specialty or internship training.</p><h2>Equipment, inclusions and extra costs</h2><p>The program describes EFR Instructor training, workshops, tank hire/air fills and professional support. PADI IE/application fees, required official materials, insurance, medical, personal gear, accommodation, meals and travel are not automatically included. Confirm the complete written quote.</p><h2>What the qualification enables—and its limits</h2><p>Prepares candidates for instructor assessment. Completing the seven-day IDC alone is not instructor certification, a guaranteed IE pass or guaranteed employment. MSDT preparation is a separate step.</p><h2>Current dates and booking</h2><p><a href=\"https://www.abyss.com.au/courses/open-water-scuba-diving-instructor-course\">View current course information, dates and booking options</a>. For a scheduled intake, use the matching entry in <strong>Upcoming Sydney Course Dates — Updated Daily</strong> and its exact booking link. Confirm the selected package, language, full session timetable, price and places on the live booking page. If no date is listed, ask Abyss about a suitable intake; absence from the snapshot does not mean the course is unavailable. Do not use old example prices or imply that an overnight snapshot is real-time inventory.</p><h2>Course information sources</h2><p><a href=\"https://www.abyss.com.au/courses/open-water-scuba-diving-instructor-course\">Abyss course information</a></p>",
+      "sources": [
+        "https://www.abyss.com.au/courses/open-water-scuba-diving-instructor-course"
+      ]
+    },
+    {
+      "id": null,
+      "expectedName": null,
+      "slug": "abyss-instructor-internship",
+      "name": "Abyss Dive Instructor Internship",
+      "categories": [
+        "6ab8b3eb7b6962906797d353"
+      ],
+      "keywords": [
+        "Abyss Dive Instructor Internship",
+        "abyss instructor internship",
+        "Sydney dive courses",
+        "Abyss scuba training",
+        "instructor internship",
+        "OWSI internship",
+        "MSDT internship"
+      ],
+      "text": "<!-- ABYSS_COURSE_KNOWLEDGE_V1 --><h2>What diving goal does this course help with?</h2><p>For prospective instructors wanting mentored teaching experience, shop immersion and career preparation alongside instructor training. A prepared Divemaster wanting only the core training should compare the standard IDC.</p><h2>Before you start</h2><p>Agree a pathway from your current rating. Before IDC: age 18+, qualifying leadership rating, certified six months, 60 logged dives, CPR/First Aid within 24 months and physician medical within 12 months.</p><h2>To earn the qualification</h2><p>Meet IDC and IE requirements, including 100 dives for the IE and EFR Instructor. Instructor internship practice does not replace formal assessment or active teaching status. For MSDT, five qualifying specialty instructor ratings and at least 25 qualifying student certifications are required.</p><h2>Time and preparation</h2><p>The OWSI internship is advertised around six weeks, while broader preparation may need eight to ten weeks; the OWSI plus MSDT pathway is around ten weeks. Confirm an individual start/end plan based on experience and available real students.</p><h2>Equipment, inclusions and extra costs</h2><p>Obtain the internship-specific written inclusions for training, materials, PADI fees, experience and mentoring. They differ from the standard IDC. Budget separately for medical, insurance, personal kit, accommodation, living and travel costs unless expressly included.</p><h2>What the qualification enables—and its limits</h2><p>Builds teaching and professional experience after certification. The 25 MSDT certifications are student certifications, not 25 complete courses, and must be earned under applicable PADI rules. No job or visa outcome is guaranteed.</p><h2>Current dates and booking</h2><p><a href=\"https://www.abyss.com.au/dive-instructor-internship\">View current course information, dates and booking options</a>. For a scheduled intake, use the matching entry in <strong>Upcoming Sydney Course Dates — Updated Daily</strong> and its exact booking link. Confirm the selected package, language, full session timetable, price and places on the live booking page. If no date is listed, ask Abyss about a suitable intake; absence from the snapshot does not mean the course is unavailable. Do not use old example prices or imply that an overnight snapshot is real-time inventory.</p><h2>Course information sources</h2><p><a href=\"https://www.abyss.com.au/dive-instructor-internship\">Abyss pathway information</a></p>",
+      "sources": [
+        "https://www.abyss.com.au/dive-instructor-internship"
+      ]
+    },
+    {
+      "id": null,
+      "expectedName": null,
+      "slug": "padi-msdt-preparation-sydney",
+      "name": "PADI Master Scuba Diver Trainer preparation",
+      "categories": [
+        "6ab8b3eb7b6962906797d353"
+      ],
+      "keywords": [
+        "PADI Master Scuba Diver Trainer preparation",
+        "padi msdt preparation sydney",
+        "Sydney dive courses",
+        "Abyss scuba training",
+        "MSDT",
+        "25 certifications",
+        "five instructor specialties"
+      ],
+      "text": "<!-- ABYSS_COURSE_KNOWLEDGE_V1 --><h2>What diving goal does this course help with?</h2><p>For PADI instructors wanting to teach a broader range of specialties. Recreational Master Scuba Diver is a different rating and does not qualify someone to teach.</p><h2>Before you start</h2><p>Hold the appropriate PADI instructor status or arrange the permitted preparation pathway with the Course Director. Confirm specialty-specific experience and instructor prerequisites before enrolment.</p><h2>To earn the qualification</h2><p>MSDT requires at least five qualifying PADI Specialty Instructor ratings and at least 25 qualifying diver certifications, plus PADI application/status requirements. A preparation course alone does not award MSDT.</p><h2>Time and preparation</h2><p>Abyss runs specialty instructor/MSDT preparation alongside IDC programs, with some work between IDC and IE. Confirm the actual training days. Teaching experience and accumulating qualifying certifications require additional time.</p><h2>Equipment, inclusions and extra costs</h2><p>Confirm which specialty instructor courses, dives, materials and application fees the selected quote covers. Do not transfer internship fee inclusions to a standalone preparation booking.</p><h2>What the qualification enables—and its limits</h2><p>Broadens the specialties an appropriately authorised instructor may teach; actual teaching privileges depend on the ratings awarded and current PADI status.</p><h2>Current dates and booking</h2><p><a href=\"https://www.abyss.com.au/courses/master-scuba-diver-trainer\">View current course information, dates and booking options</a>. For a scheduled intake, use the matching entry in <strong>Upcoming Sydney Course Dates — Updated Daily</strong> and its exact booking link. Confirm the selected package, language, full session timetable, price and places on the live booking page. If no date is listed, ask Abyss about a suitable intake; absence from the snapshot does not mean the course is unavailable. Do not use old example prices or imply that an overnight snapshot is real-time inventory.</p><h2>Course information sources</h2><p><a href=\"https://www.abyss.com.au/courses/master-scuba-diver-trainer\">Abyss course information</a></p>",
+      "sources": [
+        "https://www.abyss.com.au/courses/master-scuba-diver-trainer"
+      ]
+    },
+    {
+      "id": null,
+      "expectedName": null,
+      "slug": "efr-instructor-sydney",
+      "name": "Emergency First Response Instructor in Sydney",
+      "categories": [
+        "6ab8b3eb7b6962906797d353"
+      ],
+      "keywords": [
+        "Emergency First Response Instructor in Sydney",
+        "efr instructor sydney",
+        "Sydney dive courses",
+        "Abyss scuba training",
+        "EFR Instructor",
+        "teach first aid"
+      ],
+      "text": "<!-- ABYSS_COURSE_KNOWLEDGE_V1 --><h2>What diving goal does this course help with?</h2><p>For people wanting to teach CPR/first aid, including candidates meeting the PADI Instructor requirement. This is different from the participant-level first-aid course.</p><h2>Before you start</h2><p>Age 18+ and current qualifying EFR Primary/Secondary Care or CPR/First Aid training within 24 months. Confirm required Care for Children preparation and accepted equivalents with Abyss.</p><h2>To earn the qualification</h2><p>Complete instructor knowledge, teaching presentations and practical assessments, then required application and status processes.</p><h2>Time and preparation</h2><p>Contact Abyss for current dates, preparation and duration; it can be included in the IDC pathway.</p><h2>Equipment, inclusions and extra costs</h2><p>Confirm instructor materials and application fees in the relevant quote. Being included as training within an IDC does not imply every external fee is included.</p><h2>What the qualification enables—and its limits</h2><p>Allows authorised EFR teaching within the ratings/status awarded; it does not itself qualify someone as a scuba instructor.</p><h2>Current dates and booking</h2><p><a href=\"https://www.abyss.com.au/courses/emergency-first-response-instructor\">View current course information, dates and booking options</a>. For a scheduled intake, use the matching entry in <strong>Upcoming Sydney Course Dates — Updated Daily</strong> and its exact booking link. Confirm the selected package, language, full session timetable, price and places on the live booking page. If no date is listed, ask Abyss about a suitable intake; absence from the snapshot does not mean the course is unavailable. Do not use old example prices or imply that an overnight snapshot is real-time inventory.</p><h2>Course information sources</h2><p><a href=\"https://www.abyss.com.au/courses/emergency-first-response-instructor\">Abyss course information</a></p>",
+      "sources": [
+        "https://www.abyss.com.au/courses/emergency-first-response-instructor"
+      ]
+    },
+    {
+      "id": null,
+      "expectedName": null,
+      "slug": "padi-idc-staff-instructor-sydney",
+      "name": "PADI IDC Staff Instructor in Sydney",
+      "categories": [
+        "6ab8b3eb7b6962906797d353"
+      ],
+      "keywords": [
+        "PADI IDC Staff Instructor in Sydney",
+        "padi idc staff instructor sydney",
+        "Sydney dive courses",
+        "Abyss scuba training",
+        "IDC Staff",
+        "instructor development"
+      ],
+      "text": "<!-- ABYSS_COURSE_KNOWLEDGE_V1 --><h2>What diving goal does this course help with?</h2><p>For experienced instructors who want to assist with instructor development and develop evaluation skills. New instructors should first build teaching experience and the required ratings.</p><h2>Before you start</h2><p>Abyss lists PADI Master Scuba Diver Trainer and EFR Instructor status. The Course Director must verify current teaching status, experience and remaining admission requirements.</p><h2>To earn the qualification</h2><p>Complete knowledge, evaluation calibration and the required IDC audit/teaching assessments under the Course Director.</p><h2>Time and preparation</h2><p>Abyss describes online evening pre-assessment before auditing a complete IDC. Confirm every pre-assessment and IDC attendance date with the Course Director.</p><h2>Equipment, inclusions and extra costs</h2><p>Request a quote covering tuition, staff materials, required equipment and PADI application fees; do not assume these are part of a previous IDC booking.</p><h2>What the qualification enables—and its limits</h2><p>Develops instructor-development assistance privileges within current PADI standards. It is not the Course Director rating.</p><h2>Current dates and booking</h2><p><a href=\"https://www.abyss.com.au/courses/idc-staff-instructor\">View current course information, dates and booking options</a>. For a scheduled intake, use the matching entry in <strong>Upcoming Sydney Course Dates — Updated Daily</strong> and its exact booking link. Confirm the selected package, language, full session timetable, price and places on the live booking page. If no date is listed, ask Abyss about a suitable intake; absence from the snapshot does not mean the course is unavailable. Do not use old example prices or imply that an overnight snapshot is real-time inventory.</p><h2>Course information sources</h2><p><a href=\"https://www.abyss.com.au/courses/idc-staff-instructor\">Abyss course information</a></p>",
+      "sources": [
+        "https://www.abyss.com.au/courses/idc-staff-instructor"
+      ]
+    },
+    {
+      "id": null,
+      "expectedName": null,
+      "slug": "padi-underwater-navigator-sydney",
+      "name": "PADI Underwater Navigator in Sydney",
+      "categories": [
+        "6ab8b3eb7b6962906797d352"
+      ],
+      "keywords": [
+        "PADI Underwater Navigator in Sydney",
+        "padi underwater navigator sydney",
+        "Sydney dive courses",
+        "Abyss scuba training",
+        "navigation",
+        "compass"
+      ],
+      "text": "<!-- ABYSS_COURSE_KNOWLEDGE_V1 --><h2>What diving goal does this course help with?</h2><p>For divers wanting better compass and natural navigation, route planning and confidence finding their way with a buddy. A guided local dive may be enough if the only need is orientation to one new site.</p><h2>Before you start</h2><p>Age 10+; Junior Open Water, Open Water or accepted equivalent. Complete the participant medical questionnaire and obtain physician clearance before in-water training when the form requires it. Under-18s need the required parent or guardian consent. </p><h2>To earn the qualification</h2><p>Certification requires successful knowledge and practical assessments, not attendance alone. Extra training, missed sessions or rescheduling may involve additional fees under the booking terms. Complete knowledge and three specialty dives. A prior qualifying Navigation Adventure Dive may count after instructor verification.</p><h2>Time and preparation</h2><p>Approximately 2–4 hours of eLearning, then three ocean training dives on one practical day.</p><h2>Equipment, inclusions and extra costs</h2><p>Arrange a suitable compass and complete scuba kit. Equipment hire is additional when needed; book for the actual one-day practical schedule and confirm materials/certification inclusions.</p><h2>What the qualification enables—and its limits</h2><p>Improves navigation within existing depth and experience limits; does not guarantee never getting lost or qualify the diver to lead professionally.</p><h2>Current dates and booking</h2><p><a href=\"https://www.abyss.com.au/courses/underwater-navigator\">View current course information, dates and booking options</a>. For a scheduled intake, use the matching entry in <strong>Upcoming Sydney Course Dates — Updated Daily</strong> and its exact booking link. Confirm the selected package, language, full session timetable, price and places on the live booking page. If no date is listed, ask Abyss about a suitable intake; absence from the snapshot does not mean the course is unavailable. Do not use old example prices or imply that an overnight snapshot is real-time inventory.</p><h2>Course information sources</h2><p><a href=\"https://www.abyss.com.au/courses/underwater-navigator\">Abyss course information</a></p>",
+      "sources": [
+        "https://www.abyss.com.au/courses/underwater-navigator"
+      ]
+    },
+    {
+      "id": null,
+      "expectedName": null,
+      "slug": "padi-equipment-specialist-sydney",
+      "name": "PADI Equipment Specialist in Sydney",
+      "categories": [
+        "6ab8b3eb7b6962906797d352"
+      ],
+      "keywords": [
+        "PADI Equipment Specialist in Sydney",
+        "padi equipment specialist sydney",
+        "Sydney dive courses",
+        "Abyss scuba training",
+        "equipment care",
+        "gear",
+        "maintenance"
+      ],
+      "text": "<!-- ABYSS_COURSE_KNOWLEDGE_V1 --><h2>What diving goal does this course help with?</h2><p>For divers wanting to understand, care for and check their equipment and handle minor field issues. Use a qualified service technician for servicing or repairs beyond user maintenance.</p><h2>Before you start</h2><p>Abyss lists age 10+ and Open Water or an accepted equivalent. Ask the team to check any other certification; no training dives are required.</p><h2>To earn the qualification</h2><p>Complete knowledge and instructor-led practical equipment skills.</p><h2>Time and preparation</h2><p>Approximately 2–4 hours of eLearning and a one-day hands-on course.</p><h2>Equipment, inclusions and extra costs</h2><p>Ask which learning materials, certification and demonstration equipment are included; bring your own equipment only as requested. Additional purchases and servicing are not part of the course unless specified.</p><h2>What the qualification enables—and its limits</h2><p>Develops user-level equipment knowledge. It is not a technician qualification and does not authorise internal regulator servicing or other manufacturer-controlled repairs.</p><h2>Current dates and booking</h2><p><a href=\"https://www.abyss.com.au/courses/equipment-specialist\">View current course information, dates and booking options</a>. For a scheduled intake, use the matching entry in <strong>Upcoming Sydney Course Dates — Updated Daily</strong> and its exact booking link. Confirm the selected package, language, full session timetable, price and places on the live booking page. If no date is listed, ask Abyss about a suitable intake; absence from the snapshot does not mean the course is unavailable. Do not use old example prices or imply that an overnight snapshot is real-time inventory.</p><h2>Course information sources</h2><p><a href=\"https://www.abyss.com.au/courses/equipment-specialist\">Abyss course information</a></p>",
+      "sources": [
+        "https://www.abyss.com.au/courses/equipment-specialist"
+      ]
+    },
+    {
+      "id": null,
+      "expectedName": null,
+      "slug": "padi-sidemount-diver-sydney",
+      "name": "PADI Sidemount Diver in Sydney",
+      "categories": [
+        "6ab8b3eb7b6962906797d352"
+      ],
+      "keywords": [
+        "PADI Sidemount Diver in Sydney",
+        "padi sidemount diver sydney",
+        "Sydney dive courses",
+        "Abyss scuba training",
+        "sidemount",
+        "configuration"
+      ],
+      "text": "<!-- ABYSS_COURSE_KNOWLEDGE_V1 --><h2>What diving goal does this course help with?</h2><p>For certified divers wanting to learn a recreational sidemount configuration and its equipment/gas-management skills. A conventional buoyancy course may better suit someone whose goal is simply more stable trim in backmount.</p><h2>Before you start</h2><p>Age 15+; Open Water or a recognised qualifying equivalent. Complete the participant medical questionnaire and obtain physician clearance before in-water training when the form requires it. Under-18s need the required parent or guardian consent. </p><h2>To earn the qualification</h2><p>Certification requires successful knowledge and practical assessments, not attendance alone. Extra training, missed sessions or rescheduling may involve additional fees under the booking terms. Complete the required knowledge, controlled-water work and three open-water dives.</p><h2>Time and preparation</h2><p>Two practical days, with assigned eLearning completed beforehand.</p><h2>Equipment, inclusions and extra costs</h2><p>Confirm harness, buoyancy system, regulators, rigging, cylinders and personal equipment with the instructor. The public page does not specify which sidemount equipment is included; obtain a complete hire/purchase quote before booking.</p><h2>What the qualification enables—and its limits</h2><p>Recreational sidemount equipment use within existing depth and experience limits. It does not provide cave, wreck penetration, planned-decompression or other technical qualifications.</p><h2>Current dates and booking</h2><p><a href=\"https://www.abyss.com.au/courses/sidemount-diver\">View current course information, dates and booking options</a>. For a scheduled intake, use the matching entry in <strong>Upcoming Sydney Course Dates — Updated Daily</strong> and its exact booking link. Confirm the selected package, language, full session timetable, price and places on the live booking page. If no date is listed, ask Abyss about a suitable intake; absence from the snapshot does not mean the course is unavailable. Do not use old example prices or imply that an overnight snapshot is real-time inventory.</p><h2>Course information sources</h2><p><a href=\"https://www.abyss.com.au/courses/sidemount-diver\">Abyss course information</a></p>",
+      "sources": [
+        "https://www.abyss.com.au/courses/sidemount-diver"
+      ]
+    },
+    {
+      "id": null,
+      "expectedName": null,
+      "slug": "padi-wreck-diver-sydney",
+      "name": "PADI Wreck Diver in Sydney",
+      "categories": [
+        "6ab8b3eb7b6962906797d352"
+      ],
+      "keywords": [
+        "PADI Wreck Diver in Sydney",
+        "padi wreck diver sydney",
+        "Sydney dive courses",
+        "Abyss scuba training",
+        "wreck",
+        "penetration",
+        "shipwreck"
+      ],
+      "text": "<!-- ABYSS_COURSE_KNOWLEDGE_V1 --><h2>What diving goal does this course help with?</h2><p>For recreational divers wanting wreck research, hazard awareness, survey, mapping and guideline skills. External sightseeing around an appropriate wreck may already be possible within existing training and site requirements.</p><h2>Before you start</h2><p>Age 15+; Adventure Diver or accepted equivalent. Complete the participant medical questionnaire and obtain physician clearance before in-water training when the form requires it. Under-18s need the required parent or guardian consent. </p><h2>To earn the qualification</h2><p>Certification requires successful knowledge and practical assessments, not attendance alone. Extra training, missed sessions or rescheduling may involve additional fees under the booking terms. Complete knowledge and four wreck-training dives. Any limited entry exercise depends on the site, conditions, equipment and instructor assessment.</p><h2>Time and preparation</h2><p>Approximately 2–4 hours of eLearning, then four dives over at least two days.</p><h2>Equipment, inclusions and extra costs</h2><p>Confirm the wreck site, boat/transport costs, rental equipment, reels/lines, materials and certification with Abyss. The course description does not establish an all-inclusive package.</p><h2>What the qualification enables—and its limits</h2><p>Responsible recreational wreck exploration within course limits. It does not authorise unrestricted penetration, advanced overhead diving or planned decompression.</p><h2>Current dates and booking</h2><p><a href=\"https://www.abyss.com.au/courses/wreck-diver\">View current course information, dates and booking options</a>. For a scheduled intake, use the matching entry in <strong>Upcoming Sydney Course Dates — Updated Daily</strong> and its exact booking link. Confirm the selected package, language, full session timetable, price and places on the live booking page. If no date is listed, ask Abyss about a suitable intake; absence from the snapshot does not mean the course is unavailable. Do not use old example prices or imply that an overnight snapshot is real-time inventory.</p><h2>Course information sources</h2><p><a href=\"https://www.abyss.com.au/courses/wreck-diver\">Abyss course information</a></p>",
+      "sources": [
+        "https://www.abyss.com.au/courses/wreck-diver"
+      ]
+    },
+    {
+      "id": null,
+      "expectedName": null,
+      "slug": "padi-shark-conservation-sydney",
+      "name": "PADI AWARE Shark Conservation in Sydney",
+      "categories": [
+        "6ab8b3eb7b6962906797d352"
+      ],
+      "keywords": [
+        "PADI AWARE Shark Conservation in Sydney",
+        "padi shark conservation sydney",
+        "Sydney dive courses",
+        "Abyss scuba training",
+        "sharks",
+        "conservation",
+        "Bushrangers Bay"
+      ],
+      "text": "<!-- ABYSS_COURSE_KNOWLEDGE_V1 --><h2>What diving goal does this course help with?</h2><p>For certified divers interested in understanding shark conservation and observing sharks responsibly. Choose an ordinary suitable guided dive if the only goal is seeing marine life without a training outcome.</p><h2>Before you start</h2><p>Open Water or above is required. The current Abyss page does not publish a minimum age; ask the team to confirm age, accepted equivalents, experience and suitability before booking a junior. Complete the participant medical questionnaire and obtain physician clearance before in-water training when the form requires it. Under-18s need the required parent or guardian consent. </p><h2>To earn the qualification</h2><p>Certification requires successful knowledge and practical assessments, not attendance alone. Extra training, missed sessions or rescheduling may involve additional fees under the booking terms. Complete conservation knowledge and the two training dives. Wildlife sightings are never guaranteed.</p><h2>Time and preparation</h2><p>One practical day with two dives, normally at Bushrangers Bay; check preparation and meeting instructions.</p><h2>Equipment, inclusions and extra costs</h2><p>The current page includes standard scuba equipment hire, air fills, weights, learning materials and certification. Transport to/from Bushrangers Bay is not included.</p><h2>What the qualification enables—and its limits</h2><p>Develops shark awareness and responsible diving behaviour; it does not increase depth limits, permit wildlife handling or guarantee shark encounters.</p><h2>Current dates and booking</h2><p><a href=\"https://www.abyss.com.au/courses/padi-aware-shark-conservation-course-dive-with-purpose\">View current course information, dates and booking options</a>. For a scheduled intake, use the matching entry in <strong>Upcoming Sydney Course Dates — Updated Daily</strong> and its exact booking link. Confirm the selected package, language, full session timetable, price and places on the live booking page. If no date is listed, ask Abyss about a suitable intake; absence from the snapshot does not mean the course is unavailable. Do not use old example prices or imply that an overnight snapshot is real-time inventory.</p><h2>Course information sources</h2><p><a href=\"https://www.abyss.com.au/courses/padi-aware-shark-conservation-course-dive-with-purpose\">Abyss course information</a></p>",
+      "sources": [
+        "https://www.abyss.com.au/courses/padi-aware-shark-conservation-course-dive-with-purpose"
+      ]
+    },
+    {
+      "id": null,
+      "expectedName": null,
+      "slug": "padi-full-face-mask-sydney",
+      "name": "PADI Full Face Mask Diver in Sydney",
+      "categories": [
+        "6ab8b3eb7b6962906797d352"
+      ],
+      "keywords": [
+        "PADI Full Face Mask Diver in Sydney",
+        "padi full face mask sydney",
+        "Sydney dive courses",
+        "Abyss scuba training",
+        "full face mask",
+        "FFM"
+      ],
+      "text": "<!-- ABYSS_COURSE_KNOWLEDGE_V1 --><h2>What diving goal does this course help with?</h2><p>For divers wanting instructor-led introduction to a full face mask and the different backup/emergency skills it requires. This is equipment training, not a professional public-safety qualification.</p><h2>Before you start</h2><p>Age 15+ and Open Water or a qualifying equivalent. Complete the participant medical questionnaire and obtain physician clearance before in-water training when the form requires it. Under-18s need the required parent or guardian consent. </p><h2>To earn the qualification</h2><p>Certification requires successful knowledge and practical assessments, not attendance alone. Extra training, missed sessions or rescheduling may involve additional fees under the booking terms. Complete theory, equipment orientation, confined-water skills and two ocean dives.</p><h2>Time and preparation</h2><p>Private training arranged with Abyss; confirm the full date, duration and preparation before booking.</p><h2>Equipment, inclusions and extra costs</h2><p>Private instructor and the training full face mask are supplied, with confined-water training, two ocean dives and certification as described. Standard scuba gear/hire is additional unless agreed. Confirm backup configuration and any optional communications equipment.</p><h2>What the qualification enables—and its limits</h2><p>Recreational full face mask use within existing training limits. It adds no depth, technical, overhead or public-safety privileges. Speech capability depends on optional compatible communications equipment.</p><h2>Current dates and booking</h2><p><a href=\"https://www.abyss.com.au/courses/padi-full-face-mask-diver-course\">View current course information, dates and booking options</a>. For a scheduled intake, use the matching entry in <strong>Upcoming Sydney Course Dates — Updated Daily</strong> and its exact booking link. Confirm the selected package, language, full session timetable, price and places on the live booking page. If no date is listed, ask Abyss about a suitable intake; absence from the snapshot does not mean the course is unavailable. Do not use old example prices or imply that an overnight snapshot is real-time inventory.</p><h2>Course information sources</h2><p><a href=\"https://www.abyss.com.au/courses/padi-full-face-mask-diver-course\">Abyss course information</a></p>",
+      "sources": [
+        "https://www.abyss.com.au/courses/padi-full-face-mask-diver-course"
+      ]
+    },
+    {
+      "id": "6ab8bbd97b6962906797d35b",
+      "expectedName": "PADI Tec 40, Tec 45, Tec 50 and Tec 40 CCR",
+      "slug": "padi-tec-40-sydney",
+      "name": "PADI Tec 40 in Sydney",
+      "categories": [
+        "6ab8b3eb7b6962906797d353"
+      ],
+      "keywords": [
+        "PADI Tec 40 in Sydney",
+        "padi tec 40 sydney",
+        "Sydney dive courses",
+        "Abyss scuba training",
+        "Tec 40",
+        "technical diving",
+        "decompression"
+      ],
+      "text": "<!-- ABYSS_COURSE_KNOWLEDGE_V1 --><h2>What diving goal does this course help with?</h2><p>For experienced recreational divers whose goals require an introduction to planned decompression and technical equipment. A Deep Diver specialty is the more direct option for recreational no-decompression diving to 40 metres.</p><h2>Before you start</h2><p>Age 18+; Advanced Open Water, Enriched Air and Deep Diver or qualifying documented deep experience accepted by Abyss (the page lists 10 dives to 30 metres); at least 30 logged dives and physician-signed medical within 12 months. The technical instructor must verify all experience and equivalents.</p><h2>To earn the qualification</h2><p>Complete all theory, practical applications and four training dives to the technical instructor’s standard. Rescue training is recommended for this stage and required for later progression.</p><h2>Time and preparation</h2><p>Pre-study plus classroom/practical work and four dives. Confirm the entire training schedule; the start/end date of a calendar entry may not describe all preparation or additional sessions.</p><h2>Equipment, inclusions and extra costs</h2><p>Agree the exact technical configuration and itemised quote before booking. Confirm manuals, certification, gas, cylinders, regulators, boat costs and gear hire; do not infer them from a listed tuition price.</p><h2>What the qualification enables—and its limits</h2><p>Limited decompression diving to 40 metres within Tec 40 limits, including no more than 10 minutes of decompression and the gases authorised by the qualification. Not unrestricted decompression or overhead-environment training.</p><h2>Current dates and booking</h2><p><a href=\"https://www.abyss.com.au/courses/tec-40\">View current course information, dates and booking options</a>. For a scheduled intake, use the matching entry in <strong>Upcoming Sydney Course Dates — Updated Daily</strong> and its exact booking link. Confirm the selected package, language, full session timetable, price and places on the live booking page. If no date is listed, ask Abyss about a suitable intake; absence from the snapshot does not mean the course is unavailable. Do not use old example prices or imply that an overnight snapshot is real-time inventory.</p><h2>Course information sources</h2><p><a href=\"https://www.abyss.com.au/courses/tec-40\">Abyss course information</a></p>",
+      "sources": [
+        "https://www.abyss.com.au/courses/tec-40"
+      ]
+    },
+    {
+      "id": null,
+      "expectedName": null,
+      "slug": "padi-tec-45-sydney",
+      "name": "PADI Tec 45 in Sydney",
+      "categories": [
+        "6ab8b3eb7b6962906797d353"
+      ],
+      "keywords": [
+        "PADI Tec 45 in Sydney",
+        "padi tec 45 sydney",
+        "Sydney dive courses",
+        "Abyss scuba training",
+        "Tec 45",
+        "45 metres"
+      ],
+      "text": "<!-- ABYSS_COURSE_KNOWLEDGE_V1 --><h2>What diving goal does this course help with?</h2><p>For Tec 40 divers whose planned technical diving requires progression to 45 metres and more demanding decompression skills. Recreational goals alone do not require this course.</p><h2>Before you start</h2><p>Age 18+; Tec 40, Rescue and qualifying CPR/First Aid within 24 months; at least 50 logged dives including 10 deeper than 30 metres; physician-signed medical within 12 months. Abyss must confirm equivalent training, experience and readiness.</p><h2>To earn the qualification</h2><p>Complete theory, practical applications and all required training dives and assessments. Qualification depends on technical proficiency, not booked days alone.</p><h2>Time and preparation</h2><p>Pre-study and instructor-led practical/dive sessions; obtain the full schedule and preparation requirements directly from the technical team.</p><h2>Equipment, inclusions and extra costs</h2><p>Confirm the complete technical equipment configuration, gas plan and all costs, including tuition, materials, certification, cylinders, fills, boats and hire. These are not automatically all included in a headline price.</p><h2>What the qualification enables—and its limits</h2><p>Technical decompression diving to 45 metres within Tec 45 training limits. It does not authorise deeper diving, cave diving or unrestricted wreck penetration.</p><h2>Current dates and booking</h2><p><a href=\"https://www.abyss.com.au/courses/tec-45\">View current course information, dates and booking options</a>. For a scheduled intake, use the matching entry in <strong>Upcoming Sydney Course Dates — Updated Daily</strong> and its exact booking link. Confirm the selected package, language, full session timetable, price and places on the live booking page. If no date is listed, ask Abyss about a suitable intake; absence from the snapshot does not mean the course is unavailable. Do not use old example prices or imply that an overnight snapshot is real-time inventory.</p><h2>Course information sources</h2><p><a href=\"https://www.abyss.com.au/courses/tec-45\">Abyss course information</a></p>",
+      "sources": [
+        "https://www.abyss.com.au/courses/tec-45"
+      ]
+    },
+    {
+      "id": null,
+      "expectedName": null,
+      "slug": "padi-tec-50-sydney",
+      "name": "PADI Tec 50 in Sydney",
+      "categories": [
+        "6ab8b3eb7b6962906797d353"
+      ],
+      "keywords": [
+        "PADI Tec 50 in Sydney",
+        "padi tec 50 sydney",
+        "Sydney dive courses",
+        "Abyss scuba training",
+        "Tec 50",
+        "50 metres"
+      ],
+      "text": "<!-- ABYSS_COURSE_KNOWLEDGE_V1 --><h2>What diving goal does this course help with?</h2><p>For suitably experienced Tec 45 divers progressing to 50-metre technical decompression diving. The instructor should first assess whether the diver’s real goals and recent skills justify this progression.</p><h2>Before you start</h2><p>Abyss currently lists age 18+, Advanced Open Water, Rescue, Enriched Air and Tec 45 or accepted equivalents; 100 logged dives including 20 enriched-air dives, 25 deeper than 18 metres and 20 deeper than 30 metres; physician-signed medical. Confirm the current medical validity and any agency-equivalency pathway with the technical team before booking.</p><h2>To earn the qualification</h2><p>Complete the current Tec 50 theory, practical applications and dive assessments to instructor standards. Do not substitute a general agency entry option for Abyss’s published experience requirement without approval.</p><h2>Time and preparation</h2><p>Contact-only schedule. Agree pre-study, all training dates and required recent technical experience.</p><h2>Equipment, inclusions and extra costs</h2><p>Technical scuba configuration and required Tec Deep materials are needed. Request an itemised quote for tuition, learning/certification, gas, cylinders, boats and rentals.</p><h2>What the qualification enables—and its limits</h2><p>Technical decompression diving to 50 metres within the qualification’s limits and equipment/gas training. It is not a qualification for unrestricted depth or overhead environments.</p><h2>Current dates and booking</h2><p><a href=\"https://www.abyss.com.au/courses/tec-50\">View current course information, dates and booking options</a>. For a scheduled intake, use the matching entry in <strong>Upcoming Sydney Course Dates — Updated Daily</strong> and its exact booking link. Confirm the selected package, language, full session timetable, price and places on the live booking page. If no date is listed, ask Abyss about a suitable intake; absence from the snapshot does not mean the course is unavailable. Do not use old example prices or imply that an overnight snapshot is real-time inventory.</p><h2>Course information sources</h2><p><a href=\"https://www.abyss.com.au/courses/tec-50\">Abyss course information</a></p>",
+      "sources": [
+        "https://www.abyss.com.au/courses/tec-50"
+      ]
+    },
+    {
+      "id": null,
+      "expectedName": null,
+      "slug": "padi-tec-40-ccr-sydney",
+      "name": "PADI Tec 40 CCR on Hollis Prism 2",
+      "categories": [
+        "6ab8b3eb7b6962906797d353"
+      ],
+      "keywords": [
+        "PADI Tec 40 CCR on Hollis Prism 2",
+        "padi tec 40 ccr sydney",
+        "Sydney dive courses",
+        "Abyss scuba training",
+        "CCR",
+        "Prism 2",
+        "rebreather"
+      ],
+      "text": "<!-- ABYSS_COURSE_KNOWLEDGE_V1 --><h2>What diving goal does this course help with?</h2><p>For divers specifically wanting technical closed-circuit rebreather training on the Hollis Prism 2. This is a different equipment and training pathway from open-circuit Tec 40.</p><h2>Before you start</h2><p>Age 18+; Advanced Open Water, Enriched Air and Deep Diver or qualifying deep experience, and at least 30 logged dives with the required experience mix. Ask the technical instructor to verify equivalents, current medical and exact admission requirements.</p><h2>To earn the qualification</h2><p>Rescue Diver is required before Training Dive Five; at least 50 logged dives and all required knowledge/skills are needed before certification.</p><h2>Time and preparation</h2><p>Abyss advertises five days and eight training dives. Confirm the current timetable, study and unit-specific preparation.</p><h2>Equipment, inclusions and extra costs</h2><p>The course page describes training expendables (air, oxygen and sorb), boat dives, PADI manuals and certification as included; unit rental and bailout/sling cylinder-regulator hire are separate. Obtain current prices rather than relying on historical unit or rental figures.</p><h2>What the qualification enables—and its limits</h2><p>Unit-specific Tec 40 CCR training to 40 metres with a single decompression stop of no more than 10 minutes, within the stated gas and training limits. A different CCR requires the applicable qualifier/crossover; this course does not grant cave or unrestricted wreck privileges.</p><h2>Current dates and booking</h2><p><a href=\"https://www.abyss.com.au/courses/tec-40-ccr\">View current course information, dates and booking options</a>. For a scheduled intake, use the matching entry in <strong>Upcoming Sydney Course Dates — Updated Daily</strong> and its exact booking link. Confirm the selected package, language, full session timetable, price and places on the live booking page. If no date is listed, ask Abyss about a suitable intake; absence from the snapshot does not mean the course is unavailable. Do not use old example prices or imply that an overnight snapshot is real-time inventory.</p><h2>Course information sources</h2><p><a href=\"https://www.abyss.com.au/courses/tec-40-ccr\">Abyss course information</a></p>",
+      "sources": [
+        "https://www.abyss.com.au/courses/tec-40-ccr"
+      ]
+    },
+    {
+      "id": "6ab8bbed4b37f75b5ff65ba1",
+      "expectedName": "AHCLPW307 restricted scientific diving course",
+      "slug": "ahclpw307-scientific-diving",
+      "name": "AHCLPW307 restricted scientific diving course",
+      "categories": [
+        "6ab8b3eb7b6962906797d353"
+      ],
+      "keywords": [
+        "AHCLPW307 restricted scientific diving course",
+        "ahclpw307 scientific diving",
+        "Sydney dive courses",
+        "Abyss scuba training",
+        "scientific",
+        "occupational",
+        "AHCLPW307",
+        "SISOSCB001",
+        "HLTAID015"
+      ],
+      "text": "<!-- ABYSS_COURSE_KNOWLEDGE_V1 --><h2>What diving goal does this course help with?</h2><p>For applicants needing the nationally recognised restricted scientific-diving unit for a relevant work or research pathway. Recreational divers wanting better general skills should choose training relevant to their recreational goals.</p><h2>Before you start</h2><p>Before paying, provide SISOSCB001, SISOSCB006, HLTAID011 and HLTAID015 evidence, accepted nitrox certification and a current occupational medical meeting the course requirements. Recreational certification names are not automatically equivalent to these unit codes. The current page requires an occupational medical issued within 12 months, valid for all course dates, under AS/NZS 2299.1 by an appropriately trained doctor. The RTO must confirm age, admission and any visa eligibility.</p><h2>To earn the qualification</h2><p>Meet the knowledge, practical and assessment evidence requirements for AHCLPW307. Successful assessment leads to a Statement of Attainment issued by PADI Asia Pacific Pty Ltd, RTO 6729, not a full AQF qualification.</p><h2>Time and preparation</h2><p>Six training days, assigned pre-study, two confined-water sessions and 12 ocean dives. Private scheduling is available by arrangement.</p><h2>Equipment, inclusions and extra costs</h2><p>Request the complete equipment and cost list. Standard gear plus light, cutting device, signalling equipment, DSMB/spool and pocket mask are listed. Gear hire/purchases, prerequisite training, medical, gas and boat arrangements need confirmation; do not assume the tuition quote covers them all.</p><h2>What the qualification enables—and its limits</h2><p>Restricted scientific-diving competency within the unit scope. Assessment dives are no deeper than 30 metres, including one between 27 and 30; no planned decompression dives. Employment, legal, employer and dive-plan requirements still apply.</p><h2>Current dates and booking</h2><p><a href=\"https://www.abyss.com.au/courses/ahclpw307-perform-restricted-diving-for-scientific-purposes\">View current course information, dates and booking options</a>. For a scheduled intake, use the matching entry in <strong>Upcoming Sydney Course Dates — Updated Daily</strong> and its exact booking link. Confirm the selected package, language, full session timetable, price and places on the live booking page. If no date is listed, ask Abyss about a suitable intake; absence from the snapshot does not mean the course is unavailable. Do not use old example prices or imply that an overnight snapshot is real-time inventory.</p><h2>Course information sources</h2><p><a href=\"https://www.abyss.com.au/courses/ahclpw307-perform-restricted-diving-for-scientific-purposes\">Abyss course information</a></p>",
+      "sources": [
+        "https://www.abyss.com.au/courses/ahclpw307-perform-restricted-diving-for-scientific-purposes"
+      ]
+    },
+    {
+      "id": "6ab8bbc9171ef8b866f2c209",
+      "expectedName": "Avelo Instructor training: current requirements",
+      "slug": "avelo-instructor-requirements",
+      "name": "Avelo Instructor training: current requirements",
+      "categories": [
+        "6ab8b3eb7b6962906797d353"
+      ],
+      "keywords": [
+        "Avelo Instructor training: current requirements",
+        "avelo instructor requirements",
+        "Sydney dive courses",
+        "Abyss scuba training",
+        "Avelo Instructor",
+        "Essentials Instructor"
+      ],
+      "text": "<!-- ABYSS_COURSE_KNOWLEDGE_V1 --><h2>What diving goal does this course help with?</h2><p>For active scuba instructors wanting to teach Avelo using the agency’s current instructor pathway. Recreational divers should start with the Avelo diver course.</p><h2>Before you start</h2><p>The current Avelo agency pathway requires an active, insured instructor, age 18+, current CPR/First Aid/oxygen credentials, the required diver-level Avelo qualification and teaching experience (including 20 Open Water certifications). Have Avelo/Abyss verify credentials, medical and watermanship before booking.</p><h2>To earn the qualification</h2><p>Meet the agency’s current instructor knowledge, teaching, practical and Avelo dive requirements, including 16 Avelo dives by completion, and its assessment standard. New instructors have provisional/mentored teaching requirements.</p><h2>Time and preparation</h2><p>The current agency program describes 15–25 hours of online preparation and eight training days. Do not quote the older Abyss four-day Recreational Avelo Diver Instructor description as the current Essentials Instructor program.</p><h2>Equipment, inclusions and extra costs</h2><p>Ask Abyss to confirm the current course version, intake, system/equipment supply, fees, materials, insurance, certification and mentoring inclusions in writing.</p><h2>What the qualification enables—and its limits</h2><p>Teaching privileges apply only after Avelo approval and within current instructor status. The first four students require the agency’s specified 1:1 mentored process; verify all current conditions with Avelo.</p><h2>Current dates and booking</h2><p><a href=\"https://www.abyss.com.au/courses/avelo-instructor-course-leading-edge-scuba-diving\">View current course information, dates and booking options</a>. For a scheduled intake, use the matching entry in <strong>Upcoming Sydney Course Dates — Updated Daily</strong> and its exact booking link. Confirm the selected package, language, full session timetable, price and places on the live booking page. If no date is listed, ask Abyss about a suitable intake; absence from the snapshot does not mean the course is unavailable. Do not use old example prices or imply that an overnight snapshot is real-time inventory.</p><h2>Course information sources</h2><p><a href=\"https://www.abyss.com.au/courses/avelo-instructor-course-leading-edge-scuba-diving\">Abyss course information</a></p><p><a href=\"https://diveavelo.com/professionals.html\">Current Avelo professional requirements</a></p>",
+      "sources": [
+        "https://www.abyss.com.au/courses/avelo-instructor-course-leading-edge-scuba-diving",
+        "https://diveavelo.com/professionals.html"
+      ]
+    },
+    {
+      "id": "6ab8ca817b6962906797d35e",
+      "expectedName": "PADI Master Scuba Diver at Abyss: requirements and package",
+      "slug": "padi-master-scuba-diver-package",
+      "name": "PADI Master Scuba Diver at Abyss: requirements and package",
+      "categories": [
+        "6ab8b3eb7b6962906797d352"
+      ],
+      "keywords": [
+        "PADI Master Scuba Diver at Abyss: requirements and package",
+        "padi master scuba diver package",
+        "Sydney dive courses",
+        "Abyss scuba training",
+        "MSD",
+        "Master Scuba Diver",
+        "50 dives",
+        "package"
+      ],
+      "text": "<!-- ABYSS_COURSE_KNOWLEDGE_V1 --><h2>What diving goal does this course help with?</h2><p>For recreational divers wanting a broad, purposeful development plan. Buy only the courses that serve your goals; a bundle is unnecessary if you need one focused skill. This is different from professional Divemaster or instructor-level MSDT.</p><h2>Before you start</h2><p>The Abyss package requires age 15+, Advanced Open Water or accepted equivalent, and a commitment to complete included training within 12 months. Advanced Open Water is required but not included. Check each specialty’s individual entry requirements.</p><h2>To earn the qualification</h2><p>The PADI rating requires Advanced Open Water, Rescue, five qualifying PADI Specialty Diver certifications and at least 50 logged dives. Package attendance alone does not award the rating. If choosing Freediver, have Abyss verify the full five-specialty combination because Freediver follows a separate pathway; Avelo is not a PADI specialty.</p><h2>Time and preparation</h2><p>Complete the package’s separate courses within 12 months, plus any dives needed to reach the 50-dive rating requirement. Choose each course’s actual date rather than treating the package purchase as a single scheduled course.</p><h2>Equipment, inclusions and extra costs</h2><p>The current package lists Rescue, EFR, Deep, Nitrox, Equipment Specialist, a choice of Sidemount or Freediver, and a choice of Buoyancy, Navigator or Dry Suit, plus bonus Avelo training. Gear hire is excluded. Use the correct Rescue Trained choice and obtain credit/quote advice for qualifications already held.</p><h2>What the qualification enables—and its limits</h2><p>Recognises recreational experience and training. It does not authorise professional guiding or instruction. Requirements of the selected specialties remain in force.</p><h2>Current dates and booking</h2><p><a href=\"https://www.abyss.com.au/products/master_scuba_diver\">View current course information, dates and booking options</a>. For a scheduled intake, use the matching entry in <strong>Upcoming Sydney Course Dates — Updated Daily</strong> and its exact booking link. Confirm the selected package, language, full session timetable, price and places on the live booking page. If no date is listed, ask Abyss about a suitable intake; absence from the snapshot does not mean the course is unavailable. Do not use old example prices or imply that an overnight snapshot is real-time inventory.</p><h2>Course information sources</h2><p><a href=\"https://www.abyss.com.au/products/master_scuba_diver\">Abyss pathway information</a></p>",
+      "sources": [
+        "https://www.abyss.com.au/products/master_scuba_diver"
+      ]
+    },
+    {
+      "id": "6ab8b5107b6962906797d355",
+      "expectedName": "Which Sydney dive course should I choose?",
+      "slug": "which-sydney-dive-course",
+      "name": "Which Sydney dive course should I choose?",
+      "categories": [
+        "6ab8b3eb7b6962906797d354"
+      ],
+      "keywords": [
+        "Which Sydney dive course should I choose?",
+        "which sydney dive course",
+        "Sydney dive courses",
+        "Abyss scuba training",
+        "which course",
+        "goal",
+        "next course",
+        "recommendation"
+      ],
+      "text": "<!-- ABYSS_COURSE_KNOWLEDGE_V1 --><h2>Start with the diving you want to do</h2><p>Ask: “What would you like to do underwater that you cannot comfortably or confidently do now?” Then establish present certification/agency, approximate logged dives, most recent dive and the relevant trip or site. Ask age only where it affects eligibility. Do not ask every question before offering useful guidance.</p><h2>Match the goal to the smallest useful next step</h2><p>Return after a break: ReActivate/refresher. Steadier buoyancy or trim: Peak Performance Buoyancy. Broader experience and recreational depth to 30 metres: Advanced Open Water. Longer no-decompression time on suitable repetitive dives: Nitrox. Recreational diving to 40 metres: Deep Diver. Cooler water: Dry Suit. Finding routes: Underwater Navigator. Buddy prevention and response: Rescue. Equipment configuration: Sidemount or Full Face Mask when that is the actual goal. Breath-hold diving: Freediver. Professional guiding: Divemaster; teaching scuba: IDC after prerequisites.</p><h2>When no course is needed</h2><p>If the visitor is already qualified, current and comfortable for the intended diving, suggest appropriate diving experience or local orientation. Do not sell Advanced, Nitrox or a specialty simply because it is next on a ladder. A guided dive can be appropriate for unfamiliar sites; medical clearance and instructor judgement cannot be replaced by the Agent.</p><h2>Explain the recommendation</h2><p>Give one primary recommendation and a short reason tied to the stated goal. Explain the entry requirements separately from requirements needed by certification. Accept qualifying equivalents after Abyss checks them; do not force a customer to repeat equivalent training. Mention one alternative only when it materially changes suitability.</p><h2>Move to a suitable booking</h2><p>Ask which weekend/date range works and whether there is a trip deadline. Allow time for eLearning, prerequisites and all sessions. Offer one to three suitable entries from Upcoming Sydney Course Dates — Updated Daily. Preserve package and language distinctions, omit sold-out entries as bookable recommendations, and use each exact booking link. Say dates and prices were listed at the last check and are confirmed on the live booking page.</p><h2>When to ask the team</h2><p>Use <a href=\"https://www.abyss.com.au/talk-to-a-dive-instructor\">the Abyss instructor enquiry</a> for unresolved equivalents, technical/occupational eligibility, unclear package inclusions, junior suitability or a course with no listed intake. If the snapshot is older than 48 hours or its check time cannot be verified, use <a href=\"https://www.abyss.com.au/course-beacon\">live course listings</a> and do not assert availability.</p><h2>Course information sources</h2><p><a href=\"https://www.abyss.com.au/training-hub\">Abyss pathway information</a> · <a href=\"https://www.abyss.com.au/course-beacon\">Abyss pathway information</a></p>",
+      "sources": [
+        "https://www.abyss.com.au/training-hub",
+        "https://www.abyss.com.au/course-beacon"
+      ]
+    },
+    {
+      "id": "6ab8b6617b6962906797d356",
+      "expectedName": "Booking a dive course: buddies, prerequisites, dates and equipment",
+      "slug": "booking-sydney-dive-course",
+      "name": "Booking a dive course: buddies, prerequisites, dates and equipment",
+      "categories": [
+        "6ab8b3eb7b6962906797d354"
+      ],
+      "keywords": [
+        "Booking a dive course: buddies, prerequisites, dates and equipment",
+        "booking sydney dive course",
+        "Sydney dive courses",
+        "Abyss scuba training",
+        "booking",
+        "buddy",
+        "equipment",
+        "price",
+        "dates"
+      ],
+      "text": "<!-- ABYSS_COURSE_KNOWLEDGE_V1 --><h2>You can book without a buddy</h2><p>Solo enrolment is welcome; Abyss organises training groups and buddy arrangements. Tell the team about accessibility, language, equipment sizing or schedule needs before committing.</p><h2>Verify eligibility without unnecessary repeat training</h2><p>Check the selected course’s minimum age, certification/equivalence, logged/recent diving experience and medical paperwork. Separate entry requirements from certification requirements. CPR and First Aid for Rescue/professional prerequisites are current within 24 months. Do not reject a qualifying equivalent or require an additional course that is already satisfied.</p><h2>Choose the exact product and intake</h2><p>Standard, premium, private, internship, package and language-specific listings can have different inclusions and schedules. A Chinese Divemaster intake must not be offered as an English intake. Use the exact date-specific booking URL in the daily schedule; never invent a cart code or edit its encoded identifiers.</p><h2>Prices, equipment and inclusions</h2><p>Evergreen articles do not quote historical tuition prices. Check the listed snapshot price and the live selected booking; confirm all gear hire, learning materials, certification/application fees, boat costs and prerequisite courses. Nitrox’s current description says optional ocean dives cost extra despite the shorthand session label.</p><h2>Preparation and performance</h2><p>Allow eLearning and paperwork time before the first practical session. Attend the full schedule. Completion is based on demonstrated competence; weather, readiness and additional training can affect dates and costs. Review <a href=\"https://www.abyss.com.au/terms-and-conditions\">Abyss booking terms</a> before payment.</p><h2>Using daily dates</h2><p>The course-date article is an overnight snapshot, not live capacity. Do not make “only two places left” claims. If its successful check is older than 48 hours, missing or flagged stale, send visitors to <a href=\"https://www.abyss.com.au/course-beacon\">live course listings</a> and confirm the selected course there.</p><h2>Course information sources</h2><p><a href=\"https://www.abyss.com.au/course-beacon\">Abyss pathway information</a> · <a href=\"https://www.abyss.com.au/terms-and-conditions\">Abyss pathway information</a></p>",
+      "sources": [
+        "https://www.abyss.com.au/course-beacon",
+        "https://www.abyss.com.au/terms-and-conditions"
+      ]
+    },
+    {
+      "id": "6ab8cb2984f08c58bb03f7f1",
+      "expectedName": "Abyss internships versus PADI professional courses",
+      "slug": "internship-versus-professional-course",
+      "name": "Abyss internships versus PADI professional courses",
+      "categories": [
+        "6ab8b3eb7b6962906797d353"
+      ],
+      "keywords": [
+        "Abyss internships versus PADI professional courses",
+        "internship versus professional course",
+        "Sydney dive courses",
+        "Abyss scuba training",
+        "internship versus course",
+        "professional pathway"
+      ],
+      "text": "<!-- ABYSS_COURSE_KNOWLEDGE_V1 --><h2>Choose by starting point and experience goal</h2><p>A standard course targets the qualification for divers who already meet its prerequisites. An internship adds time, mentoring, diving and centre experience. Do not describe the two as interchangeable bookings.</p><h2>Divemaster comparison</h2><p>The standard course lists 40 dives to begin and 60 to certify, around 14 days full-time or five weekends over up to eight weeks. The approved Abyss CDC mentoring pathway within the internship can begin formal Divemaster training at 20 dives, still requiring 60 for certification. The internship is around nine weeks full-time or six months part-time, with an individual plan for missing prerequisites.</p><h2>Instructor comparison</h2><p>The standard IDC is approximately seven practical days plus preparation and a separate IE. The Instructor Internship adds mentored teaching, centre experience and career preparation. All pathways still require 60 dives for IDC, 100 for IE, six months as a certified diver and the applicable professional prerequisites.</p><h2>Confirm the actual package</h2><p>CPR and First Aid currency is 24 months. Medical requirements, prior-certification credits, gear, PADI fees, materials, accommodation and living costs must be checked against the selected package. Standard course-date listings are not internship bookings. No pathway guarantees certification, a job or work rights.</p><h2>Course information sources</h2><p><a href=\"https://www.abyss.com.au/courses/padi-divemaster-certification-and-training\">Abyss course information</a> · <a href=\"https://www.abyss.com.au/divemaster-internship\">Abyss pathway information</a> · <a href=\"https://www.abyss.com.au/courses/open-water-scuba-diving-instructor-course\">Abyss course information</a> · <a href=\"https://www.abyss.com.au/dive-instructor-internship\">Abyss pathway information</a></p>",
+      "sources": [
+        "https://www.abyss.com.au/courses/padi-divemaster-certification-and-training",
+        "https://www.abyss.com.au/divemaster-internship",
+        "https://www.abyss.com.au/courses/open-water-scuba-diving-instructor-course",
+        "https://www.abyss.com.au/dive-instructor-internship"
+      ]
+    },
+    {
+      "id": "6ab8bbd184f08c58bb03f7e8",
+      "expectedName": "Other PADI specialties Abyss advertises",
+      "slug": "other-padi-specialty-goals",
+      "name": "Other PADI specialties: choose by diving goal",
+      "categories": [
+        "6ab8b3eb7b6962906797d352"
+      ],
+      "keywords": [
+        "Other PADI specialties: choose by diving goal",
+        "other padi specialty goals",
+        "Sydney dive courses",
+        "Abyss scuba training",
+        "specialties",
+        "navigation",
+        "equipment",
+        "sidemount",
+        "wreck",
+        "shark",
+        "full face mask"
+      ],
+      "text": "<!-- ABYSS_COURSE_KNOWLEDGE_V1 --><h2>Focused specialties</h2><p>Use the dedicated course articles for Underwater Navigator (route finding), Equipment Specialist (user care), Sidemount (recreational configuration), Wreck (responsible wreck exploration), AWARE Shark Conservation (conservation knowledge) and Full Face Mask (equipment skills). Each has its own prerequisites and inclusions.</p><h2>Avoid assuming a specialty is required</h2><p>Ask what the visitor wants to do and whether their current qualification and experience already fit. A wreck sightseeing dive, shark encounter or ordinary equipment purchase does not automatically require another course.</p><h2>Dates and availability</h2><p>Look for the exact course in Upcoming Sydney Course Dates — Updated Daily. No listed intake means ask about scheduling, not that Abyss never teaches it. Full Face Mask and some other courses use private/contact-only arrangements.</p><h2>Course information sources</h2><p><a href=\"https://www.abyss.com.au/training-hub\">Abyss pathway information</a> · <a href=\"https://www.abyss.com.au/course-beacon\">Abyss pathway information</a></p>",
+      "sources": [
+        "https://www.abyss.com.au/training-hub",
+        "https://www.abyss.com.au/course-beacon"
+      ]
+    },
+    {
+      "id": "6ab8bbfb84f08c58bb03f7eb",
+      "expectedName": "PADI courses Abyss does not currently teach",
+      "slug": "courses-without-confirmed-current-offering",
+      "name": "Courses without a confirmed current Abyss offering",
+      "categories": [
+        "6ab8b3eb7b6962906797d354"
+      ],
+      "keywords": [
+        "Courses without a confirmed current Abyss offering",
+        "courses without confirmed current offering",
+        "Sydney dive courses",
+        "Abyss scuba training",
+        "not listed",
+        "not offered",
+        "unlisted course"
+      ],
+      "text": "<!-- ABYSS_COURSE_KNOWLEDGE_V1 --><h2>Do not infer availability from a generic PADI catalogue</h2><p>A PADI course existing elsewhere does not establish that Abyss currently runs it. Equally, absence from the daily calendar does not prove Abyss does not teach it.</p><h2>Handle an unlisted request</h2><p>Check current Abyss course guidance and ask <a href=\"https://www.abyss.com.au/talk-to-a-dive-instructor\">an Abyss instructor</a> about the exact goal, qualification and dates. Do not invent a price, intake, prerequisites or alternative provider. If the goal can be met by an existing course or suitable diving experience, explain that option without misrepresenting its qualification.</p><h2>Specialist activities</h2><p>Cave, ice, public-safety, commercial or advanced technical requests require confirmation of an appropriate actual offering. Recreational specialties must not be presented as occupational or unrestricted overhead authorisation.</p><h2>Course information sources</h2><p><a href=\"https://www.abyss.com.au/training-hub\">Abyss pathway information</a> · <a href=\"https://www.abyss.com.au/course-beacon\">Abyss pathway information</a></p>",
+      "sources": [
+        "https://www.abyss.com.au/training-hub",
+        "https://www.abyss.com.au/course-beacon"
+      ]
+    },
+    {
+      "id": "6ab8bbf484f08c58bb03f7ea",
+      "expectedName": "PADI courses to discuss with an Abyss instructor",
+      "slug": "courses-to-discuss-with-instructor",
+      "name": "PADI courses to discuss with an Abyss instructor",
+      "categories": [
+        "6ab8b3eb7b6962906797d354"
+      ],
+      "keywords": [
+        "PADI courses to discuss with an Abyss instructor",
+        "courses to discuss with instructor",
+        "Sydney dive courses",
+        "Abyss scuba training",
+        "private course",
+        "no date",
+        "enquiry"
+      ],
+      "text": "<!-- ABYSS_COURSE_KNOWLEDGE_V1 --><h2>Ask about a specific goal</h2><p>For Night, Search and Recovery, underwater photography, AWARE-related options, Basic Freediver, Advanced Mermaid, partial beginner qualifications, gas blending or older rebreather programs, ask Abyss to confirm the current offering. A historic mention is not evidence of a bookable intake.</p><h2>Information needed for a useful answer</h2><p>Provide current qualification/agency, age where relevant, recent experience, the intended diving and preferred dates. Request entry requirements, course outcome, duration, equipment, inclusions and full current cost before committing.</p><h2>Do not force an unnecessary substitute</h2><p>If a visitor is already qualified for the desired activity, local orientation or guided experience may be enough. If a qualification is required, do not imply that a different course grants the same privileges.</p><h2>Next step</h2><p><a href=\"https://www.abyss.com.au/talk-to-a-dive-instructor\">Ask an Abyss instructor about this course</a> or <a href=\"https://www.abyss.com.au/course-beacon\">check current scheduled courses</a>.</p><h2>Course information sources</h2><p><a href=\"https://www.abyss.com.au/training-hub\">Abyss pathway information</a> · <a href=\"https://www.abyss.com.au/course-beacon\">Abyss pathway information</a></p>",
+      "sources": [
+        "https://www.abyss.com.au/training-hub",
+        "https://www.abyss.com.au/course-beacon"
+      ]
+    },
+    {
+      "id": null,
+      "expectedName": null,
+      "slug": "advanced-versus-specialty-course",
+      "name": "Advanced Open Water or a focused specialty?",
+      "categories": [
+        "6ab8b3eb7b6962906797d354"
+      ],
+      "keywords": [
+        "Advanced Open Water or a focused specialty?",
+        "advanced versus specialty course",
+        "Sydney dive courses",
+        "Abyss scuba training",
+        "Advanced versus specialty",
+        "course comparison"
+      ],
+      "text": "<!-- ABYSS_COURSE_KNOWLEDGE_V1 --><h2>Choose broader experience when the goal is broad</h2><p>Advanced Open Water combines five Adventure Dives including deep and navigation. It suits an Open Water diver wanting varied, supervised experience and progression toward the adult 30-metre recreational range.</p><h2>Choose a specialty for one specific goal</h2><p>Peak Performance Buoyancy focuses on control; Nitrox on suitable repetitive-dive planning; Deep on recreational diving to 40 metres; Dry Suit on that equipment; Navigator on route finding. Do not sell all of them as a compulsory sequence.</p><h2>Credit and prerequisites</h2><p>A qualifying Adventure Dive may count toward the corresponding specialty after Abyss verifies the training record. It is not automatically a complete specialty. Deep has its own Adventure Diver/equivalent entry requirement; several other specialties can follow Open Water directly.</p><h2>If confidence is the problem</h2><p>Clarify whether the issue is rusty basic skills, buoyancy, unfamiliar conditions or a genuine qualification gap. ReActivate, focused coaching or guided experience may serve the goal better than a more advanced card.</p><h2>Course information sources</h2><p><a href=\"https://www.abyss.com.au/advanced-open-water\">Abyss pathway information</a> · <a href=\"https://www.abyss.com.au/courses/peak-performance-buoyancy\">Abyss course information</a> · <a href=\"https://www.abyss.com.au/courses/enriched-air-diver\">Abyss course information</a> · <a href=\"https://www.abyss.com.au/courses/deep-diver\">Abyss course information</a></p>",
+      "sources": [
+        "https://www.abyss.com.au/advanced-open-water",
+        "https://www.abyss.com.au/courses/peak-performance-buoyancy",
+        "https://www.abyss.com.au/courses/enriched-air-diver",
+        "https://www.abyss.com.au/courses/deep-diver"
+      ]
+    }
+  ]
+}

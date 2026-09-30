@@ -16,6 +16,7 @@
     "check": "npm test && npm run validate"
   },
   "dependencies": {
+    "cheerio": "^1.1.2",
     "luxon": "3.7.2",
     "playwright": "1.61.1"
   }

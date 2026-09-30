@@ -1,0 +1,93 @@
+name: Sydney Course knowledge and daily dates
+on:
+  schedule:
+    - cron: '30 2 * * *'
+      timezone: Australia/Sydney
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/sync-helpscout-courses.yml'
+      - 'src/helpscout-course*.mjs'
+      - 'scripts/*course*.mjs'
+      - 'data/helpscout-course-knowledge.json'
+      - 'data/helpscout-course-mapping.json'
+  pull_request:
+    paths:
+      - '.github/workflows/sync-helpscout-courses.yml'
+      - 'src/helpscout-course*.mjs'
+      - 'scripts/*course*.mjs'
+      - 'data/helpscout-course-knowledge.json'
+      - 'data/helpscout-course-mapping.json'
+      - 'tests/helpscout-courses.test.mjs'
+permissions:
+  contents: read
+concurrency:
+  group: helpscout-courses-${{ github.event_name == 'pull_request' && github.run_id || 'publish' }}
+  cancel-in-progress: false
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - name: Validate the complete live course extract without publication
+        if: github.event_name == 'pull_request'
+        run: node scripts/sync-helpscout-courses.mjs
+      - uses: actions/upload-artifact@v7
+        if: always() && github.event_name == 'pull_request'
+        with:
+          name: course-validation-${{ github.run_number }}
+          path: diagnostics/helpscout-course-*
+          retention-days: 14
+  publish:
+    needs: test
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - name: Publish audited knowledge when the pack changes
+        run: node scripts/publish-course-knowledge.mjs
+        env:
+          HELP_SCOUT_DOCS_API_KEY: ${{ secrets.HELP_SCOUT_DOCS_API_KEY }}
+      - name: Refresh and read back course dates
+        run: node scripts/sync-helpscout-courses.mjs
+        env:
+          DRY_RUN: 'false'
+          HELP_SCOUT_DOCS_API_KEY: ${{ secrets.HELP_SCOUT_DOCS_API_KEY }}
+      - name: Preserve originals and validation evidence
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: helpscout-courses-${{ github.run_number }}
+          path: diagnostics/helpscout-course-*
+          if-no-files-found: ignore
+          retention-days: 30
+      - name: Record successful publication or failed attempt
+        if: always()
+        run: |
+          git config user.name "abyss-future-dive-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for file in data/helpscout-course-knowledge-status.json data/helpscout-course-sync-status.json data/helpscout-course-last-good.json; do
+            if test -f "$file"; then git add -- "$file"; fi
+          done
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "chore: record course knowledge and schedule verification"
+          git pull --rebase origin main
+          git push origin HEAD:main
