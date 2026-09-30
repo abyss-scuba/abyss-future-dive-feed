@@ -1,6 +1,6 @@
 {
-  "publishedAt": "2026-09-30T20:42:07.467Z",
-  "packHash": "74d74596ad6bea2ed24981dc22b94c31656c743ed026388d170b0c94c7b18a61",
+  "publishedAt": "2026-09-30T21:07:10.645Z",
+  "packHash": "ddaec2aff3ff1e046214a1e4f1a841bb888ce2b4935f63205971f187c9eeb602",
   "articles": [
     {
       "id": "6ab8ba1b171ef8b866f2c207",
@@ -252,7 +252,7 @@
       "name": "Which Sydney dive course should I choose?",
       "slug": "which-sydney-dive-course-should-i-choose",
       "plannedSlug": "which-sydney-dive-course",
-      "textHash": "43b1890c66cd970917373d2515dce4ede047cc650a689e089b06d1f5f10796fb"
+      "textHash": "03b08a49ba72ed7e57ef140b60ea0c67b4a97cdff234a0178f3cb9d2faa76f09"
     },
     {
       "id": "6ab8b6617b6962906797d356",
@@ -308,14 +308,14 @@
       "name": "Prepare for a dive holiday or liveaboard",
       "slug": "prepare-for-dive-holiday-liveaboard",
       "plannedSlug": "prepare-for-dive-holiday-liveaboard",
-      "textHash": "c637592bd17f62c6c642a93c5a65e8a3ecc7affd791f9d6021da3e8874eab150"
+      "textHash": "f84c5e07682a7a0e337cd04f063fe700cfb3c3e697553dce18dd3f198278643f"
     },
     {
       "id": "6abd6b2cbd0193dcb268d677",
       "name": "Explore deeper sites or wrecks",
       "slug": "explore-deeper-sites-or-wrecks",
       "plannedSlug": "explore-deeper-sites-or-wrecks",
-      "textHash": "c10a227c5f7dc60c1d3889dfbb0d4da44c551e3818d150ac733a373c26776f88"
+      "textHash": "ad69e1ffdcc0e501cadf0eb34d442551081ad301e912015a1e2ff16e62ffb947"
     },
     {
       "id": "6abd6b2c7cdaed3f1efa5796",
@@ -329,7 +329,7 @@
       "name": "Return to diving after a break",
       "slug": "return-to-diving-after-a-break",
       "plannedSlug": "return-to-diving-after-a-break",
-      "textHash": "78fe123904ae2a328fd90b12473af957543fa50175986ba2e8a6c263bcb69c64"
+      "textHash": "15e57e5d3caf1c47571435d9f23aeff93305c6383b7d7e803f64b7eac770d963"
     },
     {
       "id": "6abd6b2dc3e570044c288a11",
