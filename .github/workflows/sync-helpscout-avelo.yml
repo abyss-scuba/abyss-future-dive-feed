@@ -1,0 +1,101 @@
+name: Avelo knowledge and daily course dates
+on:
+  schedule:
+    - cron: '0 7 * * *'
+      timezone: Australia/Sydney
+    - cron: '5 7 * * *'
+      timezone: Australia/Sydney
+    - cron: '15 7 * * *'
+      timezone: Australia/Sydney
+    - cron: '30 7 * * *'
+      timezone: Australia/Sydney
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/sync-helpscout-avelo.yml'
+      - 'src/helpscout-avelo.mjs'
+      - 'scripts/*avelo*.mjs'
+      - 'data/helpscout-avelo-knowledge.json'
+      - 'data/helpscout-course-knowledge.json'
+  pull_request:
+    paths:
+      - '.github/workflows/sync-helpscout-avelo.yml'
+      - 'src/helpscout-avelo.mjs'
+      - 'scripts/*avelo*.mjs'
+      - 'data/helpscout-avelo-knowledge.json'
+      - 'data/helpscout-course-knowledge.json'
+      - 'tests/helpscout-avelo.test.mjs'
+permissions:
+  contents: read
+concurrency:
+  group: helpscout-avelo-${{ github.event_name == 'pull_request' && github.run_id || 'publish' }}
+  cancel-in-progress: false
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: node --test tests/helpscout-avelo.test.mjs
+      - name: Validate the live Avelo feed without publication
+        if: github.event_name == 'pull_request'
+        run: node scripts/sync-helpscout-avelo.mjs
+      - uses: actions/upload-artifact@v7
+        if: always() && github.event_name == 'pull_request'
+        with:
+          name: avelo-validation-${{ github.run_number }}
+          path: diagnostics/helpscout-avelo-*
+          retention-days: 14
+  publish:
+    needs: test
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - name: Publish or verify Avelo knowledge and shared canonical course facts
+        run: node scripts/publish-avelo-knowledge.mjs
+        env:
+          HELP_SCOUT_DOCS_API_KEY: ${{ secrets.HELP_SCOUT_DOCS_API_KEY }}
+      - name: Refresh Avelo dates or publish the stale fallback
+        if: always()
+        run: node scripts/sync-helpscout-avelo.mjs
+        env:
+          DRY_RUN: 'false'
+          AVELO_MODE: ${{ github.event.schedule == '30 7 * * *' && 'watchdog' || 'refresh' }}
+          HELP_SCOUT_DOCS_API_KEY: ${{ secrets.HELP_SCOUT_DOCS_API_KEY }}
+      - name: Preserve versioned snapshots and article backups
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: helpscout-avelo-${{ github.run_number }}
+          path: diagnostics/helpscout-avelo-*
+          retention-days: 30
+          if-no-files-found: ignore
+      - name: Record verification status without committing article bodies
+        if: always()
+        run: |
+          git config user.name "abyss-future-dive-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for file in data/helpscout-avelo-knowledge-status.json data/helpscout-avelo-sync-status.json; do
+            if test -f "$file"; then git add -- "$file"; fi
+          done
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "chore: record Avelo publication verification"
+          git pull --rebase origin main
+          git push origin HEAD:main
