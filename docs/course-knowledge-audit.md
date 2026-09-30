@@ -111,3 +111,9 @@ Audit date: 30 September 2026. All 20 existing Sydney Dive Courses articles were
 - https://www.abyss.com.au/scuba-refresher-course
 - https://www.abyss.com.au/terms-and-conditions
 - https://www.abyss.com.au/training-hub
+
+## Retrieval-driven schedule split
+
+After first publication the Agent retrieved the buoyancy course correctly, but could not confirm its October date from the single 95-listing article. The authorised size exception was applied: the original daily overview now supplies up to two next usable dates per course, with five maintained family articles covering the complete range. All six are generated from the same validated snapshot with independent check/expiry timestamps. The overview is published last.
+
+Family groups: Advanced/Refresher; Specialties; Rescue/First Aid; Freediving/Mermaid/Avelo; Professional/Technical. No dates were dropped from the complete family set.
