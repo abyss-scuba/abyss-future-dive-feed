@@ -1,0 +1,104 @@
+{
+  "publishedAt": "2026-09-30T23:53:04.849Z",
+  "packHash": "09d6e781dd9a3cbe56a9daf4e183499a72525605de44d179773fe120d78d4cec",
+  "articles": [
+    {
+      "id": "6abda0dd535b0034271debb1",
+      "name": "Understanding the Avelo system",
+      "slug": "understanding-avelo-system",
+      "schedule": false,
+      "textHash": "3a30c873cbef2ba40aed5324dcca2009fb44fe7651fa39e5802dbfebf8430bd3"
+    },
+    {
+      "id": "6abda0dd535b0034271debb2",
+      "name": "Avelo buoyancy and the skills you still use",
+      "slug": "avelo-buoyancy-skills",
+      "schedule": false,
+      "textHash": "2f5b0f7b9204347496c6c5b7e8542cfc5e1bf51a95275638660576b11c72dd03"
+    },
+    {
+      "id": "6abda0dd3be702ed269e38e2",
+      "name": "Avelo benefits for the diving you enjoy",
+      "slug": "avelo-benefits-diving-goals",
+      "schedule": false,
+      "textHash": "d03bef9791d93eef96882f0123f1523bba59f0c2fad677d2b4717612d2dba0f8"
+    },
+    {
+      "id": "6abda0de3be702ed269e38e3",
+      "name": "Is Avelo suitable for me",
+      "slug": "avelo-suitability",
+      "schedule": false,
+      "textHash": "8fb3c43897854400b385a9fabccbcc77b5c04489af656528e38c5a84089c329c"
+    },
+    {
+      "id": "6abda0de3be702ed269e38e4",
+      "name": "Avelo Dive Course and Avelo Essentials in Sydney",
+      "slug": "avelo-essentials-sydney",
+      "schedule": false,
+      "textHash": "a98aff966c8aadef041bd416d351bff245086c51ceb14683dedcf9444454dc64"
+    },
+    {
+      "id": "6abda0debd0193dcb268d7a6",
+      "name": "Your Avelo course day and equipment",
+      "slug": "your-avelo-course-day",
+      "schedule": false,
+      "textHash": "419590a9ada81386d45c5689f192ca6373e9f5384bbaf8bb27f72dccf70d400d"
+    },
+    {
+      "id": "6abda0df528fa6f4b198ae72",
+      "name": "Standard Avelo course or Avelo Odyssey",
+      "slug": "avelo-course-or-odyssey",
+      "schedule": false,
+      "textHash": "ea20b606cedaaca437f06c5a32a90d71527e51648f56209cbb391f74a79b3247"
+    },
+    {
+      "id": "6abda0df7cdaed3f1efa58d5",
+      "name": "Avelo regulators computers and equipment fit",
+      "slug": "avelo-equipment-compatibility",
+      "schedule": false,
+      "textHash": "9223bd045be08d52ec4e777f12e1ea6fd685c58283c51ae43bce434971f353d8"
+    },
+    {
+      "id": "6abda0df528fa6f4b198ae73",
+      "name": "Avelo safety reliability and equipment questions",
+      "slug": "avelo-safety-reliability",
+      "schedule": false,
+      "textHash": "d1ee12e83a0e4dd53283892a9a419da19312fd35d77f2614d30bf4f20cb0f25c"
+    },
+    {
+      "id": "6abda0df535b0034271debb3",
+      "name": "Hire Avelo and keep diving after certification",
+      "slug": "avelo-hire-after-certification",
+      "schedule": false,
+      "textHash": "f7ae787bd5548b3eec11f2675bb7d3387aebef97f6aadfcfe1b62381c2501c49"
+    },
+    {
+      "id": "6abda0df535b0034271debb4",
+      "name": "Buying Avelo and taking it on dive trips",
+      "slug": "buying-travelling-avelo",
+      "schedule": false,
+      "textHash": "f804ed95e6479c5601db41a5e5242c9e233b2f7d01e1e76503fdd4ecda973fd9"
+    },
+    {
+      "id": "6abda0e0c3e570044c288b4a",
+      "name": "Avelo bookings changes and instructor help",
+      "slug": "avelo-booking-instructor-help",
+      "schedule": false,
+      "textHash": "9f8df1428ecdd37414a49529ea4df04e565463d751ed2200a9b03039bb9fe786"
+    },
+    {
+      "id": "6abda0e0c3e570044c288b4b",
+      "name": "Avelo Instructor training: current requirements",
+      "slug": "avelo-instructor-requirements",
+      "schedule": false,
+      "textHash": "361a853bd82063c21d7c60503c593e78987b4de2a4ccca45a52ac6c799621ba8"
+    },
+    {
+      "id": "6abda0e0535b0034271debb5",
+      "name": "Upcoming Avelo Course Dates — Updated Daily",
+      "slug": "upcoming-avelo-course-dates-updated-daily",
+      "schedule": true,
+      "textHash": "1cd0f35c76954b46d074814607570a0310ed5ee1619918db97d461d6fcae75c0"
+    }
+  ]
+}

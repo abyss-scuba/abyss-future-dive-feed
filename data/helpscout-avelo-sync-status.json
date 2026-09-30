@@ -1,0 +1,26 @@
+{
+  "attemptedAt": "2026-10-01T09:53:05.007+10:00",
+  "status": "published-and-read-back",
+  "lastSuccessfulCheck": "2026-10-01T09:53:05.007+10:00",
+  "validUntil": "2026-10-02T07:30:00.000+10:00",
+  "localDate": "2026-10-01",
+  "futureCount": 1,
+  "prices": {
+    "66991806": 699
+  },
+  "coverage": {
+    "sourceTotal": 1,
+    "pages": 1,
+    "pageSizes": [
+      1
+    ],
+    "widget": "4869",
+    "groups": "40518,40519"
+  },
+  "publication": {
+    "articleId": "6abda0e0535b0034271debb5",
+    "status": "published-and-read-back",
+    "textHash": "f5b03f0f1875fa139a79bea48f8cd09d6baa143ab3b5d7f9425e6e4ed1936ea9"
+  },
+  "agentVerification": "pending internal Test"
+}
