@@ -67,7 +67,11 @@ Audit date: 30 September 2026. All 20 existing Sydney Dive Courses articles were
 
 - Local test suite: 71 tests passed, including bad dates/prices/capacity, duplicate IDs, timetable conflicts, DST expiry, article identity/draft conflicts, readback and local-day deduplication.
 - Live dry run: 95/95 rows, 50 + 45 rows across two pages; exact booking links verified.
-- Production run and Agent uptake: recorded separately after deployment; do not infer success from this audit file.
+- Production publication: workflow run [36724815938](https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/36724815938) succeeded. Status records 95 listings across six schedule articles, all published and read back, checked at 2026-09-30T23:52:40.353+10:00. The 42 evergreen articles were published and read back in the earlier successful deployment; the original 20 article IDs were retained.
+- Agent uptake: the prepared `Abyss Sydney Course Adviser` (27358) retrieved the new specialty schedule and correctly answered the date-specific October buoyancy question with Sunday 11 October 2026, listed AUD299 and booking ID 41406453. It also retrieved the revised Nitrox article and explained optional, extra-cost ocean dives. The Divemaster internship test recognised a qualifying 18-month-old First Aid/CPR certificate as still within the 24-month period, and distinguished the approved 20-dive internship entry from 60 dives to certify.
+- Stale-data test: the Agent declined to confirm current price/availability from a three-day-old snapshot. An unrelated-link response was observed; the Agent's applied identity now instructs it to ask which course or use the general live listings instead of unrelated course links. That wording change is configuration evidence, not a claim of comprehensive regression coverage.
+- Remaining launch limitation: a combined goal, prerequisites and October date question still sometimes retrieves the correct course recommendation but only a general booking URL. A separate date-specific question has retrieved the exact dated booking successfully. Do not present this as proven one-turn booking performance. Tune and test the full conversation, no-course-needed path, package/language distinctions, stale fallback and conversion tracking before connecting a public Beacon.
+- Public deployment: the Agent is prepared for testing; the training-hub Beacon has not been connected by this work. Booking conversion uplift has not been measured.
 
 ## Primary sources
 
