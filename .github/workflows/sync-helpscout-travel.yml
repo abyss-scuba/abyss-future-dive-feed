@@ -1,0 +1,75 @@
+name: Dive Travel daily availability snapshot
+on:
+  schedule:
+    - cron: "0 8 * * *"
+      timezone: "Australia/Sydney"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/sync-helpscout-travel.yml'
+      - 'data/helpscout-travel-target.json'
+      - 'src/helpscout-travel*.mjs'
+      - 'scripts/*helpscout-travel.mjs'
+  pull_request:
+    paths:
+      - '.github/workflows/sync-helpscout-travel.yml'
+      - 'data/helpscout-travel-target.json'
+      - 'src/helpscout-travel*.mjs'
+      - 'scripts/*helpscout-travel.mjs'
+      - 'tests/helpscout-travel.test.mjs'
+permissions:
+  contents: read
+concurrency:
+  group: helpscout-travel-${{ github.event_name == 'pull_request' && github.run_id || 'publish' }}
+  cancel-in-progress: false
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm test
+  publish:
+    needs: test
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Refresh and verify the trip snapshot
+        run: node scripts/sync-helpscout-travel.mjs
+        env:
+          DRY_RUN: 'false'
+          HELP_SCOUT_DOCS_API_KEY: ${{ secrets.HELP_SCOUT_DOCS_API_KEY }}
+      - name: Save validation evidence
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: helpscout-travel-${{ github.run_number }}
+          path: diagnostics/helpscout-travel-*
+          if-no-files-found: ignore
+          retention-days: 14
+      - name: Record the successful refresh
+        run: |
+          git config user.name "abyss-future-dive-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- data/helpscout-travel-sync-status.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "chore: record verified travel snapshot refresh"
+          git pull --rebase origin main
+          git push origin HEAD:main
