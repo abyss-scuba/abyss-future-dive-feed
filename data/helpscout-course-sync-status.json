@@ -1,10 +1,10 @@
 {
-  "attemptedAt": "2026-10-01T06:40:16.651+10:00",
-  "status": "published-and-verified",
+  "attemptedAt": "2026-10-01T06:42:10.198+10:00",
+  "status": "already-published-today",
   "lastSuccessfulCheck": "2026-10-01T06:40:16.651+10:00",
   "staleAfter": "2026-10-03T06:40:16.651+10:00",
   "publication": {
-    "status": "published-and-verified",
+    "status": "already-published-today",
     "id": "6abd113e528fa6f4b198ab23",
     "count": 95,
     "articles": [
@@ -36,7 +36,7 @@
       {
         "id": "6abd73c1535b0034271deaba",
         "name": "Steadier buoyancy for underwater photos — Peak Performance Buoyancy dates",
-        "status": "published-and-verified"
+        "status": "already-published-today"
       },
       {
         "id": "6abd113e528fa6f4b198ab23",

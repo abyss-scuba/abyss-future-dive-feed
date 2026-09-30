@@ -1,6 +1,6 @@
 {
-  "publishedAt": "2026-09-30T20:29:50.171Z",
-  "packHash": "c3d4c5d511d1013516f322b7938af963b5fb584a61a788ff0a08d9cf41292921",
+  "publishedAt": "2026-09-30T20:42:07.467Z",
+  "packHash": "74d74596ad6bea2ed24981dc22b94c31656c743ed026388d170b0c94c7b18a61",
   "articles": [
     {
       "id": "6ab8ba1b171ef8b866f2c207",
@@ -21,7 +21,7 @@
       "name": "PADI Advanced Open Water in Sydney",
       "slug": "padi-advanced-open-water",
       "plannedSlug": "padi-advanced-open-water-sydney",
-      "textHash": "36120450ce0e72b9858bddc603b5b83c303c8021d728898b421771d13033ae3b"
+      "textHash": "feb0f4d5ba8e32c92bde51fcada46dff84e217904339c7f7b1e97fa160cd3ef8"
     },
     {
       "id": "6ab8baf349f1bc2c6aefc9ab",
