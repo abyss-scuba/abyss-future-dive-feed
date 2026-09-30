@@ -77,7 +77,15 @@ export function schedulePlans(snapshot){
  next.sort((a,b)=>a.startDate.localeCompare(b.startDate)||a.course.localeCompare(b.course));
  let overview=renderCourseSnapshot({...snapshot,sessions:next}).replace('ABYSS_COURSE_SNAPSHOT_V1','ABYSS_COURSE_SNAPSHOT_V2');
  overview=overview.replace('<h2>How to recommend a date</h2>',`<h2>Complete date range by course family</h2><p>The full validated snapshot contains ${snapshot.sessions.length} future listings. This overview shows up to two next entries per course that have no source timetable conflict and were listed with places. For later dates, sold-out entries or timetable queries, retrieve the matching daily family article:</p><ul>${familyPlans.map(p=>'<li>'+escape(p.name)+'</li>').join('')}</ul><h2>How to recommend a date</h2>`);
- return [...familyPlans,{slug:SLUG,name:TITLE,text:overview,sessions:snapshot.sessions}];
+ const buoyancySessions=snapshot.sessions.filter(r=>r.courseKey==='padi-peak-performance-buoyancy-sydney');
+ const focused=[];
+ if(buoyancySessions.length){
+  const name='Steadier buoyancy for underwater photos — Peak Performance Buoyancy dates';
+  const intro='<h2>Choose and book steadier buoyancy for underwater photography</h2><p>For an active certified diver whose main goal is steady hovering, trim and controlled movement for photos, Peak Performance Buoyancy is a focused next step. Open Water certification does not automatically mean Advanced is the right course. If basic skills are rusty, address the refresher need first. Use the definitive PADI Peak Performance Buoyancy in Sydney article for entry prerequisites, preparation, equipment, inclusions and certification requirements. This daily article supplies the matching course dates and booking links.</p>';
+  const text=renderCourseSnapshot({...snapshot,sessions:buoyancySessions}).replace('ABYSS_COURSE_SNAPSHOT_V1','ABYSS_COURSE_SNAPSHOT_V2').replace('<h2>'+TITLE+'</h2>','<h2>'+escape(name)+'</h2>'+intro).replace('future course listings; source total','future listings for Peak Performance Buoyancy; source total');
+  focused.push({slug:'steadier-buoyancy-photography-course-dates',name,text,sessions:buoyancySessions});
+ }
+ return [...familyPlans,...focused,{slug:SLUG,name:TITLE,text:overview,sessions:snapshot.sessions}];
 }
 export async function publishCourseSnapshot(snapshot,{request}={}){
  await validateCollection(request);const listed=await listArticles(request),plans=schedulePlans(snapshot),results=[];
