@@ -1,6 +1,6 @@
 {
-  "publishedAt": "2026-09-30T13:39:56.726Z",
-  "packHash": "9cd16247b201ac4e2f3beff18374747b2c3af0a56aad4682b32f5ef0c0f8cafa",
+  "publishedAt": "2026-09-30T20:03:58.119Z",
+  "packHash": "2c432f1447e56548ed88c811015d40b4ffe9deaf0c918ceb7b5e805cbe43406b",
   "articles": [
     {
       "id": "6ab8ba1b171ef8b866f2c207",
@@ -252,7 +252,7 @@
       "name": "Which Sydney dive course should I choose?",
       "slug": "which-sydney-dive-course-should-i-choose",
       "plannedSlug": "which-sydney-dive-course",
-      "textHash": "0a9e3b28ff9159e4614fc9d00dcb3a062eb5965c4ec8f6e29a221c41dd2990d1"
+      "textHash": "724347490ffea1f146bc80f056e09d6112bc93553b332614f22fd78ec5f7c071"
     },
     {
       "id": "6ab8b6617b6962906797d356",
@@ -295,6 +295,62 @@
       "slug": "advanced-versus-specialty-course",
       "plannedSlug": "advanced-versus-specialty-course",
       "textHash": "047ca3def8e6b0543395d83fa45a09463b8c1110250abafe349faac0057cdfec"
+    },
+    {
+      "id": "6abd6b2c528fa6f4b198ad2c",
+      "name": "Feel more comfortable diving in Sydney",
+      "slug": "feel-more-comfortable-diving-sydney",
+      "plannedSlug": "feel-more-comfortable-diving-sydney",
+      "textHash": "1635291d7e15e8100479f372db61b54b99bf72c385c1e85714c91228812424a1"
+    },
+    {
+      "id": "6abd6b2c528fa6f4b198ad2d",
+      "name": "Prepare for a dive holiday or liveaboard",
+      "slug": "prepare-for-dive-holiday-liveaboard",
+      "plannedSlug": "prepare-for-dive-holiday-liveaboard",
+      "textHash": "c637592bd17f62c6c642a93c5a65e8a3ecc7affd791f9d6021da3e8874eab150"
+    },
+    {
+      "id": "6abd6b2cbd0193dcb268d677",
+      "name": "Explore deeper sites or wrecks",
+      "slug": "explore-deeper-sites-or-wrecks",
+      "plannedSlug": "explore-deeper-sites-or-wrecks",
+      "textHash": "c10a227c5f7dc60c1d3889dfbb0d4da44c551e3818d150ac733a373c26776f88"
+    },
+    {
+      "id": "6abd6b2c7cdaed3f1efa5796",
+      "name": "Become a more capable dive buddy",
+      "slug": "become-a-more-capable-dive-buddy",
+      "plannedSlug": "become-a-more-capable-dive-buddy",
+      "textHash": "f270141bed51295edff1a2798e85e486356c8e9f534060b84ee7b461df1c2299"
+    },
+    {
+      "id": "6abd6b2d3be702ed269e378e",
+      "name": "Return to diving after a break",
+      "slug": "return-to-diving-after-a-break",
+      "plannedSlug": "return-to-diving-after-a-break",
+      "textHash": "78fe123904ae2a328fd90b12473af957543fa50175986ba2e8a6c263bcb69c64"
+    },
+    {
+      "id": "6abd6b2dc3e570044c288a11",
+      "name": "Enjoy marine life or underwater photography",
+      "slug": "marine-life-photography-next-step",
+      "plannedSlug": "marine-life-photography-next-step",
+      "textHash": "73a8d4de0f5c2f08576d9524b6fa00dac4d18ec63574a3387a77e3bcefdae81e"
+    },
+    {
+      "id": "6abd6b2d528fa6f4b198ad2e",
+      "name": "Work towards Master Scuba Diver",
+      "slug": "plan-master-scuba-diver-next-step",
+      "plannedSlug": "plan-master-scuba-diver-next-step",
+      "textHash": "a41a184235f5723ebaeefd129d38ae74a5f9d7344f6c4e5e2cc0221107b15bf1"
+    },
+    {
+      "id": "6abd6b2d535b0034271dea66",
+      "name": "When more diving is the best next step",
+      "slug": "when-more-diving-is-best-next-step",
+      "plannedSlug": "when-more-diving-is-best-next-step",
+      "textHash": "7500d6dce75e7ef0161643b6242033a08d8e71c536c66289546a340e1b0c5836"
     }
   ]
 }
