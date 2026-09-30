@@ -1,0 +1,146 @@
+{
+  "/courses/padi-aware-shark-conservation-course-dive-with-purpose": {
+    "key": "padi-shark-conservation-sydney",
+    "articleSlug": "padi-shark-conservation-sydney",
+    "title": "PADI AWARE Shark Conservation in Sydney",
+    "names": [
+      "PADI Aware Shark Conservation Course"
+    ]
+  },
+  "/courses/padi-advanced-open-water-course": {
+    "key": "padi-advanced-open-water-sydney",
+    "articleSlug": "padi-advanced-open-water-sydney",
+    "title": "PADI Advanced Open Water in Sydney",
+    "names": [
+      "Advanced Open Water Diver"
+    ]
+  },
+  "/courses/enriched-air-diver": {
+    "key": "padi-nitrox-sydney",
+    "articleSlug": "padi-nitrox-sydney",
+    "title": "PADI Enriched Air Nitrox in Sydney",
+    "names": [
+      "Enriched Air Diver"
+    ]
+  },
+  "/courses/padi-freediver-course": {
+    "key": "padi-freediver-sydney",
+    "articleSlug": "padi-freediver-sydney",
+    "title": "PADI Freediver in Sydney",
+    "names": [
+      "PADI Freediver Course"
+    ]
+  },
+  "/courses/padi-divemaster-certification-and-training": {
+    "key": "padi-divemaster-course-sydney",
+    "articleSlug": "padi-divemaster-course-sydney",
+    "title": "PADI Divemaster course in Sydney",
+    "names": [
+      "PADI Divemaster Certification and Training"
+    ]
+  },
+  "/courses/emergency-first-response": {
+    "key": "emergency-first-response-sydney",
+    "articleSlug": "emergency-first-response-sydney",
+    "title": "Emergency First Response: First Aid and CPR in Sydney",
+    "names": [
+      "Emergency First Response Course"
+    ]
+  },
+  "/courses/peak-performance-buoyancy": {
+    "key": "padi-peak-performance-buoyancy-sydney",
+    "articleSlug": "padi-peak-performance-buoyancy-sydney",
+    "title": "PADI Peak Performance Buoyancy in Sydney",
+    "names": [
+      "Peak Performance Buoyancy Course"
+    ]
+  },
+  "/courses/padi-rescue-diver-course": {
+    "key": "padi-rescue-diver-sydney",
+    "articleSlug": "padi-rescue-diver-sydney",
+    "title": "PADI Rescue Diver in Sydney",
+    "names": [
+      "PADI Rescue Diver Course | Enhance Safety & Confidence in Diving"
+    ]
+  },
+  "/courses/reactivate-your-diving": {
+    "key": "padi-reactivate-sydney",
+    "articleSlug": "padi-reactivate-sydney",
+    "title": "PADI ReActivate and scuba refresher in Sydney",
+    "names": [
+      "PADI REFRESHER COURSE SYDNEY"
+    ]
+  },
+  "/courses/how-to-become-a-mermaid": {
+    "key": "padi-mermaid-sydney",
+    "articleSlug": "padi-mermaid-sydney",
+    "title": "PADI Mermaid in Sydney",
+    "names": [
+      "PADI Mermaid Course"
+    ]
+  },
+  "/courses/avelo-dive-course": {
+    "key": "avelo-essentials-sydney",
+    "articleSlug": "avelo-essentials-sydney",
+    "title": "Avelo Dive Course and Avelo Essentials in Sydney",
+    "names": [
+      "Avelo Dive Course"
+    ]
+  },
+  "/courses/open-water-scuba-diving-instructor-course": {
+    "key": "padi-idc-sydney",
+    "articleSlug": "padi-idc-sydney",
+    "title": "PADI Instructor Development Course (IDC) in Sydney",
+    "names": [
+      "Instructor Development Course (IDC)"
+    ]
+  },
+  "/courses/deep-diver": {
+    "key": "padi-deep-diver-sydney",
+    "articleSlug": "padi-deep-diver-sydney",
+    "title": "PADI Deep Diver in Sydney",
+    "names": [
+      "Deep Diver Course"
+    ]
+  },
+  "/courses/equipment-specialist": {
+    "key": "padi-equipment-specialist-sydney",
+    "articleSlug": "padi-equipment-specialist-sydney",
+    "title": "PADI Equipment Specialist in Sydney",
+    "names": [
+      "Equipment Specialist Course"
+    ]
+  },
+  "/courses/sidemount-diver": {
+    "key": "padi-sidemount-diver-sydney",
+    "articleSlug": "padi-sidemount-diver-sydney",
+    "title": "PADI Sidemount Diver in Sydney",
+    "names": [
+      "Sidemount Diver Course"
+    ]
+  },
+  "/courses/tec-40": {
+    "key": "padi-tec-40-sydney",
+    "articleSlug": "padi-tec-40-sydney",
+    "title": "PADI Tec 40 in Sydney",
+    "names": [
+      "Tec 40"
+    ]
+  },
+  "/courses/underwater-navigator": {
+    "key": "padi-underwater-navigator-sydney",
+    "articleSlug": "padi-underwater-navigator-sydney",
+    "title": "PADI Underwater Navigator in Sydney",
+    "names": [
+      "PADI Underwater Navigator Course"
+    ]
+  },
+  "/courses/dry-suit-diver": {
+    "key": "padi-dry-suit-diver-sydney",
+    "articleSlug": "padi-dry-suit-diver-sydney",
+    "title": "PADI Dry Suit Diver in Sydney",
+    "names": [
+      "DrySuit Diver Course"
+    ]
+  }
+}
