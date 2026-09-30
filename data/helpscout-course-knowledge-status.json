@@ -1,13 +1,13 @@
 {
-  "publishedAt": "2026-09-30T20:03:58.119Z",
-  "packHash": "2c432f1447e56548ed88c811015d40b4ffe9deaf0c918ceb7b5e805cbe43406b",
+  "publishedAt": "2026-09-30T20:29:50.171Z",
+  "packHash": "c3d4c5d511d1013516f322b7938af963b5fb584a61a788ff0a08d9cf41292921",
   "articles": [
     {
       "id": "6ab8ba1b171ef8b866f2c207",
       "name": "PADI Enriched Air Nitrox in Sydney",
       "slug": "nitrox-and-buoyancy",
       "plannedSlug": "padi-nitrox-sydney",
-      "textHash": "3294656d6673eec527a11b8971fea4523f0550b194f569ba2e744a20ef3c851e"
+      "textHash": "8628dc44bcc0783e848f77877d02a28678e572e62cf419d49e8779a7d25d269f"
     },
     {
       "id": "6abd112249f1bc2c6aefd870",
@@ -252,14 +252,14 @@
       "name": "Which Sydney dive course should I choose?",
       "slug": "which-sydney-dive-course-should-i-choose",
       "plannedSlug": "which-sydney-dive-course",
-      "textHash": "724347490ffea1f146bc80f056e09d6112bc93553b332614f22fd78ec5f7c071"
+      "textHash": "43b1890c66cd970917373d2515dce4ede047cc650a689e089b06d1f5f10796fb"
     },
     {
       "id": "6ab8b6617b6962906797d356",
       "name": "Booking a dive course: buddies, prerequisites, dates and equipment",
       "slug": "booking-a-dive-course-buddies-prerequisites-dates-equipment",
       "plannedSlug": "booking-sydney-dive-course",
-      "textHash": "63a71602379210740732c13d15628935ead589db56e8ee09e08244372e2631be"
+      "textHash": "85a66bb280c2e0cdda30867d877167390d25c7c8d3f0e537706ad87c1d467af1"
     },
     {
       "id": "6ab8cb2984f08c58bb03f7f1",
