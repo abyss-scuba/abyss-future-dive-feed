@@ -1,0 +1,11 @@
+{
+  "checkedAt": "2026-09-30T14:34:58.645+10:00",
+  "firstDate": "2026-10-31",
+  "lastDate": "2027-10-26",
+  "availableDepartures": 7,
+  "soldOutDepartures": 3,
+  "publication": {
+    "status": "updated",
+    "count": 10
+  }
+}
