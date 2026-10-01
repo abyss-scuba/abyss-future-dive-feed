@@ -1,6 +1,6 @@
 {
-  "publishedAt": "2026-10-01T02:10:20.270Z",
-  "packHash": "99f06c98fbfa693562a8eb3a69634ce65ac15e53ea72bc18968644743173b16a",
+  "publishedAt": "2026-10-01T02:19:35.729Z",
+  "packHash": "1aa3c5cbf8e13401867f1223d79738833fceaf0d6354317a7c4d7ed094ab14eb",
   "articles": [
     {
       "id": "6abda0dd535b0034271debb1",
@@ -56,7 +56,7 @@
       "name": "Avelo regulators computers and equipment fit",
       "slug": "avelo-equipment-compatibility",
       "schedule": false,
-      "textHash": "fee3adf2c9ae7b7b335e4a6f51c6921f73e5c8bce6d8e9346001edd6276b9af1"
+      "textHash": "87db84eee3f81b8e266d3e063abe48014503ddbe081f537f2810974c8ab0cc5b"
     },
     {
       "id": "6abda0df528fa6f4b198ae73",
