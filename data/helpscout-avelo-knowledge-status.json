@@ -1,6 +1,6 @@
 {
-  "publishedAt": "2026-10-01T03:06:02.771Z",
-  "packHash": "c3722bbb2e2df1c17cd4e9f591390f96a077519ac5888c5aa9bda738f68fd850",
+  "publishedAt": "2026-10-01T03:16:07.472Z",
+  "packHash": "ea6f568febae5ff33c47a569f4e6c4f3801024af085e6033406f5fb0f72bae3a",
   "articles": [
     {
       "id": "6abda0dd535b0034271debb1",
@@ -21,7 +21,7 @@
       "name": "Avelo benefits for the diving you enjoy",
       "slug": "avelo-benefits-diving-goals",
       "schedule": false,
-      "textHash": "36c5894326a9be2b0e3b22c4f4a4a313ad88ac970dfca7a97323cef1d3ccf2ac"
+      "textHash": "1b6b49e98a55cf56bb6d93a11b87a9e17a503c2644b581aba4c8fa9a3486a3cc"
     },
     {
       "id": "6abda0de3be702ed269e38e3",
@@ -42,7 +42,7 @@
       "name": "Your Avelo course day and equipment",
       "slug": "your-avelo-course-day",
       "schedule": false,
-      "textHash": "2a6ba22d20c5b1787bbbbff1f959d9bfe18187817e9d76f27f5630949c1f4d74"
+      "textHash": "08cbe22ca7b80f27ab3a4e7338a058919923d73a9f8dd02d19480687bda01849"
     },
     {
       "id": "6abda0df528fa6f4b198ae72",
