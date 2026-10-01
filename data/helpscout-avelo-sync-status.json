@@ -22,5 +22,20 @@
     "status": "published-and-read-back",
     "textHash": "f5b03f0f1875fa139a79bea48f8cd09d6baa143ab3b5d7f9425e6e4ed1936ea9"
   },
-  "agentVerification": "pending internal Test"
+  "agentVerification": "verified retrieval; acceptance testing incomplete",
+  "agentVerificationDetails": {
+    "agentId": 27389,
+    "verifiedAt": "2026-10-01T00:38:36.964Z",
+    "testCase": "061-R1",
+    "snapshotTextHash": "f5b03f0f1875fa139a79bea48f8cd09d6baa143ab3b5d7f9425e6e4ed1936ea9",
+    "observed": [
+      "correct next course date",
+      "correct listed price",
+      "actual snapshot check time",
+      "exact selected-date booking link",
+      "live price/places caveat"
+    ],
+    "visitorAnswersEnabled": false,
+    "finalRegressionPassed": false
+  }
 }
