@@ -1,6 +1,6 @@
 {
-  "publishedAt": "2026-10-01T00:14:51.120Z",
-  "packHash": "4b3f3fb5af99f4c313d22751b2d1fa94615a8b30bd18f6e5118d97bb37e409eb",
+  "publishedAt": "2026-10-01T00:19:04.500Z",
+  "packHash": "0f9e1671fef9c04ef274a5cb2f2ed4da02f90b1ac7cc599f8edaf5afe1451374",
   "articles": [
     {
       "id": "6abda0dd535b0034271debb1",
@@ -56,14 +56,14 @@
       "name": "Avelo regulators computers and equipment fit",
       "slug": "avelo-equipment-compatibility",
       "schedule": false,
-      "textHash": "9223bd045be08d52ec4e777f12e1ea6fd685c58283c51ae43bce434971f353d8"
+      "textHash": "24e139d18151429960f9ca4690d30c50c420f3488c81bf3e1df07f5f8023f14f"
     },
     {
       "id": "6abda0df528fa6f4b198ae73",
       "name": "Avelo safety reliability and equipment questions",
       "slug": "avelo-safety-reliability",
       "schedule": false,
-      "textHash": "34c18be1b87fb11599663d239d1d0a52b86014e1621d544af45e8b0443c85f48"
+      "textHash": "fe0b33e38c61302214a3fd36df66ea5b8f8abb5008a2a542b78a6fc1355bf994"
     },
     {
       "id": "6abda0df535b0034271debb3",
