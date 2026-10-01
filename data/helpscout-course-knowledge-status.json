@@ -1,361 +1,550 @@
 {
-  "publishedAt": "2026-09-30T21:07:10.645Z",
-  "packHash": "ddaec2aff3ff1e046214a1e4f1a841bb888ce2b4935f63205971f187c9eeb602",
+  "publishedAt": "2026-10-01T00:10:02.644Z",
+  "packHash": "3a1ee29ed5b94ec809ebc9ce1a8858408b2ee319084a723af147834993868fb6",
   "articles": [
     {
       "id": "6ab8ba1b171ef8b866f2c207",
       "name": "PADI Enriched Air Nitrox in Sydney",
       "slug": "nitrox-and-buoyancy",
       "plannedSlug": "padi-nitrox-sydney",
-      "textHash": "8628dc44bcc0783e848f77877d02a28678e572e62cf419d49e8779a7d25d269f"
+      "textHash": "8628dc44bcc0783e848f77877d02a28678e572e62cf419d49e8779a7d25d269f",
+      "sourceHash": "281913a341f3972ef1a5ab23502d1a72b408837733033aed2b882f3eedf2f774",
+      "action": "preserved",
+      "liveTextHash": "8628dc44bcc0783e848f77877d02a28678e572e62cf419d49e8779a7d25d269f",
+      "liveHasDraft": false
     },
     {
       "id": "6abd112249f1bc2c6aefd870",
       "name": "PADI Peak Performance Buoyancy in Sydney",
       "slug": "padi-peak-performance-buoyancy-sydney",
       "plannedSlug": "padi-peak-performance-buoyancy-sydney",
-      "textHash": "6738b37c120c1db4cc1fc97866461ffe0f772a0c8caf02e30b1c8a4a389ab475"
+      "textHash": "6738b37c120c1db4cc1fc97866461ffe0f772a0c8caf02e30b1c8a4a389ab475",
+      "sourceHash": "a72d63c4dcc4ecf9ff12bc1377e8bb9da0d1e9c19fcf5e3e9bad632fd72c8c1a",
+      "action": "preserved",
+      "liveTextHash": "6738b37c120c1db4cc1fc97866461ffe0f772a0c8caf02e30b1c8a4a389ab475",
+      "liveHasDraft": false
     },
     {
       "id": "6ab8b970171ef8b866f2c206",
       "name": "PADI Advanced Open Water in Sydney",
       "slug": "padi-advanced-open-water",
       "plannedSlug": "padi-advanced-open-water-sydney",
-      "textHash": "feb0f4d5ba8e32c92bde51fcada46dff84e217904339c7f7b1e97fa160cd3ef8"
+      "textHash": "feb0f4d5ba8e32c92bde51fcada46dff84e217904339c7f7b1e97fa160cd3ef8",
+      "sourceHash": "b9f99cf3c9a1820fafbbd5deb05d49bf5d0b698b65fa5d6996abd61f23cd02ee",
+      "action": "preserved",
+      "liveTextHash": "2c96e4e3d64c8c20d4a1b2d65a0705a8694af9fef379f2c2fcda1b7b1789ab16",
+      "liveHasDraft": false
     },
     {
       "id": "6ab8baf349f1bc2c6aefc9ab",
       "name": "PADI ReActivate and scuba refresher in Sydney",
       "slug": "scuba-refresher-reactivate",
       "plannedSlug": "padi-reactivate-sydney",
-      "textHash": "807bb18a329c3f00c608e53c4a8e2c9f6d85b9bff4e6253b930de184c967153f"
+      "textHash": "807bb18a329c3f00c608e53c4a8e2c9f6d85b9bff4e6253b930de184c967153f",
+      "sourceHash": "f6206c9f7a61241fae1192a37d6c65027ea2f39ecc70bdf76d9b04c112b75092",
+      "action": "preserved",
+      "liveTextHash": "807bb18a329c3f00c608e53c4a8e2c9f6d85b9bff4e6253b930de184c967153f",
+      "liveHasDraft": false
     },
     {
       "id": "6ab8ba857b6962906797d359",
       "name": "PADI Rescue Diver in Sydney",
       "slug": "rescue-first-aid-and-oxygen",
       "plannedSlug": "padi-rescue-diver-sydney",
-      "textHash": "eb2b025e7ee3bba80d96102090935f12e2031b52ee07d0ccc270cea192af57a8"
+      "textHash": "eb2b025e7ee3bba80d96102090935f12e2031b52ee07d0ccc270cea192af57a8",
+      "sourceHash": "705d2072634889cf9bf04390d66fbdc8483d55ab5c4267d99b19c35e5ca22ce0",
+      "action": "preserved",
+      "liveTextHash": "1ca0c2dd82768cc7ef1fe9649835f407db8ea241fa4d6b923a0f02e69b6e55ff",
+      "liveHasDraft": false
     },
     {
       "id": "6abd112349f1bc2c6aefd872",
       "name": "Emergency First Response: First Aid and CPR in Sydney",
       "slug": "emergency-first-response-sydney",
       "plannedSlug": "emergency-first-response-sydney",
-      "textHash": "587c7555d7574751236be5a07fdca98aab5da84fbefd4e34b27a6212d8d9f31c"
+      "textHash": "587c7555d7574751236be5a07fdca98aab5da84fbefd4e34b27a6212d8d9f31c",
+      "sourceHash": "c7a61233ab9f5cd0a276b74e824d97fa93f0348f055e451d3f64ecb9cae59e43",
+      "action": "preserved",
+      "liveTextHash": "977d5fc509565ee8b3985a5a7b48921aa8f101d1cb41d8ebef1eb49e41770acb",
+      "liveHasDraft": false
     },
     {
       "id": "6abd1123bd0193dcb268d442",
       "name": "PADI Emergency Oxygen Provider in Sydney",
       "slug": "emergency-oxygen-provider-sydney",
       "plannedSlug": "emergency-oxygen-provider-sydney",
-      "textHash": "395bc352b8c0cea9ac0744171c2322569ff4654e93f7fdfc67ee67edd41dee8f"
+      "textHash": "395bc352b8c0cea9ac0744171c2322569ff4654e93f7fdfc67ee67edd41dee8f",
+      "sourceHash": "277856d55b7c1fe0d25f95ccf3012a8f38b29cb0cc7ab24170a4c7f84b3b724d",
+      "action": "preserved",
+      "liveTextHash": "395bc352b8c0cea9ac0744171c2322569ff4654e93f7fdfc67ee67edd41dee8f",
+      "liveHasDraft": false
     },
     {
       "id": "6ab8bbae4b37f75b5ff65b9f",
       "name": "PADI Deep Diver in Sydney",
       "slug": "deep-and-dry-suit",
       "plannedSlug": "padi-deep-diver-sydney",
-      "textHash": "e14be86fdf632df70d7b02e32e18dc478695fe7a5b48d9e4be8f8c7a933c27d2"
+      "textHash": "e14be86fdf632df70d7b02e32e18dc478695fe7a5b48d9e4be8f8c7a933c27d2",
+      "sourceHash": "0c6b717cf27354f7ed6bc8d795bf87a41a966bce3de87a74a9824e86d0ecc9fc",
+      "action": "preserved",
+      "liveTextHash": "e14be86fdf632df70d7b02e32e18dc478695fe7a5b48d9e4be8f8c7a933c27d2",
+      "liveHasDraft": false
     },
     {
       "id": "6abd11243be702ed269e3546",
       "name": "PADI Dry Suit Diver in Sydney",
       "slug": "padi-dry-suit-diver-sydney",
       "plannedSlug": "padi-dry-suit-diver-sydney",
-      "textHash": "8235df4e45bc6e58b411dbc6cc1a6487af4619b6129d1b683bb6d476eb695ee9"
+      "textHash": "8235df4e45bc6e58b411dbc6cc1a6487af4619b6129d1b683bb6d476eb695ee9",
+      "sourceHash": "40a5148c298a7702efaae076eaa3799b6f60c3625867d75c9a05a5bec784bd53",
+      "action": "preserved",
+      "liveTextHash": "8235df4e45bc6e58b411dbc6cc1a6487af4619b6129d1b683bb6d476eb695ee9",
+      "liveHasDraft": false
     },
     {
       "id": "6ab8bba6171ef8b866f2c208",
       "name": "PADI Freediver in Sydney",
       "slug": "padi-freediver-and-mermaid",
       "plannedSlug": "padi-freediver-sydney",
-      "textHash": "2f8163c98e815f192069dfb11b590e84ce20d11865b0729ba074f42825962c24"
+      "textHash": "2f8163c98e815f192069dfb11b590e84ce20d11865b0729ba074f42825962c24",
+      "sourceHash": "e24efe5ff2b0cedb1fac2051296c9de14f8000e134003e19511b254dcf81f8be",
+      "action": "preserved",
+      "liveTextHash": "b6f90ef6c4fab424d8175718f13582313266db4c17ee5ac75736be7159b104ec",
+      "liveHasDraft": false
     },
     {
       "id": "6abd11245c1e572f6ed8c213",
       "name": "PADI Mermaid in Sydney",
       "slug": "padi-mermaid-sydney",
       "plannedSlug": "padi-mermaid-sydney",
-      "textHash": "bd2e2eb16117eb6f1a3be698088655e60d2cbc16747197112b92edacf4e62a91"
+      "textHash": "bd2e2eb16117eb6f1a3be698088655e60d2cbc16747197112b92edacf4e62a91",
+      "sourceHash": "3ae945fce05e08bdbd54d98e15a223806cd8cfef343087c67c8126794d8b009e",
+      "action": "preserved",
+      "liveTextHash": "bd2e2eb16117eb6f1a3be698088655e60d2cbc16747197112b92edacf4e62a91",
+      "liveHasDraft": false
     },
     {
       "id": "6abd1124528fa6f4b198ab1c",
       "name": "PADI Advanced Freediver in Sydney",
       "slug": "padi-advanced-freediver-sydney",
       "plannedSlug": "padi-advanced-freediver-sydney",
-      "textHash": "7861e52a767d91621268b534a6ec5df7bc4734aba900f8e562ff7fa43ba85801"
+      "textHash": "7861e52a767d91621268b534a6ec5df7bc4734aba900f8e562ff7fa43ba85801",
+      "sourceHash": "e56b5623e2e23c4ffc17d3b9ddcadee6967a5ba8ea9e71434bb73b485d3aecb5",
+      "action": "preserved",
+      "liveTextHash": "7861e52a767d91621268b534a6ec5df7bc4734aba900f8e562ff7fa43ba85801",
+      "liveHasDraft": false
     },
     {
       "id": "6ab8bb8b7b6962906797d35a",
       "name": "Avelo Dive Course and Avelo Essentials in Sydney",
       "slug": "avelo-essentials",
       "plannedSlug": "avelo-essentials-sydney",
-      "textHash": "54b23d0052cb77d9b2434e97098ba6108450b48549cd0a836ffa77fe2d381379"
+      "textHash": "a98aff966c8aadef041bd416d351bff245086c51ceb14683dedcf9444454dc64",
+      "sourceHash": "0bf102847f1fe86e5b7b399243f9bb0e3dd18d347820b565913b0f8e849f2ab5",
+      "action": "published-and-read-back"
     },
     {
       "id": "6ab8b8967b6962906797d358",
       "name": "PADI Open Water in Sydney: beginners, juniors and referrals",
       "slug": "padi-open-water-and-junior",
       "plannedSlug": "padi-open-water-sydney",
-      "textHash": "b27d3c2e0d637f693ccfd089f9d77f8976d054a2a9f52ebf03a0372a4d8b3a52"
+      "textHash": "b27d3c2e0d637f693ccfd089f9d77f8976d054a2a9f52ebf03a0372a4d8b3a52",
+      "sourceHash": "425a55a33e616df1657de4d465cb7172981a8023072a13896057f76b52e6ce35",
+      "action": "preserved",
+      "liveTextHash": "d8580e8ccc267a81eb19e3cc1a134bc1607ca72f33972140365c3e045df4559e",
+      "liveHasDraft": false
     },
     {
       "id": "6ab8bb9349f1bc2c6aefc9ad",
       "name": "PADI Divemaster course in Sydney",
       "slug": "padi-divemaster-and-internship",
       "plannedSlug": "padi-divemaster-course-sydney",
-      "textHash": "88eb912dda97930b99b92f8461fcd4c3bda6ed0bae0cea65625009bcddec2a1d"
+      "textHash": "88eb912dda97930b99b92f8461fcd4c3bda6ed0bae0cea65625009bcddec2a1d",
+      "sourceHash": "b73c9cae264f98e7483e29d96212c81ebb2a65d97559bd4d7f922fb1a3ad49d5",
+      "action": "preserved",
+      "liveTextHash": "88eb912dda97930b99b92f8461fcd4c3bda6ed0bae0cea65625009bcddec2a1d",
+      "liveHasDraft": false
     },
     {
       "id": "6abd1125528fa6f4b198ab1d",
       "name": "Abyss Divemaster Internship",
       "slug": "abyss-divemaster-internship",
       "plannedSlug": "abyss-divemaster-internship",
-      "textHash": "5a3e7807da95499a2c10a07e0c9b4a9f74865384ffaabca3178920cc3e305dc5"
+      "textHash": "5a3e7807da95499a2c10a07e0c9b4a9f74865384ffaabca3178920cc3e305dc5",
+      "sourceHash": "da1ca3a043714e7cabc23588b547cb21be5475c508b0abd6f638b0fead7ae0ea",
+      "action": "preserved",
+      "liveTextHash": "5a3e7807da95499a2c10a07e0c9b4a9f74865384ffaabca3178920cc3e305dc5",
+      "liveHasDraft": false
     },
     {
       "id": "6abd112649f1bc2c6aefd874",
       "name": "PADI Junior Divemaster in Sydney",
       "slug": "padi-junior-divemaster-sydney",
       "plannedSlug": "padi-junior-divemaster-sydney",
-      "textHash": "23e0411045729120ed44c714d51abe6af7f22983ed227d6c6729005857bf4c40"
+      "textHash": "23e0411045729120ed44c714d51abe6af7f22983ed227d6c6729005857bf4c40",
+      "sourceHash": "c924434db3ac4f9064983983fdff1849dfb5fe5f73c1e7c23a22eca0472bbc9e",
+      "action": "preserved",
+      "liveTextHash": "23e0411045729120ed44c714d51abe6af7f22983ed227d6c6729005857bf4c40",
+      "liveHasDraft": false
     },
     {
       "id": "6ab8bbb549f1bc2c6aefc9ae",
       "name": "PADI Instructor Development Course (IDC) in Sydney",
       "slug": "padi-idc-and-instructor-internships",
       "plannedSlug": "padi-idc-sydney",
-      "textHash": "5e3273c577f9a74bdf35bd8d57a7ca38a71795960157036cf7c3c92143f880b3"
+      "textHash": "5e3273c577f9a74bdf35bd8d57a7ca38a71795960157036cf7c3c92143f880b3",
+      "sourceHash": "a55cf30ad37d3e658ca13f517ebb3fd884b23e4377c15a5ebcd00dbd10a0a8a5",
+      "action": "preserved",
+      "liveTextHash": "5e3273c577f9a74bdf35bd8d57a7ca38a71795960157036cf7c3c92143f880b3",
+      "liveHasDraft": false
     },
     {
       "id": "6abd1126bd0193dcb268d443",
       "name": "Abyss Dive Instructor Internship",
       "slug": "abyss-instructor-internship",
       "plannedSlug": "abyss-instructor-internship",
-      "textHash": "a2b56c2d8bd59d54f69bee5cf7c516798e59b9b85c7e5e0fc28c92a28ca836a3"
+      "textHash": "a2b56c2d8bd59d54f69bee5cf7c516798e59b9b85c7e5e0fc28c92a28ca836a3",
+      "sourceHash": "5dd61e04fb464ab8f63ce9a62ba640faf57ca8cb9d1ea2e7c50a50c0b762175b",
+      "action": "preserved",
+      "liveTextHash": "a2b56c2d8bd59d54f69bee5cf7c516798e59b9b85c7e5e0fc28c92a28ca836a3",
+      "liveHasDraft": false
     },
     {
       "id": "6abd1126528fa6f4b198ab1e",
       "name": "PADI Master Scuba Diver Trainer preparation",
       "slug": "padi-msdt-preparation-sydney",
       "plannedSlug": "padi-msdt-preparation-sydney",
-      "textHash": "1b6bcdd043676fb222015f38ce419f03cacdaa843a665ddad3e5db5dcea751b3"
+      "textHash": "1b6bcdd043676fb222015f38ce419f03cacdaa843a665ddad3e5db5dcea751b3",
+      "sourceHash": "a8ab4f86ff1b08c78772393dfcc15820e5640945480cdb2944c4678b1fe3c770",
+      "action": "preserved",
+      "liveTextHash": "1b6bcdd043676fb222015f38ce419f03cacdaa843a665ddad3e5db5dcea751b3",
+      "liveHasDraft": false
     },
     {
       "id": "6abd1127528fa6f4b198ab1f",
       "name": "Emergency First Response Instructor in Sydney",
       "slug": "efr-instructor-sydney",
       "plannedSlug": "efr-instructor-sydney",
-      "textHash": "05466d876658242c3a98ff5a618d54ac7c5fd122d1f3964023b675b89945ad8c"
+      "textHash": "05466d876658242c3a98ff5a618d54ac7c5fd122d1f3964023b675b89945ad8c",
+      "sourceHash": "2f8c3078c3367b90dad2bce08cc6eabd266c906e3d840e0919c1b2656bacef3b",
+      "action": "preserved",
+      "liveTextHash": "05466d876658242c3a98ff5a618d54ac7c5fd122d1f3964023b675b89945ad8c",
+      "liveHasDraft": false
     },
     {
       "id": "6abd112749f1bc2c6aefd875",
       "name": "PADI IDC Staff Instructor in Sydney",
       "slug": "padi-idc-staff-instructor-sydney",
       "plannedSlug": "padi-idc-staff-instructor-sydney",
-      "textHash": "97a52ea03c5f77d00bf09bacadf7e2bb8fab3be95cc1b48356f26c5cc925b722"
+      "textHash": "97a52ea03c5f77d00bf09bacadf7e2bb8fab3be95cc1b48356f26c5cc925b722",
+      "sourceHash": "4a30e0e13c855cc16ca9736986a6bc80e4770bc2a3e08c4ae631410131e98403",
+      "action": "preserved",
+      "liveTextHash": "97a52ea03c5f77d00bf09bacadf7e2bb8fab3be95cc1b48356f26c5cc925b722",
+      "liveHasDraft": false
     },
     {
       "id": "6abd1127bd0193dcb268d444",
       "name": "PADI Underwater Navigator in Sydney",
       "slug": "padi-underwater-navigator-sydney",
       "plannedSlug": "padi-underwater-navigator-sydney",
-      "textHash": "7a8462b9a9c7a71bf9e00f46066ee53c7e0205d75c03bfafca594b4b6ba7e356"
+      "textHash": "7a8462b9a9c7a71bf9e00f46066ee53c7e0205d75c03bfafca594b4b6ba7e356",
+      "sourceHash": "d87180bd982d97f50240b69c79191f5576b06e921a852be9fd8023eee75ac6ae",
+      "action": "preserved",
+      "liveTextHash": "7a8462b9a9c7a71bf9e00f46066ee53c7e0205d75c03bfafca594b4b6ba7e356",
+      "liveHasDraft": false
     },
     {
       "id": "6abd11273be702ed269e3548",
       "name": "PADI Equipment Specialist in Sydney",
       "slug": "padi-equipment-specialist-sydney",
       "plannedSlug": "padi-equipment-specialist-sydney",
-      "textHash": "e4bf7ae71aab19355d4417a19512c6e002194e9987719459d6219352f0e5b135"
+      "textHash": "e4bf7ae71aab19355d4417a19512c6e002194e9987719459d6219352f0e5b135",
+      "sourceHash": "633339d9fb28223b0ae0c19fd9219f82b0a2b276d0baeeb2aee6dbd38767d0ef",
+      "action": "preserved",
+      "liveTextHash": "e4bf7ae71aab19355d4417a19512c6e002194e9987719459d6219352f0e5b135",
+      "liveHasDraft": false
     },
     {
       "id": "6abd11277cdaed3f1efa5538",
       "name": "PADI Sidemount Diver in Sydney",
       "slug": "padi-sidemount-diver-sydney",
       "plannedSlug": "padi-sidemount-diver-sydney",
-      "textHash": "61041b585c867a2692ebfd743561c3c2698641dfc3764ddcc2420c50dcdbf681"
+      "textHash": "61041b585c867a2692ebfd743561c3c2698641dfc3764ddcc2420c50dcdbf681",
+      "sourceHash": "86d8ef7b842c8348f3150a79627cec5bc832352383eb87f311b2ef35ee62c4aa",
+      "action": "preserved",
+      "liveTextHash": "61041b585c867a2692ebfd743561c3c2698641dfc3764ddcc2420c50dcdbf681",
+      "liveHasDraft": false
     },
     {
       "id": "6abd1128528fa6f4b198ab20",
       "name": "PADI Wreck Diver in Sydney",
       "slug": "padi-wreck-diver-sydney",
       "plannedSlug": "padi-wreck-diver-sydney",
-      "textHash": "413e6afb1b1b8d0f58cf157b108b900a69e6b8aa464c3ca20835c5b0479f8bf3"
+      "textHash": "413e6afb1b1b8d0f58cf157b108b900a69e6b8aa464c3ca20835c5b0479f8bf3",
+      "sourceHash": "7fbb2f66403d94f728a7ec146ca407ec92ee49fd67b9bd1699055ec7a18d6bf1",
+      "action": "preserved",
+      "liveTextHash": "413e6afb1b1b8d0f58cf157b108b900a69e6b8aa464c3ca20835c5b0479f8bf3",
+      "liveHasDraft": false
     },
     {
       "id": "6abd112849f1bc2c6aefd876",
       "name": "PADI AWARE Shark Conservation in Sydney",
       "slug": "padi-shark-conservation-sydney",
       "plannedSlug": "padi-shark-conservation-sydney",
-      "textHash": "a30581a7f1e1876bcc9ab345fe0d989cd4cfc2e6446d075028605a0e718a4ae8"
+      "textHash": "a30581a7f1e1876bcc9ab345fe0d989cd4cfc2e6446d075028605a0e718a4ae8",
+      "sourceHash": "a7271f621e908328bf3673f9e9d64b973885d70208017505f9f25bb0e2258e16",
+      "action": "preserved",
+      "liveTextHash": "a30581a7f1e1876bcc9ab345fe0d989cd4cfc2e6446d075028605a0e718a4ae8",
+      "liveHasDraft": false
     },
     {
       "id": "6abd1128bd0193dcb268d445",
       "name": "PADI Full Face Mask Diver in Sydney",
       "slug": "padi-full-face-mask-sydney",
       "plannedSlug": "padi-full-face-mask-sydney",
-      "textHash": "d3d07291cc329316b2674726717676f8ff03480e776a2d756acaf07685e5b3ca"
+      "textHash": "d3d07291cc329316b2674726717676f8ff03480e776a2d756acaf07685e5b3ca",
+      "sourceHash": "f298ba95cad8e18b2016d42fff77bcd70f08e9b1ccc11b2d1c44d5bbcb739591",
+      "action": "preserved",
+      "liveTextHash": "94a179f1cd695d85b47efeead455734d71c0e72a056b78c1aff8018a9c464d8a",
+      "liveHasDraft": false
     },
     {
       "id": "6ab8bbd97b6962906797d35b",
       "name": "PADI Tec 40 in Sydney",
       "slug": "padi-technical-diving",
       "plannedSlug": "padi-tec-40-sydney",
-      "textHash": "97a254439084110bcf8890b5af34c49618eef072f3da96df970d0648d0a07e22"
+      "textHash": "97a254439084110bcf8890b5af34c49618eef072f3da96df970d0648d0a07e22",
+      "sourceHash": "adbf194d405e76b24a9d969c297faab18c65026b30fec1046f428f389867462d",
+      "action": "preserved",
+      "liveTextHash": "97a254439084110bcf8890b5af34c49618eef072f3da96df970d0648d0a07e22",
+      "liveHasDraft": false
     },
     {
       "id": "6abd112949f1bc2c6aefd877",
       "name": "PADI Tec 45 in Sydney",
       "slug": "padi-tec-45-sydney",
       "plannedSlug": "padi-tec-45-sydney",
-      "textHash": "457b7e65cfdd8305982255766e15ff45d9f8f3456d5750d91cfd98c9c1aaf77b"
+      "textHash": "457b7e65cfdd8305982255766e15ff45d9f8f3456d5750d91cfd98c9c1aaf77b",
+      "sourceHash": "3c8cc115f1b64f6e7f3acba34ca9af85981ec13c1765d1d7042686b6a2c1c67f",
+      "action": "preserved",
+      "liveTextHash": "457b7e65cfdd8305982255766e15ff45d9f8f3456d5750d91cfd98c9c1aaf77b",
+      "liveHasDraft": false
     },
     {
       "id": "6abd11295c1e572f6ed8c215",
       "name": "PADI Tec 50 in Sydney",
       "slug": "padi-tec-50-sydney",
       "plannedSlug": "padi-tec-50-sydney",
-      "textHash": "c5379b8694e83debf6f0ccc80405f1a02dd16bcfebe222dd8aee97679923e007"
+      "textHash": "c5379b8694e83debf6f0ccc80405f1a02dd16bcfebe222dd8aee97679923e007",
+      "sourceHash": "6e705649dfd7de4ea4ca178f0d832b9fb6d4a6579979c63b3f16c556ad498359",
+      "action": "preserved",
+      "liveTextHash": "c5379b8694e83debf6f0ccc80405f1a02dd16bcfebe222dd8aee97679923e007",
+      "liveHasDraft": false
     },
     {
       "id": "6abd1129bd0193dcb268d446",
       "name": "PADI Tec 40 CCR on Hollis Prism 2",
       "slug": "padi-tec-40-ccr-sydney",
       "plannedSlug": "padi-tec-40-ccr-sydney",
-      "textHash": "0441f51db288af88f98881aaa37664c6dd888fb3de83b74fceb6678720b358c4"
+      "textHash": "0441f51db288af88f98881aaa37664c6dd888fb3de83b74fceb6678720b358c4",
+      "sourceHash": "75ace821e4e5d401d692b56fec393e1666309dc177de4351c5489269fe01c569",
+      "action": "preserved",
+      "liveTextHash": "0441f51db288af88f98881aaa37664c6dd888fb3de83b74fceb6678720b358c4",
+      "liveHasDraft": false
     },
     {
       "id": "6ab8bbed4b37f75b5ff65ba1",
       "name": "AHCLPW307 restricted scientific diving course",
       "slug": "scientific-diving-ahclpw307",
       "plannedSlug": "ahclpw307-scientific-diving",
-      "textHash": "c4c483a3c722c339cc62c3039a4418a74f2f797a52cd653ab1aa4e1df30b7e59"
+      "textHash": "c4c483a3c722c339cc62c3039a4418a74f2f797a52cd653ab1aa4e1df30b7e59",
+      "sourceHash": "cda5d5995ab75869a3242494f2e230751d623cb35d8e8ae849279a93e83b39b2",
+      "action": "preserved",
+      "liveTextHash": "c4c483a3c722c339cc62c3039a4418a74f2f797a52cd653ab1aa4e1df30b7e59",
+      "liveHasDraft": false
     },
     {
       "id": "6ab8bbc9171ef8b866f2c209",
       "name": "Avelo Instructor training: current requirements",
       "slug": "avelo-instructor",
       "plannedSlug": "avelo-instructor-requirements",
-      "textHash": "58c2484768d6b698a3f9fe0e572f1f9a0cb22751fbaa127ff50345af1fdece81"
+      "textHash": "361a853bd82063c21d7c60503c593e78987b4de2a4ccca45a52ac6c799621ba8",
+      "sourceHash": "15774a4e1820f4f1584e6aa3edeb8a9b7ea2cf91169794bf4caa2966387b4ec5",
+      "action": "published-and-read-back"
     },
     {
       "id": "6ab8ca817b6962906797d35e",
       "name": "PADI Master Scuba Diver at Abyss: requirements and package",
       "slug": "master-scuba-diver-abyss",
       "plannedSlug": "padi-master-scuba-diver-package",
-      "textHash": "8ddf8199648599ea1d2210842e6d9f176d43f60075fa8ec3913d50d595cfffc5"
+      "textHash": "8ddf8199648599ea1d2210842e6d9f176d43f60075fa8ec3913d50d595cfffc5",
+      "sourceHash": "5f7abaadc9da8b81b93db5ed527964f943e79e876fdca33792e439f58c5ed6fe",
+      "action": "preserved",
+      "liveTextHash": "194c1ec8525defa4688084a67890234800c5afae0a6779f7524b850b5fc576d0",
+      "liveHasDraft": false
     },
     {
       "id": "6ab8b5107b6962906797d355",
       "name": "Which Sydney dive course should I choose?",
       "slug": "which-sydney-dive-course-should-i-choose",
       "plannedSlug": "which-sydney-dive-course",
-      "textHash": "03b08a49ba72ed7e57ef140b60ea0c67b4a97cdff234a0178f3cb9d2faa76f09"
+      "textHash": "03b08a49ba72ed7e57ef140b60ea0c67b4a97cdff234a0178f3cb9d2faa76f09",
+      "sourceHash": "9e179a01eb84fe8e26b92d4a9517bc65d87abd22a73fd5368e8582126356f717",
+      "action": "preserved",
+      "liveTextHash": "16b7475f6209fa965f0b9c5a64cd5816677559f3bd88fc5ab2af76d6d129b71e",
+      "liveHasDraft": false
     },
     {
       "id": "6ab8b6617b6962906797d356",
       "name": "Booking a dive course: buddies, prerequisites, dates and equipment",
       "slug": "booking-a-dive-course-buddies-prerequisites-dates-equipment",
       "plannedSlug": "booking-sydney-dive-course",
-      "textHash": "a459e0bbf825c04ee7d9fe3455c568adeab1f8295210ccdcd5812bced8fbc3a5",
-      "reviewedLiveBaseline": {
-        "reason": "Preserve reviewed live booking additions and apply only Avelo routing and freshness corrections",
-        "observedFromRun": 36794184495,
-        "articleId": "6ab8b6617b6962906797d356"
-      }
+      "textHash": "64ba0478a8e2a6c5ece787a9e5bda2a28fe85529637d61d04e5328f3f503a60a",
+      "sourceHash": "c392338ccec764434d09374c325e105a4c3ff92c24f3c3374c5b34b40a9bbd90",
+      "action": "published-and-read-back"
     },
     {
       "id": "6ab8cb2984f08c58bb03f7f1",
       "name": "Abyss internships versus PADI professional courses",
       "slug": "internships-vs-professional-courses",
       "plannedSlug": "internship-versus-professional-course",
-      "textHash": "cf1105f1c5b22fa341e9be2b44563cc13d17f401f1e42b7dcde5a468f2350143"
+      "textHash": "cf1105f1c5b22fa341e9be2b44563cc13d17f401f1e42b7dcde5a468f2350143",
+      "sourceHash": "711ed4ae93aa50a8861a187ec462be39b9934a6034008fced83805efa61edaa3",
+      "action": "preserved",
+      "liveTextHash": "37ace180ff69ef645f9f2fc4200b671cec8a4dc66180245ffbbb865da035cc6e",
+      "liveHasDraft": false
     },
     {
       "id": "6ab8bbd184f08c58bb03f7e8",
       "name": "Other PADI specialties: choose by diving goal",
       "slug": "other-recreational-specialties",
       "plannedSlug": "other-padi-specialty-goals",
-      "textHash": "a9560e8ed1fcfae1563bf1ff2048bfc7bef2f010a4699978175b118c17febf22"
+      "textHash": "a9560e8ed1fcfae1563bf1ff2048bfc7bef2f010a4699978175b118c17febf22",
+      "sourceHash": "a007c640d0ec34f7665d13b7ca88ddbd40960804bff8837b260b01c9f23c6e12",
+      "action": "preserved",
+      "liveTextHash": "a9560e8ed1fcfae1563bf1ff2048bfc7bef2f010a4699978175b118c17febf22",
+      "liveHasDraft": false
     },
     {
       "id": "6ab8bbfb84f08c58bb03f7eb",
       "name": "Courses without a confirmed current Abyss offering",
       "slug": "padi-courses-abyss-does-not-currently-teach",
       "plannedSlug": "courses-without-confirmed-current-offering",
-      "textHash": "9e95d1e2682c21bc6153a73c45938e7e4ea2683f067df55915e95e6ecd0ff0c2"
+      "textHash": "9e95d1e2682c21bc6153a73c45938e7e4ea2683f067df55915e95e6ecd0ff0c2",
+      "sourceHash": "83eddcfe23bc9caed96a13f222b9d609ec0e74a53139d0ca81c0057e173b3eb4",
+      "action": "preserved",
+      "liveTextHash": "f42022357927b9a82590265adf03ddb0948efdadf6563694d5efda26a9198e56",
+      "liveHasDraft": false
     },
     {
       "id": "6ab8bbf484f08c58bb03f7ea",
       "name": "PADI courses to discuss with an Abyss instructor",
       "slug": "padi-courses-by-instructor-enquiry",
       "plannedSlug": "courses-to-discuss-with-instructor",
-      "textHash": "cbd0f8afb7ca1ae4eef7602f05d7b34173d16ec43ae42a78dee9d5464d5ad278"
+      "textHash": "cbd0f8afb7ca1ae4eef7602f05d7b34173d16ec43ae42a78dee9d5464d5ad278",
+      "sourceHash": "5364ec576835927500be3a2aace02bd320162c8c74ff92aafc7341701eeff878",
+      "action": "preserved",
+      "liveTextHash": "9740151f023ee8f3cfd8fc1d1987503c8eec6d6931a76352a7c81b49849d6f2e",
+      "liveHasDraft": false
     },
     {
       "id": "6abd112c5c1e572f6ed8c217",
       "name": "Advanced Open Water or a focused specialty?",
       "slug": "advanced-versus-specialty-course",
       "plannedSlug": "advanced-versus-specialty-course",
-      "textHash": "047ca3def8e6b0543395d83fa45a09463b8c1110250abafe349faac0057cdfec"
+      "textHash": "047ca3def8e6b0543395d83fa45a09463b8c1110250abafe349faac0057cdfec",
+      "sourceHash": "28aa03c71e7d1dfe7e5be2b806664b6bcbfcee66e19b0d7936c31d41f8459ccf",
+      "action": "preserved",
+      "liveTextHash": "d1ab751c5fd17f54d8deb3b4b821d9a69b5cb6fa486f38368e428b6bcecfd94f",
+      "liveHasDraft": false
     },
     {
       "id": "6abd6b2c528fa6f4b198ad2c",
       "name": "Feel more comfortable diving in Sydney",
       "slug": "feel-more-comfortable-diving-sydney",
       "plannedSlug": "feel-more-comfortable-diving-sydney",
-      "textHash": "1635291d7e15e8100479f372db61b54b99bf72c385c1e85714c91228812424a1"
+      "textHash": "1635291d7e15e8100479f372db61b54b99bf72c385c1e85714c91228812424a1",
+      "sourceHash": "e547fca549860c22960f7172575287e3eae0db4141aa6891943e1aec49180e10",
+      "action": "preserved",
+      "liveTextHash": "ca494b2b14fd7dc4f1569ef69a5e768e6271869300de4b0f72446d5909609526",
+      "liveHasDraft": false
     },
     {
       "id": "6abd6b2c528fa6f4b198ad2d",
       "name": "Prepare for a dive holiday or liveaboard",
       "slug": "prepare-for-dive-holiday-liveaboard",
       "plannedSlug": "prepare-for-dive-holiday-liveaboard",
-      "textHash": "f84c5e07682a7a0e337cd04f063fe700cfb3c3e697553dce18dd3f198278643f"
+      "textHash": "f84c5e07682a7a0e337cd04f063fe700cfb3c3e697553dce18dd3f198278643f",
+      "sourceHash": "4eb76f872024f400a7a04a2ae75b40ee95c9b991fbaf4f30adc30486fc336443",
+      "action": "preserved",
+      "liveTextHash": "f84c5e07682a7a0e337cd04f063fe700cfb3c3e697553dce18dd3f198278643f",
+      "liveHasDraft": false
     },
     {
       "id": "6abd6b2cbd0193dcb268d677",
       "name": "Explore deeper sites or wrecks",
       "slug": "explore-deeper-sites-or-wrecks",
       "plannedSlug": "explore-deeper-sites-or-wrecks",
-      "textHash": "ad69e1ffdcc0e501cadf0eb34d442551081ad301e912015a1e2ff16e62ffb947"
+      "textHash": "ad69e1ffdcc0e501cadf0eb34d442551081ad301e912015a1e2ff16e62ffb947",
+      "sourceHash": "2db8a76f56c95b141713a4b6f6b0e6343da84ceb908de15d46ade6d0961c550c",
+      "action": "preserved",
+      "liveTextHash": "ad69e1ffdcc0e501cadf0eb34d442551081ad301e912015a1e2ff16e62ffb947",
+      "liveHasDraft": false
     },
     {
       "id": "6abd6b2c7cdaed3f1efa5796",
       "name": "Become a more capable dive buddy",
       "slug": "become-a-more-capable-dive-buddy",
       "plannedSlug": "become-a-more-capable-dive-buddy",
-      "textHash": "f270141bed51295edff1a2798e85e486356c8e9f534060b84ee7b461df1c2299"
+      "textHash": "f270141bed51295edff1a2798e85e486356c8e9f534060b84ee7b461df1c2299",
+      "sourceHash": "e7c91a8373fef432c8ade32f293d88b9e136c80172e07fdfe30ea0ae2eda24a5",
+      "action": "preserved",
+      "liveTextHash": "f270141bed51295edff1a2798e85e486356c8e9f534060b84ee7b461df1c2299",
+      "liveHasDraft": false
     },
     {
       "id": "6abd6b2d3be702ed269e378e",
       "name": "Return to diving after a break",
       "slug": "return-to-diving-after-a-break",
       "plannedSlug": "return-to-diving-after-a-break",
-      "textHash": "15e57e5d3caf1c47571435d9f23aeff93305c6383b7d7e803f64b7eac770d963"
+      "textHash": "15e57e5d3caf1c47571435d9f23aeff93305c6383b7d7e803f64b7eac770d963",
+      "sourceHash": "d3ab5aff1c1222dda519a8ac9f339e58b896dcbcb6dc8454a6e307d43008510c",
+      "action": "preserved",
+      "liveTextHash": "15e57e5d3caf1c47571435d9f23aeff93305c6383b7d7e803f64b7eac770d963",
+      "liveHasDraft": false
     },
     {
       "id": "6abd6b2dc3e570044c288a11",
       "name": "Enjoy marine life or underwater photography",
       "slug": "marine-life-photography-next-step",
       "plannedSlug": "marine-life-photography-next-step",
-      "textHash": "73a8d4de0f5c2f08576d9524b6fa00dac4d18ec63574a3387a77e3bcefdae81e"
+      "textHash": "73a8d4de0f5c2f08576d9524b6fa00dac4d18ec63574a3387a77e3bcefdae81e",
+      "sourceHash": "fa508c46f358f7315c6eb4c3189dacbe8d8ba3a96262f41c9526f45f27264538",
+      "action": "preserved",
+      "liveTextHash": "18efd3c9a59f423a6f0bba3d6806023aeb54a0759cce629f5ee5e2653b0b95a7",
+      "liveHasDraft": false
     },
     {
       "id": "6abd6b2d528fa6f4b198ad2e",
       "name": "Work towards Master Scuba Diver",
       "slug": "plan-master-scuba-diver-next-step",
       "plannedSlug": "plan-master-scuba-diver-next-step",
-      "textHash": "a41a184235f5723ebaeefd129d38ae74a5f9d7344f6c4e5e2cc0221107b15bf1"
+      "textHash": "a41a184235f5723ebaeefd129d38ae74a5f9d7344f6c4e5e2cc0221107b15bf1",
+      "sourceHash": "fb6c20c8894c3a377ca267446759625402948e61b20eacab462ecdbb3c0a5570",
+      "action": "preserved",
+      "liveTextHash": "a41a184235f5723ebaeefd129d38ae74a5f9d7344f6c4e5e2cc0221107b15bf1",
+      "liveHasDraft": false
     },
     {
       "id": "6abd6b2d535b0034271dea66",
       "name": "When more diving is the best next step",
       "slug": "when-more-diving-is-best-next-step",
       "plannedSlug": "when-more-diving-is-best-next-step",
-      "textHash": "7500d6dce75e7ef0161643b6242033a08d8e71c536c66289546a340e1b0c5836"
+      "textHash": "7500d6dce75e7ef0161643b6242033a08d8e71c536c66289546a340e1b0c5836",
+      "sourceHash": "3abfe5a2f4f8d7fdab5d2ea02a728201e2710d25558032ae7d462b9fcc9771a6",
+      "action": "preserved",
+      "liveTextHash": "7500d6dce75e7ef0161643b6242033a08d8e71c536c66289546a340e1b0c5836",
+      "liveHasDraft": false
     }
   ]
 }
