@@ -89,6 +89,17 @@ export function schedulePlans(snapshot){
 }
 export const FREEDIVER_ARTICLE={id:'6ab8bba6171ef8b866f2c208',name:'PADI Freediver in Sydney',slug:'padi-freediver-and-mermaid'};
 const FREEDIVER_START='<!-- ABYSS_FREEDIVER_DATES_START_V1 -->',FREEDIVER_END='<!-- ABYSS_FREEDIVER_DATES_END -->';
+// Owner-confirmed offer, deadline corrected by the owner on 1 Oct 2026.
+// This is an enrolment deadline, not a restriction on the course start date.
+function freediverFinsOffer(snapshot){
+ const checked=DateTime.fromISO(snapshot.checkedAt,{setZone:true}).setZone(ZONE);
+ check(checked.isValid,'Freediver offer needs a valid snapshot check time');
+ const active=checked.toISODate()<='2027-03-31';
+ return '<h3>Does the PADI Freediver course include free freediving fins?</h3><p>'+(active
+  ?'Yes. For beginner PADI Freediver enrolments made by 31 March 2027, the advertised offer includes a FREE pair of premium long-blade freediving fins valued at AUD $140, yours to keep. Eligible students do not need to buy a separate pair of fins. This is the enrolment deadline, not a published course-completion deadline.'
+  :'The previously advertised free-fins offer had an enrolment deadline of 31 March 2027. Do not promise free fins for a new enrolment after that date unless Abyss confirms a current extension or replacement offer. Do not deny an earlier eligible booking its promised inclusion; ask the team to check that booking.')
+  +' Confirm sizing, availability, collection and any other unstated conditions with Abyss. Do not invent a brand, model, material, cash alternative or retrospective eligibility. This dated offer must not be treated as a permanent inclusion or extended from the course date. The owner confirmed this deadline on 1 October 2026; it supersedes older October or undated March wording. See <a href="https://www.abyss.com.au/courses/padi-freediver-course">course dates and booking</a>.</p>';
+}
 // Keep dates beside the course facts already retrieved by the Agent. The two
 // markers bound the only content this updater owns in the evergreen article.
 export function withFreediverDates(original,snapshot){
@@ -104,11 +115,12 @@ export function withFreediverDates(original,snapshot){
  let block=FREEDIVER_START+'<h2>Beginner freediving: price, inclusions, next PADI Freediver course dates and booking links</h2>';
  block+='<p>For learning to freedive, beginner freediving lessons or a PADI Freediver booking, answer course questions and offer the suitable listed dates below in the same reply. These are beginner Freediver intakes, not Advanced Freediver, Mermaid or scuba courses. Use the course information below for entry requirements and preparation.</p>';
  block+=`<p><strong>Last successful check: ${escape(snapshot.checkedAt)} (Australia/Sydney).</strong> Updated by the existing daily 2:30 am Sydney course feed. This is a snapshot, not real-time availability.</p><p><strong>Stale after: ${escape(snapshot.staleAfter)}.</strong> After this time, or if the check cannot be verified, do not assert these dates, prices or availability. Use the <a href="https://www.abyss.com.au/courses/padi-freediver-course">live PADI Freediver course page</a>.</p>`;
+ block+=freediverFinsOffer(snapshot);
  if(suitable.length){
   block+=`<p><strong>Next beginner freediving course dates: ${suitable.map(r=>dates(r)).join('; ')}.</strong> This complete beginner snapshot contains ${rows.filter(r=>r.bookingStatus==='listed with places at check'&&!r.warnings.length).length} suitable future intakes; ${suitable.length} are shown below.${suitable.length<3?' If asked for the next three, provide these '+suitable.length+' verified option'+(suitable.length===1?'':'s')+' and explain that there is no third suitable intake verified in this snapshot. Do not reject the clear date question or offer an excluded sold-out entry.':''}</p>`;
   const prices=[...new Set(suitable.map(r=>r.price))].sort((a,b)=>a-b);
   const priceLabel=prices.length===1?`AUD $${prices[0].toFixed(2)}`:`AUD $${prices[0].toFixed(2)}–$${prices.at(-1).toFixed(2)}`;
-  block+=`<h3>How much does a beginner freediving course cost, and what is included?</h3><p>The suitable beginner PADI Freediver intakes below are listed at ${priceLabel} per person at the check above. Included: eLearning, instructor tuition, confined-water training, two ocean sessions (conditions permitting), certification on successful completion, weights and a weight belt. Bring or arrange a suitable mask, snorkel, fins and wetsuit; personal-equipment hire availability and charges need confirmation before payment. Any additional training and its cost must be agreed with Abyss; free repeats are not promised. These are course fees, not a verified all-in total for a visitor who needs hire or further training. Check the selected date link for current price and places.</p>`;
+  block+=`<h3>How much does a beginner freediving course cost, and what is included?</h3><p>The suitable beginner PADI Freediver intakes below are listed at ${priceLabel} per person at the check above. Included: eLearning, instructor tuition, confined-water training, two ocean sessions (conditions permitting), certification on successful completion, weights and a weight belt. The free-fins offer and its enrolment deadline are explained immediately above; include it when describing inclusions for an eligible enrolment. Bring or arrange a suitable mask, snorkel and wetsuit; personal-equipment hire availability and charges need confirmation before payment. Suitable fins are needed, but an eligible enrolment receives the promotional pair to keep. Any additional training and its cost must be agreed with Abyss; free repeats are not promised. These are course fees, not a verified all-in total for a visitor who needs hire or further training. Check the selected date link for current price and places.</p>`;
   block+='<h3>Next listed beginner freediving intakes</h3><ul>';
   for(const r of suitable)block+=`<li><strong>${dates(r)}</strong> — listed AUD $${r.price.toFixed(2)}; ${escape(r.bookingStatus)}. <a href="${escape(r.bookingUrl)}">Check this PADI Freediver date and book</a>. ${escape(r.sessionDetails.join(' | '))}. Confirm the complete timetable, current price and places on the selected live page.</li>`;
   block+='</ul>';
