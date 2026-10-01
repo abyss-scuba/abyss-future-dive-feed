@@ -61,6 +61,20 @@ test('Freediver draft, identity and marker conflicts block all schedule writes',
  }
  const missing=docsMock();await assert.rejects(publishCourseSnapshot(make(),{request:missing.request}),/identity conflict/);assert.equal(missing.mutations.length,0);
 });
+test('free-fins offer uses the Sydney enrolment deadline and survives a daily refresh',()=>{
+ const s=make(),body='<p>Owner course facts stay intact.</p>';
+ const initial=withFreediverDates(body,{...s,checkedAt:'2027-03-31T12:59:59Z'});
+ assert.ok(initial.includes('Yes. For beginner PADI Freediver enrolments made by 31 March 2027'));
+ assert.ok(initial.includes('AUD $140, yours to keep'));
+ assert.ok(initial.includes('not a published course-completion deadline'));
+ assert.ok(!initial.includes('Bring or arrange a suitable mask, snorkel, fins and wetsuit'));
+ const expired=withFreediverDates(initial,{...s,checkedAt:'2027-03-31T13:00:00Z'});
+ assert.ok(expired.includes('previously advertised free-fins offer'));
+ assert.ok(!expired.includes('Yes. For beginner'));
+ assert.ok(expired.endsWith(body));
+ const noDates=withFreediverDates(body,{...s,sessions:[]});
+ assert.ok(noDates.includes('FREE pair of premium long-blade freediving fins'));
+});
 test('a concurrent Freediver edit is never overwritten',async()=>{
  const m=courseMock();let reads=0;
  const request=async(method,path,body)=>{const result=await m.request(method,path,body);if(method==='GET'&&path===`/articles/${FREEDIVER_ARTICLE.id}`&&++reads===2)return {article:{...result.article,text:result.article.text+'<p>Concurrent edit.</p>'}};return result;};
