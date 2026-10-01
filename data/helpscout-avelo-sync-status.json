@@ -1,9 +1,9 @@
 {
-  "attemptedAt": "2026-10-01T09:53:05.007+10:00",
+  "attemptedAt": "2026-10-02T08:03:23.474+10:00",
   "status": "published-and-read-back",
-  "lastSuccessfulCheck": "2026-10-01T09:53:05.007+10:00",
-  "validUntil": "2026-10-02T07:30:00.000+10:00",
-  "localDate": "2026-10-01",
+  "lastSuccessfulCheck": "2026-10-02T08:03:23.474+10:00",
+  "validUntil": "2026-10-03T07:30:00.000+10:00",
+  "localDate": "2026-10-02",
   "futureCount": 1,
   "prices": {
     "66991806": 699
@@ -20,48 +20,7 @@
   "publication": {
     "articleId": "6abda0e0535b0034271debb5",
     "status": "published-and-read-back",
-    "textHash": "f5b03f0f1875fa139a79bea48f8cd09d6baa143ab3b5d7f9425e6e4ed1936ea9"
+    "textHash": "cdcd0d1edbf4aa0e1d554b65e0a2201b9fd1a8e646c6d3a5113befba6e550516"
   },
-  "agentVerification": "keyword routing checked; live booking caveat inconsistent; earlier 49-question acceptance retained as historical",
-  "agentVerificationDetails": {
-    "agentId": 27389,
-    "verifiedAt": "2026-10-01T04:40:42.578Z",
-    "testCase": "Avelo49-final-A9-B9",
-    "snapshotTextHash": "f5b03f0f1875fa139a79bea48f8cd09d6baa143ab3b5d7f9425e6e4ed1936ea9",
-    "observed": [
-      "verified listed course fee and inclusions",
-      "actual snapshot date and Sydney time",
-      "exact selected-date booking link",
-      "live price and places caveat",
-      "49 exact questions reviewed and passed",
-      "49 natural paraphrases reviewed and passed on unchanged configuration"
-    ],
-    "visitorAnswersEnabled": false,
-    "finalRegressionPassed": true,
-    "exactQuestionsPassed": 49,
-    "paraphrasesPassed": 49,
-    "totalObservedSubmissions": 739,
-    "knowledgeCommit": "7398f0107994c631415030b0eeb570f973a3b0db",
-    "configurationRevision": "Identity v5; physics v6; booking v9; technical-scope v5; ownership-only v1; rebreather-comparison v5; travel-lifespan v1; conditional-benefits v3",
-    "testEnvironment": "Agent27389 internal Test only",
-    "configurationChangedAfterFinalTests": true,
-    "limitations": "Observed acceptance set only; not a guarantee for every future conversation. Daily data remains a snapshot, and unresolved equipment/business facts remain explicitly unverified.",
-    "subsequentKeywordReview": {
-      "reviewedAt": "2026-10-01T05:26:22.311Z",
-      "knowledgeCommit": "b861bddfdc0a4b1645047ab2e81fa56201cdd4b2",
-      "articlesReviewed": 14,
-      "keywordsPublished": 243,
-      "exactKeywordReadbacks": 14,
-      "articleBodiesChanged": false,
-      "automatedChecksPassed": 18,
-      "internalTestQuestions": 6,
-      "correctTopicRetrievals": 6,
-      "remainingAnswerQualityFindings": [
-        "Course-fee answer used check latest details instead of explicitly confirming both live price and places.",
-        "Next-date answer confirmed live availability but omitted explicit live price confirmation."
-      ],
-      "visitorAnswersEnabled": false,
-      "scope": "Keyword curation and targeted retrieval checks only. This is not a repeat of the earlier 49 exact plus 49 paraphrase acceptance."
-    }
-  }
+  "agentVerification": "pending internal Test"
 }
