@@ -1,5 +1,5 @@
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs/promises';import {DateTime} from 'luxon';
-import {parseCalendar,buildCourseSnapshot,renderCourseSnapshot,publishCourseSnapshot,COLLECTION,TITLE,SLUG,comparable,schedulePlans} from '../src/helpscout-courses.mjs';
+import {parseCalendar,buildCourseSnapshot,renderCourseSnapshot,publishCourseSnapshot,COLLECTION,TITLE,SLUG,comparable,schedulePlans,withFreediverDates,FREEDIVER_ARTICLE} from '../src/helpscout-courses.mjs';
 import {publishKnowledge} from '../src/helpscout-course-knowledge.mjs';
 import {hash} from '../src/helpscout-courses.mjs';
 const raw=JSON.parse(await fs.readFile(new URL('./fixtures/course/rows.json',import.meta.url))),mapping=JSON.parse(await fs.readFile(new URL('../data/helpscout-course-mapping.json',import.meta.url))),now=DateTime.fromISO('2026-09-30T23:00:00+10:00'),make=(r=raw,p=null)=>buildCourseSnapshot(structuredClone(r),mapping,{now,previous:p});
@@ -10,13 +10,49 @@ test('source timetable discrepancies remain flagged rather than silently correct
 test('stale policy is 48 elapsed hours across Sydney DST',()=>{const r=buildCourseSnapshot(structuredClone(raw),mapping,{now:DateTime.fromISO('2026-10-03T02:30:00',{zone:'Australia/Sydney'})});assert.equal(DateTime.fromISO(r.staleAfter).diff(DateTime.fromISO(r.checkedAt),'hours').hours,48);assert.ok(r.staleAfter.endsWith('+11:00'));assert.ok(renderCourseSnapshot(r).includes('not real-time availability'));assert.ok(!renderCourseSnapshot(r).includes('Places left:'));});
 test('suspicious disappearance preserves last snapshot by rejecting candidate',()=>{const p=make(),r=structuredClone(raw);r.rows=r.rows.slice(0,50);assert.throws(()=>make(r,p),/fell by more/)});
 function docsMock(current=null){let articles=Array.isArray(current)?structuredClone(current):current?[current]:[],mutations=[];return {mutations,request:async(method,path,body)=>{if(method==='GET'&&path.startsWith('/collections/')&&path.includes('/articles'))return {articles:{items:articles,page:1,pages:1}};if(method==='GET'&&path.startsWith('/collections/'))return {collection:{id:COLLECTION,name:'Sydney Dive Courses',siteId:'6ab8b2dd4b37f75b5ff65b9c',visibility:'private'}};if(method==='GET'&&path==='/sites/6ab8b2dd4b37f75b5ff65b9c')return {site:{id:'6ab8b2dd4b37f75b5ff65b9c',title:'Dive course Doc'}};if(method==='GET'&&path.startsWith('/articles/'))return {article:articles.find(a=>a.id===path.split('/').at(-1))};mutations.push({method,path,body});if(method==='POST'){const article={...body,id:String(articles.length+1).padStart(24,'0'),hasDraft:false};articles.push(article);return article.id}if(method==='PUT'){const i=articles.findIndex(a=>a.id===path.split('/').at(-1));articles[i]={...articles[i],...body};return null}throw Error('Unexpected request')},get:()=>articles.find(a=>a.name===TITLE)}}
-test('creates once, reads back, and skips duplicate Sydney local-day publication',async()=>{const s=make(),m=docsMock();const p=await publishCourseSnapshot(s,{request:m.request});assert.equal(p.status,'published-and-verified');assert.equal(comparable(m.get().text),comparable(schedulePlans(s).at(-1).text));await publishCourseSnapshot(s,{request:m.request});assert.equal(m.mutations.length,7);});
-test('draft conflict prevents schedule overwrite',async()=>{const s=make(),m=docsMock({id:'123',name:TITLE,slug:SLUG,collectionId:COLLECTION,status:'published',hasDraft:true,text:renderCourseSnapshot(s)});await assert.rejects(publishCourseSnapshot(s,{request:m.request}),/draft conflict/);assert.equal(m.mutations.length,0)});
+const freediverFixture=(extra={})=>({...FREEDIVER_ARTICLE,collectionId:COLLECTION,status:'published',hasDraft:false,text:'<h2>Owner-approved course facts</h2><p>Keep these facts and links.</p>',keywords:['curated freediving keyword'],...extra});
+const courseMock=(current=[])=>docsMock([freediverFixture(),...(Array.isArray(current)?current:[current])]);
+test('creates once, reads back, and skips duplicate Sydney local-day publication',async()=>{const s=make(),m=courseMock();const p=await publishCourseSnapshot(s,{request:m.request});assert.equal(p.status,'published-and-verified');assert.equal(comparable(m.get().text),comparable(schedulePlans(s).at(-1).text));await publishCourseSnapshot(s,{request:m.request});assert.equal(m.mutations.length,8);});
+test('draft conflict prevents schedule overwrite',async()=>{const s=make(),m=courseMock({id:'123',name:TITLE,slug:SLUG,collectionId:COLLECTION,status:'published',hasDraft:true,text:renderCourseSnapshot(s)});await assert.rejects(publishCourseSnapshot(s,{request:m.request}),/draft conflict/);assert.equal(m.mutations.length,0)});
 test('all twenty original knowledge identities retained and distinct subjects separated',async()=>{const p=JSON.parse(await fs.readFile(new URL('../data/helpscout-course-knowledge.json',import.meta.url)));assert.equal(p.articles.length,50);assert.equal(new Set(p.articles.filter(a=>a.id).map(a=>a.id)).size,20);for(const s of ['padi-nitrox-sydney','padi-peak-performance-buoyancy-sydney','padi-dry-suit-diver-sydney','padi-mermaid-sydney','emergency-first-response-sydney'])assert.ok(p.articles.some(a=>a.slug===s));assert.ok(!p.articles.some(a=>/CPR(?: and First Aid)? within (?:the (?:past|previous) )?12 months/i.test(a.text)));});
 
 test('goal guide publishes into the new category with backup and readback',async()=>{const p=JSON.parse(await fs.readFile(new URL('../data/helpscout-course-knowledge.json',import.meta.url)));const existing=p.articles.slice(0,42).map((a,i)=>({...a,id:a.id||String(i+100).padStart(24,'0'),collectionId:COLLECTION,status:'published',hasDraft:false}));const guide=existing.find(a=>a.manageCategories);guide.categories=['6ab8b3eb7b6962906797d354'];const m=docsMock(existing);let backedUp=false;const request=async(method,path,body)=>{if(method!=='GET')assert.equal(backedUp,true);return m.request(method,path,body)};const result=await publishKnowledge({pack:p,request,saveBackup:async originals=>{assert.equal(originals.length,42);backedUp=true}});assert.equal(result.length,50);assert.deepEqual((await m.request('GET',`/articles/${guide.id}`)).article.categories,['6abd693c7cdaed3f1efa5777']);assert.equal(m.mutations.filter(x=>x.method==='POST').length,8);});
 
-test('booking-flow template migrates once without disabling local-day deduplication',async()=>{const snapshot=make();const old=schedulePlans(snapshot).map((p,i)=>({id:String(i+1).padStart(24,'0'),name:p.name,slug:p.slug,collectionId:COLLECTION,status:'published',hasDraft:false,text:p.text.replace('<!-- ABYSS_COURSE_BOOKING_FLOW_V2 -->','')}));const m=docsMock(old);await publishCourseSnapshot(snapshot,{request:m.request});assert.equal(m.mutations.length,7);assert.ok(m.get().text.includes('For a named-course date request'));await publishCourseSnapshot(snapshot,{request:m.request});assert.equal(m.mutations.length,7);});
+test('booking-flow template migrates once without disabling local-day deduplication',async()=>{const snapshot=make();const old=schedulePlans(snapshot).map((p,i)=>({id:String(i+1).padStart(24,'0'),name:p.name,slug:p.slug,collectionId:COLLECTION,status:'published',hasDraft:false,text:p.text.replace('<!-- ABYSS_COURSE_BOOKING_FLOW_V2 -->','')}));const m=courseMock(old);await publishCourseSnapshot(snapshot,{request:m.request});assert.equal(m.mutations.length,8);assert.ok(m.get().text.includes('For a named-course date request'));await publishCourseSnapshot(snapshot,{request:m.request});assert.equal(m.mutations.length,8);});
+
+test('Freediver dates remain with course facts and preserve exact links, body and keywords',async()=>{
+ const snapshot=make(),original=freediverFixture(),m=courseMock();
+ await publishCourseSnapshot(snapshot,{request:m.request});
+ const saved=(await m.request('GET',`/articles/${original.id}`)).article;
+ assert.ok(saved.text.endsWith(original.text));assert.deepEqual(saved.keywords,original.keywords);
+ assert.ok(saved.text.includes('Last successful check: '+snapshot.checkedAt));assert.ok(saved.text.includes('Stale after: '+snapshot.staleAfter));
+ for(const r of snapshot.sessions.filter(r=>r.courseKey==='padi-freediver-sydney'&&r.bookingStatus==='listed with places at check').slice(0,3))assert.ok(saved.text.includes(r.bookingUrl.replaceAll('&','&amp;')));
+ const unavailable=snapshot.sessions.find(r=>r.courseKey==='padi-freediver-sydney'&&r.bookingStatus==='sold out at check');
+ assert.ok(unavailable);assert.ok(!saved.text.includes(unavailable.bookingUrl));assert.ok(saved.text.includes('sold out at check'));
+ assert.ok(!saved.text.includes('/courses/avelo-dive-course?'));
+ assert.deepEqual(Object.keys(m.mutations.find(x=>x.path===`/articles/${original.id}`).body),['text']);
+});
+test('replacing the managed section removes obsolete dates and retains new owner edits',()=>{
+ const snapshot=make(),body='<p>Canonical facts.</p>',first=withFreediverDates(body,snapshot);
+ const next={...snapshot,checkedAt:'2026-10-02T02:30:00+10:00',staleAfter:'2026-10-04T03:30:00+11:00',sessions:snapshot.sessions.filter(r=>r.courseKey!=='padi-freediver-sydney')};
+ const result=withFreediverDates(first+'<p>Later owner edit.</p>',next);
+ assert.ok(result.endsWith(body+'<p>Later owner edit.</p>'));assert.equal(result.split('ABYSS_FREEDIVER_DATES_START_V1').length,2);
+ assert.ok(!result.includes('2026-09-30T23:00:00'));assert.ok(!result.includes('/courses/padi-freediver-course?'));
+ assert.ok(result.includes('No beginner PADI Freediver intake was listed'));assert.ok(result.includes('This does not mean the course is unavailable'));
+ assert.equal(withFreediverDates(result,next),result);
+});
+test('Freediver draft, identity and marker conflicts block all schedule writes',async()=>{
+ for(const change of [{hasDraft:true},{slug:'wrong-course'},{text:'<!-- ABYSS_FREEDIVER_DATES_START_V1 --><p>Broken marker</p>'}]){
+  const m=docsMock([freediverFixture(change)]);await assert.rejects(publishCourseSnapshot(make(),{request:m.request}),/conflict/);assert.equal(m.mutations.length,0);
+ }
+ const missing=docsMock();await assert.rejects(publishCourseSnapshot(make(),{request:missing.request}),/identity conflict/);assert.equal(missing.mutations.length,0);
+});
+test('a concurrent Freediver edit is never overwritten',async()=>{
+ const m=courseMock();let reads=0;
+ const request=async(method,path,body)=>{const result=await m.request(method,path,body);if(method==='GET'&&path===`/articles/${FREEDIVER_ARTICLE.id}`&&++reads===2)return {article:{...result.article,text:result.article.text+'<p>Concurrent edit.</p>'}};return result;};
+ await assert.rejects(publishCourseSnapshot(make(),{request}),/changed during publication/);
+ assert.ok(!m.mutations.some(x=>x.path===`/articles/${FREEDIVER_ARTICLE.id}`));
+});
 
 test('focused buoyancy date source isolates exact course bookings for goal retrieval',()=>{const s=make(),p=schedulePlans(s).find(p=>p.slug==='steadier-buoyancy-photography-course-dates');assert.ok(p.text.includes('steady hovering'));assert.ok(p.text.includes('Stale after:'));assert.ok(p.sessions.every(r=>r.courseKey==='padi-peak-performance-buoyancy-sydney'));for(const r of p.sessions)assert.ok(p.text.includes(r.bookingUrl.replaceAll('&','&amp;')));assert.ok(!p.text.includes('/courses/enriched-air-diver'));assert.ok(p.text.includes('definitive PADI Peak Performance Buoyancy in Sydney article'));});
 

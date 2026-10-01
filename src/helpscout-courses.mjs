@@ -87,11 +87,53 @@ export function schedulePlans(snapshot){
  }
  return [...familyPlans,...focused,{slug:SLUG,name:TITLE,text:overview,sessions:snapshot.sessions}];
 }
+export const FREEDIVER_ARTICLE={id:'6ab8bba6171ef8b866f2c208',name:'PADI Freediver in Sydney',slug:'padi-freediver-and-mermaid'};
+const FREEDIVER_START='<!-- ABYSS_FREEDIVER_DATES_START_V1 -->',FREEDIVER_END='<!-- ABYSS_FREEDIVER_DATES_END -->';
+// Keep dates beside the course facts already retrieved by the Agent. The two
+// markers bound the only content this updater owns in the evergreen article.
+export function withFreediverDates(original,snapshot){
+ const starts=original.split(FREEDIVER_START).length-1,ends=original.split(FREEDIVER_END).length-1;
+ check(starts===ends&&starts<=1,'Freediver managed date markers conflict');
+ let body=original;
+ if(starts){const start=body.indexOf(FREEDIVER_START),end=body.indexOf(FREEDIVER_END);check(end>start,'Freediver managed date markers reversed');body=body.slice(0,start)+body.slice(end+FREEDIVER_END.length);}
+ check(body.trim().length>0,'Freediver course information is empty');
+ const rows=snapshot.sessions.filter(r=>r.courseKey==='padi-freediver-sydney').sort((a,b)=>a.startDate.localeCompare(b.startDate)||a.id.localeCompare(b.id));
+ const suitable=rows.filter(r=>r.bookingStatus==='listed with places at check'&&!r.warnings.length).slice(0,3);
+ const fmt=d=>DateTime.fromISO(d,{zone:ZONE}).toFormat('d LLLL yyyy');
+ const dates=r=>escape(fmt(r.startDate)+(r.endDate!==r.startDate?' – '+fmt(r.endDate):''));
+ let block=FREEDIVER_START+'<h2>Beginner freediving: next PADI Freediver course dates and booking links</h2>';
+ block+='<p>For learning to freedive, beginner freediving lessons or a PADI Freediver booking, answer course questions and offer the suitable listed dates below in the same reply. These are beginner Freediver intakes, not Advanced Freediver, Mermaid or scuba courses. Use the course information below for entry requirements and preparation.</p>';
+ block+=`<p><strong>Last successful check: ${escape(snapshot.checkedAt)} (Australia/Sydney).</strong> Updated by the existing daily 2:30 am Sydney course feed. This is a snapshot, not real-time availability.</p><p><strong>Stale after: ${escape(snapshot.staleAfter)}.</strong> After this time, or if the check cannot be verified, do not assert these dates, prices or availability. Use the <a href="https://www.abyss.com.au/courses/padi-freediver-course">live PADI Freediver course page</a>.</p>`;
+ if(suitable.length){
+  block+='<h3>Next listed beginner freediving intakes</h3><ul>';
+  for(const r of suitable)block+=`<li><strong>${dates(r)}</strong> — listed AUD $${r.price.toFixed(2)}; ${escape(r.bookingStatus)}. <a href="${escape(r.bookingUrl)}">Check this PADI Freediver date and book</a>. ${escape(r.sessionDetails.join(' | '))}. Confirm the complete timetable, current price and places on the selected live page.</li>`;
+  block+='</ul>';
+ }else block+='<p>No beginner PADI Freediver intake was listed with places and a confirmed source timetable in this snapshot. This does not mean the course is unavailable. Check the live course page or ask Abyss about a suitable intake.</p>';
+ const excluded=rows.filter(r=>r.bookingStatus!=='listed with places at check'||r.warnings.length).slice(0,3);
+ if(excluded.length)block+='<p>Other upcoming entries that must not be offered as ready to book: '+excluded.map(r=>`${dates(r)} — ${escape(r.bookingStatus)}${r.warnings.length?'; '+escape(r.warnings.join(' ')):''}`).join('; ')+'.</p>';
+ block+=`<p>The complete snapshot has ${rows.length} future beginner PADI Freediver listings. This section shows up to three suitable intakes. For a later month, a full timetable or other freediving levels, consult Upcoming Sydney Freediving, Mermaid and Avelo Dates — Updated Daily and the matching definitive course article. Do not infer that a later date does not exist from this short list. Never invent a booking URL, substitute a different course or make scarcity claims.</p>`;
+ return block+FREEDIVER_END+body;
+}
 export async function publishCourseSnapshot(snapshot,{request}={}){
  await validateCollection(request);const listed=await listArticles(request),plans=schedulePlans(snapshot),results=[];
+ const matches=listed.filter(a=>a.id===FREEDIVER_ARTICLE.id||a.name===FREEDIVER_ARTICLE.name);
+ check(matches.length===1&&matches[0].id===FREEDIVER_ARTICLE.id,'Freediver course article identity conflict');
+ const current=(await request('GET',`/articles/${FREEDIVER_ARTICLE.id}`)).article;
+ check(current?.id===FREEDIVER_ARTICLE.id&&current.collectionId===COLLECTION&&current.name===FREEDIVER_ARTICLE.name&&current.slug===FREEDIVER_ARTICLE.slug&&current.status==='published'&&!current.hasDraft,'Freediver course article identity/status/draft conflict');
+ const embedded={...FREEDIVER_ARTICLE,current,type:'embedded-freediver',sessions:snapshot.sessions.filter(r=>r.courseKey==='padi-freediver-sydney'),text:withFreediverDates(current.text,snapshot)};
+ plans.splice(plans.length-1,0,embedded);
  // Preflight every existing destination before writing the family articles, then publish the overview last.
- for(const p of plans){const matches=listed.filter(a=>a.slug===p.slug||a.name===p.name);check(matches.length<=1,'Duplicate course schedule articles');p.id=matches[0]?.id;p.current=p.id?(await request('GET',`/articles/${p.id}`)).article:null;if(p.current){const c=p.current;check(c.collectionId===COLLECTION&&c.status==='published'&&!c.hasDraft,'Schedule identity/status/draft conflict');check(c.name===p.name&&(c.text.includes('ABYSS_COURSE_SNAPSHOT_V')||c.text.includes('Last successful check:')),'Unmanaged schedule body');}}
+ for(const p of plans){if(p.type==='embedded-freediver')continue;const matches=listed.filter(a=>a.slug===p.slug||a.name===p.name);check(matches.length<=1,'Duplicate course schedule articles');p.id=matches[0]?.id;p.current=p.id?(await request('GET',`/articles/${p.id}`)).article:null;if(p.current){const c=p.current;check(c.collectionId===COLLECTION&&c.status==='published'&&!c.hasDraft,'Schedule identity/status/draft conflict');check(c.name===p.name&&(c.text.includes('ABYSS_COURSE_SNAPSHOT_V')||c.text.includes('Last successful check:')),'Unmanaged schedule body');}}
  for(const p of plans){let id=p.id;const last=p.current?.text.match(/Last successful check:\s*(\d{4}-\d{2}-\d{2}T[^\s<]+)/)?.[1];
+ if(p.type==='embedded-freediver'){
+  if(p.current.text===p.text){results.push({id,name:p.name,status:'already-published-today'});continue;}
+  const latest=(await request('GET',`/articles/${id}`)).article;
+  check(latest?.text===p.current.text&&!latest.hasDraft&&latest.status==='published','Freediver article changed during publication');
+  await request('PUT',`/articles/${id}`,{text:p.text});
+  const read=(await request('GET',`/articles/${id}`)).article;
+  check(read.status==='published'&&read.collectionId===COLLECTION&&comparable(read.text)===comparable(p.text)&&read.text.includes(FREEDIVER_START)&&read.text.includes(FREEDIVER_END),'Published Freediver date section readback mismatch');
+  results.push({id,name:p.name,status:'published-and-verified'});continue;
+ }
  if(last&&DateTime.fromISO(last).setZone(ZONE).toISODate()===snapshot.localDate&&p.current.text.includes('ABYSS_COURSE_BOOKING_FLOW_V2')&&p.current.text.includes('<h3>Course date: ')&&p.current.text.includes('Complete date range by course family')=== (p.slug===SLUG)&& (p.slug!==SLUG||p.current.text.includes('This overview shows'))){results.push({id,name:p.name,status:'already-published-today'});continue;}
  const keywords=['Sydney course dates','upcoming dive courses','course bookings','updated daily',...new Set(p.sessions.map(r=>r.course)),...new Set(p.sessions.map(r=>COURSE_GOALS[r.courseKey]).filter(Boolean))];
  if(!id)id=await request('POST','/articles',{collectionId:COLLECTION,status:'published',slug:p.slug,name:p.name,text:p.text,categories:['6ab8b3eb7b6962906797d354'],keywords});else await request('PUT',`/articles/${id}`,{text:p.text,keywords});
