@@ -12,7 +12,7 @@ export async function publishKnowledge({pack,request,previous=null,saveBackup}){
   const old=previous?.articles?.find(x=>x.id===current?.id);
   const unchangedSource=old&&(old.sourceHash?old.sourceHash===sourceHash(a):old.name===a.name&&old.textHash===hash(comparable(a.text)));
   if(unchangedSource){check(current.collectionId===COLLECTION,`Wrong collection: ${a.name}`);plans.push({a,current,old,preserve:true});continue;}
-  if(current){check(current.collectionId===COLLECTION&&current.status==='published'&&!current.hasDraft,`Status or draft conflict: ${a.name}`);check([a.expectedName,a.name].includes(current.name),`Unexpected article title: ${a.name}`);const old=previous?.articles?.find(x=>x.id===current.id);if(old)check(old.textHash===hash(comparable(current.text)),`Article was edited since last managed publication: ${a.name}`);}
+  if(current){check(current.collectionId===COLLECTION&&current.status==='published'&&!current.hasDraft,`Status or draft conflict: ${a.name}`);check([a.expectedName,a.name].includes(current.name),`Unexpected article title: ${a.name}`);const old=previous?.articles?.find(x=>x.id===current.id);if(old&&old.textHash!==hash(comparable(current.text))){await saveBackup([...plans.filter(p=>p.current).map(p=>p.current),current]);throw new Error(`Article was edited since last managed publication: ${a.name}`);}}
   check(!listed.some(x=>x.name===a.name&&x.id!==current?.id),`Duplicate target title: ${a.name}`);
   plans.push({a,current});
  }
