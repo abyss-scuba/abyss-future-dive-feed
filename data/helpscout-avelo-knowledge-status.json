@@ -1,6 +1,6 @@
 {
-  "publishedAt": "2026-10-01T06:29:34.958Z",
-  "packHash": "4ec26fdb0a1263e2c8aec8609c7a00a6cbe34d21a6858bbb6908925a88b823d3",
+  "publishedAt": "2026-10-01T06:31:42.410Z",
+  "packHash": "73de1a7f625f62c075efb1c79099ebb8a0f40e3596d9d3e1612a834a318fa908",
   "articles": [
     {
       "id": "6abda0dd535b0034271debb1",
@@ -35,7 +35,7 @@
       "name": "Avelo buoyancy and the skills you still use",
       "slug": "avelo-buoyancy-skills",
       "schedule": false,
-      "textHash": "fefe69e2a77b1740509b7b53e19b01fece6b74bdf0a8627066c0b2504a14b506",
+      "textHash": "b5033f8da8f5a7b35f48c13c1e265d0af1b72dc04fb6bcbcb56118b57b723de0",
       "keywords": [
         "Avelo neutral buoyancy",
         "does Avelo hold depth automatically",
@@ -61,7 +61,7 @@
       "name": "Avelo benefits for the diving you enjoy",
       "slug": "avelo-benefits-diving-goals",
       "schedule": false,
-      "textHash": "071b4eb24dfa1a9cc5d35a852267df6446d1ed62e1366ccb92bcf14419a4c1a5",
+      "textHash": "89a602aabb9f9b5a855e7f22303912d523c0ba7ca0fbe7dd2a0d8bb6693cb26a",
       "keywords": [
         "Avelo benefits and drawbacks",
         "Avelo pros and cons",
@@ -230,7 +230,7 @@
       "name": "Avelo safety reliability and equipment questions",
       "slug": "avelo-safety-reliability",
       "schedule": false,
-      "textHash": "6a020e4b66a2bd207e931016ea933c7e5e23095009c5c48edf26d2183c82326b",
+      "textHash": "c790202e7dc20180c60e16c86827c5e92707aedeb219c772dc4af1024aa62931",
       "keywords": [
         "is Avelo safe",
         "Avelo pump failure",
