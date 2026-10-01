@@ -1,6 +1,6 @@
 {
-  "publishedAt": "2026-10-01T03:16:07.472Z",
-  "packHash": "ea6f568febae5ff33c47a569f4e6c4f3801024af085e6033406f5fb0f72bae3a",
+  "publishedAt": "2026-10-01T03:44:50.798Z",
+  "packHash": "0b067c5030e574b4f579a2db4af30d68f86326d6945bd65c10555f198306b587",
   "articles": [
     {
       "id": "6abda0dd535b0034271debb1",
@@ -14,14 +14,14 @@
       "name": "Avelo buoyancy and the skills you still use",
       "slug": "avelo-buoyancy-skills",
       "schedule": false,
-      "textHash": "2d1693114301041c59ac88031d3c0904806aad3bcc94e49ffbac85f3c2e39dd1"
+      "textHash": "6f1a78d45fb8e1290cacc223d41f76f68b7d0ce0c6e3c69fd75f4913ed3ba163"
     },
     {
       "id": "6abda0dd3be702ed269e38e2",
       "name": "Avelo benefits for the diving you enjoy",
       "slug": "avelo-benefits-diving-goals",
       "schedule": false,
-      "textHash": "1b6b49e98a55cf56bb6d93a11b87a9e17a503c2644b581aba4c8fa9a3486a3cc"
+      "textHash": "731ddbaefbe7e9c558149dbd9ed4d77fac196ee2ecc35c634c08fdbad9cd97fa"
     },
     {
       "id": "6abda0de3be702ed269e38e3",
@@ -63,7 +63,7 @@
       "name": "Avelo safety reliability and equipment questions",
       "slug": "avelo-safety-reliability",
       "schedule": false,
-      "textHash": "f8b8c7d759b9966f5931d402b565f52c726d3ce0e966c4b8095897ea3d0640e6"
+      "textHash": "6a020e4b66a2bd207e931016ea933c7e5e23095009c5c48edf26d2183c82326b"
     },
     {
       "id": "6abda0df535b0034271debb3",
@@ -77,7 +77,7 @@
       "name": "Buying Avelo and taking it on dive trips",
       "slug": "buying-travelling-avelo",
       "schedule": false,
-      "textHash": "99bb12d85f5a3813609f64bb7a69e887c10489910b7ffae78d67c7f10e125ef5"
+      "textHash": "aa93cd4ee64f02b2ad49de36bce37da782f8163530726b147d5bf656e6f95ab2"
     },
     {
       "id": "6abda0e0c3e570044c288b4a",
