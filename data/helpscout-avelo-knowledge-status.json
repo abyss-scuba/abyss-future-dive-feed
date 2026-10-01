@@ -1,6 +1,6 @@
 {
-  "publishedAt": "2026-10-01T06:16:28.220Z",
-  "packHash": "411d43488b72b9c11395c326c00fab62d5fa37ed27ae664246cf8c6ef8722157",
+  "publishedAt": "2026-10-01T06:18:36.351Z",
+  "packHash": "46e4e5e69afb5f264bc64a47532df2f538eede822bf64030902b54300288c530",
   "articles": [
     {
       "id": "6abda0dd535b0034271debb1",
@@ -91,7 +91,7 @@
       "name": "Is Avelo suitable for me",
       "slug": "avelo-suitability",
       "schedule": false,
-      "textHash": "fa5389310051c9b26c7c82a9ba1f51f12bfe6534ac4bc150a9aec782b918d026",
+      "textHash": "c2d6d1203253f61857ece85c54b4760ae5561e7d91deac08c8007cd7f8766b44",
       "keywords": [
         "is Avelo suitable for me",
         "Avelo for a newly certified diver",
@@ -318,7 +318,7 @@
       "name": "Avelo bookings changes and instructor help",
       "slug": "avelo-booking-instructor-help",
       "schedule": false,
-      "textHash": "b43e8f006ac3b122cced7249583d87344fc301fcb9bd7bf6c8d56d90cf5cc7f7",
+      "textHash": "a9eb083d8c6aad9bab8e7cbacd7ae0964e04a07a1ae8ae709db2e87438864e76",
       "keywords": [
         "change an Avelo course booking",
         "cancel an Avelo course",
