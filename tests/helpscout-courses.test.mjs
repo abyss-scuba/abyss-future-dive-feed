@@ -41,6 +41,18 @@ test('replacing the managed section removes obsolete dates and retains new owner
  assert.ok(result.includes('No beginner PADI Freediver intake was listed'));assert.ok(result.includes('This does not mean the course is unavailable'));
  assert.equal(withFreediverDates(result,next),result);
 });
+test('Freediver price summary follows suitable intakes and never treats hire as included',()=>{
+ const snapshot=make(),rows=snapshot.sessions.filter(r=>r.courseKey==='padi-freediver-sydney'&&r.bookingStatus==='listed with places at check');
+ const single=withFreediverDates('<p>Course facts.</p>',{...snapshot,sessions:[{...rows[0],price:650}]});
+ assert.ok(single.includes('listed at AUD $650.00 per person'));
+ assert.ok(single.includes('personal-equipment hire availability and charges need confirmation'));
+ assert.ok(single.includes('not a verified all-in total'));
+ const mixed=withFreediverDates('<p>Course facts.</p>',{...snapshot,sessions:[{...rows[0],price:650},{...rows[1],price:700},{...rows[0],id:'sold',price:100,bookingStatus:'sold out at check'}]});
+ assert.ok(mixed.includes('listed at AUD $650.00–$700.00 per person'));
+ assert.ok(!mixed.includes('AUD $100.00'));
+ const empty=withFreediverDates(single,{...snapshot,sessions:[]});
+ assert.ok(!empty.includes('listed at AUD $650.00'));assert.ok(!empty.includes('How much does a beginner freediving course cost'));
+});
 test('Freediver draft, identity and marker conflicts block all schedule writes',async()=>{
  for(const change of [{hasDraft:true},{slug:'wrong-course'},{text:'<!-- ABYSS_FREEDIVER_DATES_START_V1 --><p>Broken marker</p>'}]){
   const m=docsMock([freediverFixture(change)]);await assert.rejects(publishCourseSnapshot(make(),{request:m.request}),/conflict/);assert.equal(m.mutations.length,0);
