@@ -34,7 +34,7 @@
     {
       "slug": "avelo-buoyancy-skills",
       "name": "Avelo buoyancy and the skills you still use",
-      "text": "<!-- ABYSS_AVELO_KNOWLEDGE_V1 --><h2>Does Avelo control depth automatically?</h2><p>No. Avelo makes a buoyancy setting more stable across changes in depth; it does not choose or hold your depth. The diver controls adjustments, ascents and descents. Avelo Mode gives information, not automatic control.</p><h2>Why water ballast feels different</h2><p>Water ballast does not expand and compress like the air cell in a conventional BCD. That can reduce repeated depth-related corrections. Breathing, trim, exposure protection, remaining gas, salinity and equipment still matter. Correct weighting and controlled movement remain essential; do not promise that every diver will need no lead.</p><h2>If buoyancy is your main concern</h2><p>Tell us what feels difficult and when you last dived. Avelo training may interest you, but the equipment does not replace practice or solve every skills problem. Do not invent a mandatory Advanced Open Water or Peak Performance Buoyancy prerequisite. If general confidence or rusty skills are the issue, an instructor can help decide whether preparation is useful.</p><h2>Your next step</h2><p><a href=\"https://www.abyss.com.au/courses/avelo-dive-course\">Explore the Avelo course</a> if you want to experience the system with an instructor.</p>",
+      "text": "<!-- ABYSS_AVELO_KNOWLEDGE_V1 --><h2>Does Avelo control depth automatically?</h2><p>No. Avelo makes a buoyancy setting more stable across changes in depth; it does not choose or hold your depth. The diver controls adjustments, ascents and descents. Avelo Mode gives information, not automatic control.</p><h2>Why water ballast feels different</h2><p>Water ballast does not expand and compress like the air cell in a conventional BCD. That can reduce repeated depth-related corrections. Breathing, trim, exposure protection, remaining gas, salinity and equipment still matter. Correct weighting and controlled movement remain essential; do not promise that every diver will need no lead.</p><h2>If buoyancy is your main concern</h2><p>Tell us what feels difficult and when you last dived. Avelo training may interest you, but the equipment does not replace practice or solve every skills problem. Do not invent a mandatory Advanced Open Water or Peak Performance Buoyancy prerequisite. If general confidence or rusty skills are the issue, an instructor can help decide whether preparation is useful.</p><h2>Your next step</h2><p><a href=\"https://www.abyss.com.au/courses/avelo-dive-course\">Explore the Avelo course</a> if you want to experience the system with an instructor.</p><h2>Can I stop thinking about breathing and trim?</h2><p>No. Avelo can reduce repeated buoyancy corrections, but you still use breathing and body position to control yourself in the water. Continue to monitor depth, gas and your buddy and use the normal skills taught in training. A more stable buoyancy setting is not automatic depth or trim control.</p>",
       "keywords": [
         "automatic buoyancy",
         "hold depth",
@@ -45,7 +45,9 @@
         "breathing",
         "poor buoyancy",
         "BCD",
-        "Avelo skills"
+        "Avelo skills",
+        "breathing and trim",
+        "stop thinking about buoyancy"
       ],
       "sources": [
         "https://www.abyss.com.au/avelo-the-future-of-scuba"
@@ -57,7 +59,7 @@
     {
       "slug": "avelo-benefits-diving-goals",
       "name": "Avelo benefits for the diving you enjoy",
-      "text": "<!-- ABYSS_AVELO_KNOWLEDGE_V1 --><h2>What might I enjoy about Avelo?</h2><p>Avelo may appeal if you want a lighter-feeling setup, fewer buoyancy corrections or more attention available for your buddy, photography and marine life. The useful question is what you want to improve or enjoy on your dives.</p><h2>Will I use less air or stay down longer?</h2><p>Some divers may improve efficiency as workload and drag reduce. No percentage saving or longer dive is guaranteed. Depth, breathing, conditions, experience and the dive plan still matter. Avelo does not extend no-decompression limits or remove gas-reserve requirements.</p><h2>Shore diving and photography</h2><p>Potentially reduced equipment weight and workload can be attractive for shore diving or steady photography. Exact weight differences depend on the systems compared, exposure protection and individual weighting. Do not promise a fixed kilogram saving, cured back pain, effortless surf entries or perfect camera stability. Reef awareness and careful finning still matter.</p><h2>Do I need to change from conventional scuba?</h2><p>No. If you enjoy your current equipment, Avelo is an option to explore. You can learn using the equipment supplied for the course before deciding whether rental or ownership suits you. <a href=\"https://www.abyss.com.au/courses/avelo-dive-course\">See the Avelo course and dates</a>.</p>",
+      "text": "<!-- ABYSS_AVELO_KNOWLEDGE_V1 --><h2>What might I enjoy about Avelo?</h2><p>Avelo may appeal if you want a lighter-feeling setup, fewer buoyancy corrections or more attention available for your buddy, photography and marine life. The useful question is what you want to improve or enjoy on your dives.</p><h2>Will I use 30 percent less air?</h2><p>That is not guaranteed. Some divers may use gas more efficiently as workload or drag reduces, but results vary with the diver, depth, conditions and dive profile. Do not promise a 30 percent reduction or any fixed percentage. A course lets the diver experience the system without a promise of a particular saving.</p><h2>Does Avelo guarantee a longer dive?</h2><p>No. Gas supply and reserve, depth, breathing rate, conditions and the dive plan can limit duration. Improving gas efficiency does not remove other dive limits.</p><h2>Will Avelo extend my no-decompression limit?</h2><p>No. Changing to Avelo does not itself extend a no-decompression limit (NDL). A dive computer estimates decompression status from the depth and time profile, breathing-gas mix and residual inert-gas loading from previous dives, using its configured model. Gas consumption and the diver’s experience are not substitutes for those calculations. Distinguish gas time remaining from NDL: using gas more slowly does not grant extra no-stop time. Follow the dive computer, training and dive plan; do not give a personalised decompression calculation.</p><h2>Shore diving and photography</h2><p>Potentially reduced equipment weight and workload can be attractive for shore diving or steady photography. Exact weight differences depend on the systems compared, exposure protection and individual weighting. Do not promise a fixed kilogram saving, cured back pain, effortless surf entries or perfect camera stability. Reef awareness and careful finning still matter.</p><h2>Do I need to change from conventional scuba?</h2><p>No. If you enjoy your current equipment, Avelo is an option to explore. You can learn using the equipment supplied for the course before deciding whether rental or ownership suits you. <a href=\"https://www.abyss.com.au/courses/avelo-dive-course\">See the Avelo course and dates</a>.</p><h2>Will Avelo help me take steadier photos?</h2><p>It may help: more stable buoyancy and reduced adjustment workload can make it easier to focus on positioning and photography. It does not automatically hold depth or stabilise the camera. Breathing, trim, fin technique and awareness of marine life still matter. The Avelo course is a way to see whether the system suits your photography.</p><h2>Can Avelo cure my back pain?</h2><p>No. Avelo is diving equipment, not a treatment or cure for back pain. A lighter-feeling configuration may be more comfortable for some divers, but personal medical fitness and lifting limits need appropriate professional advice. An instructor can discuss equipment fit and practical assistance; medical clearance must come from an appropriate medical professional.</p>",
       "keywords": [
         "Avelo benefits",
         "air consumption",
@@ -68,11 +70,18 @@
         "shore entries",
         "photography",
         "reef damage",
-        "worth it"
+        "worth it",
+        "30 percent less air",
+        "no-decompression limit",
+        "NDL versus gas time remaining",
+        "steadier photos",
+        "cure back pain"
       ],
       "sources": [
         "https://www.abyss.com.au/avelo-the-future-of-scuba",
-        "https://www.abyss.com.au/courses/avelo-dive-course"
+        "https://www.abyss.com.au/courses/avelo-dive-course",
+        "https://blog.padi.com/how-dive-computers-work/",
+        "https://dan.org/alert-diver/article/trouble-in-galapagos/"
       ],
       "sourceChecked": "2026-10-01",
       "ownerRole": "Abyss Avelo training lead",
