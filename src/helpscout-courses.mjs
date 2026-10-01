@@ -96,7 +96,7 @@ function freediverFinsOffer(snapshot){
  check(checked.isValid,'Freediver offer needs a valid snapshot check time');
  const active=checked.toISODate()<='2027-03-31';
  return '<h3>Does the PADI Freediver course include free freediving fins?</h3><p>'+(active
-  ?'Yes. For beginner PADI Freediver enrolments made by 31 March 2027, the advertised offer includes a FREE pair of premium long-blade freediving fins valued at AUD $140, yours to keep. Eligible students do not need to buy a separate pair of fins. This is the enrolment deadline, not a published course-completion deadline.'
+  ?'Yes. For beginner PADI Freediver enrolments made by 31 March 2027, the advertised offer includes a FREE pair of premium long-blade freediving fins valued at AUD $129, yours to keep. Eligible students do not need to buy a separate pair of fins. This is the enrolment deadline, not a published course-completion deadline.'
   :'The previously advertised free-fins offer had an enrolment deadline of 31 March 2027. Do not promise free fins for a new enrolment after that date unless Abyss confirms a current extension or replacement offer. Do not deny an earlier eligible booking its promised inclusion; ask the team to check that booking.')
   +' Confirm sizing, availability, collection and any other unstated conditions with Abyss. Do not invent a brand, model, material, cash alternative or retrospective eligibility. This dated offer must not be treated as a permanent inclusion or extended from the course date. The owner confirmed this deadline on 1 October 2026; it supersedes older October or undated March wording. See <a href="https://www.abyss.com.au/courses/padi-freediver-course">course dates and booking</a>.</p>';
 }
