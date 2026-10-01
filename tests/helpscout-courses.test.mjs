@@ -65,7 +65,7 @@ test('free-fins offer uses the Sydney enrolment deadline and survives a daily re
  const s=make(),body='<p>Owner course facts stay intact.</p>';
  const initial=withFreediverDates(body,{...s,checkedAt:'2027-03-31T12:59:59Z'});
  assert.ok(initial.includes('Yes. For beginner PADI Freediver enrolments made by 31 March 2027'));
- assert.ok(initial.includes('AUD $140, yours to keep'));
+ assert.ok(initial.includes('AUD $129, yours to keep'));
  assert.ok(initial.includes('not a published course-completion deadline'));
  assert.ok(!initial.includes('Bring or arrange a suitable mask, snorkel, fins and wetsuit'));
  const expired=withFreediverDates(initial,{...s,checkedAt:'2027-03-31T13:00:00Z'});
