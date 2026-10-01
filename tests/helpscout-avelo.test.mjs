@@ -1,5 +1,56 @@
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import {DateTime} from 'luxon';
-import {expiry,buildSnapshot,parseCalendar,scrapeAvelo,staleHtml,renderSnapshot,validateLinks,resolvePack,publishKnowledge,SITE,COLLECTION} from '../src/helpscout-avelo.mjs';
+import {expiry,buildSnapshot,parseCalendar,scrapeAvelo,staleHtml,renderSnapshot,validateLinks,resolvePack,publishKnowledge,hash,comparable,SITE,COLLECTION} from '../src/helpscout-avelo.mjs';
+
+function docsFixture(article,{beforeReadback,beforeSecondRead}={}){
+ let stored=structuredClone(article),reads=0;const writes=[],backups=[];
+ const request=async(method,path,payload)=>{
+  if(method==='PUT'){writes.push(structuredClone(payload));stored={...stored,...structuredClone(payload)};beforeReadback?.(stored);return;}
+  assert.equal(method,'GET');
+  if(path.startsWith('/collections/'+COLLECTION+'/articles'))return {articles:{page:1,pages:1,items:[{id:stored.id}]}};
+  if(path==='/collections/'+COLLECTION)return {collection:{id:COLLECTION,siteId:SITE,name:'Avelo Diving',visibility:'private'}};
+  if(path==='/sites/'+SITE)return {site:{id:SITE}};
+  assert.equal(path,'/articles/'+stored.id);
+  if(++reads===2)beforeSecondRead?.(stored);
+  return {article:structuredClone(stored)};
+ };
+ return {request,writes,backups,saveBackup:async value=>backups.push(structuredClone(value))};
+}
+const keywordArticle=()=>({id:'keyword-test',collectionId:COLLECTION,status:'published',hasDraft:false,name:'Keyword test',slug:'keyword-test',text:'<h2>Existing facts</h2>',keywords:['old search phrase']});
+
+test('keyword-only publication replaces old terms and records the exact readback',async()=>{
+ const current=keywordArticle(),fixture=docsFixture(current),keywords=['new search phrase','another intent'];
+ const result=await publishKnowledge({...fixture,articles:[{...current,keywords}]});
+ assert.deepEqual(fixture.writes,[{keywords}]);assert.deepEqual(fixture.backups[0],[current]);
+ assert.deepEqual(result[0].keywords,keywords);assert.equal(result[0].keywordsHash,hash(JSON.stringify([...keywords].sort())));
+});
+test('schedule keyword publication preserves the live snapshot instead of its seed text',async()=>{
+ const current={...keywordArticle(),text:'<h2>Verified current schedule</h2>'},fixture=docsFixture(current);
+ const result=await publishKnowledge({...fixture,articles:[{...current,schedule:true,text:'<h2>Not yet verified seed</h2>',keywords:['course dates']}]});
+ assert.deepEqual(fixture.writes,[{keywords:['course dates']}]);assert.equal(result[0].textHash,hash(comparable(current.text)));
+});
+test('unchanged keyword sets are idempotent regardless of returned order',async()=>{
+ const current={...keywordArticle(),keywords:['second','first']},fixture=docsFixture(current);
+ await publishKnowledge({...fixture,articles:[{...current,keywords:['first','second']}]});assert.equal(fixture.writes.length,0);
+});
+test('readback rejects an obsolete keyword left behind by the API',async()=>{
+ const current=keywordArticle(),fixture=docsFixture(current,{beforeReadback:a=>a.keywords.push('obsolete')});
+ await assert.rejects(publishKnowledge({...fixture,articles:[{...current,keywords:['replacement']}]}),/keyword readback mismatch/);
+});
+test('concurrent keyword editing prevents a write',async()=>{
+ const current=keywordArticle(),fixture=docsFixture(current,{beforeSecondRead:a=>a.keywords=['human edit']});
+ await assert.rejects(publishKnowledge({...fixture,articles:[{...current,keywords:['replacement']}]}),/Concurrent/);assert.equal(fixture.writes.length,0);
+});
+test('managed keyword drift fails preflight before any write',async()=>{
+ const current=keywordArticle(),fixture=docsFixture(current),previous={articles:[{id:current.id,textHash:hash(comparable(current.text)),keywordsHash:hash(JSON.stringify(['different managed set']))}]};
+ await assert.rejects(publishKnowledge({...fixture,previous,articles:[current]}),/keywords edited since managed/);assert.equal(fixture.writes.length,0);
+});
+test('shared articles allow local keywords while preserving canonical facts and fallback',()=>{
+ const pack=JSON.parse(fs.readFileSync('data/helpscout-avelo-knowledge.json')),shared=JSON.parse(fs.readFileSync('data/helpscout-course-knowledge.json'));
+ const entry=pack.articles.find(a=>a.sharedCourseArticleId),source=shared.articles.find(a=>a.id===entry.sharedCourseArticleId),before=JSON.stringify(shared);
+ entry.keywords=['local one','local two','local three','local four','local five'];
+ let resolved=resolvePack(pack,shared).find(a=>a.slug===entry.slug);assert.deepEqual(resolved.keywords,entry.keywords);assert.equal(resolved.text,source.text);assert.equal(resolved.name,source.name);
+ delete entry.keywords;resolved=resolvePack(pack,shared).find(a=>a.slug===entry.slug);assert.deepEqual(resolved.keywords,source.keywords);assert.equal(JSON.stringify(shared),before);
+});
 const now=DateTime.fromISO('2026-10-01T07:00:00',{zone:'Australia/Sydney'});
 const row={startDate:'30 Oct 2026',endDate:'30 Oct 2026',name:'Avelo Dive Course',maxPlaces:'4',available:'3',price:'$699.00',bookingUrl:'https://www.abyss.com.au/courses/avelo-dive-course?q='+Buffer.from('part_number=AVELO 30-10&date=&open_cart_id=66991806').toString('base64'),description:'AVELO 30-10: Avelo Dive Course',sessionDetails:['Start date: 30 Oct 2026 09:15 AM']};
 const raw=(rows=[row])=>({rows,extraction:{sourceTotal:rows.length,pages:1,pageSizes:[rows.length]}});

@@ -62,12 +62,57 @@ export function renderSnapshot(s){const e=escape,fmt=d=>DateTime.fromISO(d,{zone
 export function staleHtml(reason='The current daily schedule has not been verified.') {return `<!-- ABYSS_AVELO_SNAPSHOT_V1 --><h2>Current Avelo dates need a live check</h2><p><strong>Status: STALE OR UNVERIFIED.</strong> ${escape(reason)} Do not assert dates, prices, availability or seat counts from any earlier snapshot.</p><p><a href="${COURSE}">Check the live Avelo course page</a> for the current selected date and places, or <a href="https://www.abyss.com.au/contact-us">ask the Avelo team about your preferred dates</a>. An enquiry does not reserve a place.</p>`}
 async function listArticles(request){let result=[];for(let page=1;page<=20;page++){const a=(await request('GET',`/collections/${COLLECTION}/articles?pageSize=100&status=all&page=${page}`)).articles;check(a&&Array.isArray(a.items)&&a.page===page&&Number.isInteger(a.pages),'Invalid Avelo Docs pagination');result.push(...a.items);if(page>=a.pages)return result}throw Error('Avelo Docs pagination limit')}
 export async function validateTarget(request){const c=(await request('GET',`/collections/${COLLECTION}`)).collection;check(c?.id===COLLECTION&&c.siteId===SITE&&c.name==='Avelo Diving'&&c.visibility==='private','Avelo collection identity/privacy mismatch');const site=(await request('GET',`/sites/${SITE}`)).site;check(site?.id===SITE,'Avelo site identity mismatch');return c}
-export function resolvePack(pack,coursePack){check(pack.siteId===SITE&&pack.collectionId===COLLECTION&&pack.articles.length===14,'Invalid Avelo pack');const names=new Set(),slugs=new Set();return pack.articles.map(a=>{let r=a;if(a.sharedCourseArticleId){const shared=coursePack.articles.find(x=>x.id===a.sharedCourseArticleId);check(shared,'Shared Avelo source missing');r={name:shared.name,slug:a.slug,text:shared.text,keywords:shared.keywords,sharedCourseArticleId:a.sharedCourseArticleId}}check(!names.has(r.name)&&!slugs.has(r.slug),'Duplicate Avelo pack article');names.add(r.name);slugs.add(r.slug);check(r.text&&r.keywords.length>=5,'Incomplete Avelo knowledge article');const links=[...r.text.matchAll(/href="([^"]+)"/g)].map(m=>new URL(m[1]));check(links.every(u=>u.origin==='https://www.abyss.com.au'),'Non-Abyss customer link in Avelo knowledge');return r})}
+const keywordSignature=keywords=>JSON.stringify([...(keywords??[])].sort());
+export function resolvePack(pack,coursePack){
+ check(pack.siteId===SITE&&pack.collectionId===COLLECTION&&pack.articles.length===14,'Invalid Avelo pack');
+ const names=new Set(),slugs=new Set();
+ return pack.articles.map(a=>{
+  let r=a;
+  if(a.sharedCourseArticleId){
+   const shared=coursePack.articles.find(x=>x.id===a.sharedCourseArticleId);check(shared,'Shared Avelo source missing');
+   // Keep shared course facts canonical while allowing Avelo-specific search intents.
+   r={name:shared.name,slug:a.slug,text:shared.text,keywords:a.keywords??shared.keywords,sharedCourseArticleId:a.sharedCourseArticleId};
+  }
+  check(!names.has(r.name)&&!slugs.has(r.slug),'Duplicate Avelo pack article');names.add(r.name);slugs.add(r.slug);
+  check(r.text&&Array.isArray(r.keywords)&&r.keywords.length>=5,'Incomplete Avelo knowledge article');
+  check(r.keywords.every(k=>typeof k==='string'&&k===k.trim()&&k.length>0),'Invalid Avelo keyword');
+  check(new Set(r.keywords.map(k=>k.toLowerCase().replace(/\s+/g,' '))).size===r.keywords.length,'Duplicate Avelo keyword');
+  const links=[...r.text.matchAll(/href="([^"]+)"/g)].map(m=>new URL(m[1]));
+  check(links.every(u=>u.origin==='https://www.abyss.com.au'),'Non-Abyss customer link in Avelo knowledge');
+  return r;
+ });
+}
 export async function publishKnowledge({request,articles,previous=null,saveBackup}){
- await validateTarget(request);const refs=await listArticles(request),existing=[];for(const x of refs)existing.push((await request('GET',`/articles/${x.id}`)).article);
- const plans=articles.map(a=>{const matches=existing.filter(x=>x.name===a.name||x.slug===a.slug);check(matches.length<=1,'Duplicate Avelo destination');const current=matches[0];if(current){check(current.name===a.name&&current.slug===a.slug&&current.collectionId===COLLECTION&&current.status==='published'&&!current.hasDraft,'Avelo destination conflict');const old=previous?.articles?.find(x=>x.id===current.id);if(!a.schedule&&old)check(hash(comparable(current.text))===old.textHash,'Avelo article edited since managed publication');}return {a,current}});
- await saveBackup(existing);const result=[];for(const {a,current} of plans){let id=current?.id;const text=a.schedule&&current?current.text:a.text;if(current&&!a.schedule&&comparable(current.text)!==comparable(text)){const fresh=(await request('GET',`/articles/${id}`)).article;check(!fresh.hasDraft&&comparable(fresh.text)===comparable(current.text),'Concurrent Avelo article edit');await request('PUT',`/articles/${id}`,{name:a.name,text,keywords:a.keywords})}else if(!id)id=await request('POST','/articles',{collectionId:COLLECTION,status:'published',name:a.name,slug:a.slug,text,keywords:a.keywords});
- const read=(await request('GET',`/articles/${id}`)).article;check(read.collectionId===COLLECTION&&read.status==='published'&&read.name===a.name&&read.slug===a.slug&&comparable(read.text)===comparable(text),'Avelo article readback mismatch');check(a.keywords.every(k=>(read.keywords||[]).includes(k)),'Avelo keyword readback mismatch');result.push({id,name:a.name,slug:a.slug,schedule:!!a.schedule,textHash:hash(comparable(read.text))});}
+ await validateTarget(request);const refs=await listArticles(request),existing=[];
+ for(const x of refs)existing.push((await request('GET',`/articles/${x.id}`)).article);
+ const plans=articles.map(a=>{
+  const matches=existing.filter(x=>x.name===a.name||x.slug===a.slug);check(matches.length<=1,'Duplicate Avelo destination');
+  const current=matches[0];
+  if(current){
+   check(current.name===a.name&&current.slug===a.slug&&current.collectionId===COLLECTION&&current.status==='published'&&!current.hasDraft,'Avelo destination conflict');
+   const old=previous?.articles?.find(x=>x.id===current.id);
+   if(!a.schedule&&old)check(hash(comparable(current.text))===old.textHash,'Avelo article edited since managed publication');
+   if(old?.keywordsHash)check(hash(keywordSignature(current.keywords))===old.keywordsHash,'Avelo keywords edited since managed publication');
+  }
+  return {a,current};
+ });
+ await saveBackup(existing);const result=[];
+ for(const {a,current} of plans){
+  let id=current?.id;
+  const text=a.schedule&&current?current.text:a.text;
+  const textChanged=current&&!a.schedule&&comparable(current.text)!==comparable(text);
+  const keywordsChanged=current&&keywordSignature(current.keywords)!==keywordSignature(a.keywords);
+  if(current&&(textChanged||keywordsChanged)){
+   const fresh=(await request('GET',`/articles/${id}`)).article;
+   check(fresh.collectionId===COLLECTION&&fresh.status==='published'&&fresh.name===a.name&&fresh.slug===a.slug&&!fresh.hasDraft&&comparable(fresh.text)===comparable(current.text)&&keywordSignature(fresh.keywords)===keywordSignature(current.keywords),'Concurrent Avelo article edit');
+   // A keyword-only update must never replace a fresh daily schedule with its seed text.
+   await request('PUT',`/articles/${id}`,{...(textChanged?{name:a.name,text}:{}),keywords:a.keywords});
+  }else if(!id)id=await request('POST','/articles',{collectionId:COLLECTION,status:'published',name:a.name,slug:a.slug,text,keywords:a.keywords});
+  const read=(await request('GET',`/articles/${id}`)).article;
+  check(read.collectionId===COLLECTION&&read.status==='published'&&!read.hasDraft&&read.name===a.name&&read.slug===a.slug&&comparable(read.text)===comparable(text),'Avelo article readback mismatch');
+  check(keywordSignature(read.keywords)===keywordSignature(a.keywords),'Avelo keyword readback mismatch');
+  result.push({id,name:a.name,slug:a.slug,schedule:!!a.schedule,textHash:hash(comparable(read.text)),keywords:read.keywords,keywordsHash:hash(keywordSignature(read.keywords))});
+ }
  return result;
 }
 export async function publishSnapshot({request,id,text}){await validateTarget(request);const current=(await request('GET',`/articles/${id}`)).article;check(current?.collectionId===COLLECTION&&current.name===TITLE&&current.status==='published'&&!current.hasDraft&&current.text.includes('ABYSS_AVELO_SNAPSHOT_V1'),'Avelo schedule identity/status mismatch');if(comparable(current.text)!==comparable(text))await request('PUT',`/articles/${id}`,{text});const verified=(await request('GET',`/articles/${id}`)).article;check(verified.name===TITLE&&verified.collectionId===COLLECTION&&comparable(verified.text)===comparable(text),'Avelo schedule readback mismatch');return {articleId:id,status:'published-and-read-back',textHash:hash(comparable(text))};}
