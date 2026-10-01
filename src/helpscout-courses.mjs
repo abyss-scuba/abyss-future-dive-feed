@@ -101,10 +101,13 @@ export function withFreediverDates(original,snapshot){
  const suitable=rows.filter(r=>r.bookingStatus==='listed with places at check'&&!r.warnings.length).slice(0,3);
  const fmt=d=>DateTime.fromISO(d,{zone:ZONE}).toFormat('d LLLL yyyy');
  const dates=r=>escape(fmt(r.startDate)+(r.endDate!==r.startDate?' – '+fmt(r.endDate):''));
- let block=FREEDIVER_START+'<h2>Beginner freediving: next PADI Freediver course dates and booking links</h2>';
+ let block=FREEDIVER_START+'<h2>Beginner freediving: price, inclusions, next PADI Freediver course dates and booking links</h2>';
  block+='<p>For learning to freedive, beginner freediving lessons or a PADI Freediver booking, answer course questions and offer the suitable listed dates below in the same reply. These are beginner Freediver intakes, not Advanced Freediver, Mermaid or scuba courses. Use the course information below for entry requirements and preparation.</p>';
  block+=`<p><strong>Last successful check: ${escape(snapshot.checkedAt)} (Australia/Sydney).</strong> Updated by the existing daily 2:30 am Sydney course feed. This is a snapshot, not real-time availability.</p><p><strong>Stale after: ${escape(snapshot.staleAfter)}.</strong> After this time, or if the check cannot be verified, do not assert these dates, prices or availability. Use the <a href="https://www.abyss.com.au/courses/padi-freediver-course">live PADI Freediver course page</a>.</p>`;
  if(suitable.length){
+  const prices=[...new Set(suitable.map(r=>r.price))].sort((a,b)=>a-b);
+  const priceLabel=prices.length===1?`AUD $${prices[0].toFixed(2)}`:`AUD $${prices[0].toFixed(2)}–$${prices.at(-1).toFixed(2)}`;
+  block+=`<h3>How much does a beginner freediving course cost, and what is included?</h3><p>The suitable beginner PADI Freediver intakes below are listed at ${priceLabel} per person at the check above. Included: eLearning, instructor tuition, confined-water training, two ocean sessions (conditions permitting), certification on successful completion, weights and a weight belt. Bring or arrange a suitable mask, snorkel, fins and wetsuit; personal-equipment hire availability and charges need confirmation before payment. Any additional training and its cost must be agreed with Abyss; free repeats are not promised. These are course fees, not a verified all-in total for a visitor who needs hire or further training. Check the selected date link for current price and places.</p>`;
   block+='<h3>Next listed beginner freediving intakes</h3><ul>';
   for(const r of suitable)block+=`<li><strong>${dates(r)}</strong> — listed AUD $${r.price.toFixed(2)}; ${escape(r.bookingStatus)}. <a href="${escape(r.bookingUrl)}">Check this PADI Freediver date and book</a>. ${escape(r.sessionDetails.join(' | '))}. Confirm the complete timetable, current price and places on the selected live page.</li>`;
   block+='</ul>';
