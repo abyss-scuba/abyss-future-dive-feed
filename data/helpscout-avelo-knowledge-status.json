@@ -1,6 +1,6 @@
 {
-  "publishedAt": "2026-10-01T05:20:58.455Z",
-  "packHash": "124bb0cf868409dd6895329aff877a3f314102031ef1f0b122c2f2ed61bffba0",
+  "publishedAt": "2026-10-01T05:40:58.438Z",
+  "packHash": "05e2350dd039e0be31216d977c0c8f81e31304ca3fd8e461569424d0ff57fe59",
   "articles": [
     {
       "id": "6abda0dd535b0034271debb1",
@@ -91,7 +91,7 @@
       "name": "Is Avelo suitable for me",
       "slug": "avelo-suitability",
       "schedule": false,
-      "textHash": "438b5a0b936b097e5e69baa18b693cdb85775a07379dcaebb77b793d7e71e700",
+      "textHash": "51f6bb195f5639df31d95538bd30e4a1f57012fe3b4b59fc6d95a6c8c585ede8",
       "keywords": [
         "is Avelo suitable for me",
         "Avelo for a newly certified diver",
@@ -110,9 +110,14 @@
         "can beginners learn scuba on Avelo",
         "beginner Avelo Diver versus Essentials",
         "try Avelo before certification",
-        "Avelo trial or discovery session"
+        "Avelo trial or discovery session",
+        "beginner Avelo versus PADI Open Water",
+        "Avelo beginner swimming requirements",
+        "Avelo conventional scuba crossover",
+        "Avelo beginner qualification and depth",
+        "Avelo beginner course cost and duration"
       ],
-      "keywordsHash": "24877b782554242b142746489363a8a23de1621bcb68689322beffd46af5ed16"
+      "keywordsHash": "d5b596eb53c675040448bbdec838cd5d045c431272f15448fd6bc99f3c982f9a"
     },
     {
       "id": "6abda0de3be702ed269e38e4",
@@ -146,7 +151,7 @@
       "name": "Your Avelo course day and equipment",
       "slug": "your-avelo-course-day",
       "schedule": false,
-      "textHash": "08cbe22ca7b80f27ab3a4e7338a058919923d73a9f8dd02d19480687bda01849",
+      "textHash": "8f56c7f96e1e576796f3b207ac565a123662b833014b762201298c4af5cb44da",
       "keywords": [
         "what does the Avelo course include",
         "Avelo course equipment included",
