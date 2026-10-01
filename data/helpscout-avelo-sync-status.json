@@ -22,7 +22,7 @@
     "status": "published-and-read-back",
     "textHash": "f5b03f0f1875fa139a79bea48f8cd09d6baa143ab3b5d7f9425e6e4ed1936ea9"
   },
-  "agentVerification": "verified retrieval; 49-question exact and paraphrase acceptance passed",
+  "agentVerification": "keyword routing checked; live booking caveat inconsistent; earlier 49-question acceptance retained as historical",
   "agentVerificationDetails": {
     "agentId": 27389,
     "verifiedAt": "2026-10-01T04:40:42.578Z",
@@ -44,7 +44,24 @@
     "knowledgeCommit": "7398f0107994c631415030b0eeb570f973a3b0db",
     "configurationRevision": "Identity v5; physics v6; booking v9; technical-scope v5; ownership-only v1; rebreather-comparison v5; travel-lifespan v1; conditional-benefits v3",
     "testEnvironment": "Agent27389 internal Test only",
-    "configurationChangedAfterFinalTests": false,
-    "limitations": "Observed acceptance set only; not a guarantee for every future conversation. Daily data remains a snapshot, and unresolved equipment/business facts remain explicitly unverified."
+    "configurationChangedAfterFinalTests": true,
+    "limitations": "Observed acceptance set only; not a guarantee for every future conversation. Daily data remains a snapshot, and unresolved equipment/business facts remain explicitly unverified.",
+    "subsequentKeywordReview": {
+      "reviewedAt": "2026-10-01T05:26:22.311Z",
+      "knowledgeCommit": "b861bddfdc0a4b1645047ab2e81fa56201cdd4b2",
+      "articlesReviewed": 14,
+      "keywordsPublished": 243,
+      "exactKeywordReadbacks": 14,
+      "articleBodiesChanged": false,
+      "automatedChecksPassed": 18,
+      "internalTestQuestions": 6,
+      "correctTopicRetrievals": 6,
+      "remainingAnswerQualityFindings": [
+        "Course-fee answer used check latest details instead of explicitly confirming both live price and places.",
+        "Next-date answer confirmed live availability but omitted explicit live price confirmation."
+      ],
+      "visitorAnswersEnabled": false,
+      "scope": "Keyword curation and targeted retrieval checks only. This is not a repeat of the earlier 49 exact plus 49 paraphrase acceptance."
+    }
   }
 }
