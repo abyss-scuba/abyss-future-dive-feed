@@ -1,6 +1,6 @@
 {
-  "publishedAt": "2026-10-01T02:04:41.978Z",
-  "packHash": "197feffce2e9da4c14e2f43231030b207543ce0bdf773610040e3533875c2558",
+  "publishedAt": "2026-10-01T02:10:20.270Z",
+  "packHash": "99f06c98fbfa693562a8eb3a69634ce65ac15e53ea72bc18968644743173b16a",
   "articles": [
     {
       "id": "6abda0dd535b0034271debb1",
@@ -42,7 +42,7 @@
       "name": "Your Avelo course day and equipment",
       "slug": "your-avelo-course-day",
       "schedule": false,
-      "textHash": "f0b9e5ecad8a261e97a89b1913e291fdd3489fe0ba519ab0e007b1d205a24932"
+      "textHash": "17445d7b2e9020143596ac433835c917044a584ecdfcfe36c128c06afe0c948c"
     },
     {
       "id": "6abda0df528fa6f4b198ae72",
