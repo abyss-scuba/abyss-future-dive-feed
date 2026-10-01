@@ -1,6 +1,6 @@
 {
-  "publishedAt": "2026-10-01T00:13:32.673Z",
-  "packHash": "c02254d88d41e0b1b719eeba52f799770f66f4cf8879ee6b10a6573ab6f41587",
+  "publishedAt": "2026-10-01T00:14:51.120Z",
+  "packHash": "4b3f3fb5af99f4c313d22751b2d1fa94615a8b30bd18f6e5118d97bb37e409eb",
   "articles": [
     {
       "id": "6abda0dd535b0034271debb1",
@@ -63,7 +63,7 @@
       "name": "Avelo safety reliability and equipment questions",
       "slug": "avelo-safety-reliability",
       "schedule": false,
-      "textHash": "e71d342576cbf314524b7e07a9bd77a140c8649ab1298b2c71c4c2a8f6dc6f3f"
+      "textHash": "34c18be1b87fb11599663d239d1d0a52b86014e1621d544af45e8b0443c85f48"
     },
     {
       "id": "6abda0df535b0034271debb3",
