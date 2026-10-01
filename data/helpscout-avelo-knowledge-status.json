@@ -1,6 +1,6 @@
 {
-  "publishedAt": "2026-10-01T00:27:50.305Z",
-  "packHash": "376c61cd287e1c67f69a6ed4784f5ecaefbd6754c63b44f2a15c2c83a379aff6",
+  "publishedAt": "2026-10-01T00:29:30.667Z",
+  "packHash": "9a301e46f44b8917beefde8698f3b35f387fe76410a7ca30eec672a8512d4f8a",
   "articles": [
     {
       "id": "6abda0dd535b0034271debb1",
@@ -84,7 +84,7 @@
       "name": "Avelo bookings changes and instructor help",
       "slug": "avelo-booking-instructor-help",
       "schedule": false,
-      "textHash": "92684fbee3e3b85a4a772ec51ef34440514ae33105b19f521acf67b4b8abf764"
+      "textHash": "b43e8f006ac3b122cced7249583d87344fc301fcb9bd7bf6c8d56d90cf5cc7f7"
     },
     {
       "id": "6abda0e0c3e570044c288b4b",
