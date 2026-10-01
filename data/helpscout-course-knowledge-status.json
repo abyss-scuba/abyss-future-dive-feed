@@ -259,7 +259,12 @@
       "name": "Booking a dive course: buddies, prerequisites, dates and equipment",
       "slug": "booking-a-dive-course-buddies-prerequisites-dates-equipment",
       "plannedSlug": "booking-sydney-dive-course",
-      "textHash": "85a66bb280c2e0cdda30867d877167390d25c7c8d3f0e537706ad87c1d467af1"
+      "textHash": "a459e0bbf825c04ee7d9fe3455c568adeab1f8295210ccdcd5812bced8fbc3a5",
+      "reviewedLiveBaseline": {
+        "reason": "Preserve reviewed live booking additions and apply only Avelo routing and freshness corrections",
+        "observedFromRun": 36794184495,
+        "articleId": "6ab8b6617b6962906797d356"
+      }
     },
     {
       "id": "6ab8cb2984f08c58bb03f7f1",
