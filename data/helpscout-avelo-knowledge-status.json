@@ -1,6 +1,6 @@
 {
-  "publishedAt": "2026-10-01T06:33:16.765Z",
-  "packHash": "0bcfe00e4b53f712b0988e486e78cf45fd470c1fc761269f125790e84cc8e838",
+  "publishedAt": "2026-10-01T06:39:21.802Z",
+  "packHash": "e11d70c23cecb8867be3deb8659eeb8b7ca04d123deafa52565dee1cc7d87858",
   "articles": [
     {
       "id": "6abda0dd535b0034271debb1",
@@ -61,7 +61,7 @@
       "name": "Avelo benefits for the diving you enjoy",
       "slug": "avelo-benefits-diving-goals",
       "schedule": false,
-      "textHash": "89a602aabb9f9b5a855e7f22303912d523c0ba7ca0fbe7dd2a0d8bb6693cb26a",
+      "textHash": "f4b45b1ee7a564bab1aa636c3f508988aba69163e56177f4bec3c857eebf38b7",
       "keywords": [
         "Avelo benefits and drawbacks",
         "Avelo pros and cons",
@@ -82,9 +82,11 @@
         "Avelo shore entries and boat ladders",
         "can Avelo help with back pain",
         "Avelo versus buoyancy coaching",
-        "Avelo skills transfer to conventional scuba"
+        "Avelo skills transfer to conventional scuba",
+        "Avelo versus scuba ongoing rental costs",
+        "which system costs less after certification"
       ],
-      "keywordsHash": "dfef011bbac8ae0c2220f7244a96b3dd52e76f1493725849051745d3a0e74cf2"
+      "keywordsHash": "f81b539310485c964bc19e2fd70dabeb710462698f88a4705fe10080d647d93b"
     },
     {
       "id": "6abda0de3be702ed269e38e3",
