@@ -49,6 +49,8 @@ test('Freediver price summary follows suitable intakes and never treats hire as 
  assert.ok(single.includes('not a verified all-in total'));
  const mixed=withFreediverDates('<p>Course facts.</p>',{...snapshot,sessions:[{...rows[0],price:650},{...rows[1],price:700},{...rows[0],id:'sold',price:100,bookingStatus:'sold out at check'}]});
  assert.ok(mixed.includes('listed at AUD $650.00–$700.00 per person'));
+ assert.ok(mixed.includes('contains 2 suitable future intakes; 2 are shown below'));
+ assert.ok(mixed.includes('provide these 2 verified options'));
  assert.ok(!mixed.includes('AUD $100.00'));
  const empty=withFreediverDates(single,{...snapshot,sessions:[]});
  assert.ok(!empty.includes('listed at AUD $650.00'));assert.ok(!empty.includes('How much does a beginner freediving course cost'));
