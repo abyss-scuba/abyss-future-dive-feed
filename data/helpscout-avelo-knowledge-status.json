@@ -1,34 +1,34 @@
 {
-  "publishedAt": "2026-10-01T00:38:44.496Z",
-  "packHash": "8c5b9fbd3b3ca8e69427eb7113667bc13349337e3e98cf5fc36d894d316b9a6a",
+  "publishedAt": "2026-10-01T01:20:38.008Z",
+  "packHash": "67463508fdae5259aca4bb6c09495c9c9ebbb7c43680ade825785a5833344ea6",
   "articles": [
     {
       "id": "6abda0dd535b0034271debb1",
       "name": "Understanding the Avelo system",
       "slug": "understanding-avelo-system",
       "schedule": false,
-      "textHash": "8e7cc691ac5294d1bb78c538ff8d615534ef15d93fa1ca4c2a29f74e797e2e5a"
+      "textHash": "2f2e3a6533e6459eba1a36b9b4e5b44f355d0fbcd2c04f95da4472652046072e"
     },
     {
       "id": "6abda0dd535b0034271debb2",
       "name": "Avelo buoyancy and the skills you still use",
       "slug": "avelo-buoyancy-skills",
       "schedule": false,
-      "textHash": "61f56a317ce48d771a21d3bd1f96cac238fe2886c732b0099e765f8bb5ba2fa0"
+      "textHash": "7ed9de8409b9b82e4cbc5de01939ff406fe3e8a45cb49febdeda151a15d5f334"
     },
     {
       "id": "6abda0dd3be702ed269e38e2",
       "name": "Avelo benefits for the diving you enjoy",
       "slug": "avelo-benefits-diving-goals",
       "schedule": false,
-      "textHash": "8008b48b99b0de2ad41b2ced25ba006c4087f44d529092e2c95041c8b80759c2"
+      "textHash": "0b216577a8f273ffc20036516f6860215615ddbcb310e44f96961baac17e9de8"
     },
     {
       "id": "6abda0de3be702ed269e38e3",
       "name": "Is Avelo suitable for me",
       "slug": "avelo-suitability",
       "schedule": false,
-      "textHash": "7668dc3a4ac7e60cd2839d1394dafff566df547a805a1ff52ff918cb2b35833c"
+      "textHash": "438b5a0b936b097e5e69baa18b693cdb85775a07379dcaebb77b793d7e71e700"
     },
     {
       "id": "6abda0de3be702ed269e38e4",
@@ -42,7 +42,7 @@
       "name": "Your Avelo course day and equipment",
       "slug": "your-avelo-course-day",
       "schedule": false,
-      "textHash": "115d04d5ff3749aacdb8c712ba1f0caf3a7491fb05ac9daa91ec80671d47ef04"
+      "textHash": "f0b9e5ecad8a261e97a89b1913e291fdd3489fe0ba519ab0e007b1d205a24932"
     },
     {
       "id": "6abda0df528fa6f4b198ae72",
@@ -56,28 +56,28 @@
       "name": "Avelo regulators computers and equipment fit",
       "slug": "avelo-equipment-compatibility",
       "schedule": false,
-      "textHash": "24e139d18151429960f9ca4690d30c50c420f3488c81bf3e1df07f5f8023f14f"
+      "textHash": "2c0e248712958650211ef848472f663cf924945608d8df08b95e3ab5fc3b8bcd"
     },
     {
       "id": "6abda0df528fa6f4b198ae73",
       "name": "Avelo safety reliability and equipment questions",
       "slug": "avelo-safety-reliability",
       "schedule": false,
-      "textHash": "fe0b33e38c61302214a3fd36df66ea5b8f8abb5008a2a542b78a6fc1355bf994"
+      "textHash": "d6366f7bcd9942a8644ceaff2d2e58d91c58beca64dfbe13381fd8ef7c818553"
     },
     {
       "id": "6abda0df535b0034271debb3",
       "name": "Hire Avelo and keep diving after certification",
       "slug": "avelo-hire-after-certification",
       "schedule": false,
-      "textHash": "f7ae787bd5548b3eec11f2675bb7d3387aebef97f6aadfcfe1b62381c2501c49"
+      "textHash": "384049244d9d273343b28912c744be2f9d224823280b234577f128938a103c5e"
     },
     {
       "id": "6abda0df535b0034271debb4",
       "name": "Buying Avelo and taking it on dive trips",
       "slug": "buying-travelling-avelo",
       "schedule": false,
-      "textHash": "f804ed95e6479c5601db41a5e5242c9e233b2f7d01e1e76503fdd4ecda973fd9"
+      "textHash": "4f5042817b49f54b3cf61cdfbc8add9a5005164ad54ca78ffe069a8b47e23e60"
     },
     {
       "id": "6abda0e0c3e570044c288b4a",
