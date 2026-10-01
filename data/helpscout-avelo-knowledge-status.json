@@ -1,6 +1,6 @@
 {
-  "publishedAt": "2026-10-01T06:02:03.297Z",
-  "packHash": "6ef50521ba779cf340197d2dfb1f9933fbae690a589314ba885a6a53e41b5594",
+  "publishedAt": "2026-10-01T06:05:37.705Z",
+  "packHash": "a76b0ac0655b9803631bbed43c3ec6067395ac6294364880e68120088bbbe560",
   "articles": [
     {
       "id": "6abda0dd535b0034271debb1",
@@ -284,7 +284,7 @@
       "name": "Buying Avelo and taking it on dive trips",
       "slug": "buying-travelling-avelo",
       "schedule": false,
-      "textHash": "aa93cd4ee64f02b2ad49de36bce37da782f8163530726b147d5bf656e6f95ab2",
+      "textHash": "65212e5922ee40e863a2cd55f0f0463c9416e5666061ed5bec1f979e83e9647d",
       "keywords": [
         "buy Avelo equipment",
         "Avelo system price",
@@ -386,9 +386,12 @@
         "Avelo Instructor course dates",
         "Avelo Odyssey dates",
         "Avelo course sold out",
-        "Avelo course schedule last checked"
+        "Avelo course schedule last checked",
+        "cost of Avelo Essentials for certified divers",
+        "Avelo course fee and equipment included",
+        "how much does certified diver Avelo training cost"
       ],
-      "keywordsHash": "369051cd39799e9ab6017cfe9d1af01fd38d9412ca0eb7dc10109d5d317f8b78"
+      "keywordsHash": "1869819e768c19dbf75ddd06b89b49f96cacb5fdb839bf837b6a20e8803316ad"
     }
   ]
 }
