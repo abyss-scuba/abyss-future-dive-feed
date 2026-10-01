@@ -1,6 +1,6 @@
 {
-  "publishedAt": "2026-10-01T00:10:00.623Z",
-  "packHash": "3f5d1d2c7289d561011b973bc379ac6c5109b557ab227b1d818101b4ac5a74ca",
+  "publishedAt": "2026-10-01T00:13:32.673Z",
+  "packHash": "c02254d88d41e0b1b719eeba52f799770f66f4cf8879ee6b10a6573ab6f41587",
   "articles": [
     {
       "id": "6abda0dd535b0034271debb1",
@@ -14,14 +14,14 @@
       "name": "Avelo buoyancy and the skills you still use",
       "slug": "avelo-buoyancy-skills",
       "schedule": false,
-      "textHash": "2f5b0f7b9204347496c6c5b7e8542cfc5e1bf51a95275638660576b11c72dd03"
+      "textHash": "61f56a317ce48d771a21d3bd1f96cac238fe2886c732b0099e765f8bb5ba2fa0"
     },
     {
       "id": "6abda0dd3be702ed269e38e2",
       "name": "Avelo benefits for the diving you enjoy",
       "slug": "avelo-benefits-diving-goals",
       "schedule": false,
-      "textHash": "d03bef9791d93eef96882f0123f1523bba59f0c2fad677d2b4717612d2dba0f8"
+      "textHash": "8008b48b99b0de2ad41b2ced25ba006c4087f44d529092e2c95041c8b80759c2"
     },
     {
       "id": "6abda0de3be702ed269e38e3",
