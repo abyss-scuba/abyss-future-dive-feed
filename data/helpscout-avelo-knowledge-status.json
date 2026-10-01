@@ -1,6 +1,6 @@
 {
-  "publishedAt": "2026-10-01T06:44:59.760Z",
-  "packHash": "0d3ae1f6b0670b06c2d66d98c15f8abbbdb53b468c85b31041bd504a56c01205",
+  "publishedAt": "2026-10-01T06:47:03.963Z",
+  "packHash": "20beece63864049f6f8760f3a2c9f0677234dcfe03e0999e793daed26f9f421b",
   "articles": [
     {
       "id": "6abda0dd535b0034271debb1",
@@ -93,7 +93,7 @@
       "name": "Is Avelo suitable for me",
       "slug": "avelo-suitability",
       "schedule": false,
-      "textHash": "a8edc296017d92003acc37ccdf851b4cf02e9a5fe7a98015cd8c53f3c0f9b539",
+      "textHash": "f822c9fbd06c7c33f94ac44feb06a287f2f8a5eec66fd16cbd8ef0ea8195c65d",
       "keywords": [
         "is Avelo suitable for me",
         "Avelo for a newly certified diver",
@@ -286,7 +286,7 @@
       "name": "Buying Avelo and taking it on dive trips",
       "slug": "buying-travelling-avelo",
       "schedule": false,
-      "textHash": "65212e5922ee40e863a2cd55f0f0463c9416e5666061ed5bec1f979e83e9647d",
+      "textHash": "fc623e924856e829d13fe9a8f84adaa727d7601802d2da720b173fcb66ed33ba",
       "keywords": [
         "buy Avelo equipment",
         "Avelo system price",
@@ -320,7 +320,7 @@
       "name": "Avelo bookings changes and instructor help",
       "slug": "avelo-booking-instructor-help",
       "schedule": false,
-      "textHash": "603e6c13b6d394f49c413440f281de48b033a45b0a381f5d63f1480229c70b69",
+      "textHash": "3d8f5faf27812476e4e1cd5d56033f3c91790892cd4272094fadac869fff422f",
       "keywords": [
         "change an Avelo course booking",
         "cancel an Avelo course",
@@ -338,9 +338,10 @@
         "are listed Avelo places still available",
         "Avelo schedule check time",
         "Avelo stale or expired course listing",
-        "Avelo booking link selects the wrong date"
+        "Avelo booking link selects the wrong date",
+        "beginner Avelo versus PADI course prices and inclusions"
       ],
-      "keywordsHash": "1bb362aa86cbc3529c3cd8f0d5f9f828554005fe91befbdf167ba35771452848"
+      "keywordsHash": "e4065b6c5f6df50b6c1c91da9e1088c8284bdcd595f2ad9a28787727a935010f"
     },
     {
       "id": "6abda0e0c3e570044c288b4b",
