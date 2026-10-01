@@ -1,6 +1,6 @@
 {
-  "publishedAt": "2026-10-01T02:23:44.115Z",
-  "packHash": "10ffef6a678d74e19996ba0631fd0b753191f52d27f619331f9bc62bbd40553a",
+  "publishedAt": "2026-10-01T02:32:45.543Z",
+  "packHash": "bf2dff18f045923079908e2a7a3e0e61aad0d28f6eefc2fd8811786fcb0b4797",
   "articles": [
     {
       "id": "6abda0dd535b0034271debb1",
@@ -56,7 +56,7 @@
       "name": "Avelo regulators computers and equipment fit",
       "slug": "avelo-equipment-compatibility",
       "schedule": false,
-      "textHash": "31aedf3cdeb2bbe20755228895221911f606c7603eb69e6ba410cb2826224387"
+      "textHash": "39f3ac98812d3f5b657ae83b83b4ff3abac28732c3ae6b9e2213acccdda1d8d3"
     },
     {
       "id": "6abda0df528fa6f4b198ae73",
@@ -77,7 +77,7 @@
       "name": "Buying Avelo and taking it on dive trips",
       "slug": "buying-travelling-avelo",
       "schedule": false,
-      "textHash": "538bccceb7a14e8b9871191c1e55cd61e796161dec8d28ec85435e878c5a60d7"
+      "textHash": "567582f2576045fb8403856d6147a16d9a70a435501a72162972b243c08a17f2"
     },
     {
       "id": "6abda0e0c3e570044c288b4a",
