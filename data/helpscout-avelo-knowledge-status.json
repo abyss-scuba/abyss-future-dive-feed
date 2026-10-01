@@ -1,6 +1,6 @@
 {
-  "publishedAt": "2026-10-01T01:43:20.796Z",
-  "packHash": "7d5cb036c953765c10904e00dc2485c80b6461e628ef50daf147f6b62596be21",
+  "publishedAt": "2026-10-01T01:45:09.982Z",
+  "packHash": "aa5c177269ff11c0615e31b1330079b80e4026a0a3219b1077b48ac691898a38",
   "articles": [
     {
       "id": "6abda0dd535b0034271debb1",
@@ -77,7 +77,7 @@
       "name": "Buying Avelo and taking it on dive trips",
       "slug": "buying-travelling-avelo",
       "schedule": false,
-      "textHash": "e5e183790613d8affe22f2b68d83ad10dd97f5c1ce9a930b681c0a6a4068b9b0"
+      "textHash": "d2b1ca09fa2da06a497db4f1a4da5795fb38d73b138de35950d23ef11f60a7f0"
     },
     {
       "id": "6abda0e0c3e570044c288b4a",
