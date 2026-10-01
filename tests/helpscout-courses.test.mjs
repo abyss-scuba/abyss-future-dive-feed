@@ -24,4 +24,38 @@ async function managedFixture(){const pack=JSON.parse(await fs.readFile(new URL(
 test('unrelated live edits and drafts survive while only the changed Avelo record is published',async()=>{const {pack,existing,previous}=await managedFixture();existing[2].text='<p>New owner-approved AOW advice</p>';existing[2].hasDraft=true;const a=pack.articles.find(a=>a.slug==='avelo-essentials-sydney');a.text+='<p>Updated Avelo facts.</p>';const m=docsMock(existing);const result=await publishKnowledge({pack,previous,request:m.request,saveBackup:async()=>{}});assert.equal(m.mutations.length,1);assert.equal(m.mutations[0].path,`/articles/${a.id}`);assert.equal((await m.request('GET',`/articles/${existing[2].id}`)).article.text,existing[2].text);assert.equal(result[2].textHash,previous.articles[2].textHash);assert.equal(result[2].action,'preserved');assert.equal(result[2].liveHasDraft,true);});
 test('a live conflict on the changed source still blocks every mutation',async()=>{const {pack,existing,previous}=await managedFixture();pack.articles[0].text+='<p>Managed change</p>';existing[0].text+='<p>Concurrent live change</p>';const m=docsMock(existing);await assert.rejects(publishKnowledge({pack,previous,request:m.request,saveBackup:async()=>{}}),/edited since/);assert.equal(m.mutations.length,0);});
 test('preserved live edits are not adopted as permission to overwrite later',async()=>{const {pack,existing,previous}=await managedFixture();existing[2].text+='<p>Colleague change</p>';const m=docsMock(existing);const articles=await publishKnowledge({pack,previous,request:m.request,saveBackup:async()=>{}});assert.equal(m.mutations.length,0);pack.articles[2].text+='<p>Later managed change</p>';await assert.rejects(publishKnowledge({pack,previous:{articles},request:m.request,saveBackup:async()=>{}}),/edited since/);assert.equal(m.mutations.length,0);});
-test('after baseline migration, managed keyword changes are not skipped',async()=>{const {pack,existing,previous}=await managedFixture();const m=docsMock(existing);const articles=await publishKnowledge({pack,previous,request:m.request,saveBackup:async()=>{}});pack.articles[0].keywords.push('new approved search phrase');await publishKnowledge({pack,previous:{articles},request:m.request,saveBackup:async()=>{}});assert.equal(m.mutations.length,1);assert.ok(m.mutations[0].body.keywords.includes('new approved search phrase'));});
+test('explicit managed keyword changes are not skipped after baseline migration',async()=>{const {pack,existing,previous}=await managedFixture();const m=docsMock(existing);const articles=await publishKnowledge({pack,previous,request:m.request,saveBackup:async()=>{}});pack.articles[0].manageKeywords=true;pack.articles[0].keywords.push('new approved search phrase');await publishKnowledge({pack,previous:{articles},request:m.request,saveBackup:async()=>{}});assert.equal(m.mutations.length,1);assert.ok(m.mutations[0].body.keywords.includes('new approved search phrase'));});
+
+
+test('next-day schedule refresh preserves manually curated keywords on every article',async()=>{
+ const snapshot=make();
+ const old=schedulePlans(snapshot).map((p,i)=>({id:String(i+1).padStart(24,'0'),name:p.name,slug:p.slug,collectionId:COLLECTION,status:'published',hasDraft:false,text:p.text,keywords:[`curated phrase ${i}`]}));
+ const m=docsMock(old),next=structuredClone(snapshot);
+ next.localDate='2026-10-01';next.checkedAt='2026-10-01T23:00:00+10:00';next.staleAfter='2026-10-03T23:00:00+10:00';
+ await publishCourseSnapshot(next,{request:m.request});
+ assert.equal(m.mutations.length,old.length);
+ for(const article of old){const actual=(await m.request('GET',`/articles/${article.id}`)).article;assert.deepEqual(actual.keywords,article.keywords);assert.ok(actual.text.includes(next.checkedAt));}
+ assert.ok(m.mutations.every(change=>!Object.hasOwn(change.body,'keywords')));
+});
+
+test('new schedule articles use date phrases without bare course or goal keywords',async()=>{
+ const m=docsMock();await publishCourseSnapshot(make(),{request:m.request});
+ for(const mutation of m.mutations){assert.equal(mutation.method,'POST');assert.ok(mutation.body.keywords.length);assert.ok(mutation.body.keywords.every(k=>/dates|upcoming|calendar/i.test(k)));}
+});
+
+test('knowledge body updates preserve live keywords unless explicitly managed',async()=>{
+ const {pack,existing,previous}=await managedFixture();
+ existing[0].keywords=['owner curated medical enquiry'];pack.articles[0].text+='<p>Updated course guidance.</p>';pack.articles[0].keywords=['old pack keyword'];
+ const m=docsMock(existing);await publishKnowledge({pack,previous,request:m.request,saveBackup:async()=>{}});
+ assert.equal(m.mutations.length,1);assert.ok(!Object.hasOwn(m.mutations[0].body,'keywords'));
+ assert.deepEqual((await m.request('GET',`/articles/${existing[0].id}`)).article.keywords,['owner curated medical enquiry']);
+});
+
+
+test('keyword opt-in preserves existing source fingerprints for unmodified records',async()=>{
+ const {pack,existing,previous}=await managedFixture();
+ previous.articles.forEach((r,i)=>{const a=pack.articles[i];r.sourceHash=hash(JSON.stringify({name:a.name,text:comparable(a.text),keywords:a.keywords,categories:a.manageCategories?a.categories:null}));});
+ existing[0].text='<p>New live guidance</p>';existing[0].keywords=['new live phrase'];existing[0].hasDraft=true;
+ const m=docsMock(existing);const result=await publishKnowledge({pack,previous,request:m.request,saveBackup:async()=>{}});
+ assert.equal(m.mutations.length,0);assert.ok(result.every(r=>r.action==='preserved'));
+});
