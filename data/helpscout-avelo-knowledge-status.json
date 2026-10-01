@@ -1,6 +1,6 @@
 {
-  "publishedAt": "2026-10-01T06:13:09.414Z",
-  "packHash": "ee34d6061b2f9ebfbf64f958d1fb8c166802a6a2182122c3efe1e753c1ca84b9",
+  "publishedAt": "2026-10-01T06:16:28.220Z",
+  "packHash": "411d43488b72b9c11395c326c00fab62d5fa37ed27ae664246cf8c6ef8722157",
   "articles": [
     {
       "id": "6abda0dd535b0034271debb1",
@@ -35,7 +35,7 @@
       "name": "Avelo buoyancy and the skills you still use",
       "slug": "avelo-buoyancy-skills",
       "schedule": false,
-      "textHash": "95431c331285f18a574fa2b8f3e702f7e0298ee7925d9bab04b29b389c4667cf",
+      "textHash": "fefe69e2a77b1740509b7b53e19b01fece6b74bdf0a8627066c0b2504a14b506",
       "keywords": [
         "Avelo neutral buoyancy",
         "does Avelo hold depth automatically",
