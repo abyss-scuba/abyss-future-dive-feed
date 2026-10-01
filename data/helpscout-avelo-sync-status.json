@@ -22,20 +22,29 @@
     "status": "published-and-read-back",
     "textHash": "f5b03f0f1875fa139a79bea48f8cd09d6baa143ab3b5d7f9425e6e4ed1936ea9"
   },
-  "agentVerification": "verified retrieval; acceptance testing incomplete",
+  "agentVerification": "verified retrieval; 49-question exact and paraphrase acceptance passed",
   "agentVerificationDetails": {
     "agentId": 27389,
-    "verifiedAt": "2026-10-01T00:38:36.964Z",
-    "testCase": "061-R1",
+    "verifiedAt": "2026-10-01T04:40:42.578Z",
+    "testCase": "Avelo49-final-A9-B9",
     "snapshotTextHash": "f5b03f0f1875fa139a79bea48f8cd09d6baa143ab3b5d7f9425e6e4ed1936ea9",
     "observed": [
-      "correct next course date",
-      "correct listed price",
-      "actual snapshot check time",
+      "verified listed course fee and inclusions",
+      "actual snapshot date and Sydney time",
       "exact selected-date booking link",
-      "live price/places caveat"
+      "live price and places caveat",
+      "49 exact questions reviewed and passed",
+      "49 natural paraphrases reviewed and passed on unchanged configuration"
     ],
     "visitorAnswersEnabled": false,
-    "finalRegressionPassed": false
+    "finalRegressionPassed": true,
+    "exactQuestionsPassed": 49,
+    "paraphrasesPassed": 49,
+    "totalObservedSubmissions": 739,
+    "knowledgeCommit": "7398f0107994c631415030b0eeb570f973a3b0db",
+    "configurationRevision": "Identity v5; physics v6; booking v9; technical-scope v5; ownership-only v1; rebreather-comparison v5; travel-lifespan v1; conditional-benefits v3",
+    "testEnvironment": "Agent27389 internal Test only",
+    "configurationChangedAfterFinalTests": false,
+    "limitations": "Observed acceptance set only; not a guarantee for every future conversation. Daily data remains a snapshot, and unresolved equipment/business facts remain explicitly unverified."
   }
 }
