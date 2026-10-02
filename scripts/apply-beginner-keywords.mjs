@@ -4,16 +4,28 @@ import path from 'node:path';
 import {createHash} from 'node:crypto';
 import {pathToFileURL} from 'node:url';
 const ID=/^[0-9a-f]{24}$/;
+const FIXED_COLLECTIONS={
+ '6abf61e6c3e570044c2891ed':'New Diver Support',
+ '6ab98d4249f1bc2c6aefca54':'Sydney Dive Calendar'
+};
+const FIXED_TARGETS={
+ '6abf7099528fa6f4b198b51b':'6abf61e6c3e570044c2891ed',
+ '6abf733d3be702ed269e3fa6':'6abf61e6c3e570044c2891ed',
+ '6abf7841c3e570044c28921f':'6abf61e6c3e570044c2891ed',
+ '6abf6f632bd8064b0717cab1':'6abf61e6c3e570044c2891ed',
+ '6abf76557cdaed3f1efa5fa0':'6ab98d4249f1bc2c6aefca54',
+ '6abf7b9f3be702ed269e3faf':'6ab98d4249f1bc2c6aefca54'
+};
 const hash=x=>createHash('sha256').update(JSON.stringify(x)).digest('hex');
 const ensure=(ok,msg)=>{if(!ok)throw new Error(msg);};
 const keys=a=>a.keywords??[];
 const bodyState=a=>({id:a.id,collectionId:a.collectionId,name:a.name,slug:a.slug,status:a.status,hasDraft:a.hasDraft,text:a.text});
 export function validatePlan(p){
  ensure(p?.siteId==='5d0ed4d02c7d3a6ebd2268ed'&&p.collectionId==='6abf61e6c3e570044c2891ed','Wrong fixed site or collection');
- ensure(Array.isArray(p.articles)&&p.articles.length===4,'Expected four requested articles');
+ ensure(Array.isArray(p.articles)&&p.articles.length===6,'Expected six requested articles');
  const ids=new Set(),terms=new Set();
  for(const a of p.articles){
-  ensure(ID.test(a.id)&&!ids.has(a.id)&&a.title,'Invalid or duplicate target');ids.add(a.id);
+  ensure(ID.test(a.id)&&!ids.has(a.id)&&a.title&&FIXED_TARGETS[a.id]===a.collectionId,'Invalid or duplicate target');ids.add(a.id);
   ensure(Array.isArray(a.keywords)&&a.keywords.length>=10&&a.keywords.length<=25,'Invalid keyword set');
   for(const k of a.keywords){ensure(typeof k==='string'&&k.trim()===k&&k.length>2&&!/[\n,;]/.test(k),'Invalid individual phrase');const n=k.toLowerCase();ensure(!terms.has(n),'Duplicate exact phrase across requested articles');terms.add(n);}
  }
@@ -21,13 +33,15 @@ export function validatePlan(p){
 }
 export async function applyKeywords({request,plan,publish=false,backup=async()=>{}}){
  validatePlan(plan);
- const c=(await request('GET',`/collections/${plan.collectionId}`)).collection;
- ensure(c?.id===plan.collectionId&&c.siteId===plan.siteId&&c.name==='New Diver Support'&&c.visibility==='private','Collection identity or privacy mismatch');
+ for(const [id,name] of Object.entries(FIXED_COLLECTIONS)){
+  const c=(await request('GET',`/collections/${id}`)).collection;
+  ensure(c?.id===id&&c.siteId===plan.siteId&&c.name===name&&c.visibility==='private','Collection identity or privacy mismatch');
+ }
  const records=[];
  // Preflight every fixed target before making any write.
  for(const t of plan.articles){
   const a=(await request('GET',`/articles/${t.id}`)).article;
-  ensure(a?.id===t.id&&a.collectionId===plan.collectionId&&a.name===t.title,'Article identity mismatch');
+  ensure(a?.id===t.id&&a.collectionId===t.collectionId&&a.name===t.title,'Article identity mismatch');
   ensure(['published','notpublished'].includes(a.status),'Unknown article status');
   ensure(typeof a.text==='string'&&Array.isArray(keys(a)),'Invalid article response');
   records.push({t,a});

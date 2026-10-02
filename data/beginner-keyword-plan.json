@@ -1,102 +1,46 @@
 {
   "siteId": "5d0ed4d02c7d3a6ebd2268ed",
   "collectionId": "6abf61e6c3e570044c2891ed",
+  "collections": [
+    {"id":"6abf61e6c3e570044c2891ed","name":"New Diver Support"},
+    {"id":"6ab98d4249f1bc2c6aefca54","name":"Sydney Dive Calendar"}
+  ],
   "articles": [
     {
-      "id": "6abf7099528fa6f4b198b51b",
-      "title": "Using the Beginner Dive Calendar: labels, dates and booking",
-      "keywords": [
-        "how to use the beginner dive calendar",
-        "how do I book a dive and reserve equipment",
-        "New Diver Option",
-        "Check Experience badge",
-        "Suggested Pick",
-        "Training Option",
-        "club members only dive",
-        "do I have to join the dive club",
-        "beginner calendar not loading",
-        "no beginner dates showing",
-        "why is my dive missing from the calendar",
-        "how far ahead can I book a dive",
-        "when will more dive dates be added",
-        "beginner calendar 42 day window",
-        "fully booked dive alternatives",
-        "beginner dive waiting list"
-      ]
+      "id":"6abf7099528fa6f4b198b51b",
+      "collectionId":"6abf61e6c3e570044c2891ed",
+      "title":"Using the Beginner Dive Calendar: labels, dates and booking",
+      "keywords":["how to use the beginner dive calendar","how do I book a dive and reserve equipment","New Diver Option","Check Experience badge","Suggested Pick","Training Option","club members only dive","do I have to join the dive club","beginner calendar not loading","no beginner dates showing","why is my dive missing from the calendar","how far ahead can I book a dive","when will more dive dates be added","beginner calendar 42 day window","fully booked dive alternatives","beginner dive waiting list"]
     },
     {
-      "id": "6abf733d3be702ed269e3fa6",
-      "title": "Your first guided dive after certification: what happens and who helps",
-      "keywords": [
-        "first guided dive after certification",
-        "what happens on my first dive after my course",
-        "only four Open Water course dives",
-        "am I experienced enough to join",
-        "what should I bring on my first guided dive",
-        "will a divemaster guide us underwater",
-        "dive master underwater guide",
-        "guided shore dive versus boat guidance",
-        "guided group dive versus private lesson",
-        "how big are the diving groups",
-        "will I be diving with other beginners",
-        "guide to diver ratio on a fun dive",
-        "help checking dive equipment and weighting",
-        "can I join without a buddy",
-        "booking a dive alone",
-        "how will you choose my dive buddy",
-        "paired with another new diver",
-        "how many dives will we do"
-      ]
+      "id":"6abf733d3be702ed269e3fa6",
+      "collectionId":"6abf61e6c3e570044c2891ed",
+      "title":"Your first guided dive after certification: what happens and who helps",
+      "keywords":["first guided dive after certification","what happens on my first dive after my course","only four Open Water course dives","am I experienced enough to join","what should I bring on my first guided dive","will a divemaster guide us underwater","dive master underwater guide","guided shore dive versus boat guidance","guided group dive versus private lesson","how big are the diving groups","will I be diving with other beginners","guide to diver ratio on a fun dive","help checking dive equipment and weighting","can I join without a buddy","booking a dive alone","how will you choose my dive buddy","paired with another new diver","how many dives will we do"]
     },
     {
-      "id": "6abf7841c3e570044c28921f",
-      "title": "Nervous about your next dive? Support, pace and extra help",
-      "keywords": [
-        "nervous about my first dive after my course",
-        "what support will I have as a nervous diver",
-        "worried about keeping up with the group",
-        "my buoyancy is shaky",
-        "I use my air quickly",
-        "will I hold everyone else up",
-        "use more air than my buddy",
-        "need more time to descend",
-        "struggle to equalise",
-        "difficulty equalizing on descent",
-        "can I sit out a dive",
-        "come up early if I feel uncomfortable",
-        "stop a dive because I am nervous",
-        "need extra help during a dive",
-        "private guide for a nervous diver",
-        "private guide versus refresher",
-        "forgotten scuba equipment setup",
-        "group dive or buoyancy training"
-      ]
+      "id":"6abf7841c3e570044c28921f",
+      "collectionId":"6abf61e6c3e570044c2891ed",
+      "title":"Nervous about your next dive? Support, pace and extra help",
+      "keywords":["nervous about my first dive after my course","what support will I have as a nervous diver","worried about keeping up with the group","my buoyancy is shaky","I use my air quickly","will I hold everyone else up","use more air than my buddy","need more time to descend","struggle to equalise","difficulty equalizing on descent","can I sit out a dive","come up early if I feel uncomfortable","stop a dive because I am nervous","need extra help during a dive","private guide for a nervous diver","private guide versus refresher","forgotten scuba equipment setup","group dive or buoyancy training"]
     },
     {
-      "id": "6abf6f632bd8064b0717cab1",
-      "title": "Upcoming beginner dive dates — shore, boat and trips",
-      "keywords": [
-        "beginner dive dates",
-        "which beginner friendly dives are on this weekend",
-        "new diver dives this weekend",
-        "what dives are on this Saturday",
-        "what dives are on this Sunday",
-        "beginner dives next weekend",
-        "upcoming beginner shore dives",
-        "first boat dive dates",
-        "new diver weekday dives",
-        "beginner dives during the week",
-        "next Henry Head boat dive",
-        "next Bare Island guided dive",
-        "next Oak Park shore dive",
-        "next Marine Marvels dive",
-        "weedy seadragon dive dates",
-        "next Martin Island seal dive",
-        "beginner dive trips",
-        "upcoming dive weekends and travel dates",
-        "beginner dive availability",
-        "which beginner dives are fully booked"
-      ]
+      "id":"6abf6f632bd8064b0717cab1",
+      "collectionId":"6abf61e6c3e570044c2891ed",
+      "title":"Upcoming beginner dive dates — shore, boat and trips",
+      "keywords":["beginner dive dates","which beginner friendly dives are on this weekend","new diver dives this weekend","what dives are on this Saturday","what dives are on this Sunday","beginner dives next weekend","upcoming beginner shore dives","first boat dive dates","new diver weekday dives","beginner dives during the week","next Henry Head boat dive","next Bare Island guided dive","next Oak Park shore dive","next Marine Marvels dive","weedy seadragon dive dates","next Martin Island seal dive","beginner dive trips","upcoming dive weekends and travel dates","beginner dive availability","which beginner dives are fully booked"]
+    },
+    {
+      "id":"6abf76557cdaed3f1efa5fa0",
+      "collectionId":"6ab98d4249f1bc2c6aefca54",
+      "title":"Scuba equipment hire and the total cost of your dive",
+      "keywords":["what will my dive cost with equipment hire","total dive cost including rental gear","can I hire all the equipment I need","I do not own any scuba gear","full scuba equipment hire inclusions","what does full gear rental include","is wetsuit hire included","are tanks included in equipment rental","do I need to hire two tanks","regulator BCD computer and weights hire","mask snorkel fins and boots rental","free guided shore dive extra costs","how to book scuba rental equipment","Select your dive gear","collect and return rental gear","transporting hired gear to the dive site","hire gear cancellation terms","standard scuba rental versus Avelo hire"]
+    },
+    {
+      "id":"6abf7b9f3be702ed269e3faf",
+      "collectionId":"6ab98d4249f1bc2c6aefca54",
+      "title":"Certification evidence, medical paperwork and insurance for certified divers",
+      "keywords":["do I need my certification card and logbook","bring proof of dive certification","can I show my eCard","digital scuba certification card","lost my diving certification card","forgot my dive logbook","trained with another dive centre","SSI or SDI certified diver joining Abyss","equivalent scuba diving qualifications","documents required for a guided shore dive","paperwork for a certified diver fun dive","liability waiver for guided dives","do certified divers need a medical certificate","medical declaration versus medical certificate","do I need dive insurance for a guided dive","is dive insurance included after my course"]
     }
   ]
 }
