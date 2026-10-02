@@ -1,0 +1,50 @@
+name: Verify and apply fixed Beginner Docs keywords
+on:
+  workflow_dispatch:
+    inputs:
+      publish:
+        type: boolean
+        default: false
+        description: Apply reviewed Keywords-only changes to the four fixed published articles
+  pull_request:
+    paths: ['data/beginner-keyword-plan.json', 'scripts/apply-beginner-keywords.mjs', 'tests/beginner-keywords.test.mjs', '.github/workflows/beginner-keywords.yml']
+  push:
+    branches: [main]
+    paths: ['data/beginner-keyword-plan.json', 'scripts/apply-beginner-keywords.mjs', 'tests/beginner-keywords.test.mjs', '.github/workflows/beginner-keywords.yml']
+permissions:
+  contents: read
+concurrency:
+  group: beginner-keywords-${{ github.event_name == 'pull_request' && github.ref || 'production' }}
+  cancel-in-progress: false
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+      - run: node --test tests/beginner-keywords.test.mjs
+  apply:
+    needs: test
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+      - name: Verify fixed identities and update Keywords only
+        env:
+          HELP_SCOUT_DOCS_API_KEY: ${{ secrets.HELP_SCOUT_DOCS_API_KEY }}
+          PUBLISH_KEYWORDS: ${{ github.event_name == 'push' || inputs.publish }}
+        run: node scripts/apply-beginner-keywords.mjs
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: beginner-keyword-counts-${{ github.run_id }}
+          path: diagnostics/beginner-keywords/status.json
+          if-no-files-found: ignore
+          retention-days: 14
