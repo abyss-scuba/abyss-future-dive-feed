@@ -1,0 +1,71 @@
+name: New diver 27449 fixed-source QA
+on:
+  push:
+    branches: ['qa/new-diver-suggested-questions-27449']
+    paths: ['.github/workflows/new-diver-qa-27449.yml']
+permissions:
+  contents: read
+concurrency:
+  group: new-diver-27449-source-qa
+  cancel-in-progress: false
+jobs:
+  read:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+      - name: Read fixed private Docs; export encrypted evidence only
+        env:
+          HELP_SCOUT_DOCS_API_KEY: ${{ secrets.HELP_SCOUT_DOCS_API_KEY }}
+        shell: bash
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs/promises';
+          import {randomBytes,createCipheriv,publicEncrypt,constants,createHash} from 'node:crypto';
+          const PUBLIC_KEY = `-----BEGIN PUBLIC KEY-----
+          MIIBojANBgkqhkiG9w0BAQEFAAOCAY8AMIIBigKCAYEAwEj09DmS99RAXw0HM82V
+          TR1oTu3mjuDoYUmVYDHpGjynFEg6Pet8/INxrFjI7bdJVBM0dMmKsZ0aT+GTA2BE
+          He64tfnBMaMSK2tGcNLhjwCu7EMZ1oNa+Azps2ViQoiD4WJZZxxyfXeaep1fDTKW
+          MRJIcY0GS11oGQkSqVpQgd4y+xiQu7PEkYqlfUoirJDV/7XMmb7JZaA2F2dp99t/
+          TcYrXlYGJZlyYwnqUAW6QvIX8jmro1hTFYrjo0+7zH3ZqxJNT3LXaAvHDOT7VXwj
+          36xp7NjUBwcbhBb60cRKXGNi3K0vDazNehDjr/JX9k6+lQ1oovtmR2bhwo1hBb/g
+          KkDCcBCuxGUhlWyURNI1wjYfhcBnuWReOOyYij87XLi5LHRtoOafpLnIcJJyIUSr
+          UejR1H+mkPGi7kMMcFAmdsXIjBufDt4hD3Syxg8aGBLMS6t8b38cH4rvJIoYQQYp
+          Hfd97bp8mBXSWGvy4GpkLV2q+GqBmQtvIhJ2/euCKWqlAgMBAAE=
+          -----END PUBLIC KEY-----`;
+          const targets=[
+            ['6abf733d3be702ed269e3fa6','6abf61e6c3e570044c2891ed','Your first guided dive after certification: what happens and who helps'],
+            ['6abf7841c3e570044c28921f','6abf61e6c3e570044c2891ed','Nervous about your next dive? Support, pace and extra help'],
+            ['6abf76557cdaed3f1efa5fa0','6ab98d4249f1bc2c6aefca54','Scuba equipment hire and the total cost of your dive'],
+            ['6abf6f632bd8064b0717cab1','6abf61e6c3e570044c2891ed','Upcoming beginner dive dates — shore, boat and trips']
+          ];
+          const ensure=(ok,msg)=>{if(!ok)throw new Error(msg)};
+          const sha=x=>createHash('sha256').update(x).digest('hex');
+          const get=async resource=>{
+            const key=process.env.HELP_SCOUT_DOCS_API_KEY;ensure(key,'Credential unavailable');
+            const r=await fetch('https://docsapi.helpscout.net/v1'+resource,{method:'GET',redirect:'error',signal:AbortSignal.timeout(25000),headers:{Authorization:'Basic '+Buffer.from(key+':X').toString('base64'),Accept:'application/json'}});
+            ensure(r.ok,'Fixed-source read failed with status '+r.status);return r.json();
+          };
+          try {
+            for(const id of new Set(targets.map(x=>x[1]))){const c=(await get('/collections/'+id)).collection;ensure(c?.id===id&&c.siteId==='5d0ed4d02c7d3a6ebd2268ed'&&c.visibility==='private','Collection identity/privacy mismatch');}
+            const articles=[];
+            for(const [id,cid,title] of targets){const a=(await get('/articles/'+id)).article;ensure(a?.id===id&&a.collectionId===cid&&a.name===title&&typeof a.text==='string','Fixed article identity/body mismatch');articles.push(a);}
+            const evidence=Buffer.from(JSON.stringify({checkedAt:new Date().toISOString(),articles}));
+            const key=randomBytes(32),iv=randomBytes(12),cipher=createCipheriv('aes-256-gcm',key,iv);
+            const ciphertext=Buffer.concat([cipher.update(evidence),cipher.final()]);
+            const wrappedKey=publicEncrypt({key:PUBLIC_KEY,padding:constants.RSA_PKCS1_OAEP_PADDING,oaepHash:'sha256'},key);
+            await fs.mkdir('qa-evidence',{recursive:true});
+            await fs.writeFile('qa-evidence/fixed-articles.encrypted.json',JSON.stringify({v:1,algorithm:'RSA-OAEP-SHA256+AES-256-GCM',wrappedKey:wrappedKey.toString('base64'),iv:iv.toString('base64'),tag:cipher.getAuthTag().toString('base64'),ciphertext:ciphertext.toString('base64')}));
+            const report={status:'read-only-verified',checkedAt:new Date().toISOString(),articles:articles.map(a=>({id:a.id,collectionId:a.collectionId,name:a.name,status:a.status,hasDraft:!!a.hasDraft,number:a.number,slug:a.slug,bodySha256:sha(a.text),keywordsCount:(a.keywords||[]).length,wordCount:a.text.replace(/<[^>]*>/g,' ').split(/\s+/).filter(Boolean).length}))};
+            await fs.writeFile('qa-evidence/status.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report));
+          }catch(e){console.error('Fixed-source QA stopped: '+e.message);process.exitCode=1;}
+          NODE
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: new-diver-27449-encrypted-source-read
+          path: qa-evidence/
+          retention-days: 3
+          if-no-files-found: error
