@@ -5,12 +5,12 @@ on:
       publish:
         type: boolean
         default: false
-        description: Apply reviewed Keywords-only changes to the four fixed published articles
+        description: Apply reviewed Keywords-only changes to the six fixed published articles
   pull_request:
-    paths: ['data/beginner-keyword-plan.json', 'scripts/apply-beginner-keywords.mjs', 'tests/beginner-keywords.test.mjs', '.github/workflows/beginner-keywords.yml']
+    paths: ['data/beginner-keyword-plan.json', 'scripts/apply-beginner-keywords.mjs', 'scripts/verify-beginner-docs-search.mjs', 'tests/beginner-keywords.test.mjs', 'tests/beginner-docs-search.test.mjs', '.github/workflows/beginner-keywords.yml']
   push:
     branches: [main]
-    paths: ['data/beginner-keyword-plan.json', 'scripts/apply-beginner-keywords.mjs', 'tests/beginner-keywords.test.mjs', '.github/workflows/beginner-keywords.yml']
+    paths: ['data/beginner-keyword-plan.json', 'scripts/apply-beginner-keywords.mjs', 'scripts/verify-beginner-docs-search.mjs', 'tests/beginner-keywords.test.mjs', 'tests/beginner-docs-search.test.mjs', '.github/workflows/beginner-keywords.yml']
 permissions:
   contents: read
 concurrency:
@@ -25,7 +25,7 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: '22'
-      - run: node --test tests/beginner-keywords.test.mjs
+      - run: node --test tests/beginner-keywords.test.mjs tests/beginner-docs-search.test.mjs
   apply:
     needs: test
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
@@ -37,14 +37,20 @@ jobs:
         with:
           node-version: '22'
       - name: Verify fixed identities and update Keywords only
+        id: keywords
         env:
           HELP_SCOUT_DOCS_API_KEY: ${{ secrets.HELP_SCOUT_DOCS_API_KEY }}
           PUBLISH_KEYWORDS: ${{ github.event_name == 'push' || inputs.publish }}
         run: node scripts/apply-beginner-keywords.mjs
+      - name: Read-only Docs search checks (not AI Answers testing)
+        if: ${{ !cancelled() && steps.keywords.outcome != 'skipped' }}
+        env:
+          HELP_SCOUT_DOCS_API_KEY: ${{ secrets.HELP_SCOUT_DOCS_API_KEY }}
+        run: node scripts/verify-beginner-docs-search.mjs
       - uses: actions/upload-artifact@v7
         if: always()
         with:
           name: beginner-keyword-counts-${{ github.run_id }}
-          path: diagnostics/beginner-keywords/status.json
+          path: diagnostics/beginner-keywords/
           if-no-files-found: ignore
           retention-days: 14
