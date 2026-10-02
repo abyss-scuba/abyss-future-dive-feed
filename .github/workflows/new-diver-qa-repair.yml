@@ -1,0 +1,31 @@
+name: Repair three fixed new-diver answer sources
+on:
+  push:
+    branches: ['qa/new-diver-suggested-questions-27449']
+    paths: ['.github/workflows/new-diver-qa-repair.yml']
+permissions:
+  contents: read
+concurrency:
+  group: new-diver-27449-source-qa
+  cancel-in-progress: false
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with: {node-version: '22'}
+      - name: Run fixed-source safety tests before access to Docs
+        run: node --test qa-tools/repair-new-diver-source-answers.test.mjs
+      - name: Apply exact reviewed FAQ additions and verify readback
+        env:
+          HELP_SCOUT_DOCS_API_KEY: ${{ secrets.HELP_SCOUT_DOCS_API_KEY }}
+        run: node qa-tools/repair-new-diver-source-answers.mjs
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: new-diver-27449-repair-status
+          path: qa-repair-status/status.json
+          retention-days: 7
+          if-no-files-found: warn
