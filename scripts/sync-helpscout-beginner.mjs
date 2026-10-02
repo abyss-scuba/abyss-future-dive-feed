@@ -3,6 +3,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { buildSnapshot,renderArticle,validateCountChange,sydneyParts } from '../src/helpscout-beginner-snapshot.mjs';
 import { makeClient,readTarget,isDue,publishSnapshot } from '../src/helpscout-beginner-publish.mjs';
+import { validateBookingLinks } from '../src/helpscout-beginner-links.mjs';
 const TARGET='data/helpscout-beginner-target.json',LAST='data/helpscout-beginner-last-good.json';
 const readJson=async p=>{try{return JSON.parse(await fs.readFile(p,'utf8'));}catch(e){if(e.code==='ENOENT')return null;throw e;}};
 const writeJson=async(p,v)=>{await fs.mkdir(path.dirname(p),{recursive:true});await fs.writeFile(p,JSON.stringify(v,null,2)+'\n');};
@@ -22,6 +23,7 @@ async function main(){
  }
  const report=await readJson('diagnostics/beginner-widget/inspection.json');
  const snapshot=buildSnapshot(report,{now});const previous=await readJson(LAST);validateCountChange(snapshot,previous);
+ await validateBookingLinks(snapshot);
  await writeJson('diagnostics/beginner-public/candidate.json',snapshot);
  await fs.writeFile('diagnostics/beginner-public/candidate.html',renderArticle(snapshot));
  if(!publish){console.log(JSON.stringify({status:'validated-candidate-not-published',counts:snapshot.counts,sourceCounts:snapshot.sourceCounts}));return;}
