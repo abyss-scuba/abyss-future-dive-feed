@@ -13,7 +13,6 @@ try {
   page.on('request', request => {
     const url = new URL(request.url());
     if (url.origin !== new URL(SOURCE).origin || !['xhr','fetch'].includes(request.resourceType())) return;
-    // Store only public endpoint structure, never cookies, headers or token values.
     const params = new URLSearchParams(request.postData() || '');
     report.observedRequests.push({path:url.pathname, method:request.method(), queryKeys:[...url.searchParams.keys()], formKeys:[...params.keys()]});
   });
@@ -25,7 +24,6 @@ try {
     .filter(e => /^widget\d+$/.test(e.id) && e.querySelector('tr.main-row'))
     .map(e => ({id:e.id,tableIds:[...e.querySelectorAll('table')].map(t=>t.id),headers:[...e.querySelectorAll('thead th')].map(t=>t.textContent.trim())})));
   if (!widgets.length) throw new Error('No verified numeric widget root found; parser configuration is unresolved');
-
   async function snapshot(root) {
     return root.evaluate(e => ({
       selectedPerPage:e.querySelector('select.per_page')?.value || null,
@@ -47,6 +45,21 @@ try {
     const item = {...widget,pages:[],complete:false};
     report.widgets.push(item);
     try {
+      // Verified live issue: the 50-row charter view repeats rows on page 2.
+      // Change the public widget's own control to 20 and verify the result.
+      if (widget.headers.includes('Charter')) {
+        const perPage = root.locator('select.per_page').first();
+        if (await perPage.count() && await perPage.inputValue() !== '20') {
+          item.originalPerPage = await perPage.inputValue();
+          await perPage.selectOption('20');
+          await page.waitForFunction(id => {
+            const element = document.getElementById(id);
+            const rows = element?.querySelectorAll('tr.main-row').length || 0;
+            return element?.querySelector('select.per_page')?.value === '20' && rows > 0 && rows <= 20;
+          }, widget.id, {timeout:45000});
+          await page.waitForTimeout(1500);
+        }
+      }
       const initial = await snapshot(root);
       item.pages.push(initial);
       const isCourse = /course/i.test(widget.tableIds.join(' ')+' '+widget.headers.join(' '));
@@ -55,7 +68,7 @@ try {
       for(let number=2; number<=20; number++) {
         const link = root.locator(`.pagination .page-link[data-page="${number}"]`).first();
         if (!await link.count()) {
-          const later=last.pagination.some(p=>/^\d+$/.test(p.page || '') && Number(p.page)>number);
+          const later=last.pagination.some(p=>!p.disabled && [p.page,p.text].some(v=>/^\d+$/.test(v || '') && Number(v)>=number));
           if(later)throw new Error(`Missing page ${number} despite a later page`);
           item.complete=true;break;
         }
