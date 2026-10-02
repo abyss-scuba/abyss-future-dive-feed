@@ -1,0 +1,7 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {encodedNameRepair,validateBookingLinks} from '../src/helpscout-beginner-links.mjs';
+const original='https://www.abyss.com.au/charters/guided-shore-dives?q='+Buffer.from('part_number=Shiprock & Oak Park Dive 27/11/2026&date=&open_cart_id=66660492').toString('base64');
+test('ampersand name repair retains exact full title and ID',()=>{const c=encodedNameRepair(original);assert.equal(c.title,'Shiprock & Oak Park Dive 27/11/2026');assert.equal(c.id,'66660492');const p=new URLSearchParams(Buffer.from(new URL(c.url).searchParams.get('q'),'base64').toString());assert.equal(p.get('part_number'),c.title);});
+test('repaired URL accepted only after selected booking verification',async()=>{const s={events:[{id:'66660492',title:'Shiprock',bookingUrl:original}]};let calls=0;await validateBookingLinks(s,async u=>{calls++;return {ok:true,url:u,text:async()=>calls===1?'Generic product':'66660492 Add to Cart'};});assert.equal(calls,2);assert.equal(s.events[0].sourceBookingUrl,original);assert.equal(s.events[0].title,'Shiprock & Oak Park Dive 27/11/2026');assert.notEqual(s.events[0].bookingUrl,original);});
+test('unverified repair never replaces original URL',async()=>{const s={events:[{id:'66660492',bookingUrl:original}]};await assert.rejects(()=>validateBookingLinks(s,async u=>({ok:true,url:u,text:async()=>'Generic product'})));assert.equal(s.events[0].bookingUrl,original);});
