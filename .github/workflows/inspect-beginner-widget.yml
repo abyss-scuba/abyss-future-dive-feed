@@ -1,0 +1,34 @@
+name: Inspect public beginner widget (read only)
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'scripts/inspect-beginner-widget.mjs'
+      - '.github/workflows/inspect-beginner-widget.yml'
+permissions:
+  contents: read
+concurrency:
+  group: beginner-widget-inspection-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Inspect only the public beginner data page
+        run: node scripts/inspect-beginner-widget.mjs
+      - name: Save public event-data inspection evidence
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: beginner-public-widget-${{ github.run_id }}
+          path: diagnostics/beginner-widget/
+          retention-days: 7
+          if-no-files-found: error

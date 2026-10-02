@@ -1,0 +1,145 @@
+name: Beginner dive schedule Help Scout snapshot
+on:
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: Publish the validated public-event snapshot to its private Docs article
+        type: boolean
+        default: false
+      bootstrap:
+        description: Create or discover the fixed private collection and schedule target
+        type: boolean
+        default: false
+      force:
+        description: Refresh even when already checked on this Sydney date
+        type: boolean
+        default: false
+  schedule:
+    - cron: '30 3 * * *'
+      timezone: Australia/Sydney
+    - cron: '15 4 * * *'
+      timezone: Australia/Sydney
+  push:
+    branches: [main]
+    paths:
+      - 'src/helpscout-beginner-*.mjs'
+      - 'scripts/sync-helpscout-beginner.mjs'
+      - 'scripts/inspect-beginner-widget.mjs'
+      - '.github/workflows/sync-helpscout-beginner.yml'
+  pull_request:
+    paths:
+      - 'src/helpscout-beginner-*.mjs'
+      - 'scripts/sync-helpscout-beginner.mjs'
+      - 'scripts/inspect-beginner-widget.mjs'
+      - 'tests/helpscout-beginner-*.test.mjs'
+      - '.github/workflows/sync-helpscout-beginner.yml'
+permissions:
+  contents: read
+concurrency:
+  group: helpscout-beginner-${{ github.event_name == 'pull_request' && github.ref || 'production' }}
+  cancel-in-progress: false
+jobs:
+  gate:
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      due: ${{ steps.due.outputs.due }}
+      publish: ${{ steps.mode.outputs.publish }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+      - id: mode
+        env:
+          SHOULD_PUBLISH: ${{ github.ref == 'refs/heads/main' && (github.event_name == 'schedule' || github.event_name == 'push' || inputs.publish) }}
+        run: echo "publish=$SHOULD_PUBLISH" >> "$GITHUB_OUTPUT"
+      - id: due
+        env:
+          HELP_SCOUT_DOCS_API_KEY: ${{ secrets.HELP_SCOUT_DOCS_API_KEY }}
+          BOOTSTRAP: ${{ github.event_name == 'push' || inputs.bootstrap }}
+          FORCE_REFRESH: ${{ inputs.force || false }}
+          SHOULD_PUBLISH: ${{ steps.mode.outputs.publish }}
+        run: |
+          if [ "$SHOULD_PUBLISH" = "true" ]; then
+            node scripts/sync-helpscout-beginner.mjs --due
+          else
+            echo 'due=true' >> "$GITHUB_OUTPUT"
+          fi
+  verify:
+    needs: [gate]
+    if: always() && (github.event_name == 'pull_request' || (needs.gate.result == 'success' && needs.gate.outputs.due == 'true'))
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - run: npx playwright install --with-deps chromium
+      - name: Read every source page without Help Scout credentials
+        run: node scripts/inspect-beginner-widget.mjs
+      - name: Validate and render public event data only
+        run: node scripts/sync-helpscout-beginner.mjs
+        env:
+          PUBLISH: 'false'
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: beginner-public-candidate-${{ github.run_id }}
+          path: |
+            diagnostics/beginner-widget/
+            diagnostics/beginner-public/
+          retention-days: 7
+          if-no-files-found: ignore
+  publish:
+    needs: [gate, verify]
+    if: github.ref == 'refs/heads/main' && needs.gate.outputs.publish == 'true' && needs.gate.outputs.due == 'true' && needs.verify.result == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+      - uses: actions/download-artifact@v5
+        with:
+          name: beginner-public-candidate-${{ github.run_id }}
+          path: diagnostics
+      - name: Publish only the fixed beginner schedule and verify readback
+        env:
+          HELP_SCOUT_DOCS_API_KEY: ${{ secrets.HELP_SCOUT_DOCS_API_KEY }}
+          PUBLISH: 'true'
+          BOOTSTRAP: ${{ github.event_name == 'push' || inputs.bootstrap }}
+          FORCE_REFRESH: ${{ inputs.force || false }}
+        run: node scripts/sync-helpscout-beginner.mjs
+      - name: Commit only verified target and public snapshot status
+        run: |
+          git config user.name 'abyss-future-dive-bot'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- data/helpscout-beginner-target.json data/helpscout-beginner-last-good.json data/helpscout-beginner-sync-status.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'chore: refresh verified beginner dive snapshot'
+          git pull --rebase origin main
+          git push origin HEAD:main
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: beginner-publication-status-${{ github.run_id }}
+          path: |
+            data/helpscout-beginner-target.json
+            data/helpscout-beginner-sync-status.json
+          retention-days: 14
+          if-no-files-found: ignore
+      - name: Remove transient article backup
+        if: always()
+        run: rm -f "$RUNNER_TEMP/beginner-schedule-backup.json"
