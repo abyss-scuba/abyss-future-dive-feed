@@ -1,0 +1,41 @@
+name: Verify first guided dive article body (read only)
+on:
+  workflow_dispatch:
+  pull_request:
+    paths: ['scripts/verify-beginner-body.mjs', 'tests/beginner-body.test.mjs', '.github/workflows/verify-beginner-body.yml']
+  push:
+    branches: [main]
+    paths: ['scripts/verify-beginner-body.mjs', 'tests/beginner-body.test.mjs', '.github/workflows/verify-beginner-body.yml']
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+      - run: node --test tests/beginner-body.test.mjs
+  verify:
+    needs: test
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+      - name: Read only the fixed article and report structural flags
+        env:
+          HELP_SCOUT_DOCS_API_KEY: ${{ secrets.HELP_SCOUT_DOCS_API_KEY }}
+        run: node scripts/verify-beginner-body.mjs
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: beginner-body-structure-${{ github.run_id }}
+          path: diagnostics/beginner-body/status.json
+          if-no-files-found: ignore
+          retention-days: 14
