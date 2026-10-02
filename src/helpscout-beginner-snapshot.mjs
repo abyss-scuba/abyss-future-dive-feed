@@ -56,7 +56,8 @@ export function bookingIdentity(url){
 export function parsePrice(raw){
  if(typeof raw!=='string')return null;
  const m=raw.trim().match(/^(?:A\$|AUD\s*\$?|\$)(\d+(?:,\d{3})*(?:\.\d{2})?)$/);
- return m?{amount:Number(m[1].replaceAll(',','')),currency:'AUD',basis:'listed booking price; confirm package basis and extras'}:null;
+ const amount=m?Number(m[1].replaceAll(',','')):NaN;
+ return Number.isFinite(amount)?{amount,currency:'AUD',basis:'listed booking price; confirm package basis and extras'}:null;
 }
 function parseRow(row,widget,checkedAt){
  assert(Array.isArray(row.cells)&&row.cells.length===8,'Unexpected source columns');
@@ -83,10 +84,14 @@ function parseRow(row,widget,checkedAt){
  if(/\bclub\s*dives?\b/i.test(publicText))notes.push('Members-only listing: check club membership and individual suitability.');
  if(/no experience needed/i.test(row.cells[3]))notes.push('The source category is not permission for uncertified participation. Check the actual product prerequisites.');
  const description=(row.detail||[]).filter(x=>!/^Start date:|^Our Price:/i.test(x)).join(' ');
+ let listedPrice=parsePrice(row.cells[6]);
+ if(listedPrice?.amount===0&&b.path!=='/charters/guided-shore-dives'){
+  listedPrice=null;notes.push('The source price needs confirmation; do not describe this departure as free.');
+ }
  const depth=description.match(/\b\d{1,2}(?:\s*[–-]\s*\d{1,2})?\s*m\b/i)?.[0]||null;
  return {id:b.id,kind,title:b.title,product:row.cells[3],startDate,endDate,time,
   timeBasis:kind==='trip'?'as listed; confirm itinerary time zone':ZONE,startInstant:instant,
-  bookingUrl:b.url,listedPrice:parsePrice(row.cells[6]),availability:availability.status,
+  bookingUrl:b.url,listedPrice,availability:availability.status,
   availabilityLabel:availability.label,listedDepth:depth,notes,sourceWidget:widget};
 }
 export function buildSnapshot(report,{now=report?.finishedAt}={}){
