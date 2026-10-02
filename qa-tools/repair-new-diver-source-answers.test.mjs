@@ -1,0 +1,12 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {createHash} from 'node:crypto';import {buildText,validateArticle,TARGETS} from './repair-new-diver-source-answers.mjs';
+const original='<p>What should I do?</p><p>'+('A supported example sentence. '.repeat(8))+'</p>';
+const target={id:'x',collectionId:'c',name:'n',expected:createHash('sha256').update(original).digest('hex')};
+const article={id:'x',collectionId:'c',name:'n',status:'published',hasDraft:false,text:original};
+test('promotes question only; retains body text',()=>{const p=buildText(original,'<h2>New question?</h2><p>Answer.</p>');assert.ok(p.includes('<h2>What should I do?</h2>'));assert.ok(p.endsWith(original.replace('<p>What should I do?</p>','<h2>What should I do?</h2>')));});
+test('refuses duplicate patches',()=>assert.throws(()=>buildText(buildText(original,'new'),'new')));
+test('accepts exact known published state',()=>validateArticle(article,target));
+test('rejects concurrent body change',()=>assert.throws(()=>validateArticle({...article,text:original+'x'},target)));
+test('rejects unreviewed draft',()=>assert.throws(()=>validateArticle({...article,hasDraft:true},target,{id:'x',text:'draft'})));
+test('rejects wrong identity/publication',()=>{assert.throws(()=>validateArticle({...article,id:'y'},target));assert.throws(()=>validateArticle({...article,status:'notpublished'},target));});
+test('only three static sources, not schedule',()=>{assert.equal(TARGETS.length,3);assert.ok(!TARGETS.some(x=>x.id==='6abf6f632bd8064b0717cab1'));});
+test('hire example arithmetic',()=>assert.equal(72.5+27.5+33+2*25,183));
