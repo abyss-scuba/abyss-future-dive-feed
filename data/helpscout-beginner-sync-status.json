@@ -1,11 +1,11 @@
 {
   "status": "updated-and-verified",
-  "checkedAt": "2026-10-02T21:31:22.002Z",
-  "publishedAt": "2026-10-02T21:32:01.158Z",
-  "expiresAt": "2026-10-04T09:31:22.002Z",
+  "checkedAt": "2026-10-02T22:21:42.781Z",
+  "publishedAt": "2026-10-02T22:22:20.119Z",
+  "expiresAt": "2026-10-04T10:21:42.781Z",
   "counts": {
     "shore": 32,
-    "boat": 31,
+    "boat": 30,
     "trip": 10
   },
   "sourceCounts": {
@@ -22,18 +22,48 @@
     "articleId": "6abf6f632bd8064b0717cab1",
     "articleTitle": "Upcoming beginner dive dates — shore, boat and trips"
   },
-  "textHash": "0d2711c244e43e4f768f1c58ba604281bedbc9f4b7ab7592aa0578124930141c",
+  "textHash": "55fed3921a67aa37505b1035d138f5c1a6a66c4ee70ce5ebbffedccdca460b38",
   "firstDiveRecommendations": {
     "status": "updated-and-verified",
     "articleId": "6abf733d3be702ed269e3fa6",
-    "checkedAt": "2026-10-02T21:31:22.002Z",
-    "expiresAt": "2026-10-04T09:31:22.002Z",
+    "checkedAt": "2026-10-02T22:21:42.781Z",
+    "expiresAt": "2026-10-04T10:21:42.781Z",
     "selectedEventIds": [
       "66412496",
       "66412502"
     ],
-    "bodyHash": "f045e9cdfeafe0b1eddab237b8f31bb4462307be320778761b0cb0a3e33eb3d6",
+    "bodyHash": "a6d636db327f2018081f852b727e5c8048c23681fc78f770a0c7d4e3b106e01e",
     "metadataUnchanged": true
+  },
+  "firstAnswerOptions": {
+    "checkedAt": "2026-10-02T22:21:42.781Z",
+    "expiresAt": "2026-10-04T10:21:42.781Z",
+    "results": [
+      {
+        "id": "6abf76557cdaed3f1efa5fa0",
+        "number": 429,
+        "status": "updated-and-verified",
+        "bodyHash": "78a0f2678e2b1f5903c76cc888416256b53f5a485d06439b0651d841f3006eca",
+        "originalContentUnchanged": true,
+        "metadataUnchanged": true
+      },
+      {
+        "id": "6abf7841c3e570044c28921f",
+        "number": 430,
+        "status": "updated-and-verified",
+        "bodyHash": "3f335edcbf583268329b12f85f61fc10ccdd8836c82b35a15c78e234b4d460c0",
+        "originalContentUnchanged": true,
+        "metadataUnchanged": true
+      },
+      {
+        "id": "6ab992784b37f75b5ff65c3e",
+        "number": 276,
+        "status": "updated-and-verified",
+        "bodyHash": "84fcbe0e1f658db33ff4eca73550fd3c7164b1509a9cb9d580f0e16be9389d44",
+        "originalContentUnchanged": true,
+        "metadataUnchanged": true
+      }
+    ]
   },
   "schedule": "03:30 Australia/Sydney",
   "retry": "04:15 after failure only"

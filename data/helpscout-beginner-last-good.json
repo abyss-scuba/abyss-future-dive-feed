@@ -1,12 +1,12 @@
 {
   "version": 1,
   "source": "https://www.abyss.com.au/beginner-diver-widget",
-  "checkedAt": "2026-10-02T21:31:22.002Z",
-  "expiresAt": "2026-10-04T09:31:22.002Z",
+  "checkedAt": "2026-10-02T22:21:42.781Z",
+  "expiresAt": "2026-10-04T10:21:42.781Z",
   "timezone": "Australia/Sydney",
   "counts": {
     "shore": 32,
-    "boat": 31,
+    "boat": 30,
     "trip": 10
   },
   "sourceCounts": {
@@ -16,6 +16,10 @@
   "excluded": [
     {
       "id": "66385228",
+      "reason": "already started"
+    },
+    {
+      "id": "66412515",
       "reason": "already started"
     },
     {
@@ -49,29 +53,6 @@
   ],
   "events": [
     {
-      "id": "66412515",
-      "kind": "boat",
-      "title": "Henry Head Boat Dive 03/10/2026",
-      "product": "Boat Dives",
-      "startDate": "2026-10-03",
-      "endDate": "2026-10-03",
-      "time": "08:00",
-      "timeBasis": "Australia/Sydney",
-      "startInstant": "2026-10-02T22:00:00.000Z",
-      "bookingUrl": "https://www.abyss.com.au/charters/boat-dives?q=cGFydF9udW1iZXI9SGVucnkgSGVhZCBCb2F0IERpdmUgMDMvMTAvMjAyNiZkYXRlPSZvcGVuX2NhcnRfaWQ9NjY0MTI1MTU=",
-      "listedPrice": {
-        "amount": 130,
-        "currency": "AUD",
-        "basis": "listed booking price; confirm package basis and extras"
-      },
-      "availability": "check_availability",
-      "availabilityLabel": "Check availability",
-      "listedDepth": "12–24m",
-      "notes": [],
-      "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:49.563Z"
-    },
-    {
       "id": "66412506",
       "kind": "shore",
       "title": "Leap to Steps Dive 03/10/2026",
@@ -92,7 +73,7 @@
       "listedDepth": "18-22m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:49.536Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:06.273Z"
     },
     {
       "id": "66412517",
@@ -115,7 +96,7 @@
       "listedDepth": "15–24m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:49.777Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:06.331Z"
     },
     {
       "id": "66412502",
@@ -138,7 +119,7 @@
       "listedDepth": "12-18m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:49.781Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:06.493Z"
     },
     {
       "id": "66412567",
@@ -161,7 +142,7 @@
       "listedDepth": null,
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:50.060Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:06.490Z"
     },
     {
       "id": "67175809",
@@ -184,7 +165,7 @@
       "listedDepth": null,
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:50.079Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:07.124Z"
     },
     {
       "id": "66412496",
@@ -207,7 +188,7 @@
       "listedDepth": "10m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:50.298Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:06.981Z"
     },
     {
       "id": "66412530",
@@ -230,7 +211,7 @@
       "listedDepth": "18–25m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:50.313Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:07.165Z"
     },
     {
       "id": "66412518",
@@ -253,7 +234,7 @@
       "listedDepth": "18m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:50.617Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:07.182Z"
     },
     {
       "id": "66412531",
@@ -276,7 +257,7 @@
       "listedDepth": null,
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:50.619Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:07.601Z"
     },
     {
       "id": "66412532",
@@ -301,7 +282,7 @@
         "Technical departure, not an ordinary new-diver option; appropriate technical qualification and team approval required."
       ],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:50.825Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:07.699Z"
     },
     {
       "id": "66412497",
@@ -324,7 +305,7 @@
       "listedDepth": "10m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:50.838Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:07.838Z"
     },
     {
       "id": "66412522",
@@ -347,7 +328,7 @@
       "listedDepth": null,
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:51.140Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:07.784Z"
     },
     {
       "id": "66412511",
@@ -370,7 +351,7 @@
       "listedDepth": "18-22m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:51.168Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:08.157Z"
     },
     {
       "id": "66412521",
@@ -393,7 +374,7 @@
       "listedDepth": null,
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:51.332Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:08.288Z"
     },
     {
       "id": "66412526",
@@ -416,7 +397,7 @@
       "listedDepth": null,
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:51.341Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:08.356Z"
     },
     {
       "id": "66412529",
@@ -439,7 +420,7 @@
       "listedDepth": "14m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:51.660Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:08.394Z"
     },
     {
       "id": "66412523",
@@ -462,7 +443,7 @@
       "listedDepth": null,
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:51.663Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:08.711Z"
     },
     {
       "id": "66412524",
@@ -485,7 +466,7 @@
       "listedDepth": null,
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:51.832Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:08.844Z"
     },
     {
       "id": "66412519",
@@ -508,7 +489,7 @@
       "listedDepth": "18m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:51.900Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:09.181Z"
     },
     {
       "id": "66412534",
@@ -533,7 +514,7 @@
         "Technical departure, not an ordinary new-diver option; appropriate technical qualification and team approval required."
       ],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:52.182Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:08.962Z"
     },
     {
       "id": "66412498",
@@ -556,7 +537,7 @@
       "listedDepth": "10m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:52.167Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:09.287Z"
     },
     {
       "id": "66412563",
@@ -579,7 +560,7 @@
       "listedDepth": "25m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:52.359Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:09.414Z"
     },
     {
       "id": "66412527",
@@ -602,7 +583,7 @@
       "listedDepth": "15–24m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:52.448Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:09.610Z"
     },
     {
       "id": "66412520",
@@ -625,7 +606,7 @@
       "listedDepth": "18m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:52.763Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:09.794Z"
     },
     {
       "id": "67009601",
@@ -648,7 +629,7 @@
       "listedDepth": null,
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:52.732Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:09.910Z"
     },
     {
       "id": "67034962",
@@ -671,7 +652,7 @@
       "listedDepth": "18-22m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:52.874Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:09.961Z"
     },
     {
       "id": "66560586",
@@ -694,7 +675,7 @@
       "listedDepth": null,
       "notes": [],
       "sourceWidget": "widget3857",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:52.893Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:10.016Z"
     },
     {
       "id": "66993310",
@@ -717,7 +698,7 @@
       "listedDepth": "12–24m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:53.254Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:10.434Z"
     },
     {
       "id": "67034963",
@@ -740,7 +721,7 @@
       "listedDepth": "12-18m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:53.393Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:10.546Z"
     },
     {
       "id": "66993311",
@@ -763,7 +744,7 @@
       "listedDepth": "15–24m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:53.468Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:10.573Z"
     },
     {
       "id": "66661869",
@@ -786,7 +767,7 @@
       "listedDepth": "15–24m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:53.421Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:10.660Z"
     },
     {
       "id": "66660489",
@@ -809,7 +790,7 @@
       "listedDepth": "18-22m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:53.807Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:11.075Z"
     },
     {
       "id": "66713307",
@@ -832,7 +813,7 @@
       "listedDepth": "12–24m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:53.949Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:11.209Z"
     },
     {
       "id": "66660481",
@@ -855,7 +836,7 @@
       "listedDepth": "10m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:53.953Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:11.239Z"
     },
     {
       "id": "66661875",
@@ -880,7 +861,7 @@
         "Technical departure, not an ordinary new-diver option; appropriate technical qualification and team approval required."
       ],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:53.972Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:11.244Z"
     },
     {
       "id": "66660482",
@@ -903,7 +884,7 @@
       "listedDepth": "10m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:54.392Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:11.719Z"
     },
     {
       "id": "66661876",
@@ -926,7 +907,7 @@
       "listedDepth": null,
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:54.496Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:11.844Z"
     },
     {
       "id": "66661868",
@@ -949,7 +930,7 @@
       "listedDepth": null,
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:54.507Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:11.898Z"
     },
     {
       "id": "66661871",
@@ -972,7 +953,7 @@
       "listedDepth": "15–24m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:54.505Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:11.890Z"
     },
     {
       "id": "66660494",
@@ -995,7 +976,7 @@
       "listedDepth": "10m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:54.919Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:12.275Z"
     },
     {
       "id": "66693175",
@@ -1018,7 +999,7 @@
       "listedDepth": null,
       "notes": [],
       "sourceWidget": "widget3857",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:55.080Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:12.251Z"
     },
     {
       "id": "66661870",
@@ -1041,7 +1022,7 @@
       "listedDepth": "15–24m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:55.053Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:12.528Z"
     },
     {
       "id": "66660490",
@@ -1064,7 +1045,7 @@
       "listedDepth": "18-22m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:55.078Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:12.540Z"
     },
     {
       "id": "66661877",
@@ -1087,7 +1068,7 @@
       "listedDepth": "30m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:55.438Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:12.880Z"
     },
     {
       "id": "66661878",
@@ -1112,7 +1093,7 @@
         "The listing explicitly says unguided; no underwater escort is promised."
       ],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:55.582Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:12.911Z"
     },
     {
       "id": "66661865",
@@ -1135,7 +1116,7 @@
       "listedDepth": "12-18m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:55.649Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:13.265Z"
     },
     {
       "id": "66661879",
@@ -1158,7 +1139,7 @@
       "listedDepth": "25–35m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:55.641Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:13.174Z"
     },
     {
       "id": "66661867",
@@ -1181,7 +1162,7 @@
       "listedDepth": "15m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:55.952Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:13.601Z"
     },
     {
       "id": "66661880",
@@ -1204,7 +1185,7 @@
       "listedDepth": "30m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:56.110Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:13.547Z"
     },
     {
       "id": "66660487",
@@ -1227,7 +1208,7 @@
       "listedDepth": "10m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:56.231Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:13.827Z"
     },
     {
       "id": "66661881",
@@ -1250,7 +1231,7 @@
       "listedDepth": "18m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:56.189Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:13.890Z"
     },
     {
       "id": "66661872",
@@ -1273,7 +1254,7 @@
       "listedDepth": "15–24m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:56.474Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:14.276Z"
     },
     {
       "id": "66660488",
@@ -1296,7 +1277,7 @@
       "listedDepth": "10m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:56.673Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:14.262Z"
     },
     {
       "id": "66661882",
@@ -1319,7 +1300,7 @@
       "listedDepth": "25m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:56.715Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:14.595Z"
     },
     {
       "id": "66660492",
@@ -1344,7 +1325,7 @@
       "sourceWidget": "widget3856",
       "sourceBookingUrl": "https://www.abyss.com.au/charters/guided-shore-dives?q=cGFydF9udW1iZXI9U2hpcHJvY2sgJiBPYWsgUGFyayBEaXZlIDI3LzExLzIwMjYmZGF0ZT0mb3Blbl9jYXJ0X2lkPTY2NjYwNDky",
       "bookingLinkRepair": "URL-encoded an unescaped ampersand in the source part_number",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:57.311Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:15.168Z"
     },
     {
       "id": "66713310",
@@ -1367,7 +1348,7 @@
       "listedDepth": "12–24m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:56.988Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:14.884Z"
     },
     {
       "id": "66661866",
@@ -1390,7 +1371,7 @@
       "listedDepth": "14m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:57.201Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:14.981Z"
     },
     {
       "id": "66661874",
@@ -1413,7 +1394,7 @@
       "listedDepth": "15–24m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:57.265Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:15.293Z"
     },
     {
       "id": "66713311",
@@ -1438,7 +1419,7 @@
         "Technical departure, not an ordinary new-diver option; appropriate technical qualification and team approval required."
       ],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:57.491Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:15.492Z"
     },
     {
       "id": "66660491",
@@ -1461,7 +1442,7 @@
       "listedDepth": "18-22m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:57.731Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:15.635Z"
     },
     {
       "id": "66833151",
@@ -1484,7 +1465,7 @@
       "listedDepth": null,
       "notes": [],
       "sourceWidget": "widget3857",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:57.648Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:15.649Z"
     },
     {
       "id": "66693186",
@@ -1507,7 +1488,7 @@
       "listedDepth": null,
       "notes": [],
       "sourceWidget": "widget3857",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:57.650Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:15.734Z"
     },
     {
       "id": "66831998",
@@ -1530,7 +1511,7 @@
       "listedDepth": null,
       "notes": [],
       "sourceWidget": "widget3857",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:57.820Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:15.911Z"
     },
     {
       "id": "66693187",
@@ -1553,7 +1534,7 @@
       "listedDepth": null,
       "notes": [],
       "sourceWidget": "widget3857",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:58.023Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:16.375Z"
     },
     {
       "id": "66724107",
@@ -1578,7 +1559,7 @@
         "The source category is not permission for uncertified participation. Check the actual product prerequisites."
       ],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:58.158Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:16.196Z"
     },
     {
       "id": "46898806",
@@ -1601,7 +1582,7 @@
       "listedDepth": null,
       "notes": [],
       "sourceWidget": "widget3857",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:58.106Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:16.152Z"
     },
     {
       "id": "66724108",
@@ -1626,7 +1607,7 @@
         "The source category is not permission for uncertified participation. Check the actual product prerequisites."
       ],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:58.343Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:16.511Z"
     },
     {
       "id": "66547847",
@@ -1647,7 +1628,7 @@
         "The source price needs confirmation; do not describe this departure as free."
       ],
       "sourceWidget": "widget3857",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:58.373Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:16.589Z"
     },
     {
       "id": "66724110",
@@ -1672,7 +1653,7 @@
         "The source category is not permission for uncertified participation. Check the actual product prerequisites."
       ],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:58.611Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:16.781Z"
     },
     {
       "id": "45572438",
@@ -1695,7 +1676,7 @@
       "listedDepth": null,
       "notes": [],
       "sourceWidget": "widget3857",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:58.530Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:16.843Z"
     },
     {
       "id": "66724111",
@@ -1720,7 +1701,7 @@
         "The source category is not permission for uncertified participation. Check the actual product prerequisites."
       ],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:58.879Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:17.109Z"
     },
     {
       "id": "66183347",
@@ -1743,7 +1724,7 @@
       "listedDepth": null,
       "notes": [],
       "sourceWidget": "widget3857",
-      "bookingLinkCheckedAt": "2026-10-02T21:31:58.810Z"
+      "bookingLinkCheckedAt": "2026-10-02T22:22:17.051Z"
     }
   ],
   "coverage": {
