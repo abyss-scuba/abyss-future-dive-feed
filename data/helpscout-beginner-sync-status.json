@@ -1,15 +1,15 @@
 {
-  "status": "created-and-verified",
-  "checkedAt": "2026-10-02T08:45:52.109Z",
-  "publishedAt": "2026-10-02T08:46:27.609Z",
-  "expiresAt": "2026-10-03T20:45:52.109Z",
+  "status": "updated-and-verified",
+  "checkedAt": "2026-10-02T21:31:22.002Z",
+  "publishedAt": "2026-10-02T21:32:01.158Z",
+  "expiresAt": "2026-10-04T09:31:22.002Z",
   "counts": {
-    "shore": 33,
+    "shore": 32,
     "boat": 31,
     "trip": 10
   },
   "sourceCounts": {
-    "widget3856": 72,
+    "widget3856": 71,
     "widget3857": 10
   },
   "coverage": {
@@ -22,7 +22,19 @@
     "articleId": "6abf6f632bd8064b0717cab1",
     "articleTitle": "Upcoming beginner dive dates — shore, boat and trips"
   },
-  "textHash": "3fef290dbb94a7b948726d9584d7915173e5eacd0575a707e7f91dc867eeea17",
+  "textHash": "0d2711c244e43e4f768f1c58ba604281bedbc9f4b7ab7592aa0578124930141c",
+  "firstDiveRecommendations": {
+    "status": "updated-and-verified",
+    "articleId": "6abf733d3be702ed269e3fa6",
+    "checkedAt": "2026-10-02T21:31:22.002Z",
+    "expiresAt": "2026-10-04T09:31:22.002Z",
+    "selectedEventIds": [
+      "66412496",
+      "66412502"
+    ],
+    "bodyHash": "f045e9cdfeafe0b1eddab237b8f31bb4462307be320778761b0cb0a3e33eb3d6",
+    "metadataUnchanged": true
+  },
   "schedule": "03:30 Australia/Sydney",
   "retry": "04:15 after failure only"
 }
