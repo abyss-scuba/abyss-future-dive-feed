@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v6
         with: {node-version: '22'}
-      - name: Read exact authorised sources without exporting plaintext
+      - name: Read only the buddy article; encrypt its published and draft bodies
         env:
           HELP_SCOUT_DOCS_API_KEY: ${{ secrets.HELP_SCOUT_DOCS_API_KEY }}
         run: |
@@ -19,16 +19,17 @@ jobs:
           import fs from 'node:fs/promises';
           import {randomBytes,createCipheriv,publicEncrypt,constants,createHash} from 'node:crypto';
           const pub=`-----BEGIN PUBLIC KEY-----
-          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA1dPjV/28Odj3v7wHa2lh
-          Op/EYQYfDWXMEbvQvAemuud5EwhAi0a+kI+kGlj9Gu7xtrSn/btkLOua5/MZZxpw
-          yw+AFa2TV30cx7L89TGJDXv9XgkS4gR9r2PgeUrlpJHbGCurL7HURyn0YENDPiv9
-          KsFiPBNZuNJuVHFLWQBr/jpBITKwP67CJaEje31Veb+Dug0s4f9eg1lZg0XrP5nD
-          N/LWbGsxVFqtFCAEUND0BmpjPQW76tQEP7UxgV9Ab+7CwJ1uOXS5Ez20+32cttNj
-          O1pJhjBUy/VH7BW89P8U5hpJURualTXg4+vWYl3aIB+Kz2FWzXiu4I8qyLaYgyxj
-          gwIDAQAB
+          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmTY9rWfG1L23H55oGGT5
+          XGPAI+KMTH4++fVwsMHw44kfia5aOZPKTIawZmTYY80IwDxEpo6GnDD7CH0IXFBG
+          TSfPcddZJpRKl/gxNDYxg6sjgLzxPpG0LFI9J3G7kAc6KBlI+cCArca8XyxzqX1j
+          b4LAP6gyiISlO9UG7cyZMtq5WK7+qAe6uPee9mWt4xkqlZwSOaQOUz/PYXh7GTgw
+          ZoKlIQHqBekm0/hEZFyyvdJFNwT7KJceaT/TdOdK/bXIoy8mnaCFYBByfsuIc/ZU
+          g2xFB44Zf/nItx+RBr0mG7hVgHyPKrvMEaq+Nt2U4Uonzt7y/snXILMkaxgCL1Ao
+          pwIDAQAB
           -----END PUBLIC KEY-----`;
-          const targets=[['6abb767d3be702ed269e2eb4','6abb75219dcaab7ce64c5880'],['6ab992784b37f75b5ff65c3e','6ab98d4249f1bc2c6aefca54']];
+          const targets=[['6ab992784b37f75b5ff65c3e','6ab98d4249f1bc2c6aefca54']];
           const hash=x=>createHash('sha256').update(x).digest('hex');
+          const count=(s,t)=>s.split(t).length-1;
           try{
             const articles=[];
             for(const [id,cid] of targets)for(const draft of [false,true]){
@@ -40,7 +41,7 @@ jobs:
             const ciphertext=Buffer.concat([cipher.update(Buffer.from(JSON.stringify({checkedAt:new Date().toISOString(),articles}))),cipher.final()]);
             await fs.mkdir('source-backup',{recursive:true});
             await fs.writeFile('source-backup/private.encrypted.json',JSON.stringify({wrappedKey:publicEncrypt({key:pub,padding:constants.RSA_PKCS1_OAEP_PADDING,oaepHash:'sha256'},key).toString('base64'),iv:iv.toString('base64'),tag:cipher.getAuthTag().toString('base64'),ciphertext:ciphertext.toString('base64')}));
-            const status=articles.map(({requestedDraft,article:a})=>({id:a.id,title:a.name,requestedDraft,hasDraft:!!a.hasDraft,status:a.status,hash:hash(a.text),characters:a.text.length}));
+            const status=articles.map(({requestedDraft,article:a})=>({id:a.id,title:a.name,requestedDraft,hasDraft:!!a.hasDraft,status:a.status,hash:hash(a.text),characters:a.text.length,keywordCount:(a.keywords||[]).length,startMarkers:count(a.text,'<!-- ABYSS_BEGINNER_FIRST_ANSWER_OPTIONS_V1 -->'),endMarkers:count(a.text,'<!-- /ABYSS_BEGINNER_FIRST_ANSWER_OPTIONS_V1 -->'),scheduleChecks:count(a.text,'Beginner schedule checked (ISO):'),oldChecks:count(a.text,'2026-10-03T01:36:07.639Z'),rawHeadings:(a.text.match(/<h2\b/g)||[]).length,encodedHeadings:count(a.text,'&lt;h2&gt;')}));
             await fs.writeFile('source-backup/status.json',JSON.stringify(status,null,2));console.log(JSON.stringify(status));
           }catch(e){console.error('Fixed source backup stopped: '+e.message);process.exitCode=1;}
           NODE
