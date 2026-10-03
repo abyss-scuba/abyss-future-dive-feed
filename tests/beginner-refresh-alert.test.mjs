@@ -1,0 +1,15 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {assess} from '../scripts/check-beginner-refresh-alert.mjs';
+const s={checkedAt:'2026-10-03T20:38:45.251Z',expiresAt:'2026-10-05T08:38:45.251Z'};
+const now='2026-10-03T23:30:00.000Z';
+test('fresh current-Sydney-day status is healthy',()=>assert.equal(assess(s,{now,deadline:true}).healthy,true));
+test('failed updater is alerted even while last-good is fresh',()=>assert.equal(assess(s,{now,run:{conclusion:'failure'}}).healthy,false));
+test('cancelled or timed-out updater is alerted',()=>{for(const conclusion of ['cancelled','timed_out','action_required'])assert.equal(assess(s,{now,run:{conclusion}}).healthy,false);});
+test('successful updater and fresh data recovers',()=>assert.equal(assess(s,{now,run:{conclusion:'success'}}).healthy,true));
+test('expiry boundary is inclusive and not extended',()=>assert.equal(assess(s,{now:s.expiresAt}).healthy,false));
+test('missing or malformed metadata alerts',()=>{for(const x of [null,{}, {...s,checkedAt:'bad'},{...s,expiresAt:'bad'}])assert.equal(assess(x,{now}).healthy,false);});
+test('future check is not accepted',()=>assert.equal(assess({...s,checkedAt:'2026-10-04T12:00:00Z'},{now}).healthy,false));
+test('overlong 36-hour window is not accepted',()=>assert.equal(assess({...s,expiresAt:'2026-10-08T08:00:00Z'},{now}).healthy,false));
+test('watchdog detects missing new Sydney day across DST',()=>{const at='2026-10-04T18:45:00Z';assert.equal(assess(s,{now:at}).healthy,true);assert.equal(assess(s,{now:at,deadline:true}).healthy,false);});
+test('does not mutate status or report scheduled time as actual',()=>{const copy=JSON.stringify(s);assess(s,{now,deadline:true});assert.equal(JSON.stringify(s),copy);});
