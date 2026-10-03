@@ -1,8 +1,9 @@
 /** Maintained event facts only; conversation policy belongs to the AI Agent Identity. */
 import {createHash} from 'node:crypto';
+import {comparePreferredDates} from './helpscout-beginner-retention.mjs';
 export const FIRST_DIVE_TARGET={id:'6abf733d3be702ed269e3fa6',collectionId:'6abf61e6c3e570044c2891ed',name:'Your first guided dive after certification: what happens and who helps'};
 export const FIRST_DIVE_MARKER='ABYSS_FIRST_DIVE_RECOMMENDATIONS_V1';
-export const FIRST_DIVE_REVISION='ABYSS_BEGINNER_FACTS_V3';
+export const FIRST_DIVE_REVISION='ABYSS_BEGINNER_FACTS_V4_SUNDAY';
 export const SOURCE='https://www.abyss.com.au/beginner-diver-widget';
 const TITLE='<h2>Which dive should I book first?</h2>';
 const ensure=(ok,m)=>{if(!ok)throw new Error(m);};
@@ -33,12 +34,14 @@ export function firstDiveChoices(s,{now=s?.checkedAt}={}){
    if(/\b(night|twilight|dusk|sunset|drift|advanced|confident|technical|unguided|members|club)\b/i.test(e.title+' '+(e.notes||[]).join(' ')))return false;
    if(site.key==='marvels'&&(!e.title||!Number.isFinite(e.listedPrice?.amount)||e.listedPrice.amount<0||e.listedPrice.currency!=='AUD'))return false;
    try{const u=new URL(e.bookingUrl);return u.protocol==='https:'&&u.hostname==='www.abyss.com.au'&&!u.username&&!u.password&&!u.port&&u.pathname.replace(/\/$/,'')===site.path&&!!u.searchParams.get('q');}catch{return false;}
-  }).sort((a,b)=>a.startDate.localeCompare(b.startDate)||(a.time||'99').localeCompare(b.time||'99')||String(a.id).localeCompare(String(b.id)));
+  }).sort(comparePreferredDates);
   if(candidates[0])choices.push({site,event:candidates[0]});
  }
- // Marine Marvels stays an interest-specific option, not an automatic substitute
- // for a basic shallow shore outing when its route has not yet been confirmed.
- return {primary:choices.filter(x=>x.site.key!=='marvels').slice(0,2),boat:choices.find(x=>x.site.key==='henry')||null,marine:choices.find(x=>x.site.key==='marvels')||null,expired:window.expired};
+ // Retain the existing suitability hierarchy. Rank its ordinary candidates by
+ // Sunday > Saturday > Friday, earliest within each day. Explicit requested
+ // dates still use the complete canonical schedule, which is not reordered.
+ const primary=choices.filter(x=>x.site.key!=='marvels').slice(0,2).sort((a,b)=>comparePreferredDates(a.event,b.event));
+ return {primary,boat:choices.find(x=>x.site.key==='henry')||null,marine:choices.find(x=>x.site.key==='marvels')||null,expired:window.expired};
 }
 export function allFirstDiveChoices(selected){
  const out=[];for(const x of [...(selected.primary||[]),selected.boat,selected.marine])if(x&&!out.some(y=>y.event.id===x.event.id))out.push(x);return out;
