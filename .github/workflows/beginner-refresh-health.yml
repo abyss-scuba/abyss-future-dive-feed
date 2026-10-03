@@ -9,9 +9,6 @@ on:
   workflow_dispatch:
   pull_request:
     paths: ['scripts/check-beginner-refresh-alert.mjs', 'tests/beginner-refresh-alert.test.mjs', '.github/workflows/beginner-refresh-health.yml']
-  push:
-    branches: ['fix/beginner-refresh-alerts-20261004']
-    paths: ['scripts/check-beginner-refresh-alert.mjs', 'tests/beginner-refresh-alert.test.mjs', '.github/workflows/beginner-refresh-health.yml']
 permissions:
   contents: read
 concurrency:
@@ -28,9 +25,10 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: '22'
-          cache: npm
-      - run: npm ci
-      - run: npm test
+      - name: Validate the independent built-in-only alert checks
+        run: node --test tests/beginner-refresh-alert.test.mjs
+      - if: github.event_name == 'pull_request'
+        run: npm ci && npm test
   report:
     needs: verify
     if: github.event_name != 'pull_request' && (github.event_name != 'workflow_run' || (github.event.workflow_run.head_branch == 'main' && contains(fromJSON('["schedule","push","workflow_dispatch"]'), github.event.workflow_run.event)))
@@ -49,7 +47,7 @@ jobs:
       - name: Deliver one scoped repository alert or close recovered alert
         env:
           GITHUB_TOKEN: ${{ github.token }}
-          ALERT_TEST: ${{ github.event_name == 'push' && github.ref == 'refs/heads/fix/beginner-refresh-alerts-20261004' }}
+          ALERT_TEST: 'false'
         run: node scripts/check-beginner-refresh-alert.mjs
       - uses: actions/upload-artifact@v7
         if: always()
