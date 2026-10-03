@@ -68,7 +68,7 @@ export function eventFactCard({site,event:e},prefix=''){
 }
 export function renderFirstDiveExcerpt(s,{now=s.checkedAt}={}){
  const selected=firstDiveChoices(s,{now}),out=[TITLE,`<!-- ${FIRST_DIVE_MARKER} -->`,`<!-- ${FIRST_DIVE_REVISION} -->`];
- out.push('<p>Appropriate starting options are guided local outings matched to certification, experience, interests, entry, route and conditions. Oak Park and Bare Island are practical shore options; The Steps requires comfort with its stairs, rocky entry and the planned route; Henry Head and a suitable Marine Marvels event can fit particular interests. These are candidate outings, not unconditional suitability approvals.</p>');
+ out.push('<p>Appropriate starting options are guided local outings matched to certification, experience, interests, entry, route and conditions. Oak Park and Bare Island are practical shore options; Henry Head and a suitable Marine Marvels event can fit particular interests. These are candidate outings, not unconditional suitability approvals.</p>');
  out.push('<p>Default recommendation order among suitable options is Sunday, then Saturday, then Friday, then another day. Stated availability and suitability come first. The full maintained calendar, not this default shortlist, supplies alternatives for a requested weekday.</p>');
  selected.primary.forEach((choice,i)=>out.push(eventFactCard(choice,i===0?'First choice: ':'Another option: ')));
  // Keep every preferred shore option available even when outside the first two.
