@@ -88,7 +88,7 @@ export function replaceFirstDiveSection(text,section){
  return text.slice(0,start)+section+'\n'+text.slice(end);
 }
 function validate(a){const t=FIRST_DIVE_TARGET;ensure(a?.id===t.id&&a.collectionId===t.collectionId&&a.name===t.name&&a.status==='published'&&!a.hasDraft&&typeof a.text==='string','First-dive article identity, publication or draft conflict');return a;}
-async function read(request){const t=FIRST_DIVE_TARGET,c=(await request('GET','/collections/'+t.collectionId)).collection;ensure(c?.id===t.collectionId&&c.siteId===SITE&&c.visibility==='private','First-dive collection privacy mismatch');return validate((await request('GET','/articles/'+t.id)).article);}
+async function read(request){const t=FIRST_DIVE_TARGET,c=(await request('GET','/collections/'+t.collectionId)).collection;ensure(c?.id===t.collectionId&&c.siteId==='5d0ed4d02c7d3a6ebd2268ed'&&c.visibility==='private','First-dive collection privacy mismatch');return validate((await request('GET','/articles/'+t.id)).article);}
 export async function firstDiveExcerptIsCurrent(request,canonicalArticle){const checked=canonicalArticle?.text?.match(/Checked \(ISO\):\s*(\d{4}-\d{2}-\d{2}T[\d:.]+Z)/)?.[1];const a=await read(request);return !!checked&&a.text.includes(FIRST_DIVE_MARKER)&&a.text.includes(FIRST_DIVE_REVISION)&&a.text.includes('Dated recommendations checked: '+checked+'.');}
 const metadata=a=>JSON.stringify({id:a.id,collectionId:a.collectionId,name:a.name,slug:a.slug,status:a.status,keywords:a.keywords,categories:a.categories,related:a.related});
 export async function publishFirstDiveExcerpt({request,snapshot,now=snapshot.checkedAt,backup=async()=>{}}){
