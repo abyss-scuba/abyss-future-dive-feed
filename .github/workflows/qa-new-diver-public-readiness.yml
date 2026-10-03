@@ -2,33 +2,26 @@ name: New diver public readiness read-only audit
 on:
   push:
     branches: ['qa/new-diver-parallel-readiness-20261004']
-    paths: ['scripts/qa-new-diver-controls.mjs', '.github/workflows/qa-new-diver-public-readiness.yml']
+    paths: ['scripts/qa-new-diver-confirmation.mjs', '.github/workflows/qa-new-diver-public-readiness.yml']
 permissions:
   contents: read
-  actions: read
 jobs:
   audit:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 8
     steps:
       - uses: actions/checkout@v6
-        with:
-          persist-credentials: false
+        with: {persist-credentials: false}
       - uses: actions/setup-node@v6
-        with:
-          node-version: '22'
-          cache: npm
+        with: {node-version: '22', cache: npm}
       - run: npm ci
-      - run: node --check scripts/qa-new-diver-controls.mjs
+      - run: node --check scripts/qa-new-diver-confirmation.mjs
       - run: npx playwright install --with-deps chromium
-      - name: Read pre-cart prices, browser-only contact preview and scheduler history
-        run: node scripts/qa-new-diver-controls.mjs
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
+      - run: node scripts/qa-new-diver-confirmation.mjs
       - uses: actions/upload-artifact@v7
         if: always()
         with:
-          name: new-diver-controls-${{ github.run_id }}
-          path: diagnostics/new-diver-controls/
+          name: new-diver-confirmation-${{ github.run_id }}
+          path: diagnostics/new-diver-confirmation/
           retention-days: 7
           if-no-files-found: warn
