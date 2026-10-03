@@ -1,0 +1,27 @@
+// Synthetic fixtures only. These tests do not claim that a real outing exists.
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {firstDiveChoices,allFirstDiveChoices,newDiverWindow,eventFactCard,renderFirstDiveExcerpt,SOURCE} from '../src/helpscout-beginner-first-dive.mjs';
+const checkedAt='2026-10-03T20:00:00.000Z'; // Sunday 4 October, 07:00 AEDT
+const expiresAt='2026-10-05T08:00:00.000Z';
+function event(id,title,date,kind='shore',product='Guided Shore Dives'){
+ const path=kind==='boat'?'boat-dives':product==='Marine Marvels Dives'?'marine-marvels-dives':'guided-shore-dives';
+ return {id,title,kind,product,startDate:date,time:'09:00',startInstant:new Date(Date.parse(date+'T09:00:00+11:00')).toISOString(),availability:'check_availability',notes:[],listedPrice:{amount:product==='Marine Marvels Dives'?25:kind==='boat'?130:0,currency:'AUD'},bookingUrl:'https://www.abyss.com.au/charters/'+path+'?q='+Buffer.from('part_number='+title+'&open_cart_id='+id).toString('base64')};
+}
+const snapshot=events=>({source:SOURCE,checkedAt,expiresAt,events});
+const chosen=(events,options={})=>allFirstDiveChoices(firstDiveChoices(snapshot(events),{now:checkedAt,...options}));
+test('Sunday today is excluded even before its departure',()=>{const xs=chosen([event('today','Bare Island Dive','2026-10-04'),event('next','Bare Island Dive','2026-10-11')]);assert.deepEqual(xs.map(x=>x.event.id),['next']);});
+test('eligible later Sunday beats earlier Saturday and Friday at same site',()=>{const xs=chosen([event('fri','Oak Park Dive','2026-10-09'),event('sat','Oak Park Dive','2026-10-10'),event('sun','Oak Park Dive','2026-10-11')]);assert.equal(xs[0].event.id,'sun');});
+test('Saturday is the fallback when no Sunday qualifies',()=>{const xs=chosen([event('fri','Oak Park Dive','2026-10-09'),event('sat','Oak Park Dive','2026-10-10')]);assert.equal(xs[0].event.id,'sat');});
+test('Friday is used when neither weekend day qualifies',()=>assert.equal(chosen([event('fri','Oak Park Dive','2026-10-09')])[0].event.id,'fri'));
+test('Monday to Thursday are not unsolicited default substitutes',()=>{const events=[5,6,7,8].map(d=>event('d'+d,'Oak Park Dive','2026-10-'+String(d).padStart(2,'0')));assert.deepEqual(chosen(events),[]);assert.equal(newDiverWindow(snapshot(events),checkedAt).events.length,4);});
+test('explicit Monday request can use Monday without replacing it with Sunday',()=>{const xs=chosen([event('mon','Oak Park Dive','2026-10-05'),event('sun','Oak Park Dive','2026-10-11')],{requestedWeekdays:[1]});assert.deepEqual(xs.map(x=>x.event.id),['mon']);});
+test('explicit Friday request takes precedence over default Sunday',()=>{const xs=chosen([event('fri','Oak Park Dive','2026-10-09'),event('sun','Oak Park Dive','2026-10-11')],{requestedWeekdays:[5]});assert.deepEqual(xs.map(x=>x.event.id),['fri']);});
+test('a fully booked or unknown Sunday cannot displace suitable Saturday',()=>{for(const availability of ['fully_booked','unknown']){const sun={...event('sun','Bare Island Dive','2026-10-11'),availability};assert.equal(chosen([sun,event('sat','Bare Island Dive','2026-10-10')])[0].event.id,'sat');}});
+test('the whole fourteenth Sydney day qualifies and day fifteen does not',()=>{const xs=chosen([event('last','Oak Park Dive','2026-10-18'),event('far','Oak Park Dive','2026-10-19')]);assert.deepEqual(xs.map(x=>x.event.id),['last']);});
+test('The Steps stays in candidate set even behind two other shore choices',()=>{const xs=chosen([event('oak','Oak Park Dive','2026-10-11'),event('bare','Bare Island Dive','2026-10-11'),event('steps','The Steps Dive','2026-10-11')]);assert.equal(xs.length,3);const steps=xs.find(x=>x.site.name==='The Steps');assert.ok(steps);assert.match(eventFactCard(steps),/stairs and a rocky entry/);});
+test('Leap-to-Steps and night or confident-only variants remain excluded',()=>{for(const title of ['Leap to Steps Dive','The Steps Night Dive','The Steps confident divers'])assert.equal(chosen([event('x',title,'2026-10-11')]).length,0);});
+test('all five experiences retained without conflating boat guidance or Marine Marvels fee',()=>{const xs=chosen([event('oak','Oak Park Dive','2026-10-11'),event('bare','Bare Island Dive','2026-10-11'),event('steps','The Steps Dive','2026-10-11'),event('henry','Henry Head Boat Dive','2026-10-11','boat','Boat Dives'),event('mm','Weedy Seadragon Dive','2026-10-11','shore','Marine Marvels Dives')]);assert.equal(xs.length,5);assert.match(eventFactCard(xs.find(x=>x.site.key==='henry')),/in-water guidance/);assert.match(eventFactCard(xs.find(x=>x.site.key==='marvels')),/A\$25.00/);});
+test('site date time and exact supplied link come from one event',()=>{const e=event('integrity','The Steps Dive','2026-10-11');const card=eventFactCard(chosen([e])[0]);assert.ok(card.includes(e.bookingUrl));assert.match(card,/The Steps — Sunday 11 October 2026 at 09:00/);});
+test('expired snapshots return no candidate and do not fabricate a date',()=>{const s=snapshot([event('x','Oak Park Dive','2026-10-11')]);assert.deepEqual(allFirstDiveChoices(firstDiveChoices(s,{now:expiresAt})),[]);assert.match(renderFirstDiveExcerpt(s,{now:expiresAt}),/No current dated recommendation/);});
+test('canonical source ordering and counts are not mutated',()=>{const s=snapshot([event('fri','Oak Park Dive','2026-10-09'),event('sun','Oak Park Dive','2026-10-11')]);const before=JSON.stringify(s);firstDiveChoices(s,{now:checkedAt});assert.equal(JSON.stringify(s),before);});
