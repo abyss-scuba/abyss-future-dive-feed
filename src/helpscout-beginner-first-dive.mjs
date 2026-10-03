@@ -2,7 +2,7 @@
 import {createHash} from 'node:crypto';
 export const FIRST_DIVE_TARGET={id:'6abf733d3be702ed269e3fa6',collectionId:'6abf61e6c3e570044c2891ed',name:'Your first guided dive after certification: what happens and who helps'};
 export const FIRST_DIVE_MARKER='ABYSS_FIRST_DIVE_RECOMMENDATIONS_V1';
-export const FIRST_DIVE_REVISION='ABYSS_BEGINNER_FACTS_V3';
+export const FIRST_DIVE_REVISION='ABYSS_BEGINNER_FACTS_V4_WEEKEND_PRIORITY';
 export const SOURCE='https://www.abyss.com.au/beginner-diver-widget';
 const TITLE='<h2>Which dive should I book first?</h2>';
 const ensure=(ok,m)=>{if(!ok)throw new Error(m);};
@@ -11,6 +11,13 @@ export const escapeHtml=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<'
 const esc=escapeHtml;
 const localDate=instant=>new Intl.DateTimeFormat('en-CA',{timeZone:'Australia/Sydney',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(instant));
 const dateLabel=date=>new Intl.DateTimeFormat('en-AU',{timeZone:'UTC',weekday:'long',day:'numeric',month:'long',year:'numeric'}).format(new Date(date+'T12:00:00Z'));
+const weekday=e=>new Date(e.startDate+'T12:00:00Z').getUTCDay();
+const dayRank=e=>({0:0,6:1,5:2}[weekday(e)]??3);
+/** Apply only after suitability, date-window and explicit-availability filtering.
+ * Canonical schedule ordering is unchanged; this ranks recommendation candidates. */
+export function compareRecommendationEvents(a,b){
+ return dayRank(a)-dayRank(b)||a.startDate.localeCompare(b.startDate)||(a.time||'99').localeCompare(b.time||'99')||String(a.id).localeCompare(String(b.id));
+}
 export function newDiverWindow(s,now=s?.checkedAt){
  const n=Date.parse(now),checked=Date.parse(s?.checkedAt),expiry=Date.parse(s?.expiresAt);
  ensure(s?.source===SOURCE&&Array.isArray(s.events),'Unrecognised beginner snapshot');
@@ -25,19 +32,26 @@ const sites=[
  {key:'henry',name:'Henry Head',match:/\bhenry head\b/i,kind:'boat',path:'/charters/boat-dives',why:'A possible first-boat option on the shallower sponge-garden route; deeper areas are not necessary. Confirm the route and in-water guidance for this departure.'},
  {key:'marvels',name:'Marine Marvels',match:/marine marvels/i,kind:'shore',path:'/charters/marine-marvels-dives',why:'A themed, marine-biologist-led outing for a diver who enjoys observing and learning about marine life. The actual event, recent experience, buoyancy, site and conditions determine suitability.'}
 ];
-export function firstDiveChoices(s,{now=s?.checkedAt}={}){
+export function firstDiveChoices(s,{now=s?.checkedAt,requestedWeekdays=null}={}){
+ if(requestedWeekdays!==null)ensure(Array.isArray(requestedWeekdays)&&requestedWeekdays.length>0&&requestedWeekdays.every(x=>Number.isInteger(x)&&x>=0&&x<=6),'Invalid requested weekdays');
  const window=newDiverWindow(s,now),choices=[];
  for(const site of sites){
   const candidates=window.events.filter(e=>{
    if(e.kind!==site.kind||!site.match.test(site.key==='marvels'?(e.product||''):e.title)||e.availability!=='check_availability')return false;
+   if(requestedWeekdays!==null&&!requestedWeekdays.includes(weekday(e)))return false;
    if(/\b(night|twilight|dusk|sunset|drift|advanced|confident|technical|unguided|members|club)\b/i.test(e.title+' '+(e.notes||[]).join(' ')))return false;
    if(site.key==='marvels'&&(!e.title||!Number.isFinite(e.listedPrice?.amount)||e.listedPrice.amount<0||e.listedPrice.currency!=='AUD'))return false;
    try{const u=new URL(e.bookingUrl);return u.protocol==='https:'&&u.hostname==='www.abyss.com.au'&&!u.username&&!u.password&&!u.port&&u.pathname.replace(/\/$/,'')===site.path&&!!u.searchParams.get('q');}catch{return false;}
-  }).sort((a,b)=>a.startDate.localeCompare(b.startDate)||(a.time||'99').localeCompare(b.time||'99')||String(a.id).localeCompare(String(b.id)));
+  }).sort(compareRecommendationEvents);
+  // Rank ALL eligible dates before taking one per site: a later Sunday must
+  // not be lost simply because an earlier Friday was encountered first.
   if(candidates[0])choices.push({site,event:candidates[0]});
  }
- // Marine Marvels stays an interest-specific option, not an automatic substitute
- // for a basic shallow shore outing when its route has not yet been confirmed.
+ // Preserve the regular guided-shore default support category. A boat option
+ // remains separately available; day preference does not silently change support.
+ choices.sort((a,b)=>Number(a.site.kind==='boat')-Number(b.site.kind==='boat')||compareRecommendationEvents(a.event,b.event));
+ // Marine Marvels stays interest-specific, not an automatic substitute
+ // for a basic shore outing when its actual route is unconfirmed.
  return {primary:choices.filter(x=>x.site.key!=='marvels').slice(0,2),boat:choices.find(x=>x.site.key==='henry')||null,marine:choices.find(x=>x.site.key==='marvels')||null,expired:window.expired};
 }
 export function allFirstDiveChoices(selected){
@@ -52,6 +66,7 @@ export function eventFactCard({site,event:e},prefix=''){
 export function renderFirstDiveExcerpt(s,{now=s.checkedAt}={}){
  const selected=firstDiveChoices(s,{now}),out=[TITLE,`<!-- ${FIRST_DIVE_MARKER} -->`,`<!-- ${FIRST_DIVE_REVISION} -->`];
  out.push('<p>Appropriate starting options are guided local outings matched to certification, experience, interests, entry, route and conditions. Oak Park and Bare Island are practical shore options; Henry Head and a suitable Marine Marvels event can fit particular interests. These are candidate outings, not unconditional suitability approvals.</p>');
+ out.push('<p>Default recommendation order among suitable options is Sunday, then Saturday, then Friday, then another day. Stated availability and suitability come first. The full maintained calendar, not this default shortlist, supplies alternatives for a requested weekday.</p>');
  selected.primary.forEach((choice,i)=>out.push(eventFactCard(choice,i===0?'First choice: ':'Another option: ')));
  if(selected.boat&&!selected.primary.some(x=>x.event.id===selected.boat.event.id))out.push(eventFactCard(selected.boat,'Boat option: '));
  if(selected.marine)out.push(eventFactCard(selected.marine,'Marine-life option: '));

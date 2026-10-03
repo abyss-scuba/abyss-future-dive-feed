@@ -1,10 +1,10 @@
 /** Shared Docs contain maintained facts; the agent Identity owns conversation policy. */
 import {createHash} from 'node:crypto';
-import {newDiverWindow,allFirstDiveChoices,eventFactCard,escapeHtml} from './helpscout-beginner-first-dive.mjs';
+import {newDiverWindow,allFirstDiveChoices,eventFactCard,escapeHtml,compareRecommendationEvents} from './helpscout-beginner-first-dive.mjs';
 const SITE='5d0ed4d02c7d3a6ebd2268ed',CAL='6ab98d4249f1bc2c6aefca54',SUPPORT='6abf61e6c3e570044c2891ed';
 export const SOURCE='https://www.abyss.com.au/beginner-diver-widget';
 export const OPTIONS_MARKER='ABYSS_BEGINNER_FIRST_ANSWER_OPTIONS_V1';
-export const OPENING_REVISION='ABYSS_BEGINNER_FACTS_V3';
+export const OPENING_REVISION='ABYSS_BEGINNER_FACTS_V4_WEEKEND_PRIORITY';
 const START='<!-- '+OPTIONS_MARKER+' -->',END='<!-- /'+OPTIONS_MARKER+' -->\n';
 const ensure=(ok,msg)=>{if(!ok)throw new Error(msg);};
 const hash=x=>createHash('sha256').update(String(x)).digest('hex'),esc=escapeHtml;
@@ -51,17 +51,18 @@ export function renderFirstAnswerOptions(snapshot,choices,now=snapshot.checkedAt
  }
  let displayed=candidates;
  if(topic){
-  const shore=candidates.filter(x=>x.site.kind==='shore'&&x.site.name!=='Marine Marvels');
-  const sunday=shore.find(x=>new Date(x.event.startDate+'T12:00:00Z').getUTCDay()===0);
-  const preferred=(topic===276&&sunday)||shore.find(x=>x.site.name==='Oak Park')||shore[0];
-  displayed=preferred?[preferred]:[];
+  // The owner's day preference applies to all openings, not just no-buddy.
+  // Default group-support examples stay on ordinary guided shore outings;
+  // boat/Marine Marvels remain available for an explicitly suitable interest.
+  const shore=candidates.filter(x=>x.site.kind==='shore'&&x.site.name!=='Marine Marvels').sort((a,b)=>compareRecommendationEvents(a.event,b.event));
+  displayed=shore.length?[shore[0]]:[];
  }
  const rows=[`<!-- ${OPENING_REVISION} -->`,'<p><strong>Current local outing facts relevant to this answer.</strong> These are scheduled options, subject to suitability and an availability check.</p>'];
  displayed.forEach(x=>rows.push(eventFactCard(x)));
  if(!displayed.length)rows.push('<p>No suitable dated option is verified in this small excerpt from tomorrow through the next 14 Sydney calendar days. This is not a claim that every possible beginner outing is unavailable. The complete maintained schedule or the team may identify another suitable option.</p>');
  if(displayed.some(x=>x.site.kind==='shore'&&x.site.name!=='Marine Marvels'))rows.push('<p>Regular guided shore support includes a plan/entry briefing, help arranging buddy teams and a Divemaster leading the group underwater. Joining without a buddy and arranging equipment hire are normal options. Group guidance is not continuous individual tuition; the team confirms the route for the diver and conditions.</p>');
  rows.push(`<p>Schedule-check metadata, not a dive date: Beginner schedule checked (ISO): ${esc(snapshot.checkedAt)}. Expires (ISO): ${esc(snapshot.expiresAt)}. Do not use these date facts after expiry or recommend an outing that has become today in Australia/Sydney. The full 14th Sydney calendar day is included; today is excluded. Source: <a href="${SOURCE}">maintained beginner schedule</a>.</p>`);
- rows.push('<p>These event facts are not instructions to add a booking invitation to every answer. Conversation flow belongs to the agent Identity. The evergreen factual answer remains valid when this dated excerpt expires.</p>');
+ rows.push('<p>These event facts are not instructions to add a booking invitation to every answer. Conversation flow belongs to the agent Identity. The evergreen factual answer remains valid when this dated excerpt expires. Keep the site, date, time and booking URL together from the same event. Default Sunday, Saturday, Friday preference does not override stated availability; use the full maintained schedule for requested weekdays.</p>');
  return rows.join('\n');
 }
 async function resolve(request){
