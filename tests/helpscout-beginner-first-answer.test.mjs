@@ -18,7 +18,7 @@ function mock({draftIndex=-1,ambiguous=false,concurrent=false}={}){
  }};
 }
 test('14-day window excludes later options but leaves canonical snapshot intact',()=>{const s=snap(),w=firstAnswerWindow(s);assert.deepEqual(w.events.map(x=>x.id),['oak','bare']);assert.equal(s.events.length,3);});
-test('boundary uses Sydney wall-clock time across DST',()=>{const s=snap();s.events=[ev('inside','2026-10-17','08:00','2026-10-16T21:00:00Z'),ev('outside','2026-10-17','08:01','2026-10-16T21:01:00Z')];assert.deepEqual(firstAnswerWindow(s).events.map(x=>x.id),['inside']);});
+test('boundary includes the entire 14th Sydney calendar day across DST',()=>{const s=snap();s.events=[ev('inside','2026-10-17','08:00','2026-10-16T21:00:00Z'),ev('later','2026-10-17','23:00','2026-10-17T12:00:00Z'),ev('outside','2026-10-18','00:01','2026-10-17T13:01:00Z')];assert.deepEqual(firstAnswerWindow(s).events.map(x=>x.id),['inside','later']);});
 test('window is measured from now, not check timestamp',()=>{const s=snap();s.events=[ev('inside','2026-10-18','08:00','2026-10-17T21:00:00Z')];assert.equal(firstAnswerWindow(s).events.length,0);assert.equal(firstAnswerWindow(s,'2026-10-03T21:00:00Z').events.length,1);});
 test('already-departed and unknown-time today excluded',()=>{const s=snap();s.events=[ev('past','2026-10-03','07:00','2026-10-02T21:00:00Z'),ev('unknown','2026-10-03',null,null)];assert.equal(firstAnswerWindow(s).events.length,0);});
 test('expired and future check handled safely',()=>{assert.equal(firstAnswerWindow(snap(),expiresAt).events.length,0);assert.throws(()=>firstAnswerWindow(snap(),'2026-10-01T00:00:00Z'));});
