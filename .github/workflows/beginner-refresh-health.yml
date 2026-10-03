@@ -1,0 +1,58 @@
+name: Beginner refresh health alerts
+on:
+  workflow_run:
+    workflows: ['Beginner dive schedule Help Scout snapshot']
+    types: [completed]
+  schedule:
+    - cron: '45 5 * * *'
+      timezone: Australia/Sydney
+  workflow_dispatch:
+  pull_request:
+    paths: ['scripts/check-beginner-refresh-alert.mjs', 'tests/beginner-refresh-alert.test.mjs', '.github/workflows/beginner-refresh-health.yml']
+permissions:
+  contents: read
+concurrency:
+  group: beginner-refresh-health-${{ github.event_name == 'pull_request' && github.ref || 'delivery' }}
+  cancel-in-progress: false
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+      - name: Validate the independent built-in-only alert checks
+        run: node --test tests/beginner-refresh-alert.test.mjs
+      - if: github.event_name == 'pull_request'
+        run: npm ci && npm test
+  report:
+    needs: verify
+    if: github.event_name != 'pull_request' && (github.event_name != 'workflow_run' || (github.event.workflow_run.head_branch == 'main' && contains(fromJSON('["schedule","push","workflow_dispatch"]'), github.event.workflow_run.event)))
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+      - name: Deliver one scoped repository alert or close recovered alert
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          ALERT_TEST: 'false'
+        run: node scripts/check-beginner-refresh-alert.mjs
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: beginner-refresh-health-${{ github.run_id }}
+          path: diagnostics/beginner-health/result.json
+          retention-days: 14
+          if-no-files-found: warn
