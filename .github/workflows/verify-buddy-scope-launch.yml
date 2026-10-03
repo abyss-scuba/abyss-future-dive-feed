@@ -1,0 +1,33 @@
+name: Verify buddy source scopes without editing
+on:
+  push:
+    branches: ['fix/beginner-launch-weekend-priority']
+    paths: ['.github/workflows/verify-buddy-scope-launch.yml']
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/setup-node@v6
+        with: {node-version: '22'}
+      - name: Read the two fixed sources and report identity and scope flags only
+        env:
+          HELP_SCOUT_DOCS_API_KEY: ${{ secrets.HELP_SCOUT_DOCS_API_KEY }}
+        run: |
+          node --input-type=module <<'NODE'
+          const ensure=(x,m)=>{if(!x)throw Error(m)};
+          const get=async p=>{const key=process.env.HELP_SCOUT_DOCS_API_KEY;ensure(key,'Missing credential');const r=await fetch('https://docsapi.helpscout.net/v1'+p,{method:'GET',redirect:'error',signal:AbortSignal.timeout(20000),headers:{Authorization:'Basic '+Buffer.from(key+':X').toString('base64'),Accept:'application/json'}});ensure(r.ok,'Read failed '+r.status);return r.json();};
+          try{
+            const cid='6abb75219dcaab7ce64c5880',site='5d0ed4d02c7d3a6ebd2268ed';
+            const c=(await get('/collections/'+cid)).collection;ensure(c.id===cid&&c.siteId===site,'Collection mismatch');
+            const refs=[];for(let page=1;page<=5;page++){const x=(await get('/collections/'+cid+'/articles?status=published&pageSize=100&page='+page)).articles;ensure(x&&Array.isArray(x.items),'Bad metadata');refs.push(...x.items);if(page>=x.pages)break;if(page===5)throw Error('Incomplete metadata');}
+            const matches=refs.filter(a=>a.name==='Tanks, rental gear, buddies and in-water guidance');ensure(matches.length===1,'Boat source not unique');
+            const boat=(await get('/articles/'+matches[0].id)).article;
+            const buddy=(await get('/articles/6ab992784b37f75b5ff65c3e')).article;
+            ensure(boat.collectionId===cid&&buddy.collectionId==='6ab98d4249f1bc2c6aefca54','Article collection mismatch');
+            const clean=s=>s.replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim();
+            console.log(JSON.stringify({checkedAt:new Date().toISOString(),readOnly:true,articles:[{id:boat.id,title:boat.name,status:boat.status,hasDraft:!!boat.hasDraft,boatScopePrefixPresent:clean(boat.text).startsWith('Scope: this article covers Sydney BOAT departures.'),originalBoatQualificationPresent:clean(boat.text).includes('in-water guiding varies by departure')},{id:buddy.id,title:buddy.name,status:buddy.status,hasDraft:!!buddy.hasDraft,newShoreOpeningPresent:clean(buddy.text).startsWith('Yes — you are welcome to join a regular Abyss guided shore dive without bringing a buddy.'),managedDateMarkerPresent:buddy.text.includes('ABYSS_BEGINNER_FIRST_ANSWER_OPTIONS_V1')}]}));
+          }catch(e){console.error('Read-only scope check stopped: '+e.message);process.exitCode=1;}
+          NODE
