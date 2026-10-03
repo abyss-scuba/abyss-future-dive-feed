@@ -1,0 +1,31 @@
+name: New diver public readiness read-only audit
+on:
+  push:
+    branches: ['qa/new-diver-parallel-readiness-20261004']
+    paths: ['scripts/qa-new-diver-public-readiness.mjs', '.github/workflows/qa-new-diver-public-readiness.yml']
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: node --check scripts/qa-new-diver-public-readiness.mjs
+      - run: npx playwright install --with-deps chromium
+      - name: Inspect public pages without credentials or transaction submissions
+        run: node scripts/qa-new-diver-public-readiness.mjs
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: new-diver-public-readiness-${{ github.run_id }}
+          path: diagnostics/new-diver-readiness/
+          retention-days: 7
+          if-no-files-found: warn
