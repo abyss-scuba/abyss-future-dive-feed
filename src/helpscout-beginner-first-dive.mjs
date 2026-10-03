@@ -2,7 +2,7 @@
 import {createHash} from 'node:crypto';
 export const FIRST_DIVE_TARGET={id:'6abf733d3be702ed269e3fa6',collectionId:'6abf61e6c3e570044c2891ed',name:'Your first guided dive after certification: what happens and who helps'};
 export const FIRST_DIVE_MARKER='ABYSS_FIRST_DIVE_RECOMMENDATIONS_V1';
-export const FIRST_DIVE_REVISION='ABYSS_BEGINNER_FACTS_V5_FIVE_OPTIONS';
+export const FIRST_DIVE_REVISION='ABYSS_BEGINNER_FACTS_V6_STRICT_DEFAULT_DAYS';
 export const SOURCE='https://www.abyss.com.au/beginner-diver-widget';
 const TITLE='<h2>Which dive should I book first?</h2>';
 const ensure=(ok,m)=>{if(!ok)throw new Error(m);};
@@ -35,11 +35,12 @@ const sites=[
 ];
 export function firstDiveChoices(s,{now=s?.checkedAt,requestedWeekdays=null}={}){
  if(requestedWeekdays!==null)ensure(Array.isArray(requestedWeekdays)&&requestedWeekdays.length>0&&requestedWeekdays.every(x=>Number.isInteger(x)&&x>=0&&x<=6),'Invalid requested weekdays');
+ const eligibleWeekdays=requestedWeekdays===null?[0,6,5]:requestedWeekdays;
  const window=newDiverWindow(s,now),choices=[];
  for(const site of sites){
   const candidates=window.events.filter(e=>{
    if(e.kind!==site.kind||!site.match.test(site.key==='marvels'?(e.product||''):e.title)||e.availability!=='check_availability')return false;
-   if(requestedWeekdays!==null&&!requestedWeekdays.includes(weekday(e)))return false;
+   if(!eligibleWeekdays.includes(weekday(e)))return false;
    if(/\b(night|twilight|dusk|sunset|drift|advanced|confident|technical|unguided|members|club)\b/i.test(e.title+' '+(e.notes||[]).join(' ')))return false;
    // A Leap-to-Steps route is not the ordinary Steps outing requested here.
    if(site.key==='steps'&&/\bleap\b/i.test(e.title+' '+(e.notes||[]).join(' ')))return false;
@@ -68,8 +69,8 @@ export function eventFactCard({site,event:e},prefix=''){
 }
 export function renderFirstDiveExcerpt(s,{now=s.checkedAt}={}){
  const selected=firstDiveChoices(s,{now}),out=[TITLE,`<!-- ${FIRST_DIVE_MARKER} -->`,`<!-- ${FIRST_DIVE_REVISION} -->`];
- out.push('<p>Appropriate starting options are guided local outings matched to certification, experience, interests, entry, route and conditions. Oak Park and Bare Island are practical shore options; Henry Head and a suitable Marine Marvels event can fit particular interests. These are candidate outings, not unconditional suitability approvals.</p>');
- out.push('<p>Default recommendation order among suitable options is Sunday, then Saturday, then Friday, then another day. Stated availability and suitability come first. The full maintained calendar, not this default shortlist, supplies alternatives for a requested weekday.</p>');
+ out.push('<p>Appropriate starting options are guided local outings matched to certification, experience, interests, entry, route and conditions. Oak Park and Bare Island are practical shore options; The Steps, Henry Head and a suitable Marine Marvels event can fit particular interests when their entry, route and support suit the diver. These are candidate outings, not unconditional suitability approvals.</p>');
+ out.push('<p>Default proactive invitation candidates are suitable Sunday outings, then Saturday only if no suitable Sunday qualifies, then Friday only if neither qualifies. Stated availability and suitability come first. Other weekdays remain in the full maintained calendar for explicit requests; they are not automatic substitutes in this default shortlist.</p>');
  selected.primary.forEach((choice,i)=>out.push(eventFactCard(choice,i===0?'First choice: ':'Another option: ')));
  // Keep every preferred shore option available even when outside the first two.
  for(const choice of selected.shoreOptions||[])if(!selected.primary.some(x=>x.event.id===choice.event.id))out.push(eventFactCard(choice,'Additional shore option: '));
@@ -87,7 +88,7 @@ export function replaceFirstDiveSection(text,section){
  return text.slice(0,start)+section+'\n'+text.slice(end);
 }
 function validate(a){const t=FIRST_DIVE_TARGET;ensure(a?.id===t.id&&a.collectionId===t.collectionId&&a.name===t.name&&a.status==='published'&&!a.hasDraft&&typeof a.text==='string','First-dive article identity, publication or draft conflict');return a;}
-async function read(request){const t=FIRST_DIVE_TARGET,c=(await request('GET','/collections/'+t.collectionId)).collection;ensure(c?.id===t.collectionId&&c.siteId==='5d0ed4d02c7d3a6ebd2268ed'&&c.visibility==='private','First-dive collection privacy mismatch');return validate((await request('GET','/articles/'+t.id)).article);}
+async function read(request){const t=FIRST_DIVE_TARGET,c=(await request('GET','/collections/'+t.collectionId)).collection;ensure(c?.id===t.collectionId&&c.siteId===SITE&&c.visibility==='private','First-dive collection privacy mismatch');return validate((await request('GET','/articles/'+t.id)).article);}
 export async function firstDiveExcerptIsCurrent(request,canonicalArticle){const checked=canonicalArticle?.text?.match(/Checked \(ISO\):\s*(\d{4}-\d{2}-\d{2}T[\d:.]+Z)/)?.[1];const a=await read(request);return !!checked&&a.text.includes(FIRST_DIVE_MARKER)&&a.text.includes(FIRST_DIVE_REVISION)&&a.text.includes('Dated recommendations checked: '+checked+'.');}
 const metadata=a=>JSON.stringify({id:a.id,collectionId:a.collectionId,name:a.name,slug:a.slug,status:a.status,keywords:a.keywords,categories:a.categories,related:a.related});
 export async function publishFirstDiveExcerpt({request,snapshot,now=snapshot.checkedAt,backup=async()=>{}}){
