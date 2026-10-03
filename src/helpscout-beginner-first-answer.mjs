@@ -1,5 +1,6 @@
 /** Shared Docs contain maintained facts; the agent Identity owns conversation policy. */
 import {createHash} from 'node:crypto';
+import {unwrapManagedHtmlBlock} from './helpscout-managed-html-block.mjs';
 import {newDiverWindow,allFirstDiveChoices,eventFactCard,escapeHtml,compareRecommendationEvents} from './helpscout-beginner-first-dive.mjs';
 const SITE='5d0ed4d02c7d3a6ebd2268ed',CAL='6ab98d4249f1bc2c6aefca54',SUPPORT='6abf61e6c3e570044c2891ed';
 export const SOURCE='https://www.abyss.com.au/beginner-diver-widget';
@@ -15,7 +16,7 @@ const fixed=[
 const buddy={collectionId:CAL,name:'Can I join a Sydney guided dive without bringing a buddy?',number:276};
 export const firstAnswerWindow=(snapshot,now=snapshot?.checkedAt)=>newDiverWindow(snapshot,now);
 export function stripOptions(text){
- ensure(typeof text==='string','Missing article body');const starts=text.split(START).length-1,ends=text.split(END).length-1;
+ ensure(typeof text==='string','Missing article body');text=unwrapManagedHtmlBlock(text,OPTIONS_MARKER);const starts=text.split(START).length-1,ends=text.split(END).length-1;
  ensure(starts===ends&&starts<=1,'Managed date block missing delimiter or duplicated; no overwrite');
  if(!starts)return text;const a=text.indexOf(START),b=text.indexOf(END,a);ensure(b>a,'Invalid managed date block');return text.slice(0,a)+text.slice(b+END.length);
 }
@@ -73,7 +74,7 @@ async function resolve(request){
 function validate(a,t){ensure(a?.id===t.id&&a.collectionId===t.collectionId&&a.name===t.name&&a.status==='published'&&!a.hasDraft&&typeof a.text==='string','Article identity, publication or draft conflict');ensure(String(a.number)===String(t.number)||String(a.publicUrl).includes('/article/'+t.number+'-'),'Article number mismatch');return a;}
 const metadata=a=>JSON.stringify({id:a.id,collectionId:a.collectionId,name:a.name,slug:a.slug,status:a.status,keywords:a.keywords,categories:a.categories,related:a.related});
 async function readAll(request){const targets=await resolve(request),records=[];for(const t of targets)records.push({t,a:validate((await request('GET','/articles/'+t.id)).article,t)});return records;}
-export async function firstAnswerOptionsAreCurrent(request,canonicalArticle){const checked=canonicalArticle?.text?.match(/Checked \(ISO\):\s*(\d{4}-\d{2}-\d{2}T[\d:.]+Z)/)?.[1];const records=await readAll(request);return !!checked&&records.every(({a})=>a.text.includes(START)&&a.text.includes(OPENING_REVISION)&&a.text.includes('Beginner schedule checked (ISO): '+checked+'.'));}
+export async function firstAnswerOptionsAreCurrent(request,canonicalArticle){const checked=canonicalArticle?.text?.match(/Checked \(ISO\):\s*(\d{4}-\d{2}-\d{2}T[\d:.]+Z)/)?.[1];const records=await readAll(request);return !!checked&&records.every(({a})=>{const text=unwrapManagedHtmlBlock(a.text,OPTIONS_MARKER);return text.includes(START)&&text.includes(OPENING_REVISION)&&text.includes('Beginner schedule checked (ISO): '+checked+'.');});}
 export async function publishFirstAnswerOptions({request,snapshot,choices,now=snapshot.checkedAt,backup=async()=>{}}){
  ensure(Date.parse(now)<Date.parse(snapshot.expiresAt),'Date options expired before publication');const records=await readAll(request);
  const plans=records.map(({a,t})=>{const base=reconcileStaticFacts(a.text,t.number);return {a,t,base,text:insertOptions(base,renderFirstAnswerOptions(snapshot,choices,now,{topic:t.number}))};});
