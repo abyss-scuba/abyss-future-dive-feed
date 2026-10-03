@@ -2,7 +2,7 @@
 import {createHash} from 'node:crypto';
 export const FIRST_DIVE_TARGET={id:'6abf733d3be702ed269e3fa6',collectionId:'6abf61e6c3e570044c2891ed',name:'Your first guided dive after certification: what happens and who helps'};
 export const FIRST_DIVE_MARKER='ABYSS_FIRST_DIVE_RECOMMENDATIONS_V1';
-export const FIRST_DIVE_REVISION='ABYSS_BEGINNER_FACTS_V4_WEEKEND_PRIORITY';
+export const FIRST_DIVE_REVISION='ABYSS_BEGINNER_FACTS_V5_FIVE_OPTIONS';
 export const SOURCE='https://www.abyss.com.au/beginner-diver-widget';
 const TITLE='<h2>Which dive should I book first?</h2>';
 const ensure=(ok,m)=>{if(!ok)throw new Error(m);};
@@ -29,6 +29,7 @@ export function newDiverWindow(s,now=s?.checkedAt){
 const sites=[
  {key:'oak',name:'Oak Park',match:/\boak park\b/i,kind:'shore',path:'/charters/guided-shore-dives',why:'A shallow reef, typically 8–12 m, gives you a chance to settle into your diving and enjoy the fish life without needing to go deep.'},
  {key:'bare',name:'Bare Island',match:/\bbare island\b/i,kind:'shore',path:'/charters/guided-shore-dives',why:'Colourful sponge gardens and rocky reef make an enjoyable outing on a suitable 12–18 m route. Group guidance means you do not need to know the site yourself; the team confirms the currently permitted entry and route.'},
+ {key:'steps',name:'The Steps',match:/\b(?:the\s+)?steps\b/i,kind:'shore',path:'/charters/guided-shore-dives',why:'A guided reef outing for divers comfortable with stairs and a rocky entry. The team must match the current, entry, depth and route to the diver; this is not an automatically easy or shallow first dive.'},
  {key:'henry',name:'Henry Head',match:/\bhenry head\b/i,kind:'boat',path:'/charters/boat-dives',why:'A possible first-boat option on the shallower sponge-garden route; deeper areas are not necessary. Confirm the route and in-water guidance for this departure.'},
  {key:'marvels',name:'Marine Marvels',match:/marine marvels/i,kind:'shore',path:'/charters/marine-marvels-dives',why:'A themed, marine-biologist-led outing for a diver who enjoys observing and learning about marine life. The actual event, recent experience, buoyancy, site and conditions determine suitability.'}
 ];
@@ -40,6 +41,8 @@ export function firstDiveChoices(s,{now=s?.checkedAt,requestedWeekdays=null}={})
    if(e.kind!==site.kind||!site.match.test(site.key==='marvels'?(e.product||''):e.title)||e.availability!=='check_availability')return false;
    if(requestedWeekdays!==null&&!requestedWeekdays.includes(weekday(e)))return false;
    if(/\b(night|twilight|dusk|sunset|drift|advanced|confident|technical|unguided|members|club)\b/i.test(e.title+' '+(e.notes||[]).join(' ')))return false;
+   // A Leap-to-Steps route is not the ordinary Steps outing requested here.
+   if(site.key==='steps'&&/\bleap\b/i.test(e.title+' '+(e.notes||[]).join(' ')))return false;
    if(site.key==='marvels'&&(!e.title||!Number.isFinite(e.listedPrice?.amount)||e.listedPrice.amount<0||e.listedPrice.currency!=='AUD'))return false;
    try{const u=new URL(e.bookingUrl);return u.protocol==='https:'&&u.hostname==='www.abyss.com.au'&&!u.username&&!u.password&&!u.port&&u.pathname.replace(/\/$/,'')===site.path&&!!u.searchParams.get('q');}catch{return false;}
   }).sort(compareRecommendationEvents);
@@ -52,10 +55,10 @@ export function firstDiveChoices(s,{now=s?.checkedAt,requestedWeekdays=null}={})
  choices.sort((a,b)=>Number(a.site.kind==='boat')-Number(b.site.kind==='boat')||compareRecommendationEvents(a.event,b.event));
  // Marine Marvels stays interest-specific, not an automatic substitute
  // for a basic shore outing when its actual route is unconfirmed.
- return {primary:choices.filter(x=>x.site.key!=='marvels').slice(0,2),boat:choices.find(x=>x.site.key==='henry')||null,marine:choices.find(x=>x.site.key==='marvels')||null,expired:window.expired};
+ return {primary:choices.filter(x=>x.site.key!=='marvels').slice(0,2),boat:choices.find(x=>x.site.key==='henry')||null,marine:choices.find(x=>x.site.key==='marvels')||null,shoreOptions:choices.filter(x=>x.site.kind==='shore'&&x.site.key!=='marvels'),expired:window.expired};
 }
 export function allFirstDiveChoices(selected){
- const out=[];for(const x of [...(selected.primary||[]),selected.boat,selected.marine])if(x&&!out.some(y=>y.event.id===x.event.id))out.push(x);return out;
+ const out=[];for(const x of [...(selected.primary||[]),...(selected.shoreOptions||[]),selected.boat,selected.marine])if(x&&!out.some(y=>y.event.id===x.event.id))out.push(x);return out;
 }
 export function eventFactCard({site,event:e},prefix=''){
  const title=site.key==='marvels'?site.name+' — '+e.title:site.name;
@@ -68,6 +71,8 @@ export function renderFirstDiveExcerpt(s,{now=s.checkedAt}={}){
  out.push('<p>Appropriate starting options are guided local outings matched to certification, experience, interests, entry, route and conditions. Oak Park and Bare Island are practical shore options; Henry Head and a suitable Marine Marvels event can fit particular interests. These are candidate outings, not unconditional suitability approvals.</p>');
  out.push('<p>Default recommendation order among suitable options is Sunday, then Saturday, then Friday, then another day. Stated availability and suitability come first. The full maintained calendar, not this default shortlist, supplies alternatives for a requested weekday.</p>');
  selected.primary.forEach((choice,i)=>out.push(eventFactCard(choice,i===0?'First choice: ':'Another option: ')));
+ // Keep every preferred shore option available even when outside the first two.
+ for(const choice of selected.shoreOptions||[])if(!selected.primary.some(x=>x.event.id===choice.event.id))out.push(eventFactCard(choice,'Additional shore option: '));
  if(selected.boat&&!selected.primary.some(x=>x.event.id===selected.boat.event.id))out.push(eventFactCard(selected.boat,'Boat option: '));
  if(selected.marine)out.push(eventFactCard(selected.marine,'Marine-life option: '));
  if(!allFirstDiveChoices(selected).length)out.push('<p>No current dated recommendation for these preferred experiences is verified in this excerpt. This is not the full calendar and does not establish that all other dates are unavailable.</p>');
