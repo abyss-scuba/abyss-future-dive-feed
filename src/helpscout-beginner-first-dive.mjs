@@ -47,7 +47,9 @@ export function firstDiveChoices(s,{now=s?.checkedAt,requestedWeekdays=null}={})
   // not be lost simply because an earlier Friday was encountered first.
   if(candidates[0])choices.push({site,event:candidates[0]});
  }
- choices.sort((a,b)=>compareRecommendationEvents(a.event,b.event));
+ // Preserve the regular guided-shore default support category. A boat option
+ // remains separately available; day preference does not silently change support.
+ choices.sort((a,b)=>Number(a.site.kind==='boat')-Number(b.site.kind==='boat')||compareRecommendationEvents(a.event,b.event));
  // Marine Marvels stays interest-specific, not an automatic substitute
  // for a basic shore outing when its actual route is unconfirmed.
  return {primary:choices.filter(x=>x.site.key!=='marvels').slice(0,2),boat:choices.find(x=>x.site.key==='henry')||null,marine:choices.find(x=>x.site.key==='marvels')||null,expired:window.expired};
