@@ -5,7 +5,7 @@ import {newDiverWindow,allFirstDiveChoices,eventFactCard,escapeHtml,compareRecom
 const SITE='5d0ed4d02c7d3a6ebd2268ed',CAL='6ab98d4249f1bc2c6aefca54',SUPPORT='6abf61e6c3e570044c2891ed';
 export const SOURCE='https://www.abyss.com.au/beginner-diver-widget';
 export const OPTIONS_MARKER='ABYSS_BEGINNER_FIRST_ANSWER_OPTIONS_V1';
-export const OPENING_REVISION='ABYSS_BEGINNER_FACTS_V4_WEEKEND_PRIORITY';
+export const OPENING_REVISION='ABYSS_BEGINNER_FACTS_V5_FIVE_OPTIONS';
 const START='<!-- '+OPTIONS_MARKER+' -->',END='<!-- /'+OPTIONS_MARKER+' -->\n';
 const ensure=(ok,msg)=>{if(!ok)throw new Error(msg);};
 const hash=x=>createHash('sha256').update(String(x)).digest('hex'),esc=escapeHtml;
@@ -43,11 +43,11 @@ export function reconcileStaticFacts(text,topic){
  return out;
 }
 export function renderFirstAnswerOptions(snapshot,choices,now=snapshot.checkedAt,{topic=0}={}){
- const window=firstAnswerWindow(snapshot,now),candidates=allFirstDiveChoices(choices||{});ensure(candidates.length<=4,'Too many first-answer options');
+ const window=firstAnswerWindow(snapshot,now),candidates=allFirstDiveChoices(choices||{});ensure(candidates.length<=5,'Too many first-answer options');
  for(const {site,event:e} of candidates){
   const verified=window.events.find(x=>x.id===e.id);
   ensure(verified&&verified.bookingUrl===e.bookingUrl&&verified.startDate===e.startDate&&verified.time===e.time&&verified.availability==='check_availability','Choice is not a verified, non-full event from tomorrow within 14 Sydney days');
-  ensure(['Oak Park','Bare Island','Henry Head','Marine Marvels'].includes(site.name),'Unapproved first-answer site');
+  ensure(['Oak Park','Bare Island','Henry Head','Marine Marvels','The Steps'].includes(site.name),'Unapproved first-answer site');
   if(site.name==='Marine Marvels')ensure(verified.product==='Marine Marvels Dives'&&Number.isFinite(verified.listedPrice?.amount)&&verified.listedPrice.currency==='AUD','Unverified Marine Marvels product or fee');
  }
  let displayed=candidates;
