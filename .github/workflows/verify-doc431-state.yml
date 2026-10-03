@@ -1,0 +1,55 @@
+name: Inspect the fixed certified-diver paperwork source
+on:
+  push:
+    branches: ['fix/local-paperwork-doc431']
+    paths: ['.github/workflows/verify-doc431-state.yml']
+permissions: {contents: read}
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/setup-node@v6
+        with: {node-version: '22'}
+      - name: Read one authorised source and encrypt its backup
+        env:
+          HELP_SCOUT_DOCS_API_KEY: ${{ secrets.HELP_SCOUT_DOCS_API_KEY }}
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs/promises';
+          import assert from 'node:assert/strict';
+          import {createHash,createPrivateKey,createPublicKey,randomBytes,createCipheriv,publicEncrypt,constants} from 'node:crypto';
+          const id='6abf7b9f3be702ed269e3faf',cid='6ab98d4249f1bc2c6aefca54',site='5d0ed4d02c7d3a6ebd2268ed';
+          const pub=`-----BEGIN PUBLIC KEY-----
+          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAy1fB6HksWE2dol+YGvgS
+          8wZ3bwVZo3uyMcn58Qip8k797kGTOFFkgXUuE8fPB4wtZr4y8GpmkrM9Vl3+IJ2R
+          TL30mprX7LZ35Qu9pRiIGBg9gkFTUHtQQ19cdJN2nyT4emCeayUV5YkyhpE/02n9
+          37685NZUuxwMSMmN686MUUBm8X1NOc941tqTNH3JUP3wq3QnmlCZJd+sRYOfVxId
+          SSWOtVR3qol/xVJ80WvUrMaV1AJep+EA0blRlhekQDDNDVHyncmo6QcNfvz/VTrx
+          dD+bngH7WVLPO3GQOcIOYVrtuoWsEyifijJzwXrTT09MEl8Q3pnWH4aM+9NEFt9Y
+          rwIDAQAB
+          -----END PUBLIC KEY-----`;
+          const hash=x=>createHash('sha256').update(x).digest('hex');
+          const stable=a=>JSON.stringify({id:a.id,name:a.name,collectionId:a.collectionId,slug:a.slug,status:a.status,keywords:a.keywords,categories:a.categories,related:a.related});
+          try{
+            const secret=process.env.HELP_SCOUT_DOCS_API_KEY;assert.ok(secret,'Missing credential');
+            const get=async p=>{const r=await fetch('https://docsapi.helpscout.net/v1'+p,{redirect:'error',signal:AbortSignal.timeout(20000),headers:{Authorization:'Basic '+Buffer.from(secret+':X').toString('base64'),Accept:'application/json'}});assert.ok(r.ok,'Docs HTTP '+r.status);return r.json();};
+            const c=(await get('/collections/'+cid)).collection;assert.equal(c.id,cid);assert.equal(c.siteId,site);assert.equal(c.visibility,'private');
+            const a=(await get('/articles/'+id+'?draft=false')).article;assert.equal(a.id,id);assert.equal(a.collectionId,cid);assert.equal(a.status,'published');assert.equal(typeof a.text,'string');
+            const draft=a.hasDraft?(await get('/articles/'+id+'?draft=true')).article:null;
+            const seed=createHash('sha256').update('abyss-doc431-publication-key-v1\0').update(secret).digest();
+            const priv=createPrivateKey({key:Buffer.concat([Buffer.from('302e020100300506032b656e04220420','hex'),seed]),format:'der',type:'pkcs8'});
+            const transportPublicKey=createPublicKey(priv).export({format:'der',type:'spki'}).toString('base64');
+            const key=randomBytes(32),iv=randomBytes(12),cipher=createCipheriv('aes-256-gcm',key,iv);
+            const ciphertext=Buffer.concat([cipher.update(JSON.stringify({checkedAt:new Date().toISOString(),article:a,draft})),cipher.final()]);
+            const envelope={wrappedKey:publicEncrypt({key:pub,padding:constants.RSA_PKCS1_OAEP_PADDING,oaepHash:'sha256'},key).toString('base64'),iv:iv.toString('base64'),tag:cipher.getAuthTag().toString('base64'),ciphertext:ciphertext.toString('base64')};
+            const status={id,collectionId:cid,checkedAt:new Date().toISOString(),published:true,hasDraft:!!a.hasDraft,bodyHash:hash(a.text),metadataHash:hash(stable(a)),characters:a.text.length,transportPublicKey};
+            await fs.mkdir('fixed-source',{recursive:true});await fs.writeFile('fixed-source/encrypted-backup.json',JSON.stringify(envelope));await fs.writeFile('fixed-source/status.json',JSON.stringify(status,null,2));console.log(JSON.stringify(status));
+          }catch(e){console.error('Fixed source inspection stopped: '+e.message);process.exitCode=1;}
+          NODE
+      - uses: actions/upload-artifact@v7
+        with:
+          name: doc431-encrypted-state
+          path: fixed-source/
+          retention-days: 3
+          if-no-files-found: error
