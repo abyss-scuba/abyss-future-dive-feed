@@ -2,9 +2,10 @@ name: New diver public readiness read-only audit
 on:
   push:
     branches: ['qa/new-diver-parallel-readiness-20261004']
-    paths: ['scripts/qa-new-diver-public-readiness.mjs', '.github/workflows/qa-new-diver-public-readiness.yml']
+    paths: ['scripts/qa-new-diver-controls.mjs', '.github/workflows/qa-new-diver-public-readiness.yml']
 permissions:
   contents: read
+  actions: read
 jobs:
   audit:
     runs-on: ubuntu-latest
@@ -18,14 +19,16 @@ jobs:
           node-version: '22'
           cache: npm
       - run: npm ci
-      - run: node --check scripts/qa-new-diver-public-readiness.mjs
+      - run: node --check scripts/qa-new-diver-controls.mjs
       - run: npx playwright install --with-deps chromium
-      - name: Inspect public pages without credentials or transaction submissions
-        run: node scripts/qa-new-diver-public-readiness.mjs
+      - name: Read pre-cart prices, browser-only contact preview and scheduler history
+        run: node scripts/qa-new-diver-controls.mjs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
       - uses: actions/upload-artifact@v7
         if: always()
         with:
-          name: new-diver-public-readiness-${{ github.run_id }}
-          path: diagnostics/new-diver-readiness/
+          name: new-diver-controls-${{ github.run_id }}
+          path: diagnostics/new-diver-controls/
           retention-days: 7
           if-no-files-found: warn
