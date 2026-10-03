@@ -1,8 +1,8 @@
 {
   "status": "updated-and-verified",
-  "checkedAt": "2026-10-03T01:36:07.639Z",
-  "publishedAt": "2026-10-03T01:36:47.549Z",
-  "expiresAt": "2026-10-04T13:36:07.639Z",
+  "checkedAt": "2026-10-03T04:48:06.500Z",
+  "publishedAt": "2026-10-03T04:48:42.477Z",
+  "expiresAt": "2026-10-04T16:48:06.500Z",
   "counts": {
     "shore": 31,
     "boat": 30,
@@ -22,47 +22,47 @@
     "articleId": "6abf6f632bd8064b0717cab1",
     "articleTitle": "Upcoming beginner dive dates — shore, boat and trips"
   },
-  "textHash": "90e26893103ef0d317e8363ac3f7d308bd6265053bcfce0c0de2e415b5a25b6c",
+  "textHash": "d187b70f606243f2aec5a1196a4058d7646cc5387dc01bff7599cd18ed1b09f3",
   "firstDiveRecommendations": {
     "status": "updated-and-verified",
     "articleId": "6abf733d3be702ed269e3fa6",
-    "checkedAt": "2026-10-03T01:36:07.639Z",
-    "expiresAt": "2026-10-04T13:36:07.639Z",
+    "checkedAt": "2026-10-03T04:48:06.500Z",
+    "expiresAt": "2026-10-04T16:48:06.500Z",
     "selectedEventIds": [
-      "66412496",
       "66412502",
+      "66412497",
       "66412567"
     ],
-    "bodyHash": "f35fa42633b189f56d6a02311772d44d247f00ad9895aea9f7f75ddc47ab84b2",
+    "bodyHash": "0915af510b1454156c7a564a185601c73ff8152640c8d472a7faede9090df5da",
     "metadataUnchanged": true
   },
   "firstAnswerOptions": {
-    "checkedAt": "2026-10-03T01:36:07.639Z",
-    "expiresAt": "2026-10-04T13:36:07.639Z",
+    "checkedAt": "2026-10-03T04:48:06.500Z",
+    "expiresAt": "2026-10-04T16:48:06.500Z",
     "results": [
       {
         "id": "6abf76557cdaed3f1efa5fa0",
         "number": 429,
         "status": "updated-and-verified",
-        "bodyHash": "c9e96affc86debb4347a000fc7e02741730cc66e2aac43b758f9cef1a5f85f00",
-        "originalContentUnchanged": false,
-        "reviewedConversationalCleanup": true,
+        "bodyHash": "d1a5b51004856e32aedd3950ed60e5963a3617c5ddfa928fead1578343e81588",
+        "originalContentUnchanged": true,
+        "reviewedConversationalCleanup": false,
         "metadataUnchanged": true
       },
       {
         "id": "6abf7841c3e570044c28921f",
         "number": 430,
         "status": "updated-and-verified",
-        "bodyHash": "67d10bb7fec0eb088e850d13bca6294dfbb114ff311ee0dcac84aa8b268ae5f7",
-        "originalContentUnchanged": false,
-        "reviewedConversationalCleanup": true,
+        "bodyHash": "5b36cd32cbb6cf1887ee652d140f9479ce868ff2ccfdae52f59546a52003815f",
+        "originalContentUnchanged": true,
+        "reviewedConversationalCleanup": false,
         "metadataUnchanged": true
       },
       {
         "id": "6ab992784b37f75b5ff65c3e",
         "number": 276,
         "status": "updated-and-verified",
-        "bodyHash": "aef9e171190005cf9f28fe90b49561b9209a5a4eddeb483f01676141b1efff2c",
+        "bodyHash": "9a16d8cdfd7d5be5278518158ed8fdf3aedeec77a33f49b9c603ffd3407f163e",
         "originalContentUnchanged": true,
         "reviewedConversationalCleanup": false,
         "metadataUnchanged": true
