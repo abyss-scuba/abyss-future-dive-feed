@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-04T22:59:49.678+11:00",
+  "checkedAt": "2026-10-04T23:00:18.533+11:00",
   "localDate": "2026-10-04",
   "repository": "abyss-scuba/abyss-future-dive-feed",
   "scope": "Seven maintained Help Scout date publishers, including derived date sections; separate website future-feed dependency.",
@@ -211,7 +211,7 @@
     {
       "key": "travel",
       "label": "Dive Travel",
-      "state": "WARN",
+      "state": "PASS",
       "checkedAt": "2026-10-04T22:59:39.918+11:00",
       "count": 10,
       "due": "11:00",
@@ -240,15 +240,11 @@
           "eventLinks": 10,
           "bodyHash": "7f86d032989db5002fb2f046b581f4958d484ecf90fa20dadf8d83dd5cac5d91",
           "errors": [],
-          "warnings": [
-            "body-changed-with-same-check-date"
-          ]
+          "warnings": []
         }
       ],
       "errors": [],
-      "warnings": [
-        "Upcoming Abyss dive trips — dates and availability snapshot: body-changed-with-same-check-date"
-      ]
+      "warnings": []
     },
     {
       "key": "shore",
@@ -261,8 +257,8 @@
       "latestRun": {
         "id": 37200538591,
         "event": "push",
-        "status": "in_progress",
-        "conclusion": null,
+        "status": "completed",
+        "conclusion": "failure",
         "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/37200538591"
       },
       "lastSuccessfulScheduledRun": {
@@ -280,14 +276,17 @@
             "2026-10-04"
           ],
           "eventLinks": 27,
-          "bodyHash": "70869aa0dd166cb1e471c22be60c7516a4099b9d2ba6ff0fabd051532e3e72aa",
+          "bodyHash": "9f3aa5cf46961969f32b6d62658619c049488ded2d24d9477cc4e7d006076cc2",
           "errors": [],
-          "warnings": []
+          "warnings": [
+            "body-changed-with-same-check-date"
+          ]
         }
       ],
       "errors": [],
       "warnings": [
-        "workflow-in_progress"
+        "latest-workflow-failure",
+        "Upcoming Shore dive dates — schedule snapshot: body-changed-with-same-check-date"
       ]
     },
     {
