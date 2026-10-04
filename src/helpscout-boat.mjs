@@ -1,5 +1,9 @@
 import { DateTime } from "luxon";
 import { load } from "cheerio";
+import { createHash } from "node:crypto";
+import { writeFile } from "node:fs/promises";
+import { join } from "node:path";
+import { tmpdir } from "node:os";
 import { articleFingerprint, deduplicateWidgetRows, parseWidgetRow, ZONE } from "./helpscout-calendar.mjs";
 
 export { ZONE };
@@ -7,6 +11,12 @@ export const SOURCE_URL = "https://www.abyss.com.au/boat-diving-beacon";
 export const SOURCE = { id: "4862", kind: "charter", label: "boat dives" };
 export const MARKER = "ABYSS_BOAT_SNAPSHOT_V1";
 export const ARTICLE_HEADING = "Upcoming Sydney boat dives — schedule snapshot";
+
+// Preserve the operator clarification read from the existing published article
+// during the owner-authorised recovery on 4 October 2026. A site maximum alone
+// must not erase a confirmed, shallower Henry Head departure profile.
+export const HENRY_HEAD_GUIDANCE = "Ideal first boat dive with an easily maintained shallow profile within Open Water limits. Reaching deeper water requires effort and a long swim; confirm the individual plan, recency and conditions with the team.";
+export const OPERATOR_PROFILE_GUIDANCE = "Use the actual planned dive profile and confirmed operator requirements for eligibility, not the site maximum alone. Abyss confirmed on 30 September 2026 that Henry Head is an ideal first boat dive with an easy shallow profile; the 12–24m listing does not make it Advanced-only. Ask about certification and recent experience.";
 
 const categories = new Map([
   ["/charters/boat-dives", { label: "boat dives", name: "Boat dive" }],
@@ -49,6 +59,13 @@ export function certificationGuidance(event) {
   }
   if (!event.depth) return "Depth and trip-specific certification are not stated in this event; confirm with the dive team before booking.";
   if (event.depth.maximum > 30) return "Deep-diving qualification and relevant experience required; confirm this trip's exact requirements with the dive team.";
+  // The reviewed clarification applies to normal Henry Head boat departures,
+  // not an explicitly Advanced-only, technical, deeper or unguided event.
+  if (event.category === "Boat dive" && /\bhenry\s+head\b/i.test(event.title || "") &&
+      event.depth.maximum <= 24 && !event.unguided &&
+      !/must be advanced|advanced[- ]only|\bunguided\b/i.test(`${event.title || ""} ${event.description || ""}`)) {
+    return HENRY_HEAD_GUIDANCE;
+  }
   if (event.depth.maximum > 18 || /must be advanced/i.test(event.description)) {
     return "Advanced Open Water or higher and suitable recent experience; confirm this trip's exact requirements with the dive team.";
   }
@@ -103,7 +120,7 @@ export function renderBoatArticle(snapshot) {
     `<p><strong>Last successfully checked: ${html(date(checkedAt))} at ${html(checkedAt.toFormat("HH:mm ZZZZ"))}, Australia/Sydney.</strong></p>`,
     `<p>Source: <a href="${SOURCE_URL}">Abyss Boat Diving Beacon schedule</a>. The schedule is checked daily in Sydney time. These are ${events.length} listed boat events from ${html(date(asDate(events[0].startDate)))} to ${html(date(asDate(events.at(-1).startDate)))}. The search window is ${html(date(today))} through ${html(date(through))}; only supplied events are listed. No listing beyond the last date does not prove no later boat dives will run.</p>`,
     "<h2>Using these listings</h2>",
-    "<p>These are scheduled departures as of the check date, with Sydney local start times. Open the individual event link for current price, places, meeting point and final details before booking. The planned site can change with conditions; the skipper and dive team make the final call. If the check date is old, use the live boat booking page for current departures. Qualification guidance here is based on the depth published for each event; ask the dive team about your own certification and recent experience.</p>"
+    `<p>These are scheduled departures as of the check date, with Sydney local start times. Open the individual event link for current price, places, meeting point and final details before booking. The planned site can change with conditions; the skipper and dive team make the final call. If the check date is old, use the live boat booking page for current departures. ${html(OPERATOR_PROFILE_GUIDANCE)} Copy only the complete booking URL supplied for the matching event below; never construct or alter encoded q/cart parameters. If an exact event link is unavailable, give the standard booking page and state the date and time to select.</p>`
   ];
   const windows = weekendWindows(today);
   for (const [heading, saturday] of [
@@ -130,6 +147,29 @@ function contentFingerprint(markup) {
     /(Last successfully checked:\s*[^<]*? at )[^<,]+(?=, Australia\/Sydney\.)/i,
     "$1[verified clock]"
   ));
+}
+
+export function reviewedBodyFingerprint(markup) {
+  // Normalise only presentation differences seen in the read-only Quill
+  // capture: paragraph tags, HTML entities, whitespace and zero-width BOMs.
+  const plain = load(String(markup || "").replace(/<[^>]+>/g, " ")).root().text()
+    .replace(/\uFEFF/g, "").replace(/\s+/g, " ").trim();
+  return createHash("sha256").update(plain).digest("hex");
+}
+
+function isReviewedLegacyArticle(article) {
+  // One exact, fully reviewed legacy body only. No generic marker bypass.
+  // Changed text, unknown links, another article, or a draft still blocks.
+  if (article.id !== "6abb767c171ef8b866f2c9ce" || article.collectionId !== "6abb75219dcaab7ce64c5880") return false;
+  if (reviewedBodyFingerprint(article.text) !== "3e5c3c81a27c55bdd93096f274e1b67b83fbbc5b69b18a184e3044f91f5ed103") return false;
+  const $ = load(article.text || "");
+  const links = $("a[href]").toArray().map(el => $(el).attr("href"));
+  return links.length === 41 && links.every(url => [
+    "https://www.abyss.com.au/charters/boat-dives",
+    "https://www.abyss.com.au/charters/tech-boat-dives",
+    "https://www.abyss.com.au/charters/scuba-dive-with-seals",
+    "https://www.abyss.com.au/charters/single-seal-dive"
+  ].includes(url));
 }
 
 export async function updateBoatArticle(snapshot, apiKey, fetchImpl = fetch, { dryRun = true, target } = {}) {
@@ -163,21 +203,10 @@ export async function updateBoatArticle(snapshot, apiKey, fetchImpl = fetch, { d
   const current = (await request(url, "GET")).article;
   validate(current);
   const currentText = current.text || "";
-  // Diagnostics contain booleans only; no private article body is logged.
-  // The existing overwrite protection is deliberately unchanged in this step.
-  if (!currentText.includes(MARKER) && !(currentText.includes(SOURCE_URL) && currentText.includes(ARTICLE_HEADING))) {
-    const $ = load(currentText);
-    const normalize = text => String(text).replace(/\s+/g, " ").trim();
-    const evidence = {
-      marker: currentText.includes(MARKER),
-      sourceRaw: currentText.includes(SOURCE_URL),
-      sourceLink: $("a[href]").toArray().some(el => $(el).attr("href") === SOURCE_URL),
-      headingRaw: currentText.includes(ARTICLE_HEADING),
-      headingDecoded: $("h1,h2,h3").toArray().some(el => normalize($(el).text()) === ARTICLE_HEADING),
-      checkedLabel: normalize($.root().text()).includes("Last successfully checked:"),
-      scheduleSection: $("h2,h3").toArray().some(el => normalize($(el).text()) === "All upcoming boat dive dates")
-    };
-    throw new Error("Boat article managed marker and source heading are missing; article left unchanged. Recognition checks: " + JSON.stringify(evidence));
+  const managed = currentText.includes(MARKER) || (currentText.includes(SOURCE_URL) && currentText.includes(ARTICLE_HEADING));
+  const reviewedLegacy = !managed && isReviewedLegacyArticle(current);
+  if (!managed && !reviewedLegacy) {
+    throw new Error("Boat article managed marker and source heading are missing, and body does not match the reviewed recovery; article left unchanged");
   }
   const previousCount = Number(currentText.match(/These are (\d+) listed boat events/)?.[1]);
   if (previousCount && snapshot.events.length < previousCount * 0.6) {
@@ -185,12 +214,22 @@ export async function updateBoatArticle(snapshot, apiKey, fetchImpl = fetch, { d
   }
   const next = renderBoatArticle(snapshot);
   if (contentFingerprint(currentText) === contentFingerprint(next)) return { status: "unchanged", count: snapshot.events.length };
-  if (dryRun) return { status: "dry-run", count: snapshot.events.length };
+  if (dryRun) return { status: "dry-run", count: snapshot.events.length, reviewedLegacy };
+  // Re-read immediately before a write to protect edits made during the check.
+  const latest = (await request(url, "GET")).article;
+  validate(latest);
+  if (latest.text !== currentText) throw new Error("Boat article changed during preflight; article left unchanged");
+  if (reviewedLegacy) {
+    // Private backup stays in the runner's temporary area, never public logs,
+    // public diagnostics artifacts or the repository. A text capture is also
+    // retained in the owner's recovery conversation.
+    await writeFile(join(process.env.RUNNER_TEMP || tmpdir(), `boat-before-recovery-${articleId}.json`), JSON.stringify(current), { mode: 0o600 });
+  }
   await request(url, "PUT", { text: next });
   const verified = (await request(url, "GET")).article;
   validate(verified);
   if (articleFingerprint(verified.text) !== articleFingerprint(next)) {
     throw new Error("Boat published readback mismatch; inspect before retrying");
   }
-  return { status: "updated", count: snapshot.events.length };
+  return { status: "updated", count: snapshot.events.length, ...(reviewedLegacy ? { recoveredReviewedLegacy: true } : {}) };
 }
