@@ -60,8 +60,7 @@ jobs:
           git add -- data/helpscout-calendar-sync-status.json
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "chore: record verified Calendar schedule refresh"
-          git pull --rebase origin main
-          git push origin HEAD:main
+          bash scripts/push-publication-records.sh
       - name: Save candidate and validation summary
         if: always()
         uses: actions/upload-artifact@v7
