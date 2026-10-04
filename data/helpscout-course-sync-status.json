@@ -1,12 +1,12 @@
 {
-  "attemptedAt": "2026-10-03T06:50:41.764+10:00",
+  "attemptedAt": "2026-10-04T21:54:04.245+11:00",
   "status": "published-and-verified",
-  "lastSuccessfulCheck": "2026-10-03T06:50:41.764+10:00",
-  "staleAfter": "2026-10-05T07:50:41.764+11:00",
+  "lastSuccessfulCheck": "2026-10-04T21:54:04.245+11:00",
+  "staleAfter": "2026-10-06T21:54:04.245+11:00",
   "publication": {
     "status": "published-and-verified",
     "id": "6abd113e528fa6f4b198ab23",
-    "count": 95,
+    "count": 90,
     "articles": [
       {
         "id": "6abd12997cdaed3f1efa5545",
@@ -51,15 +51,15 @@
     ]
   },
   "coverage": {
-    "sourceTotal": 95,
+    "sourceTotal": 90,
     "pageSizes": [
       50,
-      45
+      40
     ],
     "pages": 2,
     "method": "DS360 course-beacon widget and its own paginated AJAX endpoint; explicit offset 50"
   },
-  "firstDate": "2026-10-03",
+  "firstDate": "2026-10-10",
   "lastDate": "2027-12-19",
   "warningCount": 15
 }

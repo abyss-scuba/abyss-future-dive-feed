@@ -1,144 +1,19 @@
 {
   "version": 1,
-  "checkedAt": "2026-10-03T06:50:41.764+10:00",
-  "localDate": "2026-10-03",
-  "staleAfter": "2026-10-05T07:50:41.764+11:00",
+  "checkedAt": "2026-10-04T21:54:04.245+11:00",
+  "localDate": "2026-10-04",
+  "staleAfter": "2026-10-06T21:54:04.245+11:00",
   "source": "https://www.abyss.com.au/course-beacon",
   "extraction": {
-    "sourceTotal": 95,
+    "sourceTotal": 90,
     "pageSizes": [
       50,
-      45
+      40
     ],
     "pages": 2,
     "method": "DS360 course-beacon widget and its own paginated AJAX endpoint; explicit offset 50"
   },
   "sessions": [
-    {
-      "id": "41406252",
-      "courseKey": "padi-advanced-open-water-sydney",
-      "articleSlug": "padi-advanced-open-water-sydney",
-      "course": "PADI Advanced Open Water in Sydney",
-      "listingName": "Advanced Open Water Diver",
-      "variant": "AOW 03-10-2026: Advanced Openwater Diver Course",
-      "language": "Not specified by source",
-      "startDate": "2026-10-03",
-      "endDate": "2026-10-04",
-      "firstSessionDate": "2026-10-03",
-      "firstSessionTime": "08:00",
-      "sessionDetails": [
-        "Start date: 03 Oct 2026 08:00 AM",
-        "AOW 03-10-2026: Advanced Openwater Diver Course"
-      ],
-      "price": 599,
-      "currency": "AUD",
-      "available": 4,
-      "capacity": 8,
-      "bookingStatus": "listed with places at check",
-      "bookingUrl": "https://www.abyss.com.au/courses/padi-advanced-open-water-course?q=cGFydF9udW1iZXI9QU9XIDAzLTEwLTIwMjYmZGF0ZT0mb3Blbl9jYXJ0X2lkPTQxNDA2MjUy",
-      "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
-    },
-    {
-      "id": "66732259",
-      "courseKey": "padi-shark-conservation-sydney",
-      "articleSlug": "padi-shark-conservation-sydney",
-      "course": "PADI AWARE Shark Conservation in Sydney",
-      "listingName": "PADI Aware Shark Conservation Course",
-      "variant": "Aware Shark Conservation 03/10/26: Discover why sharks matter and how divers can protect them.",
-      "language": "Not specified by source",
-      "startDate": "2026-10-03",
-      "endDate": "2026-10-03",
-      "firstSessionDate": "2026-10-03",
-      "firstSessionTime": "08:00",
-      "sessionDetails": [
-        "Start date: 03 Oct 2026 08:00 AM",
-        "Aware Shark Conservation 03/10/26: Discover why sharks matter and how divers can protect them."
-      ],
-      "price": 350,
-      "currency": "AUD",
-      "available": 2,
-      "capacity": 4,
-      "bookingStatus": "listed with places at check",
-      "bookingUrl": "https://www.abyss.com.au/courses/padi-aware-shark-conservation-course-dive-with-purpose?q=cGFydF9udW1iZXI9QXdhcmUgU2hhcmsgQ29uc2VydmF0aW9uIDAzLzEwLzI2JmRhdGU9Jm9wZW5fY2FydF9pZD02NjczMjI1OQ==",
-      "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
-    },
-    {
-      "id": "67009009",
-      "courseKey": "padi-divemaster-course-sydney",
-      "articleSlug": "padi-divemaster-course-sydney",
-      "course": "PADI Divemaster course in Sydney",
-      "listingName": "PADI Divemaster Certification and Training",
-      "variant": "03.10.26/03-10-2026: Divemaster Course Part Time Chinese",
-      "language": "Chinese",
-      "startDate": "2026-10-03",
-      "endDate": "2026-10-31",
-      "firstSessionDate": "2026-10-03",
-      "firstSessionTime": "08:00",
-      "sessionDetails": [
-        "Start date: 03 Oct 2026 08:00 AM",
-        "03.10.26/03-10-2026: Divemaster Course Part Time Chinese"
-      ],
-      "price": 1395,
-      "currency": "AUD",
-      "available": 6,
-      "capacity": 8,
-      "bookingStatus": "listed with places at check",
-      "bookingUrl": "https://www.abyss.com.au/courses/padi-divemaster-certification-and-training?q=cGFydF9udW1iZXI9MDMuMTAuMjYvMDMtMTAtMjAyNiZkYXRlPSZvcGVuX2NhcnRfaWQ9NjcwMDkwMDk=",
-      "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
-    },
-    {
-      "id": "66883716",
-      "courseKey": "padi-nitrox-sydney",
-      "articleSlug": "padi-nitrox-sydney",
-      "course": "PADI Enriched Air Nitrox in Sydney",
-      "listingName": "Enriched Air Diver",
-      "variant": "Enriched Air Diver 03/10/26: Enriched Air (Nitrox) Diver",
-      "language": "Not specified by source",
-      "startDate": "2026-10-03",
-      "endDate": "2026-10-03",
-      "firstSessionDate": "2026-10-03",
-      "firstSessionTime": "08:00",
-      "sessionDetails": [
-        "Start date: 03 Oct 2026 08:00 AM",
-        "Enriched Air Diver 03/10/26: Enriched Air (Nitrox) Diver"
-      ],
-      "price": 345,
-      "currency": "AUD",
-      "available": 8,
-      "capacity": 8,
-      "bookingStatus": "listed with places at check",
-      "bookingUrl": "https://www.abyss.com.au/courses/enriched-air-diver?q=cGFydF9udW1iZXI9RW5yaWNoZWQgQWlyIERpdmVyIDAzLzEwLzI2JmRhdGU9Jm9wZW5fY2FydF9pZD02Njg4MzcxNg==",
-      "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
-    },
-    {
-      "id": "66636252",
-      "courseKey": "padi-freediver-sydney",
-      "articleSlug": "padi-freediver-sydney",
-      "course": "PADI Freediver in Sydney",
-      "listingName": "PADI Freediver Course",
-      "variant": "Freediver 3 oct 2026/03-10-2026: Freediver Course",
-      "language": "Not specified by source",
-      "startDate": "2026-10-03",
-      "endDate": "2026-10-04",
-      "firstSessionDate": "2026-10-03",
-      "firstSessionTime": "09:00",
-      "sessionDetails": [
-        "Start date: 03 Oct 2026 09:00 AM",
-        "Freediver 3 oct 2026/03-10-2026: Freediver Course"
-      ],
-      "price": 599,
-      "currency": "AUD",
-      "available": 0,
-      "capacity": 4,
-      "bookingStatus": "sold out at check",
-      "bookingUrl": "https://www.abyss.com.au/courses/padi-freediver-course?q=cGFydF9udW1iZXI9RnJlZWRpdmVyIDMgb2N0IDIwMjYvMDMtMTAtMjAyNiZkYXRlPSZvcGVuX2NhcnRfaWQ9NjY2MzYyNTI=",
-      "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
-    },
     {
       "id": "41406476",
       "courseKey": "emergency-first-response-sydney",
@@ -157,12 +32,12 @@
       ],
       "price": 175,
       "currency": "AUD",
-      "available": 4,
+      "available": 3,
       "capacity": 8,
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/emergency-first-response?q=cGFydF9udW1iZXI9RW1lcmdlbmN5IEZpcnN0IFJlc3BvbnNlIDEwLzEwLzI3JmRhdGU9Jm9wZW5fY2FydF9pZD00MTQwNjQ3Ng==",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66993507",
@@ -187,7 +62,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/padi-freediver-course?q=cGFydF9udW1iZXI9RnJlZWRpdmUxMCBPY3QgLzEwLTEwLTIwMjYmZGF0ZT0mb3Blbl9jYXJ0X2lkPTY2OTkzNTA3",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "41406453",
@@ -212,7 +87,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/peak-performance-buoyancy?q=cGFydF9udW1iZXI9UGVhayBQZXJmb3JtYW5jZSBCdW95YW5jeSAxMS8xMC8yNiZkYXRlPSZvcGVuX2NhcnRfaWQ9NDE0MDY0NTM=",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "67000708",
@@ -237,7 +112,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/padi-freediver-course?q=cGFydF9udW1iZXI9RnJlZWRpdmluZyAxNy0xMC0yNi8xNy0xMC0yMDI2JmRhdGU9Jm9wZW5fY2FydF9pZD02NzAwMDcwOA==",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66594121",
@@ -262,7 +137,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/reactivate-your-diving?q=cGFydF9udW1iZXI9UEFESSBSZWZyZXNoZXIgQ291cnNlIDE3LzEwLzIwMjYmZGF0ZT0mb3Blbl9jYXJ0X2lkPTY2NTk0MTIx",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "41406234",
@@ -287,7 +162,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/padi-rescue-diver-course?q=cGFydF9udW1iZXI9UkVTQyAxNy0xMC0yMDI2JmRhdGU9Jm9wZW5fY2FydF9pZD00MTQwNjIzNA==",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "41406253",
@@ -307,12 +182,12 @@
       ],
       "price": 599,
       "currency": "AUD",
-      "available": 6,
+      "available": 5,
       "capacity": 8,
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/padi-advanced-open-water-course?q=cGFydF9udW1iZXI9QU9XIDI0LTEwLTIwMjYmZGF0ZT0mb3Blbl9jYXJ0X2lkPTQxNDA2MjUz",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "41406244",
@@ -337,7 +212,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/padi-divemaster-certification-and-training?q=cGFydF9udW1iZXI9RE0gMjQtMTAtMjAyNiZkYXRlPSZvcGVuX2NhcnRfaWQ9NDE0MDYyNDQ=",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66883717",
@@ -362,7 +237,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/enriched-air-diver?q=cGFydF9udW1iZXI9RW5yaWNoZWQgQWlyIERpdmVyIDI0LzEwLzI2JmRhdGU9Jm9wZW5fY2FydF9pZD02Njg4MzcxNw==",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66461415",
@@ -387,7 +262,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/how-to-become-a-mermaid?q=cGFydF9udW1iZXI9TWVybWFpZCAyNCBPY3QvMjQtMTAtMjAyNiZkYXRlPSZvcGVuX2NhcnRfaWQ9NjY0NjE0MTU=",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66991806",
@@ -412,7 +287,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/avelo-dive-course?q=cGFydF9udW1iZXI9QVZFTE8gMzAtMTAmZGF0ZT0mb3Blbl9jYXJ0X2lkPTY2OTkxODA2",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "41406254",
@@ -437,7 +312,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/padi-advanced-open-water-course?q=cGFydF9udW1iZXI9QU9XIDA3LTExLTIwMjYmZGF0ZT0mb3Blbl9jYXJ0X2lkPTQxNDA2MjU0",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66883718",
@@ -462,7 +337,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/enriched-air-diver?q=cGFydF9udW1iZXI9RW5yaWNoZWQgQWlyIERpdmVyIDA3LzExLzI2JmRhdGU9Jm9wZW5fY2FydF9pZD02Njg4MzcxOA==",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "41478424",
@@ -489,7 +364,7 @@
       "warnings": [
         "The source lists an earlier session/preparation date; confirm the full timetable before booking."
       ],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "41406471",
@@ -514,7 +389,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/deep-diver?q=cGFydF9udW1iZXI9REVFUDE0LTExLTIwMjYmZGF0ZT0mb3Blbl9jYXJ0X2lkPTQxNDA2NDcx",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "67025832",
@@ -539,7 +414,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/reactivate-your-diving?q=cGFydF9udW1iZXI9UmVmcmVzaGVyIENvdXJzZSAxNC8xMS8yNiZkYXRlPSZvcGVuX2NhcnRfaWQ9NjcwMjU4MzI=",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "41406421",
@@ -564,7 +439,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/padi-advanced-open-water-course?q=cGFydF9udW1iZXI9QU9XIDIxLTExLTIwMjYmZGF0ZT0mb3Blbl9jYXJ0X2lkPTQxNDA2NDIx",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66883719",
@@ -589,7 +464,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/enriched-air-diver?q=cGFydF9udW1iZXI9RW5yaWNoZWQgQWlyIERpdmVyIDIxLzExLzI2JmRhdGU9Jm9wZW5fY2FydF9pZD02Njg4MzcxOQ==",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66713329",
@@ -616,7 +491,7 @@
       "warnings": [
         "The source lists an earlier session/preparation date; confirm the full timetable before booking."
       ],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "67172076",
@@ -641,7 +516,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/padi-rescue-diver-course?q=cGFydF9udW1iZXI9UEFESSBSZXNjdWUgRGl2ZXIgMjgvMTEvMjYmZGF0ZT0mb3Blbl9jYXJ0X2lkPTY3MTcyMDc2",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "67034917",
@@ -666,7 +541,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/sidemount-diver?q=cGFydF9udW1iZXI9NjA0OTctMS8yOC0xMS0yMDI2JmRhdGU9Jm9wZW5fY2FydF9pZD02NzAzNDkxNw==",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "41406449",
@@ -691,7 +566,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/padi-advanced-open-water-course?q=cGFydF9udW1iZXI9QU9XIDA1LTEyLTIwMjYmZGF0ZT0mb3Blbl9jYXJ0X2lkPTQxNDA2NDQ5",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66883720",
@@ -716,7 +591,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/enriched-air-diver?q=cGFydF9udW1iZXI9RW5yaWNoZWQgQWlyIERpdmVyIDA1LzEyLzI2JmRhdGU9Jm9wZW5fY2FydF9pZD02Njg4MzcyMA==",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "41579313",
@@ -741,7 +616,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/tec-40?q=cGFydF9udW1iZXI9VGVjIDQwIDUvMTIvMjAyNiZkYXRlPSZvcGVuX2NhcnRfaWQ9NDE1NzkzMTM=",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "41406450",
@@ -766,7 +641,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/padi-advanced-open-water-course?q=cGFydF9udW1iZXI9QU9XIDEyLTEyLTIwMjYmZGF0ZT0mb3Blbl9jYXJ0X2lkPTQxNDA2NDUw",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66883721",
@@ -791,7 +666,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/enriched-air-diver?q=cGFydF9udW1iZXI9RW5yaWNoZWQgQWlyIERpdmVyIDEyLzEyLzI2JmRhdGU9Jm9wZW5fY2FydF9pZD02Njg4MzcyMQ==",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "67034918",
@@ -816,7 +691,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/reactivate-your-diving?q=cGFydF9udW1iZXI9UEFESSBSZWFjdGl2YXRlIFJlZnJlc2hlciAxOS8xMi8yNiZkYXRlPSZvcGVuX2NhcnRfaWQ9NjcwMzQ5MTg=",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66724054",
@@ -841,7 +716,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/padi-advanced-open-water-course?q=cGFydF9udW1iZXI9QWR2YW5jZWQgT3BlbiBXYXRlciAyLzEvMjcmZGF0ZT0mb3Blbl9jYXJ0X2lkPTY2NzI0MDU0",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66724056",
@@ -866,7 +741,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/padi-advanced-open-water-course?q=cGFydF9udW1iZXI9QWR2YW5jZWQgT3BlbiBXYXRlciA0LzEvMjcmZGF0ZT0mb3Blbl9jYXJ0X2lkPTY2NzI0MDU2",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66724032",
@@ -893,7 +768,7 @@
       "warnings": [
         "The source first-session date falls after the listed course end date. Ask Abyss to confirm before booking."
       ],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66654772",
@@ -918,7 +793,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/padi-rescue-diver-course?q=cGFydF9udW1iZXI9UEFESSBSZXNjdWUgRGl2ZXIgOS8xLzI3JmRhdGU9Jm9wZW5fY2FydF9pZD02NjY1NDc3Mg==",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66654761",
@@ -943,7 +818,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/padi-divemaster-certification-and-training?q=cGFydF9udW1iZXI9RGl2ZW1hc3RlciBQcm9ncmFtIDE2LzEvMjcmZGF0ZT0mb3Blbl9jYXJ0X2lkPTY2NjU0NzYx",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66724057",
@@ -968,7 +843,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/padi-advanced-open-water-course?q=cGFydF9udW1iZXI9QWR2YW5jZWQgT3BlbiBXYXRlciAzMC8xLzI3JmRhdGU9Jm9wZW5fY2FydF9pZD02NjcyNDA1Nw==",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66659963",
@@ -993,7 +868,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/deep-diver?q=cGFydF9udW1iZXI9UEFESSBEZWVwIERpdmVyIDMwLzEvMjcmZGF0ZT0mb3Blbl9jYXJ0X2lkPTY2NjU5OTYz",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66654778",
@@ -1020,7 +895,7 @@
       "warnings": [
         "The source lists an earlier session/preparation date; confirm the full timetable before booking."
       ],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66720866",
@@ -1045,7 +920,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/peak-performance-buoyancy?q=cGFydF9udW1iZXI9UGVhayBQZXJmb3JtYW5jZSBCdW95YW5jeSA2LzIvMjcmZGF0ZT0mb3Blbl9jYXJ0X2lkPTY2NzIwODY2",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66713330",
@@ -1070,7 +945,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/underwater-navigator?q=cGFydF9udW1iZXI9VW5kZXJ3YXRlciBOYXZpZ2F0aW9uIDcvMi8yNyZkYXRlPSZvcGVuX2NhcnRfaWQ9NjY3MTMzMzA=",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66724058",
@@ -1095,7 +970,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/padi-advanced-open-water-course?q=cGFydF9udW1iZXI9QWR2YW5jZWQgT3BlbiBXYXRlciAxMy8yLzI3JmRhdGU9Jm9wZW5fY2FydF9pZD02NjcyNDA1OA==",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66724059",
@@ -1120,7 +995,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/padi-advanced-open-water-course?q=cGFydF9udW1iZXI9QWR2YW5jZWQgT3BlbiBXYXRlciAyNy8yLzI3JmRhdGU9Jm9wZW5fY2FydF9pZD02NjcyNDA1OQ==",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66724035",
@@ -1147,7 +1022,7 @@
       "warnings": [
         "The source first-session date falls after the listed course end date. Ask Abyss to confirm before booking."
       ],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66654773",
@@ -1172,7 +1047,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/padi-rescue-diver-course?q=cGFydF9udW1iZXI9UEFESSBSZXNjdWUgRGl2ZXIgNi8zLzI3JmRhdGU9Jm9wZW5fY2FydF9pZD02NjY1NDc3Mw==",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66724060",
@@ -1197,7 +1072,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/padi-advanced-open-water-course?q=cGFydF9udW1iZXI9QWR2YW5jZWQgT3BlbiBXYXRlciAxMy8zLzI3JmRhdGU9Jm9wZW5fY2FydF9pZD02NjcyNDA2MA==",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66654762",
@@ -1222,7 +1097,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/padi-divemaster-certification-and-training?q=cGFydF9udW1iZXI9RGl2ZW1hc3RlciBQcm9ncmFtIDEzLzMvMjcmZGF0ZT0mb3Blbl9jYXJ0X2lkPTY2NjU0NzYy",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66724061",
@@ -1247,7 +1122,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/padi-advanced-open-water-course?q=cGFydF9udW1iZXI9QWR2YW5jZWQgT3BlbiBXYXRlciAyMC8zLzI3JmRhdGU9Jm9wZW5fY2FydF9pZD02NjcyNDA2MQ==",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66654779",
@@ -1274,7 +1149,7 @@
       "warnings": [
         "The source lists an earlier session/preparation date; confirm the full timetable before booking."
       ],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66724062",
@@ -1299,7 +1174,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/padi-advanced-open-water-course?q=cGFydF9udW1iZXI9QWR2YW5jZWQgT3BlbiBXYXRlciAzLzQvMjcmZGF0ZT0mb3Blbl9jYXJ0X2lkPTY2NzI0MDYy",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66654785",
@@ -1324,7 +1199,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/deep-diver?q=cGFydF9udW1iZXI9UEFESSBEZWVwIERpdmVyIDMvNC8yNyZkYXRlPSZvcGVuX2NhcnRfaWQ9NjY2NTQ3ODU=",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66740658",
@@ -1349,7 +1224,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/enriched-air-diver?q=cGFydF9udW1iZXI9RW5yaWNoZWQgQWlyLzAzLTA0LTIwMjcmZGF0ZT0mb3Blbl9jYXJ0X2lkPTY2NzQwNjU4",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "41406460",
@@ -1376,7 +1251,7 @@
       "warnings": [
         "The source lists an earlier session/preparation date; confirm the full timetable before booking."
       ],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66720867",
@@ -1401,7 +1276,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/peak-performance-buoyancy?q=cGFydF9udW1iZXI9UGVhayBQZXJmb3JtYW5jZSBCdW95YW5jeSAxMS80LzI3JmRhdGU9Jm9wZW5fY2FydF9pZD02NjcyMDg2Nw==",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66724063",
@@ -1426,7 +1301,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/padi-advanced-open-water-course?q=cGFydF9udW1iZXI9QWR2YW5jZWQgT3BlbiBXYXRlciAxLzUvMjcmZGF0ZT0mb3Blbl9jYXJ0X2lkPTY2NzI0MDYz",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66724036",
@@ -1453,7 +1328,7 @@
       "warnings": [
         "The source first-session date falls after the listed course end date. Ask Abyss to confirm before booking."
       ],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66654774",
@@ -1478,7 +1353,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/padi-rescue-diver-course?q=cGFydF9udW1iZXI9UEFESSBSZXNjdWUgRGl2ZXIgOC81LzI3JmRhdGU9Jm9wZW5fY2FydF9pZD02NjY1NDc3NA==",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66654763",
@@ -1503,7 +1378,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/padi-divemaster-certification-and-training?q=cGFydF9udW1iZXI9RGl2ZW1hc3RlciBQcm9ncmFtIDE1LzUvMjcmZGF0ZT0mb3Blbl9jYXJ0X2lkPTY2NjU0NzYz",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66720869",
@@ -1528,7 +1403,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/dry-suit-diver?q=cGFydF9udW1iZXI9UEFESSBEcnlzdWl0IDIzLTA1LTIwMjcmZGF0ZT0mb3Blbl9jYXJ0X2lkPTY2NzIwODY5",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66724066",
@@ -1553,7 +1428,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/padi-advanced-open-water-course?q=cGFydF9udW1iZXI9QWR2YW5jZWQgT3BlbiBXYXRlciAyOS81LzI3JmRhdGU9Jm9wZW5fY2FydF9pZD02NjcyNDA2Ng==",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66654786",
@@ -1578,7 +1453,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/deep-diver?q=cGFydF9udW1iZXI9UEFESSBEZWVwIERpdmVyIDI5LzUvMjcmZGF0ZT0mb3Blbl9jYXJ0X2lkPTY2NjU0Nzg2",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66654781",
@@ -1605,7 +1480,7 @@
       "warnings": [
         "The source lists an earlier session/preparation date; confirm the full timetable before booking."
       ],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66720871",
@@ -1630,7 +1505,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/dry-suit-diver?q=cGFydF9udW1iZXI9UEFESSBEcnlzdWl0IDA2LTA2LTIwMjcmZGF0ZT0mb3Blbl9jYXJ0X2lkPTY2NzIwODcx",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66724069",
@@ -1655,7 +1530,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/padi-advanced-open-water-course?q=cGFydF9udW1iZXI9QWR2YW5jZWQgT3BlbiBXYXRlciAxOC82LzI3JmRhdGU9Jm9wZW5fY2FydF9pZD02NjcyNDA2OQ==",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66720864",
@@ -1680,7 +1555,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/underwater-navigator?q=cGFydF9udW1iZXI9VW5kZXJ3YXRlciBOYXZpZ2F0aW9uIDI3LzYvMjcmZGF0ZT0mb3Blbl9jYXJ0X2lkPTY2NzIwODY0",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66724038",
@@ -1707,7 +1582,7 @@
       "warnings": [
         "The source first-session date falls after the listed course end date. Ask Abyss to confirm before booking."
       ],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66654775",
@@ -1732,7 +1607,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/padi-rescue-diver-course?q=cGFydF9udW1iZXI9UEFESSBSZXNjdWUgRGl2ZXIgMTAvNy8yNyZkYXRlPSZvcGVuX2NhcnRfaWQ9NjY2NTQ3NzU=",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66654787",
@@ -1757,7 +1632,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/deep-diver?q=cGFydF9udW1iZXI9UEFESSBEZWVwIERpdmVyIDE3LzcvMjcmZGF0ZT0mb3Blbl9jYXJ0X2lkPTY2NjU0Nzg3",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66654768",
@@ -1782,7 +1657,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/padi-divemaster-certification-and-training?q=cGFydF9udW1iZXI9RGl2ZW1hc3RlciBQcm9ncmFtIDE3LzcvMjcmZGF0ZT0mb3Blbl9jYXJ0X2lkPTY2NjU0NzY4",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66724070",
@@ -1809,7 +1684,7 @@
       "warnings": [
         "The source lists an earlier session/preparation date; confirm the full timetable before booking."
       ],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66654782",
@@ -1836,7 +1711,7 @@
       "warnings": [
         "The source lists an earlier session/preparation date; confirm the full timetable before booking."
       ],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66720874",
@@ -1861,7 +1736,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/dry-suit-diver?q=cGFydF9udW1iZXI9UEFESSBEcnlzdWl0IDA4LTA4LTIwMjcmZGF0ZT0mb3Blbl9jYXJ0X2lkPTY2NzIwODc0",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66724073",
@@ -1886,7 +1761,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/padi-advanced-open-water-course?q=cGFydF9udW1iZXI9QWR2YW5jZWQgT3BlbiBXYXRlciAxNC84LzI3JmRhdGU9Jm9wZW5fY2FydF9pZD02NjcyNDA3Mw==",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66713328",
@@ -1911,7 +1786,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/equipment-specialist?q=cGFydF9udW1iZXI9RVFVSVAgMjEtMDgtMjAyNyZkYXRlPSZvcGVuX2NhcnRfaWQ9NjY3MTMzMjg=",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66720868",
@@ -1936,7 +1811,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/peak-performance-buoyancy?q=cGFydF9udW1iZXI9UGVhayBQZXJmb3JtYW5jZSBCdW95YW5jeSAyMi84LzI3JmRhdGU9Jm9wZW5fY2FydF9pZD02NjcyMDg2OA==",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66724074",
@@ -1961,7 +1836,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/padi-advanced-open-water-course?q=cGFydF9udW1iZXI9QWR2YW5jZWQgT3BlbiBXYXRlciAzLzkvMjcmZGF0ZT0mb3Blbl9jYXJ0X2lkPTY2NzI0MDc0",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66654788",
@@ -1986,7 +1861,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/deep-diver?q=cGFydF9udW1iZXI9UEFESSBEZWVwIERpdmVyIDQvOS8yNyZkYXRlPSZvcGVuX2NhcnRfaWQ9NjY2NTQ3ODg=",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66724039",
@@ -2013,7 +1888,7 @@
       "warnings": [
         "The source first-session date falls after the listed course end date. Ask Abyss to confirm before booking."
       ],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66654776",
@@ -2038,7 +1913,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/padi-rescue-diver-course?q=cGFydF9udW1iZXI9UEFESSBSZXNjdWUgRGl2ZXIgMTEvOS8yNyZkYXRlPSZvcGVuX2NhcnRfaWQ9NjY2NTQ3NzY=",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66654770",
@@ -2063,7 +1938,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/padi-divemaster-certification-and-training?q=cGFydF9udW1iZXI9RGl2ZW1hc3RlciBQcm9ncmFtIDE4LzkvMjcmZGF0ZT0mb3Blbl9jYXJ0X2lkPTY2NjU0Nzcw",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66654783",
@@ -2090,7 +1965,7 @@
       "warnings": [
         "The source lists an earlier session/preparation date; confirm the full timetable before booking."
       ],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66724075",
@@ -2115,7 +1990,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/padi-advanced-open-water-course?q=cGFydF9udW1iZXI9QWR2YW5jZWQgT3BlbiBXYXRlciA5LzEwLzI3JmRhdGU9Jm9wZW5fY2FydF9pZD02NjcyNDA3NQ==",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66720865",
@@ -2140,7 +2015,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/underwater-navigator?q=cGFydF9udW1iZXI9VW5kZXJ3YXRlciBOYXZpZ2F0aW9uIDIzLzEwLzI3JmRhdGU9Jm9wZW5fY2FydF9pZD02NjcyMDg2NQ==",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66724076",
@@ -2165,7 +2040,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/padi-advanced-open-water-course?q=cGFydF9udW1iZXI9QWR2YW5jZWQgT3BlbiBXYXRlciAzMC8xMC8yNyZkYXRlPSZvcGVuX2NhcnRfaWQ9NjY3MjQwNzY=",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66654789",
@@ -2190,7 +2065,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/deep-diver?q=cGFydF9udW1iZXI9UEFESSBEZWVwIERpdmVyIDMwLzEwLzI3JmRhdGU9Jm9wZW5fY2FydF9pZD02NjY1NDc4OQ==",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66724041",
@@ -2215,7 +2090,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/emergency-first-response?q=cGFydF9udW1iZXI9RW1lcmdlbmN5IEZpcnN0IFJlc3BvbnNlIDUvMTEvMjcmZGF0ZT0mb3Blbl9jYXJ0X2lkPTY2NzI0MDQx",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66654777",
@@ -2240,7 +2115,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/padi-rescue-diver-course?q=cGFydF9udW1iZXI9UEFESSBSZXNjdWUgRGl2ZXIgNi8xMS8yNyZkYXRlPSZvcGVuX2NhcnRfaWQ9NjY2NTQ3Nzc=",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66724077",
@@ -2265,7 +2140,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/padi-advanced-open-water-course?q=cGFydF9udW1iZXI9QWR2YW5jZWQgT3BlbiBXYXRlciAxMy8xMS8yNyZkYXRlPSZvcGVuX2NhcnRfaWQ9NjY3MjQwNzc=",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66654771",
@@ -2290,7 +2165,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/padi-divemaster-certification-and-training?q=cGFydF9udW1iZXI9RGl2ZW1hc3RlciBQcm9ncmFtIDEzLzExLzI3JmRhdGU9Jm9wZW5fY2FydF9pZD02NjY1NDc3MQ==",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66724078",
@@ -2315,7 +2190,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/padi-advanced-open-water-course?q=cGFydF9udW1iZXI9QWR2YW5jZWQgT3BlbiBXYXRlciAyNy8xMS8yNyZkYXRlPSZvcGVuX2NhcnRfaWQ9NjY3MjQwNzg=",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66654784",
@@ -2342,7 +2217,7 @@
       "warnings": [
         "The source lists an earlier session/preparation date; confirm the full timetable before booking."
       ],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66724079",
@@ -2367,7 +2242,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/padi-advanced-open-water-course?q=cGFydF9udW1iZXI9QWR2YW5jZWQgT3BlbiBXYXRlciA0LzEyLzI3JmRhdGU9Jm9wZW5fY2FydF9pZD02NjcyNDA3OQ==",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66724080",
@@ -2392,7 +2267,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/padi-advanced-open-water-course?q=cGFydF9udW1iZXI9QWR2YW5jZWQgT3BlbiBXYXRlciAxMS8xMi8yNyZkYXRlPSZvcGVuX2NhcnRfaWQ9NjY3MjQwODA=",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     },
     {
       "id": "66654790",
@@ -2417,7 +2292,7 @@
       "bookingStatus": "listed with places at check",
       "bookingUrl": "https://www.abyss.com.au/courses/deep-diver?q=cGFydF9udW1iZXI9UEFESSBEZWVwIERpdmVyIDE4LzEyLzI3JmRhdGU9Jm9wZW5fY2FydF9pZD02NjY1NDc5MA==",
       "warnings": [],
-      "linkCheckedAt": "2026-10-03T06:50:41.764+10:00"
+      "linkCheckedAt": "2026-10-04T21:54:04.245+11:00"
     }
   ]
 }
