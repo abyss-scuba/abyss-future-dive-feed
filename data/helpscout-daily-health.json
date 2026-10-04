@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-04T23:00:18.533+11:00",
+  "checkedAt": "2026-10-04T23:00:46.832+11:00",
   "localDate": "2026-10-04",
   "repository": "abyss-scuba/abyss-future-dive-feed",
   "scope": "Seven maintained Help Scout date publishers, including derived date sections; separate website future-feed dependency.",
@@ -278,15 +278,12 @@
           "eventLinks": 27,
           "bodyHash": "9f3aa5cf46961969f32b6d62658619c049488ded2d24d9477cc4e7d006076cc2",
           "errors": [],
-          "warnings": [
-            "body-changed-with-same-check-date"
-          ]
+          "warnings": []
         }
       ],
       "errors": [],
       "warnings": [
-        "latest-workflow-failure",
-        "Upcoming Shore dive dates — schedule snapshot: body-changed-with-same-check-date"
+        "latest-workflow-failure"
       ]
     },
     {
