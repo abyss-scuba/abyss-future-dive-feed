@@ -1,0 +1,92 @@
+name: Help Scout daily publication health
+on:
+  schedule:
+    - cron: '17 11 * * *'
+      timezone: Australia/Sydney
+    - cron: '17 12 * * *'
+      timezone: Australia/Sydney
+  workflow_dispatch:
+    inputs:
+      test_delivery:
+        description: Create, read back and close a clearly labelled alert-delivery test
+        type: boolean
+        default: false
+  workflow_run:
+    workflows:
+      - Sydney Dive Calendar Help Scout article
+      - Boat Diving Help Scout snapshot
+      - Sydney Course knowledge and daily dates
+      - Dive Travel daily availability snapshot
+      - Shore Diving Help Scout snapshot
+      - Beginner dive schedule Help Scout snapshot
+      - Avelo knowledge and daily course dates
+    types: [completed]
+  pull_request:
+    paths:
+      - '.github/workflows/helpscout-daily-health.yml'
+      - 'src/helpscout-daily-health.mjs'
+      - 'scripts/check-helpscout-daily-health.mjs'
+      - 'tests/helpscout-daily-health.test.mjs'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/helpscout-daily-health.yml'
+      - 'src/helpscout-daily-health.mjs'
+      - 'scripts/check-helpscout-daily-health.mjs'
+      - 'tests/helpscout-daily-health.test.mjs'
+permissions:
+  contents: read
+concurrency:
+  group: daily-docs-health-${{ github.event_name == 'pull_request' && github.ref || 'production' }}
+  cancel-in-progress: false
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: node --test tests/helpscout-daily-health.test.mjs
+      - name: Complete regression tests before deployment
+        if: github.event_name == 'pull_request'
+        run: npm test
+  report:
+    needs: test
+    if: github.event_name != 'pull_request' && (github.event_name != 'workflow_run' || (github.event.workflow_run.head_branch == 'main' && contains(fromJSON('["schedule","push","workflow_dispatch"]'), github.event.workflow_run.event)))
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+      actions: read
+      issues: write
+    steps:
+      # A privileged workflow_run must never check out the triggering PR head.
+      - uses: actions/checkout@v6
+        with:
+          ref: main
+          persist-credentials: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - name: Read every published date section and deliver the health report
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          HELP_SCOUT_DOCS_API_KEY: ${{ secrets.HELP_SCOUT_DOCS_API_KEY }}
+          HEALTH_DELIVER: 'true'
+          HEALTH_TEST_DELIVERY: ${{ github.event_name == 'push' || inputs.test_delivery || false }}
+        run: node scripts/check-helpscout-daily-health.mjs
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: daily-docs-health-${{ github.run_id }}-${{ github.run_attempt }}
+          path: diagnostics/daily-docs-health/
+          retention-days: 30
+          if-no-files-found: warn

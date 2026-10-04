@@ -4,6 +4,8 @@ on:
   schedule:
     - cron: "0 4 * * *"
       timezone: "Australia/Sydney"
+    - cron: "37 4 * * *"
+      timezone: "Australia/Sydney"
   workflow_dispatch:
     inputs:
       publish:
@@ -11,6 +13,12 @@ on:
         type: boolean
         required: true
         default: false
+  push:
+    branches: [main]
+    paths:
+      - "src/helpscout-shore.mjs"
+      - "scripts/sync-helpscout-shore.mjs"
+      - ".github/workflows/sync-helpscout-shore.yml"
   pull_request:
     paths:
       - "src/helpscout-shore.mjs"
@@ -44,7 +52,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     env:
-      DRY_RUN: ${{ (github.event_name == 'schedule' || inputs.publish) && 'false' || 'true' }}
+      DRY_RUN: ${{ (github.event_name == 'schedule' || github.event_name == 'push' || inputs.publish) && 'false' || 'true' }}
     steps:
       - uses: actions/checkout@v6
         with:
@@ -63,7 +71,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v7
         with:
-          name: helpscout-shore-${{ github.run_number }}
+          name: helpscout-shore-${{ github.run_number }}-${{ github.run_attempt }}
           path: diagnostics/helpscout-shore-*
           if-no-files-found: ignore
           retention-days: 14
