@@ -37,14 +37,14 @@ export function normalise(markup){
 }
 export function checkDates(text){
  const dates=[];
- const iso=/(?:Last successful check:|Checked \(ISO\):|Beginner schedule checked \(ISO\):|Schedule checked \(ISO\):)\s*(\d{4}-\d{2}-\d{2}T[\d:.]+(?:Z|[+-]\d{2}:\d{2}))/gi;
+ const iso=/(?:Last successful check:|Checked \(ISO\):|Beginner schedule checked \(ISO\):|Schedule checked \(ISO\):|Dated recommendations checked:)\s*(\d{4}-\d{2}-\d{2}T[\d:.]+(?:Z|[+-]\d{2}:\d{2}))/gi;
  for(const m of text.matchAll(iso)){const d=DateTime.fromISO(m[1],{setZone:true}).setZone(ZONE);if(d.isValid)dates.push(d.toISODate());}
  const human=/(?:Last successfully checked:|Schedule snapshot checked)\s*(?:(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday|Mon|Tue|Wed|Thu|Fri|Sat|Sun),?\s+)?(\d{1,2}\s+[A-Za-z]+\s+\d{4})/gi;
  for(const m of text.matchAll(human)){for(const fmt of ['d LLLL yyyy','d LLL yyyy']){const d=DateTime.fromFormat(m[1],fmt,{zone:ZONE,locale:'en'});if(d.isValid){dates.push(d.toISODate());break;}}}
  return [...new Set(dates)].sort();
 }
 export function expiryTimes(text){
- return [...text.matchAll(/(?:Expires \(ISO\):|Valid until:|Stale after:)\s*(\d{4}-\d{2}-\d{2}T[\d:.]+(?:Z|[+-]\d{2}:\d{2}))/gi)].map(m=>Date.parse(m[1])).filter(Number.isFinite);
+ return [...text.matchAll(/(?:Expires(?: \(ISO\))?:|Valid until:|Stale after:)\s*(\d{4}-\d{2}-\d{2}T[\d:.]+(?:Z|[+-]\d{2}:\d{2}))/gi)].map(m=>Date.parse(m[1])).filter(Number.isFinite);
 }
 export function inspectLinks(links){
  const unique=new Set(),errors=[];
@@ -95,13 +95,19 @@ export function evaluatePipeline(config,{status,articles,workflow,runs=[],now=Da
  else if(checked.toISODate()>now.toISODate())errors.push('receipt-in-future');
  else if(checked.toISODate()!==now.toISODate()&&now.toFormat('HH:mm')>=config.due)errors.push('daily-publication-receipt-missing');
  if(facts.dryRun||!/^(updated|unchanged|verified|updated-and-verified|created-and-verified|published-and-verified|published-and-read-back|already-published-today)$/.test(facts.status))errors.push('receipt-not-successful');
- const results=config.articles.map((spec,i)=>inspectArticle(articles[i],spec,{now,due:config.due,previous:previous?.articles?.find(a=>a.name===spec.name)}));
+ // A new verified publication can legitimately change content on the same day.
+ const prior=previous?.checkedAt===facts.checkedAt?previous:null;
+ const results=config.articles.map((spec,i)=>inspectArticle(articles[i],spec,{now,due:config.due,previous:prior?.articles?.find(a=>a.name===spec.name)}));
  for(const a of results)errors.push(...a.errors.map(e=>a.name+': '+e));
  warnings.push(...results.flatMap(a=>a.warnings.map(w=>a.name+': '+w)));
  const primary=results.find(a=>config.articles.find(s=>s.name===a.name)?.primary);
- if(Number.isInteger(facts.count)&&primary&&primary.eventLinks!==facts.count)errors.push('published-booking-link-count-differs-from-receipt');
+ // The course overview is deliberately a shortlist. Its five grouped date
+ // articles collectively hold the full schedule; duplicates in summaries do
+ // not count twice. Other publishers put their full schedule in one article.
+ const publishedCount=config.key==='courses'?inspectLinks(articles.flatMap(a=>normalise(a?.text).links)).eventLinks:primary?.eventLinks;
+ if(Number.isInteger(facts.count)&&publishedCount!==facts.count)errors.push('published-booking-link-count-differs-from-receipt');
  const scheduled=valid.find(r=>r.event==='schedule'&&r.status==='completed'&&r.conclusion==='success');
- return {key:config.key,label:config.label,state:errors.length?'FAIL':warnings.length?'WARN':'PASS',checkedAt:facts.checkedAt,count:facts.count,due:config.due,workflow:config.workflow,latestRun:latest?{id:latest.id,event:latest.event,status:latest.status,conclusion:latest.conclusion,url:latest.html_url}:null,lastSuccessfulScheduledRun:scheduled?{id:scheduled.id,createdAt:scheduled.created_at,url:scheduled.html_url}:null,articles:results,errors:[...new Set(errors)],warnings:[...new Set(warnings)]};
+ return {key:config.key,label:config.label,state:errors.length?'FAIL':warnings.length?'WARN':'PASS',checkedAt:facts.checkedAt,count:facts.count,publishedUniqueEventLinks:publishedCount??null,due:config.due,workflow:config.workflow,latestRun:latest?{id:latest.id,event:latest.event,status:latest.status,conclusion:latest.conclusion,url:latest.html_url}:null,lastSuccessfulScheduledRun:scheduled?{id:scheduled.id,createdAt:scheduled.created_at,url:scheduled.html_url}:null,articles:results,errors:[...new Set(errors)],warnings:[...new Set(warnings)]};
 }
 export function summaryMarkdown(report){
  const lines=['# Help Scout daily publication health','',`Checked: ${report.checkedAt} (${ZONE}).`,'','| Date source | Result | Last successful check | Records |','|---|---|---|---:|'];
