@@ -13,6 +13,12 @@ on:
       timezone: 'Australia/Sydney'
     - cron: '37 5 * * *'
       timezone: 'Australia/Sydney'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/sync-helpscout-calendar.yml'
+      - 'src/helpscout-calendar.mjs'
+      - 'scripts/sync-helpscout-calendar.mjs'
 
 permissions:
   contents: read
@@ -26,10 +32,14 @@ jobs:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 25
+    permissions:
+      contents: write
     env:
-      DRY_RUN: ${{ (github.event_name == 'schedule' || inputs.publish) && 'false' || 'true' }}
+      DRY_RUN: ${{ (github.event_name == 'schedule' || github.event_name == 'push' || inputs.publish) && 'false' || 'true' }}
     steps:
       - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v6
         with:
           node-version: "22"
@@ -42,6 +52,16 @@ jobs:
         env:
           HELP_SCOUT_DOCS_API_KEY: ${{ secrets.HELP_SCOUT_DOCS_API_KEY }}
           HELP_SCOUT_ARTICLE_ID: ${{ secrets.HELP_SCOUT_ARTICLE_ID }}
+      - name: Record verified Calendar publication
+        if: success() && env.DRY_RUN == 'false'
+        run: |
+          git config user.name "abyss-future-dive-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- data/helpscout-calendar-sync-status.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "chore: record verified Calendar schedule refresh"
+          git pull --rebase origin main
+          git push origin HEAD:main
       - name: Save candidate and validation summary
         if: always()
         uses: actions/upload-artifact@v7
