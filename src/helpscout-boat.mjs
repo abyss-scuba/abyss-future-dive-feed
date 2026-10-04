@@ -1,4 +1,5 @@
 import { DateTime } from "luxon";
+import { load } from "cheerio";
 import { articleFingerprint, deduplicateWidgetRows, parseWidgetRow, ZONE } from "./helpscout-calendar.mjs";
 
 export { ZONE };
@@ -162,10 +163,21 @@ export async function updateBoatArticle(snapshot, apiKey, fetchImpl = fetch, { d
   const current = (await request(url, "GET")).article;
   validate(current);
   const currentText = current.text || "";
-  // Docs may strip HTML comments. The exact article identity plus source URL
-  // and heading still identify a previously managed snapshot safely.
+  // Diagnostics contain booleans only; no private article body is logged.
+  // The existing overwrite protection is deliberately unchanged in this step.
   if (!currentText.includes(MARKER) && !(currentText.includes(SOURCE_URL) && currentText.includes(ARTICLE_HEADING))) {
-    throw new Error("Boat article managed marker and source heading are missing; article left unchanged");
+    const $ = load(currentText);
+    const normalize = text => String(text).replace(/\s+/g, " ").trim();
+    const evidence = {
+      marker: currentText.includes(MARKER),
+      sourceRaw: currentText.includes(SOURCE_URL),
+      sourceLink: $("a[href]").toArray().some(el => $(el).attr("href") === SOURCE_URL),
+      headingRaw: currentText.includes(ARTICLE_HEADING),
+      headingDecoded: $("h1,h2,h3").toArray().some(el => normalize($(el).text()) === ARTICLE_HEADING),
+      checkedLabel: normalize($.root().text()).includes("Last successfully checked:"),
+      scheduleSection: $("h2,h3").toArray().some(el => normalize($(el).text()) === "All upcoming boat dive dates")
+    };
+    throw new Error("Boat article managed marker and source heading are missing; article left unchanged. Recognition checks: " + JSON.stringify(evidence));
   }
   const previousCount = Number(currentText.match(/These are (\d+) listed boat events/)?.[1]);
   if (previousCount && snapshot.events.length < previousCount * 0.6) {
