@@ -4,7 +4,8 @@ import fs from "node:fs";
 import { DateTime } from "luxon";
 import {
   ARTICLE_HEADING, MARKER, SOURCE_URL, boatTarget, buildBoatSnapshot,
-  certificationGuidance, publishedDepth, renderBoatArticle, updateBoatArticle, weekendWindows
+  certificationGuidance, publishedDepth, renderBoatArticle, updateBoatArticle, weekendWindows,
+  HENRY_HEAD_GUIDANCE, OPERATOR_PROFILE_GUIDANCE, reviewedBodyFingerprint
 } from "../src/helpscout-boat.mjs";
 
 const fixture = JSON.parse(fs.readFileSync(new URL("./fixtures/boat-widget-2026-09-29.json", import.meta.url)));
@@ -54,13 +55,13 @@ test("captured widget 4862 yields 32 distinct exact event links and all four boa
   assert.equal(result.events.at(-1).startDate, "2026-11-29");
 });
 
-test("published depth sets conservative certification guidance and discloses unguided trips", () => {
+test("published depth preserves the Henry Head operator clarification and discloses unguided trips", () => {
   const events = snapshot().events;
   const henry = events.find(event => event.title.startsWith("Henry Head"));
   const tuggerah = events.find(event => event.title.startsWith("Tuggerah"));
   const wanderers = events.find(event => event.title.includes("Wanderers"));
   assert.deepEqual(henry.depth, { text: "12–24m", maximum: 24 });
-  assert.match(certificationGuidance(henry), /Advanced Open Water/);
+  assert.equal(certificationGuidance(henry), HENRY_HEAD_GUIDANCE);
   assert.equal(tuggerah.depth.maximum, 46);
   assert.match(certificationGuidance(tuggerah), /Technical-diving qualification/);
   assert.equal(wanderers.depth.maximum, 40);
@@ -68,6 +69,20 @@ test("published depth sets conservative certification guidance and discloses ung
   assert.equal(wanderers.unguided, true);
   assert.deepEqual(publishedDepth("reef 25–35m", "Voodoo"), { text: "25–35m", maximum: 35 });
   assert.equal(publishedDepth("site and depth to be confirmed"), null);
+});
+
+test("Henry Head clarification does not override explicit advanced, deep, technical or unguided events", () => {
+  const henry = snapshot().events.find(event => event.title.startsWith("Henry Head"));
+  assert.match(certificationGuidance({ ...henry, description: "MUST BE ADVANCED" }), /Advanced Open Water/);
+  assert.match(certificationGuidance({ ...henry, depth: { maximum: 35 } }), /Deep-diving qualification/);
+  assert.match(certificationGuidance({ ...henry, category: "Technical boat dive" }), /Technical-diving qualification/);
+  assert.notEqual(certificationGuidance({ ...henry, unguided: true }), HENRY_HEAD_GUIDANCE);
+  assert.notEqual(certificationGuidance({ ...henry, title: "Henry Head UNGUIDED Boat Dive" }), HENRY_HEAD_GUIDANCE);
+  const markup = renderBoatArticle(snapshot());
+  assert.ok(markup.includes(OPERATOR_PROFILE_GUIDANCE));
+  assert.ok(markup.includes(HENRY_HEAD_GUIDANCE));
+  assert.match(markup, /never construct or alter encoded q\/cart parameters/);
+  assert.doesNotMatch(markup, /do not generate encoded q\/cart links/);
 });
 
 test("negative seat counts and $0.00 do not become availability or a free-price promise", () => {
@@ -140,7 +155,7 @@ test("dry run uses GET only; publishing updates text only and verifies readback"
   assert.equal(source.calls[1].url, `https://docsapi.helpscout.net/v1/articles/${target.articleId}`);
   const live = await updateBoatArticle(snapshot(), "fake", source.fetchImpl, { dryRun: false, target });
   assert.equal(live.status, "updated");
-  assert.deepEqual(source.calls.slice(2).map(call => call.options.method), ["GET", "GET", "PUT", "GET"]);
+  assert.deepEqual(source.calls.slice(2).map(call => call.options.method), ["GET", "GET", "GET", "PUT", "GET"]);
   const payload = JSON.parse(source.calls.find(call => call.options.method === "PUT").options.body);
   assert.deepEqual(Object.keys(payload), ["text"]);
   assert.match(payload.text, /<!-- ABYSS_BOAT_SNAPSHOT_V1 -->/);
@@ -161,7 +176,7 @@ test("a new Sydney check date republishes even if only the timestamp changes", a
   const source = docsFetch(article({ text: yesterdayText }));
   const result = await updateBoatArticle(snapshot(), "fake", source.fetchImpl, { dryRun: false, target });
   assert.equal(result.status, "updated");
-  assert.deepEqual(source.calls.map(call => call.options.method), ["GET", "GET", "PUT", "GET"]);
+  assert.deepEqual(source.calls.map(call => call.options.method), ["GET", "GET", "GET", "PUT", "GET"]);
   const published = JSON.parse(source.calls.find(call => call.options.method === "PUT").options.body).text;
   assert.match(published, /Last successfully checked: Tuesday 29 September 2026 at 17:00 GMT\+10, Australia\/Sydney/);
 });
@@ -171,6 +186,7 @@ test("wrong target, draft, missing marker and large count loss prevent writes", 
     { id: "cccccccccccccccccccccccc" }, { collectionId: "cccccccccccccccccccccccc" },
     { name: "wrong title" }, { status: "draft" }, { hasDraft: true },
     { text: "Unrelated content" },
+    { text: `<p>${ARTICLE_HEADING}</p><p>Last successfully checked: Wednesday 30 September 2026.</p><p>${OPERATOR_PROFILE_GUIDANCE}</p>` },
     { text: `${bootstrap}<p>These are 100 listed boat events.</p>` }
   ]) {
     const source = docsFetch(article(bad));
@@ -188,8 +204,29 @@ test("wrong target, draft, missing marker and large count loss prevent writes", 
   assert.equal((await updateBoatArticle(snapshot(), "fake", strippedComment.fetchImpl, { dryRun: true, target })).status, "dry-run");
 });
 
+test("reviewed body hash ignores presentation only, not changed words or dates", () => {
+  const plain = "One & two. Second paragraph.";
+  assert.equal(reviewedBodyFingerprint(plain), reviewedBodyFingerprint("<p>One &amp; two.</p><p>Second paragraph.\uFEFF</p>"));
+  assert.notEqual(reviewedBodyFingerprint(plain), reviewedBodyFingerprint("One & two. Changed paragraph."));
+  assert.notEqual(reviewedBodyFingerprint("10 October 2026"), reviewedBodyFingerprint("21 November 2026"));
+});
+
+test("concurrent article edit during preflight prevents an overwrite", async () => {
+  const source = docsFetch();
+  let articleReads = 0;
+  const wrapped = async (url, options) => {
+    const response = await source.fetchImpl(url, options);
+    if (url.includes("/articles/") && options.method === "GET" && ++articleReads === 2) {
+      return { ...response, json: async () => ({ article: article({ text: bootstrap + "<p>New manual correction</p>" }) }) };
+    }
+    return response;
+  };
+  await assert.rejects(updateBoatArticle(snapshot(), "fake", wrapped, { dryRun: false, target }), /changed during preflight/);
+  assert.equal(source.calls.filter(call => call.options.method === "PUT").length, 0);
+});
+
 test("failed published readback is not reported as success", async () => {
   const source = docsFetch(article(), { corruptReadback: true });
   await assert.rejects(updateBoatArticle(snapshot(), "fake", source.fetchImpl, { dryRun: false, target }), /readback mismatch/);
-  assert.deepEqual(source.calls.map(call => call.options.method), ["GET", "GET", "PUT", "GET"]);
+  assert.deepEqual(source.calls.map(call => call.options.method), ["GET", "GET", "GET", "PUT", "GET"]);
 });
