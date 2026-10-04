@@ -15,9 +15,10 @@ async function main(){
  const bootstrap=process.env.BOOTSTRAP==='true',force=process.env.FORCE_REFRESH==='true',publish=process.env.PUBLISH==='true';
  const target=await readJson(TARGET);
  if(args.has('--due')){
-  if(process.env.GITHUB_EVENT_NAME==='schedule'){
-   const t=sydneyParts(now).time;if(t<'00:30'||t>'06:00')throw new Error('Scheduled run is outside 00:30–06:00 Sydney; no publication');
-  }
+  // GitHub can delay a scheduled start. A late, freshly validated same-day
+  // catch-up is safer than deliberately leaving yesterday's article in use.
+  // isDue and the published excerpts still prevent redundant daily writes.
+  if(process.env.GITHUB_EVENT_NAME==='schedule'&&sydneyParts(now).time>'06:00')console.warn('Scheduled beginner refresh started late; checking whether publication is still due.');
   let due=true;
   if(target){
    const request=makeClient(process.env.HELP_SCOUT_DOCS_API_KEY),current=await readTarget(request,target);
