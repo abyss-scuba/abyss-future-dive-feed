@@ -3,6 +3,8 @@ on:
   schedule:
     - cron: "0 8 * * *"
       timezone: "Australia/Sydney"
+    - cron: "37 8 * * *"
+      timezone: "Australia/Sydney"
   workflow_dispatch:
   push:
     branches: [main]
