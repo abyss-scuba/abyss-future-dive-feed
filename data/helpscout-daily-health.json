@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-04T23:00:46.832+11:00",
+  "checkedAt": "2026-10-04T23:06:28.369+11:00",
   "localDate": "2026-10-04",
   "repository": "abyss-scuba/abyss-future-dive-feed",
   "scope": "Seven maintained Help Scout date publishers, including derived date sections; separate website future-feed dependency.",
@@ -11,6 +11,7 @@
       "state": "PASS",
       "checkedAt": "2026-10-04",
       "count": 79,
+      "publishedUniqueEventLinks": 79,
       "due": "08:00",
       "workflow": "sync-helpscout-calendar.yml",
       "latestRun": {
@@ -45,6 +46,7 @@
       "state": "PASS",
       "checkedAt": "2026-10-04T22:30:33.190+11:00",
       "count": 30,
+      "publishedUniqueEventLinks": 30,
       "due": "04:00",
       "workflow": "sync-helpscout-boat.yml",
       "latestRun": {
@@ -80,9 +82,10 @@
     {
       "key": "courses",
       "label": "Sydney Dive Courses",
-      "state": "FAIL",
+      "state": "PASS",
       "checkedAt": "2026-10-04T21:54:04.245+11:00",
       "count": 90,
+      "publishedUniqueEventLinks": 90,
       "due": "07:00",
       "workflow": "sync-helpscout-courses.yml",
       "latestRun": {
@@ -203,9 +206,7 @@
           "warnings": []
         }
       ],
-      "errors": [
-        "published-booking-link-count-differs-from-receipt"
-      ],
+      "errors": [],
       "warnings": []
     },
     {
@@ -214,6 +215,7 @@
       "state": "PASS",
       "checkedAt": "2026-10-04T22:59:39.918+11:00",
       "count": 10,
+      "publishedUniqueEventLinks": 10,
       "due": "11:00",
       "workflow": "sync-helpscout-travel.yml",
       "latestRun": {
@@ -252,6 +254,7 @@
       "state": "WARN",
       "checkedAt": "2026-10-04T06:36:57.289+11:00",
       "count": 27,
+      "publishedUniqueEventLinks": 27,
       "due": "07:00",
       "workflow": "sync-helpscout-shore.yml",
       "latestRun": {
@@ -289,9 +292,10 @@
     {
       "key": "beginner",
       "label": "Beginner Dive Calendar",
-      "state": "FAIL",
+      "state": "PASS",
       "checkedAt": "2026-10-03T20:38:45.251Z",
       "count": 71,
+      "publishedUniqueEventLinks": 71,
       "due": "07:30",
       "workflow": "sync-helpscout-beginner.yml",
       "latestRun": {
@@ -321,12 +325,12 @@
           "number": 428,
           "name": "Your first guided dive after certification: what happens and who helps",
           "collectionId": "6abf61e6c3e570044c2891ed",
-          "checkDates": [],
+          "checkDates": [
+            "2026-10-04"
+          ],
           "eventLinks": 1,
           "bodyHash": "6ee58c3d13999d96728cecef94da70a9d65f9327676e3388664b10f3049850a1",
-          "errors": [
-            "successful-check-date-missing"
-          ],
+          "errors": [],
           "warnings": []
         },
         {
@@ -369,9 +373,7 @@
           "warnings": []
         }
       ],
-      "errors": [
-        "Your first guided dive after certification: what happens and who helps: successful-check-date-missing"
-      ],
+      "errors": [],
       "warnings": []
     },
     {
@@ -380,6 +382,7 @@
       "state": "PASS",
       "checkedAt": "2026-10-04T09:37:24.727+11:00",
       "count": 1,
+      "publishedUniqueEventLinks": 1,
       "due": "10:30",
       "workflow": "sync-helpscout-avelo.yml",
       "latestRun": {
@@ -422,5 +425,11 @@
     "issue": 45,
     "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/issues/45",
     "action": "updated"
+  },
+  "deliveryTest": {
+    "issue": 48,
+    "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/issues/48",
+    "createdReadBackAndClosed": true,
+    "emailReceiptVerified": false
   }
 }
