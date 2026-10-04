@@ -3,6 +3,8 @@ on:
   schedule:
     - cron: '30 2 * * *'
       timezone: Australia/Sydney
+    - cron: '7 4 * * *'
+      timezone: Australia/Sydney
   workflow_dispatch:
   push:
     branches: [main]
@@ -62,11 +64,15 @@ jobs:
           node-version: '22'
           cache: npm
       - run: npm ci
+        id: dependencies
       - name: Publish audited knowledge when the pack changes
         run: node scripts/publish-course-knowledge.mjs
         env:
           HELP_SCOUT_DOCS_API_KEY: ${{ secrets.HELP_SCOUT_DOCS_API_KEY }}
       - name: Refresh and read back course dates
+        # A protected manual edit in a static article must not stop the separate
+        # guarded date publisher. The knowledge error still fails the workflow.
+        if: ${{ !cancelled() && steps.dependencies.outcome == 'success' }}
         run: node scripts/sync-helpscout-courses.mjs
         env:
           DRY_RUN: 'false'
