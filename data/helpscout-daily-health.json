@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-04T23:19:07.772+11:00",
+  "checkedAt": "2026-10-04T23:19:47.334+11:00",
   "localDate": "2026-10-04",
   "repository": "abyss-scuba/abyss-future-dive-feed",
   "scope": "Seven maintained Help Scout date publishers, including derived date sections; separate website future-feed dependency.",
@@ -45,8 +45,8 @@
     {
       "key": "boat",
       "label": "Boat Diving",
-      "state": "WARN",
-      "checkedAt": "2026-10-04T22:30:33.190+11:00",
+      "state": "PASS",
+      "checkedAt": "2026-10-04T23:19:14.432+11:00",
       "count": 30,
       "publishedUniqueEventLinks": 30,
       "due": "04:00",
@@ -54,8 +54,8 @@
       "latestRun": {
         "id": 37201632179,
         "event": "push",
-        "status": "in_progress",
-        "conclusion": null,
+        "status": "completed",
+        "conclusion": "success",
         "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/37201632179"
       },
       "lastSuccessfulScheduledRun": {
@@ -79,9 +79,7 @@
         }
       ],
       "errors": [],
-      "warnings": [
-        "workflow-in_progress"
-      ]
+      "warnings": []
     },
     {
       "key": "courses",
@@ -216,8 +214,8 @@
     {
       "key": "travel",
       "label": "Dive Travel",
-      "state": "WARN",
-      "checkedAt": "2026-10-04T22:59:39.918+11:00",
+      "state": "PASS",
+      "checkedAt": "2026-10-04T23:19:37.127+11:00",
       "count": 10,
       "publishedUniqueEventLinks": 10,
       "due": "11:00",
@@ -225,8 +223,8 @@
       "latestRun": {
         "id": 37201632205,
         "event": "push",
-        "status": "in_progress",
-        "conclusion": null,
+        "status": "completed",
+        "conclusion": "success",
         "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/37201632205"
       },
       "lastSuccessfulScheduledRun": {
@@ -244,21 +242,19 @@
             "2026-10-04"
           ],
           "eventLinks": 10,
-          "bodyHash": "7f86d032989db5002fb2f046b581f4958d484ecf90fa20dadf8d83dd5cac5d91",
+          "bodyHash": "77fcb2647f7a17e89e1279f52bffc5c0338f4ba84450ed264d888d26ce0d0b7d",
           "errors": [],
           "warnings": []
         }
       ],
       "errors": [],
-      "warnings": [
-        "workflow-in_progress"
-      ]
+      "warnings": []
     },
     {
       "key": "shore",
       "label": "Shore Diving",
-      "state": "WARN",
-      "checkedAt": "2026-10-04T06:36:57.289+11:00",
+      "state": "PASS",
+      "checkedAt": "2026-10-04T23:19:25.268+11:00",
       "count": 27,
       "publishedUniqueEventLinks": 27,
       "due": "07:00",
@@ -266,8 +262,8 @@
       "latestRun": {
         "id": 37201632186,
         "event": "push",
-        "status": "in_progress",
-        "conclusion": null,
+        "status": "completed",
+        "conclusion": "success",
         "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/37201632186"
       },
       "lastSuccessfulScheduledRun": {
@@ -285,15 +281,13 @@
             "2026-10-04"
           ],
           "eventLinks": 27,
-          "bodyHash": "9f3aa5cf46961969f32b6d62658619c049488ded2d24d9477cc4e7d006076cc2",
+          "bodyHash": "308773a5c4e711c86988a9a18b71a0a512331e26d6ebff174660304f7fbd0b0d",
           "errors": [],
           "warnings": []
         }
       ],
       "errors": [],
-      "warnings": [
-        "workflow-in_progress"
-      ]
+      "warnings": []
     },
     {
       "key": "beginner",
