@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-04T23:19:47.334+11:00",
+  "checkedAt": "2026-10-04T23:20:17.841+11:00",
   "localDate": "2026-10-04",
   "repository": "abyss-scuba/abyss-future-dive-feed",
   "scope": "Seven maintained Help Scout date publishers, including derived date sections; separate website future-feed dependency.",
@@ -8,7 +8,7 @@
     {
       "key": "calendar",
       "label": "Sydney Dive Calendar",
-      "state": "WARN",
+      "state": "PASS",
       "checkedAt": "2026-10-04",
       "count": 79,
       "publishedUniqueEventLinks": 79,
@@ -17,8 +17,8 @@
       "latestRun": {
         "id": 37201632189,
         "event": "push",
-        "status": "in_progress",
-        "conclusion": null,
+        "status": "completed",
+        "conclusion": "success",
         "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/37201632189"
       },
       "lastSuccessfulScheduledRun": null,
@@ -38,9 +38,7 @@
         }
       ],
       "errors": [],
-      "warnings": [
-        "workflow-in_progress"
-      ]
+      "warnings": []
     },
     {
       "key": "boat",
