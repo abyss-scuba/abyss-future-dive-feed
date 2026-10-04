@@ -60,7 +60,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v7
         with:
-          name: helpscout-travel-${{ github.run_number }}
+          name: helpscout-travel-${{ github.run_number }}-${{ github.run_attempt }}
           path: diagnostics/helpscout-travel-*
           if-no-files-found: ignore
           retention-days: 14
@@ -68,6 +68,23 @@ jobs:
         run: |
           git config user.name "abyss-future-dive-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          record=$(mktemp)
+          trap 'rm -f "$record"' EXIT
+          cp data/helpscout-travel-sync-status.json "$record"
+          # Reconcile with current main before creating the status-only commit.
+          # This avoids replaying an old run's status diff over a newer record.
+          git restore --source=HEAD -- data/helpscout-travel-sync-status.json
+          git fetch origin main
+          git merge --ff-only origin/main
+          node --input-type=module - "$record" <<'NODE'
+          import fs from 'node:fs';
+          const path='data/helpscout-travel-sync-status.json';
+          const incoming=JSON.parse(fs.readFileSync(process.argv[2],'utf8'));
+          const current=JSON.parse(fs.readFileSync(path,'utf8'));
+          if(!Number.isFinite(Date.parse(incoming.checkedAt)) || !['updated','unchanged'].includes(incoming.publication?.status)) throw Error('Refusing an unverified status record');
+          if(Date.parse(incoming.checkedAt)>=Date.parse(current.checkedAt)) fs.copyFileSync(process.argv[2],path);
+          else console.log('A newer verified Travel status already exists; preserved');
+          NODE
           git add -- data/helpscout-travel-sync-status.json
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "chore: record verified travel snapshot refresh"
