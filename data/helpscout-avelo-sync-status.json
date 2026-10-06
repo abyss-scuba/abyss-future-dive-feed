@@ -1,6 +1,6 @@
 {
-  "attemptedAt": "2026-10-06T12:05:36.813+11:00",
-  "status": "published-and-read-back",
+  "attemptedAt": "2026-10-06T12:21:32.963+11:00",
+  "status": "failed-last-good-preserved",
   "lastSuccessfulCheck": "2026-10-06T12:05:36.813+11:00",
   "validUntil": "2026-10-07T07:30:00.000+11:00",
   "localDate": "2026-10-06",
@@ -22,5 +22,7 @@
     "status": "published-and-read-back",
     "textHash": "e7b4bd372bd3fa08e3016f7b11b244480959c255f400a5d8c1cddc1aaa1a3761"
   },
-  "agentVerification": "pending internal Test"
+  "agentVerification": "not verified",
+  "error": "Help Scout GET /articles/6abda0e0535b0034271debb5 returned HTTP 503",
+  "stale": false
 }
