@@ -1,8 +1,8 @@
 {
-  "attemptedAt": "2026-10-08T07:41:42.689+11:00",
+  "attemptedAt": "2026-10-08T08:56:12.099+11:00",
   "status": "published-and-verified",
-  "lastSuccessfulCheck": "2026-10-08T07:41:42.689+11:00",
-  "staleAfter": "2026-10-10T07:41:42.689+11:00",
+  "lastSuccessfulCheck": "2026-10-08T08:56:12.099+11:00",
+  "staleAfter": "2026-10-10T08:56:12.099+11:00",
   "publication": {
     "status": "published-and-verified",
     "id": "6abd113e528fa6f4b198ab23",
@@ -11,32 +11,32 @@
       {
         "id": "6abd12997cdaed3f1efa5545",
         "name": "Upcoming Sydney Advanced Open Water and Refresher Dates — Updated Daily",
-        "status": "published-and-verified"
+        "status": "already-published-today"
       },
       {
         "id": "6abd12993be702ed269e354f",
         "name": "Upcoming Sydney Specialty Courses Dates — Updated Daily",
-        "status": "published-and-verified"
+        "status": "already-published-today"
       },
       {
         "id": "6abd129949f1bc2c6aefd886",
         "name": "Upcoming Sydney Rescue and First Aid Dates — Updated Daily",
-        "status": "published-and-verified"
+        "status": "already-published-today"
       },
       {
         "id": "6abd129a7cdaed3f1efa5546",
         "name": "Upcoming Sydney Freediving, Mermaid and Avelo Dates — Updated Daily",
-        "status": "published-and-verified"
+        "status": "already-published-today"
       },
       {
         "id": "6abd129a7cdaed3f1efa5547",
         "name": "Upcoming Sydney Professional and Technical Courses Dates — Updated Daily",
-        "status": "published-and-verified"
+        "status": "already-published-today"
       },
       {
         "id": "6abd73c1535b0034271deaba",
         "name": "Steadier buoyancy for underwater photos — Peak Performance Buoyancy dates",
-        "status": "published-and-verified"
+        "status": "already-published-today"
       },
       {
         "id": "6ab8bba6171ef8b866f2c208",
@@ -46,7 +46,7 @@
       {
         "id": "6abd113e528fa6f4b198ab23",
         "name": "Upcoming Sydney Course Dates — Updated Daily",
-        "status": "published-and-verified"
+        "status": "already-published-today"
       }
     ]
   },
