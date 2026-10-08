@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-09T09:24:28.871+11:00",
+  "checkedAt": "2026-10-09T10:18:07.827+11:00",
   "localDate": "2026-10-09",
   "repository": "abyss-scuba/abyss-future-dive-feed",
   "scope": "Seven maintained Help Scout date publishers, including derived date sections; separate website future-feed dependency.",
@@ -8,23 +8,23 @@
     {
       "key": "calendar",
       "label": "Sydney Dive Calendar",
-      "state": "FAIL",
-      "checkedAt": "2026-10-08",
+      "state": "PASS",
+      "checkedAt": "2026-10-09",
       "count": 72,
       "publishedUniqueEventLinks": 72,
       "due": "08:00",
       "workflow": "sync-helpscout-calendar.yml",
       "latestRun": {
-        "id": 37701324056,
+        "id": 37858496133,
         "event": "schedule",
         "status": "completed",
         "conclusion": "success",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/37701324056"
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/37858496133"
       },
       "lastSuccessfulScheduledRun": {
-        "id": 37701324056,
-        "createdAt": "2026-10-07T23:16:33Z",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/37701324056"
+        "id": 37858496133,
+        "createdAt": "2026-10-08T23:16:24Z",
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/37858496133"
       },
       "articles": [
         {
@@ -33,20 +33,15 @@
           "name": "Upcoming Sydney dive dates — schedule snapshot",
           "collectionId": "6ab98d4249f1bc2c6aefca54",
           "checkDates": [
-            "2026-10-08"
+            "2026-10-09"
           ],
           "eventLinks": 72,
-          "bodyHash": "991a0f3134d5e2236895471d61732d4e91c917843fcd3713e4e6b24e3f5324da",
-          "errors": [
-            "published-check-date-not-current"
-          ],
+          "bodyHash": "f52a41f98049a787ea9913012208f5cd9702475c4058dc0aa3fada4e701fd992",
+          "errors": [],
           "warnings": []
         }
       ],
-      "errors": [
-        "daily-publication-receipt-missing",
-        "Upcoming Sydney dive dates — schedule snapshot: published-check-date-not-current"
-      ],
+      "errors": [],
       "warnings": []
     },
     {
@@ -451,6 +446,6 @@
   "delivery": {
     "issue": 45,
     "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/issues/45",
-    "action": "daily-deduplicated"
+    "action": "updated"
   }
 }
