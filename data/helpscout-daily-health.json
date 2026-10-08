@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-08T11:44:41.009+11:00",
+  "checkedAt": "2026-10-08T12:16:17.277+11:00",
   "localDate": "2026-10-08",
   "repository": "abyss-scuba/abyss-future-dive-feed",
   "scope": "Seven maintained Help Scout date publishers, including derived date sections; separate website future-feed dependency.",
@@ -217,22 +217,22 @@
       "key": "travel",
       "label": "Dive Travel",
       "state": "PASS",
-      "checkedAt": "2026-10-08T11:44:12.533+11:00",
-      "count": 9,
-      "publishedUniqueEventLinks": 9,
+      "checkedAt": "2026-10-08T12:15:46.920+11:00",
+      "count": 10,
+      "publishedUniqueEventLinks": 10,
       "due": "11:00",
       "workflow": "sync-helpscout-travel.yml",
       "latestRun": {
-        "id": 37709213525,
+        "id": 37711953656,
         "event": "schedule",
         "status": "completed",
         "conclusion": "success",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/37709213525"
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/37711953656"
       },
       "lastSuccessfulScheduledRun": {
-        "id": 37709213525,
-        "createdAt": "2026-10-08T00:43:05Z",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/37709213525"
+        "id": 37711953656,
+        "createdAt": "2026-10-08T01:14:50Z",
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/37711953656"
       },
       "articles": [
         {
@@ -243,8 +243,8 @@
           "checkDates": [
             "2026-10-08"
           ],
-          "eventLinks": 9,
-          "bodyHash": "d835d9382a392c78c1c85e516e72d48981f27c86c03598f827806bffee3d19a5",
+          "eventLinks": 10,
+          "bodyHash": "fcdef20a6644a37779757f797a273c24f089b85c2a337c27d9627267885f051a",
           "errors": [],
           "warnings": []
         }
@@ -434,6 +434,6 @@
   "delivery": {
     "issue": 45,
     "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/issues/45",
-    "action": "updated"
+    "action": "daily-deduplicated"
   }
 }
