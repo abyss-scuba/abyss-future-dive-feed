@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-09T10:18:07.827+11:00",
+  "checkedAt": "2026-10-09T10:33:06.933+11:00",
   "localDate": "2026-10-09",
   "repository": "abyss-scuba/abyss-future-dive-feed",
   "scope": "Seven maintained Help Scout date publishers, including derived date sections; separate website future-feed dependency.",
@@ -15,16 +15,16 @@
       "due": "08:00",
       "workflow": "sync-helpscout-calendar.yml",
       "latestRun": {
-        "id": 37858496133,
+        "id": 37859914381,
         "event": "schedule",
         "status": "completed",
         "conclusion": "success",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/37858496133"
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/37859914381"
       },
       "lastSuccessfulScheduledRun": {
-        "id": 37858496133,
-        "createdAt": "2026-10-08T23:16:24Z",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/37858496133"
+        "id": 37859914381,
+        "createdAt": "2026-10-08T23:31:29Z",
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/37859914381"
       },
       "articles": [
         {
@@ -419,19 +419,18 @@
           "eventLinks": 1,
           "bodyHash": "e682f28afb7fb3aadab35d9ee244af13c0c5b429ddae32b7fc3075fd57a7fd56",
           "errors": [
+            "published-check-date-not-current",
             "published-date-section-expired"
           ],
-          "warnings": [
-            "awaiting-todays-refresh"
-          ]
+          "warnings": []
         }
       ],
       "errors": [
+        "daily-publication-receipt-missing",
+        "Upcoming Avelo Course Dates — Updated Daily: published-check-date-not-current",
         "Upcoming Avelo Course Dates — Updated Daily: published-date-section-expired"
       ],
-      "warnings": [
-        "Upcoming Avelo Course Dates — Updated Daily: awaiting-todays-refresh"
-      ]
+      "warnings": []
     }
   ],
   "monitorErrors": [
