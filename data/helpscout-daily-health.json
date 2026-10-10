@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-10T10:59:27.225+11:00",
+  "checkedAt": "2026-10-10T11:04:38.555+11:00",
   "localDate": "2026-10-10",
   "repository": "abyss-scuba/abyss-future-dive-feed",
   "scope": "Seven maintained Help Scout date publishers, including derived date sections; separate website future-feed dependency.",
@@ -216,7 +216,7 @@
     {
       "key": "travel",
       "label": "Dive Travel",
-      "state": "WARN",
+      "state": "FAIL",
       "checkedAt": "2026-10-09T12:23:36.749+11:00",
       "count": 10,
       "publishedUniqueEventLinks": 10,
@@ -245,16 +245,17 @@
           ],
           "eventLinks": 10,
           "bodyHash": "6bf02e76eb087fa0599373e966ca8a825d1ac2ccfa9878445053d0a17257a8aa",
-          "errors": [],
-          "warnings": [
-            "awaiting-todays-refresh"
-          ]
+          "errors": [
+            "published-check-date-not-current"
+          ],
+          "warnings": []
         }
       ],
-      "errors": [],
-      "warnings": [
-        "Upcoming Abyss dive trips — dates and availability snapshot: awaiting-todays-refresh"
-      ]
+      "errors": [
+        "daily-publication-receipt-missing",
+        "Upcoming Abyss dive trips — dates and availability snapshot: published-check-date-not-current"
+      ],
+      "warnings": []
     },
     {
       "key": "shore",
@@ -396,16 +397,16 @@
       "due": "10:30",
       "workflow": "sync-helpscout-avelo.yml",
       "latestRun": {
-        "id": 38006971547,
+        "id": 38007378680,
         "event": "schedule",
         "status": "completed",
         "conclusion": "success",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/38006971547"
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/38007378680"
       },
       "lastSuccessfulScheduledRun": {
-        "id": 38006971547,
-        "createdAt": "2026-10-09T23:58:31Z",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/38006971547"
+        "id": 38007378680,
+        "createdAt": "2026-10-10T00:03:48Z",
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/38007378680"
       },
       "articles": [
         {
@@ -438,6 +439,6 @@
   "delivery": {
     "issue": 45,
     "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/issues/45",
-    "action": "daily-deduplicated"
+    "action": "updated"
   }
 }
