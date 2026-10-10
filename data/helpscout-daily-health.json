@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-11T07:23:36.981+11:00",
+  "checkedAt": "2026-10-11T07:33:40.588+11:00",
   "localDate": "2026-10-11",
   "repository": "abyss-scuba/abyss-future-dive-feed",
   "scope": "Seven maintained Help Scout date publishers, including derived date sections; separate website future-feed dependency.",
@@ -90,18 +90,18 @@
     {
       "key": "courses",
       "label": "Sydney Dive Courses",
-      "state": "PASS",
+      "state": "FAIL",
       "checkedAt": "2026-10-11T06:24:20.493+11:00",
-      "count": 88,
+      "count": null,
       "publishedUniqueEventLinks": 88,
       "due": "07:00",
       "workflow": "sync-helpscout-courses.yml",
       "latestRun": {
-        "id": 38079638659,
+        "id": 38084154369,
         "event": "schedule",
         "status": "completed",
-        "conclusion": "success",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/38079638659"
+        "conclusion": "failure",
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/38084154369"
       },
       "lastSuccessfulScheduledRun": {
         "id": 38079638659,
@@ -214,8 +214,12 @@
           "warnings": []
         }
       ],
-      "errors": [],
-      "warnings": []
+      "errors": [
+        "receipt-not-successful"
+      ],
+      "warnings": [
+        "latest-workflow-failure"
+      ]
     },
     {
       "key": "travel",
@@ -302,18 +306,18 @@
     {
       "key": "beginner",
       "label": "Beginner Dive Calendar",
-      "state": "PASS",
+      "state": "WARN",
       "checkedAt": "2026-10-10T20:13:24.091Z",
       "count": 63,
       "publishedUniqueEventLinks": 63,
       "due": "07:30",
       "workflow": "sync-helpscout-beginner.yml",
       "latestRun": {
-        "id": 38082824503,
+        "id": 38084224696,
         "event": "schedule",
-        "status": "completed",
-        "conclusion": "success",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/38082824503"
+        "status": "in_progress",
+        "conclusion": null,
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/38084224696"
       },
       "lastSuccessfulScheduledRun": {
         "id": 38082824503,
@@ -388,12 +392,14 @@
         }
       ],
       "errors": [],
-      "warnings": []
+      "warnings": [
+        "workflow-in_progress"
+      ]
     },
     {
       "key": "avelo",
       "label": "Avelo Diving",
-      "state": "WARN",
+      "state": "FAIL",
       "checkedAt": "2026-10-10T10:47:19.639+11:00",
       "count": 1,
       "publishedUniqueEventLinks": 1,
@@ -422,13 +428,17 @@
           ],
           "eventLinks": 1,
           "bodyHash": "18572dade4cd7e49489d7b178490d9c6e30c16e38581ef374fa965fee0fc64f3",
-          "errors": [],
+          "errors": [
+            "published-date-section-expired"
+          ],
           "warnings": [
             "awaiting-todays-refresh"
           ]
         }
       ],
-      "errors": [],
+      "errors": [
+        "Upcoming Avelo Course Dates — Updated Daily: published-date-section-expired"
+      ],
       "warnings": [
         "Upcoming Avelo Course Dates — Updated Daily: awaiting-todays-refresh"
       ]
