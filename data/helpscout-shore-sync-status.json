@@ -1,12 +1,12 @@
 {
-  "checkedAt": "2026-10-11T07:41:09.238+11:00",
-  "eventCount": 22,
+  "checkedAt": "2026-10-12T07:42:59.503+11:00",
+  "eventCount": 21,
   "marineMarvelsCount": 1,
-  "firstDate": "2026-10-11",
+  "firstDate": "2026-10-17",
   "lastDate": "2026-11-29",
   "dryRun": false,
   "publication": {
     "status": "updated",
-    "count": 22
+    "count": 21
   }
 }
