@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-12T09:25:22.635+11:00",
+  "checkedAt": "2026-10-12T10:25:29.902+11:00",
   "localDate": "2026-10-12",
   "repository": "abyss-scuba/abyss-future-dive-feed",
   "scope": "Seven maintained Help Scout date publishers, including derived date sections; separate website future-feed dependency.",
@@ -389,23 +389,23 @@
     {
       "key": "avelo",
       "label": "Avelo Diving",
-      "state": "FAIL",
-      "checkedAt": "2026-10-11T10:09:33.564+11:00",
+      "state": "PASS",
+      "checkedAt": "2026-10-12T10:25:03.183+11:00",
       "count": 1,
       "publishedUniqueEventLinks": 1,
       "due": "10:30",
       "workflow": "sync-helpscout-avelo.yml",
       "latestRun": {
-        "id": 38095888513,
+        "id": 38184179961,
         "event": "schedule",
         "status": "completed",
         "conclusion": "success",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/38095888513"
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/38184179961"
       },
       "lastSuccessfulScheduledRun": {
-        "id": 38095888513,
-        "createdAt": "2026-10-10T23:41:19Z",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/38095888513"
+        "id": 38184179961,
+        "createdAt": "2026-10-11T23:24:46Z",
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/38184179961"
       },
       "articles": [
         {
@@ -414,24 +414,16 @@
           "name": "Upcoming Avelo Course Dates — Updated Daily",
           "collectionId": "6abd97aa535b0034271deb9a",
           "checkDates": [
-            "2026-10-11"
+            "2026-10-12"
           ],
           "eventLinks": 1,
-          "bodyHash": "cfbfcfb7d87b04fc25f6b3d9dfd56a36c170f9d4361c35ae2f8c52dfd3de925b",
-          "errors": [
-            "published-date-section-expired"
-          ],
-          "warnings": [
-            "awaiting-todays-refresh"
-          ]
+          "bodyHash": "178efd9d7ee49d86cc7be44d6728f0a1a233defe0a22466054ef1032725546cb",
+          "errors": [],
+          "warnings": []
         }
       ],
-      "errors": [
-        "Upcoming Avelo Course Dates — Updated Daily: published-date-section-expired"
-      ],
-      "warnings": [
-        "Upcoming Avelo Course Dates — Updated Daily: awaiting-todays-refresh"
-      ]
+      "errors": [],
+      "warnings": []
     }
   ],
   "monitorErrors": [
@@ -446,6 +438,6 @@
   "delivery": {
     "issue": 45,
     "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/issues/45",
-    "action": "daily-deduplicated"
+    "action": "updated"
   }
 }
