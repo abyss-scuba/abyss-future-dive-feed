@@ -52,6 +52,7 @@ The exact booking URL is always preserved. The scraper decodes `q` for identity 
 - Prefers more specific `marine-special` metadata when the same event appears in a broad widget.
 - Keeps up to 48 hours of last-known-good data if one source temporarily fails.
 - Refuses to publish when a core source cannot cover the 90-day public horizon or a public event lacks price or an exact booking code.
+- `npm run validate` also rejects feeds or core-source successful checks older than 48 hours, even if their saved status still says `fresh`. Future-dated or missing check timestamps fail validation. An old snapshot must be replaced by a successful scrape, never by changing its timestamp.
 
 ## Customer-facing wording
 
