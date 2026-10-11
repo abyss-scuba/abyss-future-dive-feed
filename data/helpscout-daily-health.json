@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-12T07:28:07.843+11:00",
+  "checkedAt": "2026-10-12T07:43:31.677+11:00",
   "localDate": "2026-10-12",
   "repository": "abyss-scuba/abyss-future-dive-feed",
   "scope": "Seven maintained Help Scout date publishers, including derived date sections; separate website future-feed dependency.",
@@ -263,23 +263,23 @@
     {
       "key": "shore",
       "label": "Shore Diving",
-      "state": "FAIL",
-      "checkedAt": "2026-10-11T07:41:09.238+11:00",
-      "count": 22,
-      "publishedUniqueEventLinks": 22,
+      "state": "PASS",
+      "checkedAt": "2026-10-12T07:42:59.503+11:00",
+      "count": 21,
+      "publishedUniqueEventLinks": 21,
       "due": "07:00",
       "workflow": "sync-helpscout-shore.yml",
       "latestRun": {
-        "id": 38084645338,
+        "id": 38173300758,
         "event": "schedule",
         "status": "completed",
         "conclusion": "success",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/38084645338"
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/38173300758"
       },
       "lastSuccessfulScheduledRun": {
-        "id": 38084645338,
-        "createdAt": "2026-10-10T20:40:13Z",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/38084645338"
+        "id": 38173300758,
+        "createdAt": "2026-10-11T20:41:59Z",
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/38173300758"
       },
       "articles": [
         {
@@ -288,20 +288,15 @@
           "name": "Upcoming Shore dive dates — schedule snapshot",
           "collectionId": "6abb22ad5c1e572f6ed8ba47",
           "checkDates": [
-            "2026-10-11"
+            "2026-10-12"
           ],
-          "eventLinks": 22,
-          "bodyHash": "63abcaea65c8d0ff3b6da5557bcaf03064c237a73bef6aa23b84d09b54f4f68b",
-          "errors": [
-            "published-check-date-not-current"
-          ],
+          "eventLinks": 21,
+          "bodyHash": "968a3ec77df9761b7e25a77fbcafe210e19fd39c98b583a1ae28660a0c6a804e",
+          "errors": [],
           "warnings": []
         }
       ],
-      "errors": [
-        "daily-publication-receipt-missing",
-        "Upcoming Shore dive dates — schedule snapshot: published-check-date-not-current"
-      ],
+      "errors": [],
       "warnings": []
     },
     {
@@ -398,7 +393,7 @@
     {
       "key": "avelo",
       "label": "Avelo Diving",
-      "state": "WARN",
+      "state": "FAIL",
       "checkedAt": "2026-10-11T10:09:33.564+11:00",
       "count": 1,
       "publishedUniqueEventLinks": 1,
@@ -427,13 +422,17 @@
           ],
           "eventLinks": 1,
           "bodyHash": "cfbfcfb7d87b04fc25f6b3d9dfd56a36c170f9d4361c35ae2f8c52dfd3de925b",
-          "errors": [],
+          "errors": [
+            "published-date-section-expired"
+          ],
           "warnings": [
             "awaiting-todays-refresh"
           ]
         }
       ],
-      "errors": [],
+      "errors": [
+        "Upcoming Avelo Course Dates — Updated Daily: published-date-section-expired"
+      ],
       "warnings": [
         "Upcoming Avelo Course Dates — Updated Daily: awaiting-todays-refresh"
       ]
