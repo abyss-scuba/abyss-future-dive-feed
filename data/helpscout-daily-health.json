@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-13T13:26:27.506+11:00",
+  "checkedAt": "2026-10-13T13:43:19.173+11:00",
   "localDate": "2026-10-13",
   "repository": "abyss-scuba/abyss-future-dive-feed",
   "scope": "Seven maintained Help Scout date publishers, including derived date sections; separate website future-feed dependency.",
@@ -217,22 +217,22 @@
       "key": "travel",
       "label": "Dive Travel",
       "state": "PASS",
-      "checkedAt": "2026-10-13T13:25:55.498+11:00",
+      "checkedAt": "2026-10-13T13:42:48.302+11:00",
       "count": 10,
       "publishedUniqueEventLinks": 10,
       "due": "11:00",
       "workflow": "sync-helpscout-travel.yml",
       "latestRun": {
-        "id": 38336781608,
+        "id": 38338116533,
         "event": "schedule",
         "status": "completed",
         "conclusion": "success",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/38336781608"
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/38338116533"
       },
       "lastSuccessfulScheduledRun": {
-        "id": 38336781608,
-        "createdAt": "2026-10-13T02:25:06Z",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/38336781608"
+        "id": 38338116533,
+        "createdAt": "2026-10-13T02:41:53Z",
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/38338116533"
       },
       "articles": [
         {
@@ -244,7 +244,7 @@
             "2026-10-13"
           ],
           "eventLinks": 10,
-          "bodyHash": "7f185511386f775bf4417714c186affc40ee9469c03c04ca2e04e253707dcc22",
+          "bodyHash": "da69a42d0cb7925864fd324ef75bccc4cf26e187c31ce8e94d4f1377878fd292",
           "errors": [],
           "warnings": []
         }
@@ -434,6 +434,6 @@
   "delivery": {
     "issue": 45,
     "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/issues/45",
-    "action": "updated"
+    "action": "daily-deduplicated"
   }
 }
