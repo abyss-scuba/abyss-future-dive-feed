@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-15T07:23:57.017+11:00",
+  "checkedAt": "2026-10-15T07:37:00.983+11:00",
   "localDate": "2026-10-15",
   "repository": "abyss-scuba/abyss-future-dive-feed",
   "scope": "Seven maintained Help Scout date publishers, including derived date sections; separate website future-feed dependency.",
@@ -91,22 +91,22 @@
       "key": "courses",
       "label": "Sydney Dive Courses",
       "state": "PASS",
-      "checkedAt": "2026-10-15T06:32:28.939+11:00",
+      "checkedAt": "2026-10-15T07:36:13.676+11:00",
       "count": 91,
       "publishedUniqueEventLinks": 91,
       "due": "07:00",
       "workflow": "sync-helpscout-courses.yml",
       "latestRun": {
-        "id": 38624465645,
+        "id": 38633378001,
         "event": "schedule",
         "status": "completed",
         "conclusion": "success",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/38624465645"
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/38633378001"
       },
       "lastSuccessfulScheduledRun": {
-        "id": 38624465645,
-        "createdAt": "2026-10-14T19:31:58Z",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/38624465645"
+        "id": 38633378001,
+        "createdAt": "2026-10-14T20:35:36Z",
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/38633378001"
       },
       "articles": [
         {
@@ -209,7 +209,7 @@
             "2026-10-15"
           ],
           "eventLinks": 3,
-          "bodyHash": "c04a1be9d979e681c36da2c6f3e91fdec04c0f414789cb6078a500f215edcecf",
+          "bodyHash": "b0337ab5c319aefe6145ca1af2c2e981434e01bb3bce288017fad734f9214aa9",
           "errors": [],
           "warnings": []
         }
@@ -393,7 +393,7 @@
     {
       "key": "avelo",
       "label": "Avelo Diving",
-      "state": "WARN",
+      "state": "FAIL",
       "checkedAt": "2026-10-14T10:34:39.093+11:00",
       "count": 1,
       "publishedUniqueEventLinks": 1,
@@ -422,13 +422,17 @@
           ],
           "eventLinks": 1,
           "bodyHash": "9bcc2d20ee7e5ea65f1eadabf7ce24b37a0d0da7c3930c7e87d406949005ab74",
-          "errors": [],
+          "errors": [
+            "published-date-section-expired"
+          ],
           "warnings": [
             "awaiting-todays-refresh"
           ]
         }
       ],
-      "errors": [],
+      "errors": [
+        "Upcoming Avelo Course Dates — Updated Daily: published-date-section-expired"
+      ],
       "warnings": [
         "Upcoming Avelo Course Dates — Updated Daily: awaiting-todays-refresh"
       ]
