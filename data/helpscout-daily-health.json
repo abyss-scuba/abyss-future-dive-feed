@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-14T10:47:35.584+11:00",
+  "checkedAt": "2026-10-14T11:10:31.151+11:00",
   "localDate": "2026-10-14",
   "repository": "abyss-scuba/abyss-future-dive-feed",
   "scope": "Seven maintained Help Scout date publishers, including derived date sections; separate website future-feed dependency.",
@@ -216,23 +216,23 @@
     {
       "key": "travel",
       "label": "Dive Travel",
-      "state": "WARN",
-      "checkedAt": "2026-10-13T13:42:48.302+11:00",
+      "state": "PASS",
+      "checkedAt": "2026-10-14T11:09:58.880+11:00",
       "count": 10,
       "publishedUniqueEventLinks": 10,
       "due": "11:00",
       "workflow": "sync-helpscout-travel.yml",
       "latestRun": {
-        "id": 38338116533,
+        "id": 38488495775,
         "event": "schedule",
         "status": "completed",
         "conclusion": "success",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/38338116533"
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/38488495775"
       },
       "lastSuccessfulScheduledRun": {
-        "id": 38338116533,
-        "createdAt": "2026-10-13T02:41:53Z",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/38338116533"
+        "id": 38488495775,
+        "createdAt": "2026-10-14T00:09:12Z",
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/38488495775"
       },
       "articles": [
         {
@@ -241,20 +241,16 @@
           "name": "Upcoming Abyss dive trips — dates and availability snapshot",
           "collectionId": "6abc82e23be702ed269e3347",
           "checkDates": [
-            "2026-10-13"
+            "2026-10-14"
           ],
           "eventLinks": 10,
-          "bodyHash": "da69a42d0cb7925864fd324ef75bccc4cf26e187c31ce8e94d4f1377878fd292",
+          "bodyHash": "e1eb0e3bab8cdd6dfde9a621429c84466208929da82b9e4719bfca706ed10ae7",
           "errors": [],
-          "warnings": [
-            "awaiting-todays-refresh"
-          ]
+          "warnings": []
         }
       ],
       "errors": [],
-      "warnings": [
-        "Upcoming Abyss dive trips — dates and availability snapshot: awaiting-todays-refresh"
-      ]
+      "warnings": []
     },
     {
       "key": "shore",
@@ -438,6 +434,6 @@
   "delivery": {
     "issue": 45,
     "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/issues/45",
-    "action": "daily-deduplicated"
+    "action": "updated"
   }
 }
