@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-17T05:53:08.063+11:00",
+  "checkedAt": "2026-10-17T06:38:46.498+11:00",
   "localDate": "2026-10-17",
   "repository": "abyss-scuba/abyss-future-dive-feed",
   "scope": "Seven maintained Help Scout date publishers, including derived date sections; separate website future-feed dependency.",
@@ -306,23 +306,23 @@
     {
       "key": "beginner",
       "label": "Beginner Dive Calendar",
-      "state": "WARN",
-      "checkedAt": "2026-10-15T19:57:25.357Z",
+      "state": "PASS",
+      "checkedAt": "2026-10-16T19:37:44.441Z",
       "count": 61,
       "publishedUniqueEventLinks": 61,
       "due": "07:30",
       "workflow": "sync-helpscout-beginner.yml",
       "latestRun": {
-        "id": 38801111522,
+        "id": 38956193006,
         "event": "schedule",
         "status": "completed",
         "conclusion": "success",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/38801111522"
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/38956193006"
       },
       "lastSuccessfulScheduledRun": {
-        "id": 38801111522,
-        "createdAt": "2026-10-15T20:20:18Z",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/38801111522"
+        "id": 38956193006,
+        "createdAt": "2026-10-16T19:36:47Z",
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/38956193006"
       },
       "articles": [
         {
@@ -331,14 +331,12 @@
           "name": "Upcoming beginner dive dates — shore, boat and trips",
           "collectionId": "6abf61e6c3e570044c2891ed",
           "checkDates": [
-            "2026-10-16"
+            "2026-10-17"
           ],
           "eventLinks": 61,
-          "bodyHash": "d7e1778190063d155b20ad83418766cd03959db440414fccce50cfe77eade4ca",
+          "bodyHash": "3cd2a6f883bcf77ffe5b83bb6e0492a3da51969199bfb02eef707dda312a9e12",
           "errors": [],
-          "warnings": [
-            "awaiting-todays-refresh"
-          ]
+          "warnings": []
         },
         {
           "id": "6abf733d3be702ed269e3fa6",
@@ -346,14 +344,12 @@
           "name": "Your first guided dive after certification: what happens and who helps",
           "collectionId": "6abf61e6c3e570044c2891ed",
           "checkDates": [
-            "2026-10-16"
+            "2026-10-17"
           ],
-          "eventLinks": 1,
-          "bodyHash": "9f1dc4ea437e37209be5119437039b1176051856afdd37649bb64c0cc8e0e0fd",
+          "eventLinks": 3,
+          "bodyHash": "37c5c12897ddd22e7cc880b0c70a6560a2a5c5676408bdfd840d38156e0ad9f9",
           "errors": [],
-          "warnings": [
-            "awaiting-todays-refresh"
-          ]
+          "warnings": []
         },
         {
           "id": "6abf76557cdaed3f1efa5fa0",
@@ -361,14 +357,12 @@
           "name": "Scuba equipment hire and the total cost of your dive",
           "collectionId": "6ab98d4249f1bc2c6aefca54",
           "checkDates": [
-            "2026-10-16"
+            "2026-10-17"
           ],
           "eventLinks": 1,
-          "bodyHash": "7cd4c2cbd5cacba96a1d5c05e37eaba80bae8a94f92a437aa888de150a69d1b2",
+          "bodyHash": "92368549c0d04a700aab0b9cda799246885fad7d858f5b0e8fc154852a5eb613",
           "errors": [],
-          "warnings": [
-            "awaiting-todays-refresh"
-          ]
+          "warnings": []
         },
         {
           "id": "6abf7841c3e570044c28921f",
@@ -376,14 +370,12 @@
           "name": "Nervous about your next dive? Support, pace and extra help",
           "collectionId": "6abf61e6c3e570044c2891ed",
           "checkDates": [
-            "2026-10-16"
+            "2026-10-17"
           ],
           "eventLinks": 1,
-          "bodyHash": "0b8ed84abbe49423e53bdb660a6dc792676abc9e83f522c2f38ac022e479ca89",
+          "bodyHash": "c2d9d06c3f6cb9eb4c83a2a5b5be66695dbde6582adc600be4f86840c7c724ce",
           "errors": [],
-          "warnings": [
-            "awaiting-todays-refresh"
-          ]
+          "warnings": []
         },
         {
           "id": "6ab992784b37f75b5ff65c3e",
@@ -391,24 +383,16 @@
           "name": "Can I join a Sydney guided dive without bringing a buddy?",
           "collectionId": "6ab98d4249f1bc2c6aefca54",
           "checkDates": [
-            "2026-10-16"
+            "2026-10-17"
           ],
           "eventLinks": 1,
-          "bodyHash": "2faa455074a0b8b532a2b2b06fa28da21b4ebb328be004b3be430c6e8f75ffa4",
+          "bodyHash": "88793701419aaaa9d6005884d5199818b8c53b931ae6e1e45973ac9234300756",
           "errors": [],
-          "warnings": [
-            "awaiting-todays-refresh"
-          ]
+          "warnings": []
         }
       ],
       "errors": [],
-      "warnings": [
-        "Upcoming beginner dive dates — shore, boat and trips: awaiting-todays-refresh",
-        "Your first guided dive after certification: what happens and who helps: awaiting-todays-refresh",
-        "Scuba equipment hire and the total cost of your dive: awaiting-todays-refresh",
-        "Nervous about your next dive? Support, pace and extra help: awaiting-todays-refresh",
-        "Can I join a Sydney guided dive without bringing a buddy?: awaiting-todays-refresh"
-      ]
+      "warnings": []
     },
     {
       "key": "avelo",
