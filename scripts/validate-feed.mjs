@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import fs from "node:fs/promises";
 import process from "node:process";
+import { pathToFileURL } from "node:url";
 import { DateTime } from "luxon";
 import { decodeBookingUrl } from "../src/booking-code.mjs";
 
@@ -10,17 +11,33 @@ function error(errors, message) {
   errors.push(message);
 }
 
-async function main() {
-  const feed = JSON.parse(await fs.readFile(feedPath, "utf8"));
+export const MAX_FEED_AGE_HOURS = 48;
+
+function validateFreshness(errors, timestamp, label, now) {
+  const parsed = DateTime.fromISO(typeof timestamp === "string" ? timestamp : "");
+  if (!parsed.isValid || !/[Tt].*(?:[Zz]|[+-](?:[01]\d|2[0-3]):?[0-5]\d)$/.test(timestamp || "")) {
+    error(errors, `${label} is missing or invalid (an ISO timestamp with timezone is required)`);
+    return;
+  }
+  const ageHours = now.toUTC().diff(parsed.toUTC(), "hours").hours;
+  if (ageHours < 0) {
+    error(errors, `${label} is in the future`);
+  } else if (ageHours > MAX_FEED_AGE_HOURS) {
+    error(errors, `${label} is older than ${MAX_FEED_AGE_HOURS} hours; a fresh successful scrape is required`);
+  }
+}
+
+export function validateFeed(feed, { now = DateTime.utc() } = {}) {
   const errors = [];
   const warnings = [];
 
   if (feed.schemaVersion !== "1.0.0") {
     error(errors, `Unexpected schemaVersion: ${feed.schemaVersion}`);
   }
-  if (!DateTime.fromISO(feed.generatedAt || "").isValid) {
-    error(errors, "generatedAt is missing or invalid");
+  if (!DateTime.isDateTime(now) || !now.isValid) {
+    throw new Error("Validation requires a valid current time");
   }
+  validateFreshness(errors, feed.generatedAt, "generatedAt", now);
   if (!Array.isArray(feed.events)) error(errors, "events must be an array");
 
   const coreSources = Object.entries(feed.sources || {}).filter(
@@ -29,6 +46,8 @@ async function main() {
   if (!coreSources.length) error(errors, "No core source summaries found");
 
   for (const [name, source] of coreSources) {
+    // A new envelope must not disguise old last-known-good source data.
+    validateFreshness(errors, source.lastSuccessfulAt, `${name}: lastSuccessfulAt`, now);
     if (!source.lastDate) error(errors, `${name}: missing lastDate`);
     if (!source.coversPublicHorizon) {
       error(errors, `${name}: public horizon is not covered`);
@@ -67,18 +86,24 @@ async function main() {
     }
   }
 
-  const report = {
+  return {
     valid: errors.length === 0,
     errors,
     warnings,
     eventCount: feed.events?.length || 0
   };
-
-  console.log(JSON.stringify(report, null, 2));
-  if (errors.length) process.exitCode = 1;
 }
 
-main().catch((failure) => {
-  console.error(failure.stack || failure.message);
-  process.exitCode = 1;
-});
+async function main() {
+  const feed = JSON.parse(await fs.readFile(feedPath, "utf8"));
+  const report = validateFeed(feed);
+  console.log(JSON.stringify(report, null, 2));
+  if (!report.valid) process.exitCode = 1;
+}
+
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main().catch((failure) => {
+    console.error(failure.stack || failure.message);
+    process.exitCode = 1;
+  });
+}
