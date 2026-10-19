@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-20T10:45:54.932+11:00",
+  "checkedAt": "2026-10-20T10:50:43.536+11:00",
   "localDate": "2026-10-20",
   "repository": "abyss-scuba/abyss-future-dive-feed",
   "scope": "Seven maintained Help Scout date publishers, including derived date sections; separate website future-feed dependency.",
@@ -400,11 +400,11 @@
       "due": "10:30",
       "workflow": "sync-helpscout-avelo.yml",
       "latestRun": {
-        "id": 39343473564,
+        "id": 39343969530,
         "event": "schedule",
         "status": "completed",
         "conclusion": "failure",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/39343473564"
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/39343969530"
       },
       "lastSuccessfulScheduledRun": {
         "id": 39172471039,
@@ -419,12 +419,14 @@
           "collectionId": "6abd97aa535b0034271deb9a",
           "checkDates": [],
           "eventLinks": 0,
-          "bodyHash": "9de5d441fd9390934b782967249134de9bbdd45035f81b7808e72466a2e93a08",
+          "bodyHash": "efdac11a07dc6394d9d639ceecc24998fb2372487e3334ff437f88f34bbbec30",
           "errors": [
             "successful-check-date-missing",
             "stale-fallback-published"
           ],
-          "warnings": []
+          "warnings": [
+            "body-changed-with-same-check-date"
+          ]
         }
       ],
       "errors": [
@@ -434,7 +436,8 @@
         "published-booking-link-count-differs-from-receipt"
       ],
       "warnings": [
-        "latest-workflow-failure"
+        "latest-workflow-failure",
+        "Upcoming Avelo Course Dates — Updated Daily: body-changed-with-same-check-date"
       ]
     }
   ],
@@ -450,6 +453,6 @@
   "delivery": {
     "issue": 45,
     "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/issues/45",
-    "action": "daily-deduplicated"
+    "action": "updated"
   }
 }
