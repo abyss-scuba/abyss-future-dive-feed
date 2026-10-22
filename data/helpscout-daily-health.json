@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-23T05:28:22.242+11:00",
+  "checkedAt": "2026-10-23T05:46:07.376+11:00",
   "localDate": "2026-10-23",
   "repository": "abyss-scuba/abyss-future-dive-feed",
   "scope": "Seven maintained Help Scout date publishers, including derived date sections; separate website future-feed dependency.",
@@ -52,22 +52,22 @@
       "key": "boat",
       "label": "Boat Diving",
       "state": "PASS",
-      "checkedAt": "2026-10-23T05:27:56.276+11:00",
+      "checkedAt": "2026-10-23T05:45:37.944+11:00",
       "count": 39,
       "publishedUniqueEventLinks": 39,
       "due": "04:00",
       "workflow": "sync-helpscout-boat.yml",
       "latestRun": {
-        "id": 39831442845,
+        "id": 39834037094,
         "event": "schedule",
         "status": "completed",
         "conclusion": "success",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/39831442845"
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/39834037094"
       },
       "lastSuccessfulScheduledRun": {
-        "id": 39831442845,
-        "createdAt": "2026-10-22T18:26:53Z",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/39831442845"
+        "id": 39834037094,
+        "createdAt": "2026-10-22T18:44:39Z",
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/39834037094"
       },
       "articles": [
         {
@@ -494,6 +494,6 @@
   "delivery": {
     "issue": 45,
     "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/issues/45",
-    "action": "updated"
+    "action": "daily-deduplicated"
   }
 }
