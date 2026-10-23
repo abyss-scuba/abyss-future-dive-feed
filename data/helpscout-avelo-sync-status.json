@@ -1,6 +1,6 @@
 {
-  "attemptedAt": "2026-10-24T10:11:30.381+11:00",
-  "status": "failed-last-good-preserved",
+  "attemptedAt": "2026-10-24T10:16:51.343+11:00",
+  "status": "stale-fallback-published",
   "lastSuccessfulCheck": "2026-10-19T09:11:25.519+11:00",
   "validUntil": "2026-10-20T07:30:00.000+11:00",
   "localDate": "2026-10-19",
@@ -22,10 +22,10 @@
     "status": "published-and-read-back",
     "textHash": "0c527fec6e551e53fd7b3afb73e932cd65811aef35c88857dcfb6ca018732bcf"
   },
-  "agentVerification": "not verified",
+  "agentVerification": "pending internal Test",
   "watchdogCheckedAt": "2026-10-19T09:30:05.265+11:00",
   "watchdog": "current article verified",
-  "error": "Avelo booking controls missing",
+  "error": "No current verified snapshot",
   "stale": true,
   "fallback": {
     "articleId": "6abda0e0535b0034271debb5",
