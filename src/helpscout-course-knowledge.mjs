@@ -1,7 +1,7 @@
 import {COLLECTION,check,comparable,hash,listArticles,validateCollection} from './helpscout-courses.mjs';
 // Fingerprint the source separately from live Docs. Unchanged source records must
 // never overwrite a colleague's newer live edits, nor block unrelated updates.
-const sourceHash=a=>hash(JSON.stringify({name:a.name,text:comparable(a.text),keywords:a.keywords,categories:a.manageCategories?a.categories:null}));
+const sourceHash=a=>hash(JSON.stringify({name:a.name,text:comparable(a.text),keywords:a.keywords,categories:a.manageCategories?a.categories:null,...(a.manageKeywords===true?{manageKeywords:true}:{})}));
 export async function publishKnowledge({pack,request,previous=null,saveBackup}){
  check(pack.collectionId===COLLECTION&&pack.articles.length===({1:42,2:50}[pack.version])&&pack.articles.filter(a=>a.id).length===20,'Invalid course knowledge pack');
  await validateCollection(request);const listed=await listArticles(request),plans=[],used=new Set();
@@ -22,7 +22,8 @@ export async function publishKnowledge({pack,request,previous=null,saveBackup}){
  for(const {a,current,old,preserve} of plans){
   if(preserve){result.push({...old,sourceHash:sourceHash(a),action:'preserved',liveTextHash:hash(comparable(current.text)),liveHasDraft:!!current.hasDraft});continue;}
   let id=current?.id;
-  if(current){const fresh=(await request('GET',`/articles/${id}`)).article;check(!fresh.hasDraft&&fresh.name===current.name&&hash(comparable(fresh.text))===hash(comparable(current.text)),`Concurrent edit: ${a.name}`);await request('PUT',`/articles/${id}`,{name:a.name,text:a.text,keywords:a.keywords,...(a.manageCategories?{categories:a.categories}:{})});}
+  // Preserve live keyword curation unless a source record explicitly opts in.
+  if(current){const fresh=(await request('GET',`/articles/${id}`)).article;check(!fresh.hasDraft&&fresh.name===current.name&&hash(comparable(fresh.text))===hash(comparable(current.text)),`Concurrent edit: ${a.name}`);await request('PUT',`/articles/${id}`,{name:a.name,text:a.text,...(a.manageKeywords===true?{keywords:a.keywords}:{}),...(a.manageCategories?{categories:a.categories}:{})});}
   else id=await request('POST','/articles',{collectionId:COLLECTION,status:'published',slug:a.slug,name:a.name,text:a.text,categories:a.categories,keywords:a.keywords});
   const read=(await request('GET',`/articles/${id}`)).article;
   check(read.collectionId===COLLECTION&&read.status==='published'&&read.name===a.name&&comparable(read.text)===comparable(a.text),`Article readback mismatch: ${a.name}`);
