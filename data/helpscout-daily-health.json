@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-26T10:02:44.500+11:00",
+  "checkedAt": "2026-10-26T10:31:18.443+11:00",
   "localDate": "2026-10-26",
   "repository": "abyss-scuba/abyss-future-dive-feed",
   "scope": "Seven maintained Help Scout date publishers, including derived date sections; separate website future-feed dependency.",
@@ -217,22 +217,22 @@
       "key": "travel",
       "label": "Dive Travel",
       "state": "PASS",
-      "checkedAt": "2026-10-26T10:02:17.544+11:00",
+      "checkedAt": "2026-10-26T10:30:52.548+11:00",
       "count": 11,
       "publishedUniqueEventLinks": 11,
       "due": "11:00",
       "workflow": "sync-helpscout-travel.yml",
       "latestRun": {
-        "id": 40242847413,
+        "id": 40245043329,
         "event": "schedule",
         "status": "completed",
         "conclusion": "success",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/40242847413"
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/40245043329"
       },
       "lastSuccessfulScheduledRun": {
-        "id": 40242847413,
-        "createdAt": "2026-10-25T23:01:23Z",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/40242847413"
+        "id": 40245043329,
+        "createdAt": "2026-10-25T23:30:06Z",
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/40245043329"
       },
       "articles": [
         {
@@ -244,7 +244,7 @@
             "2026-10-26"
           ],
           "eventLinks": 11,
-          "bodyHash": "e44963177a2c39c6539a2315cb2f9dd232bce1c91d8f6a8ee611ee22e74384ea",
+          "bodyHash": "1579291bba9c22a77d1bb649254f9491bfbef52aef2ae280ea3ac82161df9050",
           "errors": [],
           "warnings": []
         }
@@ -420,6 +420,7 @@
         }
       ],
       "errors": [
+        "daily-publication-receipt-missing",
         "Upcoming Avelo Course Dates — Updated Daily: successful-check-date-missing",
         "Upcoming Avelo Course Dates — Updated Daily: stale-fallback-published",
         "published-booking-link-count-differs-from-receipt"
