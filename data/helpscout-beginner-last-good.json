@@ -1,16 +1,16 @@
 {
   "version": 1,
   "source": "https://www.abyss.com.au/beginner-diver-widget",
-  "checkedAt": "2026-10-24T18:55:32.089Z",
-  "expiresAt": "2026-10-26T06:55:32.089Z",
+  "checkedAt": "2026-10-25T19:19:41.504Z",
+  "expiresAt": "2026-10-27T07:19:41.504Z",
   "timezone": "Australia/Sydney",
   "counts": {
-    "shore": 40,
-    "boat": 37,
+    "shore": 49,
+    "boat": 55,
     "trip": 11
   },
   "sourceCounts": {
-    "widget3856": 85,
+    "widget3856": 112,
     "widget3857": 11
   },
   "excluded": [
@@ -49,75 +49,6 @@
   ],
   "events": [
     {
-      "id": "66412527",
-      "kind": "boat",
-      "title": "Magic Point Shark Dive 25/10/2026",
-      "product": "Boat Dives",
-      "startDate": "2026-10-25",
-      "endDate": "2026-10-25",
-      "time": "08:00",
-      "timeBasis": "Australia/Sydney",
-      "startInstant": "2026-10-24T21:00:00.000Z",
-      "bookingUrl": "https://www.abyss.com.au/charters/boat-dives?q=cGFydF9udW1iZXI9TWFnaWMgUG9pbnQgU2hhcmsgRGl2ZSAyNS8xMC8yMDI2JmRhdGU9Jm9wZW5fY2FydF9pZD02NjQxMjUyNw==",
-      "listedPrice": {
-        "amount": 130,
-        "currency": "AUD",
-        "basis": "listed booking price; confirm package basis and extras"
-      },
-      "availability": "fully_booked",
-      "availabilityLabel": "Fully booked",
-      "listedDepth": "15–24m",
-      "notes": [],
-      "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:55:57.243Z"
-    },
-    {
-      "id": "66412520",
-      "kind": "shore",
-      "title": "Voodoo Dive 25/10/2026",
-      "product": "Guided Shore Dives",
-      "startDate": "2026-10-25",
-      "endDate": "2026-10-25",
-      "time": "09:00",
-      "timeBasis": "Australia/Sydney",
-      "startInstant": "2026-10-24T22:00:00.000Z",
-      "bookingUrl": "https://www.abyss.com.au/charters/guided-shore-dives?q=cGFydF9udW1iZXI9Vm9vZG9vIERpdmUgMjUvMTAvMjAyNiZkYXRlPSZvcGVuX2NhcnRfaWQ9NjY0MTI1MjA=",
-      "listedPrice": {
-        "amount": 0,
-        "currency": "AUD",
-        "basis": "listed booking price; confirm package basis and extras"
-      },
-      "availability": "fully_booked",
-      "availabilityLabel": "Fully booked",
-      "listedDepth": "18m",
-      "notes": [],
-      "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:55:57.299Z"
-    },
-    {
-      "id": "67009601",
-      "kind": "shore",
-      "title": "Oak Park ND 25/10/26",
-      "product": "Guided Shore Dives",
-      "startDate": "2026-10-25",
-      "endDate": "2026-10-25",
-      "time": "18:00",
-      "timeBasis": "Australia/Sydney",
-      "startInstant": "2026-10-25T07:00:00.000Z",
-      "bookingUrl": "https://www.abyss.com.au/charters/guided-shore-dives?q=cGFydF9udW1iZXI9T2FrIFBhcmsgTkQgMjUvMTAvMjYmZGF0ZT0mb3Blbl9jYXJ0X2lkPTY3MDA5NjAx",
-      "listedPrice": {
-        "amount": 0,
-        "currency": "AUD",
-        "basis": "listed booking price; confirm package basis and extras"
-      },
-      "availability": "check_availability",
-      "availabilityLabel": "Check availability",
-      "listedDepth": null,
-      "notes": [],
-      "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:55:57.278Z"
-    },
-    {
       "id": "67034962",
       "kind": "shore",
       "title": "Leap to Steps Dive 30/10/26",
@@ -138,7 +69,7 @@
       "listedDepth": "18-22m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:55:57.293Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:10.954Z"
     },
     {
       "id": "66560586",
@@ -161,7 +92,7 @@
       "listedDepth": null,
       "notes": [],
       "sourceWidget": "widget3857",
-      "bookingLinkCheckedAt": "2026-10-24T18:55:57.680Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:10.679Z"
     },
     {
       "id": "66993310",
@@ -184,7 +115,7 @@
       "listedDepth": "12–24m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:55:57.844Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:10.962Z"
     },
     {
       "id": "67034963",
@@ -207,7 +138,7 @@
       "listedDepth": "12-18m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:55:57.989Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:11.004Z"
     },
     {
       "id": "66993311",
@@ -230,7 +161,7 @@
       "listedDepth": "15–24m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:55:57.974Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:11.307Z"
     },
     {
       "id": "66661869",
@@ -253,7 +184,7 @@
       "listedDepth": "15–24m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:55:58.259Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:11.633Z"
     },
     {
       "id": "66660489",
@@ -276,7 +207,7 @@
       "listedDepth": "18-22m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:55:58.507Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:11.642Z"
     },
     {
       "id": "66713307",
@@ -299,7 +230,7 @@
       "listedDepth": "12–24m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:55:58.679Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:11.644Z"
     },
     {
       "id": "100038837",
@@ -322,7 +253,7 @@
       "listedDepth": null,
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:55:58.685Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:11.949Z"
     },
     {
       "id": "66660481",
@@ -345,7 +276,7 @@
       "listedDepth": "10m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:55:58.855Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:12.324Z"
     },
     {
       "id": "66661875",
@@ -370,7 +301,7 @@
         "Technical departure, not an ordinary new-diver option; appropriate technical qualification and team approval required."
       ],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:55:59.041Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:12.233Z"
     },
     {
       "id": "66660482",
@@ -393,7 +324,7 @@
       "listedDepth": "10m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:55:59.253Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:12.334Z"
     },
     {
       "id": "66661876",
@@ -416,7 +347,7 @@
       "listedDepth": null,
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:55:59.371Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:12.510Z"
     },
     {
       "id": "66661868",
@@ -439,7 +370,7 @@
       "listedDepth": null,
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:55:59.424Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:12.860Z"
     },
     {
       "id": "66661871",
@@ -462,7 +393,7 @@
       "listedDepth": "15–24m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:55:59.642Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:12.992Z"
     },
     {
       "id": "66660494",
@@ -485,7 +416,7 @@
       "listedDepth": "10m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:55:59.909Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:12.972Z"
     },
     {
       "id": "100038765",
@@ -508,7 +439,7 @@
       "listedDepth": null,
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:00.057Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:13.057Z"
     },
     {
       "id": "66693175",
@@ -531,7 +462,32 @@
       "listedDepth": null,
       "notes": [],
       "sourceWidget": "widget3857",
-      "bookingLinkCheckedAt": "2026-10-24T18:55:59.875Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:13.290Z"
+    },
+    {
+      "id": "66660493",
+      "kind": "shore",
+      "title": "Shiprock & Oak Park Dive 13/11/26",
+      "product": "Guided Shore Dives",
+      "startDate": "2026-11-13",
+      "endDate": "2026-11-13",
+      "time": "10:00",
+      "timeBasis": "Australia/Sydney",
+      "startInstant": "2026-11-12T23:00:00.000Z",
+      "bookingUrl": "https://www.abyss.com.au/charters/guided-shore-dives?q=cGFydF9udW1iZXI9U2hpcHJvY2srJTI2K09haytQYXJrK0RpdmUrMTMlMkYxMSUyRjI2JmRhdGU9Jm9wZW5fY2FydF9pZD02NjY2MDQ5Mw%3D%3D",
+      "listedPrice": {
+        "amount": 0,
+        "currency": "AUD",
+        "basis": "listed booking price; confirm package basis and extras"
+      },
+      "availability": "check_availability",
+      "availabilityLabel": "Check availability",
+      "listedDepth": "16m",
+      "notes": [],
+      "sourceWidget": "widget3856",
+      "sourceBookingUrl": "https://www.abyss.com.au/charters/guided-shore-dives?q=cGFydF9udW1iZXI9U2hpcHJvY2sgJiBPYWsgUGFyayBEaXZlIDEzLzExLzI2JmRhdGU9Jm9wZW5fY2FydF9pZD02NjY2MDQ5Mw==",
+      "bookingLinkRepair": "URL-encoded an unescaped ampersand in the source part_number",
+      "bookingLinkCheckedAt": "2026-10-25T19:20:14.322Z"
     },
     {
       "id": "100004425",
@@ -554,7 +510,7 @@
       "listedDepth": null,
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:00.312Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:13.662Z"
     },
     {
       "id": "66661870",
@@ -577,7 +533,7 @@
       "listedDepth": "15–24m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:00.539Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:13.634Z"
     },
     {
       "id": "66660490",
@@ -600,7 +556,7 @@
       "listedDepth": "18-22m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:00.495Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:13.879Z"
     },
     {
       "id": "66661877",
@@ -623,7 +579,7 @@
       "listedDepth": "30m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:00.763Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:14.262Z"
     },
     {
       "id": "66661878",
@@ -648,7 +604,7 @@
         "The listing explicitly says unguided; no underwater escort is promised."
       ],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:00.890Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:14.320Z"
     },
     {
       "id": "66661865",
@@ -671,7 +627,7 @@
       "listedDepth": "12-18m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:01.173Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:14.509Z"
     },
     {
       "id": "66661879",
@@ -694,7 +650,7 @@
       "listedDepth": "25–35m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:01.169Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:14.892Z"
     },
     {
       "id": "66661867",
@@ -717,7 +673,7 @@
       "listedDepth": "15m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:01.442Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:14.948Z"
     },
     {
       "id": "66661880",
@@ -740,7 +696,7 @@
       "listedDepth": "30m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:01.565Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:14.982Z"
     },
     {
       "id": "66660487",
@@ -763,7 +719,7 @@
       "listedDepth": "10m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:01.892Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:15.151Z"
     },
     {
       "id": "66661881",
@@ -786,7 +742,7 @@
       "listedDepth": "18m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:01.845Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:15.515Z"
     },
     {
       "id": "66661872",
@@ -809,7 +765,7 @@
       "listedDepth": "15–24m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:02.110Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:15.509Z"
     },
     {
       "id": "66660488",
@@ -832,7 +788,7 @@
       "listedDepth": "10m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:02.242Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:15.632Z"
     },
     {
       "id": "66661882",
@@ -855,7 +811,7 @@
       "listedDepth": "25m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:02.521Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:15.708Z"
     },
     {
       "id": "100038240",
@@ -878,7 +834,7 @@
       "listedDepth": null,
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:02.555Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:16.169Z"
     },
     {
       "id": "66660492",
@@ -903,7 +859,7 @@
       "sourceWidget": "widget3856",
       "sourceBookingUrl": "https://www.abyss.com.au/charters/guided-shore-dives?q=cGFydF9udW1iZXI9U2hpcHJvY2sgJiBPYWsgUGFyayBEaXZlIDI3LzExLzIwMjYmZGF0ZT0mb3Blbl9jYXJ0X2lkPTY2NjYwNDky",
       "bookingLinkRepair": "URL-encoded an unescaped ampersand in the source part_number",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:03.474Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:16.702Z"
     },
     {
       "id": "66713310",
@@ -926,7 +882,7 @@
       "listedDepth": "12–24m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:02.890Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:16.293Z"
     },
     {
       "id": "66661866",
@@ -949,7 +905,7 @@
       "listedDepth": "14m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:03.208Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:16.247Z"
     },
     {
       "id": "66661874",
@@ -972,7 +928,7 @@
       "listedDepth": "15–24m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:03.215Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:16.810Z"
     },
     {
       "id": "100081178",
@@ -995,7 +951,7 @@
       "listedDepth": null,
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:03.445Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:16.824Z"
     },
     {
       "id": "66713311",
@@ -1020,7 +976,7 @@
         "Technical departure, not an ordinary new-diver option; appropriate technical qualification and team approval required."
       ],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:03.800Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:16.889Z"
     },
     {
       "id": "66660491",
@@ -1043,7 +999,7 @@
       "listedDepth": "18-22m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:03.802Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:17.355Z"
     },
     {
       "id": "100038843",
@@ -1066,7 +1022,7 @@
       "listedDepth": null,
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:04.128Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:17.447Z"
     },
     {
       "id": "100045650",
@@ -1089,7 +1045,7 @@
       "listedDepth": "10m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:04.142Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:17.449Z"
     },
     {
       "id": "100053506",
@@ -1112,7 +1068,7 @@
       "listedDepth": "12–24m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:04.381Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:17.531Z"
     },
     {
       "id": "100046489",
@@ -1135,7 +1091,7 @@
       "listedDepth": "10m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:04.414Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:17.906Z"
     },
     {
       "id": "100054445",
@@ -1158,7 +1114,7 @@
       "listedDepth": "15–24m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:04.829Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:18.120Z"
     },
     {
       "id": "100054621",
@@ -1181,7 +1137,7 @@
       "listedDepth": "15–24m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:04.833Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:18.019Z"
     },
     {
       "id": "100046614",
@@ -1204,7 +1160,7 @@
       "listedDepth": "10m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:04.963Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:18.204Z"
     },
     {
       "id": "100054963",
@@ -1227,7 +1183,7 @@
       "listedDepth": "25m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:04.994Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:18.562Z"
     },
     {
       "id": "100053301",
@@ -1250,7 +1206,7 @@
       "listedDepth": "14m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:05.394Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:18.662Z"
     },
     {
       "id": "100048554",
@@ -1275,7 +1231,7 @@
         "Technical departure, not an ordinary new-diver option; appropriate technical qualification and team approval required."
       ],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:05.452Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:18.741Z"
     },
     {
       "id": "100048929",
@@ -1298,7 +1254,7 @@
       "listedDepth": "15m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:05.567Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:18.876Z"
     },
     {
       "id": "100050044",
@@ -1321,7 +1277,7 @@
       "listedDepth": "18–24m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:05.583Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:19.115Z"
     },
     {
       "id": "100055099",
@@ -1344,7 +1300,7 @@
       "listedDepth": "15–24m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:05.979Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:19.286Z"
     },
     {
       "id": "100050416",
@@ -1367,7 +1323,7 @@
       "listedDepth": "18-22m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:06.036Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:19.368Z"
     },
     {
       "id": "100050572",
@@ -1390,7 +1346,7 @@
       "listedDepth": "18-22m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:06.177Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:19.440Z"
     },
     {
       "id": "100055722",
@@ -1413,7 +1369,7 @@
       "listedDepth": "25–35m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:06.188Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:19.680Z"
     },
     {
       "id": "100050293",
@@ -1436,7 +1392,7 @@
       "listedDepth": "15m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:06.583Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:19.924Z"
     },
     {
       "id": "100055193",
@@ -1459,7 +1415,7 @@
       "listedDepth": "15–24m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:06.767Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:19.993Z"
     },
     {
       "id": "100048671",
@@ -1484,7 +1440,7 @@
         "Technical departure, not an ordinary new-diver option; appropriate technical qualification and team approval required."
       ],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:06.750Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:20.011Z"
     },
     {
       "id": "66833151",
@@ -1507,7 +1463,7 @@
       "listedDepth": null,
       "notes": [],
       "sourceWidget": "widget3857",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:06.640Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:20.080Z"
     },
     {
       "id": "100055598",
@@ -1530,7 +1486,7 @@
       "listedDepth": "25–35m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:07.251Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:20.485Z"
     },
     {
       "id": "100053644",
@@ -1553,7 +1509,7 @@
       "listedDepth": "15m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:07.298Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:20.626Z"
     },
     {
       "id": "100055595",
@@ -1576,7 +1532,7 @@
       "listedDepth": "15–24m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:07.459Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:20.669Z"
     },
     {
       "id": "100055485",
@@ -1599,7 +1555,7 @@
       "listedDepth": "15–24m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:07.363Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:20.706Z"
     },
     {
       "id": "100050165",
@@ -1622,7 +1578,7 @@
       "listedDepth": "15m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:07.830Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:21.029Z"
     },
     {
       "id": "100055592",
@@ -1645,7 +1601,7 @@
       "listedDepth": "30m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:07.879Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:21.315Z"
     },
     {
       "id": "100055296",
@@ -1668,7 +1624,7 @@
       "listedDepth": "15–24m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:07.988Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:21.382Z"
     },
     {
       "id": "100055599",
@@ -1691,7 +1647,7 @@
       "listedDepth": "12–24m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:08.115Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:21.375Z"
     },
     {
       "id": "100046812",
@@ -1714,7 +1670,30 @@
       "listedDepth": "10m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:08.496Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:21.565Z"
+    },
+    {
+      "id": "100095182",
+      "kind": "boat",
+      "title": "Barrens Hut Boat Dive 2/01/27",
+      "product": "Boat Dives",
+      "startDate": "2027-01-02",
+      "endDate": "2027-01-02",
+      "time": "08:00",
+      "timeBasis": "Australia/Sydney",
+      "startInstant": "2027-01-01T21:00:00.000Z",
+      "bookingUrl": "https://www.abyss.com.au/charters/boat-dives?q=cGFydF9udW1iZXI9QmFycmVucyBIdXQgQm9hdCBEaXZlIDIvMDEvMjcmZGF0ZT0mb3Blbl9jYXJ0X2lkPTEwMDA5NTE4Mg==",
+      "listedPrice": {
+        "amount": 130,
+        "currency": "AUD",
+        "basis": "listed booking price; confirm package basis and extras"
+      },
+      "availability": "check_availability",
+      "availabilityLabel": "Check availability",
+      "listedDepth": "30m",
+      "notes": [],
+      "sourceWidget": "widget3856",
+      "bookingLinkCheckedAt": "2026-10-25T19:20:21.934Z"
     },
     {
       "id": "100091952",
@@ -1737,7 +1716,53 @@
       "listedDepth": "10m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:08.494Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:22.031Z"
+    },
+    {
+      "id": "100095183",
+      "kind": "boat",
+      "title": "Osborn Shoals Dive 02/01/27",
+      "product": "Boat Dives",
+      "startDate": "2027-01-02",
+      "endDate": "2027-01-02",
+      "time": "12:00",
+      "timeBasis": "Australia/Sydney",
+      "startInstant": "2027-01-02T01:00:00.000Z",
+      "bookingUrl": "https://www.abyss.com.au/charters/boat-dives?q=cGFydF9udW1iZXI9T3Nib3JuIFNob2FscyBEaXZlIDAyLzAxLzI3JmRhdGU9Jm9wZW5fY2FydF9pZD0xMDAwOTUxODM=",
+      "listedPrice": {
+        "amount": 130,
+        "currency": "AUD",
+        "basis": "listed booking price; confirm package basis and extras"
+      },
+      "availability": "check_availability",
+      "availabilityLabel": "Check availability",
+      "listedDepth": "18–24m",
+      "notes": [],
+      "sourceWidget": "widget3856",
+      "bookingLinkCheckedAt": "2026-10-25T19:20:22.004Z"
+    },
+    {
+      "id": "100095190",
+      "kind": "boat",
+      "title": "Madic Point Shark Dive 03/01/27",
+      "product": "Boat Dives",
+      "startDate": "2027-01-03",
+      "endDate": "2027-01-03",
+      "time": "08:00",
+      "timeBasis": "Australia/Sydney",
+      "startInstant": "2027-01-02T21:00:00.000Z",
+      "bookingUrl": "https://www.abyss.com.au/charters/boat-dives?q=cGFydF9udW1iZXI9TWFkaWMgUG9pbnQgU2hhcmsgRGl2ZSAwMy8wMS8yNyZkYXRlPSZvcGVuX2NhcnRfaWQ9MTAwMDk1MTkw",
+      "listedPrice": {
+        "amount": 130,
+        "currency": "AUD",
+        "basis": "listed booking price; confirm package basis and extras"
+      },
+      "availability": "check_availability",
+      "availabilityLabel": "Check availability",
+      "listedDepth": "15–24m",
+      "notes": [],
+      "sourceWidget": "widget3856",
+      "bookingLinkCheckedAt": "2026-10-25T19:20:22.120Z"
     },
     {
       "id": "100091953",
@@ -1760,7 +1785,30 @@
       "listedDepth": "10m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:08.625Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:22.558Z"
+    },
+    {
+      "id": "100095191",
+      "kind": "boat",
+      "title": "Hilda Wreck Boat Dive 03/01/27",
+      "product": "Boat Dives",
+      "startDate": "2027-01-03",
+      "endDate": "2027-01-03",
+      "time": "12:00",
+      "timeBasis": "Australia/Sydney",
+      "startInstant": "2027-01-03T01:00:00.000Z",
+      "bookingUrl": "https://www.abyss.com.au/charters/boat-dives?q=cGFydF9udW1iZXI9SGlsZGEgV3JlY2sgQm9hdCBEaXZlIDAzLzAxLzI3JmRhdGU9Jm9wZW5fY2FydF9pZD0xMDAwOTUxOTE=",
+      "listedPrice": {
+        "amount": 130,
+        "currency": "AUD",
+        "basis": "listed booking price; confirm package basis and extras"
+      },
+      "availability": "check_availability",
+      "availabilityLabel": "Check availability",
+      "listedDepth": "25m",
+      "notes": [],
+      "sourceWidget": "widget3856",
+      "bookingLinkCheckedAt": "2026-10-25T19:20:22.634Z"
     },
     {
       "id": "100091955",
@@ -1783,7 +1831,147 @@
       "listedDepth": "10m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:08.779Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:22.691Z"
+    },
+    {
+      "id": "100095192",
+      "kind": "boat",
+      "title": "Henry Head Boat Dive 09/01/27",
+      "product": "Boat Dives",
+      "startDate": "2027-01-09",
+      "endDate": "2027-01-09",
+      "time": "08:00",
+      "timeBasis": "Australia/Sydney",
+      "startInstant": "2027-01-08T21:00:00.000Z",
+      "bookingUrl": "https://www.abyss.com.au/charters/boat-dives?q=cGFydF9udW1iZXI9SGVucnkgSGVhZCBCb2F0IERpdmUgMDkvMDEvMjcmZGF0ZT0mb3Blbl9jYXJ0X2lkPTEwMDA5NTE5Mg==",
+      "listedPrice": {
+        "amount": 130,
+        "currency": "AUD",
+        "basis": "listed booking price; confirm package basis and extras"
+      },
+      "availability": "check_availability",
+      "availabilityLabel": "Check availability",
+      "listedDepth": "12–24m",
+      "notes": [],
+      "sourceWidget": "widget3856",
+      "bookingLinkCheckedAt": "2026-10-25T19:20:22.699Z"
+    },
+    {
+      "id": "100095177",
+      "kind": "shore",
+      "title": "Sutherland Point Dive 9/01/27",
+      "product": "Guided Shore Dives",
+      "startDate": "2027-01-09",
+      "endDate": "2027-01-09",
+      "time": "09:00",
+      "timeBasis": "Australia/Sydney",
+      "startInstant": "2027-01-08T22:00:00.000Z",
+      "bookingUrl": "https://www.abyss.com.au/charters/guided-shore-dives?q=cGFydF9udW1iZXI9U3V0aGVybGFuZCBQb2ludCBEaXZlIDkvMDEvMjcmZGF0ZT0mb3Blbl9jYXJ0X2lkPTEwMDA5NTE3Nw==",
+      "listedPrice": {
+        "amount": 0,
+        "currency": "AUD",
+        "basis": "listed booking price; confirm package basis and extras"
+      },
+      "availability": "check_availability",
+      "availabilityLabel": "Check availability",
+      "listedDepth": "14m",
+      "notes": [],
+      "sourceWidget": "widget3856",
+      "bookingLinkCheckedAt": "2026-10-25T19:20:23.194Z"
+    },
+    {
+      "id": "100095196",
+      "kind": "boat",
+      "title": "Magic Point Shark Dive 09/01/27",
+      "product": "Boat Dives",
+      "startDate": "2027-01-09",
+      "endDate": "2027-01-09",
+      "time": "12:00",
+      "timeBasis": "Australia/Sydney",
+      "startInstant": "2027-01-09T01:00:00.000Z",
+      "bookingUrl": "https://www.abyss.com.au/charters/boat-dives?q=cGFydF9udW1iZXI9TWFnaWMgUG9pbnQgU2hhcmsgRGl2ZSAwOS8wMS8yNyZkYXRlPSZvcGVuX2NhcnRfaWQ9MTAwMDk1MTk2",
+      "listedPrice": {
+        "amount": 130,
+        "currency": "AUD",
+        "basis": "listed booking price; confirm package basis and extras"
+      },
+      "availability": "check_availability",
+      "availabilityLabel": "Check availability",
+      "listedDepth": "15–24m",
+      "notes": [],
+      "sourceWidget": "widget3856",
+      "bookingLinkCheckedAt": "2026-10-25T19:20:23.276Z"
+    },
+    {
+      "id": "100095201",
+      "kind": "boat",
+      "title": "Whale Watching Platform Dive 10/01/27",
+      "product": "Boat Dives",
+      "startDate": "2027-01-10",
+      "endDate": "2027-01-10",
+      "time": "08:00",
+      "timeBasis": "Australia/Sydney",
+      "startInstant": "2027-01-09T21:00:00.000Z",
+      "bookingUrl": "https://www.abyss.com.au/charters/boat-dives?q=cGFydF9udW1iZXI9V2hhbGUgV2F0Y2hpbmcgUGxhdGZvcm0gRGl2ZSAxMC8wMS8yNyZkYXRlPSZvcGVuX2NhcnRfaWQ9MTAwMDk1MjAx",
+      "listedPrice": {
+        "amount": 130,
+        "currency": "AUD",
+        "basis": "listed booking price; confirm package basis and extras"
+      },
+      "availability": "check_availability",
+      "availabilityLabel": "Check availability",
+      "listedDepth": "18–25m",
+      "notes": [],
+      "sourceWidget": "widget3856",
+      "bookingLinkCheckedAt": "2026-10-25T19:20:23.461Z"
+    },
+    {
+      "id": "100095179",
+      "kind": "shore",
+      "title": "Shiprock & Oak Park Dive 10/01/27",
+      "product": "Guided Shore Dives",
+      "startDate": "2027-01-10",
+      "endDate": "2027-01-10",
+      "time": "09:00",
+      "timeBasis": "Australia/Sydney",
+      "startInstant": "2027-01-09T22:00:00.000Z",
+      "bookingUrl": "https://www.abyss.com.au/charters/guided-shore-dives?q=cGFydF9udW1iZXI9U2hpcHJvY2srJTI2K09haytQYXJrK0RpdmUrMTAlMkYwMSUyRjI3JmRhdGU9Jm9wZW5fY2FydF9pZD0xMDAwOTUxNzk%3D",
+      "listedPrice": {
+        "amount": 0,
+        "currency": "AUD",
+        "basis": "listed booking price; confirm package basis and extras"
+      },
+      "availability": "check_availability",
+      "availabilityLabel": "Check availability",
+      "listedDepth": "16m",
+      "notes": [],
+      "sourceWidget": "widget3856",
+      "sourceBookingUrl": "https://www.abyss.com.au/charters/guided-shore-dives?q=cGFydF9udW1iZXI9U2hpcHJvY2sgJiBPYWsgUGFyayBEaXZlIDEwLzAxLzI3JmRhdGU9Jm9wZW5fY2FydF9pZD0xMDAwOTUxNzk=",
+      "bookingLinkRepair": "URL-encoded an unescaped ampersand in the source part_number",
+      "bookingLinkCheckedAt": "2026-10-25T19:20:24.199Z"
+    },
+    {
+      "id": "100095203",
+      "kind": "boat",
+      "title": "Voodoo Wide Boat Dive 10/01/27",
+      "product": "Boat Dives",
+      "startDate": "2027-01-10",
+      "endDate": "2027-01-10",
+      "time": "12:00",
+      "timeBasis": "Australia/Sydney",
+      "startInstant": "2027-01-10T01:00:00.000Z",
+      "bookingUrl": "https://www.abyss.com.au/charters/boat-dives?q=cGFydF9udW1iZXI9Vm9vZG9vIFdpZGUgQm9hdCBEaXZlIDEwLzAxLzI3JmRhdGU9Jm9wZW5fY2FydF9pZD0xMDAwOTUyMDM=",
+      "listedPrice": {
+        "amount": 130,
+        "currency": "AUD",
+        "basis": "listed booking price; confirm package basis and extras"
+      },
+      "availability": "check_availability",
+      "availabilityLabel": "Check availability",
+      "listedDepth": "25–35m",
+      "notes": [],
+      "sourceWidget": "widget3856",
+      "bookingLinkCheckedAt": "2026-10-25T19:20:24.260Z"
     },
     {
       "id": "66693186",
@@ -1806,7 +1994,168 @@
       "listedDepth": null,
       "notes": [],
       "sourceWidget": "widget3857",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:08.940Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:23.692Z"
+    },
+    {
+      "id": "100095173",
+      "kind": "shore",
+      "title": "Leap to Steps Drift Dive 15/01/27",
+      "product": "Guided Shore Dives",
+      "startDate": "2027-01-15",
+      "endDate": "2027-01-15",
+      "time": "10:00",
+      "timeBasis": "Australia/Sydney",
+      "startInstant": "2027-01-14T23:00:00.000Z",
+      "bookingUrl": "https://www.abyss.com.au/charters/guided-shore-dives?q=cGFydF9udW1iZXI9TGVhcCB0byBTdGVwcyBEcmlmdCBEaXZlIDE1LzAxLzI3JmRhdGU9Jm9wZW5fY2FydF9pZD0xMDAwOTUxNzM=",
+      "listedPrice": {
+        "amount": 0,
+        "currency": "AUD",
+        "basis": "listed booking price; confirm package basis and extras"
+      },
+      "availability": "check_availability",
+      "availabilityLabel": "Check availability",
+      "listedDepth": "18-22m",
+      "notes": [],
+      "sourceWidget": "widget3856",
+      "bookingLinkCheckedAt": "2026-10-25T19:20:24.172Z"
+    },
+    {
+      "id": "100095204",
+      "kind": "boat",
+      "title": "Dragons Lair Boat Dive 16/01/27",
+      "product": "Boat Dives",
+      "startDate": "2027-01-16",
+      "endDate": "2027-01-16",
+      "time": "08:00",
+      "timeBasis": "Australia/Sydney",
+      "startInstant": "2027-01-15T21:00:00.000Z",
+      "bookingUrl": "https://www.abyss.com.au/charters/boat-dives?q=cGFydF9udW1iZXI9RHJhZ29ucyBMYWlyIEJvYXQgRGl2ZSAxNi8wMS8yNyZkYXRlPSZvcGVuX2NhcnRfaWQ9MTAwMDk1MjA0",
+      "listedPrice": {
+        "amount": 130,
+        "currency": "AUD",
+        "basis": "listed booking price; confirm package basis and extras"
+      },
+      "availability": "check_availability",
+      "availabilityLabel": "Check availability",
+      "listedDepth": null,
+      "notes": [],
+      "sourceWidget": "widget3856",
+      "bookingLinkCheckedAt": "2026-10-25T19:20:24.305Z"
+    },
+    {
+      "id": "100095174",
+      "kind": "shore",
+      "title": "Leap to Steps Drift Dive 16/01/27",
+      "product": "Guided Shore Dives",
+      "startDate": "2027-01-16",
+      "endDate": "2027-01-16",
+      "time": "09:00",
+      "timeBasis": "Australia/Sydney",
+      "startInstant": "2027-01-15T22:00:00.000Z",
+      "bookingUrl": "https://www.abyss.com.au/charters/guided-shore-dives?q=cGFydF9udW1iZXI9TGVhcCB0byBTdGVwcyBEcmlmdCBEaXZlIDE2LzAxLzI3JmRhdGU9Jm9wZW5fY2FydF9pZD0xMDAwOTUxNzQ=",
+      "listedPrice": {
+        "amount": 0,
+        "currency": "AUD",
+        "basis": "listed booking price; confirm package basis and extras"
+      },
+      "availability": "check_availability",
+      "availabilityLabel": "Check availability",
+      "listedDepth": "18-22m",
+      "notes": [],
+      "sourceWidget": "widget3856",
+      "bookingLinkCheckedAt": "2026-10-25T19:20:24.874Z"
+    },
+    {
+      "id": "100095205",
+      "kind": "boat",
+      "title": "Big Saigon Boat Dive 16/01/27",
+      "product": "Boat Dives",
+      "startDate": "2027-01-16",
+      "endDate": "2027-01-16",
+      "time": "12:00",
+      "timeBasis": "Australia/Sydney",
+      "startInstant": "2027-01-16T01:00:00.000Z",
+      "bookingUrl": "https://www.abyss.com.au/charters/boat-dives?q=cGFydF9udW1iZXI9QmlnIFNhaWdvbiBCb2F0IERpdmUgMTYvMDEvMjcmZGF0ZT0mb3Blbl9jYXJ0X2lkPTEwMDA5NTIwNQ==",
+      "listedPrice": {
+        "amount": 130,
+        "currency": "AUD",
+        "basis": "listed booking price; confirm package basis and extras"
+      },
+      "availability": "check_availability",
+      "availabilityLabel": "Check availability",
+      "listedDepth": "18m",
+      "notes": [],
+      "sourceWidget": "widget3856",
+      "bookingLinkCheckedAt": "2026-10-25T19:20:24.871Z"
+    },
+    {
+      "id": "100095197",
+      "kind": "boat",
+      "title": "Magic Point Shark Dive 17/01/27",
+      "product": "Boat Dives",
+      "startDate": "2027-01-17",
+      "endDate": "2027-01-17",
+      "time": "08:00",
+      "timeBasis": "Australia/Sydney",
+      "startInstant": "2027-01-16T21:00:00.000Z",
+      "bookingUrl": "https://www.abyss.com.au/charters/boat-dives?q=cGFydF9udW1iZXI9TWFnaWMgUG9pbnQgU2hhcmsgRGl2ZSAxNy8wMS8yNyZkYXRlPSZvcGVuX2NhcnRfaWQ9MTAwMDk1MTk3",
+      "listedPrice": {
+        "amount": 130,
+        "currency": "AUD",
+        "basis": "listed booking price; confirm package basis and extras"
+      },
+      "availability": "check_availability",
+      "availabilityLabel": "Check availability",
+      "listedDepth": "15–24m",
+      "notes": [],
+      "sourceWidget": "widget3856",
+      "bookingLinkCheckedAt": "2026-10-25T19:20:24.938Z"
+    },
+    {
+      "id": "100095171",
+      "kind": "shore",
+      "title": "Oak Park Dive 17/01/27",
+      "product": "Guided Shore Dives",
+      "startDate": "2027-01-17",
+      "endDate": "2027-01-17",
+      "time": "09:00",
+      "timeBasis": "Australia/Sydney",
+      "startInstant": "2027-01-16T22:00:00.000Z",
+      "bookingUrl": "https://www.abyss.com.au/charters/guided-shore-dives?q=cGFydF9udW1iZXI9T2FrIFBhcmsgRGl2ZSAxNy8wMS8yNyZkYXRlPSZvcGVuX2NhcnRfaWQ9MTAwMDk1MTcx",
+      "listedPrice": {
+        "amount": 0,
+        "currency": "AUD",
+        "basis": "listed booking price; confirm package basis and extras"
+      },
+      "availability": "check_availability",
+      "availabilityLabel": "Check availability",
+      "listedDepth": "10m",
+      "notes": [],
+      "sourceWidget": "widget3856",
+      "bookingLinkCheckedAt": "2026-10-25T19:20:24.946Z"
+    },
+    {
+      "id": "100095194",
+      "kind": "boat",
+      "title": "Henry Head Boat Dive 17/01/27",
+      "product": "Boat Dives",
+      "startDate": "2027-01-17",
+      "endDate": "2027-01-17",
+      "time": "12:00",
+      "timeBasis": "Australia/Sydney",
+      "startInstant": "2027-01-17T01:00:00.000Z",
+      "bookingUrl": "https://www.abyss.com.au/charters/boat-dives?q=cGFydF9udW1iZXI9SGVucnkgSGVhZCBCb2F0IERpdmUgMTcvMDEvMjcmZGF0ZT0mb3Blbl9jYXJ0X2lkPTEwMDA5NTE5NA==",
+      "listedPrice": {
+        "amount": 130,
+        "currency": "AUD",
+        "basis": "listed booking price; confirm package basis and extras"
+      },
+      "availability": "check_availability",
+      "availabilityLabel": "Check availability",
+      "listedDepth": "12–24m",
+      "notes": [],
+      "sourceWidget": "widget3856",
+      "bookingLinkCheckedAt": "2026-10-25T19:20:25.543Z"
     },
     {
       "id": "100091954",
@@ -1829,7 +2178,287 @@
       "listedDepth": "10m",
       "notes": [],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:09.078Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:25.536Z"
+    },
+    {
+      "id": "100095195",
+      "kind": "boat",
+      "title": "Henry Head Boat Dive 23/01/27",
+      "product": "Boat Dives",
+      "startDate": "2027-01-23",
+      "endDate": "2027-01-23",
+      "time": "08:00",
+      "timeBasis": "Australia/Sydney",
+      "startInstant": "2027-01-22T21:00:00.000Z",
+      "bookingUrl": "https://www.abyss.com.au/charters/boat-dives?q=cGFydF9udW1iZXI9SGVucnkgSGVhZCBCb2F0IERpdmUgMjMvMDEvMjcmZGF0ZT0mb3Blbl9jYXJ0X2lkPTEwMDA5NTE5NQ==",
+      "listedPrice": {
+        "amount": 130,
+        "currency": "AUD",
+        "basis": "listed booking price; confirm package basis and extras"
+      },
+      "availability": "check_availability",
+      "availabilityLabel": "Check availability",
+      "listedDepth": "12–24m",
+      "notes": [],
+      "sourceWidget": "widget3856",
+      "bookingLinkCheckedAt": "2026-10-25T19:20:25.616Z"
+    },
+    {
+      "id": "100095178",
+      "kind": "shore",
+      "title": "Sutherland Point Dive 23/01/27",
+      "product": "Guided Shore Dives",
+      "startDate": "2027-01-23",
+      "endDate": "2027-01-23",
+      "time": "09:00",
+      "timeBasis": "Australia/Sydney",
+      "startInstant": "2027-01-22T22:00:00.000Z",
+      "bookingUrl": "https://www.abyss.com.au/charters/guided-shore-dives?q=cGFydF9udW1iZXI9U3V0aGVybGFuZCBQb2ludCBEaXZlIDIzLzAxLzI3JmRhdGU9Jm9wZW5fY2FydF9pZD0xMDAwOTUxNzg=",
+      "listedPrice": {
+        "amount": 0,
+        "currency": "AUD",
+        "basis": "listed booking price; confirm package basis and extras"
+      },
+      "availability": "check_availability",
+      "availabilityLabel": "Check availability",
+      "listedDepth": "14m",
+      "notes": [],
+      "sourceWidget": "widget3856",
+      "bookingLinkCheckedAt": "2026-10-25T19:20:25.569Z"
+    },
+    {
+      "id": "100095198",
+      "kind": "boat",
+      "title": "Magic Point Shark Dive 23/01/27",
+      "product": "Boat Dives",
+      "startDate": "2027-01-23",
+      "endDate": "2027-01-23",
+      "time": "12:00",
+      "timeBasis": "Australia/Sydney",
+      "startInstant": "2027-01-23T01:00:00.000Z",
+      "bookingUrl": "https://www.abyss.com.au/charters/boat-dives?q=cGFydF9udW1iZXI9TWFnaWMgUG9pbnQgU2hhcmsgRGl2ZSAyMy8wMS8yNyZkYXRlPSZvcGVuX2NhcnRfaWQ9MTAwMDk1MTk4",
+      "listedPrice": {
+        "amount": 130,
+        "currency": "AUD",
+        "basis": "listed booking price; confirm package basis and extras"
+      },
+      "availability": "check_availability",
+      "availabilityLabel": "Check availability",
+      "listedDepth": "15–24m",
+      "notes": [],
+      "sourceWidget": "widget3856",
+      "bookingLinkCheckedAt": "2026-10-25T19:20:26.263Z"
+    },
+    {
+      "id": "100095207",
+      "kind": "boat",
+      "title": "Tuggerah Technical Dive 24/01/27",
+      "product": "Tech Boat Dives",
+      "startDate": "2027-01-24",
+      "endDate": "2027-01-24",
+      "time": "08:00",
+      "timeBasis": "Australia/Sydney",
+      "startInstant": "2027-01-23T21:00:00.000Z",
+      "bookingUrl": "https://www.abyss.com.au/charters/tech-boat-dives?q=cGFydF9udW1iZXI9VHVnZ2VyYWggVGVjaG5pY2FsIERpdmUgMjQvMDEvMjcmZGF0ZT0mb3Blbl9jYXJ0X2lkPTEwMDA5NTIwNw==",
+      "listedPrice": {
+        "amount": 120,
+        "currency": "AUD",
+        "basis": "listed booking price; confirm package basis and extras"
+      },
+      "availability": "check_availability",
+      "availabilityLabel": "Check availability",
+      "listedDepth": "46m",
+      "notes": [
+        "Technical departure, not an ordinary new-diver option; appropriate technical qualification and team approval required."
+      ],
+      "sourceWidget": "widget3856",
+      "bookingLinkCheckedAt": "2026-10-25T19:20:26.163Z"
+    },
+    {
+      "id": "100095180",
+      "kind": "shore",
+      "title": "Shiprock & Oak Park Dive 24/01/27",
+      "product": "Guided Shore Dives",
+      "startDate": "2027-01-24",
+      "endDate": "2027-01-24",
+      "time": "09:00",
+      "timeBasis": "Australia/Sydney",
+      "startInstant": "2027-01-23T22:00:00.000Z",
+      "bookingUrl": "https://www.abyss.com.au/charters/guided-shore-dives?q=cGFydF9udW1iZXI9U2hpcHJvY2srJTI2K09haytQYXJrK0RpdmUrMjQlMkYwMSUyRjI3JmRhdGU9Jm9wZW5fY2FydF9pZD0xMDAwOTUxODA%3D",
+      "listedPrice": {
+        "amount": 0,
+        "currency": "AUD",
+        "basis": "listed booking price; confirm package basis and extras"
+      },
+      "availability": "check_availability",
+      "availabilityLabel": "Check availability",
+      "listedDepth": "16m",
+      "notes": [],
+      "sourceWidget": "widget3856",
+      "sourceBookingUrl": "https://www.abyss.com.au/charters/guided-shore-dives?q=cGFydF9udW1iZXI9U2hpcHJvY2sgJiBPYWsgUGFyayBEaXZlIDI0LzAxLzI3JmRhdGU9Jm9wZW5fY2FydF9pZD0xMDAwOTUxODA=",
+      "bookingLinkRepair": "URL-encoded an unescaped ampersand in the source part_number",
+      "bookingLinkCheckedAt": "2026-10-25T19:20:26.915Z"
+    },
+    {
+      "id": "100095189",
+      "kind": "boat",
+      "title": "Osborn Shoals Boat Dive 24/01/27",
+      "product": "Boat Dives",
+      "startDate": "2027-01-24",
+      "endDate": "2027-01-24",
+      "time": "12:00",
+      "timeBasis": "Australia/Sydney",
+      "startInstant": "2027-01-24T01:00:00.000Z",
+      "bookingUrl": "https://www.abyss.com.au/charters/boat-dives?q=cGFydF9udW1iZXI9T3Nib3JuIFNob2FscyBCb2F0IERpdmUgMjQvMDEvMjcmZGF0ZT0mb3Blbl9jYXJ0X2lkPTEwMDA5NTE4OQ==",
+      "listedPrice": {
+        "amount": 130,
+        "currency": "AUD",
+        "basis": "listed booking price; confirm package basis and extras"
+      },
+      "availability": "check_availability",
+      "availabilityLabel": "Check availability",
+      "listedDepth": "18–24m",
+      "notes": [],
+      "sourceWidget": "widget3856",
+      "bookingLinkCheckedAt": "2026-10-25T19:20:26.253Z"
+    },
+    {
+      "id": "100095175",
+      "kind": "shore",
+      "title": "Leap to Steps Drift Dive 29/01/27",
+      "product": "Guided Shore Dives",
+      "startDate": "2027-01-29",
+      "endDate": "2027-01-29",
+      "time": "10:00",
+      "timeBasis": "Australia/Sydney",
+      "startInstant": "2027-01-28T23:00:00.000Z",
+      "bookingUrl": "https://www.abyss.com.au/charters/guided-shore-dives?q=cGFydF9udW1iZXI9TGVhcCB0byBTdGVwcyBEcmlmdCBEaXZlIDI5LzAxLzI3JmRhdGU9Jm9wZW5fY2FydF9pZD0xMDAwOTUxNzU=",
+      "listedPrice": {
+        "amount": 0,
+        "currency": "AUD",
+        "basis": "listed booking price; confirm package basis and extras"
+      },
+      "availability": "check_availability",
+      "availabilityLabel": "Check availability",
+      "listedDepth": "18-22m",
+      "notes": [],
+      "sourceWidget": "widget3856",
+      "bookingLinkCheckedAt": "2026-10-25T19:20:26.814Z"
+    },
+    {
+      "id": "100095199",
+      "kind": "boat",
+      "title": "Magic Point Shark Dive 30/01/27",
+      "product": "Boat Dives",
+      "startDate": "2027-01-30",
+      "endDate": "2027-01-30",
+      "time": "08:00",
+      "timeBasis": "Australia/Sydney",
+      "startInstant": "2027-01-29T21:00:00.000Z",
+      "bookingUrl": "https://www.abyss.com.au/charters/boat-dives?q=cGFydF9udW1iZXI9TWFnaWMgUG9pbnQgU2hhcmsgRGl2ZSAzMC8wMS8yNyZkYXRlPSZvcGVuX2NhcnRfaWQ9MTAwMDk1MTk5",
+      "listedPrice": {
+        "amount": 130,
+        "currency": "AUD",
+        "basis": "listed booking price; confirm package basis and extras"
+      },
+      "availability": "check_availability",
+      "availabilityLabel": "Check availability",
+      "listedDepth": "15–24m",
+      "notes": [],
+      "sourceWidget": "widget3856",
+      "bookingLinkCheckedAt": "2026-10-25T19:20:26.916Z"
+    },
+    {
+      "id": "100095176",
+      "kind": "shore",
+      "title": "Leap to Steps Drift Dive 30/01/27",
+      "product": "Guided Shore Dives",
+      "startDate": "2027-01-30",
+      "endDate": "2027-01-30",
+      "time": "09:00",
+      "timeBasis": "Australia/Sydney",
+      "startInstant": "2027-01-29T22:00:00.000Z",
+      "bookingUrl": "https://www.abyss.com.au/charters/guided-shore-dives?q=cGFydF9udW1iZXI9TGVhcCB0byBTdGVwcyBEcmlmdCBEaXZlIDMwLzAxLzI3JmRhdGU9Jm9wZW5fY2FydF9pZD0xMDAwOTUxNzY=",
+      "listedPrice": {
+        "amount": 0,
+        "currency": "AUD",
+        "basis": "listed booking price; confirm package basis and extras"
+      },
+      "availability": "check_availability",
+      "availabilityLabel": "Check availability",
+      "listedDepth": "18-22m",
+      "notes": [],
+      "sourceWidget": "widget3856",
+      "bookingLinkCheckedAt": "2026-10-25T19:20:26.921Z"
+    },
+    {
+      "id": "100095202",
+      "kind": "boat",
+      "title": "Barrens Hut Boat Dive 30/01/27",
+      "product": "Boat Dives",
+      "startDate": "2027-01-30",
+      "endDate": "2027-01-30",
+      "time": "12:00",
+      "timeBasis": "Australia/Sydney",
+      "startInstant": "2027-01-30T01:00:00.000Z",
+      "bookingUrl": "https://www.abyss.com.au/charters/boat-dives?q=cGFydF9udW1iZXI9QmFycmVucyBIdXQgQm9hdCBEaXZlIDMwLzAxLzI3JmRhdGU9Jm9wZW5fY2FydF9pZD0xMDAwOTUyMDI=",
+      "listedPrice": {
+        "amount": 130,
+        "currency": "AUD",
+        "basis": "listed booking price; confirm package basis and extras"
+      },
+      "availability": "check_availability",
+      "availabilityLabel": "Check availability",
+      "listedDepth": "30m",
+      "notes": [],
+      "sourceWidget": "widget3856",
+      "bookingLinkCheckedAt": "2026-10-25T19:20:27.466Z"
+    },
+    {
+      "id": "100095200",
+      "kind": "boat",
+      "title": "Magic Point Shark Dive 31/01/27",
+      "product": "Boat Dives",
+      "startDate": "2027-01-31",
+      "endDate": "2027-01-31",
+      "time": "08:00",
+      "timeBasis": "Australia/Sydney",
+      "startInstant": "2027-01-30T21:00:00.000Z",
+      "bookingUrl": "https://www.abyss.com.au/charters/boat-dives?q=cGFydF9udW1iZXI9TWFnaWMgUG9pbnQgU2hhcmsgRGl2ZSAzMS8wMS8yNyZkYXRlPSZvcGVuX2NhcnRfaWQ9MTAwMDk1MjAw",
+      "listedPrice": {
+        "amount": 130,
+        "currency": "AUD",
+        "basis": "listed booking price; confirm package basis and extras"
+      },
+      "availability": "check_availability",
+      "availabilityLabel": "Check availability",
+      "listedDepth": "15–24m",
+      "notes": [],
+      "sourceWidget": "widget3856",
+      "bookingLinkCheckedAt": "2026-10-25T19:20:27.553Z"
+    },
+    {
+      "id": "100095172",
+      "kind": "shore",
+      "title": "Oak Park Dive 31/01/2027",
+      "product": "Guided Shore Dives",
+      "startDate": "2027-01-31",
+      "endDate": "2027-01-31",
+      "time": "09:00",
+      "timeBasis": "Australia/Sydney",
+      "startInstant": "2027-01-30T22:00:00.000Z",
+      "bookingUrl": "https://www.abyss.com.au/charters/guided-shore-dives?q=cGFydF9udW1iZXI9T2FrIFBhcmsgRGl2ZSAzMS8wMS8yMDI3JmRhdGU9Jm9wZW5fY2FydF9pZD0xMDAwOTUxNzI=",
+      "listedPrice": {
+        "amount": 0,
+        "currency": "AUD",
+        "basis": "listed booking price; confirm package basis and extras"
+      },
+      "availability": "check_availability",
+      "availabilityLabel": "Check availability",
+      "listedDepth": "10m",
+      "notes": [],
+      "sourceWidget": "widget3856",
+      "bookingLinkCheckedAt": "2026-10-25T19:20:27.599Z"
     },
     {
       "id": "66831998",
@@ -1852,7 +2481,7 @@
       "listedDepth": null,
       "notes": [],
       "sourceWidget": "widget3857",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:09.076Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:27.316Z"
     },
     {
       "id": "66693187",
@@ -1875,7 +2504,7 @@
       "listedDepth": null,
       "notes": [],
       "sourceWidget": "widget3857",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:09.216Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:27.793Z"
     },
     {
       "id": "66724107",
@@ -1900,7 +2529,7 @@
         "The source category is not permission for uncertified participation. Check the actual product prerequisites."
       ],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:09.554Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:28.011Z"
     },
     {
       "id": "100063484",
@@ -1923,7 +2552,7 @@
       "listedDepth": null,
       "notes": [],
       "sourceWidget": "widget3857",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:09.556Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:27.970Z"
     },
     {
       "id": "46898806",
@@ -1946,7 +2575,7 @@
       "listedDepth": null,
       "notes": [],
       "sourceWidget": "widget3857",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:09.538Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:28.039Z"
     },
     {
       "id": "66724108",
@@ -1971,7 +2600,7 @@
         "The source category is not permission for uncertified participation. Check the actual product prerequisites."
       ],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:09.846Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:28.296Z"
     },
     {
       "id": "66547847",
@@ -1992,7 +2621,7 @@
         "The source price needs confirmation; do not describe this departure as free."
       ],
       "sourceWidget": "widget3857",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:09.893Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:28.313Z"
     },
     {
       "id": "66724110",
@@ -2017,7 +2646,7 @@
         "The source category is not permission for uncertified participation. Check the actual product prerequisites."
       ],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:10.222Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:28.552Z"
     },
     {
       "id": "45572438",
@@ -2040,7 +2669,7 @@
       "listedDepth": null,
       "notes": [],
       "sourceWidget": "widget3857",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:09.916Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:28.447Z"
     },
     {
       "id": "66724111",
@@ -2065,7 +2694,7 @@
         "The source category is not permission for uncertified participation. Check the actual product prerequisites."
       ],
       "sourceWidget": "widget3856",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:10.525Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:28.775Z"
     },
     {
       "id": "66183347",
@@ -2088,11 +2717,11 @@
       "listedDepth": null,
       "notes": [],
       "sourceWidget": "widget3857",
-      "bookingLinkCheckedAt": "2026-10-24T18:56:10.271Z"
+      "bookingLinkCheckedAt": "2026-10-25T19:20:28.661Z"
     }
   ],
   "coverage": {
-    "first": "2026-10-25",
+    "first": "2026-10-30",
     "last": "2027-10-16"
   }
 }
