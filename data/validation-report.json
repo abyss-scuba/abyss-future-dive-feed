@@ -5,7 +5,7 @@
     "guided-shore: does not reach the 100-day collection target",
     "boat-seal: does not reach the 100-day collection target"
   ],
-  "generatedAt": "2026-10-26T18:41:15.096Z",
+  "generatedAt": "2026-10-27T05:05:45.109Z",
   "sourcePage": "https://www.abyss.com.au/widget-all",
   "browserMessages": [
     "error: Failed to load resource: net::ERR_FAILED",
@@ -20,11 +20,9 @@
     "error: Failed to load resource: net::ERR_FAILED",
     "error: Failed to load resource: net::ERR_FAILED",
     "warning: Google Maps JavaScript API has been loaded directly without loading=async. This can result in suboptimal performance. For best-practice loading patterns please see https://goo.gle/js-api-loading",
+    "requestfailed: https://analytics.google.com/g/collect?v=2&tid=G-B7HLTKWJ3V&gtm=45je6an1h1v893827339za208zd893827339xf1&_p=1793077547230&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGAC&are=1&cid=1578110266.1793077547&frm=0&pscdl=noapi&rcb=5&sr=1600x1000&uaa=x86&uab=64&uafvl=HeadlessChrome%3B149.0.7827.55%7CChromium%3B149.0.7827.55%7CNot)A%253BBrand%3B24.0.0.0&uam=&uamb=0&uap=Windows&uapv=&uaw=0&ul=en-au&gaf=2&_s=1&tag_exp=115616985~115938466~115938468~118897920~118897930~120213116~120385422~120420414~120469145~120469153~121246026~121246034~123620776&sid=1793077547&sct=1&seg=0&dl=https%3A%2F%2Fwww.abyss.com.au%2Fwidget-all&dt=Internal%20DS360%20Future%20Dive%20Schedule%20Source&en=page_view&_fv=1&_nsi=1&_ss=1&_ee=1&tfd=1360 — net::ERR_ABORTED",
     "error: Failed to load resource: net::ERR_FAILED",
     "error: Failed to load resource: net::ERR_FAILED",
-    "requestfailed: https://analytics.google.com/g/collect?v=2&tid=G-B7HLTKWJ3V&gtm=45je6am0v893827339za208zd893827339xf1&_p=1793040077344&_gaz=1&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAGAC&are=1&cid=569854287.1793040078&frm=0&pscdl=noapi&rcb=14&sr=1600x1000&uaa=x86&uab=64&uafvl=HeadlessChrome%3B149.0.7827.55%7CChromium%3B149.0.7827.55%7CNot)A%253BBrand%3B24.0.0.0&uam=&uamb=0&uap=Windows&uapv=&uaw=0&ul=en-au&gaf=2&_s=1&tag_exp=115938465~115938468~118897920~118897930~120213116~120385422~120469145~120469153~121246026~121246034&sid=1793040077&sct=1&seg=0&dl=https%3A%2F%2Fwww.abyss.com.au%2Fwidget-all&dt=Internal%20DS360%20Future%20Dive%20Schedule%20Source&en=page_view&_fv=1&_nsi=1&_ss=1&_ee=1&tfd=1133 — net::ERR_ABORTED",
-    "error: Framing 'https://www.google.com/' violates the following report-only Content Security Policy directive: \"frame-ancestors 'self'\". The violation has been logged, but no further action has been taken.\n",
-    "requestfailed: https://csp.withgoogle.com/csp/frame-ancestors/38fac9d5b82543fc4729580d18ff2d3d — net::ERR_BLOCKED_BY_ORB",
     "error: Failed to load resource: net::ERR_FAILED",
     "error: requestStorageAccess: Permission denied.",
     "error: Failed to load resource: net::ERR_FAILED",
@@ -34,13 +32,13 @@
     "error: Failed to load resource: net::ERR_FAILED",
     "error: Failed to load resource: net::ERR_FAILED",
     "error: Failed to load resource: net::ERR_FAILED",
-    "requestfailed: https://analytics.google.com/g/collect?v=2&tid=G-B7HLTKWJ3V&gtm=45je6am0v893827339za200zd893827339xf1&_p=1793040077344&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AEAAAGQC&ae=a&are=1&cid=569854287.1793040078&frm=0&pscdl=noapi&rcb=14&sr=1600x1000&uaa=x86&uab=64&uafvl=HeadlessChrome%3B149.0.7827.55%7CChromium%3B149.0.7827.55%7CNot)A%253BBrand%3B24.0.0.0&uam=&uamb=0&uap=Windows&uapv=&uaw=0&ul=en-au&gaf=2&_s=2&tag_exp=115938465~115938468~118897920~118897930~120213116~120385422~120469145~120469153~121246026~121246034&sid=1793040077&sct=1&seg=0&dl=https%3A%2F%2Fwww.abyss.com.au%2Fwidget-all&dt=Internal%20DS360%20Future%20Dive%20Schedule%20Source&en=scroll&epn.percent_scrolled=90&_et=5&tfd=6139 — net::ERR_ABORTED",
+    "requestfailed: https://analytics.google.com/g/collect?v=2&tid=G-B7HLTKWJ3V&gtm=45je6an1h1v893827339za200zd893827339xf1&_p=1793077547230&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AEAAAGQC&ae=a&are=1&cid=1578110266.1793077547&frm=0&pscdl=noapi&rcb=5&sr=1600x1000&uaa=x86&uab=64&uafvl=HeadlessChrome%3B149.0.7827.55%7CChromium%3B149.0.7827.55%7CNot)A%253BBrand%3B24.0.0.0&uam=&uamb=0&uap=Windows&uapv=&uaw=0&ul=en-au&gaf=2&_s=2&tag_exp=115616985~115938466~115938468~118897920~118897930~120213116~120385422~120420414~120469145~120469153~121246026~121246034~123620776&sid=1793077547&sct=1&seg=0&dl=https%3A%2F%2Fwww.abyss.com.au%2Fwidget-all&dt=Internal%20DS360%20Future%20Dive%20Schedule%20Source&en=scroll&epn.percent_scrolled=90&_et=9&tfd=6372 — net::ERR_ABORTED",
     "warning: Google Maps JavaScript API warning: NoApiKeys https://developers.google.com/maps/documentation/javascript/error-messages#no-api-keys",
     "warning: Google Maps JavaScript API warning: SensorNotRequired https://developers.google.com/maps/documentation/javascript/error-messages#sensor-not-required"
   ],
   "counts": {
-    "sourceEvents": 95,
-    "deduplicatedEvents": 95,
+    "sourceEvents": 94,
+    "deduplicatedEvents": 94,
     "publicFeedEvents": 66
   }
 }
