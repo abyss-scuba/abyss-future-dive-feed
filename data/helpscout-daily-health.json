@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-28T07:51:41.972+11:00",
+  "checkedAt": "2026-10-28T08:04:46.957+11:00",
   "localDate": "2026-10-28",
   "repository": "abyss-scuba/abyss-future-dive-feed",
   "scope": "Seven maintained Help Scout date publishers, including derived date sections; separate website future-feed dependency.",
@@ -8,7 +8,7 @@
     {
       "key": "calendar",
       "label": "Sydney Dive Calendar",
-      "state": "WARN",
+      "state": "FAIL",
       "checkedAt": "2026-10-27",
       "count": 82,
       "publishedUniqueEventLinks": 82,
@@ -37,16 +37,17 @@
           ],
           "eventLinks": 82,
           "bodyHash": "56a7cc0417554a862c959fa3dad3441477008778b7f50bc0ceb88ad2d0fec115",
-          "errors": [],
-          "warnings": [
-            "awaiting-todays-refresh"
-          ]
+          "errors": [
+            "published-check-date-not-current"
+          ],
+          "warnings": []
         }
       ],
-      "errors": [],
-      "warnings": [
-        "Upcoming Sydney dive dates — schedule snapshot: awaiting-todays-refresh"
-      ]
+      "errors": [
+        "daily-publication-receipt-missing",
+        "Upcoming Sydney dive dates — schedule snapshot: published-check-date-not-current"
+      ],
+      "warnings": []
     },
     {
       "key": "boat",
@@ -263,23 +264,23 @@
     {
       "key": "shore",
       "label": "Shore Diving",
-      "state": "FAIL",
-      "checkedAt": "2026-10-27T08:50:51.475+11:00",
+      "state": "PASS",
+      "checkedAt": "2026-10-28T08:04:10.767+11:00",
       "count": 42,
       "publishedUniqueEventLinks": 42,
       "due": "07:00",
       "workflow": "sync-helpscout-shore.yml",
       "latestRun": {
-        "id": 40407464649,
+        "id": 40583428797,
         "event": "schedule",
         "status": "completed",
         "conclusion": "success",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/40407464649"
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/40583428797"
       },
       "lastSuccessfulScheduledRun": {
-        "id": 40407464649,
-        "createdAt": "2026-10-26T21:48:44Z",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/40407464649"
+        "id": 40583428797,
+        "createdAt": "2026-10-27T21:03:05Z",
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/40583428797"
       },
       "articles": [
         {
@@ -288,20 +289,15 @@
           "name": "Upcoming Shore dive dates — schedule snapshot",
           "collectionId": "6abb22ad5c1e572f6ed8ba47",
           "checkDates": [
-            "2026-10-27"
+            "2026-10-28"
           ],
           "eventLinks": 42,
-          "bodyHash": "105a8b6f52451d4cb14b2aede3ff6cd66571f0febe149b8b1576e9f89625bef8",
-          "errors": [
-            "published-check-date-not-current"
-          ],
+          "bodyHash": "1e67bdd067348c9ce8dc4ba9b4694dd706a44b78810e90dcb8e69211aa1c7851",
+          "errors": [],
           "warnings": []
         }
       ],
-      "errors": [
-        "daily-publication-receipt-missing",
-        "Upcoming Shore dive dates — schedule snapshot: published-check-date-not-current"
-      ],
+      "errors": [],
       "warnings": []
     },
     {
