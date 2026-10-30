@@ -1,18 +1,16 @@
 {
-  "attemptedAt": "2026-10-30T11:01:36.581+11:00",
-  "status": "stale-fallback-published",
-  "lastSuccessfulCheck": "2026-10-19T09:11:25.519+11:00",
-  "validUntil": "2026-10-20T07:30:00.000+11:00",
-  "localDate": "2026-10-19",
-  "futureCount": 1,
-  "prices": {
-    "66991806": 699
-  },
+  "attemptedAt": "2026-10-31T10:26:35.133+11:00",
+  "status": "published-and-read-back",
+  "lastSuccessfulCheck": "2026-10-31T10:26:35.133+11:00",
+  "validUntil": "2026-11-01T07:30:00.000+11:00",
+  "localDate": "2026-10-31",
+  "futureCount": 0,
+  "prices": {},
   "coverage": {
-    "sourceTotal": 1,
-    "pages": 1,
+    "sourceTotal": 0,
+    "pages": 0,
     "pageSizes": [
-      1
+      0
     ],
     "widget": "4869",
     "groups": "40518,40519"
@@ -20,16 +18,7 @@
   "publication": {
     "articleId": "6abda0e0535b0034271debb5",
     "status": "published-and-read-back",
-    "textHash": "0c527fec6e551e53fd7b3afb73e932cd65811aef35c88857dcfb6ca018732bcf"
+    "textHash": "3e1d197ac767f1b01ea2f10e67f6d175f7e47ba1abb1acb2154fdb8cd6d7ded8"
   },
-  "agentVerification": "pending internal Test",
-  "watchdogCheckedAt": "2026-10-19T09:30:05.265+11:00",
-  "watchdog": "current article verified",
-  "error": "No current verified snapshot",
-  "stale": true,
-  "fallback": {
-    "articleId": "6abda0e0535b0034271debb5",
-    "status": "published-and-read-back",
-    "textHash": "aa33461457e18dd131c933bdc548e38a7b27f264495163736b9c8c92f2157634"
-  }
+  "agentVerification": "pending internal Test"
 }
