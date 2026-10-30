@@ -1,15 +1,15 @@
 {
-  "checkedAt": "2026-10-30T06:49:01.212+11:00",
-  "eventCount": 53,
+  "checkedAt": "2026-10-31T06:07:32.815+11:00",
+  "eventCount": 54,
   "technicalCount": 5,
   "sealCount": 0,
   "unguidedCount": 1,
   "firstDate": "2026-10-31",
-  "lastDate": "2027-01-30",
+  "lastDate": "2027-01-31",
   "dryRun": false,
   "sourceOnly": false,
   "publication": {
-    "status": "unchanged",
-    "count": 53
+    "status": "updated",
+    "count": 54
   }
 }
