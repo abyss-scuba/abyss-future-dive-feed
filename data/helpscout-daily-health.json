@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-01T10:58:21.213+11:00",
+  "checkedAt": "2026-11-01T11:25:38.406+11:00",
   "localDate": "2026-11-01",
   "repository": "abyss-scuba/abyss-future-dive-feed",
   "scope": "Seven maintained Help Scout date publishers, including derived date sections; separate website future-feed dependency.",
@@ -217,22 +217,22 @@
       "key": "travel",
       "label": "Dive Travel",
       "state": "PASS",
-      "checkedAt": "2026-11-01T10:57:49.104+11:00",
+      "checkedAt": "2026-11-01T11:25:01.641+11:00",
       "count": 12,
       "publishedUniqueEventLinks": 12,
       "due": "11:00",
       "workflow": "sync-helpscout-travel.yml",
       "latestRun": {
-        "id": 41254594457,
+        "id": 41256561981,
         "event": "schedule",
         "status": "completed",
         "conclusion": "success",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/41254594457"
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/41256561981"
       },
       "lastSuccessfulScheduledRun": {
-        "id": 41254594457,
-        "createdAt": "2026-10-31T23:56:46Z",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/41254594457"
+        "id": 41256561981,
+        "createdAt": "2026-11-01T00:23:48Z",
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/41256561981"
       },
       "articles": [
         {
@@ -244,7 +244,7 @@
             "2026-11-01"
           ],
           "eventLinks": 12,
-          "bodyHash": "b6cf639dd4d50c713efb96bf1133a781c84a9f05f6ddefb1c038c90de261f09a",
+          "bodyHash": "3f32ac3883d8870baa1816ed14ee95ccbc1831dd1c5a9e351f6d6f99f8da1450",
           "errors": [],
           "warnings": []
         }
@@ -430,8 +430,7 @@
   },
   "state": "PASS",
   "delivery": {
-    "issue": 51,
-    "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/issues/51",
-    "action": "recovered-and-closed"
+    "action": "no-new-failure",
+    "issue": null
   }
 }
