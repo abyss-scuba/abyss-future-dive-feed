@@ -2,7 +2,7 @@
   "schemaVersion": "1.0.0",
   "feedVersion": "1",
   "sourcePage": "https://www.abyss.com.au/widget-all",
-  "generatedAt": "2026-11-01T17:56:06.758Z",
+  "generatedAt": "2026-11-02T06:03:50.983Z",
   "timezone": "Australia/Sydney",
   "futureStartOffsetDays": 21,
   "publicHorizonDays": 90,
@@ -26,7 +26,7 @@
       "rowsAscending": true,
       "coversPublicHorizon": true,
       "coversCollectionTarget": false,
-      "lastSuccessfulAt": "2026-11-01T17:56:06.758Z",
+      "lastSuccessfulAt": "2026-11-02T06:03:50.983Z",
       "warnings": []
     },
     "boat-seal": {
@@ -40,7 +40,7 @@
       "rowsAscending": true,
       "coversPublicHorizon": true,
       "coversCollectionTarget": false,
-      "lastSuccessfulAt": "2026-11-01T17:56:06.758Z",
+      "lastSuccessfulAt": "2026-11-02T06:03:50.983Z",
       "warnings": []
     },
     "marine-special": {
@@ -54,7 +54,7 @@
       "rowsAscending": true,
       "coversPublicHorizon": false,
       "coversCollectionTarget": false,
-      "lastSuccessfulAt": "2026-11-01T17:56:06.758Z",
+      "lastSuccessfulAt": "2026-11-02T06:03:50.983Z",
       "warnings": []
     }
   },
@@ -102,7 +102,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "66713310",
@@ -146,7 +146,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "66661866",
@@ -191,7 +191,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "66661874",
@@ -237,7 +237,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100081178",
@@ -281,7 +281,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "66660491",
@@ -325,7 +325,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100038843",
@@ -369,7 +369,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100045650",
@@ -413,7 +413,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100053506",
@@ -457,7 +457,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100046489",
@@ -501,7 +501,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100054445",
@@ -547,7 +547,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100054621",
@@ -593,7 +593,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100046614",
@@ -637,7 +637,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100054963",
@@ -682,7 +682,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100053301",
@@ -727,7 +727,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100048929",
@@ -772,7 +772,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100050044",
@@ -816,7 +816,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100055099",
@@ -862,7 +862,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100050416",
@@ -906,7 +906,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100050572",
@@ -950,7 +950,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100055722",
@@ -994,7 +994,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100050293",
@@ -1039,7 +1039,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100055193",
@@ -1085,7 +1085,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100055598",
@@ -1129,7 +1129,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100053644",
@@ -1174,7 +1174,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100055595",
@@ -1220,7 +1220,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100055485",
@@ -1266,7 +1266,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100050165",
@@ -1311,7 +1311,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100055592",
@@ -1355,7 +1355,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100055296",
@@ -1401,7 +1401,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100055599",
@@ -1445,7 +1445,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100046812",
@@ -1489,7 +1489,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100095182",
@@ -1533,7 +1533,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100091952",
@@ -1577,7 +1577,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100095183",
@@ -1621,7 +1621,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100095190",
@@ -1667,7 +1667,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100091953",
@@ -1711,7 +1711,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100095191",
@@ -1756,7 +1756,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100091955",
@@ -1800,7 +1800,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100095192",
@@ -1844,7 +1844,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100095177",
@@ -1889,7 +1889,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100095196",
@@ -1935,7 +1935,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100095201",
@@ -1980,7 +1980,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100095179",
@@ -2024,7 +2024,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100095203",
@@ -2068,7 +2068,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100095173",
@@ -2112,7 +2112,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100095204",
@@ -2157,7 +2157,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100095174",
@@ -2201,7 +2201,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100095205",
@@ -2245,7 +2245,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100095197",
@@ -2291,7 +2291,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100095171",
@@ -2335,7 +2335,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100095194",
@@ -2379,7 +2379,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100091954",
@@ -2423,7 +2423,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100095195",
@@ -2467,7 +2467,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100095178",
@@ -2512,7 +2512,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100095198",
@@ -2558,7 +2558,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100095180",
@@ -2602,7 +2602,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100095189",
@@ -2646,7 +2646,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100095175",
@@ -2690,7 +2690,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100095199",
@@ -2736,7 +2736,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100095176",
@@ -2780,7 +2780,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100095202",
@@ -2824,7 +2824,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100095200",
@@ -2870,7 +2870,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     },
     {
       "id": "100095172",
@@ -2914,7 +2914,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-01T17:56:06.758Z"
+      "scrapedAt": "2026-11-02T06:03:50.983Z"
     }
   ]
 }
