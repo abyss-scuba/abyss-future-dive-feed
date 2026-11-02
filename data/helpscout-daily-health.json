@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-03T10:10:28.528+11:00",
+  "checkedAt": "2026-11-03T10:40:32.050+11:00",
   "localDate": "2026-11-03",
   "repository": "abyss-scuba/abyss-future-dive-feed",
   "scope": "Seven maintained Help Scout date publishers, including derived date sections; separate website future-feed dependency.",
@@ -308,23 +308,23 @@
     {
       "key": "beginner",
       "label": "Beginner Dive Calendar",
-      "state": "FAIL",
-      "checkedAt": "2026-11-01T20:40:55.206Z",
-      "count": 109,
-      "publishedUniqueEventLinks": 109,
+      "state": "PASS",
+      "checkedAt": "2026-11-02T23:39:12.037Z",
+      "count": 108,
+      "publishedUniqueEventLinks": 108,
       "due": "07:30",
       "workflow": "sync-helpscout-beginner.yml",
       "latestRun": {
-        "id": 41350686241,
+        "id": 41546924130,
         "event": "schedule",
         "status": "completed",
         "conclusion": "success",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/41350686241"
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/41546924130"
       },
       "lastSuccessfulScheduledRun": {
-        "id": 41350686241,
-        "createdAt": "2026-11-01T21:11:06Z",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/41350686241"
+        "id": 41546924130,
+        "createdAt": "2026-11-02T23:38:01Z",
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/41546924130"
       },
       "articles": [
         {
@@ -333,13 +333,11 @@
           "name": "Upcoming beginner dive dates — shore, boat and trips",
           "collectionId": "6abf61e6c3e570044c2891ed",
           "checkDates": [
-            "2026-11-02"
+            "2026-11-03"
           ],
-          "eventLinks": 109,
-          "bodyHash": "176d671454449d23ae8ea4496fbec5ca0e4c0db0b576d24d5202b04c7ab27b73",
-          "errors": [
-            "published-check-date-not-current"
-          ],
+          "eventLinks": 108,
+          "bodyHash": "0b8ca153cd65de2b4137462cb714709cefa1ed36d93a2b11694abcc802e67d80",
+          "errors": [],
           "warnings": []
         },
         {
@@ -348,13 +346,11 @@
           "name": "Your first guided dive after certification: what happens and who helps",
           "collectionId": "6abf61e6c3e570044c2891ed",
           "checkDates": [
-            "2026-11-02"
+            "2026-11-03"
           ],
           "eventLinks": 2,
-          "bodyHash": "d80ce040fa100691ba4d0e674b3decc5434738b50a8ec3fcd0cb78d2c98211ce",
-          "errors": [
-            "published-check-date-not-current"
-          ],
+          "bodyHash": "1aef86c0f29c9a92dd79ab7ae78a8771d1a3619fd42a35725d2b4effca865f6c",
+          "errors": [],
           "warnings": []
         },
         {
@@ -363,13 +359,11 @@
           "name": "Scuba equipment hire and the total cost of your dive",
           "collectionId": "6ab98d4249f1bc2c6aefca54",
           "checkDates": [
-            "2026-11-02"
+            "2026-11-03"
           ],
           "eventLinks": 1,
-          "bodyHash": "27bf083c936c81933f02aad088f21235821c63692831c18986e2e9f13b721b3c",
-          "errors": [
-            "published-check-date-not-current"
-          ],
+          "bodyHash": "082905263b195153b4b736406fd3333bc8a8695000047224f3d4ef2024470982",
+          "errors": [],
           "warnings": []
         },
         {
@@ -378,13 +372,11 @@
           "name": "Nervous about your next dive? Support, pace and extra help",
           "collectionId": "6abf61e6c3e570044c2891ed",
           "checkDates": [
-            "2026-11-02"
+            "2026-11-03"
           ],
           "eventLinks": 1,
-          "bodyHash": "ea41f815216811cd3a74facecb7e7176396a6e8d687f42add856e3ce1c6e7eee",
-          "errors": [
-            "published-check-date-not-current"
-          ],
+          "bodyHash": "7b7b9304d0b253a57dd1304cbeb9eedbc450a9e03b2cd9ca667cd0117be10046",
+          "errors": [],
           "warnings": []
         },
         {
@@ -393,24 +385,15 @@
           "name": "Can I join a Sydney guided dive without bringing a buddy?",
           "collectionId": "6ab98d4249f1bc2c6aefca54",
           "checkDates": [
-            "2026-11-02"
+            "2026-11-03"
           ],
           "eventLinks": 1,
-          "bodyHash": "a980eb4343373b66b29660709dadc01f8460dfe6b7dde062c38fc483a2e4a3f0",
-          "errors": [
-            "published-check-date-not-current"
-          ],
+          "bodyHash": "418fb0ce310711787e465dca7f632f8e5ff47d10395f1c87c325e12fb9c4cde9",
+          "errors": [],
           "warnings": []
         }
       ],
-      "errors": [
-        "daily-publication-receipt-missing",
-        "Upcoming beginner dive dates — shore, boat and trips: published-check-date-not-current",
-        "Your first guided dive after certification: what happens and who helps: published-check-date-not-current",
-        "Scuba equipment hire and the total cost of your dive: published-check-date-not-current",
-        "Nervous about your next dive? Support, pace and extra help: published-check-date-not-current",
-        "Can I join a Sydney guided dive without bringing a buddy?: published-check-date-not-current"
-      ],
+      "errors": [],
       "warnings": []
     },
     {
@@ -446,19 +429,18 @@
           "eventLinks": 0,
           "bodyHash": "95cf508757242725a63332252a64161ef7a799883f34a0fea599bd118c6db854",
           "errors": [
+            "published-check-date-not-current",
             "published-date-section-expired"
           ],
-          "warnings": [
-            "awaiting-todays-refresh"
-          ]
+          "warnings": []
         }
       ],
       "errors": [
+        "daily-publication-receipt-missing",
+        "Upcoming Avelo Course Dates — Updated Daily: published-check-date-not-current",
         "Upcoming Avelo Course Dates — Updated Daily: published-date-section-expired"
       ],
-      "warnings": [
-        "Upcoming Avelo Course Dates — Updated Daily: awaiting-todays-refresh"
-      ]
+      "warnings": []
     }
   ],
   "monitorErrors": [],
