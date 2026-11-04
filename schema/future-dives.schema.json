@@ -13,30 +13,138 @@
     "events"
   ],
   "properties": {
-    "schemaVersion": { "const": "1.0.0" },
-    "generatedAt": { "type": "string", "format": "date-time" },
-    "timezone": { "const": "Australia/Sydney" },
-    "futureStartOffsetDays": { "type": "integer", "minimum": 0 },
-    "publicHorizonDays": { "type": "integer", "minimum": 1 },
-    "collectionTargetDays": { "type": "integer", "minimum": 1 },
+    "schemaVersion": {
+      "const": "1.1.0"
+    },
+    "generatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "timezone": {
+      "const": "Australia/Sydney"
+    },
+    "futureStartOffsetDays": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "publicHorizonDays": {
+      "const": 45
+    },
+    "collectionTargetDays": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Legacy source-page target, retained for compatibility only. Does not cap collection or establish reliable coverage."
+    },
     "window": {
       "type": "object",
-      "required": ["startsOn", "publicSearchThrough", "publicTargetThrough"],
+      "required": [
+        "startsOn",
+        "publicSearchThrough",
+        "publicTargetThrough",
+        "latestListedDate"
+      ],
       "properties": {
-        "startsOn": { "type": "string", "format": "date" },
-        "publicSearchThrough": {
-          "type": ["string", "null"],
+        "startsOn": {
+          "type": "string",
           "format": "date"
         },
-        "publicTargetThrough": { "type": "string", "format": "date" },
-        "collectedThrough": { "type": "string", "format": "date" }
+        "publicSearchThrough": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date",
+          "description": "Minimum checkedThrough of both required sources, capped by the current 45-day target. Not the last listed event."
+        },
+        "publicTargetThrough": {
+          "type": "string",
+          "format": "date"
+        },
+        "collectedThrough": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date",
+          "description": "Latest collected future listing, not a verified empty range."
+        },
+        "latestListedDate": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date",
+          "description": "Latest retained public event date, which may be before or after the reliable checked window."
+        }
       }
     },
-    "sources": { "type": "object" },
-    "eventCount": { "type": "integer", "minimum": 0 },
+    "sources": {
+      "type": "object",
+      "required": [
+        "guided-shore",
+        "boat-seal"
+      ],
+      "properties": {
+        "guided-shore": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/source"
+            },
+            {
+              "properties": {
+                "role": {
+                  "const": "core"
+                },
+                "widgetId": {
+                  "const": "4745"
+                },
+                "status": {
+                  "enum": [
+                    "fresh",
+                    "stale"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "boat-seal": {
+          "allOf": [
+            {
+              "$ref": "#/$defs/source"
+            },
+            {
+              "properties": {
+                "role": {
+                  "const": "core"
+                },
+                "widgetId": {
+                  "const": "4746"
+                },
+                "status": {
+                  "enum": [
+                    "fresh",
+                    "stale"
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      },
+      "additionalProperties": {
+        "$ref": "#/$defs/source"
+      }
+    },
+    "eventCount": {
+      "type": "integer",
+      "minimum": 0
+    },
     "events": {
       "type": "array",
-      "items": { "$ref": "#/$defs/event" }
+      "items": {
+        "$ref": "#/$defs/event"
+      }
     }
   },
   "$defs": {
@@ -52,28 +160,68 @@
         "price",
         "bookingUrl",
         "bookingCode",
-        "productPath"
+        "productPath",
+        "beyondReliableHorizon"
       ],
       "properties": {
-        "id": { "type": "string", "minLength": 1 },
-        "openCartId": { "type": ["string", "null"] },
-        "source": { "type": "string" },
-        "sourceWidgetId": { "type": "string" },
-        "primaryCategory": { "type": "string" },
-        "tags": { "type": "array", "items": { "type": "string" } },
-        "title": { "type": "string", "minLength": 1 },
-        "startDate": { "type": "string", "format": "date" },
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "openCartId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source": {
+          "type": "string"
+        },
+        "sourceWidgetId": {
+          "type": "string"
+        },
+        "primaryCategory": {
+          "type": "string"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "startDate": {
+          "type": "string",
+          "format": "date"
+        },
         "startTime": {
-          "type": ["string", "null"],
+          "type": [
+            "string",
+            "null"
+          ],
           "pattern": "^([01]\\d|2[0-3]):[0-5]\\d$"
         },
         "price": {
           "type": "object",
-          "required": ["amount", "currency", "display"],
+          "required": [
+            "amount",
+            "currency",
+            "display"
+          ],
           "properties": {
-            "amount": { "type": "number", "minimum": 0 },
-            "currency": { "const": "AUD" },
-            "display": { "type": "string" }
+            "amount": {
+              "type": "number",
+              "minimum": 0
+            },
+            "currency": {
+              "const": "AUD"
+            },
+            "display": {
+              "type": "string"
+            }
           }
         },
         "bookingUrl": {
@@ -81,8 +229,184 @@
           "format": "uri",
           "pattern": "\\?q="
         },
-        "bookingCode": { "type": "string", "minLength": 1 },
-        "productPath": { "type": "string", "pattern": "^/" }
+        "bookingCode": {
+          "type": "string",
+          "minLength": 1
+        },
+        "productPath": {
+          "type": "string",
+          "pattern": "^/"
+        },
+        "beyondReliableHorizon": {
+          "type": "boolean",
+          "description": "True for retained dates after window.publicSearchThrough. Later dates need explicit reconfirmation; missing later dates are not proof no events are planned."
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "widgetId",
+        "role",
+        "status",
+        "rawEventCount",
+        "firstDate",
+        "lastDate",
+        "lastSuccessfulAt",
+        "checkedFrom",
+        "checkedThrough",
+        "extraction"
+      ],
+      "properties": {
+        "widgetId": {
+          "type": "string"
+        },
+        "role": {
+          "enum": [
+            "core",
+            "supplementary"
+          ]
+        },
+        "status": {
+          "enum": [
+            "fresh",
+            "stale",
+            "failed"
+          ]
+        },
+        "rawEventCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "firstDate": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "lastDate": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "lastSuccessfulAt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "checkedFrom": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "checkedThrough": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "extraction": {
+          "type": "object",
+          "required": [
+            "complete"
+          ],
+          "properties": {
+            "complete": {
+              "type": "boolean"
+            }
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "enum": [
+                  "fresh",
+                  "stale"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "lastSuccessfulAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "checkedFrom": {
+                "type": "string",
+                "format": "date"
+              },
+              "checkedThrough": {
+                "type": "string",
+                "format": "date"
+              },
+              "extraction": {
+                "$ref": "#/$defs/extraction"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "extraction": {
+      "type": "object",
+      "required": [
+        "complete",
+        "sourceTotal",
+        "rowCount",
+        "totalPages",
+        "pagesCollected",
+        "pageSize",
+        "pageSizes",
+        "explicitEmpty"
+      ],
+      "properties": {
+        "complete": {
+          "const": true
+        },
+        "sourceTotal": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "rowCount": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "totalPages": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "pagesCollected": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "pageSize": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Selected 20/50-row size, or the observed complete single-page size when DS360 omits controls (1 for a verified empty page)."
+        },
+        "pageSizes": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "explicitEmpty": {
+          "type": "boolean"
+        }
       }
     }
   }

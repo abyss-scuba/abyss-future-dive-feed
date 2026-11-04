@@ -34,8 +34,8 @@ The exact booking URL is always preserved. The scraper decodes `q` for identity 
 
 | File | Purpose |
 |---|---|
-| `data/future-dives.json` | Public candidate feed, beginning 21 days from today and ending at the configured 90-day public horizon. |
-| `data/all-widget-events.json` | Deduplicated diagnostic snapshot extending to the 100-day collection target. |
+| `data/future-dives.json` | Public candidate feed from day 21 onward, retaining all later listed dates. The reliable checked window is 45 days. |
+| `data/all-widget-events.json` | All deduplicated future listings from every verified source page, including dates beyond day 100. |
 | `data/scrape-state.json` | Last-known-good per-source state used to survive a temporary widget failure. Do not expose this file publicly. |
 | `data/validation-report.json` | Validation result and scrape diagnostics. |
 | `diagnostics/` | Candidate files, screenshots and rendered HTML when a run fails. |
@@ -46,12 +46,18 @@ The exact booking URL is always preserved. The scraper decodes `q` for identity 
 - Then waits until each widget's row text is stable for three consecutive checks.
 - Reads hidden `.expand-row` details directly; it does not click every plus icon.
 - Uses the stable outer wrappers and widget IDs, not generated inner calendar IDs.
-- Collects page 2 only when page 1 does not reach the collection target, or when the rows are not date-sorted.
-- Resets the DS360 rows-per-page control to 50 before pagination, so the widget's internal offset is correct.
+- Collects every advertised source page, regardless of its latest listed date or sorting. Exact totals and per-page row counts must reconcile.
+- When page controls exist, resets DS360 to 20 rows and waits for calendar row replacement. This avoids the documented repeated charter-page issue at 50 rows. When DS360 omits controls, accepts a complete single page only if declared pages equal 1 and observed rows exactly match the independent source count.
 - Deduplicates by `open_cart_id`, then exact booking URL, then fallback event identity.
 - Prefers more specific `marine-special` metadata when the same event appears in a broad widget.
 - Keeps up to 48 hours of last-known-good data if one source temporarily fails.
-- Refuses to publish when a core source cannot cover the 90-day public horizon or a public event lacks price or an exact booking code.
+- Requires both guided-shore widget 4745 and combined boat-seal widget 4746. The latter is required for ordinary boat dives even when no seal dives are listed.
+- Treats 45 days from each successful Sydney-date check as the reliable planning horizon. No event is required on that final day. Legacy page attributes of 90/100 cannot override this policy.
+- Accepts a verified empty source only with explicit empty text, zero declared count and complete matching pagination evidence. Missing widgets, loading/errors, missing metadata, repeated pages, incomplete rows and page-limit truncation fail closed.
+- Preserves later listed dates with `beyondReliableHorizon: true`; this does not imply that an unlisted later date has no dives. No seasonal dates are invented or hard-coded.
+- Refuses to publish malformed source rows before filtering. Exact booking URLs, valid zero-dollar prices and cross-source deduplication are preserved.
+- Rejects feeds and successful source checks older than 48 hours, missing timestamps and future timestamps. Cached evidence, including verified zero, keeps its original checked-through date and stale status. Old version-1.0 cache cannot be promoted into complete-extraction evidence.
+- Uses one shared validator for scraper candidates and standalone validation. Health checks inspect core-source evidence and successful-check times, not merely the feed envelope.
 
 ## Customer-facing wording
 
@@ -69,6 +75,7 @@ Requirements: Node.js 22 or later.
 npm ci
 npx playwright install chromium
 npm test
+npm run test:browser
 npm run scrape
 npm run validate
 npm run summary
@@ -87,8 +94,7 @@ npm run scrape
 
 ## GitHub Actions
 
-The included workflow is manual-only at first. Run it from **Actions → Scrape future dives → Run workflow** with `publish` left off. Download the artifact and inspect the JSON.
+The workflow already has a schedule and its manual `publish` input defaults to true. For review-only work, do not dispatch it with publishing enabled. Run locally with isolated output/diagnostics directories, or explicitly choose `publish: false` for an authorized shadow run. The added browser regression step must pass before scraping.
 
-After a successful shadow period, uncomment the `schedule` block in `.github/workflows/scrape-future-dives.yml`. The prepared cron runs twice daily at 01:17 and 13:17 UTC.
-
+This change emits schema `1.1.0`. Review [docs/INTEGRATION_NOTES.md](docs/INTEGRATION_NOTES.md) before enabling it: the live calendar is outside this repository and must not keep treating the final listed date as the checked range. Existing generated JSON has deliberately not been rewritten or timestamped.
 See [QUICKSTART.md](QUICKSTART.md) for the exact setup sequence, [REVIEW_CHECKLIST.md](REVIEW_CHECKLIST.md) for the launch checks, and [docs/INTEGRATION_NOTES.md](docs/INTEGRATION_NOTES.md) for the later calendar integration contract.

@@ -1,0 +1,62 @@
+name: Verify 45-day feed safely
+
+on:
+  push:
+    branches:
+      - review/45-day-reliable-feed-20261104
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: verify-reliable-feed-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      SOURCE_URL: https://www.abyss.com.au/widget-all
+      OUTPUT_DIR: diagnostics/shadow-data
+      DIAGNOSTICS_DIR: diagnostics/shadow-scrape
+      MIN_INITIAL_DELAY_MS: "10000"
+      WIDGET_TIMEOUT_MS: "90000"
+      STABILITY_POLL_MS: "1000"
+      STABLE_POLLS_REQUIRED: "3"
+      FINAL_SETTLE_MS: "1500"
+      FUTURE_START_OFFSET_DAYS: "21"
+      MAX_STALE_HOURS: "48"
+      MAX_PAGES_PER_SOURCE: "10"
+      HEADLESS: "true"
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Run deterministic tests
+        run: npm test
+      - name: Run all offline browser cases
+        run: npm run test:browser
+      - name: Run production scraper without publishing
+        run: npm run scrape
+      - name: Validate shadow candidate
+        run: node scripts/validate-feed.mjs diagnostics/shadow-data/future-dives.json
+      - name: Summarize shadow candidate
+        run: node scripts/summarise-feed.mjs diagnostics/shadow-data/future-dives.json
+      - name: Assert production data was not modified
+        run: git diff --exit-code -- data
+      - name: Save verification evidence
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: reliable-feed-verification-${{ github.sha }}
+          path: diagnostics/
+          retention-days: 14
+          if-no-files-found: warn

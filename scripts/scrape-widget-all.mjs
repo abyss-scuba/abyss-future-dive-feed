@@ -5,13 +5,14 @@ import process from "node:process";
 import { pathToFileURL } from "node:url";
 import { chromium } from "playwright";
 import { DateTime } from "luxon";
-import { cleanText, parseTableDate, todayInZone } from "../src/dates.mjs";
+import { cleanText, parseTableDate } from "../src/dates.mjs";
 import { normaliseRawEvent } from "../src/normalise-event.mjs";
 import {
-  deduplicateEvents,
-  filterEventsByDate,
-  minimumCoreCoverageDate
+  deduplicateEvents
 } from "../src/feed-utils.mjs";
+
+import { RELIABLE_HORIZON_DAYS, SCHEMA_VERSION, REQUIRED_SOURCES, checkedRange, canReuseSource, reliableSearchThrough } from "../src/feed-coverage.mjs";
+import { validateFeed } from "./validate-feed.mjs";
 
 const CONFIG = {
   sourceUrl: process.env.SOURCE_URL || "https://www.abyss.com.au/widget-all",
@@ -65,7 +66,7 @@ async function loadPage(page) {
   if (CONFIG.htmlFixturePath) {
     const fixtureHtml = await fs.readFile(CONFIG.htmlFixturePath, "utf8");
     const inertHtml = fixtureHtml
-      .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "")
+      .replace(/<script\b[^>]*>([\s\S]*?)<\/script>/gi, '<script type="application/x-source">$1</script>')
       .replace(/<link\b[^>]*>/gi, "")
       .replace(/<iframe\b[^>]*>[\s\S]*?<\/iframe>/gi, "")
       .replace(/<img\b[^>]*>/gi, "");
@@ -87,21 +88,25 @@ async function loadPage(page) {
   }
 }
 
-async function readPageConfiguration(page) {
+export async function readPageConfiguration(page) {
   await page.waitForSelector("#widget-all-source", {
     timeout: CONFIG.widgetTimeoutMs
   });
 
-  return page.locator("#widget-all-source").evaluate((root) => ({
+  const config = await page.locator("#widget-all-source").evaluate((root) => ({
     feedVersion: root.dataset.feedVersion || "1",
-    publicHorizonDays: Number(root.dataset.publicHorizonDays || 90),
+    sourcePublicHorizonDays: Number(root.dataset.publicHorizonDays || 90),
     collectionTargetDays: Number(root.dataset.collectionTargetDays || 100),
     timezone: root.dataset.timezone || "Australia/Sydney"
   }));
+  if (config.timezone !== "Australia/Sydney" || !Number.isInteger(config.collectionTargetDays) || config.collectionTargetDays < 1) throw new Error("Invalid page configuration");
+  // The site's legacy 90/100 attributes must not override the reliability policy.
+  return { ...config, publicHorizonDays: RELIABLE_HORIZON_DAYS };
+
 }
 
-async function discoverSources(page) {
-  return page.locator("#widget-all-source .widget-all-source").evaluateAll(
+export async function discoverSources(page) {
+  const sources = await page.locator("#widget-all-source .widget-all-source").evaluateAll(
     (elements) =>
       elements.map((element) => ({
         selector: `#${element.id}`,
@@ -116,6 +121,17 @@ async function discoverSources(page) {
           .filter(Boolean)
       }))
   );
+  const names = new Set();
+  const widgets = new Set();
+  for (const source of sources) {
+    if (!source.source || !source.widgetId || source.selector === "#" || names.has(source.source) || widgets.has(source.widgetId)) throw new Error("Missing or duplicate source identity");
+    names.add(source.source); widgets.add(source.widgetId);
+    if (await page.locator(`${source.selector} #widget${source.widgetId}`).count() !== 1) throw new Error(`${source.source}: expected widget ${source.widgetId} missing or duplicated`);
+  }
+  for (const [name, id] of Object.entries(REQUIRED_SOURCES)) {
+    if (!sources.some(source => source.source === name && source.widgetId === id && source.role === "core")) throw new Error(`${name}: required core widget ${id} missing or changed`);
+  }
+  return sources;
 }
 
 async function rowSignature(sourceLocator) {
@@ -144,12 +160,9 @@ async function waitForSourceStable(page, sourceMeta, options = {}) {
     const text = cleanText(await sourceLocator.innerText().catch(() => ""));
     const explicitEmpty = /no (?:records|events|data)|nothing found/i.test(text);
 
-    if (rowCount === 0 && explicitEmpty) {
-      return { rowCount: 0, explicitEmpty: true };
-    }
-
-    if (rowCount > 0) {
-      const signature = await rowSignature(sourceLocator);
+    if (/access denied|forbidden|failed to load|error loading|something went wrong/i.test(text)) throw new Error(`${sourceMeta.source}: widget reports an error`);
+    if (rowCount > 0 || explicitEmpty) {
+      const signature = rowCount ? await rowSignature(sourceLocator) : `empty:${text}`;
       const stillLoading = /loading .*calendar|please wait/i.test(text);
 
       if (!stillLoading && signature && signature === previousSignature) {
@@ -162,7 +175,7 @@ async function waitForSourceStable(page, sourceMeta, options = {}) {
         if (CONFIG.finalSettleMs > 0) {
           await page.waitForTimeout(CONFIG.finalSettleMs);
         }
-        return { rowCount, explicitEmpty: false };
+        return { rowCount, explicitEmpty: rowCount === 0 && explicitEmpty };
       }
 
       previousSignature = signature;
@@ -267,63 +280,67 @@ async function currentPageNumber(sourceLocator) {
   return Number.isFinite(page) && page > 0 ? page : 1;
 }
 
-async function paginationState(sourceLocator) {
-  const pageNumbers = await sourceLocator
-    .locator(".pagination .page-link[data-page]")
-    .evaluateAll((links) =>
-      links
-        .map((link) => Number(link.getAttribute("data-page")))
-        .filter((value) => Number.isFinite(value) && value > 0)
-    )
-    .catch(() => []);
-
-  return {
-    currentPage: await currentPageNumber(sourceLocator),
-    totalPages: pageNumbers.length ? Math.max(...pageNumbers) : 1
-  };
-}
-
-async function waitForCalendarAjax(page) {
-  return page
-    .waitForResponse(
-      (response) =>
-        response.url().includes("/calendar/ajax_list") &&
-        response.request().method() === "POST",
-      { timeout: Math.min(CONFIG.widgetTimeoutMs, 60_000) }
-    )
-    .catch(() => null);
-}
-
-async function ensureFiftyRowsPerPage(page, sourceMeta) {
-  if (CONFIG.htmlFixturePath) return;
-
-  const sourceLocator = page.locator(sourceMeta.selector);
-  const select = sourceLocator.locator("select.per_page").first();
-  if ((await select.count()) === 0) return;
-
-  const hasFifty = await select
-    .locator('option[value="50"]')
-    .count()
-    .then((count) => count > 0);
-  if (!hasFifty) return;
-
-  log(`${sourceMeta.source}: resetting page size to 50 before pagination`);
-  const responsePromise = waitForCalendarAjax(page);
-
-  await select.evaluate((element) => {
-    element.value = "50";
-    element.dispatchEvent(new Event("input", { bubbles: true }));
-    element.dispatchEvent(new Event("change", { bubbles: true }));
+export async function paginationState(sourceLocator) {
+  const metadata = await sourceLocator.evaluate(root => {
+    const scripts = [...root.querySelectorAll("script")].map(script => script.textContent).join("\n");
+    const pageSize = Number(root.querySelector("select.per_page")?.value);
+    const links = [...root.querySelectorAll(".pagination .page-link[data-page]")].map(link => Number(link.dataset.page)).filter(n => Number.isInteger(n) && n > 0);
+    return { scripts, pageSize, links, observedRows: root.querySelectorAll("tr.main-row").length };
   });
+  return parsePaginationMetadata({ ...metadata, currentPage: await currentPageNumber(sourceLocator) });
+}
 
-  const response = await responsePromise;
-  if (response && !response.ok()) {
-    throw new Error(
-      `${sourceMeta.source}: page-size reload returned HTTP ${response.status()}`
-    );
-  }
+export function parsePaginationMetadata(metadata) {
+  metadata = { ...metadata,
+    counts: [...metadata.scripts.matchAll(/\bvar\s+count\s*=\s*["'](\d+)["']/g)].map(match => Number(match[1])),
+    declaredPages: [...metadata.scripts.matchAll(/\bvar\s+totalPages\s*=\s*parseInt\(["'](\d+)["']\)/g)].map(match => Number(match[1]))
+  };
+  if (!metadata.counts.length || new Set(metadata.counts).size !== 1 || !metadata.declaredPages.length || new Set(metadata.declaredPages).size !== 1) throw new Error("Source total/page metadata missing or conflicting");
+  const sourceTotal = metadata.counts[0];
+  // DS360 omits page-size and navigation controls when the whole result fits
+  // on one page. This is verified by independent declared total/pages and the
+  // exact observed row count; absence of controls alone is never sufficient.
+  const completeSinglePage = !metadata.pageSize && metadata.declaredPages[0] === 1 &&
+    metadata.currentPage === 1 && metadata.observedRows === sourceTotal &&
+    metadata.links.every(page => page === 1);
+  const pageSize = completeSinglePage ? Math.max(1, sourceTotal) : metadata.pageSize;
+  if (!Number.isSafeInteger(sourceTotal) || sourceTotal < 0 || (!completeSinglePage && ![20, 50].includes(pageSize))) throw new Error("Invalid source total or page size");
+  const totalPages = Math.max(1, Math.ceil(sourceTotal / pageSize));
+  // Inline totalPages can retain the original page-size value after a reload.
+  // It must describe a valid source layout; DOM links and exact per-page counts
+  // independently verify the selected 20-row layout below.
+  if (!completeSinglePage && ![Math.max(1, Math.ceil(sourceTotal / 50)), Math.max(1, Math.ceil(sourceTotal / 20))].includes(metadata.declaredPages[0])) throw new Error("Inconsistent source page total");
+  if (metadata.links.some(page => page > totalPages)) throw new Error("Pagination exceeds the declared source total");
+  return { sourceTotal, pageSize, totalPages, currentPage: metadata.currentPage };
+}
 
+async function ensureTwentyRowsPerPage(page, sourceMeta) {
+  const root = page.locator(sourceMeta.selector);
+  const select = root.locator("select.per_page").first();
+  if (!(await select.count())) return;
+  if (CONFIG.htmlFixturePath) return;
+  if (!(await select.locator('option[value="20"]').count())) throw new Error(`${sourceMeta.source}: 20-row page option missing`);
+  // Dispatch even when the displayed control already says 20: DS360's internal
+  // offset may still differ. Actual row counts are verified after the reload.
+  await root.evaluate((element, timeoutMs) => new Promise((resolve, reject) => {
+    const timer = setTimeout(() => { observer.disconnect(); reject(new Error("Page-size reset did not replace calendar rows")); }, timeoutMs);
+    const isCalendar = node => node.nodeType === 1 && (node.matches("table, tbody, tr") || node.querySelector("table, tbody, tr"));
+    const observer = new MutationObserver(records => {
+      if (records.some(record => record.type === "childList" && (record.target.matches?.("table, tbody, tr") || [...record.addedNodes, ...record.removedNodes].some(isCalendar)))) {
+        clearTimeout(timer); observer.disconnect(); resolve();
+      }
+    });
+    observer.observe(element, { childList: true, subtree: true });
+    const control = element.querySelector("select.per_page");
+    control.value = "20";
+    control.dispatchEvent(new Event("input", { bubbles: true }));
+    control.dispatchEvent(new Event("change", { bubbles: true }));
+  }), CONFIG.widgetTimeoutMs);
   await waitForSourceStable(page, sourceMeta);
+  const metadata = await paginationState(root);
+  const rowCount = await root.locator("tr.main-row").count();
+  if (metadata.currentPage !== 1 || metadata.pageSize !== 20 || rowCount !== Math.min(20, metadata.sourceTotal)) throw new Error(`${sourceMeta.source}: page-size reset did not produce a complete first page (${rowCount} rows; expected ${Math.min(20, metadata.sourceTotal)})`);
+
 }
 
 function rowsAreAscending(rawRows, zone) {
@@ -335,131 +352,74 @@ function rowsAreAscending(rawRows, zone) {
   return dates.every((value, index) => index === 0 || value >= dates[index - 1]);
 }
 
-function latestRawDate(rawRows, zone) {
-  const parsed = rawRows
-    .map((row) => parseTableDate(row.startDateText, zone))
-    .filter(Boolean)
-    .sort((a, b) => a.toMillis() - b.toMillis());
-  return parsed.length ? parsed[parsed.length - 1] : null;
-}
-
-async function clickPageAndWait(page, sourceMeta, targetPage) {
+export async function clickPageAndWait(page, sourceMeta, targetPage) {
   const sourceLocator = page.locator(sourceMeta.selector);
   const before = await rowSignature(sourceLocator);
-  const link = sourceLocator.locator(`.page-link[data-page="${targetPage}"]`).first();
-  if ((await link.count()) === 0) return false;
-
-  const responsePromise = waitForCalendarAjax(page);
-  await link.click({ timeout: 30_000 });
-  const response = await responsePromise;
-
-  if (response && !response.ok()) {
-    throw new Error(
-      `${sourceMeta.source}: page ${targetPage} returned HTTP ${response.status()}`
-    );
-  }
-
+  const links = sourceLocator.locator(`.page-link[data-page="${targetPage}"]`);
+  const visible = links.filter({ visible: true });
+  const link = (await visible.count() ? visible : links).first();
+  if ((await link.count()) === 0) throw new Error(`${sourceMeta.source}: expected page ${targetPage} link missing`);
+  await link.evaluate(element => element.click());
   const started = Date.now();
+  let moved = false;
   while (Date.now() - started < CONFIG.widgetTimeoutMs) {
-    const after = await rowSignature(sourceLocator).catch(() => "");
-    if (after && after !== before) break;
-    await page.waitForTimeout(500);
+    const after = await rowSignature(sourceLocator);
+    if (await currentPageNumber(sourceLocator) === targetPage && after && after !== before) { moved = true; break; }
+    await page.waitForTimeout(Math.min(500, CONFIG.stabilityPollMs));
   }
-
+  if (!moved) throw new Error(`${sourceMeta.source}: page ${targetPage} did not load distinct rows`);
   await waitForSourceStable(page, sourceMeta);
-  return true;
+  if (await currentPageNumber(sourceLocator) !== targetPage || await rowSignature(sourceLocator) === before) throw new Error(`${sourceMeta.source}: page ${targetPage} is unchanged or incorrectly selected`);
 }
 
-async function scrapeSource(page, sourceMeta, pageConfig, scrapedAt) {
+export async function scrapeSource(page, sourceMeta, pageConfig, scrapedAt) {
   const sourceLocator = page.locator(sourceMeta.selector);
   await waitForSourceStable(page, sourceMeta);
-
-  let pagesCollected = 0;
-  let allRawRows = [];
-  let pageNumber = await currentPageNumber(sourceLocator);
-  let rawRows = await extractRawRows(sourceLocator, pageNumber);
-  pagesCollected += 1;
-  allRawRows.push(...rawRows);
-
-  const today = todayInZone(pageConfig.timezone);
-  const collectionTarget = today.plus({ days: pageConfig.collectionTargetDays });
-  let latest = latestRawDate(rawRows, pageConfig.timezone);
-  let ascending = rowsAreAscending(rawRows, pageConfig.timezone);
-  let pagination = await paginationState(sourceLocator);
-
-  const shouldContinue = () => {
-    if (pagesCollected >= CONFIG.maxPagesPerSource) return false;
-    if (pageNumber >= pagination.totalPages) return false;
-    if (!ascending) return true;
-    return !latest || latest.toMillis() < collectionTarget.toMillis();
-  };
-
-  if (shouldContinue()) {
-    await ensureFiftyRowsPerPage(page, sourceMeta);
-
-    pageNumber = 1;
-    rawRows = await extractRawRows(sourceLocator, pageNumber);
-    pagesCollected = 1;
-    allRawRows = [...rawRows];
-    latest = latestRawDate(rawRows, pageConfig.timezone);
-    ascending = rowsAreAscending(rawRows, pageConfig.timezone);
-    pagination = await paginationState(sourceLocator);
-  }
-
-  while (shouldContinue()) {
-    const nextPage = pageNumber + 1;
-    log(`${sourceMeta.source}: collecting page ${nextPage}`);
-    const moved = await clickPageAndWait(page, sourceMeta, nextPage);
-    if (!moved) break;
-
-    pageNumber = nextPage;
-    rawRows = await extractRawRows(sourceLocator, pageNumber);
-    pagesCollected += 1;
+  await ensureTwentyRowsPerPage(page, sourceMeta);
+  if (await currentPageNumber(sourceLocator) !== 1) await clickPageAndWait(page, sourceMeta, 1);
+  const initial = await paginationState(sourceLocator);
+  if (initial.totalPages > CONFIG.maxPagesPerSource) throw new Error(`${sourceMeta.source}: all ${initial.totalPages} pages exceed the ${CONFIG.maxPagesPerSource}-page safety limit`);
+  const allRawRows = [];
+  const pageSizes = [];
+  const signatures = new Set();
+  let explicitEmpty = false;
+  for (let pageNumber = 1; pageNumber <= initial.totalPages; pageNumber++) {
+    if (pageNumber > 1) await clickPageAndWait(page, sourceMeta, pageNumber);
+    const stable = await waitForSourceStable(page, sourceMeta);
+    const metadata = await paginationState(sourceLocator);
+    if (metadata.currentPage !== pageNumber || metadata.sourceTotal !== initial.sourceTotal || metadata.pageSize !== initial.pageSize || metadata.totalPages !== initial.totalPages) throw new Error(`${sourceMeta.source}: source pagination changed during extraction`);
+    const rawRows = await extractRawRows(sourceLocator, pageNumber);
+    const expected = Math.min(initial.pageSize, Math.max(0, initial.sourceTotal - (pageNumber - 1) * initial.pageSize));
+    if (rawRows.length !== expected) throw new Error(`${sourceMeta.source}: page ${pageNumber} has ${rawRows.length} rows; expected ${expected}`);
+    explicitEmpty = initial.sourceTotal === 0 && stable.explicitEmpty;
+    if (!initial.sourceTotal && !explicitEmpty) throw new Error(`${sourceMeta.source}: zero count without a verified empty state`);
+    const signature = JSON.stringify(rawRows.map(({pageNumber, ...row}) => row));
+    if (signatures.has(signature)) throw new Error(`${sourceMeta.source}: repeated page rows`);
+    signatures.add(signature);
+    pageSizes.push(rawRows.length);
     allRawRows.push(...rawRows);
-    latest = latestRawDate(allRawRows, pageConfig.timezone);
-    pagination = await paginationState(sourceLocator);
   }
-
-  const context = {
-    timezone: pageConfig.timezone,
-    sourceUrl: CONFIG.sourceUrl,
-    scrapedAt
-  };
-  const events = allRawRows.map((row) =>
-    normaliseRawEvent(row, sourceMeta, context)
-  );
-
-  const validDates = events
-    .map((event) => event.startDate)
-    .filter(Boolean)
-    .sort();
-
-  const firstDate = validDates[0] || null;
-  const lastDate = validDates[validDates.length - 1] || null;
-  const publicTarget = today.plus({ days: pageConfig.publicHorizonDays });
-
-  return {
-    sourceMeta,
-    events,
-    summary: {
-      widgetId: sourceMeta.widgetId,
-      role: sourceMeta.role,
-      status: "fresh",
-      pagesCollected,
-      rawEventCount: events.length,
-      firstDate,
-      lastDate,
-      rowsAscending: ascending,
-      coversPublicHorizon: Boolean(
-        lastDate && DateTime.fromISO(lastDate, { zone: pageConfig.timezone }).toMillis() >= publicTarget.toMillis()
-      ),
-      coversCollectionTarget: Boolean(
-        lastDate && DateTime.fromISO(lastDate, { zone: pageConfig.timezone }).toMillis() >= collectionTarget.toMillis()
-      ),
-      lastSuccessfulAt: scrapedAt,
-      warnings: []
-    }
-  };
+  const context = { timezone: pageConfig.timezone, sourceUrl: CONFIG.sourceUrl, scrapedAt };
+  const events = allRawRows.map(row => normaliseRawEvent(row, sourceMeta, context));
+  const identities = new Set();
+  for (const event of events) {
+    if (!event.startDate || !event.startTime || !Number.isFinite(event.price?.amount)) throw new Error(`${sourceMeta.source}: malformed date, time or price in source row ${event.id}`);
+    if (event.bookable && (!event.openCartId || !event.partNumber || event.qualityWarnings.includes("booking_code_decode_failed"))) throw new Error(`${sourceMeta.source}: malformed booking identity ${event.id}`);
+    if (!event.bookable && !event.contactPart) throw new Error(`${sourceMeta.source}: lost booking link without an explicit contact action`);
+    if (identities.has(event.id)) throw new Error(`${sourceMeta.source}: duplicate or overlapping event ${event.id}`);
+    identities.add(event.id);
+  }
+  const dates = events.map(event => event.startDate).sort();
+  return { sourceMeta, events, summary: {
+    widgetId: sourceMeta.widgetId, role: sourceMeta.role, status: "fresh",
+    pagesCollected: pageSizes.length, rawEventCount: events.length,
+    firstDate: dates[0] || null, lastDate: dates.at(-1) || null,
+    rowsAscending: rowsAreAscending(allRawRows, pageConfig.timezone),
+    ...checkedRange(scrapedAt, pageConfig.timezone),
+    extraction: { complete: true, sourceTotal: initial.sourceTotal, rowCount: events.length, totalPages: initial.totalPages, pagesCollected: pageSizes.length, pageSize: initial.pageSize, pageSizes, explicitEmpty },
+    coversPublicHorizon: true,
+    lastSuccessfulAt: scrapedAt, warnings: []
+  }};
 }
 
 function priorSourceEvents(priorState, sourceName) {
@@ -468,12 +428,6 @@ function priorSourceEvents(priorState, sourceName) {
 
 function priorSourceMeta(priorState, sourceName) {
   return priorState?.sources?.[sourceName]?.summary || null;
-}
-
-function hoursOld(isoTimestamp) {
-  const parsed = DateTime.fromISO(String(isoTimestamp || ""));
-  if (!parsed.isValid) return Number.POSITIVE_INFINITY;
-  return DateTime.utc().diff(parsed.toUTC(), "hours").hours;
 }
 
 async function captureDiagnostics(page, reason) {
@@ -502,48 +456,70 @@ async function captureDiagnostics(page, reason) {
   ]);
 }
 
-function validateCandidate(candidate) {
-  const errors = [];
-  const warnings = [];
-
-  const coreSources = Object.entries(candidate.sources).filter(
-    ([, source]) => source.role === "core"
-  );
-
-  if (!coreSources.length) errors.push("No core sources were discovered");
-
-  for (const [sourceName, source] of coreSources) {
-    if (!source.lastDate) errors.push(`${sourceName}: no valid event dates`);
-    if (!source.coversPublicHorizon) {
-      errors.push(
-        `${sourceName}: does not cover the ${candidate.publicHorizonDays}-day public horizon`
-      );
-    }
-    if (!source.coversCollectionTarget) {
-      warnings.push(
-        `${sourceName}: does not reach the ${candidate.collectionTargetDays}-day collection target`
-      );
-    }
-  }
-
-  const ids = new Set();
-  for (const event of candidate.events) {
-    if (!event.id) errors.push("An event has no ID");
-    if (ids.has(event.id)) errors.push(`Duplicate event ID after merge: ${event.id}`);
-    ids.add(event.id);
-
-    if (!event.startDate) errors.push(`${event.id}: invalid start date`);
-    if (event.price?.amount == null) errors.push(`${event.id}: missing price`);
-    if (!event.bookingUrl || !event.bookingCode) {
-      errors.push(`${event.id}: missing exact DS360 booking URL/code`);
-    }
-    if (!event.openCartId) warnings.push(`${event.id}: q code has no open_cart_id`);
-  }
-
-  return { valid: errors.length === 0, errors, warnings };
+export function validateCandidate(candidate, options) {
+  return validateFeed(candidate, options);
 }
 
-async function main() {
+export function buildFeeds(sourceResults, pageConfig, scrapedAt, { futureStartOffsetDays = 21, sourceUrl = "https://www.abyss.com.au/widget-all" } = {}) {
+  const allSourceEvents = Object.values(sourceResults).flatMap(
+    (result) => result.events
+  );
+  const deduplicated = deduplicateEvents(allSourceEvents);
+
+  const today = DateTime.fromISO(scrapedAt).setZone(pageConfig.timezone).startOf("day");
+  const futureStart = today.plus({ days: futureStartOffsetDays });
+  const publicEnd = today.plus({ days: pageConfig.publicHorizonDays });
+  // Retain every later listing, including seasonal events beyond day 100.
+  const allFutureEvents = deduplicated.filter(event => event.startDate >= today.toISODate());
+  const sourceSummaries = Object.fromEntries(
+    Object.entries(sourceResults).map(([name, result]) => [name, structuredClone(result.summary)])
+  );
+  const publicSearchThrough = reliableSearchThrough(sourceSummaries, publicEnd.toISODate());
+  const publicFeedEvents = deduplicated.filter(event => event.bookable && event.startDate >= futureStart.toISODate())
+    .map(event => ({ ...event, beyondReliableHorizon: event.startDate > publicSearchThrough }));
+  for (const source of Object.values(sourceSummaries)) {
+    source.coversPublicHorizon = Boolean(source.extraction?.complete && source.checkedThrough >= publicEnd.toISODate());
+  }
+
+  const publicFeed = {
+    schemaVersion: SCHEMA_VERSION,
+    feedVersion: pageConfig.feedVersion,
+    sourcePage: sourceUrl,
+    generatedAt: scrapedAt,
+    timezone: pageConfig.timezone,
+    futureStartOffsetDays: futureStartOffsetDays,
+    publicHorizonDays: pageConfig.publicHorizonDays,
+    collectionTargetDays: pageConfig.collectionTargetDays,
+    window: {
+      startsOn: futureStart.toFormat("yyyy-LL-dd"),
+      publicSearchThrough,
+      publicTargetThrough: publicEnd.toFormat("yyyy-LL-dd"),
+      latestListedDate: publicFeedEvents.at(-1)?.startDate || null,
+      collectedThrough: allFutureEvents.at(-1)?.startDate || null
+    },
+    customerNotice:
+      `Schedule checked for reliable planning through ${publicSearchThrough}, not guaranteed availability. Later listed dates can change. Confirm dates, availability and final prices when booking.`,
+    sources: sourceSummaries,
+    eventCount: publicFeedEvents.length,
+    events: publicFeedEvents
+  };
+
+  const allWidgetFeed = {
+    schemaVersion: SCHEMA_VERSION,
+    sourcePage: sourceUrl,
+    generatedAt: scrapedAt,
+    timezone: pageConfig.timezone,
+    sources: sourceSummaries,
+    rawSourceEventCount: allSourceEvents.length,
+    deduplicatedEventCount: deduplicated.length,
+    eventCountWithinCollectionWindow: allFutureEvents.length,
+    collectionMode: "all-listed-pages",
+    events: allFutureEvents
+  };
+  return { publicFeed, allWidgetFeed, allSourceEvents, deduplicated, publicSearchThrough, publicFeedEvents };
+}
+
+export async function main() {
   await ensureDirectory(CONFIG.outputDir);
   await ensureDirectory(CONFIG.diagnosticsDir);
 
@@ -619,8 +595,7 @@ async function main() {
         const previousEvents = priorSourceEvents(priorState, sourceMeta.source);
         const previousSummary = priorSourceMeta(priorState, sourceMeta.source);
         const canUsePrevious =
-          previousEvents.length > 0 &&
-          hoursOld(previousSummary?.lastSuccessfulAt) <= CONFIG.maxStaleHours;
+          canReuseSource(previousSummary, previousEvents, DateTime.fromISO(scrapedAt), CONFIG.maxStaleHours, sourceMeta);
 
         if (canUsePrevious) {
           sourceResults[sourceMeta.source] = {
@@ -652,8 +627,10 @@ async function main() {
               rawEventCount: 0,
               firstDate: null,
               lastDate: null,
+              checkedFrom: null,
+              checkedThrough: null,
+              extraction: { complete: false },
               coversPublicHorizon: false,
-              coversCollectionTarget: false,
               lastSuccessfulAt: previousSummary?.lastSuccessfulAt || null,
               warnings: [error.message]
             }
@@ -666,75 +643,7 @@ async function main() {
       throw new Error(`Core source failure: ${fatalFailures.join("; ")}`);
     }
 
-    const allSourceEvents = Object.values(sourceResults).flatMap(
-      (result) => result.events
-    );
-    const deduplicated = deduplicateEvents(allSourceEvents);
-
-    const today = todayInZone(pageConfig.timezone);
-    const futureStart = today.plus({ days: CONFIG.futureStartOffsetDays });
-    const publicEnd = today.plus({ days: pageConfig.publicHorizonDays });
-    const collectionEnd = today.plus({ days: pageConfig.collectionTargetDays });
-
-    const allFutureEvents = filterEventsByDate(
-      deduplicated,
-      today,
-      collectionEnd,
-      pageConfig.timezone
-    );
-    const publicFeedEvents = filterEventsByDate(
-      deduplicated.filter((event) => event.bookable),
-      futureStart,
-      publicEnd,
-      pageConfig.timezone
-    );
-
-    const sourceSummaries = Object.fromEntries(
-      Object.entries(sourceResults).map(([name, result]) => [name, result.summary])
-    );
-    const minimumCoverage = minimumCoreCoverageDate(sourceSummaries);
-    const publicSearchThrough = minimumCoverage
-      ? DateTime.min(
-          publicEnd,
-          DateTime.fromISO(minimumCoverage, { zone: pageConfig.timezone })
-        ).toFormat(
-          "yyyy-LL-dd"
-        )
-      : null;
-
-    const publicFeed = {
-      schemaVersion: "1.0.0",
-      feedVersion: pageConfig.feedVersion,
-      sourcePage: CONFIG.sourceUrl,
-      generatedAt: scrapedAt,
-      timezone: pageConfig.timezone,
-      futureStartOffsetDays: CONFIG.futureStartOffsetDays,
-      publicHorizonDays: pageConfig.publicHorizonDays,
-      collectionTargetDays: pageConfig.collectionTargetDays,
-      window: {
-        startsOn: futureStart.toFormat("yyyy-LL-dd"),
-        publicSearchThrough,
-        publicTargetThrough: publicEnd.toFormat("yyyy-LL-dd"),
-        collectedThrough: collectionEnd.toFormat("yyyy-LL-dd")
-      },
-      customerNotice:
-        "Scheduled from a twice-daily future schedule snapshot. Live availability and final prices are confirmed when booking.",
-      sources: sourceSummaries,
-      eventCount: publicFeedEvents.length,
-      events: publicFeedEvents
-    };
-
-    const allWidgetFeed = {
-      schemaVersion: "1.0.0",
-      sourcePage: CONFIG.sourceUrl,
-      generatedAt: scrapedAt,
-      timezone: pageConfig.timezone,
-      sources: sourceSummaries,
-      rawSourceEventCount: allSourceEvents.length,
-      deduplicatedEventCount: deduplicated.length,
-      eventCountWithinCollectionWindow: allFutureEvents.length,
-      events: allFutureEvents
-    };
+    const { publicFeed, allWidgetFeed, allSourceEvents, deduplicated, publicSearchThrough, publicFeedEvents } = buildFeeds(sourceResults, pageConfig, scrapedAt, { futureStartOffsetDays: CONFIG.futureStartOffsetDays, sourceUrl: CONFIG.sourceUrl });
 
     const candidateValidation = validateCandidate(publicFeed);
     const validationReport = {
@@ -765,7 +674,7 @@ async function main() {
     }
 
     const nextState = {
-      schemaVersion: "1.0.0",
+      schemaVersion: SCHEMA_VERSION,
       generatedAt: scrapedAt,
       sources: Object.fromEntries(
         Object.entries(sourceResults).map(([name, result]) => [
@@ -800,7 +709,9 @@ async function main() {
   }
 }
 
-main().catch((error) => {
-  console.error(error.stack || error.message);
-  process.exitCode = 1;
-});
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main().catch((error) => {
+    console.error(error.stack || error.message);
+    process.exitCode = 1;
+  });
+}

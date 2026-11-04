@@ -1,61 +1,35 @@
-# Quick start
+# Review and shadow-test quick start
 
-## 1. Create the repository
+Requirements: Node.js 22+ and a supported Chromium runtime.
 
-Create a new private GitHub repository, for example:
-
-`abyss-future-dive-feed`
-
-Upload the entire contents of this package to the repository root. Do not upload the outer ZIP as a single file.
-
-## 2. Run the first scrape manually
-
-1. Open the repository's **Actions** tab.
-2. Open **Scrape future dives**.
-3. Select **Run workflow**.
-4. Leave **Commit validated JSON files** switched off.
-5. Start the run.
-
-The first run installs Chromium, so it will take longer than later runs.
-
-## 3. Download and review the artifact
-
-Open the completed workflow run and download the `future-dive-scrape-*` artifact.
-
-Review:
-
-- `data/future-dives.json`;
-- `data/all-widget-events.json`;
-- `data/validation-report.json`;
-- `diagnostics/candidate-future-dives.json`.
-
-The workflow must be green before proceeding.
-
-## 4. Run with publishing enabled
-
-Run the workflow again with **Commit validated JSON files** switched on. A successful run will commit the generated `data/` files to the repository.
-
-## 5. Shadow test for one week
-
-Run manually twice per day, or temporarily use an external reminder. Check the review list in `REVIEW_CHECKLIST.md` after each run.
-
-Do not change `/sydney-dive-calendar` during this stage.
-
-## 6. Enable the twice-daily schedule
-
-Edit `.github/workflows/scrape-future-dives.yml` and uncomment:
-
-```yaml
-schedule:
-  - cron: "17 1,13 * * *"
+```sh
+npm ci
+npx playwright install chromium
+npm test
+npm run test:browser
 ```
 
-Scheduled runs automatically publish validated changes.
+This repository is already scheduled, and the manual workflow's `publish` input defaults to true. Preparing a patch or reviewing a candidate does not authorize publishing. Do not dispatch a publishing run as part of review.
 
-## 7. Choose where the public JSON will live
+## Isolated, read-only source check
 
-The preferred final URL is same-origin, for example:
+Run the scraper in a new local output directory so it cannot replace saved production JSON:
 
-`https://www.abyss.com.au/data/future-dives.json`
+```sh
+OUTPUT_DIR=/tmp/abyss-feed-shadow \
+DIAGNOSTICS_DIR=/tmp/abyss-feed-shadow-diagnostics \
+npm run scrape
 
-Deployment depends on the website hosting access available. Until that is decided, the GitHub artifact and committed JSON are sufficient for shadow testing.
+node scripts/validate-feed.mjs /tmp/abyss-feed-shadow/future-dives.json
+node scripts/summarise-feed.mjs /tmp/abyss-feed-shadow/future-dives.json
+```
+
+Inspect every required source's pagination evidence, total rows, last successful timestamp and checked-through date. Confirm the actual charter widgets provide the expected metadata. Do not accept a one-page assumption if metadata is missing.
+
+Check sparse and verified-zero schedules, preserved later dates, exact booking links and schema 1.1.0 compatibility using [REVIEW_CHECKLIST.md](REVIEW_CHECKLIST.md) and [docs/INTEGRATION_NOTES.md](docs/INTEGRATION_NOTES.md).
+
+Old 1.0 JSON/cache deliberately fails the new evidence requirement. Do not change its timestamp or fabricate extraction evidence. A fresh successful scrape is required.
+
+## Publication
+
+Only after review, successful browser/live shadow tests and separate publication approval, coordinate the feed and live calendar consumer rollout. The consumer lives outside this repository. An authorized GitHub shadow run must explicitly set `publish: false`; scheduled runs and publishing-enabled manual runs commit generated data.

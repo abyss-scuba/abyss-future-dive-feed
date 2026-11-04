@@ -60,6 +60,9 @@ jobs:
       - name: Run unit tests
         run: npm test
 
+      - name: Run offline browser regression tests
+        run: npm run test:browser
+
       - name: Scrape and build candidate feed
         run: npm run scrape
 

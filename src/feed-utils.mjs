@@ -67,10 +67,9 @@ export function filterEventsByDate(
   });
 }
 
+// Deprecated name retained for callers; this is checked coverage, never last event.
 export function minimumCoreCoverageDate(sourceSummaries) {
-  const core = Object.values(sourceSummaries)
-    .filter((source) => source.role === "core" && source.lastDate)
-    .map((source) => source.lastDate)
-    .sort();
-  return core.length ? core[0] : null;
+  const required = ["guided-shore", "boat-seal"].map(name => sourceSummaries[name]);
+  if (required.some(source => source?.role !== "core" || !source?.extraction?.complete || !source.checkedThrough)) return null;
+  return required.map(source => source.checkedThrough).sort()[0];
 }

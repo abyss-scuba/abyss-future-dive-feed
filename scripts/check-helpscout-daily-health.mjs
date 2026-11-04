@@ -2,6 +2,7 @@
 /** READ-ONLY against Help Scout. Only public health metadata is written to GitHub. */
 import fs from 'node:fs/promises';
 import {DateTime} from 'luxon';
+import {evaluateWebsiteFeed} from '../src/website-feed-health.mjs';
 import {PIPELINES,ZONE,evaluatePipeline,summaryMarkdown} from '../src/helpscout-daily-health.mjs';
 const REPO='abyss-scuba/abyss-future-dive-feed';
 const RESULT='data/helpscout-daily-health.json';
@@ -89,10 +90,10 @@ async function main(){
  const files=await fs.readdir('.github/workflows');
  for(const name of files){if(/^sync-helpscout-.*\.ya?ml$/.test(name)&&!PIPELINES.some(x=>x.workflow===name)){const text=await fs.readFile('.github/workflows/'+name,'utf8');if(/^  schedule:/m.test(text))report.monitorErrors.push('unmonitored-scheduled-publisher: '+name);}}
  // An additional website feed is not a Help Scout article. Keep that distinction visible.
- const feed=await read('data/future-dives.json');const generated=Date.parse(feed?.generatedAt);
- report.websiteFutureFeed={generatedAt:feed?.generatedAt||null,state:Number.isFinite(generated)&&generated<=now.toMillis()&&now.toMillis()-generated<30*3600000?'PASS':'FAIL'};
+ const feed=await read('data/future-dives.json');
+ report.websiteFutureFeed=evaluateWebsiteFeed(feed,now);
  if(report.websiteFutureFeed.state==='FAIL')report.monitorErrors.push('website-future-feed-not-verified-within-30-hours');
- report.state=report.monitorErrors.length||report.sources.some(s=>s.state==='FAIL')?'FAIL':report.sources.some(s=>s.state==='WARN')?'WARN':'PASS';
+ report.state=report.monitorErrors.length||report.sources.some(s=>s.state==='FAIL')?'FAIL':(report.sources.some(s=>s.state==='WARN')||report.websiteFutureFeed.state==='WARN')?'WARN':'PASS';
  await fs.mkdir('diagnostics/daily-docs-health',{recursive:true});
  if(deliver){
   try{report.delivery=await deliverIncident(report);if(process.env.HEALTH_TEST_DELIVERY==='true')report.deliveryTest=await testDelivery();}
