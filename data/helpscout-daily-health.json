@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-05T08:23:28.455+11:00",
+  "checkedAt": "2026-11-05T09:05:43.701+11:00",
   "localDate": "2026-11-05",
   "repository": "abyss-scuba/abyss-future-dive-feed",
   "scope": "Seven maintained Help Scout date publishers, including derived date sections; separate website future-feed dependency.",
@@ -315,11 +315,11 @@
       "due": "07:30",
       "workflow": "sync-helpscout-beginner.yml",
       "latestRun": {
-        "id": 41729619598,
+        "id": 41921455852,
         "event": "schedule",
         "status": "completed",
-        "conclusion": "success",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/41729619598"
+        "conclusion": "failure",
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/41921455852"
       },
       "lastSuccessfulScheduledRun": {
         "id": 41729619598,
@@ -411,7 +411,9 @@
         "Nervous about your next dive? Support, pace and extra help: published-check-date-not-current",
         "Can I join a Sydney guided dive without bringing a buddy?: published-check-date-not-current"
       ],
-      "warnings": []
+      "warnings": [
+        "latest-workflow-failure"
+      ]
     },
     {
       "key": "avelo",
