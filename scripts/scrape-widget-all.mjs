@@ -474,6 +474,11 @@ export function buildFeeds(sourceResults, pageConfig, scrapedAt, { futureStartOf
   const sourceSummaries = Object.fromEntries(
     Object.entries(sourceResults).map(([name, result]) => [name, structuredClone(result.summary)])
   );
+  // Legacy consumers read generatedAt only. Keep it at the oldest retained
+  // successful check so a rebuilt envelope can never renew cached data's age.
+  const retainedChecks = Object.values(sourceSummaries).filter(source => source.status !== "failed")
+    .map(source => DateTime.fromISO(source.lastSuccessfulAt || "")).filter(time => time.isValid);
+  const generatedAt = retainedChecks.length ? DateTime.min(...retainedChecks).toUTC().toISO() : null;
   const publicSearchThrough = reliableSearchThrough(sourceSummaries, publicEnd.toISODate());
   const publicFeedEvents = deduplicated.filter(event => event.bookable && event.startDate >= futureStart.toISODate())
     .map(event => ({ ...event, beyondReliableHorizon: event.startDate > publicSearchThrough }));
@@ -485,7 +490,8 @@ export function buildFeeds(sourceResults, pageConfig, scrapedAt, { futureStartOf
     schemaVersion: SCHEMA_VERSION,
     feedVersion: pageConfig.feedVersion,
     sourcePage: sourceUrl,
-    generatedAt: scrapedAt,
+    generatedAt,
+    assembledAt: scrapedAt,
     timezone: pageConfig.timezone,
     futureStartOffsetDays: futureStartOffsetDays,
     publicHorizonDays: pageConfig.publicHorizonDays,
@@ -507,7 +513,8 @@ export function buildFeeds(sourceResults, pageConfig, scrapedAt, { futureStartOf
   const allWidgetFeed = {
     schemaVersion: SCHEMA_VERSION,
     sourcePage: sourceUrl,
-    generatedAt: scrapedAt,
+    generatedAt,
+    assembledAt: scrapedAt,
     timezone: pageConfig.timezone,
     sources: sourceSummaries,
     rawSourceEventCount: allSourceEvents.length,

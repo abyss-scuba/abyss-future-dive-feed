@@ -10,7 +10,8 @@
     "window",
     "sources",
     "eventCount",
-    "events"
+    "events",
+    "assembledAt"
   ],
   "properties": {
     "schemaVersion": {
@@ -18,7 +19,8 @@
     },
     "generatedAt": {
       "type": "string",
-      "format": "date-time"
+      "format": "date-time",
+      "description": "Oldest retained successful source check. Legacy generatedAt-only consumers must not get extra freshness from a new envelope."
     },
     "timezone": {
       "const": "Australia/Sydney"
@@ -145,6 +147,11 @@
       "items": {
         "$ref": "#/$defs/event"
       }
+    },
+    "assembledAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Actual build time, used to calculate target windows. Does not renew cached source freshness."
     }
   },
   "$defs": {

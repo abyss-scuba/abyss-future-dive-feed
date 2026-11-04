@@ -6,7 +6,7 @@ This review patch does not modify `/sydney-dive-calendar` or any Help Scout arti
 
 - Day 0 through day 20: existing live calendar data.
 - From day 21: merge live data and `future-dives.json`; live data wins.
-- `publicHorizonDays` is 45. `window.publicTargetThrough` is the generation date in Sydney plus 45 calendar days.
+- `publicHorizonDays` is 45. `window.publicTargetThrough` is the assembly date in Sydney plus 45 calendar days.
 - `window.publicSearchThrough` is the minimum verified `checkedThrough` for both required core sources, capped at that target. A recent stale fallback may shorten this by a day or two. It is independent of the last event date.
 - `window.latestListedDate` is the latest retained public event or null. It can fall before or after the checked window.
 - `window.collectedThrough` is the latest collected future listing or null, not a completeness promise.
@@ -21,7 +21,7 @@ The combined `boat-seal` source stays required for ordinary boat dives. An absen
 
 Both core sources must have the expected widget identity, a complete extraction, reconciled total and per-page row counts, and an original successful-check timestamp. A source without page controls must declare exactly one page and have an observed row count equal to its independent declared total. Zero results need explicit empty-state and zero-count evidence. Missing/failed/loading/partial results are not zero.
 
-`status: stale` means a current attempt failed but a verified check within 48 hours was retained. Keep its original timestamps and checked range. Do not relabel it as a current zero result. After 48 hours, or if timestamps/evidence are invalid, suppress date/price claims from the snapshot and link the live source/contact route. A new `generatedAt` does not renew source evidence.
+`status: stale` means a current attempt failed but a verified check within 48 hours was retained. Keep its original timestamps and checked range. Do not relabel it as a current zero result. After 48 hours, or if timestamps/evidence are invalid, suppress date/price claims from the snapshot and link the live source/contact route. `generatedAt` is conservatively pinned to the oldest retained successful source check for legacy consumers. `assembledAt` records the actual rebuild and determines target windows; it does not renew freshness.
 
 A failed supplementary source may be omitted without hiding fresh core results. Retained supplementary data is also subject to the 48-hour limit. The daily website health check uses the stricter existing 30-hour operational threshold.
 

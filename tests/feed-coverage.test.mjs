@@ -107,3 +107,17 @@ test("live DS360 complete single pages without controls require exact count evid
 test("missing page controls cannot certify a declared multi-page source", () => {
   assert.throws(() => parsePaginationMetadata(meta(40, { pageSize: 0, links: [], observedRows: 40 })), /Invalid source total or page size/);
 });
+
+test("a new assembly cannot renew the age of cached source data for legacy consumers", () => {
+  const input = sources([event("1", 30)]);
+  const oldCheck = now.minus({ hours: 47 }).toISO();
+  input["boat-seal"] = result("boat-seal", "4746", [], oldCheck);
+  input["boat-seal"].summary.status = "stale";
+  const { publicFeed } = buildFeeds(input, config, checkedAt);
+  assert.equal(DateTime.fromISO(publicFeed.generatedAt).toMillis(), DateTime.fromISO(oldCheck).toMillis());
+  assert.equal(publicFeed.assembledAt, checkedAt);
+  assert.equal(publicFeed.window.startsOn, "2026-11-25");
+  assert.equal(validateFeed(publicFeed, { now }).valid, true);
+  publicFeed.generatedAt = checkedAt;
+  assert.match(validateFeed(publicFeed, { now }).errors.join(), /oldest retained successful source check/);
+});

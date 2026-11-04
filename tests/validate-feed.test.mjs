@@ -19,7 +19,7 @@ function fixture(checkedAt = now.minus({ hours: 12 }).toISO()) {
   const range = checkedRange(checkedAt);
   return {
     schemaVersion: "1.1.0", timezone: "Australia/Sydney", publicHorizonDays: 45, futureStartOffsetDays: 21,
-    generatedAt: checkedAt,
+    generatedAt: checkedAt, assembledAt: checkedAt,
     window: { startsOn: day.plus({ days: 21 }).toISODate(), publicTargetThrough: range.checkedThrough, publicSearchThrough: range.checkedThrough, latestListedDate: date },
     sources: Object.fromEntries([["guided-shore", "4745"], ["boat-seal", "4746"]].map(([name, widgetId]) => [name, {
       widgetId, role: "core", status: "fresh", lastSuccessfulAt: checkedAt,
@@ -47,7 +47,7 @@ test("fresh feed and core source timestamps pass without changing the feed", () 
 test("the August snapshot is rejected despite stored fresh and coverage flags", () => {
   const report = validateFeed(fixture("2026-08-30T06:40:52.937Z"), { now });
   assert.equal(report.valid, false);
-  assert.equal(report.errors.filter(message => /older than 48 hours/.test(message)).length, 3);
+  assert.equal(report.errors.filter(message => /older than 48 hours/.test(message)).length, 4);
 });
 
 test("fresh generatedAt does not disguise expired core source data", () => {
@@ -78,6 +78,7 @@ test("last-known-good core source data within 48 hours keeps its stale warning",
   feed.sources["boat-seal"].lastSuccessfulAt = now.minus({ hours: 47 }).toISO();
   Object.assign(feed.sources["boat-seal"], checkedRange(feed.sources["boat-seal"].lastSuccessfulAt));
   feed.window.publicSearchThrough = feed.sources["boat-seal"].checkedThrough;
+  feed.generatedAt = feed.sources["boat-seal"].lastSuccessfulAt;
   const report = validateFeed(feed, { now });
   assert.equal(report.valid, true);
   assert.deepEqual(report.warnings, ["boat-seal: using last-known-good stale data"]);
@@ -91,7 +92,7 @@ for (const timestamp of [undefined, "invalid", "2026-10-07", "2026-10-07T05:00:0
     feed.sources["guided-shore"].lastSuccessfulAt = timestamp;
     const report = validateFeed(feed, { now });
     assert.equal(report.valid, false);
-    assert.equal(report.errors.filter(error => /generatedAt|lastSuccessfulAt/.test(error)).length, 2);
+    assert.equal(report.errors.filter(error => /(?:generatedAt |lastSuccessfulAt ).*(?:is missing|is in the future)/.test(error)).length, 2);
   });
 }
 

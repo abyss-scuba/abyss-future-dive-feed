@@ -26,6 +26,8 @@ export function validateFeed(feed, { now = DateTime.utc() } = {}) {
   }
   const ageError = freshnessError(feed.generatedAt, now);
   if (ageError) error(errors, `generatedAt ${ageError}`);
+  const assemblyError = freshnessError(feed.assembledAt, now);
+  if (assemblyError) error(errors, `assembledAt ${assemblyError}`);
   if (!Array.isArray(feed.events)) error(errors, "events must be an array");
 
   if (feed.timezone !== "Australia/Sydney") error(errors, "timezone must be Australia/Sydney");
@@ -40,10 +42,14 @@ export function validateFeed(feed, { now = DateTime.utc() } = {}) {
   for (const [name, source] of Object.entries(feed.sources || {})) {
     if (!(name in REQUIRED_SOURCES) && source.status !== "failed") errors.push(...sourceErrors(source, name, { now, zone: feed.timezone }));
   }
-  const targetThrough = checkedRange(feed.generatedAt || "", feed.timezone).checkedThrough;
+  const retainedCheckTimes = Object.values(feed.sources || {}).filter(source => source.status !== "failed")
+    .map(source => DateTime.fromISO(source.lastSuccessfulAt || "").toMillis()).filter(Number.isFinite);
+  if (!retainedCheckTimes.length || DateTime.fromISO(feed.generatedAt || "").toMillis() !== Math.min(...retainedCheckTimes)) error(errors, "generatedAt must preserve the oldest retained successful source check");
+  if (retainedCheckTimes.some(time => time > DateTime.fromISO(feed.assembledAt || "").toMillis())) error(errors, "source successful check cannot be after assembledAt");
+  const targetThrough = checkedRange(feed.assembledAt || "", feed.timezone).checkedThrough;
   const expectedThrough = reliableSearchThrough(feed.sources || {}, targetThrough);
   if (feed.window?.publicTargetThrough !== targetThrough || feed.window?.publicSearchThrough !== expectedThrough || !expectedThrough) error(errors, "window checked range does not match source checks");
-  const start = DateTime.fromISO(feed.generatedAt || "").setZone(feed.timezone).startOf("day").plus({ days: feed.futureStartOffsetDays || 0 }).toISODate();
+  const start = DateTime.fromISO(feed.assembledAt || "").setZone(feed.timezone).startOf("day").plus({ days: feed.futureStartOffsetDays || 0 }).toISODate();
   if (!Number.isInteger(feed.futureStartOffsetDays) || feed.futureStartOffsetDays < 0 || feed.futureStartOffsetDays > RELIABLE_HORIZON_DAYS || feed.window?.startsOn !== start) error(errors, "invalid future window start");
   if (feed.eventCount !== (Array.isArray(feed.events) ? feed.events.length : -1)) error(errors, "eventCount does not match events");
   const latest = (Array.isArray(feed.events) ? feed.events : []).map(e => e.startDate).filter(Boolean).sort().at(-1) || null;

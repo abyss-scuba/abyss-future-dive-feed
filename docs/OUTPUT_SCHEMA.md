@@ -2,9 +2,11 @@
 
 The machine-readable schema is `schema/future-dives.schema.json`. The scraper and standalone CLI additionally validate timestamps, identities, complete pagination evidence and consistent window values.
 
+- `generatedAt`: oldest retained successful source check, so existing timestamp-only consumers cannot gain freshness from cached data.
+- `assembledAt`: actual build time used for target-window calculations; it does not renew source evidence.
 - `publicHorizonDays`: 45, independent of the source page's old 90/100 settings.
-- `window.startsOn`: the Sydney generation date plus `futureStartOffsetDays` (normally 21).
-- `window.publicTargetThrough`: the Sydney generation date plus 45 calendar days.
+- `window.startsOn`: the Sydney assembly date plus `futureStartOffsetDays` (normally 21).
+- `window.publicTargetThrough`: the Sydney assembly date plus 45 calendar days.
 - `window.publicSearchThrough`: earliest checked-through date across both required sources, capped by the target. This is not a last-event date.
 - `window.latestListedDate`: latest retained public event date or null.
 - `window.collectedThrough`: latest collected future listing or null; no completeness inference.

@@ -57,6 +57,7 @@ The exact booking URL is always preserved. The scraper decodes `q` for identity 
 - Preserves later listed dates with `beyondReliableHorizon: true`; this does not imply that an unlisted later date has no dives. No seasonal dates are invented or hard-coded.
 - Refuses to publish malformed source rows before filtering. Exact booking URLs, valid zero-dollar prices and cross-source deduplication are preserved.
 - Rejects feeds and successful source checks older than 48 hours, missing timestamps and future timestamps. Cached evidence, including verified zero, keeps its original checked-through date and stale status. Old version-1.0 cache cannot be promoted into complete-extraction evidence.
+- Keeps `generatedAt` at the oldest retained successful source check, so legacy consumers cannot mistake a rebuilt envelope for refreshed data. `assembledAt` records the actual build time.
 - Uses one shared validator for scraper candidates and standalone validation. Health checks inspect core-source evidence and successful-check times, not merely the feed envelope.
 
 ## Customer-facing wording
