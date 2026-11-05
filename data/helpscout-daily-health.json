@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-06T09:11:38.528+11:00",
+  "checkedAt": "2026-11-06T09:38:04.302+11:00",
   "localDate": "2026-11-06",
   "repository": "abyss-scuba/abyss-future-dive-feed",
   "scope": "Seven maintained Help Scout date publishers, including derived date sections; separate website future-feed dependency.",
@@ -278,11 +278,11 @@
       "due": "07:00",
       "workflow": "sync-helpscout-shore.yml",
       "latestRun": {
-        "id": 41928586046,
+        "id": 42121567490,
         "event": "schedule",
         "status": "completed",
-        "conclusion": "success",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/41928586046"
+        "conclusion": "failure",
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/42121567490"
       },
       "lastSuccessfulScheduledRun": {
         "id": 41928586046,
@@ -310,7 +310,9 @@
         "daily-publication-receipt-missing",
         "Upcoming Shore dive dates — schedule snapshot: published-check-date-not-current"
       ],
-      "warnings": []
+      "warnings": [
+        "latest-workflow-failure"
+      ]
     },
     {
       "key": "beginner",
