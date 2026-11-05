@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-05T17:59:01.139+11:00",
+  "checkedAt": "2026-11-05T18:56:38.544+11:00",
   "localDate": "2026-11-05",
   "repository": "abyss-scuba/abyss-future-dive-feed",
   "scope": "Seven maintained Help Scout date publishers, including derived date sections; separate website future-feed dependency.",
@@ -430,8 +430,7 @@
   },
   "state": "PASS",
   "delivery": {
-    "issue": 54,
-    "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/issues/54",
-    "action": "recovered-and-closed"
+    "action": "no-new-failure",
+    "issue": null
   }
 }
