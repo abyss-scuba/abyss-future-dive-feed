@@ -20,5 +20,7 @@
     "status": "published-and-read-back",
     "textHash": "4e08446f38fee60a0b9844da6a68c1779698bfcdf3e82e8fdaee9c850cd4f156"
   },
-  "agentVerification": "pending internal Test"
+  "agentVerification": "pending internal Test",
+  "watchdogCheckedAt": "2026-11-07T11:10:54.745+11:00",
+  "watchdog": "current article verified"
 }
