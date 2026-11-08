@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-08T11:54:12.659+11:00",
+  "checkedAt": "2026-11-08T17:16:35.221+11:00",
   "localDate": "2026-11-08",
   "repository": "abyss-scuba/abyss-future-dive-feed",
   "scope": "Seven maintained Help Scout date publishers, including derived date sections; separate website future-feed dependency.",
@@ -432,7 +432,7 @@
   "monitorErrors": [],
   "agentAnswerTests": "not performed by this monitor",
   "websiteFutureFeed": {
-    "generatedAt": "2026-11-07T17:45:01.088Z",
+    "generatedAt": "2026-11-08T06:01:21.228Z",
     "state": "PASS"
   },
   "state": "FAIL",
