@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-09T07:53:57.661+11:00",
+  "checkedAt": "2026-11-09T08:04:52.571+11:00",
   "localDate": "2026-11-09",
   "repository": "abyss-scuba/abyss-future-dive-feed",
   "scope": "Seven maintained Help Scout date publishers, including derived date sections; separate website future-feed dependency.",
@@ -8,7 +8,7 @@
     {
       "key": "calendar",
       "label": "Sydney Dive Calendar",
-      "state": "WARN",
+      "state": "FAIL",
       "checkedAt": "2026-11-08",
       "count": 82,
       "publishedUniqueEventLinks": 82,
@@ -37,16 +37,17 @@
           ],
           "eventLinks": 82,
           "bodyHash": "987bcea341046932b4ff20ef119cb1e46c175019d3aeff570d103dc5a4e737d5",
-          "errors": [],
-          "warnings": [
-            "awaiting-todays-refresh"
-          ]
+          "errors": [
+            "published-check-date-not-current"
+          ],
+          "warnings": []
         }
       ],
-      "errors": [],
-      "warnings": [
-        "Upcoming Sydney dive dates — schedule snapshot: awaiting-todays-refresh"
-      ]
+      "errors": [
+        "daily-publication-receipt-missing",
+        "Upcoming Sydney dive dates — schedule snapshot: published-check-date-not-current"
+      ],
+      "warnings": []
     },
     {
       "key": "boat",
@@ -98,22 +99,22 @@
       "key": "courses",
       "label": "Sydney Dive Courses",
       "state": "PASS",
-      "checkedAt": "2026-11-09T06:50:04.547+11:00",
+      "checkedAt": "2026-11-09T08:04:08.912+11:00",
       "count": 78,
       "publishedUniqueEventLinks": 78,
       "due": "07:00",
       "workflow": "sync-helpscout-courses.yml",
       "latestRun": {
-        "id": 42516970045,
+        "id": 42523257879,
         "event": "schedule",
         "status": "completed",
         "conclusion": "success",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/42516970045"
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/42523257879"
       },
       "lastSuccessfulScheduledRun": {
-        "id": 42516970045,
-        "createdAt": "2026-11-08T19:49:36Z",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/42516970045"
+        "id": 42523257879,
+        "createdAt": "2026-11-08T21:03:45Z",
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/42523257879"
       },
       "articles": [
         {
@@ -216,7 +217,7 @@
             "2026-11-09"
           ],
           "eventLinks": 3,
-          "bodyHash": "9bdf066a66c13b503b9785c699749b78eeb66022b793b478d7b6143260187e77",
+          "bodyHash": "adf4a77a2935716d7a075ffe39641cff66ea029a9b63196c36f13ddf7480e037",
           "errors": [],
           "warnings": []
         }
