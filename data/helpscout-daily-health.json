@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-10T10:22:19.329+11:00",
+  "checkedAt": "2026-11-10T10:33:26.588+11:00",
   "localDate": "2026-11-10",
   "repository": "abyss-scuba/abyss-future-dive-feed",
   "scope": "Seven maintained Help Scout date publishers, including derived date sections; separate website future-feed dependency.",
@@ -59,11 +59,11 @@
       "due": "04:00",
       "workflow": "sync-helpscout-boat.yml",
       "latestRun": {
-        "id": 42719681762,
+        "id": 42721193757,
         "event": "schedule",
         "status": "completed",
         "conclusion": "failure",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/42719681762"
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/42721193757"
       },
       "lastSuccessfulScheduledRun": {
         "id": 41910943586,
@@ -479,19 +479,18 @@
           "eventLinks": 0,
           "bodyHash": "519c8fc5c6c864d211ad66b103e2a3283a23ea52db95a26de0866edc54eb14e0",
           "errors": [
+            "published-check-date-not-current",
             "published-date-section-expired"
           ],
-          "warnings": [
-            "awaiting-todays-refresh"
-          ]
+          "warnings": []
         }
       ],
       "errors": [
+        "daily-publication-receipt-missing",
+        "Upcoming Avelo Course Dates — Updated Daily: published-check-date-not-current",
         "Upcoming Avelo Course Dates — Updated Daily: published-date-section-expired"
       ],
-      "warnings": [
-        "Upcoming Avelo Course Dates — Updated Daily: awaiting-todays-refresh"
-      ]
+      "warnings": []
     }
   ],
   "monitorErrors": [],
