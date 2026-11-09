@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
   "sourcePage": "https://www.abyss.com.au/widget-all",
-  "generatedAt": "2026-11-08T17:56:02.106Z",
+  "generatedAt": "2026-11-09T06:29:21.362Z",
   "timezone": "Australia/Sydney",
   "sources": {
     "guided-shore": {
@@ -9,13 +9,13 @@
       "role": "core",
       "status": "fresh",
       "pagesCollected": 1,
-      "rawEventCount": 48,
-      "firstDate": "2026-11-10",
+      "rawEventCount": 47,
+      "firstDate": "2026-11-13",
       "lastDate": "2027-02-28",
       "rowsAscending": true,
       "coversPublicHorizon": true,
       "coversCollectionTarget": true,
-      "lastSuccessfulAt": "2026-11-08T17:56:02.106Z",
+      "lastSuccessfulAt": "2026-11-09T06:29:21.362Z",
       "warnings": []
     },
     "boat-seal": {
@@ -29,7 +29,7 @@
       "rowsAscending": true,
       "coversPublicHorizon": true,
       "coversCollectionTarget": false,
-      "lastSuccessfulAt": "2026-11-08T17:56:02.106Z",
+      "lastSuccessfulAt": "2026-11-09T06:29:21.362Z",
       "warnings": []
     },
     "marine-special": {
@@ -43,59 +43,14 @@
       "rowsAscending": true,
       "coversPublicHorizon": true,
       "coversCollectionTarget": false,
-      "lastSuccessfulAt": "2026-11-08T17:56:02.106Z",
+      "lastSuccessfulAt": "2026-11-09T06:29:21.362Z",
       "warnings": []
     }
   },
-  "rawSourceEventCount": 96,
-  "deduplicatedEventCount": 96,
-  "eventCountWithinCollectionWindow": 92,
+  "rawSourceEventCount": 95,
+  "deduplicatedEventCount": 95,
+  "eventCountWithinCollectionWindow": 91,
   "events": [
-    {
-      "id": "100038765",
-      "openCartId": "100038765",
-      "source": "guided-shore",
-      "sourceWidgetId": "4745",
-      "sourceRole": "core",
-      "sourceAliases": [
-        "guided-shore"
-      ],
-      "primaryCategory": "shore",
-      "tags": [
-        "night",
-        "shore"
-      ],
-      "charter": "Guided Shore Dives",
-      "title": "Night Dive",
-      "description": "Oak Park Night Dive",
-      "partNumber": "Night Dive 10/11/26",
-      "startDate": "2026-11-10",
-      "endDate": "2026-11-10",
-      "startTime": "18:00",
-      "start": "2026-11-10T18:00:00+11:00",
-      "timezone": "Australia/Sydney",
-      "price": {
-        "amount": 0,
-        "currency": "AUD",
-        "display": "$0.00",
-        "tableDisplay": "$0.00",
-        "detailDisplay": "$0.00"
-      },
-      "availabilitySnapshot": {
-        "maxPlaces": 20,
-        "placesAvailable": 16,
-        "status": "snapshot-open"
-      },
-      "bookingUrl": "https://www.abyss.com.au/charters/guided-shore-dives?q=cGFydF9udW1iZXI9TmlnaHQgRGl2ZSAxMC8xMS8yNiZkYXRlPSZvcGVuX2NhcnRfaWQ9MTAwMDM4NzY1",
-      "bookingCode": "cGFydF9udW1iZXI9TmlnaHQgRGl2ZSAxMC8xMS8yNiZkYXRlPSZvcGVuX2NhcnRfaWQ9MTAwMDM4NzY1",
-      "decodedBookingCode": "part_number=Night Dive 10/11/26&date=&open_cart_id=100038765",
-      "productPath": "/charters/guided-shore-dives",
-      "actionType": "booking",
-      "bookable": true,
-      "contactPart": null,
-      "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
-    },
     {
       "id": "66660493",
       "openCartId": "66660493",
@@ -138,7 +93,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100004425",
@@ -184,7 +139,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "66661870",
@@ -219,7 +174,7 @@
       },
       "availabilitySnapshot": {
         "maxPlaces": 18,
-        "placesAvailable": 15,
+        "placesAvailable": 11,
         "status": "snapshot-open"
       },
       "bookingUrl": "https://www.abyss.com.au/charters/boat-dives?q=cGFydF9udW1iZXI9TWFnaWMgUG9pbnQgU2hhcmsgRGl2ZSAxNC8xMS8yMDI2JmRhdGU9Jm9wZW5fY2FydF9pZD02NjY2MTg3MA==",
@@ -230,7 +185,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "66660490",
@@ -274,7 +229,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "66661877",
@@ -306,7 +261,7 @@
         "detailDisplay": "$130.00"
       },
       "availabilitySnapshot": {
-        "maxPlaces": 12,
+        "maxPlaces": 20,
         "placesAvailable": 2,
         "status": "snapshot-open"
       },
@@ -318,7 +273,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "66661878",
@@ -334,9 +289,9 @@
         "boat"
       ],
       "charter": "Boat Dives",
-      "title": "Wanderers UNGUIDED Boat Dive",
+      "title": "Wanderers UNGUIDED AM Boat Dive",
       "description": "Wanderers Reef – 40m dive with sponge gardens & big pelagic fish.",
-      "partNumber": "Wanderers UNGUIDED Boat Dive 15/11/26",
+      "partNumber": "Wanderers UNGUIDED AM Boat Dive 15/11/26",
       "startDate": "2026-11-15",
       "endDate": "2026-11-15",
       "startTime": "08:00",
@@ -350,19 +305,19 @@
         "detailDisplay": "$130.00"
       },
       "availabilitySnapshot": {
-        "maxPlaces": 13,
+        "maxPlaces": 21,
         "placesAvailable": 0,
         "status": "snapshot-full-or-unavailable"
       },
-      "bookingUrl": "https://www.abyss.com.au/charters/boat-dives?q=cGFydF9udW1iZXI9V2FuZGVyZXJzIFVOR1VJREVEIEJvYXQgRGl2ZSAxNS8xMS8yNiZkYXRlPSZvcGVuX2NhcnRfaWQ9NjY2NjE4Nzg=",
-      "bookingCode": "cGFydF9udW1iZXI9V2FuZGVyZXJzIFVOR1VJREVEIEJvYXQgRGl2ZSAxNS8xMS8yNiZkYXRlPSZvcGVuX2NhcnRfaWQ9NjY2NjE4Nzg=",
-      "decodedBookingCode": "part_number=Wanderers UNGUIDED Boat Dive 15/11/26&date=&open_cart_id=66661878",
+      "bookingUrl": "https://www.abyss.com.au/charters/boat-dives?q=cGFydF9udW1iZXI9V2FuZGVyZXJzIFVOR1VJREVEIEFNIEJvYXQgRGl2ZSAxNS8xMS8yNiZkYXRlPSZvcGVuX2NhcnRfaWQ9NjY2NjE4Nzg=",
+      "bookingCode": "cGFydF9udW1iZXI9V2FuZGVyZXJzIFVOR1VJREVEIEFNIEJvYXQgRGl2ZSAxNS8xMS8yNiZkYXRlPSZvcGVuX2NhcnRfaWQ9NjY2NjE4Nzg=",
+      "decodedBookingCode": "part_number=Wanderers UNGUIDED AM Boat Dive 15/11/26&date=&open_cart_id=66661878",
       "productPath": "/charters/boat-dives",
       "actionType": "booking",
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "66661865",
@@ -378,9 +333,9 @@
         "shore"
       ],
       "charter": "Guided Shore Dives",
-      "title": "Bare Island Dive",
-      "description": "Bare Island colourful sponges, easy shore dive (12-18m)",
-      "partNumber": "Bare Island Dive 15/11/2026",
+      "title": "Frenchmans Bay Dive",
+      "description": "Frenchmans Bay - colourful sponges, easy shore dive (8-16m)",
+      "partNumber": "Frenchmans Bay Dive 15/11/2026",
       "startDate": "2026-11-15",
       "endDate": "2026-11-15",
       "startTime": "09:00",
@@ -398,19 +353,19 @@
         "placesAvailable": 20,
         "status": "snapshot-open"
       },
-      "bookingUrl": "https://www.abyss.com.au/charters/guided-shore-dives?q=cGFydF9udW1iZXI9QmFyZSBJc2xhbmQgRGl2ZSAxNS8xMS8yMDI2JmRhdGU9Jm9wZW5fY2FydF9pZD02NjY2MTg2NQ==",
-      "bookingCode": "cGFydF9udW1iZXI9QmFyZSBJc2xhbmQgRGl2ZSAxNS8xMS8yMDI2JmRhdGU9Jm9wZW5fY2FydF9pZD02NjY2MTg2NQ==",
-      "decodedBookingCode": "part_number=Bare Island Dive 15/11/2026&date=&open_cart_id=66661865",
+      "bookingUrl": "https://www.abyss.com.au/charters/guided-shore-dives?q=cGFydF9udW1iZXI9RnJlbmNobWFucyBCYXkgRGl2ZSAxNS8xMS8yMDI2JmRhdGU9Jm9wZW5fY2FydF9pZD02NjY2MTg2NQ==",
+      "bookingCode": "cGFydF9udW1iZXI9RnJlbmNobWFucyBCYXkgRGl2ZSAxNS8xMS8yMDI2JmRhdGU9Jm9wZW5fY2FydF9pZD02NjY2MTg2NQ==",
+      "decodedBookingCode": "part_number=Frenchmans Bay Dive 15/11/2026&date=&open_cart_id=66661865",
       "productPath": "/charters/guided-shore-dives",
       "actionType": "booking",
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
-      "id": "66661879",
-      "openCartId": "66661879",
+      "id": "100160024",
+      "openCartId": "100160024",
       "source": "boat-seal",
       "sourceWidgetId": "4746",
       "sourceRole": "core",
@@ -422,9 +377,9 @@
         "boat"
       ],
       "charter": "Boat Dives",
-      "title": "Voodoo Wide Boat Dive",
-      "description": "Voodoo – ocean-facing reef, plenty of fish – Double Dive 25–35m",
-      "partNumber": "Voodoo Wide Boat Dive 15/11/26",
+      "title": "Wanderers UNGUIDED PM Boat Dive",
+      "description": "Wanderers Reef – 40m dive with sponge gardens & big pelagic fish.",
+      "partNumber": "Wanderers UNGUIDED PM Boat Dive 15/11/26",
       "startDate": "2026-11-15",
       "endDate": "2026-11-15",
       "startTime": "12:00",
@@ -439,18 +394,18 @@
       },
       "availabilitySnapshot": {
         "maxPlaces": 18,
-        "placesAvailable": 18,
+        "placesAvailable": 16,
         "status": "snapshot-open"
       },
-      "bookingUrl": "https://www.abyss.com.au/charters/boat-dives?q=cGFydF9udW1iZXI9Vm9vZG9vIFdpZGUgQm9hdCBEaXZlIDE1LzExLzI2JmRhdGU9Jm9wZW5fY2FydF9pZD02NjY2MTg3OQ==",
-      "bookingCode": "cGFydF9udW1iZXI9Vm9vZG9vIFdpZGUgQm9hdCBEaXZlIDE1LzExLzI2JmRhdGU9Jm9wZW5fY2FydF9pZD02NjY2MTg3OQ==",
-      "decodedBookingCode": "part_number=Voodoo Wide Boat Dive 15/11/26&date=&open_cart_id=66661879",
+      "bookingUrl": "https://www.abyss.com.au/charters/boat-dives?q=cGFydF9udW1iZXI9V2FuZGVyZXJzIFVOR1VJREVEIFBNIEJvYXQgRGl2ZSAxNS8xMS8yNiZkYXRlPSZvcGVuX2NhcnRfaWQ9MTAwMTYwMDI0",
+      "bookingCode": "cGFydF9udW1iZXI9V2FuZGVyZXJzIFVOR1VJREVEIFBNIEJvYXQgRGl2ZSAxNS8xMS8yNiZkYXRlPSZvcGVuX2NhcnRfaWQ9MTAwMTYwMDI0",
+      "decodedBookingCode": "part_number=Wanderers UNGUIDED PM Boat Dive 15/11/26&date=&open_cart_id=100160024",
       "productPath": "/charters/boat-dives",
       "actionType": "booking",
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "66661867",
@@ -495,7 +450,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "66661880",
@@ -539,7 +494,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "66660487",
@@ -583,7 +538,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "66661881",
@@ -627,7 +582,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "66661872",
@@ -673,7 +628,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "66660488",
@@ -717,7 +672,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "66661882",
@@ -761,7 +716,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100038240",
@@ -806,7 +761,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "66660492",
@@ -850,7 +805,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "66713310",
@@ -894,7 +849,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "66661866",
@@ -939,7 +894,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "66661874",
@@ -985,7 +940,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100081178",
@@ -1029,7 +984,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "66660491",
@@ -1073,7 +1028,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100097884",
@@ -1118,7 +1073,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100038843",
@@ -1162,7 +1117,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100045650",
@@ -1206,7 +1161,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100053506",
@@ -1250,7 +1205,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100046489",
@@ -1294,7 +1249,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100054445",
@@ -1340,7 +1295,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100054621",
@@ -1386,7 +1341,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100046614",
@@ -1430,7 +1385,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100054963",
@@ -1475,7 +1430,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100053301",
@@ -1520,7 +1475,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100048929",
@@ -1565,7 +1520,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100050044",
@@ -1609,7 +1564,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100055099",
@@ -1655,7 +1610,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100050416",
@@ -1699,7 +1654,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100050572",
@@ -1743,7 +1698,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100055722",
@@ -1787,7 +1742,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100050293",
@@ -1832,7 +1787,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100055193",
@@ -1878,7 +1833,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100055598",
@@ -1922,7 +1877,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100053644",
@@ -1967,7 +1922,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100055595",
@@ -2013,7 +1968,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100055485",
@@ -2059,7 +2014,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100050165",
@@ -2104,7 +2059,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100055592",
@@ -2148,7 +2103,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100055296",
@@ -2194,7 +2149,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100055599",
@@ -2238,7 +2193,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100046812",
@@ -2282,7 +2237,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100095182",
@@ -2326,7 +2281,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100091952",
@@ -2370,7 +2325,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100095183",
@@ -2414,7 +2369,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100095190",
@@ -2460,7 +2415,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100091953",
@@ -2504,7 +2459,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100095191",
@@ -2549,7 +2504,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100091955",
@@ -2593,7 +2548,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100095192",
@@ -2637,7 +2592,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100095177",
@@ -2682,7 +2637,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100095196",
@@ -2728,7 +2683,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100095201",
@@ -2773,7 +2728,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100095179",
@@ -2817,7 +2772,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100095203",
@@ -2861,7 +2816,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100095173",
@@ -2905,7 +2860,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100095204",
@@ -2950,7 +2905,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100095174",
@@ -2994,7 +2949,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100095205",
@@ -3038,7 +2993,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100095197",
@@ -3084,7 +3039,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100095171",
@@ -3128,7 +3083,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100095194",
@@ -3172,7 +3127,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100091954",
@@ -3216,7 +3171,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100095195",
@@ -3260,7 +3215,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100095178",
@@ -3305,7 +3260,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100095198",
@@ -3351,7 +3306,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100095180",
@@ -3395,7 +3350,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100095189",
@@ -3439,7 +3394,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100095175",
@@ -3483,7 +3438,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100095199",
@@ -3529,7 +3484,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100095176",
@@ -3573,7 +3528,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100095202",
@@ -3617,7 +3572,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100095200",
@@ -3663,7 +3618,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100095172",
@@ -3707,7 +3662,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100138490",
@@ -3751,7 +3706,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100138520",
@@ -3795,7 +3750,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100138523",
@@ -3841,7 +3796,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100138495",
@@ -3885,7 +3840,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100138512",
@@ -3929,7 +3884,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100138546",
@@ -3973,7 +3928,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100138517",
@@ -4017,7 +3972,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100138525",
@@ -4063,7 +4018,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100138529",
@@ -4108,7 +4063,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     },
     {
       "id": "100138530",
@@ -4152,7 +4107,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-08T17:56:02.106Z"
+      "scrapedAt": "2026-11-09T06:29:21.362Z"
     }
   ]
 }
