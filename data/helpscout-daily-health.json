@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-10T12:30:40.204+11:00",
+  "checkedAt": "2026-11-10T12:45:55.022+11:00",
   "localDate": "2026-11-10",
   "repository": "abyss-scuba/abyss-future-dive-feed",
   "scope": "Seven maintained Help Scout date publishers, including derived date sections; separate website future-feed dependency.",
@@ -8,23 +8,23 @@
     {
       "key": "calendar",
       "label": "Sydney Dive Calendar",
-      "state": "FAIL",
-      "checkedAt": "2026-11-09",
-      "count": 80,
-      "publishedUniqueEventLinks": 80,
+      "state": "PASS",
+      "checkedAt": "2026-11-10",
+      "count": 79,
+      "publishedUniqueEventLinks": 79,
       "due": "08:00",
       "workflow": "sync-helpscout-calendar.yml",
       "latestRun": {
-        "id": 42735805598,
+        "id": 42737873200,
         "event": "schedule",
         "status": "completed",
-        "conclusion": "failure",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/42735805598"
+        "conclusion": "success",
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/42737873200"
       },
       "lastSuccessfulScheduledRun": {
-        "id": 42530104478,
-        "createdAt": "2026-11-08T22:24:43Z",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/42530104478"
+        "id": 42737873200,
+        "createdAt": "2026-11-10T01:44:08Z",
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/42737873200"
       },
       "articles": [
         {
@@ -33,23 +33,16 @@
           "name": "Upcoming Sydney dive dates — schedule snapshot",
           "collectionId": "6ab98d4249f1bc2c6aefca54",
           "checkDates": [
-            "2026-11-09"
+            "2026-11-10"
           ],
-          "eventLinks": 80,
-          "bodyHash": "ba5620a8e21abd1a638efa7bedddbc052e2400213b6b41675b5e58be23832fb0",
-          "errors": [
-            "published-check-date-not-current"
-          ],
+          "eventLinks": 79,
+          "bodyHash": "816bd60fd9d6bc49376966d7ecedcd710d32255bbe6f6152221d05abe3c9ddb6",
+          "errors": [],
           "warnings": []
         }
       ],
-      "errors": [
-        "daily-publication-receipt-missing",
-        "Upcoming Sydney dive dates — schedule snapshot: published-check-date-not-current"
-      ],
-      "warnings": [
-        "latest-workflow-failure"
-      ]
+      "errors": [],
+      "warnings": []
     },
     {
       "key": "boat",
