@@ -1,20 +1,20 @@
 {
   "status": "updated-and-verified",
-  "checkedAt": "2026-11-08T20:40:02.761Z",
-  "publishedAt": "2026-11-08T20:40:52.811Z",
-  "expiresAt": "2026-11-10T08:40:02.761Z",
+  "checkedAt": "2026-11-10T00:21:06.895Z",
+  "publishedAt": "2026-11-10T00:22:00.333Z",
+  "expiresAt": "2026-11-11T12:21:06.895Z",
   "counts": {
-    "shore": 53,
+    "shore": 52,
     "boat": 52,
-    "trip": 12
+    "trip": 13
   },
   "sourceCounts": {
-    "widget3856": 111,
-    "widget3857": 12
+    "widget3856": 110,
+    "widget3857": 13
   },
   "coverage": {
-    "first": "2026-11-10",
-    "last": "2027-10-16"
+    "first": "2026-11-12",
+    "last": "2027-10-23"
   },
   "target": {
     "siteId": "5d0ed4d02c7d3a6ebd2268ed",
@@ -22,29 +22,28 @@
     "articleId": "6abf6f632bd8064b0717cab1",
     "articleTitle": "Upcoming beginner dive dates — shore, boat and trips"
   },
-  "textHash": "d84a6497b295bb3175734f078701c6f6e08f496cb812bedc9556972021ec223f",
+  "textHash": "94b4374f2b63d6320e7e57d06a5b3036110e9e2e25cdc83265bdbfba4b5691c9",
   "firstDiveRecommendations": {
     "status": "updated-and-verified",
     "articleId": "6abf733d3be702ed269e3fa6",
-    "checkedAt": "2026-11-08T20:40:02.761Z",
-    "expiresAt": "2026-11-10T08:40:02.761Z",
+    "checkedAt": "2026-11-10T00:21:06.895Z",
+    "expiresAt": "2026-11-11T12:21:06.895Z",
     "selectedEventIds": [
-      "66661865",
       "66660488",
       "66661867"
     ],
-    "bodyHash": "cc2b7ea558fd347bcd502ad6ef9dea53c9c0f647e366444d92b739647e442f4b",
+    "bodyHash": "415d0d575a9108869da700f862fe153d756f1b156bc373f4d5a0de0794605741",
     "metadataUnchanged": true
   },
   "firstAnswerOptions": {
-    "checkedAt": "2026-11-08T20:40:02.761Z",
-    "expiresAt": "2026-11-10T08:40:02.761Z",
+    "checkedAt": "2026-11-10T00:21:06.895Z",
+    "expiresAt": "2026-11-11T12:21:06.895Z",
     "results": [
       {
         "id": "6abf76557cdaed3f1efa5fa0",
         "number": 429,
         "status": "updated-and-verified",
-        "bodyHash": "63f251615376726397b358bcefdf6942da4007ef150a42e836b36dfcba39ea9f",
+        "bodyHash": "99b186f3783dc7e27122b193258a7ddb16e7ee10d5c9cb3a24b3df08fbe1f18e",
         "originalContentUnchanged": true,
         "reviewedConversationalCleanup": false,
         "metadataUnchanged": true
@@ -53,7 +52,7 @@
         "id": "6abf7841c3e570044c28921f",
         "number": 430,
         "status": "updated-and-verified",
-        "bodyHash": "c7cab3c66036790c6a8190c8d0a4873b5030e9f4f22a2f45d6827d0d7dca7d11",
+        "bodyHash": "289c716dc62c383992120427057ec9306662c094884a8ed905bad6b021dab580",
         "originalContentUnchanged": true,
         "reviewedConversationalCleanup": false,
         "metadataUnchanged": true
@@ -62,7 +61,7 @@
         "id": "6ab992784b37f75b5ff65c3e",
         "number": 276,
         "status": "updated-and-verified",
-        "bodyHash": "69825af8c35f952b5357884191f1521bdb61cde9c631fa3a364cb2b0c6591695",
+        "bodyHash": "4c11ff474d7d7c6518155ce3f202d32c3afc9b7e1c8f4f6f431da5ae22e5a781",
         "originalContentUnchanged": true,
         "reviewedConversationalCleanup": false,
         "metadataUnchanged": true
