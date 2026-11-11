@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-12T10:29:05.540+11:00",
+  "checkedAt": "2026-11-12T10:41:17.279+11:00",
   "localDate": "2026-11-12",
   "repository": "abyss-scuba/abyss-future-dive-feed",
   "scope": "Seven maintained Help Scout date publishers, including derived date sections; separate website future-feed dependency.",
@@ -265,22 +265,22 @@
       "key": "shore",
       "label": "Shore Diving",
       "state": "PASS",
-      "checkedAt": "2026-11-12T10:14:13.185+11:00",
+      "checkedAt": "2026-11-12T10:40:33.899+11:00",
       "count": 41,
       "publishedUniqueEventLinks": 41,
       "due": "07:00",
       "workflow": "sync-helpscout-shore.yml",
       "latestRun": {
-        "id": 43118108657,
+        "id": 43121512581,
         "event": "schedule",
         "status": "completed",
         "conclusion": "success",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/43118108657"
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/43121512581"
       },
       "lastSuccessfulScheduledRun": {
-        "id": 43118108657,
-        "createdAt": "2026-11-11T23:13:09Z",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/43118108657"
+        "id": 43121512581,
+        "createdAt": "2026-11-11T23:39:38Z",
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/43121512581"
       },
       "articles": [
         {
@@ -292,7 +292,7 @@
             "2026-11-12"
           ],
           "eventLinks": 41,
-          "bodyHash": "9e51436e40f462dd8e65dcadf61fbd8dcc1ce6149f3ba8b63faa2881b756c082",
+          "bodyHash": "fc5f46bb85a83e156b3d683c161fca4de7460e2ac082d9d3453c8a236dda4749",
           "errors": [],
           "warnings": []
         }
@@ -424,19 +424,18 @@
           "eventLinks": 1,
           "bodyHash": "833cdb1341230cd1e38cdd789037eb309bebaace7d51256ca8f763280be24f06",
           "errors": [
+            "published-check-date-not-current",
             "published-date-section-expired"
           ],
-          "warnings": [
-            "awaiting-todays-refresh"
-          ]
+          "warnings": []
         }
       ],
       "errors": [
+        "daily-publication-receipt-missing",
+        "Upcoming Avelo Course Dates — Updated Daily: published-check-date-not-current",
         "Upcoming Avelo Course Dates — Updated Daily: published-date-section-expired"
       ],
-      "warnings": [
-        "Upcoming Avelo Course Dates — Updated Daily: awaiting-todays-refresh"
-      ]
+      "warnings": []
     }
   ],
   "monitorErrors": [
