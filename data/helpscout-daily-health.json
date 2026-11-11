@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-11T16:23:35.657+11:00",
+  "checkedAt": "2026-11-11T17:42:29.753+11:00",
   "localDate": "2026-11-11",
   "repository": "abyss-scuba/abyss-future-dive-feed",
   "scope": "Seven maintained Help Scout date publishers, including derived date sections; separate website future-feed dependency.",
@@ -434,6 +434,6 @@
   "delivery": {
     "issue": 56,
     "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/issues/56",
-    "action": "updated"
+    "action": "daily-deduplicated"
   }
 }
