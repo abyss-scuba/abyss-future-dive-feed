@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-11T11:24:19.619+11:00",
+  "checkedAt": "2026-11-11T11:35:41.791+11:00",
   "localDate": "2026-11-11",
   "repository": "abyss-scuba/abyss-future-dive-feed",
   "scope": "Seven maintained Help Scout date publishers, including derived date sections; separate website future-feed dependency.",
@@ -404,16 +404,16 @@
       "due": "10:30",
       "workflow": "sync-helpscout-avelo.yml",
       "latestRun": {
-        "id": 42930969700,
+        "id": 42932467669,
         "event": "schedule",
         "status": "completed",
         "conclusion": "success",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/42930969700"
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/42932467669"
       },
       "lastSuccessfulScheduledRun": {
-        "id": 42930969700,
-        "createdAt": "2026-11-11T00:23:30Z",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/42930969700"
+        "id": 42932467669,
+        "createdAt": "2026-11-11T00:34:53Z",
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/42932467669"
       },
       "articles": [
         {
@@ -446,6 +446,6 @@
   "delivery": {
     "issue": 56,
     "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/issues/56",
-    "action": "updated"
+    "action": "daily-deduplicated"
   }
 }
