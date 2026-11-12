@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-13T09:44:20.918+11:00",
+  "checkedAt": "2026-11-13T09:51:53.595+11:00",
   "localDate": "2026-11-13",
   "repository": "abyss-scuba/abyss-future-dive-feed",
   "scope": "Seven maintained Help Scout date publishers, including derived date sections; separate website future-feed dependency.",
@@ -265,22 +265,22 @@
       "key": "shore",
       "label": "Shore Diving",
       "state": "PASS",
-      "checkedAt": "2026-11-13T09:30:25.333+11:00",
+      "checkedAt": "2026-11-13T09:51:22.218+11:00",
       "count": 43,
       "publishedUniqueEventLinks": 43,
       "due": "07:00",
       "workflow": "sync-helpscout-shore.yml",
       "latestRun": {
-        "id": 43320344381,
+        "id": 43323578284,
         "event": "schedule",
         "status": "completed",
         "conclusion": "success",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/43320344381"
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/43323578284"
       },
       "lastSuccessfulScheduledRun": {
-        "id": 43320344381,
-        "createdAt": "2026-11-12T22:29:17Z",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/43320344381"
+        "id": 43323578284,
+        "createdAt": "2026-11-12T22:50:26Z",
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/43323578284"
       },
       "articles": [
         {
@@ -292,7 +292,7 @@
             "2026-11-13"
           ],
           "eventLinks": 43,
-          "bodyHash": "89cdc63fd58508c05e91af107f2d4ba825b5d1fe2ccc6c4e43a39800886d0f0b",
+          "bodyHash": "d808e0508085099ce56c0a1f0af6636c5bd2e4bf5b09e7888725879738e2a62e",
           "errors": [],
           "warnings": []
         }
