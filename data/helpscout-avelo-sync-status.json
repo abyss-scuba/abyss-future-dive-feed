@@ -1,9 +1,9 @@
 {
-  "attemptedAt": "2026-11-13T11:51:49.738+11:00",
+  "attemptedAt": "2026-11-14T11:37:48.697+11:00",
   "status": "published-and-read-back",
-  "lastSuccessfulCheck": "2026-11-13T11:51:49.738+11:00",
-  "validUntil": "2026-11-14T07:30:00.000+11:00",
-  "localDate": "2026-11-13",
+  "lastSuccessfulCheck": "2026-11-14T11:37:48.697+11:00",
+  "validUntil": "2026-11-15T07:30:00.000+11:00",
+  "localDate": "2026-11-14",
   "futureCount": 1,
   "prices": {
     "100172078": 699
@@ -20,9 +20,7 @@
   "publication": {
     "articleId": "6abda0e0535b0034271debb5",
     "status": "published-and-read-back",
-    "textHash": "763cbefd9dfcb709eaf55ae57a23aa855c33f151debb8067beda545de179b9a8"
+    "textHash": "7d4f049de267d9f2b6444a9a173bc3fdef8a95029db748c8f17a5c3275383037"
   },
-  "agentVerification": "pending internal Test",
-  "watchdogCheckedAt": "2026-11-13T12:16:48.033+11:00",
-  "watchdog": "current article verified"
+  "agentVerification": "pending internal Test"
 }
