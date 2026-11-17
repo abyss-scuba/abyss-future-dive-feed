@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-17T11:35:17.889+11:00",
+  "checkedAt": "2026-11-17T11:45:31.250+11:00",
   "localDate": "2026-11-17",
   "repository": "abyss-scuba/abyss-future-dive-feed",
   "scope": "Seven maintained Help Scout date publishers, including derived date sections; separate website future-feed dependency.",
@@ -91,23 +91,23 @@
     {
       "key": "courses",
       "label": "Sydney Dive Courses",
-      "state": "PASS",
-      "checkedAt": "2026-11-17T10:46:51.418+11:00",
-      "count": 78,
+      "state": "FAIL",
+      "checkedAt": "2026-11-17T11:44:38.358+11:00",
+      "count": 79,
       "publishedUniqueEventLinks": 78,
       "due": "07:00",
       "workflow": "sync-helpscout-courses.yml",
       "latestRun": {
-        "id": 43982154020,
+        "id": 43990031263,
         "event": "schedule",
         "status": "completed",
         "conclusion": "success",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/43982154020"
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/43990031263"
       },
       "lastSuccessfulScheduledRun": {
-        "id": 43982154020,
-        "createdAt": "2026-11-16T23:46:28Z",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/43982154020"
+        "id": 43990031263,
+        "createdAt": "2026-11-17T00:44:17Z",
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/43990031263"
       },
       "articles": [
         {
@@ -210,12 +210,14 @@
             "2026-11-17"
           ],
           "eventLinks": 3,
-          "bodyHash": "e758e3c380de385f0b467e1300e7a579e6cff971b18cf28f5d6b0c24afd0ecbf",
+          "bodyHash": "34ebb95c20121163d2192eb8fe13e8ae2005dba330b1463d2056063e150db8f1",
           "errors": [],
           "warnings": []
         }
       ],
-      "errors": [],
+      "errors": [
+        "published-booking-link-count-differs-from-receipt"
+      ],
       "warnings": []
     },
     {
