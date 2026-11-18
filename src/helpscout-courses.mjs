@@ -151,8 +151,9 @@ export async function publishCourseSnapshot(snapshot,{request}={}){
   results.push({id,name:p.name,status:'published-and-verified'});continue;
  }
  if(last&&DateTime.fromISO(last).setZone(ZONE).toISODate()===snapshot.localDate&&p.current.text.includes('ABYSS_COURSE_BOOKING_FLOW_V2')&&p.current.text.includes('<h3>Course date: ')&&p.current.text.includes('Complete date range by course family')=== (p.slug===SLUG)&& (p.slug!==SLUG||p.current.text.includes('This overview shows'))){results.push({id,name:p.name,status:'already-published-today'});continue;}
- const keywords=['Sydney course dates','upcoming dive courses','course bookings','updated daily',...new Set(p.sessions.map(r=>r.course)),...new Set(p.sessions.map(r=>COURSE_GOALS[r.courseKey]).filter(Boolean))];
- if(!id)id=await request('POST','/articles',{collectionId:COLLECTION,status:'published',slug:p.slug,name:p.name,text:p.text,categories:['6ab8b3eb7b6962906797d354'],keywords});else await request('PUT',`/articles/${id}`,{text:p.text,keywords});
+ // Keywords are curated in Docs; a date refresh must not replace them.
+ const keywords=p.slug===SLUG?['Sydney course dates','upcoming dive courses','dive course calendar']:[...new Set(p.sessions.map(r=>`${r.course} course dates`))];
+ if(!id)id=await request('POST','/articles',{collectionId:COLLECTION,status:'published',slug:p.slug,name:p.name,text:p.text,categories:['6ab8b3eb7b6962906797d354'],keywords});else await request('PUT',`/articles/${id}`,{text:p.text});
  const read=(await request('GET',`/articles/${id}`)).article;check(read.status==='published'&&read.collectionId===COLLECTION&&comparable(read.text)===comparable(p.text),'Published course snapshot readback mismatch');results.push({id,name:p.name,status:'published-and-verified'});
  }
  return {status:results.every(r=>r.status==='already-published-today')?'already-published-today':'published-and-verified',id:results.at(-1).id,count:snapshot.sessions.length,articles:results};
