@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-20T10:21:43.827+11:00",
+  "checkedAt": "2026-11-20T10:30:43.020+11:00",
   "localDate": "2026-11-20",
   "repository": "abyss-scuba/abyss-future-dive-feed",
   "scope": "Seven maintained Help Scout date publishers, including derived date sections; separate website future-feed dependency.",
@@ -92,22 +92,22 @@
       "key": "courses",
       "label": "Sydney Dive Courses",
       "state": "PASS",
-      "checkedAt": "2026-11-20T09:42:27.595+11:00",
+      "checkedAt": "2026-11-20T10:29:34.994+11:00",
       "count": 80,
       "publishedUniqueEventLinks": 80,
       "due": "07:00",
       "workflow": "sync-helpscout-courses.yml",
       "latestRun": {
-        "id": 44631065471,
+        "id": 44638049319,
         "event": "schedule",
         "status": "completed",
         "conclusion": "success",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/44631065471"
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/44638049319"
       },
       "lastSuccessfulScheduledRun": {
-        "id": 44631065471,
-        "createdAt": "2026-11-19T22:42:06Z",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/44631065471"
+        "id": 44638049319,
+        "createdAt": "2026-11-19T23:29:14Z",
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/44638049319"
       },
       "articles": [
         {
@@ -210,7 +210,7 @@
             "2026-11-20"
           ],
           "eventLinks": 3,
-          "bodyHash": "439adb7c5cb0727589d31feba34cbced3aa5563bcf056aba8ca702ebe9ab2968",
+          "bodyHash": "649150ef335e5ae78f0403c4bd5830a88b09a1318fbc2aaa657a7278b30103d8",
           "errors": [],
           "warnings": []
         }
@@ -424,19 +424,18 @@
           "eventLinks": 1,
           "bodyHash": "4a2c5e2cf0af4ebf678735c7b23a2c3b11aa0e21f5695f1b616ed32154825eca",
           "errors": [
+            "published-check-date-not-current",
             "published-date-section-expired"
           ],
-          "warnings": [
-            "awaiting-todays-refresh"
-          ]
+          "warnings": []
         }
       ],
       "errors": [
+        "daily-publication-receipt-missing",
+        "Upcoming Avelo Course Dates — Updated Daily: published-check-date-not-current",
         "Upcoming Avelo Course Dates — Updated Daily: published-date-section-expired"
       ],
-      "warnings": [
-        "Upcoming Avelo Course Dates — Updated Daily: awaiting-todays-refresh"
-      ]
+      "warnings": []
     }
   ],
   "monitorErrors": [
