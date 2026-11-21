@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-21T11:10:28.616+11:00",
+  "checkedAt": "2026-11-21T12:03:10.133+11:00",
   "localDate": "2026-11-21",
   "repository": "abyss-scuba/abyss-future-dive-feed",
   "scope": "Seven maintained Help Scout date publishers, including derived date sections; separate website future-feed dependency.",
@@ -390,23 +390,23 @@
     {
       "key": "avelo",
       "label": "Avelo Diving",
-      "state": "FAIL",
-      "checkedAt": "2026-11-20T12:37:21.200+11:00",
-      "count": 1,
-      "publishedUniqueEventLinks": 1,
+      "state": "PASS",
+      "checkedAt": "2026-11-21T12:02:43.931+11:00",
+      "count": 0,
+      "publishedUniqueEventLinks": 0,
       "due": "10:30",
       "workflow": "sync-helpscout-avelo.yml",
       "latestRun": {
-        "id": 44656333187,
+        "id": 44847673217,
         "event": "schedule",
         "status": "completed",
         "conclusion": "success",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/44656333187"
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/44847673217"
       },
       "lastSuccessfulScheduledRun": {
-        "id": 44656333187,
-        "createdAt": "2026-11-20T01:48:57Z",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/44656333187"
+        "id": 44847673217,
+        "createdAt": "2026-11-21T01:02:06Z",
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/44847673217"
       },
       "articles": [
         {
@@ -415,22 +415,15 @@
           "name": "Upcoming Avelo Course Dates — Updated Daily",
           "collectionId": "6abd97aa535b0034271deb9a",
           "checkDates": [
-            "2026-11-20"
+            "2026-11-21"
           ],
-          "eventLinks": 1,
-          "bodyHash": "6e041d628379a4a17b43006754e687f001ebc3cc823e59a0986f2ed195387a38",
-          "errors": [
-            "published-check-date-not-current",
-            "published-date-section-expired"
-          ],
+          "eventLinks": 0,
+          "bodyHash": "edc37830e6f959e2ee7b430bb6cf7e62c08333f2bf9dc01c33ba8f41cd30d5ba",
+          "errors": [],
           "warnings": []
         }
       ],
-      "errors": [
-        "daily-publication-receipt-missing",
-        "Upcoming Avelo Course Dates — Updated Daily: published-check-date-not-current",
-        "Upcoming Avelo Course Dates — Updated Daily: published-date-section-expired"
-      ],
+      "errors": [],
       "warnings": []
     }
   ],
