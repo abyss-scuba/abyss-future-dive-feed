@@ -1,9 +1,9 @@
 {
-  "attemptedAt": "2026-11-21T12:02:43.931+11:00",
+  "attemptedAt": "2026-11-22T11:02:45.024+11:00",
   "status": "published-and-read-back",
-  "lastSuccessfulCheck": "2026-11-21T12:02:43.931+11:00",
-  "validUntil": "2026-11-22T07:30:00.000+11:00",
-  "localDate": "2026-11-21",
+  "lastSuccessfulCheck": "2026-11-22T11:02:45.024+11:00",
+  "validUntil": "2026-11-23T07:30:00.000+11:00",
+  "localDate": "2026-11-22",
   "futureCount": 0,
   "prices": {},
   "coverage": {
@@ -18,9 +18,7 @@
   "publication": {
     "articleId": "6abda0e0535b0034271debb5",
     "status": "published-and-read-back",
-    "textHash": "ad4711b27fe7cdc8cb54ec0fac71a80550f91faa7c2a4e1ae98f887ec53e09cf"
+    "textHash": "eb8c4e6d4896649158508caeb3207dc0ce338b95bb860970bed4fb55f71c38f5"
   },
-  "agentVerification": "pending internal Test",
-  "watchdogCheckedAt": "2026-11-21T12:37:57.477+11:00",
-  "watchdog": "current article verified"
+  "agentVerification": "pending internal Test"
 }
