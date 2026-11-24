@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-24T14:05:01.912+11:00",
+  "checkedAt": "2026-11-24T14:07:29.873+11:00",
   "localDate": "2026-11-24",
   "repository": "abyss-scuba/abyss-future-dive-feed",
   "scope": "Seven maintained Help Scout date publishers, including derived date sections; separate website future-feed dependency.",
@@ -265,23 +265,23 @@
     {
       "key": "shore",
       "label": "Shore Diving",
-      "state": "FAIL",
-      "checkedAt": "2026-11-23T09:45:04.409+11:00",
+      "state": "PASS",
+      "checkedAt": "2026-11-24T14:06:49.970+11:00",
       "count": 39,
       "publishedUniqueEventLinks": 39,
       "due": "07:00",
       "workflow": "sync-helpscout-shore.yml",
       "latestRun": {
-        "id": 45079366588,
+        "id": 45317086092,
         "event": "schedule",
         "status": "completed",
         "conclusion": "success",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/45079366588"
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/45317086092"
       },
       "lastSuccessfulScheduledRun": {
-        "id": 45079366588,
-        "createdAt": "2026-11-22T22:44:12Z",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/45079366588"
+        "id": 45317086092,
+        "createdAt": "2026-11-24T03:05:54Z",
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/45317086092"
       },
       "articles": [
         {
@@ -290,20 +290,15 @@
           "name": "Upcoming Shore dive dates — schedule snapshot",
           "collectionId": "6abb22ad5c1e572f6ed8ba47",
           "checkDates": [
-            "2026-11-23"
+            "2026-11-24"
           ],
           "eventLinks": 39,
-          "bodyHash": "f352570c54e9b6514eb6bbf636d1fd85b9bc84a0b9141a214d0de2fa0c3755ba",
-          "errors": [
-            "published-check-date-not-current"
-          ],
+          "bodyHash": "f5d5295a8df3310dbcae5721b59ecbfbdbda0552dd0277660075b8496e960c25",
+          "errors": [],
           "warnings": []
         }
       ],
-      "errors": [
-        "daily-publication-receipt-missing",
-        "Upcoming Shore dive dates — schedule snapshot: published-check-date-not-current"
-      ],
+      "errors": [],
       "warnings": []
     },
     {
