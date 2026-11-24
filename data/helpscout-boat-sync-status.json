@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-25T10:27:05.653+11:00",
+  "checkedAt": "2026-11-25T10:37:22.704+11:00",
   "eventCount": 48,
   "technicalCount": 7,
   "sealCount": 0,
@@ -9,7 +9,7 @@
   "dryRun": false,
   "sourceOnly": false,
   "publication": {
-    "status": "updated",
+    "status": "unchanged",
     "count": 48
   }
 }
