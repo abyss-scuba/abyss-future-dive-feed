@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-23T20:10:31.791+11:00",
-  "localDate": "2026-11-23",
+  "checkedAt": "2026-11-24T12:36:24.368+11:00",
+  "localDate": "2026-11-24",
   "repository": "abyss-scuba/abyss-future-dive-feed",
   "scope": "Seven maintained Help Scout date publishers, including derived date sections; separate website future-feed dependency.",
   "sources": [
     {
       "key": "calendar",
       "label": "Sydney Dive Calendar",
-      "state": "PASS",
+      "state": "FAIL",
       "checkedAt": "2026-11-23",
       "count": 83,
       "publishedUniqueEventLinks": 83,
@@ -37,33 +37,38 @@
           ],
           "eventLinks": 83,
           "bodyHash": "e03b9dce435e98fca0eabe73998736b905db2adb42520514f29f0b3e0c84824a",
-          "errors": [],
+          "errors": [
+            "published-check-date-not-current"
+          ],
           "warnings": []
         }
       ],
-      "errors": [],
+      "errors": [
+        "daily-publication-receipt-missing",
+        "Upcoming Sydney dive dates — schedule snapshot: published-check-date-not-current"
+      ],
       "warnings": []
     },
     {
       "key": "boat",
       "label": "Boat Diving",
       "state": "PASS",
-      "checkedAt": "2026-11-23T07:49:34.655+11:00",
+      "checkedAt": "2026-11-24T12:35:43.766+11:00",
       "count": 48,
       "publishedUniqueEventLinks": 48,
       "due": "04:00",
       "workflow": "sync-helpscout-boat.yml",
       "latestRun": {
-        "id": 45068535074,
+        "id": 45306078130,
         "event": "schedule",
         "status": "completed",
         "conclusion": "success",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/45068535074"
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/45306078130"
       },
       "lastSuccessfulScheduledRun": {
-        "id": 45068535074,
-        "createdAt": "2026-11-22T20:48:43Z",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/45068535074"
+        "id": 45306078130,
+        "createdAt": "2026-11-24T01:34:50Z",
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/45306078130"
       },
       "articles": [
         {
@@ -72,10 +77,10 @@
           "name": "Upcoming Sydney boat dives — schedule snapshot",
           "collectionId": "6abb75219dcaab7ce64c5880",
           "checkDates": [
-            "2026-11-23"
+            "2026-11-24"
           ],
           "eventLinks": 48,
-          "bodyHash": "7f77eb9060f349e8235285403400b81f2b292c73705e42115ec5f191e0d64e7b",
+          "bodyHash": "f52537cd9846091a31798882f2f6e6649c127b5f688720d1753e21abe34aacf2",
           "errors": [],
           "warnings": []
         }
@@ -86,7 +91,7 @@
     {
       "key": "courses",
       "label": "Sydney Dive Courses",
-      "state": "PASS",
+      "state": "FAIL",
       "checkedAt": "2026-11-23T09:24:58.404+11:00",
       "count": 76,
       "publishedUniqueEventLinks": 76,
@@ -115,7 +120,9 @@
           ],
           "eventLinks": 24,
           "bodyHash": "37f5da602a96cf738b291cd7246024fa2feb9e6115c2f417fb294ddf3b2465c6",
-          "errors": [],
+          "errors": [
+            "published-check-date-not-current"
+          ],
           "warnings": []
         },
         {
@@ -128,7 +135,9 @@
           ],
           "eventLinks": 23,
           "bodyHash": "b98367c93c7af812500bce07c64e2209cffb2ac263fa9e96be49b312b706e1f8",
-          "errors": [],
+          "errors": [
+            "published-check-date-not-current"
+          ],
           "warnings": []
         },
         {
@@ -141,7 +150,9 @@
           ],
           "eventLinks": 22,
           "bodyHash": "b90fff6e8e75cd1260c8eb13a9b80c1512fa169be8f4bd43558fe09f7f7bf1f4",
-          "errors": [],
+          "errors": [
+            "published-check-date-not-current"
+          ],
           "warnings": []
         },
         {
@@ -154,7 +165,9 @@
           ],
           "eventLinks": 14,
           "bodyHash": "0e45657f94ff9ac300b7a5b18b4ee8d872ce807e18064836ddefa65ea9f107ad",
-          "errors": [],
+          "errors": [
+            "published-check-date-not-current"
+          ],
           "warnings": []
         },
         {
@@ -167,7 +180,9 @@
           ],
           "eventLinks": 4,
           "bodyHash": "4c105af5ae6b1f10ca5d69ffee4a76e800caa336e15061ef583da0b914a13c78",
-          "errors": [],
+          "errors": [
+            "published-check-date-not-current"
+          ],
           "warnings": []
         },
         {
@@ -180,7 +195,9 @@
           ],
           "eventLinks": 13,
           "bodyHash": "5f6e55897a7cd6eca2530d14c38b99b0d92f1436203f964e913beee23b82f78c",
-          "errors": [],
+          "errors": [
+            "published-check-date-not-current"
+          ],
           "warnings": []
         },
         {
@@ -193,7 +210,9 @@
           ],
           "eventLinks": 3,
           "bodyHash": "90c842db5251fbca5c0f6f6326f4a79fc16c5526a79d1483e9d0bf980f1407c6",
-          "errors": [],
+          "errors": [
+            "published-check-date-not-current"
+          ],
           "warnings": []
         },
         {
@@ -206,17 +225,29 @@
           ],
           "eventLinks": 3,
           "bodyHash": "6f071203b2aa4fc6351ccd163bb97aaed857b0e453bc5b68180d6f014a2b3118",
-          "errors": [],
+          "errors": [
+            "published-check-date-not-current"
+          ],
           "warnings": []
         }
       ],
-      "errors": [],
+      "errors": [
+        "daily-publication-receipt-missing",
+        "Upcoming Sydney Course Dates — Updated Daily: published-check-date-not-current",
+        "Upcoming Sydney Advanced Open Water and Refresher Dates — Updated Daily: published-check-date-not-current",
+        "Upcoming Sydney Specialty Courses Dates — Updated Daily: published-check-date-not-current",
+        "Upcoming Sydney Rescue and First Aid Dates — Updated Daily: published-check-date-not-current",
+        "Upcoming Sydney Freediving, Mermaid and Avelo Dates — Updated Daily: published-check-date-not-current",
+        "Upcoming Sydney Professional and Technical Courses Dates — Updated Daily: published-check-date-not-current",
+        "Steadier buoyancy for underwater photos — Peak Performance Buoyancy dates: published-check-date-not-current",
+        "PADI Freediver in Sydney: published-check-date-not-current"
+      ],
       "warnings": []
     },
     {
       "key": "travel",
       "label": "Dive Travel",
-      "state": "PASS",
+      "state": "FAIL",
       "checkedAt": "2026-11-23T12:56:50.734+11:00",
       "count": 12,
       "publishedUniqueEventLinks": 12,
@@ -245,17 +276,22 @@
           ],
           "eventLinks": 12,
           "bodyHash": "748a2653230b40a4f9ae4ad6fb4a14ae652a20510b472e819dcaf4f36b31a78b",
-          "errors": [],
+          "errors": [
+            "published-check-date-not-current"
+          ],
           "warnings": []
         }
       ],
-      "errors": [],
+      "errors": [
+        "daily-publication-receipt-missing",
+        "Upcoming Abyss dive trips — dates and availability snapshot: published-check-date-not-current"
+      ],
       "warnings": []
     },
     {
       "key": "shore",
       "label": "Shore Diving",
-      "state": "PASS",
+      "state": "FAIL",
       "checkedAt": "2026-11-23T09:45:04.409+11:00",
       "count": 39,
       "publishedUniqueEventLinks": 39,
@@ -284,17 +320,22 @@
           ],
           "eventLinks": 39,
           "bodyHash": "f352570c54e9b6514eb6bbf636d1fd85b9bc84a0b9141a214d0de2fa0c3755ba",
-          "errors": [],
+          "errors": [
+            "published-check-date-not-current"
+          ],
           "warnings": []
         }
       ],
-      "errors": [],
+      "errors": [
+        "daily-publication-receipt-missing",
+        "Upcoming Shore dive dates — schedule snapshot: published-check-date-not-current"
+      ],
       "warnings": []
     },
     {
       "key": "beginner",
       "label": "Beginner Dive Calendar",
-      "state": "PASS",
+      "state": "FAIL",
       "checkedAt": "2026-11-22T21:56:04.763Z",
       "count": 105,
       "publishedUniqueEventLinks": 105,
@@ -323,7 +364,9 @@
           ],
           "eventLinks": 105,
           "bodyHash": "730c6c94075fb76ab5509e492c12902700f784cb50682ffef88b9b66ef89c368",
-          "errors": [],
+          "errors": [
+            "published-check-date-not-current"
+          ],
           "warnings": []
         },
         {
@@ -336,7 +379,9 @@
           ],
           "eventLinks": 2,
           "bodyHash": "70b6ec4437cc5146f7769e8c82948779a9118c8590e75ef39045524a0da6df30",
-          "errors": [],
+          "errors": [
+            "published-check-date-not-current"
+          ],
           "warnings": []
         },
         {
@@ -349,7 +394,9 @@
           ],
           "eventLinks": 1,
           "bodyHash": "9a2d2a10ad2421a9b9d94b281fce29d001cd1511af36e2f84dfa086784c211be",
-          "errors": [],
+          "errors": [
+            "published-check-date-not-current"
+          ],
           "warnings": []
         },
         {
@@ -362,7 +409,9 @@
           ],
           "eventLinks": 1,
           "bodyHash": "5b88247f07f7f49c5ed2814bd5df88e4df8e0b7b1d8b193c77e3adfa134ead13",
-          "errors": [],
+          "errors": [
+            "published-check-date-not-current"
+          ],
           "warnings": []
         },
         {
@@ -375,17 +424,26 @@
           ],
           "eventLinks": 1,
           "bodyHash": "a4feaf5617f01f52b9975fba2742a957279dc8108f089978345688f28491f47c",
-          "errors": [],
+          "errors": [
+            "published-check-date-not-current"
+          ],
           "warnings": []
         }
       ],
-      "errors": [],
+      "errors": [
+        "daily-publication-receipt-missing",
+        "Upcoming beginner dive dates — shore, boat and trips: published-check-date-not-current",
+        "Your first guided dive after certification: what happens and who helps: published-check-date-not-current",
+        "Scuba equipment hire and the total cost of your dive: published-check-date-not-current",
+        "Nervous about your next dive? Support, pace and extra help: published-check-date-not-current",
+        "Can I join a Sydney guided dive without bringing a buddy?: published-check-date-not-current"
+      ],
       "warnings": []
     },
     {
       "key": "avelo",
       "label": "Avelo Diving",
-      "state": "PASS",
+      "state": "FAIL",
       "checkedAt": "2026-11-23T11:34:13.645+11:00",
       "count": 0,
       "publishedUniqueEventLinks": 0,
@@ -414,11 +472,18 @@
           ],
           "eventLinks": 0,
           "bodyHash": "6d161a93edadbfdfbf38afd8181586452fca27a5314c8cc1b7e7b0eab86a7582",
-          "errors": [],
+          "errors": [
+            "published-check-date-not-current",
+            "published-date-section-expired"
+          ],
           "warnings": []
         }
       ],
-      "errors": [],
+      "errors": [
+        "daily-publication-receipt-missing",
+        "Upcoming Avelo Course Dates — Updated Daily: published-check-date-not-current",
+        "Upcoming Avelo Course Dates — Updated Daily: published-date-section-expired"
+      ],
       "warnings": []
     }
   ],
@@ -434,6 +499,6 @@
   "delivery": {
     "issue": 56,
     "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/issues/56",
-    "action": "daily-deduplicated"
+    "action": "updated"
   }
 }
