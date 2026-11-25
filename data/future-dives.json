@@ -2,16 +2,16 @@
   "schemaVersion": "1.0.0",
   "feedVersion": "1",
   "sourcePage": "https://www.abyss.com.au/widget-all",
-  "generatedAt": "2026-11-09T06:29:21.362Z",
+  "generatedAt": "2026-11-25T08:34:26.326Z",
   "timezone": "Australia/Sydney",
   "futureStartOffsetDays": 21,
   "publicHorizonDays": 90,
   "collectionTargetDays": 100,
   "window": {
-    "startsOn": "2026-11-30",
-    "publicSearchThrough": "2027-02-07",
-    "publicTargetThrough": "2027-02-07",
-    "collectedThrough": "2027-02-17"
+    "startsOn": "2026-12-16",
+    "publicSearchThrough": "2027-02-23",
+    "publicTargetThrough": "2027-02-23",
+    "collectedThrough": "2027-03-05"
   },
   "customerNotice": "Scheduled from a twice-daily future schedule snapshot. Live availability and final prices are confirmed when booking.",
   "sources": {
@@ -20,13 +20,13 @@
       "role": "core",
       "status": "fresh",
       "pagesCollected": 1,
-      "rawEventCount": 47,
-      "firstDate": "2026-11-13",
+      "rawEventCount": 40,
+      "firstDate": "2026-11-25",
       "lastDate": "2027-02-28",
       "rowsAscending": true,
       "coversPublicHorizon": true,
-      "coversCollectionTarget": true,
-      "lastSuccessfulAt": "2026-11-09T06:29:21.362Z",
+      "coversCollectionTarget": false,
+      "lastSuccessfulAt": "2026-11-25T08:34:26.326Z",
       "warnings": []
     },
     "boat-seal": {
@@ -34,13 +34,13 @@
       "role": "core",
       "status": "fresh",
       "pagesCollected": 1,
-      "rawEventCount": 47,
-      "firstDate": "2026-11-14",
-      "lastDate": "2027-02-07",
+      "rawEventCount": 49,
+      "firstDate": "2026-11-27",
+      "lastDate": "2027-02-28",
       "rowsAscending": true,
       "coversPublicHorizon": true,
       "coversCollectionTarget": false,
-      "lastSuccessfulAt": "2026-11-09T06:29:21.362Z",
+      "lastSuccessfulAt": "2026-11-25T08:34:26.326Z",
       "warnings": []
     },
     "marine-special": {
@@ -52,551 +52,14 @@
       "firstDate": "2027-02-13",
       "lastDate": "2027-02-13",
       "rowsAscending": true,
-      "coversPublicHorizon": true,
+      "coversPublicHorizon": false,
       "coversCollectionTarget": false,
-      "lastSuccessfulAt": "2026-11-09T06:29:21.362Z",
+      "lastSuccessfulAt": "2026-11-25T08:34:26.326Z",
       "warnings": []
     }
   },
-  "eventCount": 63,
+  "eventCount": 61,
   "events": [
-    {
-      "id": "100045650",
-      "openCartId": "100045650",
-      "source": "guided-shore",
-      "sourceWidgetId": "4745",
-      "sourceRole": "core",
-      "sourceAliases": [
-        "guided-shore"
-      ],
-      "primaryCategory": "shore",
-      "tags": [
-        "shore"
-      ],
-      "charter": "Guided Shore Dives",
-      "title": "Oak Park Dive",
-      "description": "Oak Park at Cronulla big blue groper shore dive (10m)",
-      "partNumber": "Oak Park Dive 04/12/26",
-      "startDate": "2026-12-04",
-      "endDate": "2026-12-04",
-      "startTime": "10:00",
-      "start": "2026-12-04T10:00:00+11:00",
-      "timezone": "Australia/Sydney",
-      "price": {
-        "amount": 0,
-        "currency": "AUD",
-        "display": "$0.00",
-        "tableDisplay": "$0.00",
-        "detailDisplay": "$0.00"
-      },
-      "availabilitySnapshot": {
-        "maxPlaces": 20,
-        "placesAvailable": 20,
-        "status": "snapshot-open"
-      },
-      "bookingUrl": "https://www.abyss.com.au/charters/guided-shore-dives?q=cGFydF9udW1iZXI9T2FrIFBhcmsgRGl2ZSAwNC8xMi8yNiZkYXRlPSZvcGVuX2NhcnRfaWQ9MTAwMDQ1NjUw",
-      "bookingCode": "cGFydF9udW1iZXI9T2FrIFBhcmsgRGl2ZSAwNC8xMi8yNiZkYXRlPSZvcGVuX2NhcnRfaWQ9MTAwMDQ1NjUw",
-      "decodedBookingCode": "part_number=Oak Park Dive 04/12/26&date=&open_cart_id=100045650",
-      "productPath": "/charters/guided-shore-dives",
-      "actionType": "booking",
-      "bookable": true,
-      "contactPart": null,
-      "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
-    },
-    {
-      "id": "100053506",
-      "openCartId": "100053506",
-      "source": "boat-seal",
-      "sourceWidgetId": "4746",
-      "sourceRole": "core",
-      "sourceAliases": [
-        "boat-seal"
-      ],
-      "primaryCategory": "boat",
-      "tags": [
-        "boat"
-      ],
-      "charter": "Boat Dives",
-      "title": "Henry Head Boat Dive",
-      "description": "Henry Head – sponge garden, red Indian fish – Double Dive 12–24m",
-      "partNumber": "Henry Head Boat Dive 5/12/26",
-      "startDate": "2026-12-05",
-      "endDate": "2026-12-05",
-      "startTime": "08:00",
-      "start": "2026-12-05T08:00:00+11:00",
-      "timezone": "Australia/Sydney",
-      "price": {
-        "amount": 130,
-        "currency": "AUD",
-        "display": "$130.00",
-        "tableDisplay": "$130.00",
-        "detailDisplay": "$130.00"
-      },
-      "availabilitySnapshot": {
-        "maxPlaces": 10,
-        "placesAvailable": 8,
-        "status": "snapshot-open"
-      },
-      "bookingUrl": "https://www.abyss.com.au/charters/boat-dives?q=cGFydF9udW1iZXI9SGVucnkgSGVhZCBCb2F0IERpdmUgNS8xMi8yNiZkYXRlPSZvcGVuX2NhcnRfaWQ9MTAwMDUzNTA2",
-      "bookingCode": "cGFydF9udW1iZXI9SGVucnkgSGVhZCBCb2F0IERpdmUgNS8xMi8yNiZkYXRlPSZvcGVuX2NhcnRfaWQ9MTAwMDUzNTA2",
-      "decodedBookingCode": "part_number=Henry Head Boat Dive 5/12/26&date=&open_cart_id=100053506",
-      "productPath": "/charters/boat-dives",
-      "actionType": "booking",
-      "bookable": true,
-      "contactPart": null,
-      "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
-    },
-    {
-      "id": "100046489",
-      "openCartId": "100046489",
-      "source": "guided-shore",
-      "sourceWidgetId": "4745",
-      "sourceRole": "core",
-      "sourceAliases": [
-        "guided-shore"
-      ],
-      "primaryCategory": "shore",
-      "tags": [
-        "shore"
-      ],
-      "charter": "Guided Shore Dives",
-      "title": "Oak Park Dive",
-      "description": "Oak Park at Cronulla big blue groper shore dive (10m)",
-      "partNumber": "Oak Park Dive 05/12/26",
-      "startDate": "2026-12-05",
-      "endDate": "2026-12-05",
-      "startTime": "09:00",
-      "start": "2026-12-05T09:00:00+11:00",
-      "timezone": "Australia/Sydney",
-      "price": {
-        "amount": 0,
-        "currency": "AUD",
-        "display": "$0.00",
-        "tableDisplay": "$0.00",
-        "detailDisplay": "$0.00"
-      },
-      "availabilitySnapshot": {
-        "maxPlaces": 20,
-        "placesAvailable": 20,
-        "status": "snapshot-open"
-      },
-      "bookingUrl": "https://www.abyss.com.au/charters/guided-shore-dives?q=cGFydF9udW1iZXI9T2FrIFBhcmsgRGl2ZSAwNS8xMi8yNiZkYXRlPSZvcGVuX2NhcnRfaWQ9MTAwMDQ2NDg5",
-      "bookingCode": "cGFydF9udW1iZXI9T2FrIFBhcmsgRGl2ZSAwNS8xMi8yNiZkYXRlPSZvcGVuX2NhcnRfaWQ9MTAwMDQ2NDg5",
-      "decodedBookingCode": "part_number=Oak Park Dive 05/12/26&date=&open_cart_id=100046489",
-      "productPath": "/charters/guided-shore-dives",
-      "actionType": "booking",
-      "bookable": true,
-      "contactPart": null,
-      "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
-    },
-    {
-      "id": "100054445",
-      "openCartId": "100054445",
-      "source": "boat-seal",
-      "sourceWidgetId": "4746",
-      "sourceRole": "core",
-      "sourceAliases": [
-        "boat-seal"
-      ],
-      "primaryCategory": "boat",
-      "tags": [
-        "boat",
-        "marine-life",
-        "shark"
-      ],
-      "charter": "Boat Dives",
-      "title": "Magic Point Shark Dive",
-      "description": "Magic Point – shark dive, Sydney most popular boat dive 15–24m",
-      "partNumber": "Magic Point Shark Dive 5/12/26",
-      "startDate": "2026-12-05",
-      "endDate": "2026-12-05",
-      "startTime": "12:00",
-      "start": "2026-12-05T12:00:00+11:00",
-      "timezone": "Australia/Sydney",
-      "price": {
-        "amount": 130,
-        "currency": "AUD",
-        "display": "$130.00",
-        "tableDisplay": "$130.00",
-        "detailDisplay": "$130.00"
-      },
-      "availabilitySnapshot": {
-        "maxPlaces": 18,
-        "placesAvailable": 17,
-        "status": "snapshot-open"
-      },
-      "bookingUrl": "https://www.abyss.com.au/charters/boat-dives?q=cGFydF9udW1iZXI9TWFnaWMgUG9pbnQgU2hhcmsgRGl2ZSA1LzEyLzI2JmRhdGU9Jm9wZW5fY2FydF9pZD0xMDAwNTQ0NDU=",
-      "bookingCode": "cGFydF9udW1iZXI9TWFnaWMgUG9pbnQgU2hhcmsgRGl2ZSA1LzEyLzI2JmRhdGU9Jm9wZW5fY2FydF9pZD0xMDAwNTQ0NDU=",
-      "decodedBookingCode": "part_number=Magic Point Shark Dive 5/12/26&date=&open_cart_id=100054445",
-      "productPath": "/charters/boat-dives",
-      "actionType": "booking",
-      "bookable": true,
-      "contactPart": null,
-      "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
-    },
-    {
-      "id": "100054621",
-      "openCartId": "100054621",
-      "source": "boat-seal",
-      "sourceWidgetId": "4746",
-      "sourceRole": "core",
-      "sourceAliases": [
-        "boat-seal"
-      ],
-      "primaryCategory": "boat",
-      "tags": [
-        "boat",
-        "marine-life",
-        "shark"
-      ],
-      "charter": "Boat Dives",
-      "title": "Magic Point Shark Dive",
-      "description": "Magic Point – shark dive, Sydney most popular boat dive 15–24m",
-      "partNumber": "Magic Point Shark Dive 6/12/26",
-      "startDate": "2026-12-06",
-      "endDate": "2026-12-06",
-      "startTime": "08:00",
-      "start": "2026-12-06T08:00:00+11:00",
-      "timezone": "Australia/Sydney",
-      "price": {
-        "amount": 130,
-        "currency": "AUD",
-        "display": "$130.00",
-        "tableDisplay": "$130.00",
-        "detailDisplay": "$130.00"
-      },
-      "availabilitySnapshot": {
-        "maxPlaces": 10,
-        "placesAvailable": 9,
-        "status": "snapshot-open"
-      },
-      "bookingUrl": "https://www.abyss.com.au/charters/boat-dives?q=cGFydF9udW1iZXI9TWFnaWMgUG9pbnQgU2hhcmsgRGl2ZSA2LzEyLzI2JmRhdGU9Jm9wZW5fY2FydF9pZD0xMDAwNTQ2MjE=",
-      "bookingCode": "cGFydF9udW1iZXI9TWFnaWMgUG9pbnQgU2hhcmsgRGl2ZSA2LzEyLzI2JmRhdGU9Jm9wZW5fY2FydF9pZD0xMDAwNTQ2MjE=",
-      "decodedBookingCode": "part_number=Magic Point Shark Dive 6/12/26&date=&open_cart_id=100054621",
-      "productPath": "/charters/boat-dives",
-      "actionType": "booking",
-      "bookable": true,
-      "contactPart": null,
-      "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
-    },
-    {
-      "id": "100046614",
-      "openCartId": "100046614",
-      "source": "guided-shore",
-      "sourceWidgetId": "4745",
-      "sourceRole": "core",
-      "sourceAliases": [
-        "guided-shore"
-      ],
-      "primaryCategory": "shore",
-      "tags": [
-        "shore"
-      ],
-      "charter": "Guided Shore Dives",
-      "title": "Oak Park Dive",
-      "description": "Oak Park at Cronulla big blue groper shore dive (10m)",
-      "partNumber": "Oak Park Dive 06/12/26",
-      "startDate": "2026-12-06",
-      "endDate": "2026-12-06",
-      "startTime": "09:00",
-      "start": "2026-12-06T09:00:00+11:00",
-      "timezone": "Australia/Sydney",
-      "price": {
-        "amount": 0,
-        "currency": "AUD",
-        "display": "$0.00",
-        "tableDisplay": "$0.00",
-        "detailDisplay": "$0.00"
-      },
-      "availabilitySnapshot": {
-        "maxPlaces": 20,
-        "placesAvailable": 20,
-        "status": "snapshot-open"
-      },
-      "bookingUrl": "https://www.abyss.com.au/charters/guided-shore-dives?q=cGFydF9udW1iZXI9T2FrIFBhcmsgRGl2ZSAwNi8xMi8yNiZkYXRlPSZvcGVuX2NhcnRfaWQ9MTAwMDQ2NjE0",
-      "bookingCode": "cGFydF9udW1iZXI9T2FrIFBhcmsgRGl2ZSAwNi8xMi8yNiZkYXRlPSZvcGVuX2NhcnRfaWQ9MTAwMDQ2NjE0",
-      "decodedBookingCode": "part_number=Oak Park Dive 06/12/26&date=&open_cart_id=100046614",
-      "productPath": "/charters/guided-shore-dives",
-      "actionType": "booking",
-      "bookable": true,
-      "contactPart": null,
-      "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
-    },
-    {
-      "id": "100054963",
-      "openCartId": "100054963",
-      "source": "boat-seal",
-      "sourceWidgetId": "4746",
-      "sourceRole": "core",
-      "sourceAliases": [
-        "boat-seal"
-      ],
-      "primaryCategory": "boat",
-      "tags": [
-        "boat",
-        "wreck"
-      ],
-      "charter": "Boat Dives",
-      "title": "Hilda Wreck Dive",
-      "description": "Hilda Wreck - Boat 25m",
-      "partNumber": "Hilda Wreck Dive 6/12/26",
-      "startDate": "2026-12-06",
-      "endDate": "2026-12-06",
-      "startTime": "12:00",
-      "start": "2026-12-06T12:00:00+11:00",
-      "timezone": "Australia/Sydney",
-      "price": {
-        "amount": 130,
-        "currency": "AUD",
-        "display": "$130.00",
-        "tableDisplay": "$130.00",
-        "detailDisplay": "$130.00"
-      },
-      "availabilitySnapshot": {
-        "maxPlaces": 0,
-        "placesAvailable": 0,
-        "status": "snapshot-full-or-unavailable"
-      },
-      "bookingUrl": "https://www.abyss.com.au/charters/boat-dives?q=cGFydF9udW1iZXI9SGlsZGEgV3JlY2sgRGl2ZSA2LzEyLzI2JmRhdGU9Jm9wZW5fY2FydF9pZD0xMDAwNTQ5NjM=",
-      "bookingCode": "cGFydF9udW1iZXI9SGlsZGEgV3JlY2sgRGl2ZSA2LzEyLzI2JmRhdGU9Jm9wZW5fY2FydF9pZD0xMDAwNTQ5NjM=",
-      "decodedBookingCode": "part_number=Hilda Wreck Dive 6/12/26&date=&open_cart_id=100054963",
-      "productPath": "/charters/boat-dives",
-      "actionType": "booking",
-      "bookable": true,
-      "contactPart": null,
-      "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
-    },
-    {
-      "id": "100053301",
-      "openCartId": "100053301",
-      "source": "guided-shore",
-      "sourceWidgetId": "4745",
-      "sourceRole": "core",
-      "sourceAliases": [
-        "guided-shore"
-      ],
-      "primaryCategory": "shore",
-      "tags": [
-        "marine-life",
-        "shore"
-      ],
-      "charter": "Guided Shore Dives",
-      "title": "Sutherland Point Dive",
-      "description": "Sutherland Point easy entry, weedy sea dragons shore dive (14m)",
-      "partNumber": "Sutherland Point Dive 11/12/26",
-      "startDate": "2026-12-11",
-      "endDate": "2026-12-11",
-      "startTime": "10:00",
-      "start": "2026-12-11T10:00:00+11:00",
-      "timezone": "Australia/Sydney",
-      "price": {
-        "amount": 0,
-        "currency": "AUD",
-        "display": "$0.00",
-        "tableDisplay": "$0.00",
-        "detailDisplay": "$0.00"
-      },
-      "availabilitySnapshot": {
-        "maxPlaces": 20,
-        "placesAvailable": 20,
-        "status": "snapshot-open"
-      },
-      "bookingUrl": "https://www.abyss.com.au/charters/guided-shore-dives?q=cGFydF9udW1iZXI9U3V0aGVybGFuZCBQb2ludCBEaXZlIDExLzEyLzI2JmRhdGU9Jm9wZW5fY2FydF9pZD0xMDAwNTMzMDE=",
-      "bookingCode": "cGFydF9udW1iZXI9U3V0aGVybGFuZCBQb2ludCBEaXZlIDExLzEyLzI2JmRhdGU9Jm9wZW5fY2FydF9pZD0xMDAwNTMzMDE=",
-      "decodedBookingCode": "part_number=Sutherland Point Dive 11/12/26&date=&open_cart_id=100053301",
-      "productPath": "/charters/guided-shore-dives",
-      "actionType": "booking",
-      "bookable": true,
-      "contactPart": null,
-      "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
-    },
-    {
-      "id": "100048929",
-      "openCartId": "100048929",
-      "source": "guided-shore",
-      "sourceWidgetId": "4745",
-      "sourceRole": "core",
-      "sourceAliases": [
-        "guided-shore"
-      ],
-      "primaryCategory": "shore",
-      "tags": [
-        "marine-life",
-        "shore"
-      ],
-      "charter": "Guided Shore Dives",
-      "title": "The Steps Dive",
-      "description": "The Steps at Kurnell weedy sea dragons shore dive (15m)",
-      "partNumber": "The Steps Dive 12/12/26",
-      "startDate": "2026-12-12",
-      "endDate": "2026-12-12",
-      "startTime": "09:00",
-      "start": "2026-12-12T09:00:00+11:00",
-      "timezone": "Australia/Sydney",
-      "price": {
-        "amount": 0,
-        "currency": "AUD",
-        "display": "$0.00",
-        "tableDisplay": "$0.00",
-        "detailDisplay": "$0.00"
-      },
-      "availabilitySnapshot": {
-        "maxPlaces": 15,
-        "placesAvailable": 12,
-        "status": "snapshot-open"
-      },
-      "bookingUrl": "https://www.abyss.com.au/charters/guided-shore-dives?q=cGFydF9udW1iZXI9VGhlIFN0ZXBzIERpdmUgMTIvMTIvMjYmZGF0ZT0mb3Blbl9jYXJ0X2lkPTEwMDA0ODkyOQ==",
-      "bookingCode": "cGFydF9udW1iZXI9VGhlIFN0ZXBzIERpdmUgMTIvMTIvMjYmZGF0ZT0mb3Blbl9jYXJ0X2lkPTEwMDA0ODkyOQ==",
-      "decodedBookingCode": "part_number=The Steps Dive 12/12/26&date=&open_cart_id=100048929",
-      "productPath": "/charters/guided-shore-dives",
-      "actionType": "booking",
-      "bookable": true,
-      "contactPart": null,
-      "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
-    },
-    {
-      "id": "100050044",
-      "openCartId": "100050044",
-      "source": "boat-seal",
-      "sourceWidgetId": "4746",
-      "sourceRole": "core",
-      "sourceAliases": [
-        "boat-seal"
-      ],
-      "primaryCategory": "boat",
-      "tags": [
-        "boat"
-      ],
-      "charter": "Boat Dives",
-      "title": "Osborn Shoals Dive",
-      "description": "Osborn Shoals – groper, morwong, cuttlefish – Double Dive 18–24m",
-      "partNumber": "Osborn Shoals Dive 12/12/26",
-      "startDate": "2026-12-12",
-      "endDate": "2026-12-12",
-      "startTime": "12:00",
-      "start": "2026-12-12T12:00:00+11:00",
-      "timezone": "Australia/Sydney",
-      "price": {
-        "amount": 130,
-        "currency": "AUD",
-        "display": "$130.00",
-        "tableDisplay": "$130.00",
-        "detailDisplay": "$130.00"
-      },
-      "availabilitySnapshot": {
-        "maxPlaces": 18,
-        "placesAvailable": 16,
-        "status": "snapshot-open"
-      },
-      "bookingUrl": "https://www.abyss.com.au/charters/boat-dives?q=cGFydF9udW1iZXI9T3Nib3JuIFNob2FscyBEaXZlIDEyLzEyLzI2JmRhdGU9Jm9wZW5fY2FydF9pZD0xMDAwNTAwNDQ=",
-      "bookingCode": "cGFydF9udW1iZXI9T3Nib3JuIFNob2FscyBEaXZlIDEyLzEyLzI2JmRhdGU9Jm9wZW5fY2FydF9pZD0xMDAwNTAwNDQ=",
-      "decodedBookingCode": "part_number=Osborn Shoals Dive 12/12/26&date=&open_cart_id=100050044",
-      "productPath": "/charters/boat-dives",
-      "actionType": "booking",
-      "bookable": true,
-      "contactPart": null,
-      "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
-    },
-    {
-      "id": "100055099",
-      "openCartId": "100055099",
-      "source": "boat-seal",
-      "sourceWidgetId": "4746",
-      "sourceRole": "core",
-      "sourceAliases": [
-        "boat-seal"
-      ],
-      "primaryCategory": "boat",
-      "tags": [
-        "boat",
-        "marine-life",
-        "shark"
-      ],
-      "charter": "Boat Dives",
-      "title": "Magic Point Shark Dive",
-      "description": "Magic Point – shark dive, Sydney most popular boat dive 15–24m",
-      "partNumber": "Magic Point Shark Dive 13/12/26",
-      "startDate": "2026-12-13",
-      "endDate": "2026-12-13",
-      "startTime": "08:00",
-      "start": "2026-12-13T08:00:00+11:00",
-      "timezone": "Australia/Sydney",
-      "price": {
-        "amount": 130,
-        "currency": "AUD",
-        "display": "$130.00",
-        "tableDisplay": "$130.00",
-        "detailDisplay": "$130.00"
-      },
-      "availabilitySnapshot": {
-        "maxPlaces": 10,
-        "placesAvailable": 10,
-        "status": "snapshot-open"
-      },
-      "bookingUrl": "https://www.abyss.com.au/charters/boat-dives?q=cGFydF9udW1iZXI9TWFnaWMgUG9pbnQgU2hhcmsgRGl2ZSAxMy8xMi8yNiZkYXRlPSZvcGVuX2NhcnRfaWQ9MTAwMDU1MDk5",
-      "bookingCode": "cGFydF9udW1iZXI9TWFnaWMgUG9pbnQgU2hhcmsgRGl2ZSAxMy8xMi8yNiZkYXRlPSZvcGVuX2NhcnRfaWQ9MTAwMDU1MDk5",
-      "decodedBookingCode": "part_number=Magic Point Shark Dive 13/12/26&date=&open_cart_id=100055099",
-      "productPath": "/charters/boat-dives",
-      "actionType": "booking",
-      "bookable": true,
-      "contactPart": null,
-      "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
-    },
-    {
-      "id": "100050416",
-      "openCartId": "100050416",
-      "source": "guided-shore",
-      "sourceWidgetId": "4745",
-      "sourceRole": "core",
-      "sourceAliases": [
-        "guided-shore"
-      ],
-      "primaryCategory": "shore",
-      "tags": [
-        "shore"
-      ],
-      "charter": "Guided Shore Dives",
-      "title": "Leap to steps Dive",
-      "description": "Leap to steps Drift for confident divers shore dive (18-22m)",
-      "partNumber": "Leap to steps Dive 13/12/26",
-      "startDate": "2026-12-13",
-      "endDate": "2026-12-13",
-      "startTime": "09:00",
-      "start": "2026-12-13T09:00:00+11:00",
-      "timezone": "Australia/Sydney",
-      "price": {
-        "amount": 0,
-        "currency": "AUD",
-        "display": "$0.00",
-        "tableDisplay": "$0.00",
-        "detailDisplay": "$0.00"
-      },
-      "availabilitySnapshot": {
-        "maxPlaces": 20,
-        "placesAvailable": 20,
-        "status": "snapshot-open"
-      },
-      "bookingUrl": "https://www.abyss.com.au/charters/guided-shore-dives?q=cGFydF9udW1iZXI9TGVhcCB0byBzdGVwcyBEaXZlIDEzLzEyLzI2JmRhdGU9Jm9wZW5fY2FydF9pZD0xMDAwNTA0MTY=",
-      "bookingCode": "cGFydF9udW1iZXI9TGVhcCB0byBzdGVwcyBEaXZlIDEzLzEyLzI2JmRhdGU9Jm9wZW5fY2FydF9pZD0xMDAwNTA0MTY=",
-      "decodedBookingCode": "part_number=Leap to steps Dive 13/12/26&date=&open_cart_id=100050416",
-      "productPath": "/charters/guided-shore-dives",
-      "actionType": "booking",
-      "bookable": true,
-      "contactPart": null,
-      "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
-    },
     {
       "id": "100050572",
       "openCartId": "100050572",
@@ -639,7 +102,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
     },
     {
       "id": "100055722",
@@ -683,7 +146,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
     },
     {
       "id": "100050293",
@@ -728,7 +191,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
     },
     {
       "id": "100055193",
@@ -774,7 +237,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
     },
     {
       "id": "100055598",
@@ -807,7 +270,7 @@
       },
       "availabilitySnapshot": {
         "maxPlaces": 18,
-        "placesAvailable": 18,
+        "placesAvailable": 17,
         "status": "snapshot-open"
       },
       "bookingUrl": "https://www.abyss.com.au/charters/boat-dives?q=cGFydF9udW1iZXI9Vm9vZG9vIFdpZGUgQm9hdCBEaXZlIDI3LzEyLzI2JmRhdGU9Jm9wZW5fY2FydF9pZD0xMDAwNTU1OTg=",
@@ -818,7 +281,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
     },
     {
       "id": "100053644",
@@ -863,7 +326,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
     },
     {
       "id": "100055595",
@@ -898,7 +361,7 @@
       },
       "availabilitySnapshot": {
         "maxPlaces": 18,
-        "placesAvailable": 18,
+        "placesAvailable": 17,
         "status": "snapshot-open"
       },
       "bookingUrl": "https://www.abyss.com.au/charters/boat-dives?q=cGFydF9udW1iZXI9TWFnaWMgUG9pbnQgU2hhcmsgRGl2ZSAyNy8xMi8yNiZkYXRlPSZvcGVuX2NhcnRfaWQ9MTAwMDU1NTk1",
@@ -909,7 +372,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
     },
     {
       "id": "100055485",
@@ -955,7 +418,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
     },
     {
       "id": "100050165",
@@ -989,7 +452,7 @@
       },
       "availabilitySnapshot": {
         "maxPlaces": 15,
-        "placesAvailable": 15,
+        "placesAvailable": 11,
         "status": "snapshot-open"
       },
       "bookingUrl": "https://www.abyss.com.au/charters/guided-shore-dives?q=cGFydF9udW1iZXI9VGhlIFN0ZXBzIERpdmUgMjgvMTIvMjYmZGF0ZT0mb3Blbl9jYXJ0X2lkPTEwMDA1MDE2NQ==",
@@ -1000,7 +463,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
     },
     {
       "id": "100055592",
@@ -1044,7 +507,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
     },
     {
       "id": "100055296",
@@ -1079,7 +542,7 @@
       },
       "availabilitySnapshot": {
         "maxPlaces": 18,
-        "placesAvailable": 18,
+        "placesAvailable": 16,
         "status": "snapshot-open"
       },
       "bookingUrl": "https://www.abyss.com.au/charters/boat-dives?q=cGFydF9udW1iZXI9TWFnaWMgUG9pbnQgU2hhcmsgRGl2ZSAyOS8xMi8yNiZkYXRlPSZvcGVuX2NhcnRfaWQ9MTAwMDU1Mjk2",
@@ -1090,7 +553,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
     },
     {
       "id": "100055599",
@@ -1134,7 +597,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
     },
     {
       "id": "100046812",
@@ -1178,7 +641,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
     },
     {
       "id": "100095182",
@@ -1222,7 +685,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
     },
     {
       "id": "100091952",
@@ -1266,7 +729,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
     },
     {
       "id": "100095183",
@@ -1310,7 +773,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
     },
     {
       "id": "100095190",
@@ -1345,7 +808,7 @@
       },
       "availabilitySnapshot": {
         "maxPlaces": 10,
-        "placesAvailable": 10,
+        "placesAvailable": 8,
         "status": "snapshot-open"
       },
       "bookingUrl": "https://www.abyss.com.au/charters/boat-dives?q=cGFydF9udW1iZXI9TWFkaWMgUG9pbnQgU2hhcmsgRGl2ZSAwMy8wMS8yNyZkYXRlPSZvcGVuX2NhcnRfaWQ9MTAwMDk1MTkw",
@@ -1356,7 +819,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
     },
     {
       "id": "100091953",
@@ -1400,7 +863,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
     },
     {
       "id": "100095191",
@@ -1445,7 +908,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
     },
     {
       "id": "100091955",
@@ -1489,7 +952,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
     },
     {
       "id": "100095192",
@@ -1533,7 +996,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
     },
     {
       "id": "100095177",
@@ -1578,7 +1041,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
     },
     {
       "id": "100095196",
@@ -1624,7 +1087,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
     },
     {
       "id": "100095201",
@@ -1669,7 +1132,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
     },
     {
       "id": "100095179",
@@ -1713,7 +1176,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
     },
     {
       "id": "100095203",
@@ -1757,7 +1220,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
     },
     {
       "id": "100095173",
@@ -1801,7 +1264,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
     },
     {
       "id": "100095204",
@@ -1846,7 +1309,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
     },
     {
       "id": "100095174",
@@ -1890,7 +1353,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
     },
     {
       "id": "100095205",
@@ -1934,7 +1397,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
     },
     {
       "id": "100095197",
@@ -1980,7 +1443,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
     },
     {
       "id": "100095171",
@@ -2024,7 +1487,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
     },
     {
       "id": "100095194",
@@ -2068,7 +1531,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
     },
     {
       "id": "100091954",
@@ -2112,7 +1575,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
     },
     {
       "id": "100095195",
@@ -2156,7 +1619,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
     },
     {
       "id": "100095178",
@@ -2201,7 +1664,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
     },
     {
       "id": "100095198",
@@ -2247,7 +1710,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
     },
     {
       "id": "100095180",
@@ -2291,7 +1754,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
     },
     {
       "id": "100095189",
@@ -2335,7 +1798,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
     },
     {
       "id": "100095175",
@@ -2379,7 +1842,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
     },
     {
       "id": "100095199",
@@ -2425,7 +1888,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
     },
     {
       "id": "100095176",
@@ -2469,7 +1932,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
     },
     {
       "id": "100095202",
@@ -2513,7 +1976,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
     },
     {
       "id": "100095200",
@@ -2559,7 +2022,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
     },
     {
       "id": "100095172",
@@ -2603,7 +2066,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
     },
     {
       "id": "100138490",
@@ -2647,7 +2110,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
     },
     {
       "id": "100138520",
@@ -2691,7 +2154,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
     },
     {
       "id": "100138523",
@@ -2737,7 +2200,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
     },
     {
       "id": "100138495",
@@ -2781,7 +2244,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
     },
     {
       "id": "100138512",
@@ -2825,7 +2288,7 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
     },
     {
       "id": "100138546",
@@ -2869,7 +2332,453 @@
       "bookable": true,
       "contactPart": null,
       "qualityWarnings": [],
-      "scrapedAt": "2026-11-09T06:29:21.362Z"
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
+    },
+    {
+      "id": "100138517",
+      "openCartId": "100138517",
+      "source": "guided-shore",
+      "sourceWidgetId": "4745",
+      "sourceRole": "core",
+      "sourceAliases": [
+        "guided-shore"
+      ],
+      "primaryCategory": "shore",
+      "tags": [
+        "shore"
+      ],
+      "charter": "Guided Shore Dives",
+      "title": "Leap to Steps Dive",
+      "description": "Leap to steps Drift for confident divers shore dive (18-22m)",
+      "partNumber": "Leap to Steps Dive 12/02/2027",
+      "startDate": "2027-02-12",
+      "endDate": "2027-02-12",
+      "startTime": "10:00",
+      "start": "2027-02-12T10:00:00+11:00",
+      "timezone": "Australia/Sydney",
+      "price": {
+        "amount": 0,
+        "currency": "AUD",
+        "display": "$0.00",
+        "tableDisplay": "$0.00",
+        "detailDisplay": "$0.00"
+      },
+      "availabilitySnapshot": {
+        "maxPlaces": 20,
+        "placesAvailable": 20,
+        "status": "snapshot-open"
+      },
+      "bookingUrl": "https://www.abyss.com.au/charters/guided-shore-dives?q=cGFydF9udW1iZXI9TGVhcCB0byBTdGVwcyBEaXZlIDEyLzAyLzIwMjcmZGF0ZT0mb3Blbl9jYXJ0X2lkPTEwMDEzODUxNw==",
+      "bookingCode": "cGFydF9udW1iZXI9TGVhcCB0byBTdGVwcyBEaXZlIDEyLzAyLzIwMjcmZGF0ZT0mb3Blbl9jYXJ0X2lkPTEwMDEzODUxNw==",
+      "decodedBookingCode": "part_number=Leap to Steps Dive 12/02/2027&date=&open_cart_id=100138517",
+      "productPath": "/charters/guided-shore-dives",
+      "actionType": "booking",
+      "bookable": true,
+      "contactPart": null,
+      "qualityWarnings": [],
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
+    },
+    {
+      "id": "100138525",
+      "openCartId": "100138525",
+      "source": "marine-special",
+      "sourceWidgetId": "4747",
+      "sourceRole": "supplementary",
+      "sourceAliases": [
+        "marine-special"
+      ],
+      "primaryCategory": "shore",
+      "tags": [
+        "marine-life",
+        "shore",
+        "special-source"
+      ],
+      "charter": "Marine Marvels Dives",
+      "title": "Weedy Seadragon Dive",
+      "description": "Weedy SeaDragon up close, guided by a marine biologist.",
+      "partNumber": "Weedy Seadragon Dive 13/02/2027",
+      "startDate": "2027-02-13",
+      "endDate": "2027-02-13",
+      "startTime": "08:00",
+      "start": "2027-02-13T08:00:00+11:00",
+      "timezone": "Australia/Sydney",
+      "price": {
+        "amount": 49,
+        "currency": "AUD",
+        "display": "$49.00",
+        "tableDisplay": "$49.00",
+        "detailDisplay": "$49.00"
+      },
+      "availabilitySnapshot": {
+        "maxPlaces": 8,
+        "placesAvailable": 8,
+        "status": "snapshot-open"
+      },
+      "bookingUrl": "https://www.abyss.com.au/charters/marine-marvels-dives?q=cGFydF9udW1iZXI9V2VlZHkgU2VhZHJhZ29uIERpdmUgMTMvMDIvMjAyNyZkYXRlPSZvcGVuX2NhcnRfaWQ9MTAwMTM4NTI1",
+      "bookingCode": "cGFydF9udW1iZXI9V2VlZHkgU2VhZHJhZ29uIERpdmUgMTMvMDIvMjAyNyZkYXRlPSZvcGVuX2NhcnRfaWQ9MTAwMTM4NTI1",
+      "decodedBookingCode": "part_number=Weedy Seadragon Dive 13/02/2027&date=&open_cart_id=100138525",
+      "productPath": "/charters/marine-marvels-dives",
+      "actionType": "booking",
+      "bookable": true,
+      "contactPart": null,
+      "qualityWarnings": [],
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
+    },
+    {
+      "id": "100138529",
+      "openCartId": "100138529",
+      "source": "guided-shore",
+      "sourceWidgetId": "4745",
+      "sourceRole": "core",
+      "sourceAliases": [
+        "guided-shore"
+      ],
+      "primaryCategory": "shore",
+      "tags": [
+        "marine-life",
+        "shore"
+      ],
+      "charter": "Guided Shore Dives",
+      "title": "The Steps Dive",
+      "description": "The Steps at Kurnell weedy sea dragons shore dive (15m)",
+      "partNumber": "The Steps Dive 13/02/2027",
+      "startDate": "2027-02-13",
+      "endDate": "2027-02-13",
+      "startTime": "09:00",
+      "start": "2027-02-13T09:00:00+11:00",
+      "timezone": "Australia/Sydney",
+      "price": {
+        "amount": 0,
+        "currency": "AUD",
+        "display": "$0.00",
+        "tableDisplay": "$0.00",
+        "detailDisplay": "$0.00"
+      },
+      "availabilitySnapshot": {
+        "maxPlaces": 15,
+        "placesAvailable": 15,
+        "status": "snapshot-open"
+      },
+      "bookingUrl": "https://www.abyss.com.au/charters/guided-shore-dives?q=cGFydF9udW1iZXI9VGhlIFN0ZXBzIERpdmUgMTMvMDIvMjAyNyZkYXRlPSZvcGVuX2NhcnRfaWQ9MTAwMTM4NTI5",
+      "bookingCode": "cGFydF9udW1iZXI9VGhlIFN0ZXBzIERpdmUgMTMvMDIvMjAyNyZkYXRlPSZvcGVuX2NhcnRfaWQ9MTAwMTM4NTI5",
+      "decodedBookingCode": "part_number=The Steps Dive 13/02/2027&date=&open_cart_id=100138529",
+      "productPath": "/charters/guided-shore-dives",
+      "actionType": "booking",
+      "bookable": true,
+      "contactPart": null,
+      "qualityWarnings": [],
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
+    },
+    {
+      "id": "100389483",
+      "openCartId": "100389483",
+      "source": "boat-seal",
+      "sourceWidgetId": "4746",
+      "sourceRole": "core",
+      "sourceAliases": [
+        "boat-seal"
+      ],
+      "primaryCategory": "boat",
+      "tags": [
+        "boat",
+        "marine-life"
+      ],
+      "charter": "Boat Dives",
+      "title": "Whale Watching Platform Dive",
+      "description": "Whale Watch Platform: reef south of bay 18–25m",
+      "partNumber": "Whale Watching Platform Dive 13/02/27",
+      "startDate": "2027-02-13",
+      "endDate": "2027-02-13",
+      "startTime": "12:00",
+      "start": "2027-02-13T12:00:00+11:00",
+      "timezone": "Australia/Sydney",
+      "price": {
+        "amount": 150,
+        "currency": "AUD",
+        "display": "$150.00",
+        "tableDisplay": "$150.00",
+        "detailDisplay": "$150.00"
+      },
+      "availabilitySnapshot": {
+        "maxPlaces": 18,
+        "placesAvailable": 18,
+        "status": "snapshot-open"
+      },
+      "bookingUrl": "https://www.abyss.com.au/charters/boat-dives?q=cGFydF9udW1iZXI9V2hhbGUgV2F0Y2hpbmcgUGxhdGZvcm0gRGl2ZSAxMy8wMi8yNyZkYXRlPSZvcGVuX2NhcnRfaWQ9MTAwMzg5NDgz",
+      "bookingCode": "cGFydF9udW1iZXI9V2hhbGUgV2F0Y2hpbmcgUGxhdGZvcm0gRGl2ZSAxMy8wMi8yNyZkYXRlPSZvcGVuX2NhcnRfaWQ9MTAwMzg5NDgz",
+      "decodedBookingCode": "part_number=Whale Watching Platform Dive 13/02/27&date=&open_cart_id=100389483",
+      "productPath": "/charters/boat-dives",
+      "actionType": "booking",
+      "bookable": true,
+      "contactPart": null,
+      "qualityWarnings": [],
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
+    },
+    {
+      "id": "100389485",
+      "openCartId": "100389485",
+      "source": "boat-seal",
+      "sourceWidgetId": "4746",
+      "sourceRole": "core",
+      "sourceAliases": [
+        "boat-seal"
+      ],
+      "primaryCategory": "boat",
+      "tags": [
+        "boat",
+        "marine-life",
+        "shark"
+      ],
+      "charter": "Boat Dives",
+      "title": "Magic Point Shark Dive",
+      "description": "Magic Point – shark dive, Sydney most popular boat dive 15–24m",
+      "partNumber": "Magic Point Shark Dive 14/02/26",
+      "startDate": "2027-02-14",
+      "endDate": "2027-02-14",
+      "startTime": "08:00",
+      "start": "2027-02-14T08:00:00+11:00",
+      "timezone": "Australia/Sydney",
+      "price": {
+        "amount": 130,
+        "currency": "AUD",
+        "display": "$130.00",
+        "tableDisplay": "$130.00",
+        "detailDisplay": "$130.00"
+      },
+      "availabilitySnapshot": {
+        "maxPlaces": 18,
+        "placesAvailable": 18,
+        "status": "snapshot-open"
+      },
+      "bookingUrl": "https://www.abyss.com.au/charters/boat-dives?q=cGFydF9udW1iZXI9TWFnaWMgUG9pbnQgU2hhcmsgRGl2ZSAxNC8wMi8yNiZkYXRlPSZvcGVuX2NhcnRfaWQ9MTAwMzg5NDg1",
+      "bookingCode": "cGFydF9udW1iZXI9TWFnaWMgUG9pbnQgU2hhcmsgRGl2ZSAxNC8wMi8yNiZkYXRlPSZvcGVuX2NhcnRfaWQ9MTAwMzg5NDg1",
+      "decodedBookingCode": "part_number=Magic Point Shark Dive 14/02/26&date=&open_cart_id=100389485",
+      "productPath": "/charters/boat-dives",
+      "actionType": "booking",
+      "bookable": true,
+      "contactPart": null,
+      "qualityWarnings": [],
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
+    },
+    {
+      "id": "100138530",
+      "openCartId": "100138530",
+      "source": "guided-shore",
+      "sourceWidgetId": "4745",
+      "sourceRole": "core",
+      "sourceAliases": [
+        "guided-shore"
+      ],
+      "primaryCategory": "shore",
+      "tags": [
+        "shore"
+      ],
+      "charter": "Guided Shore Dives",
+      "title": "Leap to Steps Dive",
+      "description": "Leap to steps Drift for confident divers shore dive (18-22m)",
+      "partNumber": "Leap to Steps Dive 14/02/27",
+      "startDate": "2027-02-14",
+      "endDate": "2027-02-14",
+      "startTime": "09:00",
+      "start": "2027-02-14T09:00:00+11:00",
+      "timezone": "Australia/Sydney",
+      "price": {
+        "amount": 0,
+        "currency": "AUD",
+        "display": "$0.00",
+        "tableDisplay": "$0.00",
+        "detailDisplay": "$0.00"
+      },
+      "availabilitySnapshot": {
+        "maxPlaces": 20,
+        "placesAvailable": 20,
+        "status": "snapshot-open"
+      },
+      "bookingUrl": "https://www.abyss.com.au/charters/guided-shore-dives?q=cGFydF9udW1iZXI9TGVhcCB0byBTdGVwcyBEaXZlIDE0LzAyLzI3JmRhdGU9Jm9wZW5fY2FydF9pZD0xMDAxMzg1MzA=",
+      "bookingCode": "cGFydF9udW1iZXI9TGVhcCB0byBTdGVwcyBEaXZlIDE0LzAyLzI3JmRhdGU9Jm9wZW5fY2FydF9pZD0xMDAxMzg1MzA=",
+      "decodedBookingCode": "part_number=Leap to Steps Dive 14/02/27&date=&open_cart_id=100138530",
+      "productPath": "/charters/guided-shore-dives",
+      "actionType": "booking",
+      "bookable": true,
+      "contactPart": null,
+      "qualityWarnings": [],
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
+    },
+    {
+      "id": "100389487",
+      "openCartId": "100389487",
+      "source": "boat-seal",
+      "sourceWidgetId": "4746",
+      "sourceRole": "core",
+      "sourceAliases": [
+        "boat-seal"
+      ],
+      "primaryCategory": "boat",
+      "tags": [
+        "boat"
+      ],
+      "charter": "Boat Dives",
+      "title": "Osborn Shoals",
+      "description": "Osborn Shoals – groper, morwong, cuttlefish – Double Dive 18–24m",
+      "partNumber": "Osborn Shoals 14/02/26",
+      "startDate": "2027-02-14",
+      "endDate": "2027-02-14",
+      "startTime": "12:00",
+      "start": "2027-02-14T12:00:00+11:00",
+      "timezone": "Australia/Sydney",
+      "price": {
+        "amount": 130,
+        "currency": "AUD",
+        "display": "$130.00",
+        "tableDisplay": "$130.00",
+        "detailDisplay": "$130.00"
+      },
+      "availabilitySnapshot": {
+        "maxPlaces": 18,
+        "placesAvailable": 18,
+        "status": "snapshot-open"
+      },
+      "bookingUrl": "https://www.abyss.com.au/charters/boat-dives?q=cGFydF9udW1iZXI9T3Nib3JuIFNob2FscyAxNC8wMi8yNiZkYXRlPSZvcGVuX2NhcnRfaWQ9MTAwMzg5NDg3",
+      "bookingCode": "cGFydF9udW1iZXI9T3Nib3JuIFNob2FscyAxNC8wMi8yNiZkYXRlPSZvcGVuX2NhcnRfaWQ9MTAwMzg5NDg3",
+      "decodedBookingCode": "part_number=Osborn Shoals 14/02/26&date=&open_cart_id=100389487",
+      "productPath": "/charters/boat-dives",
+      "actionType": "booking",
+      "bookable": true,
+      "contactPart": null,
+      "qualityWarnings": [],
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
+    },
+    {
+      "id": "100138532",
+      "openCartId": "100138532",
+      "source": "guided-shore",
+      "sourceWidgetId": "4745",
+      "sourceRole": "core",
+      "sourceAliases": [
+        "guided-shore"
+      ],
+      "primaryCategory": "shore",
+      "tags": [
+        "shore"
+      ],
+      "charter": "Guided Shore Dives",
+      "title": "Oak Park Dive",
+      "description": "Oak Park at Cronulla big blue groper shore dive (10m)",
+      "partNumber": "Oak Park Dive 19/02/27",
+      "startDate": "2027-02-19",
+      "endDate": "2027-02-19",
+      "startTime": "10:00",
+      "start": "2027-02-19T10:00:00+11:00",
+      "timezone": "Australia/Sydney",
+      "price": {
+        "amount": 0,
+        "currency": "AUD",
+        "display": "$0.00",
+        "tableDisplay": "$0.00",
+        "detailDisplay": "$0.00"
+      },
+      "availabilitySnapshot": {
+        "maxPlaces": 20,
+        "placesAvailable": 20,
+        "status": "snapshot-open"
+      },
+      "bookingUrl": "https://www.abyss.com.au/charters/guided-shore-dives?q=cGFydF9udW1iZXI9T2FrIFBhcmsgRGl2ZSAxOS8wMi8yNyZkYXRlPSZvcGVuX2NhcnRfaWQ9MTAwMTM4NTMy",
+      "bookingCode": "cGFydF9udW1iZXI9T2FrIFBhcmsgRGl2ZSAxOS8wMi8yNyZkYXRlPSZvcGVuX2NhcnRfaWQ9MTAwMTM4NTMy",
+      "decodedBookingCode": "part_number=Oak Park Dive 19/02/27&date=&open_cart_id=100138532",
+      "productPath": "/charters/guided-shore-dives",
+      "actionType": "booking",
+      "bookable": true,
+      "contactPart": null,
+      "qualityWarnings": [],
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
+    },
+    {
+      "id": "100138534",
+      "openCartId": "100138534",
+      "source": "guided-shore",
+      "sourceWidgetId": "4745",
+      "sourceRole": "core",
+      "sourceAliases": [
+        "guided-shore"
+      ],
+      "primaryCategory": "shore",
+      "tags": [
+        "shore"
+      ],
+      "charter": "Guided Shore Dives",
+      "title": "Oak Park Dive",
+      "description": "Oak Park at Cronulla big blue groper shore dive (10m)",
+      "partNumber": "Oak Park Dive 20/02/27",
+      "startDate": "2027-02-20",
+      "endDate": "2027-02-20",
+      "startTime": "09:00",
+      "start": "2027-02-20T09:00:00+11:00",
+      "timezone": "Australia/Sydney",
+      "price": {
+        "amount": 0,
+        "currency": "AUD",
+        "display": "$0.00",
+        "tableDisplay": "$0.00",
+        "detailDisplay": "$0.00"
+      },
+      "availabilitySnapshot": {
+        "maxPlaces": 20,
+        "placesAvailable": 20,
+        "status": "snapshot-open"
+      },
+      "bookingUrl": "https://www.abyss.com.au/charters/guided-shore-dives?q=cGFydF9udW1iZXI9T2FrIFBhcmsgRGl2ZSAyMC8wMi8yNyZkYXRlPSZvcGVuX2NhcnRfaWQ9MTAwMTM4NTM0",
+      "bookingCode": "cGFydF9udW1iZXI9T2FrIFBhcmsgRGl2ZSAyMC8wMi8yNyZkYXRlPSZvcGVuX2NhcnRfaWQ9MTAwMTM4NTM0",
+      "decodedBookingCode": "part_number=Oak Park Dive 20/02/27&date=&open_cart_id=100138534",
+      "productPath": "/charters/guided-shore-dives",
+      "actionType": "booking",
+      "bookable": true,
+      "contactPart": null,
+      "qualityWarnings": [],
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
+    },
+    {
+      "id": "100389489",
+      "openCartId": "100389489",
+      "source": "boat-seal",
+      "sourceWidgetId": "4746",
+      "sourceRole": "core",
+      "sourceAliases": [
+        "boat-seal"
+      ],
+      "primaryCategory": "boat",
+      "tags": [
+        "boat"
+      ],
+      "charter": "Boat Dives",
+      "title": "Henry Head Boat Dive",
+      "description": "Henry Head – sponge garden, red Indian fish – Double Dive 12–24m",
+      "partNumber": "Henry Head Boat Dive 21/02/26",
+      "startDate": "2027-02-21",
+      "endDate": "2027-02-21",
+      "startTime": "08:00",
+      "start": "2027-02-21T08:00:00+11:00",
+      "timezone": "Australia/Sydney",
+      "price": {
+        "amount": 130,
+        "currency": "AUD",
+        "display": "$130.00",
+        "tableDisplay": "$130.00",
+        "detailDisplay": "$130.00"
+      },
+      "availabilitySnapshot": {
+        "maxPlaces": 18,
+        "placesAvailable": 18,
+        "status": "snapshot-open"
+      },
+      "bookingUrl": "https://www.abyss.com.au/charters/boat-dives?q=cGFydF9udW1iZXI9SGVucnkgSGVhZCBCb2F0IERpdmUgMjEvMDIvMjYmZGF0ZT0mb3Blbl9jYXJ0X2lkPTEwMDM4OTQ4OQ==",
+      "bookingCode": "cGFydF9udW1iZXI9SGVucnkgSGVhZCBCb2F0IERpdmUgMjEvMDIvMjYmZGF0ZT0mb3Blbl9jYXJ0X2lkPTEwMDM4OTQ4OQ==",
+      "decodedBookingCode": "part_number=Henry Head Boat Dive 21/02/26&date=&open_cart_id=100389489",
+      "productPath": "/charters/boat-dives",
+      "actionType": "booking",
+      "bookable": true,
+      "contactPart": null,
+      "qualityWarnings": [],
+      "scrapedAt": "2026-11-25T08:34:26.326Z"
     }
   ]
 }
