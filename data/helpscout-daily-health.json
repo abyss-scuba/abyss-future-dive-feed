@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-25T15:33:09.433+11:00",
+  "checkedAt": "2026-11-25T19:49:17.013+11:00",
   "localDate": "2026-11-25",
   "repository": "abyss-scuba/abyss-future-dive-feed",
   "scope": "Seven maintained Help Scout date publishers, including derived date sections; separate website future-feed dependency.",
@@ -422,18 +422,16 @@
       "warnings": []
     }
   ],
-  "monitorErrors": [
-    "website-future-feed-not-verified-within-30-hours"
-  ],
+  "monitorErrors": [],
   "agentAnswerTests": "not performed by this monitor",
   "websiteFutureFeed": {
-    "generatedAt": "2026-11-09T06:29:21.362Z",
-    "state": "FAIL"
+    "generatedAt": "2026-11-25T08:34:26.326Z",
+    "state": "PASS"
   },
-  "state": "FAIL",
+  "state": "PASS",
   "delivery": {
     "issue": 56,
     "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/issues/56",
-    "action": "daily-deduplicated"
+    "action": "recovered-and-closed"
   }
 }
