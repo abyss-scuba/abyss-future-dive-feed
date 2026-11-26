@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-26T11:48:19.065+11:00",
+  "checkedAt": "2026-11-26T11:57:36.549+11:00",
   "localDate": "2026-11-26",
   "repository": "abyss-scuba/abyss-future-dive-feed",
   "scope": "Seven maintained Help Scout date publishers, including derived date sections; separate website future-feed dependency.",
@@ -98,18 +98,18 @@
     {
       "key": "courses",
       "label": "Sydney Dive Courses",
-      "state": "PASS",
+      "state": "FAIL",
       "checkedAt": "2026-11-26T10:42:35.352+11:00",
-      "count": 75,
+      "count": null,
       "publishedUniqueEventLinks": 75,
       "due": "07:00",
       "workflow": "sync-helpscout-courses.yml",
       "latestRun": {
-        "id": 45723356392,
+        "id": 45732220272,
         "event": "schedule",
         "status": "completed",
-        "conclusion": "success",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/45723356392"
+        "conclusion": "failure",
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/45732220272"
       },
       "lastSuccessfulScheduledRun": {
         "id": 45723356392,
@@ -222,8 +222,12 @@
           "warnings": []
         }
       ],
-      "errors": [],
-      "warnings": []
+      "errors": [
+        "receipt-not-successful"
+      ],
+      "warnings": [
+        "latest-workflow-failure"
+      ]
     },
     {
       "key": "travel",
