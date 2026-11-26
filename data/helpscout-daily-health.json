@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-27T10:14:55.047+11:00",
+  "checkedAt": "2026-11-27T10:56:26.528+11:00",
   "localDate": "2026-11-27",
   "repository": "abyss-scuba/abyss-future-dive-feed",
   "scope": "Seven maintained Help Scout date publishers, including derived date sections.",
@@ -98,23 +98,23 @@
     {
       "key": "courses",
       "label": "Sydney Dive Courses",
-      "state": "FAIL",
-      "checkedAt": "2026-11-26T10:42:35.352+11:00",
-      "count": null,
+      "state": "PASS",
+      "checkedAt": "2026-11-27T10:55:41.324+11:00",
+      "count": 75,
       "publishedUniqueEventLinks": 75,
       "due": "07:00",
       "workflow": "sync-helpscout-courses.yml",
       "latestRun": {
-        "id": 45732220272,
+        "id": 45913720364,
         "event": "schedule",
         "status": "completed",
-        "conclusion": "failure",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/45732220272"
+        "conclusion": "success",
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/45913720364"
       },
       "lastSuccessfulScheduledRun": {
-        "id": 45723356392,
-        "createdAt": "2026-11-25T23:42:05Z",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/45723356392"
+        "id": 45913720364,
+        "createdAt": "2026-11-26T23:55:15Z",
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/45913720364"
       },
       "articles": [
         {
@@ -123,13 +123,11 @@
           "name": "Upcoming Sydney Course Dates — Updated Daily",
           "collectionId": "6ab8b33984f08c58bb03f7e6",
           "checkDates": [
-            "2026-11-26"
+            "2026-11-27"
           ],
           "eventLinks": 24,
-          "bodyHash": "6b5ba5417ff8152ca0ad25667423cf43efd6eed65927c0e8c45eca4c7dac03fc",
-          "errors": [
-            "published-check-date-not-current"
-          ],
+          "bodyHash": "078a41ece5a5417b83b7d61cb425bdee34e7be4fcf2a1c38f33f9e9e288044b3",
+          "errors": [],
           "warnings": []
         },
         {
@@ -138,13 +136,11 @@
           "name": "Upcoming Sydney Advanced Open Water and Refresher Dates — Updated Daily",
           "collectionId": "6ab8b33984f08c58bb03f7e6",
           "checkDates": [
-            "2026-11-26"
+            "2026-11-27"
           ],
           "eventLinks": 22,
-          "bodyHash": "d386e5068fe39adb05a7ca4f5e4fe249fbaa5b3485c9983f3bb9ca6cc178c0d2",
-          "errors": [
-            "published-check-date-not-current"
-          ],
+          "bodyHash": "fc2fb3ce596e59a741d77f87100c268f6a3545dc184cbbac279131eca05a2c77",
+          "errors": [],
           "warnings": []
         },
         {
@@ -153,13 +149,11 @@
           "name": "Upcoming Sydney Specialty Courses Dates — Updated Daily",
           "collectionId": "6ab8b33984f08c58bb03f7e6",
           "checkDates": [
-            "2026-11-26"
+            "2026-11-27"
           ],
           "eventLinks": 22,
-          "bodyHash": "c346396479903f1c8452a5239e9367bb65bcbc0f4e76ac46a73c45ec3a623c3d",
-          "errors": [
-            "published-check-date-not-current"
-          ],
+          "bodyHash": "3cf1d1c51a40ab0a9935995c09006f52c159d9c07dec402e3f2d15ebcbbfcb4b",
+          "errors": [],
           "warnings": []
         },
         {
@@ -168,13 +162,11 @@
           "name": "Upcoming Sydney Rescue and First Aid Dates — Updated Daily",
           "collectionId": "6ab8b33984f08c58bb03f7e6",
           "checkDates": [
-            "2026-11-26"
+            "2026-11-27"
           ],
           "eventLinks": 14,
-          "bodyHash": "9c8ec3cf3b296fa6c653d6835fffce0a2694152ca22a042371695d15ea7679ad",
-          "errors": [
-            "published-check-date-not-current"
-          ],
+          "bodyHash": "0f559ed5ea8f8663b129b2dd46affffa27bcf6772966e5a8143083570f20f735",
+          "errors": [],
           "warnings": []
         },
         {
@@ -183,13 +175,11 @@
           "name": "Upcoming Sydney Freediving, Mermaid and Avelo Dates — Updated Daily",
           "collectionId": "6ab8b33984f08c58bb03f7e6",
           "checkDates": [
-            "2026-11-26"
+            "2026-11-27"
           ],
           "eventLinks": 4,
-          "bodyHash": "e3775ccbc3aa45892fe26f6f5f175bcb9e0cd7c740805f87bd0d7a6051d8ece3",
-          "errors": [
-            "published-check-date-not-current"
-          ],
+          "bodyHash": "baa61ab821fe12aa43fc53c198e44faaecabca2ab33042f1135670f679aae867",
+          "errors": [],
           "warnings": []
         },
         {
@@ -198,13 +188,11 @@
           "name": "Upcoming Sydney Professional and Technical Courses Dates — Updated Daily",
           "collectionId": "6ab8b33984f08c58bb03f7e6",
           "checkDates": [
-            "2026-11-26"
+            "2026-11-27"
           ],
           "eventLinks": 13,
-          "bodyHash": "a33b2c90377243414e105b3825650f433895d12fae906abc59b9dc149ced0911",
-          "errors": [
-            "published-check-date-not-current"
-          ],
+          "bodyHash": "6baef4d49642558117a7d7b6f5607c06deefe3b33637919bbfb672db55232e0f",
+          "errors": [],
           "warnings": []
         },
         {
@@ -213,13 +201,11 @@
           "name": "Steadier buoyancy for underwater photos — Peak Performance Buoyancy dates",
           "collectionId": "6ab8b33984f08c58bb03f7e6",
           "checkDates": [
-            "2026-11-26"
+            "2026-11-27"
           ],
           "eventLinks": 3,
-          "bodyHash": "ca1fc3e654c4a2c78446d274f970528fbbd08006da794d4756ab2d10f7076b34",
-          "errors": [
-            "published-check-date-not-current"
-          ],
+          "bodyHash": "a7de02d71ba47c398dcbcb8e2d3fb475f42d1fb6245648a1f50883bccdeec65e",
+          "errors": [],
           "warnings": []
         },
         {
@@ -228,31 +214,16 @@
           "name": "PADI Freediver in Sydney",
           "collectionId": "6ab8b33984f08c58bb03f7e6",
           "checkDates": [
-            "2026-11-26"
+            "2026-11-27"
           ],
           "eventLinks": 3,
-          "bodyHash": "dd2133558a47469a596ed8137cb84d51927fbc8272410aa83c3b675515a27f59",
-          "errors": [
-            "published-check-date-not-current"
-          ],
+          "bodyHash": "649c0faca82f0da9ce699fafc3d4dd4d6a87e65a6122b316cb92f2e94d525943",
+          "errors": [],
           "warnings": []
         }
       ],
-      "errors": [
-        "daily-publication-receipt-missing",
-        "receipt-not-successful",
-        "Upcoming Sydney Course Dates — Updated Daily: published-check-date-not-current",
-        "Upcoming Sydney Advanced Open Water and Refresher Dates — Updated Daily: published-check-date-not-current",
-        "Upcoming Sydney Specialty Courses Dates — Updated Daily: published-check-date-not-current",
-        "Upcoming Sydney Rescue and First Aid Dates — Updated Daily: published-check-date-not-current",
-        "Upcoming Sydney Freediving, Mermaid and Avelo Dates — Updated Daily: published-check-date-not-current",
-        "Upcoming Sydney Professional and Technical Courses Dates — Updated Daily: published-check-date-not-current",
-        "Steadier buoyancy for underwater photos — Peak Performance Buoyancy dates: published-check-date-not-current",
-        "PADI Freediver in Sydney: published-check-date-not-current"
-      ],
-      "warnings": [
-        "latest-workflow-failure"
-      ]
+      "errors": [],
+      "warnings": []
     },
     {
       "key": "travel",
@@ -482,19 +453,18 @@
           "eventLinks": 0,
           "bodyHash": "7af2108246a794c17e9be463718608b3447729168092c0ecce6a3e02ea6f5208",
           "errors": [
+            "published-check-date-not-current",
             "published-date-section-expired"
           ],
-          "warnings": [
-            "awaiting-todays-refresh"
-          ]
+          "warnings": []
         }
       ],
       "errors": [
+        "daily-publication-receipt-missing",
+        "Upcoming Avelo Course Dates — Updated Daily: published-check-date-not-current",
         "Upcoming Avelo Course Dates — Updated Daily: published-date-section-expired"
       ],
-      "warnings": [
-        "Upcoming Avelo Course Dates — Updated Daily: awaiting-todays-refresh"
-      ]
+      "warnings": []
     }
   ],
   "monitorErrors": [],
@@ -503,6 +473,6 @@
   "delivery": {
     "issue": 57,
     "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/issues/57",
-    "action": "daily-deduplicated"
+    "action": "updated"
   }
 }
