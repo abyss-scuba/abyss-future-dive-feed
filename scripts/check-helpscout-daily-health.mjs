@@ -73,7 +73,7 @@ async function saveHeartbeat(report){
 async function main(){
  if(!ghToken)throw Error('GitHub reporting credential unavailable');
  const now=DateTime.now().setZone(ZONE),previous=await read(RESULT);
- const report={schemaVersion:1,checkedAt:now.toISO(),localDate:now.toISODate(),repository:REPO,scope:'Seven maintained Help Scout date publishers, including derived date sections; separate website future-feed dependency.',sources:[],monitorErrors:[],agentAnswerTests:'not performed by this monitor'};
+ const report={schemaVersion:1,checkedAt:now.toISO(),localDate:now.toISODate(),repository:REPO,scope:'Seven maintained Help Scout date publishers, including derived date sections.',sources:[],monitorErrors:[],agentAnswerTests:'not performed by this monitor'};
  for(const config of PIPELINES){
   try{
    const status=await read('data/'+config.statusFile);
@@ -88,10 +88,6 @@ async function main(){
  }
  const files=await fs.readdir('.github/workflows');
  for(const name of files){if(/^sync-helpscout-.*\.ya?ml$/.test(name)&&!PIPELINES.some(x=>x.workflow===name)){const text=await fs.readFile('.github/workflows/'+name,'utf8');if(/^  schedule:/m.test(text))report.monitorErrors.push('unmonitored-scheduled-publisher: '+name);}}
- // An additional website feed is not a Help Scout article. Keep that distinction visible.
- const feed=await read('data/future-dives.json');const generated=Date.parse(feed?.generatedAt);
- report.websiteFutureFeed={generatedAt:feed?.generatedAt||null,state:Number.isFinite(generated)&&generated<=now.toMillis()&&now.toMillis()-generated<30*3600000?'PASS':'FAIL'};
- if(report.websiteFutureFeed.state==='FAIL')report.monitorErrors.push('website-future-feed-not-verified-within-30-hours');
  report.state=report.monitorErrors.length||report.sources.some(s=>s.state==='FAIL')?'FAIL':report.sources.some(s=>s.state==='WARN')?'WARN':'PASS';
  await fs.mkdir('diagnostics/daily-docs-health',{recursive:true});
  if(deliver){
@@ -106,3 +102,4 @@ async function main(){
  if(report.state==='FAIL')process.exitCode=1;
 }
 main().catch(e=>{console.error('Daily Docs monitor failed: '+e.message);process.exitCode=1;});
+

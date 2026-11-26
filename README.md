@@ -1,4 +1,19 @@
-# Abyss Future Dive Feed
+# Abyss Schedule and Help Scout Automation
+
+## Retired future-date feed — 26 November 2026
+
+The **See later dates** feature has been removed from `/sydney-dive-calendar`, together with its JSON consumer. Its dedicated scheduled producer (`.github/workflows/scrape-future-dives.yml`) and four generated outputs have now been retired:
+
+- `data/future-dives.json`
+- `data/all-widget-events.json`
+- `data/scrape-state.json`
+- `data/validation-report.json`
+
+The scraper and validation utilities remain as implementation reference. Running them manually can recreate the old files; no scheduled workflow now publishes this feed. A replacement shared upcoming-dates feed is a separate, future change.
+
+All seven Help Scout date publishers remain active. Their daily health checks continue; the retired website feed's freshness check has been removed so it cannot produce false failure alerts.
+
+## Historical future-date scraper reference
 
 This repository turns the DS360 source widgets on:
 
@@ -30,7 +45,7 @@ For every event it extracts:
 
 The exact booking URL is always preserved. The scraper decodes `q` for identity and metadata, but never reconstructs the customer link.
 
-## Outputs
+## Historical outputs
 
 | File | Purpose |
 |---|---|
@@ -85,10 +100,9 @@ CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium \
 npm run scrape
 ```
 
-## GitHub Actions
+## Retired GitHub Actions workflow
 
-The included workflow is manual-only at first. Run it from **Actions → Scrape future dives → Run workflow** with `publish` left off. Download the artifact and inspect the JSON.
+The former **Scrape future dives** workflow has been removed. Its history and prior generated files remain recoverable through Git history. Do not re-enable the former schedule as part of a new feed implementation.
 
-After a successful shadow period, uncomment the `schedule` block in `.github/workflows/scrape-future-dives.yml`. The prepared cron runs twice daily at 01:17 and 13:17 UTC.
+The older setup and integration documents describe the retired implementation and are retained as historical reference.
 
-See [QUICKSTART.md](QUICKSTART.md) for the exact setup sequence, [REVIEW_CHECKLIST.md](REVIEW_CHECKLIST.md) for the launch checks, and [docs/INTEGRATION_NOTES.md](docs/INTEGRATION_NOTES.md) for the later calendar integration contract.

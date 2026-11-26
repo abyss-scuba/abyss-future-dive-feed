@@ -22,7 +22,7 @@ GitHub can delay scheduled starts. A successful immediate deployment run is not 
 
 `helpscout-daily-health.yml` runs at 11:17 and 12:17 Sydney time and after the seven production publishers complete. It independently GETs the actual published Docs articles. It does not PUT or POST to Help Scout. It verifies fixed identity, published state, no blocking draft, real check dates, excerpt expiry, retained departure URLs, and count consistency with the publication receipt. The course overview is a shortlist: full coverage is the deduplicated union across its grouped articles. It also reads active workflow state and daily schedule configuration and reports additional unmonitored scheduled `sync-helpscout-*` workflows.
 
-The separate website `future-dives.json` check remains distinct from Docs. Its failure can keep the overall report red even while every Help Scout date source passes.
+The website `future-dives.json` feature and its dedicated producer were retired on 26 November 2026. The daily monitor no longer reads that file or checks its freshness. All seven Help Scout date publishers and their existing checks remain in scope.
 
 Results:
 - `data/helpscout-daily-health.json`: public health metadata and heartbeat only, no article bodies or secrets.
@@ -37,3 +37,4 @@ GitHub issue delivery is tested using a clearly labelled test issue: create, rea
 Do not remove identity, private-collection, draft, manual-edit, source consistency, large-count-drop or readback safeguards merely to make a job green. Inspect the affected article and reconcile human changes first. Never advance a successful-check timestamp after a failed scrape or failed readback. Failed/dry-run jobs cannot satisfy the daily requirement.
 
 The monitor does not make bookings, alter website pages, change Agent Identity or create Improvements. PASS confirms the monitored date publication checks; it does not certify the AI's date selection, live seat availability, dive suitability or every booking URL's browser behaviour. Agent answer regression tests remain separate.
+
