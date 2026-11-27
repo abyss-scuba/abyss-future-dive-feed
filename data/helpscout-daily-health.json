@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-27T12:00:02.654+11:00",
+  "checkedAt": "2026-11-27T12:00:34.746+11:00",
   "localDate": "2026-11-27",
   "repository": "abyss-scuba/abyss-future-dive-feed",
   "scope": "Seven maintained Help Scout date publishers, including derived date sections.",
@@ -311,7 +311,7 @@
     {
       "key": "beginner",
       "label": "Beginner Dive Calendar",
-      "state": "WARN",
+      "state": "PASS",
       "checkedAt": "2026-11-27T00:43:16.989Z",
       "count": 110,
       "publishedUniqueEventLinks": 110,
@@ -320,14 +320,14 @@
       "latestRun": {
         "id": 45919992547,
         "event": "schedule",
-        "status": "in_progress",
-        "conclusion": null,
+        "status": "completed",
+        "conclusion": "success",
         "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/45919992547"
       },
       "lastSuccessfulScheduledRun": {
-        "id": 45918285500,
-        "createdAt": "2026-11-27T00:42:24Z",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/45918285500"
+        "id": 45919992547,
+        "createdAt": "2026-11-27T01:00:02Z",
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/45919992547"
       },
       "articles": [
         {
@@ -397,9 +397,7 @@
         }
       ],
       "errors": [],
-      "warnings": [
-        "workflow-in_progress"
-      ]
+      "warnings": []
     },
     {
       "key": "avelo",
