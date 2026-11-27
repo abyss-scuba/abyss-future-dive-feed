@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-27T12:41:37.101+11:00",
+  "checkedAt": "2026-11-27T12:55:24.611+11:00",
   "localDate": "2026-11-27",
   "repository": "abyss-scuba/abyss-future-dive-feed",
   "scope": "Seven maintained Help Scout date publishers, including derived date sections.",
@@ -8,23 +8,23 @@
     {
       "key": "calendar",
       "label": "Sydney Dive Calendar",
-      "state": "PASS",
+      "state": "WARN",
       "checkedAt": "2026-11-27",
-      "count": 82,
-      "publishedUniqueEventLinks": 82,
+      "count": 80,
+      "publishedUniqueEventLinks": 80,
       "due": "08:00",
       "workflow": "sync-helpscout-calendar.yml",
       "latestRun": {
-        "id": 45923842385,
+        "id": 45925153719,
         "event": "schedule",
         "status": "completed",
         "conclusion": "success",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/45923842385"
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/45925153719"
       },
       "lastSuccessfulScheduledRun": {
-        "id": 45923842385,
-        "createdAt": "2026-11-27T01:39:52Z",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/45923842385"
+        "id": 45925153719,
+        "createdAt": "2026-11-27T01:53:41Z",
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/45925153719"
       },
       "articles": [
         {
@@ -35,14 +35,18 @@
           "checkDates": [
             "2026-11-27"
           ],
-          "eventLinks": 82,
-          "bodyHash": "061bb5ad34c56a78ccbf4a274969b31b15dc5a753f006dede8df3ce3f36fdc23",
+          "eventLinks": 80,
+          "bodyHash": "c7fea72f76a4f35c108d32a0503a73ddbd96e08589fab8313ef9b9345eb36348",
           "errors": [],
-          "warnings": []
+          "warnings": [
+            "body-changed-with-same-check-date"
+          ]
         }
       ],
       "errors": [],
-      "warnings": []
+      "warnings": [
+        "Upcoming Sydney dive dates — schedule snapshot: body-changed-with-same-check-date"
+      ]
     },
     {
       "key": "boat",
