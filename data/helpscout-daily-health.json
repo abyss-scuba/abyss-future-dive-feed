@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-27T20:43:35.301+11:00",
-  "localDate": "2026-11-27",
+  "checkedAt": "2026-11-28T09:38:04.733+11:00",
+  "localDate": "2026-11-28",
   "repository": "abyss-scuba/abyss-future-dive-feed",
   "scope": "Seven maintained Help Scout date publishers, including derived date sections.",
   "sources": [
     {
       "key": "calendar",
       "label": "Sydney Dive Calendar",
-      "state": "PASS",
+      "state": "FAIL",
       "checkedAt": "2026-11-27",
       "count": 80,
       "publishedUniqueEventLinks": 80,
@@ -37,11 +37,16 @@
           ],
           "eventLinks": 80,
           "bodyHash": "c7fea72f76a4f35c108d32a0503a73ddbd96e08589fab8313ef9b9345eb36348",
-          "errors": [],
+          "errors": [
+            "published-check-date-not-current"
+          ],
           "warnings": []
         }
       ],
-      "errors": [],
+      "errors": [
+        "daily-publication-receipt-missing",
+        "Upcoming Sydney dive dates — schedule snapshot: published-check-date-not-current"
+      ],
       "warnings": []
     },
     {
@@ -54,11 +59,11 @@
       "due": "04:00",
       "workflow": "sync-helpscout-boat.yml",
       "latestRun": {
-        "id": 45909633446,
+        "id": 46077687757,
         "event": "schedule",
         "status": "completed",
         "conclusion": "failure",
-        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/45909633446"
+        "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/actions/runs/46077687757"
       },
       "lastSuccessfulScheduledRun": {
         "id": 45511395122,
@@ -93,7 +98,7 @@
     {
       "key": "courses",
       "label": "Sydney Dive Courses",
-      "state": "PASS",
+      "state": "FAIL",
       "checkedAt": "2026-11-27T11:59:19.844+11:00",
       "count": 75,
       "publishedUniqueEventLinks": 75,
@@ -122,7 +127,9 @@
           ],
           "eventLinks": 24,
           "bodyHash": "078a41ece5a5417b83b7d61cb425bdee34e7be4fcf2a1c38f33f9e9e288044b3",
-          "errors": [],
+          "errors": [
+            "published-check-date-not-current"
+          ],
           "warnings": []
         },
         {
@@ -135,7 +142,9 @@
           ],
           "eventLinks": 22,
           "bodyHash": "fc2fb3ce596e59a741d77f87100c268f6a3545dc184cbbac279131eca05a2c77",
-          "errors": [],
+          "errors": [
+            "published-check-date-not-current"
+          ],
           "warnings": []
         },
         {
@@ -148,7 +157,9 @@
           ],
           "eventLinks": 22,
           "bodyHash": "3cf1d1c51a40ab0a9935995c09006f52c159d9c07dec402e3f2d15ebcbbfcb4b",
-          "errors": [],
+          "errors": [
+            "published-check-date-not-current"
+          ],
           "warnings": []
         },
         {
@@ -161,7 +172,9 @@
           ],
           "eventLinks": 14,
           "bodyHash": "0f559ed5ea8f8663b129b2dd46affffa27bcf6772966e5a8143083570f20f735",
-          "errors": [],
+          "errors": [
+            "published-check-date-not-current"
+          ],
           "warnings": []
         },
         {
@@ -174,7 +187,9 @@
           ],
           "eventLinks": 4,
           "bodyHash": "baa61ab821fe12aa43fc53c198e44faaecabca2ab33042f1135670f679aae867",
-          "errors": [],
+          "errors": [
+            "published-check-date-not-current"
+          ],
           "warnings": []
         },
         {
@@ -187,7 +202,9 @@
           ],
           "eventLinks": 13,
           "bodyHash": "6baef4d49642558117a7d7b6f5607c06deefe3b33637919bbfb672db55232e0f",
-          "errors": [],
+          "errors": [
+            "published-check-date-not-current"
+          ],
           "warnings": []
         },
         {
@@ -200,7 +217,9 @@
           ],
           "eventLinks": 3,
           "bodyHash": "a7de02d71ba47c398dcbcb8e2d3fb475f42d1fb6245648a1f50883bccdeec65e",
-          "errors": [],
+          "errors": [
+            "published-check-date-not-current"
+          ],
           "warnings": []
         },
         {
@@ -213,17 +232,29 @@
           ],
           "eventLinks": 3,
           "bodyHash": "d1031e69e5896f7ef4871cb2ff7a7c75df66f03a45a20eb7b3fc97de4ae3d54b",
-          "errors": [],
+          "errors": [
+            "published-check-date-not-current"
+          ],
           "warnings": []
         }
       ],
-      "errors": [],
+      "errors": [
+        "daily-publication-receipt-missing",
+        "Upcoming Sydney Course Dates — Updated Daily: published-check-date-not-current",
+        "Upcoming Sydney Advanced Open Water and Refresher Dates — Updated Daily: published-check-date-not-current",
+        "Upcoming Sydney Specialty Courses Dates — Updated Daily: published-check-date-not-current",
+        "Upcoming Sydney Rescue and First Aid Dates — Updated Daily: published-check-date-not-current",
+        "Upcoming Sydney Freediving, Mermaid and Avelo Dates — Updated Daily: published-check-date-not-current",
+        "Upcoming Sydney Professional and Technical Courses Dates — Updated Daily: published-check-date-not-current",
+        "Steadier buoyancy for underwater photos — Peak Performance Buoyancy dates: published-check-date-not-current",
+        "PADI Freediver in Sydney: published-check-date-not-current"
+      ],
       "warnings": []
     },
     {
       "key": "travel",
       "label": "Dive Travel",
-      "state": "PASS",
+      "state": "WARN",
       "checkedAt": "2026-11-27T14:45:43.659+11:00",
       "count": 12,
       "publishedUniqueEventLinks": 12,
@@ -253,16 +284,20 @@
           "eventLinks": 12,
           "bodyHash": "fc2dc3d0acff39c10861f559e7b9915b7ae2e939ed939a25d25da65815001684",
           "errors": [],
-          "warnings": []
+          "warnings": [
+            "awaiting-todays-refresh"
+          ]
         }
       ],
       "errors": [],
-      "warnings": []
+      "warnings": [
+        "Upcoming Abyss dive trips — dates and availability snapshot: awaiting-todays-refresh"
+      ]
     },
     {
       "key": "shore",
       "label": "Shore Diving",
-      "state": "PASS",
+      "state": "FAIL",
       "checkedAt": "2026-11-27T12:08:32.087+11:00",
       "count": 39,
       "publishedUniqueEventLinks": 39,
@@ -291,17 +326,22 @@
           ],
           "eventLinks": 39,
           "bodyHash": "703a8242ceb8961c748b649e74a2d3257619d85e9fb436ab68ef03a4f8bb3c2a",
-          "errors": [],
+          "errors": [
+            "published-check-date-not-current"
+          ],
           "warnings": []
         }
       ],
-      "errors": [],
+      "errors": [
+        "daily-publication-receipt-missing",
+        "Upcoming Shore dive dates — schedule snapshot: published-check-date-not-current"
+      ],
       "warnings": []
     },
     {
       "key": "beginner",
       "label": "Beginner Dive Calendar",
-      "state": "PASS",
+      "state": "FAIL",
       "checkedAt": "2026-11-27T00:43:16.989Z",
       "count": 110,
       "publishedUniqueEventLinks": 110,
@@ -330,7 +370,9 @@
           ],
           "eventLinks": 110,
           "bodyHash": "cc854eef66212337cb21e4b8a5af773abf286bb8486fafe1b3c6fa2cca2621ae",
-          "errors": [],
+          "errors": [
+            "published-check-date-not-current"
+          ],
           "warnings": []
         },
         {
@@ -343,7 +385,9 @@
           ],
           "eventLinks": 2,
           "bodyHash": "6dbd1acfc8cf64a7393f1318728452d62938151c82dd17202f3dd405bb56b6dc",
-          "errors": [],
+          "errors": [
+            "published-check-date-not-current"
+          ],
           "warnings": []
         },
         {
@@ -356,7 +400,9 @@
           ],
           "eventLinks": 1,
           "bodyHash": "a0ad2d46c61000293ec68b6fbe89948afa8eaa7df39894822d1cedc2d8bfef8c",
-          "errors": [],
+          "errors": [
+            "published-check-date-not-current"
+          ],
           "warnings": []
         },
         {
@@ -369,7 +415,9 @@
           ],
           "eventLinks": 1,
           "bodyHash": "a036efc2195a3e3e825af513b444cc1a4544734857ab5d94cddf402346b4a2b1",
-          "errors": [],
+          "errors": [
+            "published-check-date-not-current"
+          ],
           "warnings": []
         },
         {
@@ -382,17 +430,26 @@
           ],
           "eventLinks": 1,
           "bodyHash": "5799c8629b1189876e7a229fe3ad198c53ab991c62a53403f0da99e672673bb8",
-          "errors": [],
+          "errors": [
+            "published-check-date-not-current"
+          ],
           "warnings": []
         }
       ],
-      "errors": [],
+      "errors": [
+        "daily-publication-receipt-missing",
+        "Upcoming beginner dive dates — shore, boat and trips: published-check-date-not-current",
+        "Your first guided dive after certification: what happens and who helps: published-check-date-not-current",
+        "Scuba equipment hire and the total cost of your dive: published-check-date-not-current",
+        "Nervous about your next dive? Support, pace and extra help: published-check-date-not-current",
+        "Can I join a Sydney guided dive without bringing a buddy?: published-check-date-not-current"
+      ],
       "warnings": []
     },
     {
       "key": "avelo",
       "label": "Avelo Diving",
-      "state": "PASS",
+      "state": "FAIL",
       "checkedAt": "2026-11-27T13:37:13.879+11:00",
       "count": 0,
       "publishedUniqueEventLinks": 0,
@@ -421,12 +478,20 @@
           ],
           "eventLinks": 0,
           "bodyHash": "096e87af56da0f1d4a271e6cb2cd45783d131be23ab4bcc85a5ebc9ed6a093a8",
-          "errors": [],
-          "warnings": []
+          "errors": [
+            "published-date-section-expired"
+          ],
+          "warnings": [
+            "awaiting-todays-refresh"
+          ]
         }
       ],
-      "errors": [],
-      "warnings": []
+      "errors": [
+        "Upcoming Avelo Course Dates — Updated Daily: published-date-section-expired"
+      ],
+      "warnings": [
+        "Upcoming Avelo Course Dates — Updated Daily: awaiting-todays-refresh"
+      ]
     }
   ],
   "monitorErrors": [],
@@ -435,6 +500,6 @@
   "delivery": {
     "issue": 57,
     "url": "https://github.com/abyss-scuba/abyss-future-dive-feed/issues/57",
-    "action": "daily-deduplicated"
+    "action": "updated"
   }
 }
